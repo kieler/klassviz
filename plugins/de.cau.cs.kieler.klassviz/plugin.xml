@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="de.cau.cs.kieler.klighd.diagramSyntheses">
+   <diagramSynthesis
+         class="de.cau.cs.kieler.klighd.syntheses.GuiceBasedSynthesisFactory:de.cau.cs.kieler.klassviz.synthesis.ClassDataDiagramSynthesis"
+         id="de.cau.cs.kieler.klassviz.ClassDataDiagramSynthesis">
+   </diagramSynthesis>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <command
+               commandId="de.cau.cs.kieler.klassviz.synthesizeclassdiagramofselection"
+               label="Synthesize Class Diagram of Selection"
+               style="push">
+         </command>
+         <command
+               commandId="de.cau.cs.kieler.klassviz.getpreviousselectionofproject"
+               label="Get Previously Visualized Selection Of Project"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.cau.cs.kieler.klassviz.handlers.SynthesizeClassDiagramHandler"
+            id="de.cau.cs.kieler.klassviz.synthesizeclassdiagramofselection"
+            name="Synthesize Class Diagram of Selection">
+      </command>
+      <command
+            defaultHandler="de.cau.cs.kieler.klassviz.handlers.GetPreviousSelectionOfProject"
+            id="de.cau.cs.kieler.klassviz.getpreviousselectionofproject"
+            name="Get Previous Selection Of Project">
+      </command>
+   </extension>
+
+</plugin> 

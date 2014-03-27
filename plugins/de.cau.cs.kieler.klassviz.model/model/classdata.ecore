@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="classdata" nsURI="http://kieler.cs.cau.de/classdata" nsPrefix="classdata">
+  <eClassifiers xsi:type="ecore:EClass" name="EType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//IType"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+        eType="#//EField" containment="true" eKeys="#//EField/field"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
+        eType="#//EMethod" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullyQualifiedName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="field" lowerBound="1" eType="#//IField"
+        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EMethod">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" lowerBound="1"
+        eType="#//IMethod" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterTypeSignatures"
+        upperBound="-1" eType="#//EParameterTypeSignature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="IMethod" instanceClassName="org.eclipse.jdt.core.IMethod"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="IField" instanceClassName="org.eclipse.jdt.core.IField"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="IType" instanceClassName="org.eclipse.jdt.core.IType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EClassDataSelection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
+        eType="#//EType" containment="true" eKeys="#//EType/type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EParameterTypeSignature">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

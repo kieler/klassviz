@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="KIELER - Kiel Integrated Environment for Layout Eclipse RichClient&#xA;&#xA;http://www.informatik.uni-kiel.de/rtsys/kieler/&#xA;&#xA;Copyright 2014 by&#xA;+ Christian-Albrechts-University of Kiel&#xA;  + Department of Computer Science&#xA;    + Real-Time and Embedded Systems Group&#xA;&#xA;This code is provided under the terms of the Eclipse Public License (EPL).&#xA;See the file epl-v10.html for the license text."
+    modelDirectory="/de.cau.cs.kieler.klassviz.model/src" editDirectory="/de.cau.cs.kieler.klassviz.model.edit/src"
+    editorDirectory="/de.cau.cs.kieler.klassviz.model.editor/src" modelPluginID="de.cau.cs.kieler.klassviz.model"
+    modelName="Classmodel" editPluginClass="de.cau.cs.kieler.klassviz.model.edit.ClassmodelEditPlugin"
+    editorPluginClass="de.cau.cs.kieler.klassviz.model.editor.ClassmodelEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testSuiteClass="de.cau.cs.kieler.klassviz.model.tests.ClassmodelAllTests"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    editPluginID="de.cau.cs.kieler.klassviz.model.edit" editorPluginID="de.cau.cs.kieler.klassviz.model.editor"
+    language="" operationReflection="true" importOrganizing="true">
+  <foreignModel>classdata.ecore</foreignModel>
+  <genPackages prefix="Classdata" basePackage="de.cau.cs.kieler.klassviz.model" disposableProviderFactory="true"
+      ecorePackage="classdata.ecore#/">
+    <genDataTypes ecoreDataType="classdata.ecore#//IMethod"/>
+    <genDataTypes ecoreDataType="classdata.ecore#//IField"/>
+    <genDataTypes ecoreDataType="classdata.ecore#//IType"/>
+    <genClasses ecoreClass="classdata.ecore#//EType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute classdata.ecore#//EType/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference classdata.ecore#//EType/fields"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference classdata.ecore#//EType/methods"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute classdata.ecore#//EType/fullyQualifiedName"/>
+    </genClasses>
+    <genClasses ecoreClass="classdata.ecore#//EField">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute classdata.ecore#//EField/field"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute classdata.ecore#//EField/selected"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute classdata.ecore#//EField/name"/>
+    </genClasses>
+    <genClasses ecoreClass="classdata.ecore#//EMethod">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute classdata.ecore#//EMethod/method"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute classdata.ecore#//EMethod/selected"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute classdata.ecore#//EMethod/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference classdata.ecore#//EMethod/parameterTypeSignatures"/>
+    </genClasses>
+    <genClasses ecoreClass="classdata.ecore#//EClassDataSelection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference classdata.ecore#//EClassDataSelection/types"/>
+    </genClasses>
+    <genClasses ecoreClass="classdata.ecore#//EParameterTypeSignature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute classdata.ecore#//EParameterTypeSignature/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
