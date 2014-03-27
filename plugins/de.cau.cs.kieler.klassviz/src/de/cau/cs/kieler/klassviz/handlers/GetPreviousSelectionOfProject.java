@@ -49,7 +49,7 @@ import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage;
 import de.cau.cs.kieler.klassviz.model.classdata.EClassDataSelection;
 import de.cau.cs.kieler.klassviz.model.classdata.EField;
 import de.cau.cs.kieler.klassviz.model.classdata.EMethod;
-import de.cau.cs.kieler.klighd.views.DiagramViewManager;
+import de.cau.cs.kieler.klighd.ui.DiagramViewManager;
 
 
 /**

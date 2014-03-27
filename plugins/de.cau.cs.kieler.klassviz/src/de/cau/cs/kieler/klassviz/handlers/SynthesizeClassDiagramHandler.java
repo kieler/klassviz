@@ -43,7 +43,7 @@ import de.cau.cs.kieler.klassviz.model.classdata.EField;
 import de.cau.cs.kieler.klassviz.model.classdata.EMethod;
 import de.cau.cs.kieler.klassviz.model.classdata.EParameterTypeSignature;
 import de.cau.cs.kieler.klassviz.model.classdata.EType;
-import de.cau.cs.kieler.klighd.views.DiagramViewManager;
+import de.cau.cs.kieler.klighd.ui.DiagramViewManager;
 
 /**
  * This class initiates the classdiagram synthesis. Therefore a selection of
