@@ -15,12 +15,12 @@
             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
          <command
                commandId="de.cau.cs.kieler.klassviz.synthesizeclassdiagramofselection"
-               label="Synthesize Class Diagram of Selection"
+               label="Class Diagram from Selection"
                style="push">
          </command>
          <command
                commandId="de.cau.cs.kieler.klassviz.getpreviousselectionofproject"
-               label="Get Previously Visualized Selection Of Project"
+               label="Restore Project's Previous Class Diagram"
                style="push">
          </command>
       </menuContribution>
@@ -30,12 +30,12 @@
       <command
             defaultHandler="de.cau.cs.kieler.klassviz.handlers.SynthesizeClassDiagramHandler"
             id="de.cau.cs.kieler.klassviz.synthesizeclassdiagramofselection"
-            name="Synthesize Class Diagram of Selection">
+            name="Class Diagram from Selection">
       </command>
       <command
-            defaultHandler="de.cau.cs.kieler.klassviz.handlers.GetPreviousSelectionOfProject"
+            defaultHandler="de.cau.cs.kieler.klassviz.handlers.RestoreSelectionHandler"
             id="de.cau.cs.kieler.klassviz.getpreviousselectionofproject"
-            name="Get Previous Selection Of Project">
+            name="Restore Project's Previous Class Diagram">
       </command>
    </extension>
 

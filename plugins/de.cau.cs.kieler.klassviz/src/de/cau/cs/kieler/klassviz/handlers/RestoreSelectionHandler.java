@@ -61,7 +61,7 @@ import de.cau.cs.kieler.klighd.ui.DiagramViewManager;
  * @author ems
  * 
  */
-public class GetPreviousSelectionOfProject extends AbstractHandler {
+public class RestoreSelectionHandler extends AbstractHandler {
 
 	String PLUGIN_ID = "de.cau.cs.kieler.klassviz";
 
