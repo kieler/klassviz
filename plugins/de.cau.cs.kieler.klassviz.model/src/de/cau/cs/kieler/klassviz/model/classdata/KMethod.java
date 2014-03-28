@@ -46,7 +46,7 @@ public interface KMethod extends KMember {
      * @return the value of the '<em>Method</em>' attribute.
      * @see #setMethod(IMethod)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMethod_Method()
-     * @model dataType="de.cau.cs.kieler.klassviz.model.classdata.IMethod" required="true" transient="true"
+     * @model dataType="de.cau.cs.kieler.klassviz.model.classdata.IMethod" transient="true"
      * @generated
      */
     IMethod getMethod();

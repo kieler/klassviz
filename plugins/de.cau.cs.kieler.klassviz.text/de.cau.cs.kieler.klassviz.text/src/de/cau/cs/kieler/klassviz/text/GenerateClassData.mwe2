@@ -1,0 +1,97 @@
+module de.cau.cs.kieler.klassviz.text.ClassData
+
+import org.eclipse.emf.mwe.utils.*
+import org.eclipse.xtext.generator.*
+import org.eclipse.xtext.ui.generator.*
+
+var grammarURI = "classpath:/de/cau/cs/kieler/klassviz/text/ClassData.xtext"
+var fileExtensions = "klaviz"
+var projectName = "de.cau.cs.kieler.klassviz.text"
+var runtimeProject = "../${projectName}"
+var generateXtendStub = false
+
+Workflow {
+    bean = StandaloneSetup {
+        scanClassPath  = true
+        platformUri = "${runtimeProject}/.."
+        registerGeneratedEPackage = "de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage"
+        registerGenModelFile = "platform:/resource/de.cau.cs.kieler.klassviz.model/model/classmodel.genmodel"
+    }
+
+    component = DirectoryCleaner {
+        directory = "${runtimeProject}/src-gen"
+    }
+
+    component = DirectoryCleaner {
+        directory = "${runtimeProject}.ui/src-gen"
+    }
+
+    component = Generator {
+        pathRtProject = runtimeProject
+        pathUiProject = "${runtimeProject}.ui"
+        projectNameRt = projectName
+        projectNameUi = "${projectName}.ui"
+        language = auto-inject {
+            uri = grammarURI
+
+            // Java API to access grammar elements (required by several other fragments)
+            fragment = grammarAccess.GrammarAccessFragment auto-inject {}
+
+            // the Ecore2Xtext specific terminal converter
+            fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment auto-inject {}
+
+            // serializer 2.0
+            fragment = serializer.SerializerFragment auto-inject {}
+
+            // a custom ResourceFactory for use with EMF 
+            fragment = resourceFactory.ResourceFactoryFragment auto-inject {}
+
+            // the Antlr parser
+            fragment = parser.antlr.XtextAntlrGeneratorFragment auto-inject {
+                options = {
+                    classSplitting = true
+                }
+            }
+
+            // Xtend-based API for validation 
+            fragment = validation.ValidatorFragment auto-inject {
+            // composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
+            // composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+            }
+
+            // scoping and exporting API
+            fragment = scoping.ImportURIScopingFragment auto-inject {}
+            fragment = exporting.SimpleNamesFragment auto-inject {}
+            fragment = builder.BuilderIntegrationFragment auto-inject {}        
+
+            // formatter API 
+            fragment = formatting.FormatterFragment auto-inject {}
+
+            // labeling API 
+            fragment = labeling.LabelProviderFragment auto-inject {}
+
+            // outline API 
+            fragment = outline.OutlineTreeProviderFragment auto-inject {}
+            fragment = outline.QuickOutlineFragment auto-inject {}
+
+            // quickfix API
+            fragment = quickfix.QuickfixProviderFragment auto-inject {}
+
+            //content assist API 
+            fragment = contentAssist.ContentAssistFragment auto-inject {}
+
+            // antlr parser generator tailored for content assist 
+            fragment = parser.antlr.XtextAntlrUiGeneratorFragment auto-inject {
+                options = {
+                    classSplitting = true
+                }
+            }
+            
+            // provides the necessary bindings for java types integration
+            fragment = types.TypesGeneratorFragment auto-inject {}
+            
+            // generates the required bindings only if the grammar inherits from Xbase
+            fragment = xbase.XbaseGeneratorFragment auto-inject {}
+        }
+    }
+}

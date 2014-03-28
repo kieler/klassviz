@@ -45,7 +45,7 @@ public interface KMember extends EObject {
      * @return the value of the '<em>Selected</em>' attribute.
      * @see #setSelected(boolean)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMember_Selected()
-     * @model default="true" required="true"
+     * @model default="true"
      * @generated
      */
     boolean isSelected();

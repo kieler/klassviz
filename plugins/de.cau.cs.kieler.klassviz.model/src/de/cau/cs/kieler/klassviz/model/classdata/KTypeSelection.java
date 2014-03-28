@@ -26,6 +26,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection#getTypes <em>Types</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection#getJavaProjects <em>Java Projects</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection#getBundles <em>Bundles</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,9 +47,41 @@ public interface KTypeSelection extends EObject {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Types</em>' containment reference list.
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKTypeSelection_Types()
-     * @model containment="true" keys="type"
+     * @model containment="true"
      * @generated
      */
     EList<KType> getTypes();
+
+    /**
+     * Returns the value of the '<em><b>Java Projects</b></em>' attribute list.
+     * The list contents are of type {@link java.lang.String}.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Java Projects</em>' attribute list isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Java Projects</em>' attribute list.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKTypeSelection_JavaProjects()
+     * @model
+     * @generated
+     */
+    EList<String> getJavaProjects();
+
+    /**
+     * Returns the value of the '<em><b>Bundles</b></em>' attribute list.
+     * The list contents are of type {@link java.lang.String}.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Bundles</em>' attribute list isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Bundles</em>' attribute list.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKTypeSelection_Bundles()
+     * @model
+     * @generated
+     */
+    EList<String> getBundles();
 
 } // KTypeSelection

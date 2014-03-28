@@ -354,13 +354,31 @@ public interface ClassdataPackage extends EPackage {
     int KTYPE_SELECTION__TYPES = 0;
 
     /**
+     * The feature id for the '<em><b>Java Projects</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KTYPE_SELECTION__JAVA_PROJECTS = 1;
+
+    /**
+     * The feature id for the '<em><b>Bundles</b></em>' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KTYPE_SELECTION__BUNDLES = 2;
+
+    /**
      * The number of structural features of the '<em>KType Selection</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int KTYPE_SELECTION_FEATURE_COUNT = 1;
+    int KTYPE_SELECTION_FEATURE_COUNT = 3;
 
     /**
      * The number of operations of the '<em>KType Selection</em>' class.
@@ -584,6 +602,28 @@ public interface ClassdataPackage extends EPackage {
     EReference getKTypeSelection_Types();
 
     /**
+     * Returns the meta object for the attribute list '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection#getJavaProjects <em>Java Projects</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute list '<em>Java Projects</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection#getJavaProjects()
+     * @see #getKTypeSelection()
+     * @generated
+     */
+    EAttribute getKTypeSelection_JavaProjects();
+
+    /**
+     * Returns the meta object for the attribute list '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection#getBundles <em>Bundles</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute list '<em>Bundles</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection#getBundles()
+     * @see #getKTypeSelection()
+     * @generated
+     */
+    EAttribute getKTypeSelection_Bundles();
+
+    /**
      * Returns the meta object for data type '{@link org.eclipse.jdt.core.IType <em>IType</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -786,6 +826,22 @@ public interface ClassdataPackage extends EPackage {
          * @generated
          */
         EReference KTYPE_SELECTION__TYPES = eINSTANCE.getKTypeSelection_Types();
+
+        /**
+         * The meta object literal for the '<em><b>Java Projects</b></em>' attribute list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute KTYPE_SELECTION__JAVA_PROJECTS = eINSTANCE.getKTypeSelection_JavaProjects();
+
+        /**
+         * The meta object literal for the '<em><b>Bundles</b></em>' attribute list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute KTYPE_SELECTION__BUNDLES = eINSTANCE.getKTypeSelection_Bundles();
 
         /**
          * The meta object literal for the '<em>IType</em>' data type.

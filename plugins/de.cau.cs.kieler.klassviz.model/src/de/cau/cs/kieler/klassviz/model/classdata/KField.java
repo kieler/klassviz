@@ -43,7 +43,7 @@ public interface KField extends KMember {
      * @return the value of the '<em>Field</em>' attribute.
      * @see #setField(IField)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKField_Field()
-     * @model dataType="de.cau.cs.kieler.klassviz.model.classdata.IField" required="true" transient="true"
+     * @model dataType="de.cau.cs.kieler.klassviz.model.classdata.IField" transient="true"
      * @generated
      */
     IField getField();

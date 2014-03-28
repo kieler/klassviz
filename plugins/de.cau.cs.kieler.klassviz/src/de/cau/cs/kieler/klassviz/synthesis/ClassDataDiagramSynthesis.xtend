@@ -788,5 +788,4 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KTypeSelection>
             ]
         ]
     }
-    
 }

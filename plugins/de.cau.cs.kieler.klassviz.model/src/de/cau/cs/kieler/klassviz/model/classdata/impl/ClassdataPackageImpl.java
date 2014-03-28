@@ -323,6 +323,24 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
+    public EAttribute getKTypeSelection_JavaProjects() {
+        return (EAttribute)kTypeSelectionEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getKTypeSelection_Bundles() {
+        return (EAttribute)kTypeSelectionEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EDataType getIType() {
         return iTypeEDataType;
     }
@@ -395,6 +413,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
 
         kTypeSelectionEClass = createEClass(KTYPE_SELECTION);
         createEReference(kTypeSelectionEClass, KTYPE_SELECTION__TYPES);
+        createEAttribute(kTypeSelectionEClass, KTYPE_SELECTION__JAVA_PROJECTS);
+        createEAttribute(kTypeSelectionEClass, KTYPE_SELECTION__BUNDLES);
 
         // Create data types
         iTypeEDataType = createEDataType(ITYPE);
@@ -435,21 +455,20 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
 
         // Initialize classes, features, and operations; add parameters
         initEClass(kTypeEClass, KType.class, "KType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getKType_Type(), this.getIType(), "type", null, 1, 1, KType.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getKType_Type(), this.getIType(), "type", null, 0, 1, KType.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getKType_Fields(), this.getKField(), null, "fields", null, 0, -1, KType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        getKType_Fields().getEKeys().add(this.getKField_Field());
         initEReference(getKType_Methods(), this.getKMethod(), null, "methods", null, 0, -1, KType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getKType_QualifiedName(), ecorePackage.getEString(), "qualifiedName", null, 1, 1, KType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(kMemberEClass, KMember.class, "KMember", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getKMember_Selected(), ecorePackage.getEBoolean(), "selected", "true", 1, 1, KMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getKMember_Selected(), ecorePackage.getEBoolean(), "selected", "true", 0, 1, KMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getKMember_Name(), ecorePackage.getEString(), "name", null, 1, 1, KMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(kFieldEClass, KField.class, "KField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getKField_Field(), this.getIField(), "field", null, 1, 1, KField.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getKField_Field(), this.getIField(), "field", null, 0, 1, KField.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(kMethodEClass, KMethod.class, "KMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getKMethod_Method(), this.getIMethod(), "method", null, 1, 1, KMethod.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getKMethod_Method(), this.getIMethod(), "method", null, 0, 1, KMethod.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getKMethod_ParameterTypeSignatures(), this.getKParameterTypeSignature(), null, "parameterTypeSignatures", null, 0, -1, KMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(kParameterTypeSignatureEClass, KParameterTypeSignature.class, "KParameterTypeSignature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -457,7 +476,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
 
         initEClass(kTypeSelectionEClass, KTypeSelection.class, "KTypeSelection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getKTypeSelection_Types(), this.getKType(), null, "types", null, 0, -1, KTypeSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        getKTypeSelection_Types().getEKeys().add(this.getKType_Type());
+        initEAttribute(getKTypeSelection_JavaProjects(), ecorePackage.getEString(), "javaProjects", null, 0, -1, KTypeSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getKTypeSelection_Bundles(), ecorePackage.getEString(), "bundles", null, 0, -1, KTypeSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Initialize data types
         initEDataType(iTypeEDataType, IType.class, "IType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
