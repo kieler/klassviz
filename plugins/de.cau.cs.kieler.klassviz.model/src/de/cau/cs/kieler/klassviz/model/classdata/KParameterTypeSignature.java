@@ -17,21 +17,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>EParameter Type Signature</b></em>'.
+ * A representation of the model object '<em><b>KParameter Type Signature</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.EParameterTypeSignature#getName <em>Name</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KParameterTypeSignature#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getEParameterTypeSignature()
+ * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKParameterTypeSignature()
  * @model
  * @generated
  */
-public interface EParameterTypeSignature extends EObject {
+public interface KParameterTypeSignature extends EObject {
     /**
      * Returns the value of the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
@@ -42,14 +42,14 @@ public interface EParameterTypeSignature extends EObject {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Name</em>' attribute.
      * @see #setName(String)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getEParameterTypeSignature_Name()
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKParameterTypeSignature_Name()
      * @model required="true"
      * @generated
      */
     String getName();
 
     /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.EParameterTypeSignature#getName <em>Name</em>}' attribute.
+     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KParameterTypeSignature#getName <em>Name</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param value the new value of the '<em>Name</em>' attribute.
@@ -58,4 +58,4 @@ public interface EParameterTypeSignature extends EObject {
      */
     void setName(String value);
 
-} // EParameterTypeSignature
+} // KParameterTypeSignature

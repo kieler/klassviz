@@ -38,11 +38,11 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataFactory;
-import de.cau.cs.kieler.klassviz.model.classdata.EClassDataSelection;
-import de.cau.cs.kieler.klassviz.model.classdata.EField;
-import de.cau.cs.kieler.klassviz.model.classdata.EMethod;
-import de.cau.cs.kieler.klassviz.model.classdata.EParameterTypeSignature;
-import de.cau.cs.kieler.klassviz.model.classdata.EType;
+import de.cau.cs.kieler.klassviz.model.classdata.KField;
+import de.cau.cs.kieler.klassviz.model.classdata.KMethod;
+import de.cau.cs.kieler.klassviz.model.classdata.KParameterTypeSignature;
+import de.cau.cs.kieler.klassviz.model.classdata.KType;
+import de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection;
 import de.cau.cs.kieler.klighd.ui.DiagramViewManager;
 
 /**
@@ -74,8 +74,8 @@ public class SynthesizeClassDiagramHandler extends AbstractHandler {
 		// Instantiate the factory of the metamodel.
 		ClassdataFactory factory = ClassdataFactory.eINSTANCE;
 		// Create a ClassDataSelection based on the metamodel with the factory.
-		EClassDataSelection classDataSelection = factory
-				.createEClassDataSelection();
+		KTypeSelection classDataSelection = factory
+				.createKTypeSelection();
 		// This index is needed to check if only the class-file/compilation unit
 		// of a class is selected or the containing type or even both.
 		int classIndexToBeEdited = 0;
@@ -111,14 +111,14 @@ public class SynthesizeClassDiagramHandler extends AbstractHandler {
 							// If the list is empty get EType of the IType and
 							// add it.
 							classDataSelection.getTypes().add(
-									createETypeOfType(typeOfTypeRoot));
+									createKTypeOfType(typeOfTypeRoot));
 						} else {
 							// If the list isn't empty we know that the next
 							// class must be added. So increment the index and
 							// add the next EType.
 							classIndexToBeEdited++;
 							classDataSelection.getTypes().add(
-									createETypeOfType(typeOfTypeRoot));
+									createKTypeOfType(typeOfTypeRoot));
 						}
 						break;
 					case IJavaElement.TYPE: // (7)
@@ -131,7 +131,7 @@ public class SynthesizeClassDiagramHandler extends AbstractHandler {
 							// If the list is empty get EType of the IType and
 							// add it.
 							classDataSelection.getTypes().add(
-									createETypeOfType(type));
+									createKTypeOfType(type));
 						} else {
 							if (classDataSelection.getTypes()
 									.get(classIndexToBeEdited).getType()
@@ -146,7 +146,7 @@ public class SynthesizeClassDiagramHandler extends AbstractHandler {
 								// add the next EType.
 								classIndexToBeEdited++;
 								classDataSelection.getTypes().add(
-										createETypeOfType(type));
+										createKTypeOfType(type));
 							}
 						}
 						break;
@@ -160,7 +160,7 @@ public class SynthesizeClassDiagramHandler extends AbstractHandler {
 									.getFullyQualifiedName().equals(
 											classDataSelection.getTypes()
 													.get(j)
-													.getFullyQualifiedName())) {
+													.getQualifiedName())) {
 								// Get the index of the field 
 								// where it is in the model.
 								int indexOfFieldInType = Arrays.asList(
@@ -183,7 +183,7 @@ public class SynthesizeClassDiagramHandler extends AbstractHandler {
 									.getFullyQualifiedName().equals(
 											classDataSelection.getTypes()
 													.get(j)
-													.getFullyQualifiedName())) {
+													.getQualifiedName())) {
 								// Get the index of the method 
 								// where it is in the model.
 								int indexOfMethodInType = Arrays.asList(
@@ -258,15 +258,15 @@ public class SynthesizeClassDiagramHandler extends AbstractHandler {
 	 * @return
 	 * @throws JavaModelException
 	 */
-	private EType createETypeOfType(IType type) throws JavaModelException {
+	private KType createKTypeOfType(IType type) throws JavaModelException {
 		// Extract type-data needed for the metamodel.
-		EType eType = factory.createEType();
+		KType eType = factory.createKType();
 		eType.setType(type);
-		eType.setFullyQualifiedName(type.getFullyQualifiedName());
+		eType.setQualifiedName(type.getFullyQualifiedName());
 		// Extract field-data needed for the metamodel, but initially set the
 		// selected-boolean 'false'.
 		for (int j = 0; j < type.getFields().length; j++) {
-			EField field = factory.createEField();
+			KField field = factory.createKField();
 			field.setField(type.getFields()[j]);
 			field.setName(type.getFields()[j].getElementName());
 			field.setSelected(false);
@@ -275,12 +275,12 @@ public class SynthesizeClassDiagramHandler extends AbstractHandler {
 		// Extract method-data needed for the metamodel, but initially set the
 		// selected-boolean 'false'.
 		for (int j = 0; j < type.getMethods().length; j++) {
-			EMethod method = factory.createEMethod();
+			KMethod method = factory.createKMethod();
 			method.setMethod(type.getMethods()[j]);
 			method.setName(type.getMethods()[j].getElementName());
 			for (int k = 0; k < type.getMethods()[j].getParameterTypes().length; k++) {
-				EParameterTypeSignature signature = factory
-						.createEParameterTypeSignature();
+				KParameterTypeSignature signature = factory
+						.createKParameterTypeSignature();
 				signature.setName(type.getMethods()[j].getParameterTypes()[k]);
 				method.getParameterTypeSignatures().add(signature);
 			}
@@ -294,10 +294,10 @@ public class SynthesizeClassDiagramHandler extends AbstractHandler {
 	 * Save the selection in the plug-ins folder of the projects that has an selected element.
 	 * @param classDataSelection
 	 */
-	private void saveSelection(EClassDataSelection classDataSelection) {
+	private void saveSelection(KTypeSelection classDataSelection) {
 		HashSet<IJavaProject> projects = new HashSet<IJavaProject>();
 		for (int i = 0; i < classDataSelection.getTypes().size(); i++) {
-			EType type = classDataSelection.getTypes().get(i);
+			KType type = classDataSelection.getTypes().get(i);
 			projects.add(type.getType().getJavaProject());
 		}
 		// Create a resource set.

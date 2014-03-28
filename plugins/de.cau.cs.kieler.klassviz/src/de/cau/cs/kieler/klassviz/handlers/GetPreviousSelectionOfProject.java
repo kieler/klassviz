@@ -46,9 +46,9 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage;
-import de.cau.cs.kieler.klassviz.model.classdata.EClassDataSelection;
-import de.cau.cs.kieler.klassviz.model.classdata.EField;
-import de.cau.cs.kieler.klassviz.model.classdata.EMethod;
+import de.cau.cs.kieler.klassviz.model.classdata.KField;
+import de.cau.cs.kieler.klassviz.model.classdata.KMethod;
+import de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection;
 import de.cau.cs.kieler.klighd.ui.DiagramViewManager;
 
 
@@ -103,8 +103,8 @@ public class GetPreviousSelectionOfProject extends AbstractHandler {
 				+ projectPath + "/selection.xmi");
 		Resource resource = resourceSet.getResource(platformURI, true);
 		EObject modelObject = resource.getContents().get(0);
-		if (modelObject instanceof EClassDataSelection) {
-			EClassDataSelection classDataSelection = (EClassDataSelection) modelObject;
+		if (modelObject instanceof KTypeSelection) {
+		    KTypeSelection classDataSelection = (KTypeSelection) modelObject;
 			List<Object> toBeSelectedElements = new ArrayList<Object>();
 			try {
 				// Restore the full data of the previously selected types,
@@ -113,10 +113,10 @@ public class GetPreviousSelectionOfProject extends AbstractHandler {
 				// 'toBeSelectedElements'.
 				for (int i = 0; i < classDataSelection.getTypes().size(); i++) {
 					IType type = javaProject.findType(classDataSelection
-							.getTypes().get(i).getFullyQualifiedName());
+							.getTypes().get(i).getQualifiedName());
 					classDataSelection.getTypes().get(i).setType(type);
 					toBeSelectedElements.add(type);
-					EList<EField> eFields = classDataSelection.getTypes()
+					EList<KField> eFields = classDataSelection.getTypes()
 							.get(i).getFields();
 					for (int j = 0; j < eFields.size(); j++) {
 						// Get field based on name.
@@ -130,7 +130,7 @@ public class GetPreviousSelectionOfProject extends AbstractHandler {
 							toBeSelectedElements.add(field);
 						}
 					}
-					EList<EMethod> eMethods = classDataSelection.getTypes()
+					EList<KMethod> eMethods = classDataSelection.getTypes()
 							.get(i).getMethods();
 					for (int j = 0; j < eMethods.size(); j++) {
 						// Get method based on name and parametertypes.
@@ -188,7 +188,7 @@ public class GetPreviousSelectionOfProject extends AbstractHandler {
 	 * @param eMethod
 	 * @return
 	 */
-	private String[] getMethodParameters(EMethod eMethod) {
+	private String[] getMethodParameters(KMethod eMethod) {
 		List<String> parameterSignatureTypes = new ArrayList<String>();
 		for (int i = 0; i < eMethod.getParameterTypeSignatures().size(); i++) {
 			parameterSignatureTypes.add(eMethod.getParameterTypeSignatures()

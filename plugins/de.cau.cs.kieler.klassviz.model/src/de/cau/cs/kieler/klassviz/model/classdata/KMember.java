@@ -15,55 +15,27 @@ package de.cau.cs.kieler.klassviz.model.classdata;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.jdt.core.IField;
-
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>EField</b></em>'.
+ * A representation of the model object '<em><b>KMember</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.EField#getField <em>Field</em>}</li>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.EField#isSelected <em>Selected</em>}</li>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.EField#getName <em>Name</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#isSelected <em>Selected</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getEField()
- * @model
+ * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMember()
+ * @model abstract="true"
  * @generated
  */
-public interface EField extends EObject {
-    /**
-     * Returns the value of the '<em><b>Field</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Field</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Field</em>' attribute.
-     * @see #setField(IField)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getEField_Field()
-     * @model dataType="de.cau.cs.kieler.klassviz.model.classdata.IField" required="true" transient="true"
-     * @generated
-     */
-    IField getField();
-
-    /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.EField#getField <em>Field</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Field</em>' attribute.
-     * @see #getField()
-     * @generated
-     */
-    void setField(IField value);
-
+public interface KMember extends EObject {
     /**
      * Returns the value of the '<em><b>Selected</b></em>' attribute.
+     * The default value is <code>"true"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Selected</em>' attribute isn't clear,
@@ -72,14 +44,14 @@ public interface EField extends EObject {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Selected</em>' attribute.
      * @see #setSelected(boolean)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getEField_Selected()
-     * @model required="true"
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMember_Selected()
+     * @model default="true" required="true"
      * @generated
      */
     boolean isSelected();
 
     /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.EField#isSelected <em>Selected</em>}' attribute.
+     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#isSelected <em>Selected</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param value the new value of the '<em>Selected</em>' attribute.
@@ -98,14 +70,14 @@ public interface EField extends EObject {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Name</em>' attribute.
      * @see #setName(String)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getEField_Name()
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMember_Name()
      * @model required="true"
      * @generated
      */
     String getName();
 
     /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.EField#getName <em>Name</em>}' attribute.
+     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#getName <em>Name</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param value the new value of the '<em>Name</em>' attribute.
@@ -114,4 +86,4 @@ public interface EField extends EObject {
      */
     void setName(String value);
 
-} // EField
+} // KMember

@@ -14,9 +14,9 @@
 package de.cau.cs.kieler.klassviz.model.classdata.impl;
 
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage;
-import de.cau.cs.kieler.klassviz.model.classdata.EField;
-import de.cau.cs.kieler.klassviz.model.classdata.EMethod;
-import de.cau.cs.kieler.klassviz.model.classdata.EType;
+import de.cau.cs.kieler.klassviz.model.classdata.KField;
+import de.cau.cs.kieler.klassviz.model.classdata.KMethod;
+import de.cau.cs.kieler.klassviz.model.classdata.KType;
 
 import java.util.Collection;
 
@@ -38,21 +38,21 @@ import org.eclipse.jdt.core.IType;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>EType</b></em>'.
+ * An implementation of the model object '<em><b>KType</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.ETypeImpl#getType <em>Type</em>}</li>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.ETypeImpl#getFields <em>Fields</em>}</li>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.ETypeImpl#getMethods <em>Methods</em>}</li>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.ETypeImpl#getFullyQualifiedName <em>Fully Qualified Name</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl#getType <em>Type</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl#getFields <em>Fields</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl#getMethods <em>Methods</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl#getQualifiedName <em>Qualified Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ETypeImpl extends MinimalEObjectImpl.Container implements EType {
+public class KTypeImpl extends MinimalEObjectImpl.Container implements KType {
     /**
      * The default value of the '{@link #getType() <em>Type</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -81,7 +81,7 @@ public class ETypeImpl extends MinimalEObjectImpl.Container implements EType {
      * @generated
      * @ordered
      */
-    protected EList<EField> fields;
+    protected EList<KField> fields;
 
     /**
      * The cached value of the '{@link #getMethods() <em>Methods</em>}' containment reference list.
@@ -91,34 +91,34 @@ public class ETypeImpl extends MinimalEObjectImpl.Container implements EType {
      * @generated
      * @ordered
      */
-    protected EList<EMethod> methods;
+    protected EList<KMethod> methods;
 
     /**
-     * The default value of the '{@link #getFullyQualifiedName() <em>Fully Qualified Name</em>}' attribute.
+     * The default value of the '{@link #getQualifiedName() <em>Qualified Name</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getFullyQualifiedName()
+     * @see #getQualifiedName()
      * @generated
      * @ordered
      */
-    protected static final String FULLY_QUALIFIED_NAME_EDEFAULT = null;
+    protected static final String QUALIFIED_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getFullyQualifiedName() <em>Fully Qualified Name</em>}' attribute.
+     * The cached value of the '{@link #getQualifiedName() <em>Qualified Name</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getFullyQualifiedName()
+     * @see #getQualifiedName()
      * @generated
      * @ordered
      */
-    protected String fullyQualifiedName = FULLY_QUALIFIED_NAME_EDEFAULT;
+    protected String qualifiedName = QUALIFIED_NAME_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected ETypeImpl() {
+    protected KTypeImpl() {
         super();
     }
 
@@ -129,7 +129,7 @@ public class ETypeImpl extends MinimalEObjectImpl.Container implements EType {
      */
     @Override
     protected EClass eStaticClass() {
-        return ClassdataPackage.Literals.ETYPE;
+        return ClassdataPackage.Literals.KTYPE;
     }
 
     /**
@@ -150,7 +150,7 @@ public class ETypeImpl extends MinimalEObjectImpl.Container implements EType {
         IType oldType = type;
         type = newType;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.ETYPE__TYPE, oldType, type));
+            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KTYPE__TYPE, oldType, type));
     }
 
     /**
@@ -158,9 +158,9 @@ public class ETypeImpl extends MinimalEObjectImpl.Container implements EType {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EList<EField> getFields() {
+    public EList<KField> getFields() {
         if (fields == null) {
-            fields = new EObjectContainmentEList<EField>(EField.class, this, ClassdataPackage.ETYPE__FIELDS);
+            fields = new EObjectContainmentEList<KField>(KField.class, this, ClassdataPackage.KTYPE__FIELDS);
         }
         return fields;
     }
@@ -170,9 +170,9 @@ public class ETypeImpl extends MinimalEObjectImpl.Container implements EType {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EList<EMethod> getMethods() {
+    public EList<KMethod> getMethods() {
         if (methods == null) {
-            methods = new EObjectContainmentEList<EMethod>(EMethod.class, this, ClassdataPackage.ETYPE__METHODS);
+            methods = new EObjectContainmentEList<KMethod>(KMethod.class, this, ClassdataPackage.KTYPE__METHODS);
         }
         return methods;
     }
@@ -182,8 +182,8 @@ public class ETypeImpl extends MinimalEObjectImpl.Container implements EType {
      * <!-- end-user-doc -->
      * @generated
      */
-    public String getFullyQualifiedName() {
-        return fullyQualifiedName;
+    public String getQualifiedName() {
+        return qualifiedName;
     }
 
     /**
@@ -191,11 +191,11 @@ public class ETypeImpl extends MinimalEObjectImpl.Container implements EType {
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setFullyQualifiedName(String newFullyQualifiedName) {
-        String oldFullyQualifiedName = fullyQualifiedName;
-        fullyQualifiedName = newFullyQualifiedName;
+    public void setQualifiedName(String newQualifiedName) {
+        String oldQualifiedName = qualifiedName;
+        qualifiedName = newQualifiedName;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.ETYPE__FULLY_QUALIFIED_NAME, oldFullyQualifiedName, fullyQualifiedName));
+            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KTYPE__QUALIFIED_NAME, oldQualifiedName, qualifiedName));
     }
 
     /**
@@ -206,9 +206,9 @@ public class ETypeImpl extends MinimalEObjectImpl.Container implements EType {
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case ClassdataPackage.ETYPE__FIELDS:
+            case ClassdataPackage.KTYPE__FIELDS:
                 return ((InternalEList<?>)getFields()).basicRemove(otherEnd, msgs);
-            case ClassdataPackage.ETYPE__METHODS:
+            case ClassdataPackage.KTYPE__METHODS:
                 return ((InternalEList<?>)getMethods()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -222,14 +222,14 @@ public class ETypeImpl extends MinimalEObjectImpl.Container implements EType {
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case ClassdataPackage.ETYPE__TYPE:
+            case ClassdataPackage.KTYPE__TYPE:
                 return getType();
-            case ClassdataPackage.ETYPE__FIELDS:
+            case ClassdataPackage.KTYPE__FIELDS:
                 return getFields();
-            case ClassdataPackage.ETYPE__METHODS:
+            case ClassdataPackage.KTYPE__METHODS:
                 return getMethods();
-            case ClassdataPackage.ETYPE__FULLY_QUALIFIED_NAME:
-                return getFullyQualifiedName();
+            case ClassdataPackage.KTYPE__QUALIFIED_NAME:
+                return getQualifiedName();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -243,19 +243,19 @@ public class ETypeImpl extends MinimalEObjectImpl.Container implements EType {
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case ClassdataPackage.ETYPE__TYPE:
+            case ClassdataPackage.KTYPE__TYPE:
                 setType((IType)newValue);
                 return;
-            case ClassdataPackage.ETYPE__FIELDS:
+            case ClassdataPackage.KTYPE__FIELDS:
                 getFields().clear();
-                getFields().addAll((Collection<? extends EField>)newValue);
+                getFields().addAll((Collection<? extends KField>)newValue);
                 return;
-            case ClassdataPackage.ETYPE__METHODS:
+            case ClassdataPackage.KTYPE__METHODS:
                 getMethods().clear();
-                getMethods().addAll((Collection<? extends EMethod>)newValue);
+                getMethods().addAll((Collection<? extends KMethod>)newValue);
                 return;
-            case ClassdataPackage.ETYPE__FULLY_QUALIFIED_NAME:
-                setFullyQualifiedName((String)newValue);
+            case ClassdataPackage.KTYPE__QUALIFIED_NAME:
+                setQualifiedName((String)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -269,17 +269,17 @@ public class ETypeImpl extends MinimalEObjectImpl.Container implements EType {
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case ClassdataPackage.ETYPE__TYPE:
+            case ClassdataPackage.KTYPE__TYPE:
                 setType(TYPE_EDEFAULT);
                 return;
-            case ClassdataPackage.ETYPE__FIELDS:
+            case ClassdataPackage.KTYPE__FIELDS:
                 getFields().clear();
                 return;
-            case ClassdataPackage.ETYPE__METHODS:
+            case ClassdataPackage.KTYPE__METHODS:
                 getMethods().clear();
                 return;
-            case ClassdataPackage.ETYPE__FULLY_QUALIFIED_NAME:
-                setFullyQualifiedName(FULLY_QUALIFIED_NAME_EDEFAULT);
+            case ClassdataPackage.KTYPE__QUALIFIED_NAME:
+                setQualifiedName(QUALIFIED_NAME_EDEFAULT);
                 return;
         }
         super.eUnset(featureID);
@@ -293,14 +293,14 @@ public class ETypeImpl extends MinimalEObjectImpl.Container implements EType {
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case ClassdataPackage.ETYPE__TYPE:
+            case ClassdataPackage.KTYPE__TYPE:
                 return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-            case ClassdataPackage.ETYPE__FIELDS:
+            case ClassdataPackage.KTYPE__FIELDS:
                 return fields != null && !fields.isEmpty();
-            case ClassdataPackage.ETYPE__METHODS:
+            case ClassdataPackage.KTYPE__METHODS:
                 return methods != null && !methods.isEmpty();
-            case ClassdataPackage.ETYPE__FULLY_QUALIFIED_NAME:
-                return FULLY_QUALIFIED_NAME_EDEFAULT == null ? fullyQualifiedName != null : !FULLY_QUALIFIED_NAME_EDEFAULT.equals(fullyQualifiedName);
+            case ClassdataPackage.KTYPE__QUALIFIED_NAME:
+                return QUALIFIED_NAME_EDEFAULT == null ? qualifiedName != null : !QUALIFIED_NAME_EDEFAULT.equals(qualifiedName);
         }
         return super.eIsSet(featureID);
     }
@@ -317,10 +317,10 @@ public class ETypeImpl extends MinimalEObjectImpl.Container implements EType {
         StringBuffer result = new StringBuffer(super.toString());
         result.append(" (type: ");
         result.append(type);
-        result.append(", fullyQualifiedName: ");
-        result.append(fullyQualifiedName);
+        result.append(", qualifiedName: ");
+        result.append(qualifiedName);
         result.append(')');
         return result.toString();
     }
 
-} //ETypeImpl
+} //KTypeImpl

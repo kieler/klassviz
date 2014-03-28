@@ -21,24 +21,24 @@ import org.eclipse.jdt.core.IType;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>EType</b></em>'.
+ * A representation of the model object '<em><b>KType</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.EType#getType <em>Type</em>}</li>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.EType#getFields <em>Fields</em>}</li>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.EType#getMethods <em>Methods</em>}</li>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.EType#getFullyQualifiedName <em>Fully Qualified Name</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getType <em>Type</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getFields <em>Fields</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getMethods <em>Methods</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getQualifiedName <em>Qualified Name</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getEType()
+ * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType()
  * @model
  * @generated
  */
-public interface EType extends EObject {
+public interface KType extends EObject {
     /**
      * Returns the value of the '<em><b>Type</b></em>' attribute.
      * <!-- begin-user-doc -->
@@ -49,14 +49,14 @@ public interface EType extends EObject {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Type</em>' attribute.
      * @see #setType(IType)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getEType_Type()
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType_Type()
      * @model dataType="de.cau.cs.kieler.klassviz.model.classdata.IType" required="true" transient="true"
      * @generated
      */
     IType getType();
 
     /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.EType#getType <em>Type</em>}' attribute.
+     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getType <em>Type</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @param value the new value of the '<em>Type</em>' attribute.
@@ -67,7 +67,7 @@ public interface EType extends EObject {
 
     /**
      * Returns the value of the '<em><b>Fields</b></em>' containment reference list.
-     * The list contents are of type {@link de.cau.cs.kieler.klassviz.model.classdata.EField}.
+     * The list contents are of type {@link de.cau.cs.kieler.klassviz.model.classdata.KField}.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Fields</em>' containment reference list isn't clear,
@@ -75,15 +75,15 @@ public interface EType extends EObject {
      * </p>
      * <!-- end-user-doc -->
      * @return the value of the '<em>Fields</em>' containment reference list.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getEType_Fields()
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType_Fields()
      * @model containment="true" keys="field"
      * @generated
      */
-    EList<EField> getFields();
+    EList<KField> getFields();
 
     /**
      * Returns the value of the '<em><b>Methods</b></em>' containment reference list.
-     * The list contents are of type {@link de.cau.cs.kieler.klassviz.model.classdata.EMethod}.
+     * The list contents are of type {@link de.cau.cs.kieler.klassviz.model.classdata.KMethod}.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Methods</em>' containment reference list isn't clear,
@@ -91,36 +91,36 @@ public interface EType extends EObject {
      * </p>
      * <!-- end-user-doc -->
      * @return the value of the '<em>Methods</em>' containment reference list.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getEType_Methods()
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType_Methods()
      * @model containment="true"
      * @generated
      */
-    EList<EMethod> getMethods();
+    EList<KMethod> getMethods();
 
     /**
-     * Returns the value of the '<em><b>Fully Qualified Name</b></em>' attribute.
+     * Returns the value of the '<em><b>Qualified Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Fully Qualified Name</em>' attribute isn't clear,
+     * If the meaning of the '<em>Qualified Name</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Fully Qualified Name</em>' attribute.
-     * @see #setFullyQualifiedName(String)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getEType_FullyQualifiedName()
+     * @return the value of the '<em>Qualified Name</em>' attribute.
+     * @see #setQualifiedName(String)
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType_QualifiedName()
      * @model required="true"
      * @generated
      */
-    String getFullyQualifiedName();
+    String getQualifiedName();
 
     /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.EType#getFullyQualifiedName <em>Fully Qualified Name</em>}' attribute.
+     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getQualifiedName <em>Qualified Name</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Fully Qualified Name</em>' attribute.
-     * @see #getFullyQualifiedName()
+     * @param value the new value of the '<em>Qualified Name</em>' attribute.
+     * @see #getQualifiedName()
      * @generated
      */
-    void setFullyQualifiedName(String value);
+    void setQualifiedName(String value);
 
-} // EType
+} // KType

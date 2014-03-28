@@ -14,55 +14,56 @@
 package de.cau.cs.kieler.klassviz.model.classdata.impl;
 
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage;
-import de.cau.cs.kieler.klassviz.model.classdata.EParameterTypeSignature;
+import de.cau.cs.kieler.klassviz.model.classdata.KField;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.jdt.core.IField;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>EParameter Type Signature</b></em>'.
+ * An implementation of the model object '<em><b>KField</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.EParameterTypeSignatureImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KFieldImpl#getField <em>Field</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class EParameterTypeSignatureImpl extends MinimalEObjectImpl.Container implements EParameterTypeSignature {
+public class KFieldImpl extends KMemberImpl implements KField {
     /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+     * The default value of the '{@link #getField() <em>Field</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
+     * @see #getField()
      * @generated
      * @ordered
      */
-    protected static final String NAME_EDEFAULT = null;
+    protected static final IField FIELD_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+     * The cached value of the '{@link #getField() <em>Field</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
+     * @see #getField()
      * @generated
      * @ordered
      */
-    protected String name = NAME_EDEFAULT;
+    protected IField field = FIELD_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected EParameterTypeSignatureImpl() {
+    protected KFieldImpl() {
         super();
     }
 
@@ -73,7 +74,7 @@ public class EParameterTypeSignatureImpl extends MinimalEObjectImpl.Container im
      */
     @Override
     protected EClass eStaticClass() {
-        return ClassdataPackage.Literals.EPARAMETER_TYPE_SIGNATURE;
+        return ClassdataPackage.Literals.KFIELD;
     }
 
     /**
@@ -81,8 +82,8 @@ public class EParameterTypeSignatureImpl extends MinimalEObjectImpl.Container im
      * <!-- end-user-doc -->
      * @generated
      */
-    public String getName() {
-        return name;
+    public IField getField() {
+        return field;
     }
 
     /**
@@ -90,11 +91,11 @@ public class EParameterTypeSignatureImpl extends MinimalEObjectImpl.Container im
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setName(String newName) {
-        String oldName = name;
-        name = newName;
+    public void setField(IField newField) {
+        IField oldField = field;
+        field = newField;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.EPARAMETER_TYPE_SIGNATURE__NAME, oldName, name));
+            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KFIELD__FIELD, oldField, field));
     }
 
     /**
@@ -105,8 +106,8 @@ public class EParameterTypeSignatureImpl extends MinimalEObjectImpl.Container im
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case ClassdataPackage.EPARAMETER_TYPE_SIGNATURE__NAME:
-                return getName();
+            case ClassdataPackage.KFIELD__FIELD:
+                return getField();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -119,8 +120,8 @@ public class EParameterTypeSignatureImpl extends MinimalEObjectImpl.Container im
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case ClassdataPackage.EPARAMETER_TYPE_SIGNATURE__NAME:
-                setName((String)newValue);
+            case ClassdataPackage.KFIELD__FIELD:
+                setField((IField)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -134,8 +135,8 @@ public class EParameterTypeSignatureImpl extends MinimalEObjectImpl.Container im
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case ClassdataPackage.EPARAMETER_TYPE_SIGNATURE__NAME:
-                setName(NAME_EDEFAULT);
+            case ClassdataPackage.KFIELD__FIELD:
+                setField(FIELD_EDEFAULT);
                 return;
         }
         super.eUnset(featureID);
@@ -149,8 +150,8 @@ public class EParameterTypeSignatureImpl extends MinimalEObjectImpl.Container im
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case ClassdataPackage.EPARAMETER_TYPE_SIGNATURE__NAME:
-                return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+            case ClassdataPackage.KFIELD__FIELD:
+                return FIELD_EDEFAULT == null ? field != null : !FIELD_EDEFAULT.equals(field);
         }
         return super.eIsSet(featureID);
     }
@@ -165,10 +166,10 @@ public class EParameterTypeSignatureImpl extends MinimalEObjectImpl.Container im
         if (eIsProxy()) return super.toString();
 
         StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (name: ");
-        result.append(name);
+        result.append(" (field: ");
+        result.append(field);
         result.append(')');
         return result.toString();
     }
 
-} //EParameterTypeSignatureImpl
+} //KFieldImpl

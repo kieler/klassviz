@@ -69,14 +69,14 @@ public interface ClassdataPackage extends EPackage {
     ClassdataPackage eINSTANCE = de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl.init();
 
     /**
-     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.ETypeImpl <em>EType</em>}' class.
+     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl <em>KType</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ETypeImpl
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getEType()
+     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl
+     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKType()
      * @generated
      */
-    int ETYPE = 0;
+    int KTYPE = 0;
 
     /**
      * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -85,7 +85,7 @@ public interface ClassdataPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ETYPE__TYPE = 0;
+    int KTYPE__TYPE = 0;
 
     /**
      * The feature id for the '<em><b>Fields</b></em>' containment reference list.
@@ -94,7 +94,7 @@ public interface ClassdataPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ETYPE__FIELDS = 1;
+    int KTYPE__FIELDS = 1;
 
     /**
      * The feature id for the '<em><b>Methods</b></em>' containment reference list.
@@ -103,44 +103,108 @@ public interface ClassdataPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ETYPE__METHODS = 2;
+    int KTYPE__METHODS = 2;
 
     /**
-     * The feature id for the '<em><b>Fully Qualified Name</b></em>' attribute.
+     * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ETYPE__FULLY_QUALIFIED_NAME = 3;
+    int KTYPE__QUALIFIED_NAME = 3;
 
     /**
-     * The number of structural features of the '<em>EType</em>' class.
+     * The number of structural features of the '<em>KType</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ETYPE_FEATURE_COUNT = 4;
+    int KTYPE_FEATURE_COUNT = 4;
 
     /**
-     * The number of operations of the '<em>EType</em>' class.
+     * The number of operations of the '<em>KType</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ETYPE_OPERATION_COUNT = 0;
+    int KTYPE_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.EFieldImpl <em>EField</em>}' class.
+     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl <em>KMember</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.EFieldImpl
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getEField()
+     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl
+     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKMember()
      * @generated
      */
-    int EFIELD = 1;
+    int KMEMBER = 1;
+
+    /**
+     * The feature id for the '<em><b>Selected</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KMEMBER__SELECTED = 0;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KMEMBER__NAME = 1;
+
+    /**
+     * The number of structural features of the '<em>KMember</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KMEMBER_FEATURE_COUNT = 2;
+
+    /**
+     * The number of operations of the '<em>KMember</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KMEMBER_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KFieldImpl <em>KField</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KFieldImpl
+     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKField()
+     * @generated
+     */
+    int KFIELD = 2;
+
+    /**
+     * The feature id for the '<em><b>Selected</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KFIELD__SELECTED = KMEMBER__SELECTED;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KFIELD__NAME = KMEMBER__NAME;
 
     /**
      * The feature id for the '<em><b>Field</b></em>' attribute.
@@ -149,7 +213,35 @@ public interface ClassdataPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EFIELD__FIELD = 0;
+    int KFIELD__FIELD = KMEMBER_FEATURE_COUNT + 0;
+
+    /**
+     * The number of structural features of the '<em>KField</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KFIELD_FEATURE_COUNT = KMEMBER_FEATURE_COUNT + 1;
+
+    /**
+     * The number of operations of the '<em>KField</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KFIELD_OPERATION_COUNT = KMEMBER_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMethodImpl <em>KMethod</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KMethodImpl
+     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKMethod()
+     * @generated
+     */
+    int KMETHOD = 3;
 
     /**
      * The feature id for the '<em><b>Selected</b></em>' attribute.
@@ -158,7 +250,7 @@ public interface ClassdataPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EFIELD__SELECTED = 1;
+    int KMETHOD__SELECTED = KMEMBER__SELECTED;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -167,35 +259,7 @@ public interface ClassdataPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EFIELD__NAME = 2;
-
-    /**
-     * The number of structural features of the '<em>EField</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EFIELD_FEATURE_COUNT = 3;
-
-    /**
-     * The number of operations of the '<em>EField</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EFIELD_OPERATION_COUNT = 0;
-
-    /**
-     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.EMethodImpl <em>EMethod</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.EMethodImpl
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getEMethod()
-     * @generated
-     */
-    int EMETHOD = 2;
+    int KMETHOD__NAME = KMEMBER__NAME;
 
     /**
      * The feature id for the '<em><b>Method</b></em>' attribute.
@@ -204,25 +268,7 @@ public interface ClassdataPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EMETHOD__METHOD = 0;
-
-    /**
-     * The feature id for the '<em><b>Selected</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EMETHOD__SELECTED = 1;
-
-    /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EMETHOD__NAME = 2;
+    int KMETHOD__METHOD = KMEMBER_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Parameter Type Signatures</b></em>' containment reference list.
@@ -231,72 +277,35 @@ public interface ClassdataPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EMETHOD__PARAMETER_TYPE_SIGNATURES = 3;
+    int KMETHOD__PARAMETER_TYPE_SIGNATURES = KMEMBER_FEATURE_COUNT + 1;
 
     /**
-     * The number of structural features of the '<em>EMethod</em>' class.
+     * The number of structural features of the '<em>KMethod</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EMETHOD_FEATURE_COUNT = 4;
+    int KMETHOD_FEATURE_COUNT = KMEMBER_FEATURE_COUNT + 2;
 
     /**
-     * The number of operations of the '<em>EMethod</em>' class.
+     * The number of operations of the '<em>KMethod</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EMETHOD_OPERATION_COUNT = 0;
+    int KMETHOD_OPERATION_COUNT = KMEMBER_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.EClassDataSelectionImpl <em>EClass Data Selection</em>}' class.
+     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KParameterTypeSignatureImpl <em>KParameter Type Signature</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.EClassDataSelectionImpl
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getEClassDataSelection()
+     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KParameterTypeSignatureImpl
+     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKParameterTypeSignature()
      * @generated
      */
-    int ECLASS_DATA_SELECTION = 3;
-
-    /**
-     * The feature id for the '<em><b>Types</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ECLASS_DATA_SELECTION__TYPES = 0;
-
-    /**
-     * The number of structural features of the '<em>EClass Data Selection</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ECLASS_DATA_SELECTION_FEATURE_COUNT = 1;
-
-    /**
-     * The number of operations of the '<em>EClass Data Selection</em>' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ECLASS_DATA_SELECTION_OPERATION_COUNT = 0;
-
-    /**
-     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.EParameterTypeSignatureImpl <em>EParameter Type Signature</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.EParameterTypeSignatureImpl
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getEParameterTypeSignature()
-     * @generated
-     */
-    int EPARAMETER_TYPE_SIGNATURE = 4;
+    int KPARAMETER_TYPE_SIGNATURE = 4;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -305,45 +314,62 @@ public interface ClassdataPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EPARAMETER_TYPE_SIGNATURE__NAME = 0;
+    int KPARAMETER_TYPE_SIGNATURE__NAME = 0;
 
     /**
-     * The number of structural features of the '<em>EParameter Type Signature</em>' class.
+     * The number of structural features of the '<em>KParameter Type Signature</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EPARAMETER_TYPE_SIGNATURE_FEATURE_COUNT = 1;
+    int KPARAMETER_TYPE_SIGNATURE_FEATURE_COUNT = 1;
 
     /**
-     * The number of operations of the '<em>EParameter Type Signature</em>' class.
+     * The number of operations of the '<em>KParameter Type Signature</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EPARAMETER_TYPE_SIGNATURE_OPERATION_COUNT = 0;
+    int KPARAMETER_TYPE_SIGNATURE_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '<em>IMethod</em>' data type.
+     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeSelectionImpl <em>KType Selection</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.eclipse.jdt.core.IMethod
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getIMethod()
+     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeSelectionImpl
+     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKTypeSelection()
      * @generated
      */
-    int IMETHOD = 5;
+    int KTYPE_SELECTION = 5;
 
     /**
-     * The meta object id for the '<em>IField</em>' data type.
+     * The feature id for the '<em><b>Types</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.eclipse.jdt.core.IField
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getIField()
      * @generated
+     * @ordered
      */
-    int IFIELD = 6;
+    int KTYPE_SELECTION__TYPES = 0;
+
+    /**
+     * The number of structural features of the '<em>KType Selection</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KTYPE_SELECTION_FEATURE_COUNT = 1;
+
+    /**
+     * The number of operations of the '<em>KType Selection</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KTYPE_SELECTION_OPERATION_COUNT = 0;
 
     /**
      * The meta object id for the '<em>IType</em>' data type.
@@ -353,212 +379,220 @@ public interface ClassdataPackage extends EPackage {
      * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getIType()
      * @generated
      */
-    int ITYPE = 7;
-
+    int ITYPE = 6;
 
     /**
-     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.EType <em>EType</em>}'.
+     * The meta object id for the '<em>IField</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>EType</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.EType
+     * @see org.eclipse.jdt.core.IField
+     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getIField()
      * @generated
      */
-    EClass getEType();
+    int IFIELD = 7;
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.EType#getType <em>Type</em>}'.
+     * The meta object id for the '<em>IMethod</em>' data type.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.eclipse.jdt.core.IMethod
+     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getIMethod()
+     * @generated
+     */
+    int IMETHOD = 8;
+
+
+    /**
+     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KType <em>KType</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>KType</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KType
+     * @generated
+     */
+    EClass getKType();
+
+    /**
+     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getType <em>Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the attribute '<em>Type</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.EType#getType()
-     * @see #getEType()
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KType#getType()
+     * @see #getKType()
      * @generated
      */
-    EAttribute getEType_Type();
+    EAttribute getKType_Type();
 
     /**
-     * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.EType#getFields <em>Fields</em>}'.
+     * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getFields <em>Fields</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the containment reference list '<em>Fields</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.EType#getFields()
-     * @see #getEType()
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KType#getFields()
+     * @see #getKType()
      * @generated
      */
-    EReference getEType_Fields();
+    EReference getKType_Fields();
 
     /**
-     * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.EType#getMethods <em>Methods</em>}'.
+     * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getMethods <em>Methods</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the containment reference list '<em>Methods</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.EType#getMethods()
-     * @see #getEType()
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KType#getMethods()
+     * @see #getKType()
      * @generated
      */
-    EReference getEType_Methods();
+    EReference getKType_Methods();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.EType#getFullyQualifiedName <em>Fully Qualified Name</em>}'.
+     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getQualifiedName <em>Qualified Name</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Fully Qualified Name</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.EType#getFullyQualifiedName()
-     * @see #getEType()
+     * @return the meta object for the attribute '<em>Qualified Name</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KType#getQualifiedName()
+     * @see #getKType()
      * @generated
      */
-    EAttribute getEType_FullyQualifiedName();
+    EAttribute getKType_QualifiedName();
 
     /**
-     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.EField <em>EField</em>}'.
+     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KMember <em>KMember</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>EField</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.EField
+     * @return the meta object for class '<em>KMember</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KMember
      * @generated
      */
-    EClass getEField();
+    EClass getKMember();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.EField#getField <em>Field</em>}'.
+     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#isSelected <em>Selected</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Selected</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KMember#isSelected()
+     * @see #getKMember()
+     * @generated
+     */
+    EAttribute getKMember_Selected();
+
+    /**
+     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#getName <em>Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Name</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KMember#getName()
+     * @see #getKMember()
+     * @generated
+     */
+    EAttribute getKMember_Name();
+
+    /**
+     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KField <em>KField</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>KField</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KField
+     * @generated
+     */
+    EClass getKField();
+
+    /**
+     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KField#getField <em>Field</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the attribute '<em>Field</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.EField#getField()
-     * @see #getEField()
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KField#getField()
+     * @see #getKField()
      * @generated
      */
-    EAttribute getEField_Field();
+    EAttribute getKField_Field();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.EField#isSelected <em>Selected</em>}'.
+     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod <em>KMethod</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Selected</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.EField#isSelected()
-     * @see #getEField()
+     * @return the meta object for class '<em>KMethod</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KMethod
      * @generated
      */
-    EAttribute getEField_Selected();
+    EClass getKMethod();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.EField#getName <em>Name</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Name</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.EField#getName()
-     * @see #getEField()
-     * @generated
-     */
-    EAttribute getEField_Name();
-
-    /**
-     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.EMethod <em>EMethod</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>EMethod</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.EMethod
-     * @generated
-     */
-    EClass getEMethod();
-
-    /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.EMethod#getMethod <em>Method</em>}'.
+     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#getMethod <em>Method</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the attribute '<em>Method</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.EMethod#getMethod()
-     * @see #getEMethod()
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KMethod#getMethod()
+     * @see #getKMethod()
      * @generated
      */
-    EAttribute getEMethod_Method();
+    EAttribute getKMethod_Method();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.EMethod#isSelected <em>Selected</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Selected</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.EMethod#isSelected()
-     * @see #getEMethod()
-     * @generated
-     */
-    EAttribute getEMethod_Selected();
-
-    /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.EMethod#getName <em>Name</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Name</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.EMethod#getName()
-     * @see #getEMethod()
-     * @generated
-     */
-    EAttribute getEMethod_Name();
-
-    /**
-     * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.EMethod#getParameterTypeSignatures <em>Parameter Type Signatures</em>}'.
+     * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#getParameterTypeSignatures <em>Parameter Type Signatures</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the containment reference list '<em>Parameter Type Signatures</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.EMethod#getParameterTypeSignatures()
-     * @see #getEMethod()
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KMethod#getParameterTypeSignatures()
+     * @see #getKMethod()
      * @generated
      */
-    EReference getEMethod_ParameterTypeSignatures();
+    EReference getKMethod_ParameterTypeSignatures();
 
     /**
-     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.EClassDataSelection <em>EClass Data Selection</em>}'.
+     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KParameterTypeSignature <em>KParameter Type Signature</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>EClass Data Selection</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.EClassDataSelection
+     * @return the meta object for class '<em>KParameter Type Signature</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KParameterTypeSignature
      * @generated
      */
-    EClass getEClassDataSelection();
+    EClass getKParameterTypeSignature();
 
     /**
-     * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.EClassDataSelection#getTypes <em>Types</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Types</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.EClassDataSelection#getTypes()
-     * @see #getEClassDataSelection()
-     * @generated
-     */
-    EReference getEClassDataSelection_Types();
-
-    /**
-     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.EParameterTypeSignature <em>EParameter Type Signature</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for class '<em>EParameter Type Signature</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.EParameterTypeSignature
-     * @generated
-     */
-    EClass getEParameterTypeSignature();
-
-    /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.EParameterTypeSignature#getName <em>Name</em>}'.
+     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KParameterTypeSignature#getName <em>Name</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the attribute '<em>Name</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.EParameterTypeSignature#getName()
-     * @see #getEParameterTypeSignature()
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KParameterTypeSignature#getName()
+     * @see #getKParameterTypeSignature()
      * @generated
      */
-    EAttribute getEParameterTypeSignature_Name();
+    EAttribute getKParameterTypeSignature_Name();
 
     /**
-     * Returns the meta object for data type '{@link org.eclipse.jdt.core.IMethod <em>IMethod</em>}'.
+     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection <em>KType Selection</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for data type '<em>IMethod</em>'.
-     * @see org.eclipse.jdt.core.IMethod
-     * @model instanceClass="org.eclipse.jdt.core.IMethod"
+     * @return the meta object for class '<em>KType Selection</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection
      * @generated
      */
-    EDataType getIMethod();
+    EClass getKTypeSelection();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection#getTypes <em>Types</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Types</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection#getTypes()
+     * @see #getKTypeSelection()
+     * @generated
+     */
+    EReference getKTypeSelection_Types();
+
+    /**
+     * Returns the meta object for data type '{@link org.eclipse.jdt.core.IType <em>IType</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for data type '<em>IType</em>'.
+     * @see org.eclipse.jdt.core.IType
+     * @model instanceClass="org.eclipse.jdt.core.IType"
+     * @generated
+     */
+    EDataType getIType();
 
     /**
      * Returns the meta object for data type '{@link org.eclipse.jdt.core.IField <em>IField</em>}'.
@@ -572,15 +606,15 @@ public interface ClassdataPackage extends EPackage {
     EDataType getIField();
 
     /**
-     * Returns the meta object for data type '{@link org.eclipse.jdt.core.IType <em>IType</em>}'.
+     * Returns the meta object for data type '{@link org.eclipse.jdt.core.IMethod <em>IMethod</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for data type '<em>IType</em>'.
-     * @see org.eclipse.jdt.core.IType
-     * @model instanceClass="org.eclipse.jdt.core.IType"
+     * @return the meta object for data type '<em>IMethod</em>'.
+     * @see org.eclipse.jdt.core.IMethod
+     * @model instanceClass="org.eclipse.jdt.core.IMethod"
      * @generated
      */
-    EDataType getIType();
+    EDataType getIMethod();
 
     /**
      * Returns the factory that creates the instances of the model.
@@ -606,14 +640,14 @@ public interface ClassdataPackage extends EPackage {
      */
     interface Literals {
         /**
-         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.ETypeImpl <em>EType</em>}' class.
+         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl <em>KType</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ETypeImpl
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getEType()
+         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl
+         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKType()
          * @generated
          */
-        EClass ETYPE = eINSTANCE.getEType();
+        EClass KTYPE = eINSTANCE.getKType();
 
         /**
          * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -621,7 +655,7 @@ public interface ClassdataPackage extends EPackage {
          * <!-- end-user-doc -->
          * @generated
          */
-        EAttribute ETYPE__TYPE = eINSTANCE.getEType_Type();
+        EAttribute KTYPE__TYPE = eINSTANCE.getKType_Type();
 
         /**
          * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
@@ -629,7 +663,7 @@ public interface ClassdataPackage extends EPackage {
          * <!-- end-user-doc -->
          * @generated
          */
-        EReference ETYPE__FIELDS = eINSTANCE.getEType_Fields();
+        EReference KTYPE__FIELDS = eINSTANCE.getKType_Fields();
 
         /**
          * The meta object literal for the '<em><b>Methods</b></em>' containment reference list feature.
@@ -637,25 +671,51 @@ public interface ClassdataPackage extends EPackage {
          * <!-- end-user-doc -->
          * @generated
          */
-        EReference ETYPE__METHODS = eINSTANCE.getEType_Methods();
+        EReference KTYPE__METHODS = eINSTANCE.getKType_Methods();
 
         /**
-         * The meta object literal for the '<em><b>Fully Qualified Name</b></em>' attribute feature.
+         * The meta object literal for the '<em><b>Qualified Name</b></em>' attribute feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
-        EAttribute ETYPE__FULLY_QUALIFIED_NAME = eINSTANCE.getEType_FullyQualifiedName();
+        EAttribute KTYPE__QUALIFIED_NAME = eINSTANCE.getKType_QualifiedName();
 
         /**
-         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.EFieldImpl <em>EField</em>}' class.
+         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl <em>KMember</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.EFieldImpl
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getEField()
+         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl
+         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKMember()
          * @generated
          */
-        EClass EFIELD = eINSTANCE.getEField();
+        EClass KMEMBER = eINSTANCE.getKMember();
+
+        /**
+         * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute KMEMBER__SELECTED = eINSTANCE.getKMember_Selected();
+
+        /**
+         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute KMEMBER__NAME = eINSTANCE.getKMember_Name();
+
+        /**
+         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KFieldImpl <em>KField</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KFieldImpl
+         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKField()
+         * @generated
+         */
+        EClass KFIELD = eINSTANCE.getKField();
 
         /**
          * The meta object literal for the '<em><b>Field</b></em>' attribute feature.
@@ -663,33 +723,17 @@ public interface ClassdataPackage extends EPackage {
          * <!-- end-user-doc -->
          * @generated
          */
-        EAttribute EFIELD__FIELD = eINSTANCE.getEField_Field();
+        EAttribute KFIELD__FIELD = eINSTANCE.getKField_Field();
 
         /**
-         * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
+         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMethodImpl <em>KMethod</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
+         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KMethodImpl
+         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKMethod()
          * @generated
          */
-        EAttribute EFIELD__SELECTED = eINSTANCE.getEField_Selected();
-
-        /**
-         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute EFIELD__NAME = eINSTANCE.getEField_Name();
-
-        /**
-         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.EMethodImpl <em>EMethod</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.EMethodImpl
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getEMethod()
-         * @generated
-         */
-        EClass EMETHOD = eINSTANCE.getEMethod();
+        EClass KMETHOD = eINSTANCE.getKMethod();
 
         /**
          * The meta object literal for the '<em><b>Method</b></em>' attribute feature.
@@ -697,23 +741,7 @@ public interface ClassdataPackage extends EPackage {
          * <!-- end-user-doc -->
          * @generated
          */
-        EAttribute EMETHOD__METHOD = eINSTANCE.getEMethod_Method();
-
-        /**
-         * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute EMETHOD__SELECTED = eINSTANCE.getEMethod_Selected();
-
-        /**
-         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute EMETHOD__NAME = eINSTANCE.getEMethod_Name();
+        EAttribute KMETHOD__METHOD = eINSTANCE.getKMethod_Method();
 
         /**
          * The meta object literal for the '<em><b>Parameter Type Signatures</b></em>' containment reference list feature.
@@ -721,35 +749,17 @@ public interface ClassdataPackage extends EPackage {
          * <!-- end-user-doc -->
          * @generated
          */
-        EReference EMETHOD__PARAMETER_TYPE_SIGNATURES = eINSTANCE.getEMethod_ParameterTypeSignatures();
+        EReference KMETHOD__PARAMETER_TYPE_SIGNATURES = eINSTANCE.getKMethod_ParameterTypeSignatures();
 
         /**
-         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.EClassDataSelectionImpl <em>EClass Data Selection</em>}' class.
+         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KParameterTypeSignatureImpl <em>KParameter Type Signature</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.EClassDataSelectionImpl
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getEClassDataSelection()
+         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KParameterTypeSignatureImpl
+         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKParameterTypeSignature()
          * @generated
          */
-        EClass ECLASS_DATA_SELECTION = eINSTANCE.getEClassDataSelection();
-
-        /**
-         * The meta object literal for the '<em><b>Types</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EReference ECLASS_DATA_SELECTION__TYPES = eINSTANCE.getEClassDataSelection_Types();
-
-        /**
-         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.EParameterTypeSignatureImpl <em>EParameter Type Signature</em>}' class.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.EParameterTypeSignatureImpl
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getEParameterTypeSignature()
-         * @generated
-         */
-        EClass EPARAMETER_TYPE_SIGNATURE = eINSTANCE.getEParameterTypeSignature();
+        EClass KPARAMETER_TYPE_SIGNATURE = eINSTANCE.getKParameterTypeSignature();
 
         /**
          * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -757,17 +767,35 @@ public interface ClassdataPackage extends EPackage {
          * <!-- end-user-doc -->
          * @generated
          */
-        EAttribute EPARAMETER_TYPE_SIGNATURE__NAME = eINSTANCE.getEParameterTypeSignature_Name();
+        EAttribute KPARAMETER_TYPE_SIGNATURE__NAME = eINSTANCE.getKParameterTypeSignature_Name();
 
         /**
-         * The meta object literal for the '<em>IMethod</em>' data type.
+         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeSelectionImpl <em>KType Selection</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see org.eclipse.jdt.core.IMethod
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getIMethod()
+         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeSelectionImpl
+         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKTypeSelection()
          * @generated
          */
-        EDataType IMETHOD = eINSTANCE.getIMethod();
+        EClass KTYPE_SELECTION = eINSTANCE.getKTypeSelection();
+
+        /**
+         * The meta object literal for the '<em><b>Types</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference KTYPE_SELECTION__TYPES = eINSTANCE.getKTypeSelection_Types();
+
+        /**
+         * The meta object literal for the '<em>IType</em>' data type.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.eclipse.jdt.core.IType
+         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getIType()
+         * @generated
+         */
+        EDataType ITYPE = eINSTANCE.getIType();
 
         /**
          * The meta object literal for the '<em>IField</em>' data type.
@@ -780,14 +808,14 @@ public interface ClassdataPackage extends EPackage {
         EDataType IFIELD = eINSTANCE.getIField();
 
         /**
-         * The meta object literal for the '<em>IType</em>' data type.
+         * The meta object literal for the '<em>IMethod</em>' data type.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see org.eclipse.jdt.core.IType
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getIType()
+         * @see org.eclipse.jdt.core.IMethod
+         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getIMethod()
          * @generated
          */
-        EDataType ITYPE = eINSTANCE.getIType();
+        EDataType IMETHOD = eINSTANCE.getIMethod();
 
     }
 

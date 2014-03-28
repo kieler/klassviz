@@ -19,24 +19,24 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>EClass Data Selection</b></em>'.
+ * A representation of the model object '<em><b>KType Selection</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.EClassDataSelection#getTypes <em>Types</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection#getTypes <em>Types</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getEClassDataSelection()
+ * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKTypeSelection()
  * @model
  * @generated
  */
-public interface EClassDataSelection extends EObject {
+public interface KTypeSelection extends EObject {
     /**
      * Returns the value of the '<em><b>Types</b></em>' containment reference list.
-     * The list contents are of type {@link de.cau.cs.kieler.klassviz.model.classdata.EType}.
+     * The list contents are of type {@link de.cau.cs.kieler.klassviz.model.classdata.KType}.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Types</em>' containment reference list isn't clear,
@@ -44,10 +44,10 @@ public interface EClassDataSelection extends EObject {
      * </p>
      * <!-- end-user-doc -->
      * @return the value of the '<em>Types</em>' containment reference list.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getEClassDataSelection_Types()
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKTypeSelection_Types()
      * @model containment="true" keys="type"
      * @generated
      */
-    EList<EType> getTypes();
+    EList<KType> getTypes();
 
-} // EClassDataSelection
+} // KTypeSelection

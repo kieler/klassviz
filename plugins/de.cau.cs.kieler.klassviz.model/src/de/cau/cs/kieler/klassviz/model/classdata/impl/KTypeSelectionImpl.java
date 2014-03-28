@@ -14,8 +14,8 @@
 package de.cau.cs.kieler.klassviz.model.classdata.impl;
 
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage;
-import de.cau.cs.kieler.klassviz.model.classdata.EClassDataSelection;
-import de.cau.cs.kieler.klassviz.model.classdata.EType;
+import de.cau.cs.kieler.klassviz.model.classdata.KType;
+import de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection;
 
 import java.util.Collection;
 
@@ -33,18 +33,18 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>EClass Data Selection</b></em>'.
+ * An implementation of the model object '<em><b>KType Selection</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.EClassDataSelectionImpl#getTypes <em>Types</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeSelectionImpl#getTypes <em>Types</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class EClassDataSelectionImpl extends MinimalEObjectImpl.Container implements EClassDataSelection {
+public class KTypeSelectionImpl extends MinimalEObjectImpl.Container implements KTypeSelection {
     /**
      * The cached value of the '{@link #getTypes() <em>Types</em>}' containment reference list.
      * <!-- begin-user-doc -->
@@ -53,14 +53,14 @@ public class EClassDataSelectionImpl extends MinimalEObjectImpl.Container implem
      * @generated
      * @ordered
      */
-    protected EList<EType> types;
+    protected EList<KType> types;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected EClassDataSelectionImpl() {
+    protected KTypeSelectionImpl() {
         super();
     }
 
@@ -71,7 +71,7 @@ public class EClassDataSelectionImpl extends MinimalEObjectImpl.Container implem
      */
     @Override
     protected EClass eStaticClass() {
-        return ClassdataPackage.Literals.ECLASS_DATA_SELECTION;
+        return ClassdataPackage.Literals.KTYPE_SELECTION;
     }
 
     /**
@@ -79,9 +79,9 @@ public class EClassDataSelectionImpl extends MinimalEObjectImpl.Container implem
      * <!-- end-user-doc -->
      * @generated
      */
-    public EList<EType> getTypes() {
+    public EList<KType> getTypes() {
         if (types == null) {
-            types = new EObjectContainmentEList<EType>(EType.class, this, ClassdataPackage.ECLASS_DATA_SELECTION__TYPES);
+            types = new EObjectContainmentEList<KType>(KType.class, this, ClassdataPackage.KTYPE_SELECTION__TYPES);
         }
         return types;
     }
@@ -94,7 +94,7 @@ public class EClassDataSelectionImpl extends MinimalEObjectImpl.Container implem
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case ClassdataPackage.ECLASS_DATA_SELECTION__TYPES:
+            case ClassdataPackage.KTYPE_SELECTION__TYPES:
                 return ((InternalEList<?>)getTypes()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -108,7 +108,7 @@ public class EClassDataSelectionImpl extends MinimalEObjectImpl.Container implem
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case ClassdataPackage.ECLASS_DATA_SELECTION__TYPES:
+            case ClassdataPackage.KTYPE_SELECTION__TYPES:
                 return getTypes();
         }
         return super.eGet(featureID, resolve, coreType);
@@ -123,9 +123,9 @@ public class EClassDataSelectionImpl extends MinimalEObjectImpl.Container implem
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case ClassdataPackage.ECLASS_DATA_SELECTION__TYPES:
+            case ClassdataPackage.KTYPE_SELECTION__TYPES:
                 getTypes().clear();
-                getTypes().addAll((Collection<? extends EType>)newValue);
+                getTypes().addAll((Collection<? extends KType>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -139,7 +139,7 @@ public class EClassDataSelectionImpl extends MinimalEObjectImpl.Container implem
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case ClassdataPackage.ECLASS_DATA_SELECTION__TYPES:
+            case ClassdataPackage.KTYPE_SELECTION__TYPES:
                 getTypes().clear();
                 return;
         }
@@ -154,10 +154,10 @@ public class EClassDataSelectionImpl extends MinimalEObjectImpl.Container implem
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case ClassdataPackage.ECLASS_DATA_SELECTION__TYPES:
+            case ClassdataPackage.KTYPE_SELECTION__TYPES:
                 return types != null && !types.isEmpty();
         }
         return super.eIsSet(featureID);
     }
 
-} //EClassDataSelectionImpl
+} //KTypeSelectionImpl

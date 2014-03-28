@@ -72,11 +72,11 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
     @Override
     public EObject create(EClass eClass) {
         switch (eClass.getClassifierID()) {
-            case ClassdataPackage.ETYPE: return createEType();
-            case ClassdataPackage.EFIELD: return createEField();
-            case ClassdataPackage.EMETHOD: return createEMethod();
-            case ClassdataPackage.ECLASS_DATA_SELECTION: return createEClassDataSelection();
-            case ClassdataPackage.EPARAMETER_TYPE_SIGNATURE: return createEParameterTypeSignature();
+            case ClassdataPackage.KTYPE: return createKType();
+            case ClassdataPackage.KFIELD: return createKField();
+            case ClassdataPackage.KMETHOD: return createKMethod();
+            case ClassdataPackage.KPARAMETER_TYPE_SIGNATURE: return createKParameterTypeSignature();
+            case ClassdataPackage.KTYPE_SELECTION: return createKTypeSelection();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -90,12 +90,12 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
     @Override
     public Object createFromString(EDataType eDataType, String initialValue) {
         switch (eDataType.getClassifierID()) {
-            case ClassdataPackage.IMETHOD:
-                return createIMethodFromString(eDataType, initialValue);
-            case ClassdataPackage.IFIELD:
-                return createIFieldFromString(eDataType, initialValue);
             case ClassdataPackage.ITYPE:
                 return createITypeFromString(eDataType, initialValue);
+            case ClassdataPackage.IFIELD:
+                return createIFieldFromString(eDataType, initialValue);
+            case ClassdataPackage.IMETHOD:
+                return createIMethodFromString(eDataType, initialValue);
             default:
                 throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
         }
@@ -109,12 +109,12 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
     @Override
     public String convertToString(EDataType eDataType, Object instanceValue) {
         switch (eDataType.getClassifierID()) {
-            case ClassdataPackage.IMETHOD:
-                return convertIMethodToString(eDataType, instanceValue);
-            case ClassdataPackage.IFIELD:
-                return convertIFieldToString(eDataType, instanceValue);
             case ClassdataPackage.ITYPE:
                 return convertITypeToString(eDataType, instanceValue);
+            case ClassdataPackage.IFIELD:
+                return convertIFieldToString(eDataType, instanceValue);
+            case ClassdataPackage.IMETHOD:
+                return convertIMethodToString(eDataType, instanceValue);
             default:
                 throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
         }
@@ -125,9 +125,9 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
      * <!-- end-user-doc -->
      * @generated
      */
-    public EType createEType() {
-        ETypeImpl eType = new ETypeImpl();
-        return eType;
+    public KType createKType() {
+        KTypeImpl kType = new KTypeImpl();
+        return kType;
     }
 
     /**
@@ -135,9 +135,9 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
      * <!-- end-user-doc -->
      * @generated
      */
-    public EField createEField() {
-        EFieldImpl eField = new EFieldImpl();
-        return eField;
+    public KField createKField() {
+        KFieldImpl kField = new KFieldImpl();
+        return kField;
     }
 
     /**
@@ -145,9 +145,9 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
      * <!-- end-user-doc -->
      * @generated
      */
-    public EMethod createEMethod() {
-        EMethodImpl eMethod = new EMethodImpl();
-        return eMethod;
+    public KMethod createKMethod() {
+        KMethodImpl kMethod = new KMethodImpl();
+        return kMethod;
     }
 
     /**
@@ -155,9 +155,9 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClassDataSelection createEClassDataSelection() {
-        EClassDataSelectionImpl eClassDataSelection = new EClassDataSelectionImpl();
-        return eClassDataSelection;
+    public KParameterTypeSignature createKParameterTypeSignature() {
+        KParameterTypeSignatureImpl kParameterTypeSignature = new KParameterTypeSignatureImpl();
+        return kParameterTypeSignature;
     }
 
     /**
@@ -165,9 +165,9 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
      * <!-- end-user-doc -->
      * @generated
      */
-    public EParameterTypeSignature createEParameterTypeSignature() {
-        EParameterTypeSignatureImpl eParameterTypeSignature = new EParameterTypeSignatureImpl();
-        return eParameterTypeSignature;
+    public KTypeSelection createKTypeSelection() {
+        KTypeSelectionImpl kTypeSelection = new KTypeSelectionImpl();
+        return kTypeSelection;
     }
 
     /**
@@ -175,8 +175,8 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
      * <!-- end-user-doc -->
      * @generated
      */
-    public IMethod createIMethodFromString(EDataType eDataType, String initialValue) {
-        return (IMethod)super.createFromString(eDataType, initialValue);
+    public IType createITypeFromString(EDataType eDataType, String initialValue) {
+        return (IType)super.createFromString(eDataType, initialValue);
     }
 
     /**
@@ -184,7 +184,7 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
      * <!-- end-user-doc -->
      * @generated
      */
-    public String convertIMethodToString(EDataType eDataType, Object instanceValue) {
+    public String convertITypeToString(EDataType eDataType, Object instanceValue) {
         return super.convertToString(eDataType, instanceValue);
     }
 
@@ -211,8 +211,8 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
      * <!-- end-user-doc -->
      * @generated
      */
-    public IType createITypeFromString(EDataType eDataType, String initialValue) {
-        return (IType)super.createFromString(eDataType, initialValue);
+    public IMethod createIMethodFromString(EDataType eDataType, String initialValue) {
+        return (IMethod)super.createFromString(eDataType, initialValue);
     }
 
     /**
@@ -220,7 +220,7 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
      * <!-- end-user-doc -->
      * @generated
      */
-    public String convertITypeToString(EDataType eDataType, Object instanceValue) {
+    public String convertIMethodToString(EDataType eDataType, Object instanceValue) {
         return super.convertToString(eDataType, instanceValue);
     }
 

@@ -77,33 +77,41 @@ public class ClassdataSwitch<T> extends Switch<T> {
     @Override
     protected T doSwitch(int classifierID, EObject theEObject) {
         switch (classifierID) {
-            case ClassdataPackage.ETYPE: {
-                EType eType = (EType)theEObject;
-                T result = caseEType(eType);
+            case ClassdataPackage.KTYPE: {
+                KType kType = (KType)theEObject;
+                T result = caseKType(kType);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case ClassdataPackage.EFIELD: {
-                EField eField = (EField)theEObject;
-                T result = caseEField(eField);
+            case ClassdataPackage.KMEMBER: {
+                KMember kMember = (KMember)theEObject;
+                T result = caseKMember(kMember);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case ClassdataPackage.EMETHOD: {
-                EMethod eMethod = (EMethod)theEObject;
-                T result = caseEMethod(eMethod);
+            case ClassdataPackage.KFIELD: {
+                KField kField = (KField)theEObject;
+                T result = caseKField(kField);
+                if (result == null) result = caseKMember(kField);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case ClassdataPackage.ECLASS_DATA_SELECTION: {
-                EClassDataSelection eClassDataSelection = (EClassDataSelection)theEObject;
-                T result = caseEClassDataSelection(eClassDataSelection);
+            case ClassdataPackage.KMETHOD: {
+                KMethod kMethod = (KMethod)theEObject;
+                T result = caseKMethod(kMethod);
+                if (result == null) result = caseKMember(kMethod);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case ClassdataPackage.EPARAMETER_TYPE_SIGNATURE: {
-                EParameterTypeSignature eParameterTypeSignature = (EParameterTypeSignature)theEObject;
-                T result = caseEParameterTypeSignature(eParameterTypeSignature);
+            case ClassdataPackage.KPARAMETER_TYPE_SIGNATURE: {
+                KParameterTypeSignature kParameterTypeSignature = (KParameterTypeSignature)theEObject;
+                T result = caseKParameterTypeSignature(kParameterTypeSignature);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case ClassdataPackage.KTYPE_SELECTION: {
+                KTypeSelection kTypeSelection = (KTypeSelection)theEObject;
+                T result = caseKTypeSelection(kTypeSelection);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -112,77 +120,92 @@ public class ClassdataSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>EType</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>KType</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>EType</em>'.
+     * @return the result of interpreting the object as an instance of '<em>KType</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseEType(EType object) {
+    public T caseKType(KType object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>EField</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>KMember</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>EField</em>'.
+     * @return the result of interpreting the object as an instance of '<em>KMember</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseEField(EField object) {
+    public T caseKMember(KMember object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>EMethod</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>KField</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>EMethod</em>'.
+     * @return the result of interpreting the object as an instance of '<em>KField</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseEMethod(EMethod object) {
+    public T caseKField(KField object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>EClass Data Selection</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>KMethod</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>EClass Data Selection</em>'.
+     * @return the result of interpreting the object as an instance of '<em>KMethod</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseEClassDataSelection(EClassDataSelection object) {
+    public T caseKMethod(KMethod object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>EParameter Type Signature</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>KParameter Type Signature</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>EParameter Type Signature</em>'.
+     * @return the result of interpreting the object as an instance of '<em>KParameter Type Signature</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseEParameterTypeSignature(EParameterTypeSignature object) {
+    public T caseKParameterTypeSignature(KParameterTypeSignature object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>KType Selection</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>KType Selection</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseKTypeSelection(KTypeSelection object) {
         return null;
     }
 

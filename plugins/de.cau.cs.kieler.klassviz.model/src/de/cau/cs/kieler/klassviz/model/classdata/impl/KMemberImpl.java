@@ -14,7 +14,7 @@
 package de.cau.cs.kieler.klassviz.model.classdata.impl;
 
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage;
-import de.cau.cs.kieler.klassviz.model.classdata.EField;
+import de.cau.cs.kieler.klassviz.model.classdata.KMember;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -23,44 +23,21 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.jdt.core.IField;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>EField</b></em>'.
+ * An implementation of the model object '<em><b>KMember</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.EFieldImpl#getField <em>Field</em>}</li>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.EFieldImpl#isSelected <em>Selected</em>}</li>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.EFieldImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl#isSelected <em>Selected</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class EFieldImpl extends MinimalEObjectImpl.Container implements EField {
-    /**
-     * The default value of the '{@link #getField() <em>Field</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getField()
-     * @generated
-     * @ordered
-     */
-    protected static final IField FIELD_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getField() <em>Field</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getField()
-     * @generated
-     * @ordered
-     */
-    protected IField field = FIELD_EDEFAULT;
-
+public abstract class KMemberImpl extends MinimalEObjectImpl.Container implements KMember {
     /**
      * The default value of the '{@link #isSelected() <em>Selected</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -69,7 +46,7 @@ public class EFieldImpl extends MinimalEObjectImpl.Container implements EField {
      * @generated
      * @ordered
      */
-    protected static final boolean SELECTED_EDEFAULT = false;
+    protected static final boolean SELECTED_EDEFAULT = true;
 
     /**
      * The cached value of the '{@link #isSelected() <em>Selected</em>}' attribute.
@@ -106,7 +83,7 @@ public class EFieldImpl extends MinimalEObjectImpl.Container implements EField {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected EFieldImpl() {
+    protected KMemberImpl() {
         super();
     }
 
@@ -117,28 +94,7 @@ public class EFieldImpl extends MinimalEObjectImpl.Container implements EField {
      */
     @Override
     protected EClass eStaticClass() {
-        return ClassdataPackage.Literals.EFIELD;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public IField getField() {
-        return field;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setField(IField newField) {
-        IField oldField = field;
-        field = newField;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.EFIELD__FIELD, oldField, field));
+        return ClassdataPackage.Literals.KMEMBER;
     }
 
     /**
@@ -159,7 +115,7 @@ public class EFieldImpl extends MinimalEObjectImpl.Container implements EField {
         boolean oldSelected = selected;
         selected = newSelected;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.EFIELD__SELECTED, oldSelected, selected));
+            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMEMBER__SELECTED, oldSelected, selected));
     }
 
     /**
@@ -180,7 +136,7 @@ public class EFieldImpl extends MinimalEObjectImpl.Container implements EField {
         String oldName = name;
         name = newName;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.EFIELD__NAME, oldName, name));
+            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMEMBER__NAME, oldName, name));
     }
 
     /**
@@ -191,11 +147,9 @@ public class EFieldImpl extends MinimalEObjectImpl.Container implements EField {
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case ClassdataPackage.EFIELD__FIELD:
-                return getField();
-            case ClassdataPackage.EFIELD__SELECTED:
+            case ClassdataPackage.KMEMBER__SELECTED:
                 return isSelected();
-            case ClassdataPackage.EFIELD__NAME:
+            case ClassdataPackage.KMEMBER__NAME:
                 return getName();
         }
         return super.eGet(featureID, resolve, coreType);
@@ -209,13 +163,10 @@ public class EFieldImpl extends MinimalEObjectImpl.Container implements EField {
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case ClassdataPackage.EFIELD__FIELD:
-                setField((IField)newValue);
-                return;
-            case ClassdataPackage.EFIELD__SELECTED:
+            case ClassdataPackage.KMEMBER__SELECTED:
                 setSelected((Boolean)newValue);
                 return;
-            case ClassdataPackage.EFIELD__NAME:
+            case ClassdataPackage.KMEMBER__NAME:
                 setName((String)newValue);
                 return;
         }
@@ -230,13 +181,10 @@ public class EFieldImpl extends MinimalEObjectImpl.Container implements EField {
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case ClassdataPackage.EFIELD__FIELD:
-                setField(FIELD_EDEFAULT);
-                return;
-            case ClassdataPackage.EFIELD__SELECTED:
+            case ClassdataPackage.KMEMBER__SELECTED:
                 setSelected(SELECTED_EDEFAULT);
                 return;
-            case ClassdataPackage.EFIELD__NAME:
+            case ClassdataPackage.KMEMBER__NAME:
                 setName(NAME_EDEFAULT);
                 return;
         }
@@ -251,11 +199,9 @@ public class EFieldImpl extends MinimalEObjectImpl.Container implements EField {
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case ClassdataPackage.EFIELD__FIELD:
-                return FIELD_EDEFAULT == null ? field != null : !FIELD_EDEFAULT.equals(field);
-            case ClassdataPackage.EFIELD__SELECTED:
+            case ClassdataPackage.KMEMBER__SELECTED:
                 return selected != SELECTED_EDEFAULT;
-            case ClassdataPackage.EFIELD__NAME:
+            case ClassdataPackage.KMEMBER__NAME:
                 return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
         }
         return super.eIsSet(featureID);
@@ -271,9 +217,7 @@ public class EFieldImpl extends MinimalEObjectImpl.Container implements EField {
         if (eIsProxy()) return super.toString();
 
         StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (field: ");
-        result.append(field);
-        result.append(", selected: ");
+        result.append(" (selected: ");
         result.append(selected);
         result.append(", name: ");
         result.append(name);
@@ -281,4 +225,4 @@ public class EFieldImpl extends MinimalEObjectImpl.Container implements EField {
         return result.toString();
     }
 
-} //EFieldImpl
+} //KMemberImpl

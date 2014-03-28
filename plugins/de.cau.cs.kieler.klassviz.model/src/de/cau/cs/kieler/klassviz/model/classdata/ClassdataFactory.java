@@ -33,49 +33,49 @@ public interface ClassdataFactory extends EFactory {
     ClassdataFactory eINSTANCE = de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataFactoryImpl.init();
 
     /**
-     * Returns a new object of class '<em>EType</em>'.
+     * Returns a new object of class '<em>KType</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>EType</em>'.
+     * @return a new object of class '<em>KType</em>'.
      * @generated
      */
-    EType createEType();
+    KType createKType();
 
     /**
-     * Returns a new object of class '<em>EField</em>'.
+     * Returns a new object of class '<em>KField</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>EField</em>'.
+     * @return a new object of class '<em>KField</em>'.
      * @generated
      */
-    EField createEField();
+    KField createKField();
 
     /**
-     * Returns a new object of class '<em>EMethod</em>'.
+     * Returns a new object of class '<em>KMethod</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>EMethod</em>'.
+     * @return a new object of class '<em>KMethod</em>'.
      * @generated
      */
-    EMethod createEMethod();
+    KMethod createKMethod();
 
     /**
-     * Returns a new object of class '<em>EClass Data Selection</em>'.
+     * Returns a new object of class '<em>KParameter Type Signature</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>EClass Data Selection</em>'.
+     * @return a new object of class '<em>KParameter Type Signature</em>'.
      * @generated
      */
-    EClassDataSelection createEClassDataSelection();
+    KParameterTypeSignature createKParameterTypeSignature();
 
     /**
-     * Returns a new object of class '<em>EParameter Type Signature</em>'.
+     * Returns a new object of class '<em>KType Selection</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>EParameter Type Signature</em>'.
+     * @return a new object of class '<em>KType Selection</em>'.
      * @generated
      */
-    EParameterTypeSignature createEParameterTypeSignature();
+    KTypeSelection createKTypeSelection();
 
     /**
      * Returns the package supported by this factory.

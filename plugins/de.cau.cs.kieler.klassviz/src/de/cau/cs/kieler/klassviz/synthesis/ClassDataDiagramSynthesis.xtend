@@ -46,11 +46,16 @@ import org.eclipse.jdt.core.IMethod
 import org.eclipse.jdt.core.IPackageFragment
 import org.eclipse.jdt.core.IType
 import org.eclipse.jdt.core.Signature
-import de.cau.cs.kieler.klassviz.model.classdata.EClassDataSelection
-import de.cau.cs.kieler.klassviz.model.classdata.EType
-import de.cau.cs.kieler.klassviz.model.classdata.EField
+import de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection
+import de.cau.cs.kieler.klassviz.model.classdata.KType
+import de.cau.cs.kieler.klassviz.model.classdata.KField
 
-class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<EClassDataSelection> {
+/**
+ * Synthesis of class diagrams using the Classdata meta model.
+ * 
+ * @author ems
+ */
+class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KTypeSelection> {
 
 	@Inject
 	extension KNodeExtensions
@@ -121,7 +126,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<EClassDataSelec
 	}
 
 	// Transform ClassDataSelection model to diagram.
-	override KNode transform(EClassDataSelection model) {
+	override KNode transform(KTypeSelection model) {
 		val classDiagramRoot = model.createNode().putToLookUpWith(model) => [
 			var List<IPackageFragment> packageFragments
 			// If packages should be visualized get all package nodes and 
@@ -171,7 +176,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<EClassDataSelec
 	}
 
 	// Create a node for each package. And add the content.
-	def KNode createPackageNode(IPackageFragment fragment, EClassDataSelection classDataSelection) {
+	def KNode createPackageNode(IPackageFragment fragment, KTypeSelection classDataSelection) {
 		return fragment.createNode.putToLookUpWith(fragment) => [ packageNode |
 			// Add a gray rectangle for each package
 			packageNode.addRectangle => [ rect |
@@ -192,7 +197,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<EClassDataSelec
 	}
 
 	// Create a node for each class. And add the content.
-	def createClassNode(EType classData, EClassDataSelection classDataSelection) {
+	def createClassNode(KType classData, KTypeSelection classDataSelection) {
 		return classData.createNode.putToLookUpWith(classData) => [
 			it.addRoundedRectangle(5, 5) => [ rect |
 				rect.setGridPlacement(1).from(LEFT, 2, 0, TOP, 2, 0).to(RIGHT, 2, 0, BOTTOM, 0, 0)
@@ -280,7 +285,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<EClassDataSelec
 	}
 
 	// Get the color depending on the class type.
-	def KColor getNodeColor(EType classData) {
+	def KColor getNodeColor(KType classData) {
 		if (classData.type.isClass) {
 			return "#A4D3EE".color
 		}
@@ -298,8 +303,8 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<EClassDataSelec
 	// Check if field has an association-dependency.
 	// A field has dependency when it's type equals one of the visualized classes
 	// or a generic parameter type equals one of the visualized classes. 
-	def List<Boolean> create fieldHasDependency : new LinkedList<Boolean>() hasDependency(EType classData,
-		EClassDataSelection classDataSelection, EField eField) {
+	def List<Boolean> create fieldHasDependency : new LinkedList<Boolean>() hasDependency(KType classData,
+		KTypeSelection classDataSelection, KField eField) {
 		fieldHasDependency.add(false)
 		val String[][] fieldType = classData.type.resolveType(
 			Signature.getSignatureSimpleName(eField.field.typeSignature))
@@ -356,7 +361,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<EClassDataSelec
 	}
 
 	// Create inheritance of classes and interfaces.
-	def void createInheritanceEdges(EClassDataSelection classDataSelection) {
+	def void createInheritanceEdges(KTypeSelection classDataSelection) {
 		classDataSelection.types.forEach [
 			if (it.type.superclassName != null) {
 				it.createClassInheritanceEdge(classDataSelection)
@@ -368,7 +373,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<EClassDataSelec
 	}
 
 	// For each class visualize all relationships to super classes that are visualized.
-	def createClassInheritanceEdge(EType classData, EClassDataSelection classDataSelection) {
+	def createClassInheritanceEdge(KType classData, KTypeSelection classDataSelection) {
 		classDataSelection.types.forEach [ classDataToBeCompared |
 			val IType superClass = classData.type.newSupertypeHierarchy(new NullProgressMonitor).
 				getSuperclass(classData.type);
@@ -385,7 +390,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<EClassDataSelec
 	}
 
 	// For each class visualize all relationships to super interfaces that are visualized.
-	def createInterfaceInheritanceEdge(EType classData, EClassDataSelection classDataSelection) {
+	def createInterfaceInheritanceEdge(KType classData, KTypeSelection classDataSelection) {
 		classDataSelection.types.forEach [ classDataToBeCompared |
 			val IType[] directSuperInterfaces = classData.type.newSupertypeHierarchy(new NullProgressMonitor).
 				getSuperInterfaces(classData.type);
@@ -411,7 +416,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<EClassDataSelec
 	}
 
 	// For each field in each class add their associations if there are any. Also add the multiplicities.
-	def createAssociationEdges(EType classData, EClassDataSelection classDataSelection) {
+	def createAssociationEdges(KType classData, KTypeSelection classDataSelection) {
 		classDataSelection.types.forEach [ classDataToBeCompared |
 			val int[] classHasAssociationToThisClass = #[0, 0]
 			classData.fields.forEach [ eField |

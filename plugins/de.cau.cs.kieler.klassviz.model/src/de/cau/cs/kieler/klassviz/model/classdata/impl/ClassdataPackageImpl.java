@@ -15,11 +15,12 @@ package de.cau.cs.kieler.klassviz.model.classdata.impl;
 
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataFactory;
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage;
-import de.cau.cs.kieler.klassviz.model.classdata.EClassDataSelection;
-import de.cau.cs.kieler.klassviz.model.classdata.EField;
-import de.cau.cs.kieler.klassviz.model.classdata.EMethod;
-import de.cau.cs.kieler.klassviz.model.classdata.EParameterTypeSignature;
-import de.cau.cs.kieler.klassviz.model.classdata.EType;
+import de.cau.cs.kieler.klassviz.model.classdata.KField;
+import de.cau.cs.kieler.klassviz.model.classdata.KMember;
+import de.cau.cs.kieler.klassviz.model.classdata.KMethod;
+import de.cau.cs.kieler.klassviz.model.classdata.KParameterTypeSignature;
+import de.cau.cs.kieler.klassviz.model.classdata.KType;
+import de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -45,42 +46,49 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass eTypeEClass = null;
+    private EClass kTypeEClass = null;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass eFieldEClass = null;
+    private EClass kMemberEClass = null;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass eMethodEClass = null;
+    private EClass kFieldEClass = null;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass eClassDataSelectionEClass = null;
+    private EClass kMethodEClass = null;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass eParameterTypeSignatureEClass = null;
+    private EClass kParameterTypeSignatureEClass = null;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    private EDataType iMethodEDataType = null;
+    private EClass kTypeSelectionEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EDataType iTypeEDataType = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -94,7 +102,7 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    private EDataType iTypeEDataType = null;
+    private EDataType iMethodEDataType = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -162,8 +170,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getEType() {
-        return eTypeEClass;
+    public EClass getKType() {
+        return kTypeEClass;
     }
 
     /**
@@ -171,8 +179,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getEType_Type() {
-        return (EAttribute)eTypeEClass.getEStructuralFeatures().get(0);
+    public EAttribute getKType_Type() {
+        return (EAttribute)kTypeEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -180,8 +188,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getEType_Fields() {
-        return (EReference)eTypeEClass.getEStructuralFeatures().get(1);
+    public EReference getKType_Fields() {
+        return (EReference)kTypeEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -189,8 +197,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getEType_Methods() {
-        return (EReference)eTypeEClass.getEStructuralFeatures().get(2);
+    public EReference getKType_Methods() {
+        return (EReference)kTypeEClass.getEStructuralFeatures().get(2);
     }
 
     /**
@@ -198,8 +206,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getEType_FullyQualifiedName() {
-        return (EAttribute)eTypeEClass.getEStructuralFeatures().get(3);
+    public EAttribute getKType_QualifiedName() {
+        return (EAttribute)kTypeEClass.getEStructuralFeatures().get(3);
     }
 
     /**
@@ -207,8 +215,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getEField() {
-        return eFieldEClass;
+    public EClass getKMember() {
+        return kMemberEClass;
     }
 
     /**
@@ -216,8 +224,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getEField_Field() {
-        return (EAttribute)eFieldEClass.getEStructuralFeatures().get(0);
+    public EAttribute getKMember_Selected() {
+        return (EAttribute)kMemberEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -225,8 +233,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getEField_Selected() {
-        return (EAttribute)eFieldEClass.getEStructuralFeatures().get(1);
+    public EAttribute getKMember_Name() {
+        return (EAttribute)kMemberEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -234,8 +242,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getEField_Name() {
-        return (EAttribute)eFieldEClass.getEStructuralFeatures().get(2);
+    public EClass getKField() {
+        return kFieldEClass;
     }
 
     /**
@@ -243,8 +251,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getEMethod() {
-        return eMethodEClass;
+    public EAttribute getKField_Field() {
+        return (EAttribute)kFieldEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -252,8 +260,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getEMethod_Method() {
-        return (EAttribute)eMethodEClass.getEStructuralFeatures().get(0);
+    public EClass getKMethod() {
+        return kMethodEClass;
     }
 
     /**
@@ -261,8 +269,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getEMethod_Selected() {
-        return (EAttribute)eMethodEClass.getEStructuralFeatures().get(1);
+    public EAttribute getKMethod_Method() {
+        return (EAttribute)kMethodEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -270,8 +278,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getEMethod_Name() {
-        return (EAttribute)eMethodEClass.getEStructuralFeatures().get(2);
+    public EReference getKMethod_ParameterTypeSignatures() {
+        return (EReference)kMethodEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -279,8 +287,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getEMethod_ParameterTypeSignatures() {
-        return (EReference)eMethodEClass.getEStructuralFeatures().get(3);
+    public EClass getKParameterTypeSignature() {
+        return kParameterTypeSignatureEClass;
     }
 
     /**
@@ -288,8 +296,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getEClassDataSelection() {
-        return eClassDataSelectionEClass;
+    public EAttribute getKParameterTypeSignature_Name() {
+        return (EAttribute)kParameterTypeSignatureEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -297,8 +305,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getEClassDataSelection_Types() {
-        return (EReference)eClassDataSelectionEClass.getEStructuralFeatures().get(0);
+    public EClass getKTypeSelection() {
+        return kTypeSelectionEClass;
     }
 
     /**
@@ -306,8 +314,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EClass getEParameterTypeSignature() {
-        return eParameterTypeSignatureEClass;
+    public EReference getKTypeSelection_Types() {
+        return (EReference)kTypeSelectionEClass.getEStructuralFeatures().get(0);
     }
 
     /**
@@ -315,17 +323,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getEParameterTypeSignature_Name() {
-        return (EAttribute)eParameterTypeSignatureEClass.getEStructuralFeatures().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EDataType getIMethod() {
-        return iMethodEDataType;
+    public EDataType getIType() {
+        return iTypeEDataType;
     }
 
     /**
@@ -342,8 +341,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EDataType getIType() {
-        return iTypeEDataType;
+    public EDataType getIMethod() {
+        return iMethodEDataType;
     }
 
     /**
@@ -374,33 +373,33 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
         isCreated = true;
 
         // Create classes and their features
-        eTypeEClass = createEClass(ETYPE);
-        createEAttribute(eTypeEClass, ETYPE__TYPE);
-        createEReference(eTypeEClass, ETYPE__FIELDS);
-        createEReference(eTypeEClass, ETYPE__METHODS);
-        createEAttribute(eTypeEClass, ETYPE__FULLY_QUALIFIED_NAME);
+        kTypeEClass = createEClass(KTYPE);
+        createEAttribute(kTypeEClass, KTYPE__TYPE);
+        createEReference(kTypeEClass, KTYPE__FIELDS);
+        createEReference(kTypeEClass, KTYPE__METHODS);
+        createEAttribute(kTypeEClass, KTYPE__QUALIFIED_NAME);
 
-        eFieldEClass = createEClass(EFIELD);
-        createEAttribute(eFieldEClass, EFIELD__FIELD);
-        createEAttribute(eFieldEClass, EFIELD__SELECTED);
-        createEAttribute(eFieldEClass, EFIELD__NAME);
+        kMemberEClass = createEClass(KMEMBER);
+        createEAttribute(kMemberEClass, KMEMBER__SELECTED);
+        createEAttribute(kMemberEClass, KMEMBER__NAME);
 
-        eMethodEClass = createEClass(EMETHOD);
-        createEAttribute(eMethodEClass, EMETHOD__METHOD);
-        createEAttribute(eMethodEClass, EMETHOD__SELECTED);
-        createEAttribute(eMethodEClass, EMETHOD__NAME);
-        createEReference(eMethodEClass, EMETHOD__PARAMETER_TYPE_SIGNATURES);
+        kFieldEClass = createEClass(KFIELD);
+        createEAttribute(kFieldEClass, KFIELD__FIELD);
 
-        eClassDataSelectionEClass = createEClass(ECLASS_DATA_SELECTION);
-        createEReference(eClassDataSelectionEClass, ECLASS_DATA_SELECTION__TYPES);
+        kMethodEClass = createEClass(KMETHOD);
+        createEAttribute(kMethodEClass, KMETHOD__METHOD);
+        createEReference(kMethodEClass, KMETHOD__PARAMETER_TYPE_SIGNATURES);
 
-        eParameterTypeSignatureEClass = createEClass(EPARAMETER_TYPE_SIGNATURE);
-        createEAttribute(eParameterTypeSignatureEClass, EPARAMETER_TYPE_SIGNATURE__NAME);
+        kParameterTypeSignatureEClass = createEClass(KPARAMETER_TYPE_SIGNATURE);
+        createEAttribute(kParameterTypeSignatureEClass, KPARAMETER_TYPE_SIGNATURE__NAME);
+
+        kTypeSelectionEClass = createEClass(KTYPE_SELECTION);
+        createEReference(kTypeSelectionEClass, KTYPE_SELECTION__TYPES);
 
         // Create data types
-        iMethodEDataType = createEDataType(IMETHOD);
-        iFieldEDataType = createEDataType(IFIELD);
         iTypeEDataType = createEDataType(ITYPE);
+        iFieldEDataType = createEDataType(IFIELD);
+        iMethodEDataType = createEDataType(IMETHOD);
     }
 
     /**
@@ -431,37 +430,39 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
         // Set bounds for type parameters
 
         // Add supertypes to classes
+        kFieldEClass.getESuperTypes().add(this.getKMember());
+        kMethodEClass.getESuperTypes().add(this.getKMember());
 
         // Initialize classes, features, and operations; add parameters
-        initEClass(eTypeEClass, EType.class, "EType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getEType_Type(), this.getIType(), "type", null, 1, 1, EType.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getEType_Fields(), this.getEField(), null, "fields", null, 0, -1, EType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        getEType_Fields().getEKeys().add(this.getEField_Field());
-        initEReference(getEType_Methods(), this.getEMethod(), null, "methods", null, 0, -1, EType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getEType_FullyQualifiedName(), ecorePackage.getEString(), "fullyQualifiedName", null, 1, 1, EType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEClass(kTypeEClass, KType.class, "KType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getKType_Type(), this.getIType(), "type", null, 1, 1, KType.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getKType_Fields(), this.getKField(), null, "fields", null, 0, -1, KType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        getKType_Fields().getEKeys().add(this.getKField_Field());
+        initEReference(getKType_Methods(), this.getKMethod(), null, "methods", null, 0, -1, KType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getKType_QualifiedName(), ecorePackage.getEString(), "qualifiedName", null, 1, 1, KType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        initEClass(eFieldEClass, EField.class, "EField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getEField_Field(), this.getIField(), "field", null, 1, 1, EField.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getEField_Selected(), ecorePackage.getEBoolean(), "selected", null, 1, 1, EField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getEField_Name(), ecorePackage.getEString(), "name", null, 1, 1, EField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEClass(kMemberEClass, KMember.class, "KMember", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getKMember_Selected(), ecorePackage.getEBoolean(), "selected", "true", 1, 1, KMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getKMember_Name(), ecorePackage.getEString(), "name", null, 1, 1, KMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        initEClass(eMethodEClass, EMethod.class, "EMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getEMethod_Method(), this.getIMethod(), "method", null, 1, 1, EMethod.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getEMethod_Selected(), ecorePackage.getEBoolean(), "selected", null, 1, 1, EMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getEMethod_Name(), ecorePackage.getEString(), "name", null, 1, 1, EMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getEMethod_ParameterTypeSignatures(), this.getEParameterTypeSignature(), null, "parameterTypeSignatures", null, 0, -1, EMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEClass(kFieldEClass, KField.class, "KField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getKField_Field(), this.getIField(), "field", null, 1, 1, KField.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        initEClass(eClassDataSelectionEClass, EClassDataSelection.class, "EClassDataSelection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getEClassDataSelection_Types(), this.getEType(), null, "types", null, 0, -1, EClassDataSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        getEClassDataSelection_Types().getEKeys().add(this.getEType_Type());
+        initEClass(kMethodEClass, KMethod.class, "KMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getKMethod_Method(), this.getIMethod(), "method", null, 1, 1, KMethod.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getKMethod_ParameterTypeSignatures(), this.getKParameterTypeSignature(), null, "parameterTypeSignatures", null, 0, -1, KMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        initEClass(eParameterTypeSignatureEClass, EParameterTypeSignature.class, "EParameterTypeSignature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEAttribute(getEParameterTypeSignature_Name(), ecorePackage.getEString(), "name", null, 1, 1, EParameterTypeSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEClass(kParameterTypeSignatureEClass, KParameterTypeSignature.class, "KParameterTypeSignature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getKParameterTypeSignature_Name(), ecorePackage.getEString(), "name", null, 1, 1, KParameterTypeSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(kTypeSelectionEClass, KTypeSelection.class, "KTypeSelection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getKTypeSelection_Types(), this.getKType(), null, "types", null, 0, -1, KTypeSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        getKTypeSelection_Types().getEKeys().add(this.getKType_Type());
 
         // Initialize data types
-        initEDataType(iMethodEDataType, IMethod.class, "IMethod", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-        initEDataType(iFieldEDataType, IField.class, "IField", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
         initEDataType(iTypeEDataType, IType.class, "IType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+        initEDataType(iFieldEDataType, IField.class, "IField", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+        initEDataType(iMethodEDataType, IMethod.class, "IMethod", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
         // Create resource
         createResource(eNS_URI);
