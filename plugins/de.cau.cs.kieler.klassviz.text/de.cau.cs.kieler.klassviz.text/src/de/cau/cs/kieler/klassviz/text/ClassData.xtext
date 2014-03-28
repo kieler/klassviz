@@ -19,6 +19,9 @@ import "http://kieler.cs.cau.de/classdata"
 
 KTypeSelection returns KTypeSelection:
     {KTypeSelection}
+    ('import'
+        ('project' javaProjects+=QualifiedID | 'bundle' bundles+=QualifiedID)
+    )*
     (types+=KType)*;
 
 KType returns KType:

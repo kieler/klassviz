@@ -21,24 +21,68 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "KTypeSelection");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cKTypeSelectionAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cTypesAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cTypesKTypeParserRuleCall_1_0 = (RuleCall)cTypesAssignment_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cImportKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
+		private final Group cGroup_1_1_0 = (Group)cAlternatives_1_1.eContents().get(0);
+		private final Keyword cProjectKeyword_1_1_0_0 = (Keyword)cGroup_1_1_0.eContents().get(0);
+		private final Assignment cJavaProjectsAssignment_1_1_0_1 = (Assignment)cGroup_1_1_0.eContents().get(1);
+		private final RuleCall cJavaProjectsQualifiedIDParserRuleCall_1_1_0_1_0 = (RuleCall)cJavaProjectsAssignment_1_1_0_1.eContents().get(0);
+		private final Group cGroup_1_1_1 = (Group)cAlternatives_1_1.eContents().get(1);
+		private final Keyword cBundleKeyword_1_1_1_0 = (Keyword)cGroup_1_1_1.eContents().get(0);
+		private final Assignment cBundlesAssignment_1_1_1_1 = (Assignment)cGroup_1_1_1.eContents().get(1);
+		private final RuleCall cBundlesQualifiedIDParserRuleCall_1_1_1_1_0 = (RuleCall)cBundlesAssignment_1_1_1_1.eContents().get(0);
+		private final Assignment cTypesAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTypesKTypeParserRuleCall_2_0 = (RuleCall)cTypesAssignment_2.eContents().get(0);
 		
 		//KTypeSelection:
-		//	{KTypeSelection} types+=KType*;
+		//	{KTypeSelection} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* types+=KType*;
 		public ParserRule getRule() { return rule; }
 
-		//{KTypeSelection} types+=KType*
+		//{KTypeSelection} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* types+=KType*
 		public Group getGroup() { return cGroup; }
 
 		//{KTypeSelection}
 		public Action getKTypeSelectionAction_0() { return cKTypeSelectionAction_0; }
 
+		//("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"import"
+		public Keyword getImportKeyword_1_0() { return cImportKeyword_1_0; }
+
+		//"project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID
+		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
+
+		//"project" javaProjects+=QualifiedID
+		public Group getGroup_1_1_0() { return cGroup_1_1_0; }
+
+		//"project"
+		public Keyword getProjectKeyword_1_1_0_0() { return cProjectKeyword_1_1_0_0; }
+
+		//javaProjects+=QualifiedID
+		public Assignment getJavaProjectsAssignment_1_1_0_1() { return cJavaProjectsAssignment_1_1_0_1; }
+
+		//QualifiedID
+		public RuleCall getJavaProjectsQualifiedIDParserRuleCall_1_1_0_1_0() { return cJavaProjectsQualifiedIDParserRuleCall_1_1_0_1_0; }
+
+		//"bundle" bundles+=QualifiedID
+		public Group getGroup_1_1_1() { return cGroup_1_1_1; }
+
+		//"bundle"
+		public Keyword getBundleKeyword_1_1_1_0() { return cBundleKeyword_1_1_1_0; }
+
+		//bundles+=QualifiedID
+		public Assignment getBundlesAssignment_1_1_1_1() { return cBundlesAssignment_1_1_1_1; }
+
+		//QualifiedID
+		public RuleCall getBundlesQualifiedIDParserRuleCall_1_1_1_1_0() { return cBundlesQualifiedIDParserRuleCall_1_1_1_1_0; }
+
 		//types+=KType*
-		public Assignment getTypesAssignment_1() { return cTypesAssignment_1; }
+		public Assignment getTypesAssignment_2() { return cTypesAssignment_2; }
 
 		//KType
-		public RuleCall getTypesKTypeParserRuleCall_1_0() { return cTypesKTypeParserRuleCall_1_0; }
+		public RuleCall getTypesKTypeParserRuleCall_2_0() { return cTypesKTypeParserRuleCall_2_0; }
 	}
 
 	public class KTypeElements extends AbstractParserRuleElementFinder {
@@ -317,7 +361,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//KTypeSelection:
-	//	{KTypeSelection} types+=KType*;
+	//	{KTypeSelection} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* types+=KType*;
 	public KTypeSelectionElements getKTypeSelectionAccess() {
 		return (pKTypeSelection != null) ? pKTypeSelection : (pKTypeSelection = new KTypeSelectionElements());
 	}

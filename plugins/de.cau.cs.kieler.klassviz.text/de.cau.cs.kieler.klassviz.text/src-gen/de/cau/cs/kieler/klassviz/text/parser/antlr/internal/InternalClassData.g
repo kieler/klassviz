@@ -83,19 +83,68 @@ ruleKTypeSelection returns [EObject current=null]
             grammarAccess.getKTypeSelectionAccess().getKTypeSelectionAction_0(),
             $current);
     }
-)(
+)(	otherlv_1='import' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getKTypeSelectionAccess().getImportKeyword_1_0());
+    }
+((	otherlv_2='project' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getKTypeSelectionAccess().getProjectKeyword_1_1_0_0());
+    }
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getKTypeSelectionAccess().getTypesKTypeParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getKTypeSelectionAccess().getJavaProjectsQualifiedIDParserRuleCall_1_1_0_1_0()); 
 	    }
-		lv_types_1_0=ruleKType		{
+		lv_javaProjects_3_0=ruleQualifiedID		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getKTypeSelectionRule());
+	        }
+       		add(
+       			$current, 
+       			"javaProjects",
+        		lv_javaProjects_3_0, 
+        		"QualifiedID");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+    |(	otherlv_4='bundle' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getKTypeSelectionAccess().getBundleKeyword_1_1_1_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getKTypeSelectionAccess().getBundlesQualifiedIDParserRuleCall_1_1_1_1_0()); 
+	    }
+		lv_bundles_5_0=ruleQualifiedID		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getKTypeSelectionRule());
+	        }
+       		add(
+       			$current, 
+       			"bundles",
+        		lv_bundles_5_0, 
+        		"QualifiedID");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))))*(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getKTypeSelectionAccess().getTypesKTypeParserRuleCall_2_0()); 
+	    }
+		lv_types_6_0=ruleKType		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getKTypeSelectionRule());
 	        }
        		add(
        			$current, 
        			"types",
-        		lv_types_1_0, 
+        		lv_types_6_0, 
         		"KType");
 	        afterParserOrEnumRuleCall();
 	    }

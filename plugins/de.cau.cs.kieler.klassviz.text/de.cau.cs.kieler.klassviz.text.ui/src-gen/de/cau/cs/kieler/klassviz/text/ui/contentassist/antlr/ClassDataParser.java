@@ -37,10 +37,14 @@ public class ClassDataParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getKTypeSelectionAccess().getAlternatives_1_1(), "rule__KTypeSelection__Alternatives_1_1");
 					put(grammarAccess.getKTypeAccess().getAlternatives_3(), "rule__KType__Alternatives_3");
 					put(grammarAccess.getPropertyValueAccess().getAlternatives(), "rule__PropertyValue__Alternatives");
 					put(grammarAccess.getFloatAccess().getAlternatives(), "rule__Float__Alternatives");
 					put(grammarAccess.getKTypeSelectionAccess().getGroup(), "rule__KTypeSelection__Group__0");
+					put(grammarAccess.getKTypeSelectionAccess().getGroup_1(), "rule__KTypeSelection__Group_1__0");
+					put(grammarAccess.getKTypeSelectionAccess().getGroup_1_1_0(), "rule__KTypeSelection__Group_1_1_0__0");
+					put(grammarAccess.getKTypeSelectionAccess().getGroup_1_1_1(), "rule__KTypeSelection__Group_1_1_1__0");
 					put(grammarAccess.getKTypeAccess().getGroup(), "rule__KType__Group__0");
 					put(grammarAccess.getKMethodAccess().getGroup(), "rule__KMethod__Group__0");
 					put(grammarAccess.getKMethodAccess().getGroup_2(), "rule__KMethod__Group_2__0");
@@ -48,7 +52,9 @@ public class ClassDataParser extends AbstractContentAssistParser {
 					put(grammarAccess.getKParameterTypeSignatureAccess().getGroup(), "rule__KParameterTypeSignature__Group__0");
 					put(grammarAccess.getQualifiedIDAccess().getGroup(), "rule__QualifiedID__Group__0");
 					put(grammarAccess.getQualifiedIDAccess().getGroup_1(), "rule__QualifiedID__Group_1__0");
-					put(grammarAccess.getKTypeSelectionAccess().getTypesAssignment_1(), "rule__KTypeSelection__TypesAssignment_1");
+					put(grammarAccess.getKTypeSelectionAccess().getJavaProjectsAssignment_1_1_0_1(), "rule__KTypeSelection__JavaProjectsAssignment_1_1_0_1");
+					put(grammarAccess.getKTypeSelectionAccess().getBundlesAssignment_1_1_1_1(), "rule__KTypeSelection__BundlesAssignment_1_1_1_1");
+					put(grammarAccess.getKTypeSelectionAccess().getTypesAssignment_2(), "rule__KTypeSelection__TypesAssignment_2");
 					put(grammarAccess.getKTypeAccess().getQualifiedNameAssignment_1(), "rule__KType__QualifiedNameAssignment_1");
 					put(grammarAccess.getKTypeAccess().getFieldsAssignment_3_0(), "rule__KType__FieldsAssignment_3_0");
 					put(grammarAccess.getKTypeAccess().getMethodsAssignment_3_1(), "rule__KType__MethodsAssignment_3_1");

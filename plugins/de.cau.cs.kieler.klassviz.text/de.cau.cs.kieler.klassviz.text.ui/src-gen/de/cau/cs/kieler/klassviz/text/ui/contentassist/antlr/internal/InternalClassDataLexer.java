@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalClassDataLexer extends Lexer {
+    public static final int T__19=19;
     public static final int RULE_BOOLEAN=7;
     public static final int RULE_ID=6;
     public static final int RULE_STRING=8;
@@ -22,6 +23,8 @@ public class InternalClassDataLexer extends Lexer {
     public static final int T__12=12;
     public static final int T__14=14;
     public static final int T__13=13;
+    public static final int T__21=21;
+    public static final int T__20=20;
     public static final int RULE_NATURAL=5;
     public static final int RULE_WS=11;
     public static final int RULE_SL_COMMENT=10;
@@ -47,10 +50,10 @@ public class InternalClassDataLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:11:7: ( 'type' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:11:9: 'type'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:11:7: ( 'import' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:11:9: 'import'
             {
-            match("type"); 
+            match("import"); 
 
 
             }
@@ -68,10 +71,11 @@ public class InternalClassDataLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:12:7: ( '{' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:12:9: '{'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:12:7: ( 'project' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:12:9: 'project'
             {
-            match('{'); 
+            match("project"); 
+
 
             }
 
@@ -88,10 +92,11 @@ public class InternalClassDataLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:13:7: ( '}' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:13:9: '}'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:13:7: ( 'bundle' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:13:9: 'bundle'
             {
-            match('}'); 
+            match("bundle"); 
+
 
             }
 
@@ -108,10 +113,11 @@ public class InternalClassDataLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:14:7: ( '(' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:14:9: '('
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:14:7: ( 'type' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:14:9: 'type'
             {
-            match('('); 
+            match("type"); 
+
 
             }
 
@@ -128,10 +134,10 @@ public class InternalClassDataLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:15:7: ( ')' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:15:9: ')'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:15:7: ( '{' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:15:9: '{'
             {
-            match(')'); 
+            match('{'); 
 
             }
 
@@ -148,10 +154,10 @@ public class InternalClassDataLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:16:7: ( ',' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:16:9: ','
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:16:7: ( '}' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:16:9: '}'
             {
-            match(','); 
+            match('}'); 
 
             }
 
@@ -168,10 +174,10 @@ public class InternalClassDataLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:17:7: ( '.' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:17:9: '.'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:17:7: ( '(' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:17:9: '('
             {
-            match('.'); 
+            match('('); 
 
             }
 
@@ -183,15 +189,75 @@ public class InternalClassDataLexer extends Lexer {
     }
     // $ANTLR end "T__18"
 
+    // $ANTLR start "T__19"
+    public final void mT__19() throws RecognitionException {
+        try {
+            int _type = T__19;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:18:7: ( ')' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:18:9: ')'
+            {
+            match(')'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__19"
+
+    // $ANTLR start "T__20"
+    public final void mT__20() throws RecognitionException {
+        try {
+            int _type = T__20;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:19:7: ( ',' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:19:9: ','
+            {
+            match(','); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__20"
+
+    // $ANTLR start "T__21"
+    public final void mT__21() throws RecognitionException {
+        try {
+            int _type = T__21;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:20:7: ( '.' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:20:9: '.'
+            {
+            match('.'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__21"
+
     // $ANTLR start "RULE_BOOLEAN"
     public final void mRULE_BOOLEAN() throws RecognitionException {
         try {
             int _type = RULE_BOOLEAN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1103:14: ( ( 'true' | 'false' ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1103:16: ( 'true' | 'false' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1375:14: ( ( 'true' | 'false' ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1375:16: ( 'true' | 'false' )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1103:16: ( 'true' | 'false' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1375:16: ( 'true' | 'false' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -209,7 +275,7 @@ public class InternalClassDataLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1103:17: 'true'
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1375:17: 'true'
                     {
                     match("true"); 
 
@@ -217,7 +283,7 @@ public class InternalClassDataLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1103:24: 'false'
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1375:24: 'false'
                     {
                     match("false"); 
 
@@ -243,15 +309,15 @@ public class InternalClassDataLexer extends Lexer {
         try {
             int _type = RULE_TFLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:13: ( ( ( '+' | '-' ) ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )* )? ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? ) | ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | ( '0' .. '9' )+ ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:15: ( ( '+' | '-' ) ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )* )? ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? ) | ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | ( '0' .. '9' )+ ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:13: ( ( ( '+' | '-' ) ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )* )? ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? ) | ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | ( '0' .. '9' )+ ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:15: ( ( '+' | '-' ) ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )* )? ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? ) | ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | ( '0' .. '9' )+ ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:15: ( ( '+' | '-' ) ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )* )? ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? ) | ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | ( '0' .. '9' )+ ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:15: ( ( '+' | '-' ) ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )* )? ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? ) | ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | ( '0' .. '9' )+ ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )
             int alt25=4;
             alt25 = dfa25.predict(input);
             switch (alt25) {
                 case 1 :
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:16: ( '+' | '-' ) ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )* )? ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:16: ( '+' | '-' ) ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )* )? ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? )
                     {
                     if ( input.LA(1)=='+'||input.LA(1)=='-' ) {
                         input.consume();
@@ -262,7 +328,7 @@ public class InternalClassDataLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:26: ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )* )? ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:26: ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )* )? ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? )
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -280,9 +346,9 @@ public class InternalClassDataLexer extends Lexer {
                     }
                     switch (alt12) {
                         case 1 :
-                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:27: ( '0' .. '9' )+ ( '.' ( '0' .. '9' )* )? ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
+                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:27: ( '0' .. '9' )+ ( '.' ( '0' .. '9' )* )? ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
                             {
-                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:27: ( '0' .. '9' )+
+                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:27: ( '0' .. '9' )+
                             int cnt2=0;
                             loop2:
                             do {
@@ -296,7 +362,7 @@ public class InternalClassDataLexer extends Lexer {
 
                                 switch (alt2) {
                             	case 1 :
-                            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:28: '0' .. '9'
+                            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:28: '0' .. '9'
                             	    {
                             	    matchRange('0','9'); 
 
@@ -312,7 +378,7 @@ public class InternalClassDataLexer extends Lexer {
                                 cnt2++;
                             } while (true);
 
-                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:39: ( '.' ( '0' .. '9' )* )?
+                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:39: ( '.' ( '0' .. '9' )* )?
                             int alt4=2;
                             int LA4_0 = input.LA(1);
 
@@ -321,10 +387,10 @@ public class InternalClassDataLexer extends Lexer {
                             }
                             switch (alt4) {
                                 case 1 :
-                                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:40: '.' ( '0' .. '9' )*
+                                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:40: '.' ( '0' .. '9' )*
                                     {
                                     match('.'); 
-                                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:44: ( '0' .. '9' )*
+                                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:44: ( '0' .. '9' )*
                                     loop3:
                                     do {
                                         int alt3=2;
@@ -337,7 +403,7 @@ public class InternalClassDataLexer extends Lexer {
 
                                         switch (alt3) {
                                     	case 1 :
-                                    	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:45: '0' .. '9'
+                                    	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:45: '0' .. '9'
                                     	    {
                                     	    matchRange('0','9'); 
 
@@ -355,7 +421,7 @@ public class InternalClassDataLexer extends Lexer {
 
                             }
 
-                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:58: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
+                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:58: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
                             int alt7=2;
                             int LA7_0 = input.LA(1);
 
@@ -364,7 +430,7 @@ public class InternalClassDataLexer extends Lexer {
                             }
                             switch (alt7) {
                                 case 1 :
-                                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:59: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
+                                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:59: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
                                     {
                                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                                         input.consume();
@@ -375,7 +441,7 @@ public class InternalClassDataLexer extends Lexer {
                                         recover(mse);
                                         throw mse;}
 
-                                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:69: ( '+' | '-' )?
+                                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:69: ( '+' | '-' )?
                                     int alt5=2;
                                     int LA5_0 = input.LA(1);
 
@@ -401,7 +467,7 @@ public class InternalClassDataLexer extends Lexer {
 
                                     }
 
-                                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:80: ( '0' .. '9' )+
+                                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:80: ( '0' .. '9' )+
                                     int cnt6=0;
                                     loop6:
                                     do {
@@ -415,7 +481,7 @@ public class InternalClassDataLexer extends Lexer {
 
                                         switch (alt6) {
                                     	case 1 :
-                                    	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:81: '0' .. '9'
+                                    	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:81: '0' .. '9'
                                     	    {
                                     	    matchRange('0','9'); 
 
@@ -441,10 +507,10 @@ public class InternalClassDataLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:94: '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
+                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:94: '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
                             {
                             match('.'); 
-                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:98: ( '0' .. '9' )+
+                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:98: ( '0' .. '9' )+
                             int cnt8=0;
                             loop8:
                             do {
@@ -458,7 +524,7 @@ public class InternalClassDataLexer extends Lexer {
 
                                 switch (alt8) {
                             	case 1 :
-                            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:99: '0' .. '9'
+                            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:99: '0' .. '9'
                             	    {
                             	    matchRange('0','9'); 
 
@@ -474,7 +540,7 @@ public class InternalClassDataLexer extends Lexer {
                                 cnt8++;
                             } while (true);
 
-                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:110: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
+                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:110: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
                             int alt11=2;
                             int LA11_0 = input.LA(1);
 
@@ -483,7 +549,7 @@ public class InternalClassDataLexer extends Lexer {
                             }
                             switch (alt11) {
                                 case 1 :
-                                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:111: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
+                                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:111: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
                                     {
                                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                                         input.consume();
@@ -494,7 +560,7 @@ public class InternalClassDataLexer extends Lexer {
                                         recover(mse);
                                         throw mse;}
 
-                                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:121: ( '+' | '-' )?
+                                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:121: ( '+' | '-' )?
                                     int alt9=2;
                                     int LA9_0 = input.LA(1);
 
@@ -520,7 +586,7 @@ public class InternalClassDataLexer extends Lexer {
 
                                     }
 
-                                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:132: ( '0' .. '9' )+
+                                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:132: ( '0' .. '9' )+
                                     int cnt10=0;
                                     loop10:
                                     do {
@@ -534,7 +600,7 @@ public class InternalClassDataLexer extends Lexer {
 
                                         switch (alt10) {
                                     	case 1 :
-                                    	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:133: '0' .. '9'
+                                    	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:133: '0' .. '9'
                                     	    {
                                     	    matchRange('0','9'); 
 
@@ -566,9 +632,9 @@ public class InternalClassDataLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:147: ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:147: ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
                     {
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:147: ( '0' .. '9' )+
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:147: ( '0' .. '9' )+
                     int cnt13=0;
                     loop13:
                     do {
@@ -582,7 +648,7 @@ public class InternalClassDataLexer extends Lexer {
 
                         switch (alt13) {
                     	case 1 :
-                    	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:148: '0' .. '9'
+                    	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:148: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -599,7 +665,7 @@ public class InternalClassDataLexer extends Lexer {
                     } while (true);
 
                     match('.'); 
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:163: ( '0' .. '9' )*
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:163: ( '0' .. '9' )*
                     loop14:
                     do {
                         int alt14=2;
@@ -612,7 +678,7 @@ public class InternalClassDataLexer extends Lexer {
 
                         switch (alt14) {
                     	case 1 :
-                    	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:164: '0' .. '9'
+                    	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:164: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -624,7 +690,7 @@ public class InternalClassDataLexer extends Lexer {
                         }
                     } while (true);
 
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:175: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:175: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
                     int alt17=2;
                     int LA17_0 = input.LA(1);
 
@@ -633,7 +699,7 @@ public class InternalClassDataLexer extends Lexer {
                     }
                     switch (alt17) {
                         case 1 :
-                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:176: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
+                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:176: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
                             {
                             if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                                 input.consume();
@@ -644,7 +710,7 @@ public class InternalClassDataLexer extends Lexer {
                                 recover(mse);
                                 throw mse;}
 
-                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:186: ( '+' | '-' )?
+                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:186: ( '+' | '-' )?
                             int alt15=2;
                             int LA15_0 = input.LA(1);
 
@@ -670,7 +736,7 @@ public class InternalClassDataLexer extends Lexer {
 
                             }
 
-                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:197: ( '0' .. '9' )+
+                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:197: ( '0' .. '9' )+
                             int cnt16=0;
                             loop16:
                             do {
@@ -684,7 +750,7 @@ public class InternalClassDataLexer extends Lexer {
 
                                 switch (alt16) {
                             	case 1 :
-                            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:198: '0' .. '9'
+                            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:198: '0' .. '9'
                             	    {
                             	    matchRange('0','9'); 
 
@@ -710,10 +776,10 @@ public class InternalClassDataLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:211: '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:211: '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
                     {
                     match('.'); 
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:215: ( '0' .. '9' )+
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:215: ( '0' .. '9' )+
                     int cnt18=0;
                     loop18:
                     do {
@@ -727,7 +793,7 @@ public class InternalClassDataLexer extends Lexer {
 
                         switch (alt18) {
                     	case 1 :
-                    	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:216: '0' .. '9'
+                    	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:216: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -743,7 +809,7 @@ public class InternalClassDataLexer extends Lexer {
                         cnt18++;
                     } while (true);
 
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:227: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:227: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
                     int alt21=2;
                     int LA21_0 = input.LA(1);
 
@@ -752,7 +818,7 @@ public class InternalClassDataLexer extends Lexer {
                     }
                     switch (alt21) {
                         case 1 :
-                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:228: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
+                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:228: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
                             {
                             if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                                 input.consume();
@@ -763,7 +829,7 @@ public class InternalClassDataLexer extends Lexer {
                                 recover(mse);
                                 throw mse;}
 
-                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:238: ( '+' | '-' )?
+                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:238: ( '+' | '-' )?
                             int alt19=2;
                             int LA19_0 = input.LA(1);
 
@@ -789,7 +855,7 @@ public class InternalClassDataLexer extends Lexer {
 
                             }
 
-                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:249: ( '0' .. '9' )+
+                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:249: ( '0' .. '9' )+
                             int cnt20=0;
                             loop20:
                             do {
@@ -803,7 +869,7 @@ public class InternalClassDataLexer extends Lexer {
 
                                 switch (alt20) {
                             	case 1 :
-                            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:250: '0' .. '9'
+                            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:250: '0' .. '9'
                             	    {
                             	    matchRange('0','9'); 
 
@@ -829,9 +895,9 @@ public class InternalClassDataLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:263: ( '0' .. '9' )+ ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:263: ( '0' .. '9' )+ ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
                     {
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:263: ( '0' .. '9' )+
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:263: ( '0' .. '9' )+
                     int cnt22=0;
                     loop22:
                     do {
@@ -845,7 +911,7 @@ public class InternalClassDataLexer extends Lexer {
 
                         switch (alt22) {
                     	case 1 :
-                    	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:264: '0' .. '9'
+                    	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:264: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -870,7 +936,7 @@ public class InternalClassDataLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:285: ( '+' | '-' )?
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:285: ( '+' | '-' )?
                     int alt23=2;
                     int LA23_0 = input.LA(1);
 
@@ -896,7 +962,7 @@ public class InternalClassDataLexer extends Lexer {
 
                     }
 
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:296: ( '0' .. '9' )+
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:296: ( '0' .. '9' )+
                     int cnt24=0;
                     loop24:
                     do {
@@ -910,7 +976,7 @@ public class InternalClassDataLexer extends Lexer {
 
                         switch (alt24) {
                     	case 1 :
-                    	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:297: '0' .. '9'
+                    	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1377:297: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -948,10 +1014,10 @@ public class InternalClassDataLexer extends Lexer {
         try {
             int _type = RULE_NATURAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1107:14: ( ( '0' .. '9' )+ )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1107:16: ( '0' .. '9' )+
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1379:14: ( ( '0' .. '9' )+ )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1379:16: ( '0' .. '9' )+
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1107:16: ( '0' .. '9' )+
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1379:16: ( '0' .. '9' )+
             int cnt26=0;
             loop26:
             do {
@@ -965,7 +1031,7 @@ public class InternalClassDataLexer extends Lexer {
 
                 switch (alt26) {
             	case 1 :
-            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1107:17: '0' .. '9'
+            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1379:17: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -997,10 +1063,10 @@ public class InternalClassDataLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1109:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1109:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1381:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1381:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1109:11: ( '^' )?
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1381:11: ( '^' )?
             int alt27=2;
             int LA27_0 = input.LA(1);
 
@@ -1009,7 +1075,7 @@ public class InternalClassDataLexer extends Lexer {
             }
             switch (alt27) {
                 case 1 :
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1109:11: '^'
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1381:11: '^'
                     {
                     match('^'); 
 
@@ -1027,7 +1093,7 @@ public class InternalClassDataLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1109:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1381:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop28:
             do {
                 int alt28=2;
@@ -1076,11 +1142,11 @@ public class InternalClassDataLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1111:13: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1111:15: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1383:13: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1383:15: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
             {
             match('\"'); 
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1111:19: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1383:19: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
             loop29:
             do {
                 int alt29=3;
@@ -1096,7 +1162,7 @@ public class InternalClassDataLexer extends Lexer {
 
                 switch (alt29) {
             	case 1 :
-            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1111:20: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1383:20: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
             	    {
             	    match('\\'); 
             	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1112,7 +1178,7 @@ public class InternalClassDataLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1111:65: ~ ( ( '\\\\' | '\"' ) )
+            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1383:65: ~ ( ( '\\\\' | '\"' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1149,12 +1215,12 @@ public class InternalClassDataLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1113:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1113:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1385:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1385:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1113:24: ( options {greedy=false; } : . )*
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1385:24: ( options {greedy=false; } : . )*
             loop30:
             do {
                 int alt30=2;
@@ -1179,7 +1245,7 @@ public class InternalClassDataLexer extends Lexer {
 
                 switch (alt30) {
             	case 1 :
-            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1113:52: .
+            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1385:52: .
             	    {
             	    matchAny(); 
 
@@ -1209,12 +1275,12 @@ public class InternalClassDataLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1115:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1115:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1387:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1387:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1115:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1387:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop31:
             do {
                 int alt31=2;
@@ -1227,7 +1293,7 @@ public class InternalClassDataLexer extends Lexer {
 
                 switch (alt31) {
             	case 1 :
-            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1115:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1387:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1247,7 +1313,7 @@ public class InternalClassDataLexer extends Lexer {
                 }
             } while (true);
 
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1115:40: ( ( '\\r' )? '\\n' )?
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1387:40: ( ( '\\r' )? '\\n' )?
             int alt33=2;
             int LA33_0 = input.LA(1);
 
@@ -1256,9 +1322,9 @@ public class InternalClassDataLexer extends Lexer {
             }
             switch (alt33) {
                 case 1 :
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1115:41: ( '\\r' )? '\\n'
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1387:41: ( '\\r' )? '\\n'
                     {
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1115:41: ( '\\r' )?
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1387:41: ( '\\r' )?
                     int alt32=2;
                     int LA32_0 = input.LA(1);
 
@@ -1267,7 +1333,7 @@ public class InternalClassDataLexer extends Lexer {
                     }
                     switch (alt32) {
                         case 1 :
-                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1115:41: '\\r'
+                            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1387:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1299,10 +1365,10 @@ public class InternalClassDataLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1117:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1117:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1389:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1389:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1117:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1389:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt34=0;
             loop34:
             do {
@@ -1352,8 +1418,8 @@ public class InternalClassDataLexer extends Lexer {
     // $ANTLR end "RULE_WS"
 
     public void mTokens() throws RecognitionException {
-        // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | RULE_BOOLEAN | RULE_TFLOAT | RULE_NATURAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS )
-        int alt35=15;
+        // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | RULE_BOOLEAN | RULE_TFLOAT | RULE_NATURAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS )
+        int alt35=18;
         alt35 = dfa35.predict(input);
         switch (alt35) {
             case 1 :
@@ -1406,56 +1472,77 @@ public class InternalClassDataLexer extends Lexer {
                 }
                 break;
             case 8 :
-                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:52: RULE_BOOLEAN
+                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:52: T__19
+                {
+                mT__19(); 
+
+                }
+                break;
+            case 9 :
+                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:58: T__20
+                {
+                mT__20(); 
+
+                }
+                break;
+            case 10 :
+                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:64: T__21
+                {
+                mT__21(); 
+
+                }
+                break;
+            case 11 :
+                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:70: RULE_BOOLEAN
                 {
                 mRULE_BOOLEAN(); 
 
                 }
                 break;
-            case 9 :
-                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:65: RULE_TFLOAT
+            case 12 :
+                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:83: RULE_TFLOAT
                 {
                 mRULE_TFLOAT(); 
 
                 }
                 break;
-            case 10 :
-                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:77: RULE_NATURAL
+            case 13 :
+                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:95: RULE_NATURAL
                 {
                 mRULE_NATURAL(); 
 
                 }
                 break;
-            case 11 :
-                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:90: RULE_ID
+            case 14 :
+                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:108: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 12 :
-                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:98: RULE_STRING
+            case 15 :
+                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:116: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 13 :
-                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:110: RULE_ML_COMMENT
+            case 16 :
+                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:128: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 14 :
-                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:126: RULE_SL_COMMENT
+            case 17 :
+                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:144: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 15 :
-                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:142: RULE_WS
+            case 18 :
+                // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1:160: RULE_WS
                 {
                 mRULE_WS(); 
 
@@ -1478,13 +1565,13 @@ public class InternalClassDataLexer extends Lexer {
     static final String DFA25_maxS =
         "\1\71\1\uffff\1\145\3\uffff";
     static final String DFA25_acceptS =
-        "\1\uffff\1\1\1\uffff\1\3\1\4\1\2";
+        "\1\uffff\1\1\1\uffff\1\3\1\2\1\4";
     static final String DFA25_specialS =
         "\6\uffff}>";
     static final String[] DFA25_transitionS = {
             "\1\1\1\uffff\1\1\1\3\1\uffff\12\2",
             "",
-            "\1\5\1\uffff\12\2\13\uffff\1\4\37\uffff\1\4",
+            "\1\4\1\uffff\12\2\13\uffff\1\5\37\uffff\1\5",
             "",
             "",
             ""
@@ -1520,61 +1607,89 @@ public class InternalClassDataLexer extends Lexer {
             this.transition = DFA25_transition;
         }
         public String getDescription() {
-            return "1105:15: ( ( '+' | '-' ) ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )* )? ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? ) | ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | ( '0' .. '9' )+ ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )";
+            return "1377:15: ( ( '+' | '-' ) ( ( '0' .. '9' )+ ( '.' ( '0' .. '9' )* )? ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? ) | ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '.' ( '0' .. '9' )+ ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | ( '0' .. '9' )+ ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )";
         }
     }
     static final String DFA35_eotS =
-        "\1\uffff\1\13\5\uffff\1\21\1\13\1\uffff\1\23\4\uffff\2\13\1\uffff"+
-        "\1\13\3\uffff\3\13\1\34\1\35\1\13\2\uffff\1\35";
+        "\1\uffff\4\16\5\uffff\1\27\1\16\1\uffff\1\31\4\uffff\5\16\1\uffff"+
+        "\1\16\3\uffff\11\16\1\53\1\54\4\16\2\uffff\1\54\1\61\1\16\1\63\1"+
+        "\uffff\1\64\2\uffff";
     static final String DFA35_eofS =
-        "\37\uffff";
+        "\65\uffff";
     static final String DFA35_minS =
-        "\1\11\1\162\5\uffff\1\60\1\141\1\uffff\1\56\2\uffff\1\52\1\uffff"+
-        "\1\160\1\165\1\uffff\1\154\3\uffff\2\145\1\163\2\60\1\145\2\uffff"+
-        "\1\60";
+        "\1\11\1\155\1\162\1\165\1\162\5\uffff\1\60\1\141\1\uffff\1\56\2"+
+        "\uffff\1\52\1\uffff\1\160\1\157\1\156\1\160\1\165\1\uffff\1\154"+
+        "\3\uffff\1\157\1\152\1\144\2\145\1\163\1\162\1\145\1\154\2\60\1"+
+        "\145\1\164\1\143\1\145\2\uffff\2\60\1\164\1\60\1\uffff\1\60\2\uffff";
     static final String DFA35_maxS =
-        "\1\175\1\171\5\uffff\1\71\1\141\1\uffff\1\145\2\uffff\1\57\1\uffff"+
-        "\1\160\1\165\1\uffff\1\154\3\uffff\2\145\1\163\2\172\1\145\2\uffff"+
-        "\1\172";
+        "\1\175\1\155\1\162\1\165\1\171\5\uffff\1\71\1\141\1\uffff\1\145"+
+        "\2\uffff\1\57\1\uffff\1\160\1\157\1\156\1\160\1\165\1\uffff\1\154"+
+        "\3\uffff\1\157\1\152\1\144\2\145\1\163\1\162\1\145\1\154\2\172\1"+
+        "\145\1\164\1\143\1\145\2\uffff\2\172\1\164\1\172\1\uffff\1\172\2"+
+        "\uffff";
     static final String DFA35_acceptS =
-        "\2\uffff\1\2\1\3\1\4\1\5\1\6\2\uffff\1\11\1\uffff\1\13\1\14\1\uffff"+
-        "\1\17\2\uffff\1\7\1\uffff\1\12\1\15\1\16\6\uffff\1\1\1\10\1\uffff";
+        "\5\uffff\1\5\1\6\1\7\1\10\1\11\2\uffff\1\14\1\uffff\1\16\1\17\1"+
+        "\uffff\1\22\5\uffff\1\12\1\uffff\1\15\1\20\1\21\17\uffff\1\4\1\13"+
+        "\4\uffff\1\1\1\uffff\1\3\1\2";
     static final String DFA35_specialS =
-        "\37\uffff}>";
+        "\65\uffff}>";
     static final String[] DFA35_transitionS = {
-            "\2\16\2\uffff\1\16\22\uffff\1\16\1\uffff\1\14\5\uffff\1\4\1"+
-            "\5\1\uffff\1\11\1\6\1\11\1\7\1\15\12\12\7\uffff\32\13\3\uffff"+
-            "\2\13\1\uffff\5\13\1\10\15\13\1\1\6\13\1\2\1\uffff\1\3",
-            "\1\20\6\uffff\1\17",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\12\11",
+            "\2\21\2\uffff\1\21\22\uffff\1\21\1\uffff\1\17\5\uffff\1\7\1"+
+            "\10\1\uffff\1\14\1\11\1\14\1\12\1\20\12\15\7\uffff\32\16\3\uffff"+
+            "\2\16\1\uffff\1\16\1\3\3\16\1\13\2\16\1\1\6\16\1\2\3\16\1\4"+
+            "\6\16\1\5\1\uffff\1\6",
             "\1\22",
+            "\1\23",
+            "\1\24",
+            "\1\26\6\uffff\1\25",
             "",
-            "\1\11\1\uffff\12\12\13\uffff\1\11\37\uffff\1\11",
             "",
             "",
-            "\1\24\4\uffff\1\25",
             "",
-            "\1\26",
-            "\1\27",
             "",
+            "\12\14",
             "\1\30",
             "",
+            "\1\14\1\uffff\12\15\13\uffff\1\14\37\uffff\1\14",
             "",
             "",
-            "\1\31",
-            "\1\32",
-            "\1\33",
-            "\12\13\7\uffff\32\13\4\uffff\1\13\1\uffff\32\13",
-            "\12\13\7\uffff\32\13\4\uffff\1\13\1\uffff\32\13",
+            "\1\32\4\uffff\1\33",
+            "",
+            "\1\34",
+            "\1\35",
             "\1\36",
+            "\1\37",
+            "\1\40",
+            "",
+            "\1\41",
             "",
             "",
-            "\12\13\7\uffff\32\13\4\uffff\1\13\1\uffff\32\13"
+            "",
+            "\1\42",
+            "\1\43",
+            "\1\44",
+            "\1\45",
+            "\1\46",
+            "\1\47",
+            "\1\50",
+            "\1\51",
+            "\1\52",
+            "\12\16\7\uffff\32\16\4\uffff\1\16\1\uffff\32\16",
+            "\12\16\7\uffff\32\16\4\uffff\1\16\1\uffff\32\16",
+            "\1\55",
+            "\1\56",
+            "\1\57",
+            "\1\60",
+            "",
+            "",
+            "\12\16\7\uffff\32\16\4\uffff\1\16\1\uffff\32\16",
+            "\12\16\7\uffff\32\16\4\uffff\1\16\1\uffff\32\16",
+            "\1\62",
+            "\12\16\7\uffff\32\16\4\uffff\1\16\1\uffff\32\16",
+            "",
+            "\12\16\7\uffff\32\16\4\uffff\1\16\1\uffff\32\16",
+            "",
+            ""
     };
 
     static final short[] DFA35_eot = DFA.unpackEncodedString(DFA35_eotS);
@@ -1607,7 +1722,7 @@ public class InternalClassDataLexer extends Lexer {
             this.transition = DFA35_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | RULE_BOOLEAN | RULE_TFLOAT | RULE_NATURAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS );";
+            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | RULE_BOOLEAN | RULE_TFLOAT | RULE_NATURAL | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS );";
         }
     }
  

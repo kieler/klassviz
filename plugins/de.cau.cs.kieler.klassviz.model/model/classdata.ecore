@@ -35,5 +35,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="KTypeSelection">
     <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
         eType="#//KType" containment="true" eKeys="#//KType/type"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="javaProjects" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bundles" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

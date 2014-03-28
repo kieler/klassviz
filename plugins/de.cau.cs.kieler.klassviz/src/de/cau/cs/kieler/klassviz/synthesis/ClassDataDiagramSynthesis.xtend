@@ -56,6 +56,8 @@ import de.cau.cs.kieler.klassviz.model.classdata.KField
  * @author ems
  */
 class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KTypeSelection> {
+    
+    public static val SYNTHESIS_ID = "de.cau.cs.kieler.klassviz.ClassDataDiagramSynthesis"
 
 	@Inject
 	extension KNodeExtensions

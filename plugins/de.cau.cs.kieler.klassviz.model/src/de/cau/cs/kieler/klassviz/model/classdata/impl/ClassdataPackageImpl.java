@@ -323,6 +323,24 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
+    public EAttribute getKTypeSelection_JavaProjects() {
+        return (EAttribute)kTypeSelectionEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getKTypeSelection_Bundles() {
+        return (EAttribute)kTypeSelectionEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EDataType getIType() {
         return iTypeEDataType;
     }
@@ -395,6 +413,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
 
         kTypeSelectionEClass = createEClass(KTYPE_SELECTION);
         createEReference(kTypeSelectionEClass, KTYPE_SELECTION__TYPES);
+        createEAttribute(kTypeSelectionEClass, KTYPE_SELECTION__JAVA_PROJECTS);
+        createEAttribute(kTypeSelectionEClass, KTYPE_SELECTION__BUNDLES);
 
         // Create data types
         iTypeEDataType = createEDataType(ITYPE);
@@ -457,6 +477,8 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
         initEClass(kTypeSelectionEClass, KTypeSelection.class, "KTypeSelection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getKTypeSelection_Types(), this.getKType(), null, "types", null, 0, -1, KTypeSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         getKTypeSelection_Types().getEKeys().add(this.getKType_Type());
+        initEAttribute(getKTypeSelection_JavaProjects(), ecorePackage.getEString(), "javaProjects", null, 0, -1, KTypeSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getKTypeSelection_Bundles(), ecorePackage.getEString(), "bundles", null, 0, -1, KTypeSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Initialize data types
         initEDataType(iTypeEDataType, IType.class, "IType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

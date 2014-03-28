@@ -255,6 +255,28 @@ finally {
 
 
 
+rule__KTypeSelection__Alternatives_1_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getKTypeSelectionAccess().getGroup_1_1_0()); }
+(rule__KTypeSelection__Group_1_1_0__0)
+{ after(grammarAccess.getKTypeSelectionAccess().getGroup_1_1_0()); }
+)
+
+    |(
+{ before(grammarAccess.getKTypeSelectionAccess().getGroup_1_1_1()); }
+(rule__KTypeSelection__Group_1_1_1__0)
+{ after(grammarAccess.getKTypeSelectionAccess().getGroup_1_1_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__KType__Alternatives_3
     @init {
 		int stackSize = keepStackSize();
@@ -339,6 +361,7 @@ rule__KTypeSelection__Group__1
     }
 :
 	rule__KTypeSelection__Group__1__Impl
+	rule__KTypeSelection__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -350,9 +373,228 @@ rule__KTypeSelection__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getKTypeSelectionAccess().getTypesAssignment_1()); }
-(rule__KTypeSelection__TypesAssignment_1)*
-{ after(grammarAccess.getKTypeSelectionAccess().getTypesAssignment_1()); }
+{ before(grammarAccess.getKTypeSelectionAccess().getGroup_1()); }
+(rule__KTypeSelection__Group_1__0)*
+{ after(grammarAccess.getKTypeSelectionAccess().getGroup_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__KTypeSelection__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__KTypeSelection__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__KTypeSelection__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getKTypeSelectionAccess().getTypesAssignment_2()); }
+(rule__KTypeSelection__TypesAssignment_2)*
+{ after(grammarAccess.getKTypeSelectionAccess().getTypesAssignment_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+
+
+rule__KTypeSelection__Group_1__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__KTypeSelection__Group_1__0__Impl
+	rule__KTypeSelection__Group_1__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__KTypeSelection__Group_1__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getKTypeSelectionAccess().getImportKeyword_1_0()); }
+
+	'import' 
+
+{ after(grammarAccess.getKTypeSelectionAccess().getImportKeyword_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__KTypeSelection__Group_1__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__KTypeSelection__Group_1__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__KTypeSelection__Group_1__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getKTypeSelectionAccess().getAlternatives_1_1()); }
+(rule__KTypeSelection__Alternatives_1_1)
+{ after(grammarAccess.getKTypeSelectionAccess().getAlternatives_1_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+rule__KTypeSelection__Group_1_1_0__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__KTypeSelection__Group_1_1_0__0__Impl
+	rule__KTypeSelection__Group_1_1_0__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__KTypeSelection__Group_1_1_0__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getKTypeSelectionAccess().getProjectKeyword_1_1_0_0()); }
+
+	'project' 
+
+{ after(grammarAccess.getKTypeSelectionAccess().getProjectKeyword_1_1_0_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__KTypeSelection__Group_1_1_0__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__KTypeSelection__Group_1_1_0__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__KTypeSelection__Group_1_1_0__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getKTypeSelectionAccess().getJavaProjectsAssignment_1_1_0_1()); }
+(rule__KTypeSelection__JavaProjectsAssignment_1_1_0_1)
+{ after(grammarAccess.getKTypeSelectionAccess().getJavaProjectsAssignment_1_1_0_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+rule__KTypeSelection__Group_1_1_1__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__KTypeSelection__Group_1_1_1__0__Impl
+	rule__KTypeSelection__Group_1_1_1__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__KTypeSelection__Group_1_1_1__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getKTypeSelectionAccess().getBundleKeyword_1_1_1_0()); }
+
+	'bundle' 
+
+{ after(grammarAccess.getKTypeSelectionAccess().getBundleKeyword_1_1_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__KTypeSelection__Group_1_1_1__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__KTypeSelection__Group_1_1_1__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__KTypeSelection__Group_1_1_1__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getKTypeSelectionAccess().getBundlesAssignment_1_1_1_1()); }
+(rule__KTypeSelection__BundlesAssignment_1_1_1_1)
+{ after(grammarAccess.getKTypeSelectionAccess().getBundlesAssignment_1_1_1_1()); }
 )
 
 ;
@@ -964,14 +1206,44 @@ finally {
 
 
 
-rule__KTypeSelection__TypesAssignment_1
+rule__KTypeSelection__JavaProjectsAssignment_1_1_0_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getKTypeSelectionAccess().getTypesKTypeParserRuleCall_1_0()); }
-	ruleKType{ after(grammarAccess.getKTypeSelectionAccess().getTypesKTypeParserRuleCall_1_0()); }
+{ before(grammarAccess.getKTypeSelectionAccess().getJavaProjectsQualifiedIDParserRuleCall_1_1_0_1_0()); }
+	ruleQualifiedID{ after(grammarAccess.getKTypeSelectionAccess().getJavaProjectsQualifiedIDParserRuleCall_1_1_0_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__KTypeSelection__BundlesAssignment_1_1_1_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getKTypeSelectionAccess().getBundlesQualifiedIDParserRuleCall_1_1_1_1_0()); }
+	ruleQualifiedID{ after(grammarAccess.getKTypeSelectionAccess().getBundlesQualifiedIDParserRuleCall_1_1_1_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__KTypeSelection__TypesAssignment_2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getKTypeSelectionAccess().getTypesKTypeParserRuleCall_2_0()); }
+	ruleKType{ after(grammarAccess.getKTypeSelectionAccess().getTypesKTypeParserRuleCall_2_0()); }
 )
 
 ;

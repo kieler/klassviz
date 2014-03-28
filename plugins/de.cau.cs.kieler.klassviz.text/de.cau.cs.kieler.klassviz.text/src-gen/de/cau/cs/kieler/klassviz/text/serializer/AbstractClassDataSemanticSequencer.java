@@ -99,7 +99,7 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 	
 	/**
 	 * Constraint:
-	 *     (types+=KType*)
+	 *     ((javaProjects+=QualifiedID | bundles+=QualifiedID)* types+=KType*)
 	 */
 	protected void sequence_KTypeSelection(EObject context, KTypeSelection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
