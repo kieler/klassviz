@@ -45,7 +45,6 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage;
 import de.cau.cs.kieler.klassviz.model.classdata.KField;
 import de.cau.cs.kieler.klassviz.model.classdata.KMethod;
 import de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection;
@@ -98,7 +97,6 @@ public class RestoreSelectionHandler extends AbstractHandler {
 				.getExtensionToFactoryMap()
 				.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
 						new XMIResourceFactoryImpl());
-		ClassdataPackage libraryPackage = ClassdataPackage.eINSTANCE;
 		URI platformURI = URI.createURI("platform:/meta/" + PLUGIN_ID
 				+ projectPath + "/selection.xmi");
 		Resource resource = resourceSet.getResource(platformURI, true);
