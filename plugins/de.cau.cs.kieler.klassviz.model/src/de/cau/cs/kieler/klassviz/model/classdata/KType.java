@@ -50,7 +50,7 @@ public interface KType extends EObject {
      * @return the value of the '<em>Type</em>' attribute.
      * @see #setType(IType)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType_Type()
-     * @model dataType="de.cau.cs.kieler.klassviz.model.classdata.IType" required="true" transient="true"
+     * @model dataType="de.cau.cs.kieler.klassviz.model.classdata.IType" transient="true"
      * @generated
      */
     IType getType();
@@ -76,7 +76,7 @@ public interface KType extends EObject {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Fields</em>' containment reference list.
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType_Fields()
-     * @model containment="true" keys="field"
+     * @model containment="true"
      * @generated
      */
     EList<KField> getFields();
