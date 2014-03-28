@@ -476,7 +476,6 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
 
         initEClass(kTypeSelectionEClass, KTypeSelection.class, "KTypeSelection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getKTypeSelection_Types(), this.getKType(), null, "types", null, 0, -1, KTypeSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        getKTypeSelection_Types().getEKeys().add(this.getKType_Type());
         initEAttribute(getKTypeSelection_JavaProjects(), ecorePackage.getEString(), "javaProjects", null, 0, -1, KTypeSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getKTypeSelection_Bundles(), ecorePackage.getEString(), "bundles", null, 0, -1, KTypeSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

@@ -47,7 +47,7 @@ public interface KTypeSelection extends EObject {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Types</em>' containment reference list.
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKTypeSelection_Types()
-     * @model containment="true" keys="type"
+     * @model containment="true"
      * @generated
      */
     EList<KType> getTypes();
