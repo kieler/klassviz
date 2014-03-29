@@ -40,12 +40,15 @@ KMethod returns KMethod:
 
 KParameterTypeSignature returns KParameterTypeSignature:
     {KParameterTypeSignature}
-    name=ID;
+    name=TypeSignature;
 
 //--------------- Terminals ----------------
 
 QualifiedID returns ecore::EString:
     ID ('.' ID)*;
+
+TypeSignature returns ecore::EString:
+    ID ('<' ('?' | TypeSignature) '>')?;
 
 PropertyValue returns ecore::EString:
     BOOLEAN | STRING | Float | QualifiedID;

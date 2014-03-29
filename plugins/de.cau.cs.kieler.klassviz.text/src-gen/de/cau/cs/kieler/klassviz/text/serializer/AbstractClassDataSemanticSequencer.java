@@ -83,7 +83,7 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 	
 	/**
 	 * Constraint:
-	 *     name=ID
+	 *     name=TypeSignature
 	 */
 	protected void sequence_KParameterTypeSignature(EObject context, KParameterTypeSignature semanticObject) {
 		if(errorAcceptor != null) {
@@ -92,7 +92,7 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getKParameterTypeSignatureAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getKParameterTypeSignatureAccess().getNameTypeSignatureParserRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
