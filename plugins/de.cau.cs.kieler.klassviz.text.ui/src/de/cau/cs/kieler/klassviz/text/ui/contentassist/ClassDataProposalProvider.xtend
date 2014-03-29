@@ -24,6 +24,9 @@ import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.jdt.core.JavaCore
 import org.eclipse.core.runtime.CoreException
 import de.cau.cs.kieler.klassviz.synthesis.ClassDataExtensions
+import com.google.inject.Inject
+import org.eclipse.xtext.RuleCall
+import org.eclipse.jdt.core.Signature
 
 /**
  * Custom content assist proposals.
@@ -33,7 +36,22 @@ import de.cau.cs.kieler.klassviz.synthesis.ClassDataExtensions
  */
 class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
     
+    @Inject
     extension ClassDataExtensions
+    
+    /**
+     * Provide completion proposals for the name of an imported project.
+     */
+     def override completeKTypeSelection_JavaProjects(EObject model, Assignment assignment,
+            ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+         for (project : ResourcesPlugin.workspace.root.projects) {
+             try {
+                 if (project.open && project.hasNature(JavaCore.NATURE_ID)) {
+                    acceptor.accept(createCompletionProposal(project.name, context))
+                 }
+            } catch (CoreException e) {}
+         }
+     }
     
     /**
      * Provide completion proposals for the name of a type.
@@ -55,7 +73,7 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
             ICompletionProposalAcceptor acceptor) {
         val project = ResourcesPlugin.workspace.root.getProject(projectName)
         try {
-            if (project.hasNature(JavaCore.NATURE_ID)) {
+            if (project.open && project.hasNature(JavaCore.NATURE_ID)) {
                 val javaProject = JavaCore.create(project)
                 for (packFrag : javaProject.packageFragments) {
                     for (compilationUnit : packFrag.compilationUnits) {
@@ -71,30 +89,37 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
     /**
      * Provide completion proposals for the name of a field.
      */
-     def override completeKField_Name(EObject model, Assignment assignment,
-            ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+     def override complete_KField(EObject model, RuleCall ruleCall, ContentAssistContext context,
+            ICompletionProposalAcceptor acceptor) {
         val type = model as KType
         val data = type.eContainer as KTypeSelection
         val jdtType = data.getJdtType(type)
         if (jdtType != null) {
             for (field : jdtType.fields) {
-                acceptor.accept(createCompletionProposal(field.elementName, context))
+                if (!type.fields.exists[it.name == field.elementName]) {
+                    acceptor.accept(createCompletionProposal(field.elementName, context))
+                }
             }
         }
     }
     
     /**
-     * Provide completion proposals for the name of a method.
+     * Provide completion proposals for the signature of a method.
      */
-     def override completeKMethod_Name(EObject model, Assignment assignment,
-            ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+     def override complete_KMethod(EObject model, RuleCall ruleCall, ContentAssistContext context,
+             ICompletionProposalAcceptor acceptor) {
         val type = model as KType
         val data = type.eContainer as KTypeSelection
         val jdtType = data.getJdtType(type)
         if (jdtType != null) {
             for (method : jdtType.methods) {
                 if (!method.constructor) {
-                    acceptor.accept(createCompletionProposal(method.elementName, context))
+                    val paramTypeSign = method.parameterTypes.map[t | Signature.toString(t)]
+                    if (!type.methods.exists[it.name == method.elementName
+                            && it.parameterTypeSignatures.map[s | s.name].equals(paramTypeSign)]) {
+                        val proposal = method.elementName + "(" + paramTypeSign.join(", ") + ")"
+                        acceptor.accept(createCompletionProposal(proposal, context))
+                    }
                 }
             }
         }

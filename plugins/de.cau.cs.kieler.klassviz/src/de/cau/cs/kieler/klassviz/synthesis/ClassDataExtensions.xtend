@@ -45,7 +45,7 @@ class ClassDataExtensions {
     def private IType getJdtType(String projectName, KType type) {
         val project = ResourcesPlugin.workspace.root.getProject(projectName)
         try {
-            if (project.hasNature(JavaCore.NATURE_ID)) {
+            if (project.open && project.hasNature(JavaCore.NATURE_ID)) {
                 val javaProject = JavaCore.create(project)
                 val result = javaProject.findType(type.qualifiedName)
                 if (result != null) {

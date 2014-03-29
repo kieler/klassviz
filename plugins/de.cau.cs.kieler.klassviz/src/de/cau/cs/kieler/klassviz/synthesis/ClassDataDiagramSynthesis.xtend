@@ -57,6 +57,8 @@ import org.eclipse.jdt.core.Signature
  */
 class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KTypeSelection> {
     
+    public static val SYNTHESIS_ID = "de.cau.cs.kieler.klassviz.ClassDataDiagramSynthesis"
+    
     // Various extensions that make it easier to generate a KGraph
     @Inject extension KColorExtensions
     @Inject extension KContainerRenderingExtensions
