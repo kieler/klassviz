@@ -5,8 +5,7 @@ Bundle-Vendor: Christian-Albrechts-Universität zu Kiel
 Bundle-Version: 0.1.0.qualifier
 Bundle-SymbolicName: de.cau.cs.kieler.klassviz;singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: javax.inject,
- com.google.guava,
+Require-Bundle: com.google.guava,
  com.google.inject,
  de.cau.cs.kieler.core.krendering,
  de.cau.cs.kieler.core.krendering.extensions,

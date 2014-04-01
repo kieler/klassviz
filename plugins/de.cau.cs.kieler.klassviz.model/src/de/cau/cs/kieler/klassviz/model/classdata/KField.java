@@ -13,7 +13,6 @@
  */
 package de.cau.cs.kieler.klassviz.model.classdata;
 
-import org.eclipse.jdt.core.IField;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +22,7 @@ import org.eclipse.jdt.core.IField;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KField#getField <em>Field</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KField#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,29 +32,29 @@ import org.eclipse.jdt.core.IField;
  */
 public interface KField extends KMember {
     /**
-     * Returns the value of the '<em><b>Field</b></em>' attribute.
+     * Returns the value of the '<em><b>Type</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Field</em>' attribute isn't clear,
+     * If the meaning of the '<em>Type</em>' containment reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Field</em>' attribute.
-     * @see #setField(IField)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKField_Field()
-     * @model dataType="de.cau.cs.kieler.klassviz.model.classdata.IField" transient="true"
+     * @return the value of the '<em>Type</em>' containment reference.
+     * @see #setType(KTypeReference)
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKField_Type()
+     * @model containment="true"
      * @generated
      */
-    IField getField();
+    KTypeReference getType();
 
     /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KField#getField <em>Field</em>}' attribute.
+     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KField#getType <em>Type</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Field</em>' attribute.
-     * @see #getField()
+     * @param value the new value of the '<em>Type</em>' containment reference.
+     * @see #getType()
      * @generated
      */
-    void setField(IField value);
+    void setType(KTypeReference value);
 
 } // KField

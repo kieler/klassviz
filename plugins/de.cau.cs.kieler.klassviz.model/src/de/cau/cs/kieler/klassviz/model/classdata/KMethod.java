@@ -15,8 +15,6 @@ package de.cau.cs.kieler.klassviz.model.classdata;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.jdt.core.IMethod;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>KMethod</b></em>'.
@@ -25,8 +23,8 @@ import org.eclipse.jdt.core.IMethod;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#getMethod <em>Method</em>}</li>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#getParameterTypeSignatures <em>Parameter Type Signatures</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#getReturnType <em>Return Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,45 +34,45 @@ import org.eclipse.jdt.core.IMethod;
  */
 public interface KMethod extends KMember {
     /**
-     * Returns the value of the '<em><b>Method</b></em>' attribute.
+     * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+     * The list contents are of type {@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference}.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Method</em>' attribute isn't clear,
+     * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Method</em>' attribute.
-     * @see #setMethod(IMethod)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMethod_Method()
-     * @model dataType="de.cau.cs.kieler.klassviz.model.classdata.IMethod" transient="true"
-     * @generated
-     */
-    IMethod getMethod();
-
-    /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#getMethod <em>Method</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Method</em>' attribute.
-     * @see #getMethod()
-     * @generated
-     */
-    void setMethod(IMethod value);
-
-    /**
-     * Returns the value of the '<em><b>Parameter Type Signatures</b></em>' containment reference list.
-     * The list contents are of type {@link de.cau.cs.kieler.klassviz.model.classdata.KParameterTypeSignature}.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Parameter Type Signatures</em>' containment reference list isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Parameter Type Signatures</em>' containment reference list.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMethod_ParameterTypeSignatures()
+     * @return the value of the '<em>Parameters</em>' containment reference list.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMethod_Parameters()
      * @model containment="true"
      * @generated
      */
-    EList<KParameterTypeSignature> getParameterTypeSignatures();
+    EList<KTypeReference> getParameters();
+
+    /**
+     * Returns the value of the '<em><b>Return Type</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Return Type</em>' containment reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Return Type</em>' containment reference.
+     * @see #setReturnType(KTypeReference)
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMethod_ReturnType()
+     * @model containment="true"
+     * @generated
+     */
+    KTypeReference getReturnType();
+
+    /**
+     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#getReturnType <em>Return Type</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Return Type</em>' containment reference.
+     * @see #getReturnType()
+     * @generated
+     */
+    void setReturnType(KTypeReference value);
 
 } // KMethod

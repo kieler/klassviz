@@ -17,8 +17,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.jdt.core.IType;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>KType</b></em>'.
@@ -27,43 +25,73 @@ import org.eclipse.jdt.core.IType;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getType <em>Type</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#isSelected <em>Selected</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getName <em>Name</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getFields <em>Fields</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getMethods <em>Methods</em>}</li>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getQualifiedName <em>Qualified Name</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getNestedTypes <em>Nested Types</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#isStatic <em>Static</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getVisibility <em>Visibility</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface KType extends EObject {
     /**
-     * Returns the value of the '<em><b>Type</b></em>' attribute.
+     * Returns the value of the '<em><b>Selected</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Type</em>' attribute isn't clear,
+     * If the meaning of the '<em>Selected</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Type</em>' attribute.
-     * @see #setType(IType)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType_Type()
-     * @model dataType="de.cau.cs.kieler.klassviz.model.classdata.IType" transient="true"
+     * @return the value of the '<em>Selected</em>' attribute.
+     * @see #setSelected(boolean)
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType_Selected()
+     * @model default="false"
      * @generated
      */
-    IType getType();
+    boolean isSelected();
 
     /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getType <em>Type</em>}' attribute.
+     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#isSelected <em>Selected</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Type</em>' attribute.
-     * @see #getType()
+     * @param value the new value of the '<em>Selected</em>' attribute.
+     * @see #isSelected()
      * @generated
      */
-    void setType(IType value);
+    void setSelected(boolean value);
+
+    /**
+     * Returns the value of the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Name</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Name</em>' attribute.
+     * @see #setName(String)
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType_Name()
+     * @model required="true"
+     * @generated
+     */
+    String getName();
+
+    /**
+     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getName <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Name</em>' attribute.
+     * @see #getName()
+     * @generated
+     */
+    void setName(String value);
 
     /**
      * Returns the value of the '<em><b>Fields</b></em>' containment reference list.
@@ -98,29 +126,76 @@ public interface KType extends EObject {
     EList<KMethod> getMethods();
 
     /**
-     * Returns the value of the '<em><b>Qualified Name</b></em>' attribute.
+     * Returns the value of the '<em><b>Nested Types</b></em>' containment reference list.
+     * The list contents are of type {@link de.cau.cs.kieler.klassviz.model.classdata.KType}.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Qualified Name</em>' attribute isn't clear,
+     * If the meaning of the '<em>Nested Types</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Qualified Name</em>' attribute.
-     * @see #setQualifiedName(String)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType_QualifiedName()
-     * @model required="true"
+     * @return the value of the '<em>Nested Types</em>' containment reference list.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType_NestedTypes()
+     * @model containment="true"
      * @generated
      */
-    String getQualifiedName();
+    EList<KType> getNestedTypes();
 
     /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getQualifiedName <em>Qualified Name</em>}' attribute.
+     * Returns the value of the '<em><b>Static</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Static</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Qualified Name</em>' attribute.
-     * @see #getQualifiedName()
+     * @return the value of the '<em>Static</em>' attribute.
+     * @see #setStatic(boolean)
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType_Static()
+     * @model default="false" required="true"
      * @generated
      */
-    void setQualifiedName(String value);
+    boolean isStatic();
+
+    /**
+     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#isStatic <em>Static</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Static</em>' attribute.
+     * @see #isStatic()
+     * @generated
+     */
+    void setStatic(boolean value);
+
+    /**
+     * Returns the value of the '<em><b>Visibility</b></em>' attribute.
+     * The default value is <code>"PACKAGE"</code>.
+     * The literals are from the enumeration {@link de.cau.cs.kieler.klassviz.model.classdata.KVisibility}.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Visibility</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Visibility</em>' attribute.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KVisibility
+     * @see #setVisibility(KVisibility)
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType_Visibility()
+     * @model default="PACKAGE" required="true"
+     * @generated
+     */
+    KVisibility getVisibility();
+
+    /**
+     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getVisibility <em>Visibility</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Visibility</em>' attribute.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KVisibility
+     * @see #getVisibility()
+     * @generated
+     */
+    void setVisibility(KVisibility value);
 
 } // KType

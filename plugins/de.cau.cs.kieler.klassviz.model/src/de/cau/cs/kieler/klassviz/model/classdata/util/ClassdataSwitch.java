@@ -77,9 +77,42 @@ public class ClassdataSwitch<T> extends Switch<T> {
     @Override
     protected T doSwitch(int classifierID, EObject theEObject) {
         switch (classifierID) {
+            case ClassdataPackage.KCLASS_MODEL: {
+                KClassModel kClassModel = (KClassModel)theEObject;
+                T result = caseKClassModel(kClassModel);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case ClassdataPackage.KPACKAGE: {
+                KPackage kPackage = (KPackage)theEObject;
+                T result = caseKPackage(kPackage);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
             case ClassdataPackage.KTYPE: {
                 KType kType = (KType)theEObject;
                 T result = caseKType(kType);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case ClassdataPackage.KCLASS: {
+                KClass kClass = (KClass)theEObject;
+                T result = caseKClass(kClass);
+                if (result == null) result = caseKType(kClass);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case ClassdataPackage.KINTERFACE: {
+                KInterface kInterface = (KInterface)theEObject;
+                T result = caseKInterface(kInterface);
+                if (result == null) result = caseKType(kInterface);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case ClassdataPackage.KENUM: {
+                KEnum kEnum = (KEnum)theEObject;
+                T result = caseKEnum(kEnum);
+                if (result == null) result = caseKType(kEnum);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -103,20 +136,44 @@ public class ClassdataSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case ClassdataPackage.KPARAMETER_TYPE_SIGNATURE: {
-                KParameterTypeSignature kParameterTypeSignature = (KParameterTypeSignature)theEObject;
-                T result = caseKParameterTypeSignature(kParameterTypeSignature);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
-            case ClassdataPackage.KTYPE_SELECTION: {
-                KTypeSelection kTypeSelection = (KTypeSelection)theEObject;
-                T result = caseKTypeSelection(kTypeSelection);
+            case ClassdataPackage.KTYPE_REFERENCE: {
+                KTypeReference kTypeReference = (KTypeReference)theEObject;
+                T result = caseKTypeReference(kTypeReference);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
             default: return defaultCase(theEObject);
         }
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>KClass Model</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>KClass Model</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseKClassModel(KClassModel object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>KPackage</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>KPackage</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseKPackage(KPackage object) {
+        return null;
     }
 
     /**
@@ -131,6 +188,51 @@ public class ClassdataSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseKType(KType object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>KClass</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>KClass</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseKClass(KClass object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>KInterface</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>KInterface</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseKInterface(KInterface object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>KEnum</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>KEnum</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseKEnum(KEnum object) {
         return null;
     }
 
@@ -180,32 +282,17 @@ public class ClassdataSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>KParameter Type Signature</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>KType Reference</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>KParameter Type Signature</em>'.
+     * @return the result of interpreting the object as an instance of '<em>KType Reference</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseKParameterTypeSignature(KParameterTypeSignature object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>KType Selection</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>KType Selection</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseKTypeSelection(KTypeSelection object) {
+    public T caseKTypeReference(KTypeReference object) {
         return null;
     }
 

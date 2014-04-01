@@ -14,11 +14,15 @@
 package de.cau.cs.kieler.klassviz.synthesis
 
 import org.eclipse.jdt.core.IType
-import de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection
 import de.cau.cs.kieler.klassviz.model.classdata.KType
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.runtime.CoreException
 import org.eclipse.jdt.core.JavaCore
+import org.eclipse.jdt.core.IMethod
+import de.cau.cs.kieler.klassviz.model.classdata.KMethod
+import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
+import de.cau.cs.kieler.klassviz.model.classdata.KPackage
+import org.eclipse.jdt.core.Signature
 
 /**
  * @author msp
@@ -28,10 +32,30 @@ import org.eclipse.jdt.core.JavaCore
 class ClassDataExtensions {
     
     /**
+     * Build a qualified name for the given type.
+     */
+    def String getQualifiedName(KType type) {
+        val result = new StringBuilder(type.name)
+        var container = type.eContainer
+        while (!(container instanceof KPackage) && container != null) {
+            if (container instanceof KType) {
+                result.insert(0, '$')
+                result.insert(0, (container as KType).name)
+            }
+            container = container.eContainer
+        }
+        if (container instanceof KPackage) {
+            result.insert(0, '.')
+            result.insert(0, (container as KPackage).name)
+        }
+        return result.toString
+    }
+    
+    /**
      * Retrieve a JDT type from all referenced projects and bundles.
      */
-    def IType getJdtType(KTypeSelection data, KType type) {
-        for (projectName : data.javaProjects) {
+    def IType getJdtType(KClassModel classModel, KType type) {
+        for (projectName : classModel.javaProjects) {
             val result = getJdtType(projectName, type)
             if (result != null) {
                 return result
@@ -42,7 +66,7 @@ class ClassDataExtensions {
     /**
      * Retrieve a JDT type from a Java project.
      */
-    def private IType getJdtType(String projectName, KType type) {
+    def IType getJdtType(String projectName, KType type) {
         val project = ResourcesPlugin.workspace.root.getProject(projectName)
         try {
             if (project.open && project.hasNature(JavaCore.NATURE_ID)) {
@@ -53,6 +77,21 @@ class ClassDataExtensions {
                 }
             }
         } catch (CoreException e) {}
+    }
+    
+    def boolean equalSignature(IMethod jdtMethod, KMethod kMethod) {
+        if (jdtMethod.elementName != kMethod.name
+                || jdtMethod.numberOfParameters != kMethod.parameters.size) {
+            return false
+        }
+        var int i = 0
+        while (i < jdtMethod.numberOfParameters) {
+            if (Signature.toString(jdtMethod.parameterTypes.get(i)) != kMethod.parameters.get(i)) {
+                return false
+            }
+            i = i + 1
+        }
+        return true
     }
     
 }

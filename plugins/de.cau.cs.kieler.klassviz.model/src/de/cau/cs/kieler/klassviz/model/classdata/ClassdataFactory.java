@@ -33,13 +33,49 @@ public interface ClassdataFactory extends EFactory {
     ClassdataFactory eINSTANCE = de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataFactoryImpl.init();
 
     /**
-     * Returns a new object of class '<em>KType</em>'.
+     * Returns a new object of class '<em>KClass Model</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>KType</em>'.
+     * @return a new object of class '<em>KClass Model</em>'.
      * @generated
      */
-    KType createKType();
+    KClassModel createKClassModel();
+
+    /**
+     * Returns a new object of class '<em>KPackage</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>KPackage</em>'.
+     * @generated
+     */
+    KPackage createKPackage();
+
+    /**
+     * Returns a new object of class '<em>KClass</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>KClass</em>'.
+     * @generated
+     */
+    KClass createKClass();
+
+    /**
+     * Returns a new object of class '<em>KInterface</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>KInterface</em>'.
+     * @generated
+     */
+    KInterface createKInterface();
+
+    /**
+     * Returns a new object of class '<em>KEnum</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>KEnum</em>'.
+     * @generated
+     */
+    KEnum createKEnum();
 
     /**
      * Returns a new object of class '<em>KField</em>'.
@@ -60,22 +96,13 @@ public interface ClassdataFactory extends EFactory {
     KMethod createKMethod();
 
     /**
-     * Returns a new object of class '<em>KParameter Type Signature</em>'.
+     * Returns a new object of class '<em>KType Reference</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>KParameter Type Signature</em>'.
+     * @return a new object of class '<em>KType Reference</em>'.
      * @generated
      */
-    KParameterTypeSignature createKParameterTypeSignature();
-
-    /**
-     * Returns a new object of class '<em>KType Selection</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>KType Selection</em>'.
-     * @generated
-     */
-    KTypeSelection createKTypeSelection();
+    KTypeReference createKTypeReference();
 
     /**
      * Returns the package supported by this factory.

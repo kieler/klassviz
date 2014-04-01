@@ -14,55 +14,46 @@
 package de.cau.cs.kieler.klassviz.model.classdata.impl;
 
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage;
-import de.cau.cs.kieler.klassviz.model.classdata.KParameterTypeSignature;
+import de.cau.cs.kieler.klassviz.model.classdata.KEnum;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>KParameter Type Signature</b></em>'.
+ * An implementation of the model object '<em><b>KEnum</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KParameterTypeSignatureImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KEnumImpl#getConstants <em>Constants</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class KParameterTypeSignatureImpl extends MinimalEObjectImpl.Container implements KParameterTypeSignature {
+public class KEnumImpl extends KTypeImpl implements KEnum {
     /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+     * The cached value of the '{@link #getConstants() <em>Constants</em>}' attribute list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
+     * @see #getConstants()
      * @generated
      * @ordered
      */
-    protected static final String NAME_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
-    protected String name = NAME_EDEFAULT;
+    protected EList<String> constants;
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected KParameterTypeSignatureImpl() {
+    protected KEnumImpl() {
         super();
     }
 
@@ -73,7 +64,7 @@ public class KParameterTypeSignatureImpl extends MinimalEObjectImpl.Container im
      */
     @Override
     protected EClass eStaticClass() {
-        return ClassdataPackage.Literals.KPARAMETER_TYPE_SIGNATURE;
+        return ClassdataPackage.Literals.KENUM;
     }
 
     /**
@@ -81,20 +72,11 @@ public class KParameterTypeSignatureImpl extends MinimalEObjectImpl.Container im
      * <!-- end-user-doc -->
      * @generated
      */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setName(String newName) {
-        String oldName = name;
-        name = newName;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KPARAMETER_TYPE_SIGNATURE__NAME, oldName, name));
+    public EList<String> getConstants() {
+        if (constants == null) {
+            constants = new EDataTypeUniqueEList<String>(String.class, this, ClassdataPackage.KENUM__CONSTANTS);
+        }
+        return constants;
     }
 
     /**
@@ -105,8 +87,8 @@ public class KParameterTypeSignatureImpl extends MinimalEObjectImpl.Container im
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case ClassdataPackage.KPARAMETER_TYPE_SIGNATURE__NAME:
-                return getName();
+            case ClassdataPackage.KENUM__CONSTANTS:
+                return getConstants();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -116,11 +98,13 @@ public class KParameterTypeSignatureImpl extends MinimalEObjectImpl.Container im
      * <!-- end-user-doc -->
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case ClassdataPackage.KPARAMETER_TYPE_SIGNATURE__NAME:
-                setName((String)newValue);
+            case ClassdataPackage.KENUM__CONSTANTS:
+                getConstants().clear();
+                getConstants().addAll((Collection<? extends String>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -134,8 +118,8 @@ public class KParameterTypeSignatureImpl extends MinimalEObjectImpl.Container im
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case ClassdataPackage.KPARAMETER_TYPE_SIGNATURE__NAME:
-                setName(NAME_EDEFAULT);
+            case ClassdataPackage.KENUM__CONSTANTS:
+                getConstants().clear();
                 return;
         }
         super.eUnset(featureID);
@@ -149,8 +133,8 @@ public class KParameterTypeSignatureImpl extends MinimalEObjectImpl.Container im
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case ClassdataPackage.KPARAMETER_TYPE_SIGNATURE__NAME:
-                return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+            case ClassdataPackage.KENUM__CONSTANTS:
+                return constants != null && !constants.isEmpty();
         }
         return super.eIsSet(featureID);
     }
@@ -165,10 +149,10 @@ public class KParameterTypeSignatureImpl extends MinimalEObjectImpl.Container im
         if (eIsProxy()) return super.toString();
 
         StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (name: ");
-        result.append(name);
+        result.append(" (constants: ");
+        result.append(constants);
         result.append(')');
         return result.toString();
     }
 
-} //KParameterTypeSignatureImpl
+} //KEnumImpl

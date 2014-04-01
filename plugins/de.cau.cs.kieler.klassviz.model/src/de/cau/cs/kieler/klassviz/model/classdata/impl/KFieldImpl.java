@@ -15,14 +15,15 @@ package de.cau.cs.kieler.klassviz.model.classdata.impl;
 
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage;
 import de.cau.cs.kieler.klassviz.model.classdata.KField;
+import de.cau.cs.kieler.klassviz.model.classdata.KTypeReference;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.jdt.core.IField;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +32,7 @@ import org.eclipse.jdt.core.IField;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KFieldImpl#getField <em>Field</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KFieldImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,24 +40,14 @@ import org.eclipse.jdt.core.IField;
  */
 public class KFieldImpl extends KMemberImpl implements KField {
     /**
-     * The default value of the '{@link #getField() <em>Field</em>}' attribute.
+     * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getField()
+     * @see #getType()
      * @generated
      * @ordered
      */
-    protected static final IField FIELD_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getField() <em>Field</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getField()
-     * @generated
-     * @ordered
-     */
-    protected IField field = FIELD_EDEFAULT;
+    protected KTypeReference type;
 
     /**
      * <!-- begin-user-doc -->
@@ -82,8 +73,8 @@ public class KFieldImpl extends KMemberImpl implements KField {
      * <!-- end-user-doc -->
      * @generated
      */
-    public IField getField() {
-        return field;
+    public KTypeReference getType() {
+        return type;
     }
 
     /**
@@ -91,11 +82,47 @@ public class KFieldImpl extends KMemberImpl implements KField {
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setField(IField newField) {
-        IField oldField = field;
-        field = newField;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KFIELD__FIELD, oldField, field));
+    public NotificationChain basicSetType(KTypeReference newType, NotificationChain msgs) {
+        KTypeReference oldType = type;
+        type = newType;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassdataPackage.KFIELD__TYPE, oldType, newType);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setType(KTypeReference newType) {
+        if (newType != type) {
+            NotificationChain msgs = null;
+            if (type != null)
+                msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ClassdataPackage.KFIELD__TYPE, null, msgs);
+            if (newType != null)
+                msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ClassdataPackage.KFIELD__TYPE, null, msgs);
+            msgs = basicSetType(newType, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KFIELD__TYPE, newType, newType));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+        switch (featureID) {
+            case ClassdataPackage.KFIELD__TYPE:
+                return basicSetType(null, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
@@ -106,8 +133,8 @@ public class KFieldImpl extends KMemberImpl implements KField {
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case ClassdataPackage.KFIELD__FIELD:
-                return getField();
+            case ClassdataPackage.KFIELD__TYPE:
+                return getType();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -120,8 +147,8 @@ public class KFieldImpl extends KMemberImpl implements KField {
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case ClassdataPackage.KFIELD__FIELD:
-                setField((IField)newValue);
+            case ClassdataPackage.KFIELD__TYPE:
+                setType((KTypeReference)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -135,8 +162,8 @@ public class KFieldImpl extends KMemberImpl implements KField {
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case ClassdataPackage.KFIELD__FIELD:
-                setField(FIELD_EDEFAULT);
+            case ClassdataPackage.KFIELD__TYPE:
+                setType((KTypeReference)null);
                 return;
         }
         super.eUnset(featureID);
@@ -150,26 +177,10 @@ public class KFieldImpl extends KMemberImpl implements KField {
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case ClassdataPackage.KFIELD__FIELD:
-                return FIELD_EDEFAULT == null ? field != null : !FIELD_EDEFAULT.equals(field);
+            case ClassdataPackage.KFIELD__TYPE:
+                return type != null;
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (eIsProxy()) return super.toString();
-
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (field: ");
-        result.append(field);
-        result.append(')');
-        return result.toString();
     }
 
 } //KFieldImpl

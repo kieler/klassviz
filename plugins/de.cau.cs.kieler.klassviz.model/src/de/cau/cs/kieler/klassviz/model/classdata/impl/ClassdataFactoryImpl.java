@@ -24,10 +24,6 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import org.eclipse.jdt.core.IField;
-import org.eclipse.jdt.core.IMethod;
-import org.eclipse.jdt.core.IType;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
@@ -72,11 +68,14 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
     @Override
     public EObject create(EClass eClass) {
         switch (eClass.getClassifierID()) {
-            case ClassdataPackage.KTYPE: return createKType();
+            case ClassdataPackage.KCLASS_MODEL: return createKClassModel();
+            case ClassdataPackage.KPACKAGE: return createKPackage();
+            case ClassdataPackage.KCLASS: return createKClass();
+            case ClassdataPackage.KINTERFACE: return createKInterface();
+            case ClassdataPackage.KENUM: return createKEnum();
             case ClassdataPackage.KFIELD: return createKField();
             case ClassdataPackage.KMETHOD: return createKMethod();
-            case ClassdataPackage.KPARAMETER_TYPE_SIGNATURE: return createKParameterTypeSignature();
-            case ClassdataPackage.KTYPE_SELECTION: return createKTypeSelection();
+            case ClassdataPackage.KTYPE_REFERENCE: return createKTypeReference();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -90,12 +89,8 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
     @Override
     public Object createFromString(EDataType eDataType, String initialValue) {
         switch (eDataType.getClassifierID()) {
-            case ClassdataPackage.ITYPE:
-                return createITypeFromString(eDataType, initialValue);
-            case ClassdataPackage.IFIELD:
-                return createIFieldFromString(eDataType, initialValue);
-            case ClassdataPackage.IMETHOD:
-                return createIMethodFromString(eDataType, initialValue);
+            case ClassdataPackage.KVISIBILITY:
+                return createKVisibilityFromString(eDataType, initialValue);
             default:
                 throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
         }
@@ -109,12 +104,8 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
     @Override
     public String convertToString(EDataType eDataType, Object instanceValue) {
         switch (eDataType.getClassifierID()) {
-            case ClassdataPackage.ITYPE:
-                return convertITypeToString(eDataType, instanceValue);
-            case ClassdataPackage.IFIELD:
-                return convertIFieldToString(eDataType, instanceValue);
-            case ClassdataPackage.IMETHOD:
-                return convertIMethodToString(eDataType, instanceValue);
+            case ClassdataPackage.KVISIBILITY:
+                return convertKVisibilityToString(eDataType, instanceValue);
             default:
                 throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
         }
@@ -125,9 +116,49 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
      * <!-- end-user-doc -->
      * @generated
      */
-    public KType createKType() {
-        KTypeImpl kType = new KTypeImpl();
-        return kType;
+    public KClassModel createKClassModel() {
+        KClassModelImpl kClassModel = new KClassModelImpl();
+        return kClassModel;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public KPackage createKPackage() {
+        KPackageImpl kPackage = new KPackageImpl();
+        return kPackage;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public KClass createKClass() {
+        KClassImpl kClass = new KClassImpl();
+        return kClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public KInterface createKInterface() {
+        KInterfaceImpl kInterface = new KInterfaceImpl();
+        return kInterface;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public KEnum createKEnum() {
+        KEnumImpl kEnum = new KEnumImpl();
+        return kEnum;
     }
 
     /**
@@ -155,9 +186,9 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
      * <!-- end-user-doc -->
      * @generated
      */
-    public KParameterTypeSignature createKParameterTypeSignature() {
-        KParameterTypeSignatureImpl kParameterTypeSignature = new KParameterTypeSignatureImpl();
-        return kParameterTypeSignature;
+    public KTypeReference createKTypeReference() {
+        KTypeReferenceImpl kTypeReference = new KTypeReferenceImpl();
+        return kTypeReference;
     }
 
     /**
@@ -165,9 +196,10 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
      * <!-- end-user-doc -->
      * @generated
      */
-    public KTypeSelection createKTypeSelection() {
-        KTypeSelectionImpl kTypeSelection = new KTypeSelectionImpl();
-        return kTypeSelection;
+    public KVisibility createKVisibilityFromString(EDataType eDataType, String initialValue) {
+        KVisibility result = KVisibility.get(initialValue);
+        if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+        return result;
     }
 
     /**
@@ -175,53 +207,8 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
      * <!-- end-user-doc -->
      * @generated
      */
-    public IType createITypeFromString(EDataType eDataType, String initialValue) {
-        return (IType)super.createFromString(eDataType, initialValue);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public String convertITypeToString(EDataType eDataType, Object instanceValue) {
-        return super.convertToString(eDataType, instanceValue);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public IField createIFieldFromString(EDataType eDataType, String initialValue) {
-        return (IField)super.createFromString(eDataType, initialValue);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public String convertIFieldToString(EDataType eDataType, Object instanceValue) {
-        return super.convertToString(eDataType, instanceValue);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public IMethod createIMethodFromString(EDataType eDataType, String initialValue) {
-        return (IMethod)super.createFromString(eDataType, initialValue);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public String convertIMethodToString(EDataType eDataType, Object instanceValue) {
-        return super.convertToString(eDataType, instanceValue);
+    public String convertKVisibilityToString(EDataType eDataType, Object instanceValue) {
+        return instanceValue == null ? null : instanceValue.toString();
     }
 
     /**

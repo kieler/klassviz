@@ -1,43 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="classdata" nsURI="http://kieler.cs.cau.de/classdata" nsPrefix="classdata">
-  <eClassifiers xsi:type="ecore:EClass" name="KType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//IType"
-        transient="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
-        eType="#//KField" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
-        eType="#//KMethod" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiedName" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="IType" instanceClassName="org.eclipse.jdt.core.IType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="KMember" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="KField" eSuperTypes="#//KMember">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="field" eType="#//IField"
-        transient="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="IField" instanceClassName="org.eclipse.jdt.core.IField"/>
-  <eClassifiers xsi:type="ecore:EClass" name="KMethod" eSuperTypes="#//KMember">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="#//IMethod"
-        transient="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterTypeSignatures"
-        upperBound="-1" eType="#//KParameterTypeSignature" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="IMethod" instanceClassName="org.eclipse.jdt.core.IMethod"/>
-  <eClassifiers xsi:type="ecore:EClass" name="KParameterTypeSignature">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="KTypeSelection">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
-        eType="#//KType" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="KClassModel">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="javaProjects" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bundles" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
+        eType="#//KPackage" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KPackage">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
+        eType="#//KType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KType" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+        eType="#//KField" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
+        eType="#//KMethod" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nestedTypes" upperBound="-1"
+        eType="#//KType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="static" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" lowerBound="1"
+        eType="#//KVisibility" defaultValueLiteral="PACKAGE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KClass" eSuperTypes="#//KType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superClass" eType="#//KClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
+        eType="#//KInterface"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeParameters" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="final" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KInterface" eSuperTypes="#//KType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superInterfaces" upperBound="-1"
+        eType="#//KInterface"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeParameters" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KEnum" eSuperTypes="#//KType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constants" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KMember" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="static" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="final" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" lowerBound="1"
+        eType="#//KVisibility" defaultValueLiteral="PACKAGE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KField" eSuperTypes="#//KMember">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//KTypeReference"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KMethod" eSuperTypes="#//KMember">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//KTypeReference" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="#//KTypeReference"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KTypeReference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="signature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceType" eType="#//KType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeArguments" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arrayDepth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="KVisibility">
+    <eLiterals name="PUBLIC"/>
+    <eLiterals name="PROTECTED" value="1"/>
+    <eLiterals name="PACKAGE" value="2"/>
+    <eLiterals name="PRIVATE" value="3" literal="PRIVATE"/>
   </eClassifiers>
 </ecore:EPackage>

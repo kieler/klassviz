@@ -79,8 +79,28 @@ public class ClassdataAdapterFactory extends AdapterFactoryImpl {
     protected ClassdataSwitch<Adapter> modelSwitch =
         new ClassdataSwitch<Adapter>() {
             @Override
+            public Adapter caseKClassModel(KClassModel object) {
+                return createKClassModelAdapter();
+            }
+            @Override
+            public Adapter caseKPackage(KPackage object) {
+                return createKPackageAdapter();
+            }
+            @Override
             public Adapter caseKType(KType object) {
                 return createKTypeAdapter();
+            }
+            @Override
+            public Adapter caseKClass(KClass object) {
+                return createKClassAdapter();
+            }
+            @Override
+            public Adapter caseKInterface(KInterface object) {
+                return createKInterfaceAdapter();
+            }
+            @Override
+            public Adapter caseKEnum(KEnum object) {
+                return createKEnumAdapter();
             }
             @Override
             public Adapter caseKMember(KMember object) {
@@ -95,12 +115,8 @@ public class ClassdataAdapterFactory extends AdapterFactoryImpl {
                 return createKMethodAdapter();
             }
             @Override
-            public Adapter caseKParameterTypeSignature(KParameterTypeSignature object) {
-                return createKParameterTypeSignatureAdapter();
-            }
-            @Override
-            public Adapter caseKTypeSelection(KTypeSelection object) {
-                return createKTypeSelectionAdapter();
+            public Adapter caseKTypeReference(KTypeReference object) {
+                return createKTypeReferenceAdapter();
             }
             @Override
             public Adapter defaultCase(EObject object) {
@@ -123,6 +139,34 @@ public class ClassdataAdapterFactory extends AdapterFactoryImpl {
 
 
     /**
+     * Creates a new adapter for an object of class '{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel <em>KClass Model</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KClassModel
+     * @generated
+     */
+    public Adapter createKClassModelAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link de.cau.cs.kieler.klassviz.model.classdata.KPackage <em>KPackage</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KPackage
+     * @generated
+     */
+    public Adapter createKPackageAdapter() {
+        return null;
+    }
+
+    /**
      * Creates a new adapter for an object of class '{@link de.cau.cs.kieler.klassviz.model.classdata.KType <em>KType</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
@@ -133,6 +177,48 @@ public class ClassdataAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createKTypeAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link de.cau.cs.kieler.klassviz.model.classdata.KClass <em>KClass</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KClass
+     * @generated
+     */
+    public Adapter createKClassAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link de.cau.cs.kieler.klassviz.model.classdata.KInterface <em>KInterface</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KInterface
+     * @generated
+     */
+    public Adapter createKInterfaceAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link de.cau.cs.kieler.klassviz.model.classdata.KEnum <em>KEnum</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KEnum
+     * @generated
+     */
+    public Adapter createKEnumAdapter() {
         return null;
     }
 
@@ -179,30 +265,16 @@ public class ClassdataAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link de.cau.cs.kieler.klassviz.model.classdata.KParameterTypeSignature <em>KParameter Type Signature</em>}'.
+     * Creates a new adapter for an object of class '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference <em>KType Reference</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KParameterTypeSignature
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KTypeReference
      * @generated
      */
-    public Adapter createKParameterTypeSignatureAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection <em>KType Selection</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection
-     * @generated
-     */
-    public Adapter createKTypeSelectionAdapter() {
+    public Adapter createKTypeReferenceAdapter() {
         return null;
     }
 
