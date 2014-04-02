@@ -3,23 +3,23 @@ package de.cau.cs.kieler.klassviz.text.serializer;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage;
+import de.cau.cs.kieler.klassviz.model.classdata.KClass;
+import de.cau.cs.kieler.klassviz.model.classdata.KClassModel;
+import de.cau.cs.kieler.klassviz.model.classdata.KEnum;
 import de.cau.cs.kieler.klassviz.model.classdata.KField;
+import de.cau.cs.kieler.klassviz.model.classdata.KInterface;
 import de.cau.cs.kieler.klassviz.model.classdata.KMethod;
-import de.cau.cs.kieler.klassviz.model.classdata.KParameterTypeSignature;
-import de.cau.cs.kieler.klassviz.model.classdata.KType;
-import de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection;
+import de.cau.cs.kieler.klassviz.model.classdata.KPackage;
+import de.cau.cs.kieler.klassviz.model.classdata.KTypeReference;
 import de.cau.cs.kieler.klassviz.text.services.ClassDataGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
 import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
-import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -29,9 +29,36 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == ClassdataPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case ClassdataPackage.KCLASS:
+				if(context == grammarAccess.getKClassRule() ||
+				   context == grammarAccess.getKTypeRule()) {
+					sequence_KClass(context, (KClass) semanticObject); 
+					return; 
+				}
+				else break;
+			case ClassdataPackage.KCLASS_MODEL:
+				if(context == grammarAccess.getKClassModelRule()) {
+					sequence_KClassModel(context, (KClassModel) semanticObject); 
+					return; 
+				}
+				else break;
+			case ClassdataPackage.KENUM:
+				if(context == grammarAccess.getKEnumRule() ||
+				   context == grammarAccess.getKTypeRule()) {
+					sequence_KEnum(context, (KEnum) semanticObject); 
+					return; 
+				}
+				else break;
 			case ClassdataPackage.KFIELD:
 				if(context == grammarAccess.getKFieldRule()) {
 					sequence_KField(context, (KField) semanticObject); 
+					return; 
+				}
+				else break;
+			case ClassdataPackage.KINTERFACE:
+				if(context == grammarAccess.getKInterfaceRule() ||
+				   context == grammarAccess.getKTypeRule()) {
+					sequence_KInterface(context, (KInterface) semanticObject); 
 					return; 
 				}
 				else break;
@@ -41,27 +68,48 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 					return; 
 				}
 				else break;
-			case ClassdataPackage.KPARAMETER_TYPE_SIGNATURE:
-				if(context == grammarAccess.getKParameterTypeSignatureRule()) {
-					sequence_KParameterTypeSignature(context, (KParameterTypeSignature) semanticObject); 
+			case ClassdataPackage.KPACKAGE:
+				if(context == grammarAccess.getKPackageRule()) {
+					sequence_KPackage(context, (KPackage) semanticObject); 
 					return; 
 				}
 				else break;
-			case ClassdataPackage.KTYPE:
-				if(context == grammarAccess.getKTypeRule()) {
-					sequence_KType(context, (KType) semanticObject); 
-					return; 
-				}
-				else break;
-			case ClassdataPackage.KTYPE_SELECTION:
-				if(context == grammarAccess.getKTypeSelectionRule()) {
-					sequence_KTypeSelection(context, (KTypeSelection) semanticObject); 
+			case ClassdataPackage.KTYPE_REFERENCE:
+				if(context == grammarAccess.getKTypeReferenceRule()) {
+					sequence_KTypeReference(context, (KTypeReference) semanticObject); 
 					return; 
 				}
 				else break;
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Constraint:
+	 *     ((javaProjects+=QualifiedID | bundles+=QualifiedID)* packages+=KPackage*)
+	 */
+	protected void sequence_KClassModel(EObject context, KClassModel semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID (fields+=KField | methods+=KMethod)*)
+	 */
+	protected void sequence_KClass(EObject context, KClass semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID (fields+=KField | methods+=KMethod)*)
+	 */
+	protected void sequence_KEnum(EObject context, KEnum semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Constraint:
@@ -74,7 +122,16 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (parameterTypeSignatures+=KParameterTypeSignature parameterTypeSignatures+=KParameterTypeSignature*)?)
+	 *     (name=ID (fields+=KField | methods+=KMethod)*)
+	 */
+	protected void sequence_KInterface(EObject context, KInterface semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID (parameters+=KTypeReference parameters+=KTypeReference*)?)
 	 */
 	protected void sequence_KMethod(EObject context, KMethod semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -83,34 +140,18 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 	
 	/**
 	 * Constraint:
-	 *     name=TypeSignature
+	 *     (name=QualifiedID types+=KType*)
 	 */
-	protected void sequence_KParameterTypeSignature(EObject context, KParameterTypeSignature semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ClassdataPackage.Literals.KPARAMETER_TYPE_SIGNATURE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ClassdataPackage.Literals.KPARAMETER_TYPE_SIGNATURE__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getKParameterTypeSignatureAccess().getNameTypeSignatureParserRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     ((javaProjects+=QualifiedID | bundles+=QualifiedID)* types+=KType*)
-	 */
-	protected void sequence_KTypeSelection(EObject context, KTypeSelection semanticObject) {
+	protected void sequence_KPackage(EObject context, KPackage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (qualifiedName=QualifiedID (fields+=KField | methods+=KMethod)*)
+	 *     signature=TypeSignature
 	 */
-	protected void sequence_KType(EObject context, KType semanticObject) {
+	protected void sequence_KTypeReference(EObject context, KTypeReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

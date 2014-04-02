@@ -13,26 +13,28 @@
  */
 package de.cau.cs.kieler.klassviz.synthesis
 
-import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
-import org.eclipse.jface.viewers.IStructuredSelection
-import de.cau.cs.kieler.klassviz.model.classdata.ClassdataFactory
-import org.eclipse.jdt.core.IJavaElement
-import org.eclipse.jdt.core.JavaModelException
-import org.eclipse.jdt.core.ITypeRoot
-import org.eclipse.jdt.core.IType
-import de.cau.cs.kieler.klassviz.model.classdata.KType
-import org.eclipse.jdt.core.Signature
-import org.eclipse.jdt.core.IField
-import org.eclipse.jdt.core.IMethod
 import com.google.inject.Inject
-import org.eclipse.jdt.core.Flags
+import de.cau.cs.kieler.klassviz.model.classdata.ClassdataFactory
 import de.cau.cs.kieler.klassviz.model.classdata.KClass
+import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
+import de.cau.cs.kieler.klassviz.model.classdata.KField
+import de.cau.cs.kieler.klassviz.model.classdata.KInterface
+import de.cau.cs.kieler.klassviz.model.classdata.KMethod
+import de.cau.cs.kieler.klassviz.model.classdata.KType
+import de.cau.cs.kieler.klassviz.model.classdata.KTypeReference
 import de.cau.cs.kieler.klassviz.model.classdata.KVisibility
 import org.eclipse.core.runtime.NullProgressMonitor
-import de.cau.cs.kieler.klassviz.model.classdata.KField
-import de.cau.cs.kieler.klassviz.model.classdata.KMethod
-import de.cau.cs.kieler.klassviz.model.classdata.KInterface
-import de.cau.cs.kieler.klassviz.model.classdata.KTypeReference
+import org.eclipse.jdt.core.Flags
+import org.eclipse.jdt.core.IField
+import org.eclipse.jdt.core.IJavaElement
+import org.eclipse.jdt.core.IMethod
+import org.eclipse.jdt.core.IType
+import org.eclipse.jdt.core.ITypeRoot
+import org.eclipse.jdt.core.JavaModelException
+import org.eclipse.jdt.core.Signature
+import org.eclipse.jface.viewers.IStructuredSelection
+import java.util.HashSet
+import java.util.Set
 
 /**
  * Transformation class between the JDT model and our own class model.
@@ -43,12 +45,22 @@ class JdtModelTransformation {
     
     @Inject
     extension ClassDataExtensions
+
+    /** The types contained in the current selection. */
+    private final Set<IType> selectedTypes = new HashSet<IType>
     
     /**
      * Transform a selection of JDT elements to a class model instance.
      */
     def KClassModel transform(IStructuredSelection selection) throws JavaModelException {
         val selectedElements = selection.toArray()
+        
+        // Gather all types in the current selection.
+        selectedTypes.clear
+        selectedTypes += selectedElements.filter[it instanceof IType]
+        selectedTypes += selectedElements.filter[it instanceof ITypeRoot]
+                .map[(it as ITypeRoot).findPrimaryType]
+        
         // Create a class model instance based on the metamodel with the factory.
         val classModel = ClassdataFactory.eINSTANCE.createKClassModel()
         
@@ -97,6 +109,7 @@ class JdtModelTransformation {
         var kPackage = classModel.packages.findFirst[p | p.name == packageName]
         if (kPackage == null) {
             kPackage = ClassdataFactory.eINSTANCE.createKPackage()
+            kPackage.name = packageName
             classModel.packages += kPackage
         }
         
@@ -112,17 +125,21 @@ class JdtModelTransformation {
             }
             if (jdtType.superclassName != null) {
                 val superClazz = typeHierarchy.getSuperclass(jdtType)
-                if (superClazz != null) {
+                if (superClazz != null && selectedTypes.contains(superClazz)) {
                     kClazz.superClass = createType(superClazz, classModel) as KClass
                 }
             }
             for (superInterface : typeHierarchy.getSuperInterfaces(jdtType)) {
-                kClazz.interfaces += createType(superInterface, classModel) as KInterface
+                if (selectedTypes.contains(superInterface)) {
+                    kClazz.interfaces += createType(superInterface, classModel) as KInterface
+                }
             }
         } else if (kType instanceof KInterface) {
             val kInterface = kType as KInterface
             for (superInterface : typeHierarchy.getSuperInterfaces(jdtType)) {
-                kInterface.superInterfaces += createType(superInterface, classModel) as KInterface
+                if (selectedTypes.contains(superInterface)) {
+                    kInterface.superInterfaces += createType(superInterface, classModel) as KInterface
+                }
             }
         }
         
@@ -179,8 +196,8 @@ class JdtModelTransformation {
         val jdtType = jdtField.declaringType
         val packageName = jdtType.packageFragment.elementName
         classModel.packages.findFirst[p | p.name == packageName]
-            ?.types.findFirst[t | t.name == jdtType.elementName]
-            ?.fields.findFirst[f | f.name == jdtField.elementName]
+            ?.types?.findFirst[t | t.name == jdtType.elementName]
+            ?.fields?.findFirst[f | f.name == jdtField.elementName]
     }
 
     /**
@@ -191,8 +208,8 @@ class JdtModelTransformation {
         val jdtType = jdtMethod.declaringType
         val packageName = jdtType.packageFragment.elementName
         classModel.packages.findFirst[p | p.name == packageName]
-            ?.types.findFirst[t | t.name == jdtType.elementName]
-            ?.methods.findFirst[f | jdtMethod.equalSignature(f)]
+            ?.types?.findFirst[t | t.name == jdtType.elementName]
+            ?.methods?.findFirst[f | jdtMethod.equalSignature(f)]
     }
     
     /**
@@ -219,7 +236,7 @@ class JdtModelTransformation {
         if (!res.nullOrEmpty) {
             val qualifiedName = res.get(0).get(0) + "." + res.get(0).get(1)
             val referencedType = jdtType.javaProject.findType(qualifiedName)
-            if (referencedType != null) {
+            if (referencedType != null && selectedTypes.contains(referencedType)) {
                 typeRef.referenceType = createType(referencedType, classModel)
             }
             if (!typeRef.signature.startsWith(res.get(0).get(0))) {

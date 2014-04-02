@@ -28,8 +28,8 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -90,9 +90,12 @@ public class SynthesizeClassDiagramHandler extends AbstractHandler {
             Iterator<?> selectionIter = sSelection.iterator();
             while (selectionIter.hasNext()) {
                 Object obj = selectionIter.next();
-                if (obj instanceof IType) {
-                    projects.add(((IType) obj).getJavaProject());
+                if (obj instanceof IJavaElement) {
+                    projects.add(((IJavaElement) obj).getJavaProject());
                 }
+            }
+            for (IJavaProject project : projects) {
+                classModel.getJavaProjects().add(project.getElementName());
             }
             saveSelection(classModel, projects);
             

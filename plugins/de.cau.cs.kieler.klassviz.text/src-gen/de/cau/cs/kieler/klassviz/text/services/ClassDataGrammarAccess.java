@@ -17,10 +17,10 @@ import org.eclipse.xtext.service.AbstractElementFinder.*;
 public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
-	public class KTypeSelectionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "KTypeSelection");
+	public class KClassModelElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "KClassModel");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cKTypeSelectionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cKClassModelAction_0 = (Action)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cImportKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
@@ -32,18 +32,18 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cBundleKeyword_1_1_1_0 = (Keyword)cGroup_1_1_1.eContents().get(0);
 		private final Assignment cBundlesAssignment_1_1_1_1 = (Assignment)cGroup_1_1_1.eContents().get(1);
 		private final RuleCall cBundlesQualifiedIDParserRuleCall_1_1_1_1_0 = (RuleCall)cBundlesAssignment_1_1_1_1.eContents().get(0);
-		private final Assignment cTypesAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTypesKTypeParserRuleCall_2_0 = (RuleCall)cTypesAssignment_2.eContents().get(0);
+		private final Assignment cPackagesAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cPackagesKPackageParserRuleCall_2_0 = (RuleCall)cPackagesAssignment_2.eContents().get(0);
 		
-		//KTypeSelection:
-		//	{KTypeSelection} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* types+=KType*;
+		//KClassModel:
+		//	{KClassModel} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* packages+=KPackage*;
 		public ParserRule getRule() { return rule; }
 
-		//{KTypeSelection} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* types+=KType*
+		//{KClassModel} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* packages+=KPackage*
 		public Group getGroup() { return cGroup; }
 
-		//{KTypeSelection}
-		public Action getKTypeSelectionAction_0() { return cKTypeSelectionAction_0; }
+		//{KClassModel}
+		public Action getKClassModelAction_0() { return cKClassModelAction_0; }
 
 		//("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))*
 		public Group getGroup_1() { return cGroup_1; }
@@ -78,19 +78,83 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedID
 		public RuleCall getBundlesQualifiedIDParserRuleCall_1_1_1_1_0() { return cBundlesQualifiedIDParserRuleCall_1_1_1_1_0; }
 
+		//packages+=KPackage*
+		public Assignment getPackagesAssignment_2() { return cPackagesAssignment_2; }
+
+		//KPackage
+		public RuleCall getPackagesKPackageParserRuleCall_2_0() { return cPackagesKPackageParserRuleCall_2_0; }
+	}
+
+	public class KPackageElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "KPackage");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPackageKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameQualifiedIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cTypesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTypesKTypeParserRuleCall_3_0 = (RuleCall)cTypesAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//KPackage:
+		//	"package" name=QualifiedID "{" types+=KType* "}";
+		public ParserRule getRule() { return rule; }
+
+		//"package" name=QualifiedID "{" types+=KType* "}"
+		public Group getGroup() { return cGroup; }
+
+		//"package"
+		public Keyword getPackageKeyword_0() { return cPackageKeyword_0; }
+
+		//name=QualifiedID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//QualifiedID
+		public RuleCall getNameQualifiedIDParserRuleCall_1_0() { return cNameQualifiedIDParserRuleCall_1_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+
 		//types+=KType*
-		public Assignment getTypesAssignment_2() { return cTypesAssignment_2; }
+		public Assignment getTypesAssignment_3() { return cTypesAssignment_3; }
 
 		//KType
-		public RuleCall getTypesKTypeParserRuleCall_2_0() { return cTypesKTypeParserRuleCall_2_0; }
+		public RuleCall getTypesKTypeParserRuleCall_3_0() { return cTypesKTypeParserRuleCall_3_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 
 	public class KTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "KType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cKClassParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cKInterfaceParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cKEnumParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//KType:
+		//	KClass | KInterface | KEnum;
+		public ParserRule getRule() { return rule; }
+
+		//KClass | KInterface | KEnum
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//KClass
+		public RuleCall getKClassParserRuleCall_0() { return cKClassParserRuleCall_0; }
+
+		//KInterface
+		public RuleCall getKInterfaceParserRuleCall_1() { return cKInterfaceParserRuleCall_1; }
+
+		//KEnum
+		public RuleCall getKEnumParserRuleCall_2() { return cKEnumParserRuleCall_2; }
+	}
+
+	public class KClassElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "KClass");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cQualifiedNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cQualifiedNameQualifiedIDParserRuleCall_1_0 = (RuleCall)cQualifiedNameAssignment_1.eContents().get(0);
+		private final Keyword cClassKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
 		private final Assignment cFieldsAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
@@ -99,21 +163,125 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMethodsKMethodParserRuleCall_3_1_0 = (RuleCall)cMethodsAssignment_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//KType:
-		//	"type" qualifiedName=QualifiedID "{" (fields+=KField | methods+=KMethod)* "}";
+		//KClass:
+		//	"class" name=ID "{" (fields+=KField | methods+=KMethod)* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"type" qualifiedName=QualifiedID "{" (fields+=KField | methods+=KMethod)* "}"
+		//"class" name=ID "{" (fields+=KField | methods+=KMethod)* "}"
 		public Group getGroup() { return cGroup; }
 
-		//"type"
-		public Keyword getTypeKeyword_0() { return cTypeKeyword_0; }
+		//"class"
+		public Keyword getClassKeyword_0() { return cClassKeyword_0; }
 
-		//qualifiedName=QualifiedID
-		public Assignment getQualifiedNameAssignment_1() { return cQualifiedNameAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
-		//QualifiedID
-		public RuleCall getQualifiedNameQualifiedIDParserRuleCall_1_0() { return cQualifiedNameQualifiedIDParserRuleCall_1_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+
+		//(fields+=KField | methods+=KMethod)*
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+
+		//fields+=KField
+		public Assignment getFieldsAssignment_3_0() { return cFieldsAssignment_3_0; }
+
+		//KField
+		public RuleCall getFieldsKFieldParserRuleCall_3_0_0() { return cFieldsKFieldParserRuleCall_3_0_0; }
+
+		//methods+=KMethod
+		public Assignment getMethodsAssignment_3_1() { return cMethodsAssignment_3_1; }
+
+		//KMethod
+		public RuleCall getMethodsKMethodParserRuleCall_3_1_0() { return cMethodsKMethodParserRuleCall_3_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+
+	public class KInterfaceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "KInterface");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cInterfaceKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Assignment cFieldsAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final RuleCall cFieldsKFieldParserRuleCall_3_0_0 = (RuleCall)cFieldsAssignment_3_0.eContents().get(0);
+		private final Assignment cMethodsAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
+		private final RuleCall cMethodsKMethodParserRuleCall_3_1_0 = (RuleCall)cMethodsAssignment_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//KInterface:
+		//	"interface" name=ID "{" (fields+=KField | methods+=KMethod)* "}";
+		public ParserRule getRule() { return rule; }
+
+		//"interface" name=ID "{" (fields+=KField | methods+=KMethod)* "}"
+		public Group getGroup() { return cGroup; }
+
+		//"interface"
+		public Keyword getInterfaceKeyword_0() { return cInterfaceKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+
+		//(fields+=KField | methods+=KMethod)*
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+
+		//fields+=KField
+		public Assignment getFieldsAssignment_3_0() { return cFieldsAssignment_3_0; }
+
+		//KField
+		public RuleCall getFieldsKFieldParserRuleCall_3_0_0() { return cFieldsKFieldParserRuleCall_3_0_0; }
+
+		//methods+=KMethod
+		public Assignment getMethodsAssignment_3_1() { return cMethodsAssignment_3_1; }
+
+		//KMethod
+		public RuleCall getMethodsKMethodParserRuleCall_3_1_0() { return cMethodsKMethodParserRuleCall_3_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+
+	public class KEnumElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "KEnum");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEnumKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Assignment cFieldsAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final RuleCall cFieldsKFieldParserRuleCall_3_0_0 = (RuleCall)cFieldsAssignment_3_0.eContents().get(0);
+		private final Assignment cMethodsAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
+		private final RuleCall cMethodsKMethodParserRuleCall_3_1_0 = (RuleCall)cMethodsAssignment_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//KEnum:
+		//	"enum" name=ID "{" (fields+=KField | methods+=KMethod)* "}";
+		public ParserRule getRule() { return rule; }
+
+		//"enum" name=ID "{" (fields+=KField | methods+=KMethod)* "}"
+		public Group getGroup() { return cGroup; }
+
+		//"enum"
+		public Keyword getEnumKeyword_0() { return cEnumKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -160,21 +328,19 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Assignment cParameterTypeSignaturesAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cParameterTypeSignaturesKParameterTypeSignatureParserRuleCall_2_0_0 = (RuleCall)cParameterTypeSignaturesAssignment_2_0.eContents().get(0);
+		private final Assignment cParametersAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cParametersKTypeReferenceParserRuleCall_2_0_0 = (RuleCall)cParametersAssignment_2_0.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCommaKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
-		private final Assignment cParameterTypeSignaturesAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
-		private final RuleCall cParameterTypeSignaturesKParameterTypeSignatureParserRuleCall_2_1_1_0 = (RuleCall)cParameterTypeSignaturesAssignment_2_1_1.eContents().get(0);
+		private final Assignment cParametersAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final RuleCall cParametersKTypeReferenceParserRuleCall_2_1_1_0 = (RuleCall)cParametersAssignment_2_1_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//KMethod:
-		//	name=ID "(" (parameterTypeSignatures+=KParameterTypeSignature (","
-		//	parameterTypeSignatures+=KParameterTypeSignature)*)? ")";
+		//	name=ID "(" (parameters+=KTypeReference ("," parameters+=KTypeReference)*)? ")";
 		public ParserRule getRule() { return rule; }
 
-		//name=ID "(" (parameterTypeSignatures+=KParameterTypeSignature ("," parameterTypeSignatures+=KParameterTypeSignature)*)?
-		//")"
+		//name=ID "(" (parameters+=KTypeReference ("," parameters+=KTypeReference)*)? ")"
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -186,53 +352,45 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//(parameterTypeSignatures+=KParameterTypeSignature ("," parameterTypeSignatures+=KParameterTypeSignature)*)?
+		//(parameters+=KTypeReference ("," parameters+=KTypeReference)*)?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//parameterTypeSignatures+=KParameterTypeSignature
-		public Assignment getParameterTypeSignaturesAssignment_2_0() { return cParameterTypeSignaturesAssignment_2_0; }
+		//parameters+=KTypeReference
+		public Assignment getParametersAssignment_2_0() { return cParametersAssignment_2_0; }
 
-		//KParameterTypeSignature
-		public RuleCall getParameterTypeSignaturesKParameterTypeSignatureParserRuleCall_2_0_0() { return cParameterTypeSignaturesKParameterTypeSignatureParserRuleCall_2_0_0; }
+		//KTypeReference
+		public RuleCall getParametersKTypeReferenceParserRuleCall_2_0_0() { return cParametersKTypeReferenceParserRuleCall_2_0_0; }
 
-		//("," parameterTypeSignatures+=KParameterTypeSignature)*
+		//("," parameters+=KTypeReference)*
 		public Group getGroup_2_1() { return cGroup_2_1; }
 
 		//","
 		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
 
-		//parameterTypeSignatures+=KParameterTypeSignature
-		public Assignment getParameterTypeSignaturesAssignment_2_1_1() { return cParameterTypeSignaturesAssignment_2_1_1; }
+		//parameters+=KTypeReference
+		public Assignment getParametersAssignment_2_1_1() { return cParametersAssignment_2_1_1; }
 
-		//KParameterTypeSignature
-		public RuleCall getParameterTypeSignaturesKParameterTypeSignatureParserRuleCall_2_1_1_0() { return cParameterTypeSignaturesKParameterTypeSignatureParserRuleCall_2_1_1_0; }
+		//KTypeReference
+		public RuleCall getParametersKTypeReferenceParserRuleCall_2_1_1_0() { return cParametersKTypeReferenceParserRuleCall_2_1_1_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 
-	public class KParameterTypeSignatureElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "KParameterTypeSignature");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cKParameterTypeSignatureAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameTypeSignatureParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+	public class KTypeReferenceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "KTypeReference");
+		private final Assignment cSignatureAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cSignatureTypeSignatureParserRuleCall_0 = (RuleCall)cSignatureAssignment.eContents().get(0);
 		
-		//KParameterTypeSignature:
-		//	{KParameterTypeSignature} name=TypeSignature;
+		//KTypeReference:
+		//	signature=TypeSignature;
 		public ParserRule getRule() { return rule; }
 
-		//{KParameterTypeSignature} name=TypeSignature
-		public Group getGroup() { return cGroup; }
-
-		//{KParameterTypeSignature}
-		public Action getKParameterTypeSignatureAction_0() { return cKParameterTypeSignatureAction_0; }
-
-		//name=TypeSignature
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//signature=TypeSignature
+		public Assignment getSignatureAssignment() { return cSignatureAssignment; }
 
 		//TypeSignature
-		public RuleCall getNameTypeSignatureParserRuleCall_1_0() { return cNameTypeSignatureParserRuleCall_1_0; }
+		public RuleCall getSignatureTypeSignatureParserRuleCall_0() { return cSignatureTypeSignatureParserRuleCall_0; }
 	}
 
 	public class QualifiedIDElements extends AbstractParserRuleElementFinder {
@@ -267,7 +425,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	public class TypeSignatureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TypeSignature");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cQualifiedIDParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cLessThanSignKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
@@ -276,14 +434,14 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cGreaterThanSignKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
 		//TypeSignature returns ecore::EString:
-		//	ID ("<" ("?" | TypeSignature) ">")?;
+		//	QualifiedID ("<" ("?" | TypeSignature) ">")?;
 		public ParserRule getRule() { return rule; }
 
-		//ID ("<" ("?" | TypeSignature) ">")?
+		//QualifiedID ("<" ("?" | TypeSignature) ">")?
 		public Group getGroup() { return cGroup; }
 
-		//ID
-		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+		//QualifiedID
+		public RuleCall getQualifiedIDParserRuleCall_0() { return cQualifiedIDParserRuleCall_0; }
 
 		//("<" ("?" | TypeSignature) ">")?
 		public Group getGroup_1() { return cGroup_1; }
@@ -353,11 +511,15 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
-	private KTypeSelectionElements pKTypeSelection;
+	private KClassModelElements pKClassModel;
+	private KPackageElements pKPackage;
 	private KTypeElements pKType;
+	private KClassElements pKClass;
+	private KInterfaceElements pKInterface;
+	private KEnumElements pKEnum;
 	private KFieldElements pKField;
 	private KMethodElements pKMethod;
-	private KParameterTypeSignatureElements pKParameterTypeSignature;
+	private KTypeReferenceElements pKTypeReference;
 	private QualifiedIDElements pQualifiedID;
 	private TypeSignatureElements pTypeSignature;
 	private PropertyValueElements pPropertyValue;
@@ -401,24 +563,64 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	
 
 	
-	//KTypeSelection:
-	//	{KTypeSelection} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* types+=KType*;
-	public KTypeSelectionElements getKTypeSelectionAccess() {
-		return (pKTypeSelection != null) ? pKTypeSelection : (pKTypeSelection = new KTypeSelectionElements());
+	//KClassModel:
+	//	{KClassModel} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* packages+=KPackage*;
+	public KClassModelElements getKClassModelAccess() {
+		return (pKClassModel != null) ? pKClassModel : (pKClassModel = new KClassModelElements());
 	}
 	
-	public ParserRule getKTypeSelectionRule() {
-		return getKTypeSelectionAccess().getRule();
+	public ParserRule getKClassModelRule() {
+		return getKClassModelAccess().getRule();
+	}
+
+	//KPackage:
+	//	"package" name=QualifiedID "{" types+=KType* "}";
+	public KPackageElements getKPackageAccess() {
+		return (pKPackage != null) ? pKPackage : (pKPackage = new KPackageElements());
+	}
+	
+	public ParserRule getKPackageRule() {
+		return getKPackageAccess().getRule();
 	}
 
 	//KType:
-	//	"type" qualifiedName=QualifiedID "{" (fields+=KField | methods+=KMethod)* "}";
+	//	KClass | KInterface | KEnum;
 	public KTypeElements getKTypeAccess() {
 		return (pKType != null) ? pKType : (pKType = new KTypeElements());
 	}
 	
 	public ParserRule getKTypeRule() {
 		return getKTypeAccess().getRule();
+	}
+
+	//KClass:
+	//	"class" name=ID "{" (fields+=KField | methods+=KMethod)* "}";
+	public KClassElements getKClassAccess() {
+		return (pKClass != null) ? pKClass : (pKClass = new KClassElements());
+	}
+	
+	public ParserRule getKClassRule() {
+		return getKClassAccess().getRule();
+	}
+
+	//KInterface:
+	//	"interface" name=ID "{" (fields+=KField | methods+=KMethod)* "}";
+	public KInterfaceElements getKInterfaceAccess() {
+		return (pKInterface != null) ? pKInterface : (pKInterface = new KInterfaceElements());
+	}
+	
+	public ParserRule getKInterfaceRule() {
+		return getKInterfaceAccess().getRule();
+	}
+
+	//KEnum:
+	//	"enum" name=ID "{" (fields+=KField | methods+=KMethod)* "}";
+	public KEnumElements getKEnumAccess() {
+		return (pKEnum != null) ? pKEnum : (pKEnum = new KEnumElements());
+	}
+	
+	public ParserRule getKEnumRule() {
+		return getKEnumAccess().getRule();
 	}
 
 	//KField:
@@ -432,8 +634,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//KMethod:
-	//	name=ID "(" (parameterTypeSignatures+=KParameterTypeSignature (","
-	//	parameterTypeSignatures+=KParameterTypeSignature)*)? ")";
+	//	name=ID "(" (parameters+=KTypeReference ("," parameters+=KTypeReference)*)? ")";
 	public KMethodElements getKMethodAccess() {
 		return (pKMethod != null) ? pKMethod : (pKMethod = new KMethodElements());
 	}
@@ -442,14 +643,14 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		return getKMethodAccess().getRule();
 	}
 
-	//KParameterTypeSignature:
-	//	{KParameterTypeSignature} name=TypeSignature;
-	public KParameterTypeSignatureElements getKParameterTypeSignatureAccess() {
-		return (pKParameterTypeSignature != null) ? pKParameterTypeSignature : (pKParameterTypeSignature = new KParameterTypeSignatureElements());
+	//KTypeReference:
+	//	signature=TypeSignature;
+	public KTypeReferenceElements getKTypeReferenceAccess() {
+		return (pKTypeReference != null) ? pKTypeReference : (pKTypeReference = new KTypeReferenceElements());
 	}
 	
-	public ParserRule getKParameterTypeSignatureRule() {
-		return getKParameterTypeSignatureAccess().getRule();
+	public ParserRule getKTypeReferenceRule() {
+		return getKTypeReferenceAccess().getRule();
 	}
 
 	////--------------- Terminals ----------------
@@ -464,7 +665,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TypeSignature returns ecore::EString:
-	//	ID ("<" ("?" | TypeSignature) ">")?;
+	//	QualifiedID ("<" ("?" | TypeSignature) ">")?;
 	public TypeSignatureElements getTypeSignatureAccess() {
 		return (pTypeSignature != null) ? pTypeSignature : (pTypeSignature = new TypeSignatureElements());
 	}

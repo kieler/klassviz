@@ -23,6 +23,7 @@ import de.cau.cs.kieler.klassviz.model.classdata.KMethod
 import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
 import de.cau.cs.kieler.klassviz.model.classdata.KPackage
 import org.eclipse.jdt.core.Signature
+import org.eclipse.jdt.core.IPackageFragment
 
 /**
  * @author msp
@@ -71,14 +72,40 @@ class ClassDataExtensions {
         try {
             if (project.open && project.hasNature(JavaCore.NATURE_ID)) {
                 val javaProject = JavaCore.create(project)
-                val result = javaProject.findType(type.qualifiedName)
-                if (result != null) {
-                    return result
-                }
+                return javaProject.findType(type.qualifiedName)
             }
         } catch (CoreException e) {}
     }
     
+    /**
+     * Get all packages defined in the Java project with the given name.
+     */
+    def IPackageFragment[] getJdtPackages(String projectName) {
+        val project = ResourcesPlugin.workspace.root.getProject(projectName)
+        try {
+            if (project.open && project.hasNature(JavaCore.NATURE_ID)) {
+                return JavaCore.create(project).packageFragments
+            }
+        } catch (CoreException e) {}
+        return #[]
+    }
+    
+    /**
+     * Retrieve a JDT package from a Java project.
+     */
+    def IPackageFragment getJdtPackage(String projectName, KPackage pack) {
+        val project = ResourcesPlugin.workspace.root.getProject(projectName)
+        try {
+            if (project.open && project.hasNature(JavaCore.NATURE_ID)) {
+                val javaProject = JavaCore.create(project)
+                return javaProject.packageFragments.findFirst[it.elementName == pack.name]
+            }
+        } catch (CoreException e) {}
+    }
+    
+    /**
+     * Determine whether the signature of the given JDT method equals that of the KMethod.
+     */
     def boolean equalSignature(IMethod jdtMethod, KMethod kMethod) {
         if (jdtMethod.elementName != kMethod.name
                 || jdtMethod.numberOfParameters != kMethod.parameters.size) {
@@ -86,7 +113,9 @@ class ClassDataExtensions {
         }
         var int i = 0
         while (i < jdtMethod.numberOfParameters) {
-            if (Signature.toString(jdtMethod.parameterTypes.get(i)) != kMethod.parameters.get(i)) {
+            val jdtSignature = Signature.toString(jdtMethod.parameterTypes.get(i))
+            val kSignature = kMethod.parameters.get(i).signature
+            if (jdtSignature != kSignature && jdtSignature != Signature.getSimpleName(kSignature)) {
                 return false
             }
             i = i + 1

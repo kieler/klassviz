@@ -19,7 +19,6 @@ import org.eclipse.xtext.Assignment
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
 import de.cau.cs.kieler.klassviz.model.classdata.KType
-import de.cau.cs.kieler.klassviz.model.classdata.KTypeSelection
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.jdt.core.JavaCore
 import org.eclipse.core.runtime.CoreException
@@ -27,6 +26,8 @@ import de.cau.cs.kieler.klassviz.synthesis.ClassDataExtensions
 import com.google.inject.Inject
 import org.eclipse.xtext.RuleCall
 import org.eclipse.jdt.core.Signature
+import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
+import de.cau.cs.kieler.klassviz.model.classdata.KPackage
 
 /**
  * Custom content assist proposals.
@@ -42,9 +43,11 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
     /**
      * Provide completion proposals for the name of an imported project.
      */
-     def override completeKTypeSelection_JavaProjects(EObject model, Assignment assignment,
+     def override completeKClassModel_JavaProjects(EObject model, Assignment assignment,
             ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-         for (project : ResourcesPlugin.workspace.root.projects) {
+         val classModel = model as KClassModel
+         for (project : ResourcesPlugin.workspace.root.projects.filter[
+                !classModel.javaProjects.contains(it.name)]) {
              try {
                  if (project.open && project.hasNature(JavaCore.NATURE_ID)) {
                     acceptor.accept(createCompletionProposal(project.name, context))
@@ -52,38 +55,87 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
             } catch (CoreException e) {}
          }
      }
+     
+     /**
+      * Provide completion proposals for the name of a package.
+      */
+     def override completeKPackage_Name(EObject model, Assignment assignment,
+            ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+         val classModel = (model as KPackage).eContainer as KClassModel
+         
+         // provide proposals for all referenced Java projects
+         for (projectName : classModel.javaProjects) {
+             for (packFrag : projectName.jdtPackages.filter[it.compilationUnits.length > 0
+                    && classModel.packages.forall[p | p.name != it.elementName]]) {
+                 acceptor.accept(createCompletionProposal(packFrag.elementName, context))
+             }
+         }
+     }
     
     /**
-     * Provide completion proposals for the name of a type.
+     * Provide completion proposals for the name of a class.
      */
-    def override completeKType_QualifiedName(EObject model, Assignment assignment,
+    def override completeKClass_Name(EObject model, Assignment assignment,
             ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        val data = (model as KType).eContainer as KTypeSelection
+        val pack = model as KPackage
+        val classModel = pack.eContainer as KClassModel
         
         // provide proposals for all referenced Java projects
-        for (projectName : data.javaProjects) {
-            provideProjectProposals(projectName, context, acceptor)
+        for (projectName : classModel.javaProjects) {
+            val packFrag = projectName.getJdtPackage(pack)
+            if (packFrag != null) {
+                for (compilationUnit : packFrag.compilationUnits) {
+                    for (type : compilationUnit.types.filter[it.isClass
+                            && pack.types.forall[t | t.name != it.elementName]]) {
+                        acceptor.accept(createCompletionProposal(type.elementName, context))
+                    }
+                }
+            }
         }
     }
     
     /**
-     * Provide completion proposals for all class files and compilation units in the given project.
+     * Provide completion proposals for the name of an interface.
      */
-    def private provideProjectProposals(String projectName, ContentAssistContext context,
-            ICompletionProposalAcceptor acceptor) {
-        val project = ResourcesPlugin.workspace.root.getProject(projectName)
-        try {
-            if (project.open && project.hasNature(JavaCore.NATURE_ID)) {
-                val javaProject = JavaCore.create(project)
-                for (packFrag : javaProject.packageFragments) {
-                    for (compilationUnit : packFrag.compilationUnits) {
-                        for (type : compilationUnit.types) {
-                            acceptor.accept(createCompletionProposal(type.fullyQualifiedName, context))
-                        }
+    def override completeKInterface_Name(EObject model, Assignment assignment,
+            ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        val pack = model as KPackage
+        val classModel = pack.eContainer as KClassModel
+        
+        // provide proposals for all referenced Java projects
+        for (projectName : classModel.javaProjects) {
+            val packFrag = projectName.getJdtPackage(pack)
+            if (packFrag != null) {
+                for (compilationUnit : packFrag.compilationUnits) {
+                    for (type : compilationUnit.types.filter[it.isInterface
+                            && pack.types.forall[t | t.name != it.elementName]]) {
+                        acceptor.accept(createCompletionProposal(type.elementName, context))
                     }
                 }
             }
-        } catch (CoreException e) {}
+        }
+    }
+    
+    /**
+     * Provide completion proposals for the name of an enumeration.
+     */
+    def override completeKEnum_Name(EObject model, Assignment assignment,
+            ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+        val pack = model as KPackage
+        val classModel = pack.eContainer as KClassModel
+        
+        // provide proposals for all referenced Java projects
+        for (projectName : classModel.javaProjects) {
+            val packFrag = projectName.getJdtPackage(pack)
+            if (packFrag != null) {
+                for (compilationUnit : packFrag.compilationUnits) {
+                    for (type : compilationUnit.types.filter[it.isEnum
+                            && pack.types.forall[t | t.name != it.elementName]]) {
+                        acceptor.accept(createCompletionProposal(type.elementName, context))
+                    }
+                }
+            }
+        }
     }
     
     /**
@@ -92,11 +144,12 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
      def override complete_KField(EObject model, RuleCall ruleCall, ContentAssistContext context,
             ICompletionProposalAcceptor acceptor) {
         val type = model as KType
-        val data = type.eContainer as KTypeSelection
-        val jdtType = data.getJdtType(type)
+        val pack = type.eContainer as KPackage
+        val classModel = pack.eContainer as KClassModel
+        val jdtType = classModel.getJdtType(type)
         if (jdtType != null) {
             for (field : jdtType.fields) {
-                if (!type.fields.exists[it.name == field.elementName]) {
+                if (type.fields.forall[it.name != field.elementName]) {
                     acceptor.accept(createCompletionProposal(field.elementName, context))
                 }
             }
@@ -109,14 +162,15 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
      def override complete_KMethod(EObject model, RuleCall ruleCall, ContentAssistContext context,
              ICompletionProposalAcceptor acceptor) {
         val type = model as KType
-        val data = type.eContainer as KTypeSelection
-        val jdtType = data.getJdtType(type)
+        val pack = type.eContainer as KPackage
+        val classModel = pack.eContainer as KClassModel
+        val jdtType = classModel.getJdtType(type)
         if (jdtType != null) {
             for (method : jdtType.methods) {
                 if (!method.constructor) {
                     val paramTypeSign = method.parameterTypes.map[t | Signature.toString(t)]
-                    if (!type.methods.exists[it.name == method.elementName
-                            && it.parameterTypeSignatures.map[s | s.name].equals(paramTypeSign)]) {
+                    if (type.methods.forall[it.name != method.elementName
+                            || !it.parameters.map[s | s.signature].equals(paramTypeSign)]) {
                         val proposal = method.elementName + "(" + paramTypeSign.join(", ") + ")"
                         acceptor.accept(createCompletionProposal(proposal, context))
                     }

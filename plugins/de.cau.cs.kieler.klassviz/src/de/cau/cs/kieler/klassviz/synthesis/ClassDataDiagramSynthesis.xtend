@@ -15,6 +15,7 @@ package de.cau.cs.kieler.klassviz.synthesis
 
 import com.google.common.base.Joiner
 import com.google.common.collect.ImmutableList
+import com.google.inject.Inject
 import de.cau.cs.kieler.core.kgraph.KNode
 import de.cau.cs.kieler.core.krendering.KContainerRendering
 import de.cau.cs.kieler.core.krendering.KPolyline
@@ -27,11 +28,19 @@ import de.cau.cs.kieler.core.krendering.extensions.KLabelExtensions
 import de.cau.cs.kieler.core.krendering.extensions.KNodeExtensions
 import de.cau.cs.kieler.core.krendering.extensions.KPolylineExtensions
 import de.cau.cs.kieler.core.krendering.extensions.KRenderingExtensions
+import de.cau.cs.kieler.core.util.Maybe
 import de.cau.cs.kieler.kiml.options.Direction
 import de.cau.cs.kieler.kiml.options.EdgeRouting
 import de.cau.cs.kieler.kiml.options.LayoutOptions
+import de.cau.cs.kieler.klassviz.model.classdata.KClass
+import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
+import de.cau.cs.kieler.klassviz.model.classdata.KEnum
 import de.cau.cs.kieler.klassviz.model.classdata.KField
+import de.cau.cs.kieler.klassviz.model.classdata.KInterface
+import de.cau.cs.kieler.klassviz.model.classdata.KMethod
+import de.cau.cs.kieler.klassviz.model.classdata.KPackage
 import de.cau.cs.kieler.klassviz.model.classdata.KType
+import de.cau.cs.kieler.klassviz.model.classdata.KVisibility
 import de.cau.cs.kieler.klighd.KlighdConstants
 import de.cau.cs.kieler.klighd.SynthesisOption
 import de.cau.cs.kieler.klighd.syntheses.AbstractDiagramSynthesis
@@ -40,15 +49,6 @@ import java.util.Collection
 import java.util.List
 import java.util.Map
 import org.eclipse.jdt.core.Signature
-import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
-import de.cau.cs.kieler.klassviz.model.classdata.KPackage
-import de.cau.cs.kieler.klassviz.model.classdata.KEnum
-import de.cau.cs.kieler.klassviz.model.classdata.KInterface
-import de.cau.cs.kieler.klassviz.model.classdata.KClass
-import de.cau.cs.kieler.klassviz.model.classdata.KVisibility
-import de.cau.cs.kieler.klassviz.model.classdata.KMethod
-import de.cau.cs.kieler.core.util.Maybe
-import com.google.inject.Inject
 
 /**
  * Synthesis of class diagrams using the Classdata meta model.

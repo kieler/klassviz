@@ -176,7 +176,7 @@ public class RestoreSelectionHandler extends AbstractHandler {
         List<String> parameterSignatureTypes = new ArrayList<String>();
         for (KTypeReference typeReference : eMethod.getParameters()) {
             parameterSignatureTypes.add(Signature.createTypeSignature(
-                    typeReference.getSignature(), false));
+                    Signature.getSimpleName(typeReference.getSignature()), false));
         }
         return parameterSignatureTypes.toArray(new String[0]);
     }

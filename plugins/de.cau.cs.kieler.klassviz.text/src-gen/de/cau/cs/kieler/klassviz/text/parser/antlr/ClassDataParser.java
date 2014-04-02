@@ -25,7 +25,7 @@ public class ClassDataParser extends org.eclipse.xtext.parser.antlr.AbstractAntl
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "KTypeSelection";
+		return "KClassModel";
 	}
 	
 	public ClassDataGrammarAccess getGrammarAccess() {

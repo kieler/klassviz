@@ -17,15 +17,33 @@ hidden(WS, ML_COMMENT, SL_COMMENT)
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "http://kieler.cs.cau.de/classdata"
 
-KTypeSelection returns KTypeSelection:
-    {KTypeSelection}
+KClassModel returns KClassModel:
+    {KClassModel}
     ('import'
         ('project' javaProjects+=QualifiedID | 'bundle' bundles+=QualifiedID)
     )*
-    (types+=KType)*;
+    (packages+=KPackage)*;
+
+KPackage returns KPackage:
+    'package' name=QualifiedID '{'
+        (types+=KType)*
+    '}';
 
 KType returns KType:
-    'type' qualifiedName=QualifiedID '{'
+    KClass | KInterface | KEnum;
+
+KClass returns KClass:
+    'class' name=ID '{'
+        (fields+=KField | methods+=KMethod)*
+    '}';
+
+KInterface returns KInterface:
+    'interface' name=ID '{'
+        (fields+=KField | methods+=KMethod)*
+    '}';
+
+KEnum returns KEnum:
+    'enum' name=ID '{'
         (fields+=KField | methods+=KMethod)*
     '}';
 
@@ -34,13 +52,11 @@ KField returns KField:
 
 KMethod returns KMethod:
     name=ID '('
-        (parameterTypeSignatures+=KParameterTypeSignature
-            ("," parameterTypeSignatures+=KParameterTypeSignature)*)?
+        (parameters+=KTypeReference ("," parameters+=KTypeReference)*)?
     ')';
 
-KParameterTypeSignature returns KParameterTypeSignature:
-    {KParameterTypeSignature}
-    name=TypeSignature;
+KTypeReference returns KTypeReference:
+    signature=TypeSignature;
 
 //--------------- Terminals ----------------
 
@@ -48,7 +64,7 @@ QualifiedID returns ecore::EString:
     ID ('.' ID)*;
 
 TypeSignature returns ecore::EString:
-    ID ('<' ('?' | TypeSignature) '>')?;
+    QualifiedID ('<' ('?' | TypeSignature) '>')?;
 
 PropertyValue returns ecore::EString:
     BOOLEAN | STRING | Float | QualifiedID;
