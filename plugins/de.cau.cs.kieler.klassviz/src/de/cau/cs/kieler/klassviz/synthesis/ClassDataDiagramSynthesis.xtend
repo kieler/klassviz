@@ -321,14 +321,8 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 if (!(fields.empty && methods.empty)) {
                     rect.addSeparator
                     
-                    // Add a rectangle with a two-column grid layout that will hold the actual fields
-                    val fieldContainer = rect.addRectangle
-                    fieldContainer.setGridPlacement(2)
-                    fieldContainer.invisible = true
-                    
-                    // Add the actual fields
                     fields.forEach [ field |
-                        fieldContainer.addClassMember(field.key, field.value)
+                        rect.addClassMember(field.key, field.value)
                     ]
                 }
                 
@@ -336,14 +330,8 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 if (!methods.empty) {
                     rect.addSeparator
                     
-                    // Add a rectangle with a two-column grid layout that will hold the actual methods
-                    val methodContainer = rect.addRectangle
-                    methodContainer.setGridPlacement(2)
-                    methodContainer.invisible = true
-                    
-                    // Add the actual methods
                     methods.forEach [ method |
-                        methodContainer.addClassMember(method.key, method.value)
+                        rect.addClassMember(method.key, method.value)
                     ]
                 }
             ]
@@ -538,7 +526,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
         // Method parameters
         val parameters = newLinkedList();
         if (METHODS_PARAMETERS.booleanValue) {
-            method.parameters.forEach [ parameter |
+            method.parameters.map [ parameter |
                 if (METHODS_TYPE.booleanValue) {
                     parameters += parameter.name + " : " + Signature.getSimpleName(parameter.signature)
                 } else {
@@ -688,24 +676,33 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
         
         // Depending on if we will use icons or not, the rendering changes
         if (USE_ICONS.booleanValue) {
-            // Add a new little rectangle that we can place stuff in
-            val actualContainer = container.addRectangle() => [ rect |
-                rect.invisible = true
-                rect.setGridPlacement(2)
-                rect.setGridPlacementData(
+            // We need two rectangles: one that represents the grid layout cell...
+            val cell = container.addRectangle() => [
+                it.invisible = true
+                it.setGridPlacementData(
                     0,
                     0,
                     createKPosition(LEFT, 0, 0, TOP, 0, 0),
-                    createKPosition(RIGHT, 0, 0, BOTTOM, 0, 0)).flexibleWidth = false
+                    createKPosition(RIGHT, 0, 0, BOTTOM, 0, 0))
+            ]
+            
+            // ...and a second one that servers as a free-floating, centrally-aligned container
+            val actualContainer = cell.addRectangle() => [
+                it.invisible = true
+                it.setPointPlacementData(
+                    LEFT, 0, 0.5f,
+                    TOP, 0, 0.5f,
+                    H_CENTRAL, V_CENTRAL,
+                    0, 0, 0, 0)
             ]
             
             // Type indicator
             actualContainer.addTypeIndicator(classData) => [ icon |
-                icon.setGridPlacementData(
-                    16,
-                    16,
-                    createKPosition(LEFT, 0, 0, TOP, 0, 0),
-                    createKPosition(RIGHT, 0, 0, BOTTOM, 0, 0)).flexibleWidth = false
+                icon.setPointPlacementData(
+                    LEFT, 10, 0,
+                    TOP, 0, 0.5f,
+                    H_CENTRAL, V_CENTRAL,
+                    0, 0, 16, 16)
             ]
             
             // Class name
@@ -713,11 +710,11 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 text.fontSize = KlighdConstants.DEFAULT_FONT_SIZE + 2
                 text.fontBold = true
                 text.fontItalic = isAbstract
-                text.setGridPlacementData(
-                    0,
-                    0,
-                    createKPosition(LEFT, ICON_PADDING, 0, TOP, 0, 0),
-                    createKPosition(RIGHT, 0, 0, BOTTOM, 0, 0)).flexibleWidth = false
+                text.setPointPlacementData(
+                    LEFT, 25, 0,
+                    TOP, 0, 0.5f,
+                    H_LEFT, V_CENTRAL,
+                    0, 0, 0, 0)
             ]
         } else {
             // Type indicator
@@ -749,22 +746,30 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     def KContainerRendering addClassMember(KContainerRendering container, KVisibility visibility,
         String name) {
         
-        container.addVisibilityIndicator(visibility) => [ indicator |
-            indicator.horizontalAlignment = H_LEFT
-            indicator.setGridPlacementData(
-                16,
-                16,
-                createKPosition(LEFT, 0, 0, TOP, CLASS_NODE_PADDING, 0),
-                createKPosition(RIGHT, ICON_PADDING, 0, BOTTOM, 0, 0)).flexibleWidth = false
+        // Add an invisible rectangle that will contain our visibility indicator and the member name
+        val actualContainer = container.addRectangle() => [
+                it.invisible = true
+                it.setGridPlacementData(
+                    0,
+                    0,
+                    createKPosition(LEFT, 0, 0, TOP, 2, 0),
+                    createKPosition(RIGHT, 0, 0, BOTTOM, 0, 0))
+            ]
+        
+        actualContainer.addVisibilityIndicator(visibility) => [ indicator |
+            indicator.setPointPlacementData(
+                LEFT, 8, 0,
+                TOP, 0, 0.5f,
+                H_CENTRAL, V_CENTRAL,
+                0, 0, 16, 16)
         ]
         
-        container.addText(name) => [ text |
-            text.horizontalAlignment = H_LEFT
-            text.setGridPlacementData(
-                0,
-                0,
-                createKPosition(LEFT, 0, 0, TOP, CLASS_NODE_PADDING, 0),
-                createKPosition(RIGHT, 0, 0, BOTTOM, 0, 0))
+        actualContainer.addText(name) => [ text |
+            text.setPointPlacementData(
+                LEFT, 20, 0,
+                TOP, 0, 0.5f,
+                H_LEFT, V_CENTRAL,
+                0, 0, 0, 0)
         ]
         
         return container
