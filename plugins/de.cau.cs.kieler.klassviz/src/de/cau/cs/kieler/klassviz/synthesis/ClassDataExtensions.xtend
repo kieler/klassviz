@@ -24,6 +24,9 @@ import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
 import de.cau.cs.kieler.klassviz.model.classdata.KPackage
 import org.eclipse.jdt.core.Signature
 import org.eclipse.jdt.core.IPackageFragment
+import org.eclipse.core.runtime.Platform
+import org.osgi.framework.wiring.BundleWiring
+import java.util.Collections
 
 /**
  * @author msp
@@ -53,7 +56,7 @@ class ClassDataExtensions {
     }
     
     /**
-     * Retrieve a JDT type from all referenced projects and bundles.
+     * Retrieve a JDT type from one of the referenced projects.
      */
     def IType getJdtType(KClassModel classModel, KType type) {
         for (projectName : classModel.javaProjects) {
@@ -101,6 +104,45 @@ class ClassDataExtensions {
                 return javaProject.packageFragments.findFirst[it.elementName == pack.name]
             }
         } catch (CoreException e) {}
+    }
+    
+    /**
+     * Retrieve a class from one of the referenced bundles.
+     */
+    def Class<?> getBundleClass(KClassModel classModel, KType type) {
+        for (bundleName : classModel.bundles) {
+            try {
+                val result = Platform.getBundle(bundleName)?.loadClass(type.qualifiedName)
+                if (result != null) {
+                    return result
+                }
+            } catch (ClassNotFoundException e) {}
+        }
+        null
+    }
+    
+    /**
+     * Get the names of all classes that can be loaded by the bundle with given name.
+     */
+    def Iterable<Class<?>> getBundleClasses(String bundleName, String packageName) {
+        val bundle = Platform.getBundle(bundleName)
+        if (bundle == null) {
+            return Collections.emptyList
+        }
+        bundle.adapt(BundleWiring)
+            .listResources("/" + bundleName.replace('.', '/'), "*.class",
+                BundleWiring.LISTRESOURCES_RECURSE)
+            .map[it.substring(0, it.length - ".class".length).replace('/', '.')]
+            .filter[
+                val dotIndex = it.lastIndexOf('.')
+                if (dotIndex < 0)
+                    packageName.length == 0
+                else
+                    it.substring(0, dotIndex) == packageName
+            ]
+            .map[try {
+                bundle.loadClass(it)
+            } catch (ClassNotFoundException e) {null}].filterNull
     }
     
     /**

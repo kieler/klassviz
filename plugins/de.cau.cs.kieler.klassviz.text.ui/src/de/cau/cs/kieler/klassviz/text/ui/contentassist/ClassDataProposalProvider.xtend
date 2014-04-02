@@ -28,6 +28,8 @@ import org.eclipse.xtext.RuleCall
 import org.eclipse.jdt.core.Signature
 import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
 import de.cau.cs.kieler.klassviz.model.classdata.KPackage
+import org.eclipse.core.runtime.Platform
+import de.cau.cs.kieler.klassviz.text.ui.ClassDataUiModule
 
 /**
  * Custom content assist proposals.
@@ -57,6 +59,18 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
      }
      
      /**
+      * Provide completion proposals for the name of an imported bundle.
+      */
+     def override completeKClassModel_Bundles(EObject model, Assignment assignment,
+            ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+         val classModel = model as KClassModel
+         for (bundle : Platform.getBundle(ClassDataUiModule.PLUGIN_ID).bundleContext.bundles.filter[
+                !classModel.bundles.contains(it.symbolicName)]) {
+             acceptor.accept(createCompletionProposal(bundle.symbolicName, context))
+         }
+     }
+     
+     /**
       * Provide completion proposals for the name of a package.
       */
      def override completeKPackage_Name(EObject model, Assignment assignment,
@@ -68,6 +82,16 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
              for (packFrag : projectName.jdtPackages.filter[it.compilationUnits.length > 0
                     && classModel.packages.forall[p | p.name != it.elementName]]) {
                  acceptor.accept(createCompletionProposal(packFrag.elementName, context))
+             }
+         }
+         
+         // provide proposals for all referenced bundles
+         for (bundleName : classModel.bundles) {
+             val packagesString = Platform.getBundle(bundleName)?.headers?.get("Export-Package")
+             if (packagesString != null) {
+                 for (pck : packagesString.split(",")) {
+                     acceptor.accept(createCompletionProposal(pck, context))
+                 }
              }
          }
      }
@@ -89,6 +113,18 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
                             && pack.types.forall[t | t.name != it.elementName]]) {
                         acceptor.accept(createCompletionProposal(type.elementName, context))
                     }
+                }
+            }
+        }
+        
+        // provide proposals for all referenced bundles
+        for (bundleName : classModel.bundles) {
+            if (pack.name.startsWith(bundleName)) {
+                for (clazz : bundleName.getBundleClasses(pack.name).filter[
+                        !it.anonymousClass && !it.isInterface && !it.isEnum && !it.array
+                        && !it.annotation && !it.synthetic && !it.primitive
+                        && pack.types.forall[t | t.name != it.simpleName]]) {
+                    acceptor.accept(createCompletionProposal(clazz.simpleName, context))
                 }
             }
         }
@@ -114,6 +150,16 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
                 }
             }
         }
+        
+        // provide proposals for all referenced bundles
+        for (bundleName : classModel.bundles) {
+            if (pack.name.startsWith(bundleName)) {
+                for (clazz : bundleName.getBundleClasses(pack.name).filter[it.isInterface
+                        && pack.types.forall[t | t.name != it.simpleName]]) {
+                    acceptor.accept(createCompletionProposal(clazz.simpleName, context))
+                }
+            }
+        }
     }
     
     /**
@@ -136,6 +182,16 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
                 }
             }
         }
+        
+        // provide proposals for all referenced bundles
+        for (bundleName : classModel.bundles) {
+            if (pack.name.startsWith(bundleName)) {
+                for (clazz : bundleName.getBundleClasses(pack.name).filter[it.isEnum
+                        && pack.types.forall[t | t.name != it.simpleName]]) {
+                    acceptor.accept(createCompletionProposal(clazz.simpleName, context))
+                }
+            }
+        }
     }
     
     /**
@@ -148,9 +204,17 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
         val classModel = pack.eContainer as KClassModel
         val jdtType = classModel.getJdtType(type)
         if (jdtType != null) {
-            for (field : jdtType.fields) {
-                if (type.fields.forall[it.name != field.elementName]) {
-                    acceptor.accept(createCompletionProposal(field.elementName, context))
+            // get the proposals from a JDT type
+            for (field : jdtType.fields.filter[f | type.fields.forall[it.name != f.elementName]]) {
+                acceptor.accept(createCompletionProposal(field.elementName, context))
+            }
+        } else {
+            val clazz = classModel.getBundleClass(type)
+            if (clazz != null) {
+                // get the proposals from a reflection class
+                for (field : clazz.fields.filter[f | f.declaringClass == clazz
+                        && type.fields.forall[it.name != f.name]]) {
+                    acceptor.accept(createCompletionProposal(field.name, context))
                 }
             }
         }
@@ -166,12 +230,24 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
         val classModel = pack.eContainer as KClassModel
         val jdtType = classModel.getJdtType(type)
         if (jdtType != null) {
-            for (method : jdtType.methods) {
-                if (!method.constructor) {
-                    val paramTypeSign = method.parameterTypes.map[t | Signature.toString(t)]
-                    if (type.methods.forall[it.name != method.elementName
+            // get the proposals from a JDT type
+            for (method : jdtType.methods.filter[!it.constructor]) {
+                val paramTypeSign = method.parameterTypes.map[t | Signature.toString(t)]
+                if (type.methods.forall[it.name != method.elementName
+                        || !it.parameters.map[s | s.signature].equals(paramTypeSign)]) {
+                    val proposal = method.elementName + "(" + paramTypeSign.join(", ") + ")"
+                    acceptor.accept(createCompletionProposal(proposal, context))
+                }
+            }
+        } else {
+            val clazz = classModel.getBundleClass(type)
+            if (clazz != null) {
+                // get the proposals from a reflection class
+                for (method : clazz.methods.filter[m | m.declaringClass == clazz]) {
+                    val paramTypeSign = method.parameterTypes.map[t | t.simpleName]
+                    if (type.methods.forall[it.name != method.name
                             || !it.parameters.map[s | s.signature].equals(paramTypeSign)]) {
-                        val proposal = method.elementName + "(" + paramTypeSign.join(", ") + ")"
+                        val proposal = method.name + "(" + paramTypeSign.join(", ") + ")"
                         acceptor.accept(createCompletionProposal(proposal, context))
                     }
                 }

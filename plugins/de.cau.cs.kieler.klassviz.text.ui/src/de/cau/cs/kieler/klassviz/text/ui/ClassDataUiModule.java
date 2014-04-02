@@ -19,7 +19,12 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
  * Use this class to register components to be used within the IDE.
  */
 public class ClassDataUiModule extends de.cau.cs.kieler.klassviz.text.ui.AbstractClassDataUiModule {
-	public ClassDataUiModule(AbstractUIPlugin plugin) {
-		super(plugin);
-	}
+    
+    /** The plug-in identifier. */
+    public static final String PLUGIN_ID = "de.cau.cs.kieler.klassviz.text.ui";
+    
+    public ClassDataUiModule(AbstractUIPlugin plugin) {
+        super(plugin);
+    }
+    
 }
