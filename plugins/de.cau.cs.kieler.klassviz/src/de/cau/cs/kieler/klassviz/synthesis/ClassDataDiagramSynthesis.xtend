@@ -81,6 +81,8 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     private static val CLASS_NODE_INSETS = 5
     /** Amount of space to be left between the elements of a class node. */
     private static val CLASS_NODE_PADDING = 5
+    /** Amount of space to be left between icons and text. */
+    private static val ICON_PADDING = 5
     /** Start color of the background gradient for classes. */
     private static val CLASS_BACKGROUND_1 = "#F8F9FD"
     /** End color of the background gradient for classes. */
@@ -106,10 +108,11 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
         SynthesisOption::createSeparator("General")
     
     private static val SynthesisOption COLOR_GRADIENT =
-        SynthesisOption::createCheckOption("Use Color Gradient", true)
-    
+        SynthesisOption::createCheckOption("Color Gradient", true)
+    private static val SynthesisOption USE_ICONS =
+        SynthesisOption::createCheckOption("Icons", true)
     private static val SynthesisOption VISUALIZE_PACKAGES =
-        SynthesisOption::createCheckOption("Show Packagehierarchy", false)
+        SynthesisOption::createCheckOption("Package Hierarchy", false)
     
     private static val VISUALIZE_SELECTION = "Visualize Selection"
     private static val VISUALIZE_ALL = "Visualize All"
@@ -130,8 +133,6 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
         SynthesisOption::createCheckOption("Private Attributes", true)
     private static val SynthesisOption ATTRIBUTES_TYPE =
         SynthesisOption::createCheckOption("Type", true)
-    private static val SynthesisOption ATTRIBUTES_VISIBILITY =
-        SynthesisOption::createCheckOption("Show Visibility", true)
 
     private static val SynthesisOption METHODS_SEPARATOR =
         SynthesisOption::createSeparator("Methods")
@@ -139,8 +140,6 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
         SynthesisOption::createCheckOption("Private Methods", true)
     private static val SynthesisOption METHODS_TYPE =
         SynthesisOption::createCheckOption("Type", true)
-    private static val SynthesisOption METHODS_VISIBILITY =
-        SynthesisOption::createCheckOption("Show Visibility", true)
     private static val SynthesisOption METHODS_PARAMETERS =
         SynthesisOption::createCheckOption("Parameters", true)
 
@@ -155,10 +154,10 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * Returns our list of synthesis options to be displayed.
      */
     override public getDisplayedSynthesisOptions() {
-        return ImmutableList::of(GENERAL_SEPARATOR, COLOR_GRADIENT, VISUALIZE_PACKAGES,
+        return ImmutableList::of(GENERAL_SEPARATOR, COLOR_GRADIENT, USE_ICONS, VISUALIZE_PACKAGES,
             VISUALIZE_ALL_OR_SELECTION, CLASSES_SEPARATOR, CLASSES_FQNAME, ATTRIBUTES_SEPARATOR,
-            ATTRIBUTES_PRIVATE, ATTRIBUTES_TYPE, ATTRIBUTES_VISIBILITY, METHODS_SEPARATOR,
-            METHODS_PRIVATE, METHODS_TYPE, METHODS_VISIBILITY, METHODS_PARAMETERS, EDGES_SEPARATOR,
+            ATTRIBUTES_PRIVATE, ATTRIBUTES_TYPE, METHODS_SEPARATOR,
+            METHODS_PRIVATE, METHODS_TYPE, METHODS_PARAMETERS, EDGES_SEPARATOR,
             EDGES_INHERITANCE, EDGES_ASSOCIATION)
     }
     
@@ -280,28 +279,12 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                     .from(LEFT, CLASS_NODE_INSETS, 0, TOP, CLASS_NODE_INSETS, 0)
                     .to(RIGHT, CLASS_NODE_INSETS, 0, BOTTOM, CLASS_NODE_INSETS, 0)
                 
-                // Possibly add a modifier
-                var isAbstract = false
-                if (classData instanceof KInterface) {
-                    rect.addClassModifier("Interface")
-                    isAbstract = true
-                } else if (classData instanceof KEnum) {
-                    rect.addClassModifier("Enumeration")
-                } else if (classData instanceof KClass && (classData as KClass).abstract) {
-                    rect.addClassModifier("Abstract")
-                    isAbstract = true
-                }
-                
-                // Add the class name
-                if (CLASSES_FQNAME.booleanValue) {
-                    rect.addClassName(classData.qualifiedName, isAbstract)
-                } else {
-                    rect.addClassName(classData.name, isAbstract)
-                }
+                // Add the main class information
+                rect.addClassName(classData)
                 
                 // Add all fields that have no association-relation or have association relation but
                 // associations shouldn't be visualized
-                val List<String> fields = new ArrayList(classData.fields.size)
+                val List<Pair<KVisibility, String>> fields = new ArrayList(classData.fields.size)
                 classData.fields.forEach [ eField |
                     // If the field will be visualized as a dependency, we don't need to process it
                     // at this point
@@ -314,14 +297,14 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                             // If only selected fields shall be visualized only add selected fields
                             if (eField.selected
                                     || VISUALIZE_ALL_OR_SELECTION.objectValue == VISUALIZE_ALL) {
-                                fields.add(eField.buildDisplayString)
+                                fields.add(Pair.of(eField.visibility, eField.buildDisplayString))
                             }
                         }
                     }
                 ]
                 
                 // Add all methods
-                val List<String> methods = new ArrayList(classData.methods.size)
+                val List<Pair<KVisibility, String>> methods = new ArrayList(classData.methods.size)
                 classData.methods.forEach [ eMethod |
                     // If only private methods shall be added only add non private methods...
                     if (eMethod.visibility != KVisibility::PRIVATE
@@ -329,7 +312,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                         // if only selected methods shall be visualized only add selected methods
                         if (eMethod.selected
                                 || VISUALIZE_ALL_OR_SELECTION.objectValue == VISUALIZE_ALL) {
-                            methods.add(eMethod.buildDisplayString)
+                            methods.add(Pair.of(eMethod.visibility, eMethod.buildDisplayString))
                         }
                     }
                 ]
@@ -338,8 +321,14 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 if (!(fields.empty && methods.empty)) {
                     rect.addSeparator
                     
+                    // Add a rectangle with a two-column grid layout that will hold the actual fields
+                    val fieldContainer = rect.addRectangle
+                    fieldContainer.setGridPlacement(2)
+                    fieldContainer.invisible = true
+                    
+                    // Add the actual fields
                     fields.forEach [ field |
-                        rect.addClassMember(field)
+                        fieldContainer.addClassMember(field.key, field.value)
                     ]
                 }
                 
@@ -347,8 +336,14 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 if (!methods.empty) {
                     rect.addSeparator
                     
+                    // Add a rectangle with a two-column grid layout that will hold the actual methods
+                    val methodContainer = rect.addRectangle
+                    methodContainer.setGridPlacement(2)
+                    methodContainer.invisible = true
+                    
+                    // Add the actual methods
                     methods.forEach [ method |
-                        rect.addClassMember(method)
+                        methodContainer.addClassMember(method.key, method.value)
                     ]
                 }
             ]
@@ -540,14 +535,6 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * @param method the method whose display string to build.
      */
     def String buildDisplayString(KMethod method) {
-        // Visibility modifier
-        val String visibility =
-            if (METHODS_VISIBILITY.booleanValue) {
-                method.visibility.visibilityString
-            } else {
-                ""
-            }
-        
         // Method parameters
         val parameters = newLinkedList();
         if (METHODS_PARAMETERS.booleanValue) {
@@ -570,12 +557,11 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
         
         // Build the actual display string
         if (METHODS_PARAMETERS.booleanValue) {
-            return visibility
-                + method.name
+            return method.name
                 + " (" + Joiner.on(", ").join(parameters) + ")"
                 + methodReturnType
         } else {
-            return visibility + method.name + methodReturnType
+            return method.name + methodReturnType
         }
     }
 
@@ -586,35 +572,13 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * @param field the field whose display string to build.
      */
     def String buildDisplayString(KField field) {
-        var String fieldType = ""
-        var String visibility = ""
-        if (ATTRIBUTES_VISIBILITY.booleanValue) {
-            visibility = field.visibility.visibilityString
-        }
-
-        if (ATTRIBUTES_TYPE.booleanValue) {
-            fieldType = " : " + Signature.getSimpleName(field.type.signature)
-        }
-        return visibility + field.name + fieldType
-    }
-    
-    /**
-     * Turns the given visibility type into a proper visibility modifier.
-     * 
-     * @param visibility the visibility type.
-     * @return UML visibility modifier.
-     */
-    def getVisibilityString(KVisibility visibility) {
-        switch (visibility) {
-        case KVisibility::PRIVATE:
-            return "\u2212"
-        case KVisibility::PUBLIC:
-            return "+"
-        case KVisibility::PROTECTED:
-            return "#"
-        default:
-            return ""
-        }
+        val String fieldType = 
+            if (ATTRIBUTES_TYPE.booleanValue) {
+                " : " + Signature.getSimpleName(field.type.signature)
+            } else {
+                ""
+            }
+        return field.name + fieldType
     }
 
     /**
@@ -668,42 +632,109 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * Adds a label to the container with the given content, formatted as a class modifier.
      * 
      * @param container the container to add the label to.
-     * @param modifier text for the label.
-     * @return the container.
+     * @param classData information on the class.
+     * @return the rendering.
      */
-    def KContainerRendering addClassModifier(KContainerRendering container, String modifier) {
-        container.addText("<<" + modifier + ">>") => [ text |
-            text.setGridPlacementData(
-                0,
-                0,
-                createKPosition(LEFT, 0, 0, TOP, 0, 0),
-                createKPosition(RIGHT, 0, 0, BOTTOM, 0, 0))
-        ]
-        return container
+    def KRendering addTypeIndicator(KContainerRendering container, KType classData) {
+        if (USE_ICONS.booleanValue) {
+            val iconName =
+                if (classData instanceof KInterface) {
+                    "interface.gif"
+                } else if (classData instanceof KEnum) {
+                    "enum.gif"
+                } else {
+                    "class.gif"
+                }
+            
+            return container.addImage("de.cau.cs.kieler.klassviz", "icons/" + iconName)
+        } else {
+            val modifierString =
+                if (classData instanceof KInterface) {
+                    "Interface"
+                } else if (classData instanceof KEnum) {
+                    "Enumeration"
+                } else if (classData instanceof KClass && (classData as KClass).abstract) {
+                    "Abstract"
+                } else {
+                    null
+                }
+            
+            if (modifierString != null) {
+                return container.addText("<<" + modifierString + ">>")
+            }
+        }
+        
+        return null
     }
     
     /**
      * Adds a label to the container with the given content, formatted as a class name.
      * 
-     * @param container the container to add the label to.
-     * @param name text for the label.
-     * @param isAbstract {@code true} if the class is an abstract class or an interface.
-     * @return the container.
+     * @param container the container to add the class information to.
+     * @param classData information about the class.
      */
-    def KContainerRendering addClassName(KContainerRendering container, String name,
-        boolean isAbstract) {
+    def addClassName(KContainerRendering container, KType classData) {
+        // Extract the class name we'll be using
+        val className =
+            if (CLASSES_FQNAME.booleanValue) {
+                classData.qualifiedName
+            } else {
+                classData.name
+            }
         
-        container.addText(name) => [ text |
-            text.fontSize = KlighdConstants.DEFAULT_FONT_SIZE + 2
-            text.fontBold = true
-            text.fontItalic = isAbstract
-            text.setGridPlacementData(
-                0,
-                0,
-                createKPosition(LEFT, 0, 0, TOP, 0, 0),
-                createKPosition(RIGHT, 0, 0, BOTTOM, 0, 0))
-        ]
-        return container
+        // Check if the class is abstract
+        val isAbstract = (classData instanceof KInterface)
+            || (classData instanceof KClass && (classData as KClass).abstract)
+        
+        // Depending on if we will use icons or not, the rendering changes
+        if (USE_ICONS.booleanValue) {
+            // Add a new little rectangle that we can place stuff in
+            val actualContainer = container.addRectangle() => [ rect |
+                rect.invisible = true
+                rect.setGridPlacement(2)
+                rect.setGridPlacementData(
+                    0,
+                    0,
+                    createKPosition(LEFT, 0, 0, TOP, 0, 0),
+                    createKPosition(RIGHT, 0, 0, BOTTOM, 0, 0)).flexibleWidth = false
+            ]
+            
+            // Type indicator
+            actualContainer.addTypeIndicator(classData) => [ icon |
+                icon.setGridPlacementData(
+                    16,
+                    16,
+                    createKPosition(LEFT, 0, 0, TOP, 0, 0),
+                    createKPosition(RIGHT, 0, 0, BOTTOM, 0, 0)).flexibleWidth = false
+            ]
+            
+            // Class name
+            actualContainer.addText(className) => [ text |
+                text.fontSize = KlighdConstants.DEFAULT_FONT_SIZE + 2
+                text.fontBold = true
+                text.fontItalic = isAbstract
+                text.setGridPlacementData(
+                    0,
+                    0,
+                    createKPosition(LEFT, ICON_PADDING, 0, TOP, 0, 0),
+                    createKPosition(RIGHT, 0, 0, BOTTOM, 0, 0)).flexibleWidth = false
+            ]
+        } else {
+            // Type indicator
+            container.addTypeIndicator(classData)
+            
+            // Class name
+            container.addText(className) => [ text |
+                text.fontSize = KlighdConstants.DEFAULT_FONT_SIZE + 2
+                text.fontBold = true
+                text.fontItalic = isAbstract
+                text.setGridPlacementData(
+                    0,
+                    0,
+                    createKPosition(LEFT, 0, 0, TOP, 0, 0),
+                    createKPosition(RIGHT, 0, 0, BOTTOM, 0, 0))
+            ]
+        }
     }
     
     /**
@@ -711,10 +742,22 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * are fields or methods.
      * 
      * @param container the container to add the label to.
+     * @param visibility the member's visibility.
      * @param name text for the label.
      * @return the container.
      */
-    def KContainerRendering addClassMember(KContainerRendering container, String name) {
+    def KContainerRendering addClassMember(KContainerRendering container, KVisibility visibility,
+        String name) {
+        
+        container.addVisibilityIndicator(visibility) => [ indicator |
+            indicator.horizontalAlignment = H_LEFT
+            indicator.setGridPlacementData(
+                16,
+                16,
+                createKPosition(LEFT, 0, 0, TOP, CLASS_NODE_PADDING, 0),
+                createKPosition(RIGHT, ICON_PADDING, 0, BOTTOM, 0, 0)).flexibleWidth = false
+        ]
+        
         container.addText(name) => [ text |
             text.horizontalAlignment = H_LEFT
             text.setGridPlacementData(
@@ -723,7 +766,45 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 createKPosition(LEFT, 0, 0, TOP, CLASS_NODE_PADDING, 0),
                 createKPosition(RIGHT, 0, 0, BOTTOM, 0, 0))
         ]
+        
         return container
+    }
+    
+    /**
+     * Turns the given visibility type into a proper visibility modification rendering.
+     * 
+     * @param container the container the KRendering is added to.
+     * @param visibility the visibility type.
+     * @return visibility modification rendering.
+     */
+    def KRendering addVisibilityIndicator(KContainerRendering container, KVisibility visibility) {
+        if (USE_ICONS.booleanValue) {
+            val iconName = switch (visibility) {
+                case KVisibility::PRIVATE:
+                    "private.gif"
+                case KVisibility::PUBLIC:
+                    "public.gif"
+                case KVisibility::PROTECTED:
+                    "protected.gif"
+                default:
+                    "default.gif"
+                }
+            
+            return container.addImage("de.cau.cs.kieler.klassviz", "icons/" + iconName)
+        } else {
+            val visibilityString = switch (visibility) {
+                case KVisibility::PRIVATE:
+                    "\u2212"
+                case KVisibility::PUBLIC:
+                    "+"
+                case KVisibility::PROTECTED:
+                    "#"
+                default:
+                    ""
+                }
+            
+            return container.addText(visibilityString)
+        }
     }
 
     /**
