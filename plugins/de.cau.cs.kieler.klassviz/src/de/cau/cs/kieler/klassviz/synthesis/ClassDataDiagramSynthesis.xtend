@@ -429,7 +429,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
             (classData as KClass).interfaces
         else if (classData instanceof KInterface)
             (classData as KInterface).superInterfaces
-        ).filter[it.selected].forEach [ kInterface |
+        )?.filter[it.selected]?.forEach [ kInterface |
             createEdge.putToLookUpWith(classData) => [
                 it.source = classData.node
                 it.target = kInterface.node
