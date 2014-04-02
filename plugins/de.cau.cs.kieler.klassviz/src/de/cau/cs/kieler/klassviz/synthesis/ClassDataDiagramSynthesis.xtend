@@ -192,8 +192,9 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 ]
             } else {
                 // If not just create all class nodes including their contents
+                val drawAllClasses = VISUALIZE_ALL_OR_SELECTION.objectValue == VISUALIZE_ALL
                 rootNode.children += model.packages.map [
-                    it.types.filter[it.selected].map[it.createClassNode(model)]
+                    it.types.filter[it.selected || drawAllClasses].map[it.createClassNode(model)]
                 ].flatten
             }
             
@@ -252,7 +253,8 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 }
                 
                 // For each type create a class node in this package if it is related to it.
-                packageNode.children += kPackage.types.filter[it.selected].map[ classSelection |
+                val drawAllClasses = VISUALIZE_ALL_OR_SELECTION.objectValue == VISUALIZE_ALL
+                packageNode.children += kPackage.types.filter[it.selected || drawAllClasses].map[ classSelection |
                     classSelection.createClassNode(classModel)
                 ]
             ]
@@ -311,7 +313,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                                 || ATTRIBUTES_PRIVATE.booleanValue) {
                             // If only selected fields shall be visualized only add selected fields
                             if (eField.selected
-                                    || VISUALIZE_ALL_OR_SELECTION.objectValue == VISUALIZE_SELECTION) {
+                                    || VISUALIZE_ALL_OR_SELECTION.objectValue == VISUALIZE_ALL) {
                                 fields.add(eField.buildDisplayString)
                             }
                         }
@@ -326,7 +328,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                             || METHODS_PRIVATE.booleanValue) {
                         // if only selected methods shall be visualized only add selected methods
                         if (eMethod.selected
-                                || VISUALIZE_ALL_OR_SELECTION.objectValue == VISUALIZE_SELECTION) {
+                                || VISUALIZE_ALL_OR_SELECTION.objectValue == VISUALIZE_ALL) {
                             methods.add(eMethod.buildDisplayString)
                         }
                     }
