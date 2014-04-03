@@ -30,6 +30,7 @@ import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
 import de.cau.cs.kieler.klassviz.model.classdata.KPackage
 import org.eclipse.core.runtime.Platform
 import de.cau.cs.kieler.klassviz.text.ui.ClassDataUiModule
+import org.eclipse.osgi.util.ManifestElement
 
 /**
  * Custom content assist proposals.
@@ -89,8 +90,8 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
          for (bundleName : classModel.bundles) {
              val packagesString = Platform.getBundle(bundleName)?.headers?.get("Export-Package")
              if (packagesString != null) {
-                 for (pck : packagesString.split(",")) {
-                     acceptor.accept(createCompletionProposal(pck, context))
+                 for (element : ManifestElement.parseHeader("Export-Package", packagesString)) {
+                     acceptor.accept(createCompletionProposal(element.value, context))
                  }
              }
          }
@@ -101,7 +102,12 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
      */
     def override completeKClass_Name(EObject model, Assignment assignment,
             ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        val pack = model as KPackage
+        val pack =
+            if (model instanceof KPackage) {
+                model as KPackage
+            } else {
+                model.eContainer as KPackage
+            }
         val classModel = pack.eContainer as KClassModel
         
         // provide proposals for all referenced Java projects
@@ -119,13 +125,11 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
         
         // provide proposals for all referenced bundles
         for (bundleName : classModel.bundles) {
-            if (pack.name.startsWith(bundleName)) {
-                for (clazz : bundleName.getBundleClasses(pack.name).filter[
-                        !it.anonymousClass && !it.isInterface && !it.isEnum && !it.array
-                        && !it.annotation && !it.synthetic && !it.primitive
-                        && pack.types.forall[t | t.name != it.simpleName]]) {
-                    acceptor.accept(createCompletionProposal(clazz.simpleName, context))
-                }
+            for (clazz : bundleName.getBundleClasses(pack.name).filter[
+                    !it.localClass && !it.memberClass && !it.anonymousClass && !it.isInterface
+                    && !it.isEnum && !it.array && !it.annotation && !it.synthetic && !it.primitive
+                    && pack.types.forall[t | t.name != it.simpleName]]) {
+                acceptor.accept(createCompletionProposal(clazz.simpleName, context))
             }
         }
     }
@@ -135,7 +139,12 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
      */
     def override completeKInterface_Name(EObject model, Assignment assignment,
             ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        val pack = model as KPackage
+        val pack =
+            if (model instanceof KPackage) {
+                model as KPackage
+            } else {
+                model.eContainer as KPackage
+            }
         val classModel = pack.eContainer as KClassModel
         
         // provide proposals for all referenced Java projects
@@ -167,7 +176,12 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
      */
     def override completeKEnum_Name(EObject model, Assignment assignment,
             ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-        val pack = model as KPackage
+        val pack =
+            if (model instanceof KPackage) {
+                model as KPackage
+            } else {
+                model.eContainer as KPackage
+            }
         val classModel = pack.eContainer as KClassModel
         
         // provide proposals for all referenced Java projects

@@ -26,6 +26,8 @@ import org.eclipse.jdt.core.JavaCore
 import org.eclipse.jdt.core.Signature
 import org.eclipse.xtext.validation.Check
 import de.cau.cs.kieler.klassviz.model.classdata.KPackage
+import org.eclipse.core.runtime.Platform
+import org.eclipse.osgi.util.ManifestElement
 
 /**
  * Custom validation rules. 
@@ -43,9 +45,7 @@ class ClassDataValidator extends AbstractClassDataValidator {
      */
      @Check
      def checkProjectsExist(KClassModel classModel) {
-         var i = 0
-         while (i < classModel.javaProjects.size) {
-             val projectName = classModel.javaProjects.get(i)
+         classModel.javaProjects.forEach[ projectName, i |
              if (projectName != null) {
                  val project = ResourcesPlugin.workspace.root.getProject(projectName)
                  try {
@@ -61,9 +61,54 @@ class ClassDataValidator extends AbstractClassDataValidator {
                           classModel, ClassdataPackage.eINSTANCE.KClassModel_JavaProjects, i)                 
                  }
              }
-             i = i + 1
-         }
+         ]
      }
+     
+    /**
+     * Check whether the bundles exists in the platform.
+     */
+    @Check
+    def checkBundlesExist(KClassModel classModel) {
+        classModel.bundles.forEach[ bundleName, i |
+            if (bundleName != null) {
+                if (Platform.getBundle(bundleName) == null) {
+                    error("Bundle is not available in the current platform",
+                        classModel, ClassdataPackage.eINSTANCE.KClassModel_Bundles, i)
+                }
+            }
+        ]
+    }
+    
+    /**
+     * Check whether a package exists in one of the referenced projects and bundles.
+     */
+    @Check
+    def checkPackageExists(KPackage pack) {
+        val classModel = pack.eContainer as KClassModel
+        
+        // look for the package in the referenced projects
+        for (projectName : classModel.javaProjects) {
+             if (projectName.jdtPackages.exists[it.elementName == pack.name]) {
+                 return true
+             }
+         }
+         
+         // look for the package in the referenced bundles
+         for (bundleName : classModel.bundles) {
+             val packagesString = Platform.getBundle(bundleName)?.headers?.get("Export-Package")
+             if (packagesString != null
+                    && ManifestElement.parseHeader("Export-Package", packagesString).exists[
+                        it.value.startsWith(pack.name)
+                        && (it.value.length == pack.name.length
+                            || it.value.charAt(pack.name.length) == 59) // ';' character
+                    ]) {
+                 return true
+             }
+         }
+         
+         error("Package not found in referenced projects and bundles",
+             pack, ClassdataPackage.eINSTANCE.KPackage_Name)
+    }
 
     /**
      * Check whether a type exists in one of the referenced projects and bundles.
@@ -72,7 +117,7 @@ class ClassDataValidator extends AbstractClassDataValidator {
     def checkTypeExists(KType type) {
         val pack = type.eContainer as KPackage
         val classModel = pack.eContainer as KClassModel
-        if (classModel.getJdtType(type) == null) {
+        if (classModel.getJdtType(type) == null && classModel.getBundleClass(type) == null) {
             error("Type not found in referenced projects and bundles",
                 type, ClassdataPackage.eINSTANCE.KType_Name)
         }
@@ -91,6 +136,14 @@ class ClassDataValidator extends AbstractClassDataValidator {
             if (!jdtType.fields.exists[it.elementName == field.name]) {
                 error("Field not found in referenced type",
                     field, ClassdataPackage.eINSTANCE.KMember_Name)
+            }
+        } else {
+            val clazz = classModel.getBundleClass(type)
+            if (clazz != null) {
+                if (!clazz.fields.exists[it.name == field.name]) {
+                    error("Field not found in referenced type",
+                        field, ClassdataPackage.eINSTANCE.KMember_Name)
+                }
             }
         }
     }
@@ -115,6 +168,22 @@ class ClassDataValidator extends AbstractClassDataValidator {
                         .equals(paramTypeSign)]) {
                     error("Method signature does not match any method of the referenced type",
                         method, ClassdataPackage.eINSTANCE.KMethod_Parameters)
+                }
+            }
+        } else {
+            val clazz = classModel.getBundleClass(type)
+            if (clazz != null) {
+                val matchingName = clazz.methods.filter[it.name == method.name]
+                if (matchingName.empty) {
+                    error("Method not found in referenced type",
+                        method, ClassdataPackage.eINSTANCE.KMember_Name)
+                } else {
+                    val paramTypeSign = method.parameters.map[s | s.signature]
+                    if (!matchingName.exists[it.parameterTypes.map[t | t.simpleName]
+                            .equals(paramTypeSign)]) {
+                        error("Method signature does not match any method of the referenced type",
+                            method, ClassdataPackage.eINSTANCE.KMethod_Parameters)
+                    }
                 }
             }
         }

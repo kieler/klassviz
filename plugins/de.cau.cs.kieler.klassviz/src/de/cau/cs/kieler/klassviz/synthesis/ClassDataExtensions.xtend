@@ -60,24 +60,18 @@ class ClassDataExtensions {
      */
     def IType getJdtType(KClassModel classModel, KType type) {
         for (projectName : classModel.javaProjects) {
-            val result = getJdtType(projectName, type)
-            if (result != null) {
-                return result
-            }
+            val project = ResourcesPlugin.workspace.root.getProject(projectName)
+            try {
+                if (project.open && project.hasNature(JavaCore.NATURE_ID)) {
+                    val javaProject = JavaCore.create(project)
+                    val result = javaProject.findType(type.qualifiedName)
+                    if (result != null) {
+                        return result
+                    }
+                }
+            } catch (CoreException e) {}
         }
-    }
-    
-    /**
-     * Retrieve a JDT type from a Java project.
-     */
-    def IType getJdtType(String projectName, KType type) {
-        val project = ResourcesPlugin.workspace.root.getProject(projectName)
-        try {
-            if (project.open && project.hasNature(JavaCore.NATURE_ID)) {
-                val javaProject = JavaCore.create(project)
-                return javaProject.findType(type.qualifiedName)
-            }
-        } catch (CoreException e) {}
+        null
     }
     
     /**
@@ -130,18 +124,10 @@ class ClassDataExtensions {
             return Collections.emptyList
         }
         bundle.adapt(BundleWiring)
-            .listResources("/" + bundleName.replace('.', '/'), "*.class",
-                BundleWiring.LISTRESOURCES_RECURSE)
-            .map[it.substring(0, it.length - ".class".length).replace('/', '.')]
-            .filter[
-                val dotIndex = it.lastIndexOf('.')
-                if (dotIndex < 0)
-                    packageName.length == 0
-                else
-                    it.substring(0, dotIndex) == packageName
-            ]
+            .listResources("/" + packageName.replace('.', '/'), "*.class",
+                BundleWiring.LISTRESOURCES_LOCAL)
             .map[try {
-                bundle.loadClass(it)
+                bundle.loadClass(it.substring(0, it.length - ".class".length).replace('/', '.'))
             } catch (ClassNotFoundException e) {null}].filterNull
     }
     
