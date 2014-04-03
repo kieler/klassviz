@@ -18,16 +18,16 @@ import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage
 import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
 import de.cau.cs.kieler.klassviz.model.classdata.KField
 import de.cau.cs.kieler.klassviz.model.classdata.KMethod
+import de.cau.cs.kieler.klassviz.model.classdata.KPackage
 import de.cau.cs.kieler.klassviz.model.classdata.KType
 import de.cau.cs.kieler.klassviz.synthesis.ClassDataExtensions
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.runtime.CoreException
+import org.eclipse.core.runtime.Platform
 import org.eclipse.jdt.core.JavaCore
 import org.eclipse.jdt.core.Signature
-import org.eclipse.xtext.validation.Check
-import de.cau.cs.kieler.klassviz.model.classdata.KPackage
-import org.eclipse.core.runtime.Platform
 import org.eclipse.osgi.util.ManifestElement
+import org.eclipse.xtext.validation.Check
 
 /**
  * Custom validation rules. 

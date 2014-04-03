@@ -23,6 +23,8 @@ import de.cau.cs.kieler.klassviz.model.classdata.KMethod
 import de.cau.cs.kieler.klassviz.model.classdata.KType
 import de.cau.cs.kieler.klassviz.model.classdata.KTypeReference
 import de.cau.cs.kieler.klassviz.model.classdata.KVisibility
+import java.util.HashSet
+import java.util.Set
 import org.eclipse.core.runtime.NullProgressMonitor
 import org.eclipse.jdt.core.Flags
 import org.eclipse.jdt.core.IField
@@ -33,8 +35,6 @@ import org.eclipse.jdt.core.ITypeRoot
 import org.eclipse.jdt.core.JavaModelException
 import org.eclipse.jdt.core.Signature
 import org.eclipse.jface.viewers.IStructuredSelection
-import java.util.HashSet
-import java.util.Set
 
 /**
  * Transformation class between the JDT model and our own class model.

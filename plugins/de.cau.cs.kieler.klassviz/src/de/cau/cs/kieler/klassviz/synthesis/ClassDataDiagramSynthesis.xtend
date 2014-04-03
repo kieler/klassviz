@@ -49,6 +49,7 @@ import java.util.Collection
 import java.util.List
 import java.util.Map
 import org.eclipse.jdt.core.Signature
+import org.eclipse.xtext.xbase.lib.Pair
 
 /**
  * Synthesis of class diagrams using the Classdata meta model.

@@ -13,20 +13,20 @@
  */
 package de.cau.cs.kieler.klassviz.synthesis
 
-import org.eclipse.jdt.core.IType
+import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
+import de.cau.cs.kieler.klassviz.model.classdata.KMethod
+import de.cau.cs.kieler.klassviz.model.classdata.KPackage
 import de.cau.cs.kieler.klassviz.model.classdata.KType
+import java.util.Collections
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.runtime.CoreException
-import org.eclipse.jdt.core.JavaCore
-import org.eclipse.jdt.core.IMethod
-import de.cau.cs.kieler.klassviz.model.classdata.KMethod
-import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
-import de.cau.cs.kieler.klassviz.model.classdata.KPackage
-import org.eclipse.jdt.core.Signature
-import org.eclipse.jdt.core.IPackageFragment
 import org.eclipse.core.runtime.Platform
+import org.eclipse.jdt.core.IMethod
+import org.eclipse.jdt.core.IPackageFragment
+import org.eclipse.jdt.core.IType
+import org.eclipse.jdt.core.JavaCore
+import org.eclipse.jdt.core.Signature
 import org.osgi.framework.wiring.BundleWiring
-import java.util.Collections
 
 /**
  * @author msp

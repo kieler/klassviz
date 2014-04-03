@@ -13,24 +13,23 @@
  */
 package de.cau.cs.kieler.klassviz.text.ui.contentassist
 
-import de.cau.cs.kieler.klassviz.text.ui.contentassist.AbstractClassDataProposalProvider
-import org.eclipse.emf.ecore.EObject
-import org.eclipse.xtext.Assignment
-import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
-import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
-import de.cau.cs.kieler.klassviz.model.classdata.KType
-import org.eclipse.core.resources.ResourcesPlugin
-import org.eclipse.jdt.core.JavaCore
-import org.eclipse.core.runtime.CoreException
-import de.cau.cs.kieler.klassviz.synthesis.ClassDataExtensions
 import com.google.inject.Inject
-import org.eclipse.xtext.RuleCall
-import org.eclipse.jdt.core.Signature
 import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
 import de.cau.cs.kieler.klassviz.model.classdata.KPackage
-import org.eclipse.core.runtime.Platform
+import de.cau.cs.kieler.klassviz.model.classdata.KType
+import de.cau.cs.kieler.klassviz.synthesis.ClassDataExtensions
 import de.cau.cs.kieler.klassviz.text.ui.ClassDataUiModule
+import org.eclipse.core.resources.ResourcesPlugin
+import org.eclipse.core.runtime.CoreException
+import org.eclipse.core.runtime.Platform
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.jdt.core.JavaCore
+import org.eclipse.jdt.core.Signature
 import org.eclipse.osgi.util.ManifestElement
+import org.eclipse.xtext.Assignment
+import org.eclipse.xtext.RuleCall
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
 
 /**
  * Custom content assist proposals.
