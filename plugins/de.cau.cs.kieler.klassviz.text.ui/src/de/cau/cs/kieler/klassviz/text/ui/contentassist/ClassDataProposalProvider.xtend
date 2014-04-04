@@ -245,7 +245,7 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
         if (jdtType != null) {
             // get the proposals from a JDT type
             for (method : jdtType.methods.filter[!it.constructor]) {
-                val paramTypeSign = method.parameterTypes.map[t | Signature.toString(t)]
+                val paramTypeSign = method.parameterTypes.map[t | Signature.toString(t)].toList
                 if (type.methods.forall[it.name != method.elementName
                         || !it.parameters.map[s | s.signature].equals(paramTypeSign)]) {
                     val proposal = method.elementName + "(" + paramTypeSign.join(", ") + ")"
@@ -257,7 +257,7 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
             if (clazz != null) {
                 // get the proposals from a reflection class
                 for (method : clazz.methods.filter[m | m.declaringClass == clazz]) {
-                    val paramTypeSign = method.parameterTypes.map[t | t.simpleName]
+                    val paramTypeSign = method.parameterTypes.map[t | t.simpleName].toList
                     if (type.methods.forall[it.name != method.name
                             || !it.parameters.map[s | s.signature].equals(paramTypeSign)]) {
                         val proposal = method.name + "(" + paramTypeSign.join(", ") + ")"

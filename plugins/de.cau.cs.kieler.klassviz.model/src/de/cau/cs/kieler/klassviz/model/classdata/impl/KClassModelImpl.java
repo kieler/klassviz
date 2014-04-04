@@ -19,6 +19,7 @@ import de.cau.cs.kieler.klassviz.model.classdata.KPackage;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -26,6 +27,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
@@ -42,6 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl#getJavaProjects <em>Java Projects</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl#getBundles <em>Bundles</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl#getPackages <em>Packages</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl#isResolved <em>Resolved</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +80,26 @@ public class KClassModelImpl extends MinimalEObjectImpl.Container implements KCl
      * @ordered
      */
     protected EList<KPackage> packages;
+
+    /**
+     * The default value of the '{@link #isResolved() <em>Resolved</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isResolved()
+     * @generated
+     * @ordered
+     */
+    protected static final boolean RESOLVED_EDEFAULT = false;
+
+    /**
+     * The cached value of the '{@link #isResolved() <em>Resolved</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isResolved()
+     * @generated
+     * @ordered
+     */
+    protected boolean resolved = RESOLVED_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -138,6 +161,27 @@ public class KClassModelImpl extends MinimalEObjectImpl.Container implements KCl
      * <!-- end-user-doc -->
      * @generated
      */
+    public boolean isResolved() {
+        return resolved;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setResolved(boolean newResolved) {
+        boolean oldResolved = resolved;
+        resolved = newResolved;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KCLASS_MODEL__RESOLVED, oldResolved, resolved));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
@@ -161,6 +205,8 @@ public class KClassModelImpl extends MinimalEObjectImpl.Container implements KCl
                 return getBundles();
             case ClassdataPackage.KCLASS_MODEL__PACKAGES:
                 return getPackages();
+            case ClassdataPackage.KCLASS_MODEL__RESOLVED:
+                return isResolved();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -186,6 +232,9 @@ public class KClassModelImpl extends MinimalEObjectImpl.Container implements KCl
                 getPackages().clear();
                 getPackages().addAll((Collection<? extends KPackage>)newValue);
                 return;
+            case ClassdataPackage.KCLASS_MODEL__RESOLVED:
+                setResolved((Boolean)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -207,6 +256,9 @@ public class KClassModelImpl extends MinimalEObjectImpl.Container implements KCl
             case ClassdataPackage.KCLASS_MODEL__PACKAGES:
                 getPackages().clear();
                 return;
+            case ClassdataPackage.KCLASS_MODEL__RESOLVED:
+                setResolved(RESOLVED_EDEFAULT);
+                return;
         }
         super.eUnset(featureID);
     }
@@ -225,6 +277,8 @@ public class KClassModelImpl extends MinimalEObjectImpl.Container implements KCl
                 return bundles != null && !bundles.isEmpty();
             case ClassdataPackage.KCLASS_MODEL__PACKAGES:
                 return packages != null && !packages.isEmpty();
+            case ClassdataPackage.KCLASS_MODEL__RESOLVED:
+                return resolved != RESOLVED_EDEFAULT;
         }
         return super.eIsSet(featureID);
     }
@@ -243,6 +297,8 @@ public class KClassModelImpl extends MinimalEObjectImpl.Container implements KCl
         result.append(javaProjects);
         result.append(", bundles: ");
         result.append(bundles);
+        result.append(", resolved: ");
+        result.append(resolved);
         result.append(')');
         return result.toString();
     }

@@ -50,6 +50,8 @@ import java.util.List
 import java.util.Map
 import org.eclipse.jdt.core.Signature
 import org.eclipse.xtext.xbase.lib.Pair
+import org.eclipse.emf.ecore.util.EcoreUtil
+import org.eclipse.jdt.core.JavaModelException
 
 /**
  * Synthesis of class diagrams using the Classdata meta model.
@@ -69,6 +71,8 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     @Inject extension KNodeExtensions
     @Inject extension KPolylineExtensions
     @Inject extension KRenderingExtensions
+    
+    @Inject JdtModelTransformation jdtModelTransformation
     
     
     ////////////////////////////////////////////////////////////////////////////////////////
@@ -182,19 +186,31 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * @param model the model that captures the selection of Java project elements.
      * @return a KGraph that defines the class diagram.
      */
-    override KNode transform(KClassModel model) {
-        val classDiagramRoot = model.createNode().putToLookUpWith(model) => [ rootNode |
+    override KNode transform(KClassModel input) {
+        // If the model is not resolved yet, invoke the JDT and the Reflection resolvers
+        val classModel =
+            if (!input.resolved) {
+                val m = EcoreUtil.copy(input)
+                m.resolved = true
+                try {
+                    jdtModelTransformation.resolve(m)
+                } catch (JavaModelException exception) {
+                    // schade :-(
+                }
+            } else input
+        
+        val classDiagramRoot = classModel.createNode().putToLookUpWith(classModel) => [ rootNode |
             // If packages should be visualized get all package nodes and create each package including
             // their contents
             if (VISUALIZE_PACKAGES.booleanValue) {
-                rootNode.children += model.packages.map [
-                    it.createPackageNode(model)
+                rootNode.children += classModel.packages.map [
+                    it.createPackageNode(classModel)
                 ]
             } else {
                 // If not just create all class nodes including their contents
                 val drawAllClasses = VISUALIZE_ALL_OR_SELECTION.objectValue == VISUALIZE_ALL
-                rootNode.children += model.packages.map [
-                    it.types.filter[it.selected || drawAllClasses].map[it.createClassNode(model)]
+                rootNode.children += classModel.packages.map [
+                    it.types.filter[it.selected || drawAllClasses].map[it.createClassNode(classModel)]
                 ].flatten
             }
             
@@ -216,15 +232,15 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
 
         // If inheritance shall be visualized, create all inheritance edges
         if (EDGES_INHERITANCE.booleanValue) {
-            model.createInheritanceEdges
+            classModel.createInheritanceEdges
         }
 
         // If associations shall be visualized, create all association edges with their multiplicities
         // for each node
         if (EDGES_ASSOCIATION.booleanValue) {
-            model.packages.forEach [
+            classModel.packages.forEach [
                 it.types.forEach [
-                    it.createAssociationEdges(model)
+                    it.createAssociationEdges(classModel)
                 ]
             ]
         }
@@ -241,7 +257,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * @param classModel the Java class model.
      * @return node representing the package, including all classes.
      */
-    def KNode createPackageNode(KPackage kPackage, KClassModel classModel) {
+    def private KNode createPackageNode(KPackage kPackage, KClassModel classModel) {
         return kPackage.createNode.putToLookUpWith(kPackage) => [ packageNode |
             // Add a gray rectangle for each package
             packageNode.addRectangle => [ rect |
@@ -268,7 +284,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * @param classDataSelection Java elements selected by the user.
      * @return node representing the class.
      */
-    def KNode createClassNode(KType classData, KClassModel classModel) {
+    def private KNode createClassNode(KType classData, KClassModel classModel) {
         return classData.createNode.putToLookUpWith(classData) => [
             it.addRoundedRectangle(5, 5) => [ rect |
                 rect.foreground = BORDER_COLOR.color
@@ -339,7 +355,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
         ]
     }
     
-    def void createInheritanceEdges(KClassModel classModel) {
+    def private void createInheritanceEdges(KClassModel classModel) {
         classModel.packages.forEach [
             it.types.forEach [ typeSelection |
                 if (typeSelection instanceof KClass) {
@@ -354,7 +370,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     // Check if field has an association-dependency.
     // A field has dependency when it's type equals one of the visualized classes
     // or a generic parameter type equals one of the visualized classes. 
-    def Maybe<Boolean> create fieldHasDependency : new Maybe<Boolean>(false)
+    def private Maybe<Boolean> create fieldHasDependency : new Maybe<Boolean>(false)
             hasDependency(KType classData, KClassModel classModel, KField eField) {
         val genericStart = eField.type.signature.indexOf('<')
         val fieldTypeFQN = if (genericStart < 0)
@@ -393,7 +409,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     }
 
     // For each class visualize all relationships to super classes that are visualized.
-    def createClassInheritanceEdge(KClass classData, KClassModel classModel) {
+    def private createClassInheritanceEdge(KClass classData, KClassModel classModel) {
         if (classData.superClass != null && classData.superClass.selected) {
             createEdge.putToLookUpWith(classData) => [
                 it.source = classData.node
@@ -408,7 +424,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     }
 
     // For each class visualize all relationships to super interfaces that are visualized.
-    def createInterfaceInheritanceEdge(KType classData, KClassModel classModel) {
+    def private createInterfaceInheritanceEdge(KType classData, KClassModel classModel) {
         (if (classData instanceof KClass)
             (classData as KClass).interfaces
         else if (classData instanceof KInterface)
@@ -433,7 +449,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     }
 
     // For each field in each class add their associations if there are any. Also add the multiplicities.
-    def createAssociationEdges(KType classData, KClassModel classModel) {
+    def private createAssociationEdges(KType classData, KClassModel classModel) {
         classModel.packages.forEach [
             it.types.forEach [ classDataToBeCompared |
                 val int[] classHasAssociationToThisClass = #[0, 0]
@@ -523,11 +539,11 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * 
      * @param method the method whose display string to build.
      */
-    def String buildDisplayString(KMethod method) {
+    def private String buildDisplayString(KMethod method) {
         // Method parameters
         val parameters = newLinkedList();
         if (METHODS_PARAMETERS.booleanValue) {
-            method.parameters.map [ parameter |
+            method.parameters.forEach [ parameter |
                 if (METHODS_TYPE.booleanValue) {
                     parameters += parameter.name + " : " + Signature.getSimpleName(parameter.signature)
                 } else {
@@ -560,7 +576,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * 
      * @param field the field whose display string to build.
      */
-    def String buildDisplayString(KField field) {
+    def private String buildDisplayString(KField field) {
         val String fieldType = 
             if (ATTRIBUTES_TYPE.booleanValue) {
                 " : " + Signature.getSimpleName(field.type.signature)
@@ -576,7 +592,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * @param rendering the rendering whose background to configure.
      * @param classData the corresponding class.
      */
-    def void configureBackground(KRendering rendering, KType classData) {
+    def private void configureBackground(KRendering rendering, KType classData) {
         // Check if we should use gradients or not
         if (COLOR_GRADIENT.booleanValue) {
             if (classData instanceof KClass) {
@@ -624,7 +640,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * @param classData information on the class.
      * @return the rendering.
      */
-    def KRendering addTypeIndicator(KContainerRendering container, KType classData) {
+    def private KRendering addTypeIndicator(KContainerRendering container, KType classData) {
         if (USE_ICONS.booleanValue) {
             val iconName =
                 if (classData instanceof KInterface) {
@@ -662,7 +678,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * @param container the container to add the class information to.
      * @param classData information about the class.
      */
-    def addClassName(KContainerRendering container, KType classData) {
+    def private addClassName(KContainerRendering container, KType classData) {
         // Extract the class name we'll be using
         val className =
             if (CLASSES_FQNAME.booleanValue) {
@@ -744,7 +760,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * @param name text for the label.
      * @return the container.
      */
-    def KContainerRendering addClassMember(KContainerRendering container, KVisibility visibility,
+    def private KContainerRendering addClassMember(KContainerRendering container, KVisibility visibility,
         String name) {
         
         // Add an invisible rectangle that will contain our visibility indicator and the member name
@@ -783,7 +799,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * @param visibility the visibility type.
      * @return visibility modification rendering.
      */
-    def KRendering addVisibilityIndicator(KContainerRendering container, KVisibility visibility) {
+    def private KRendering addVisibilityIndicator(KContainerRendering container, KVisibility visibility) {
         if (USE_ICONS.booleanValue) {
             val iconName = switch (visibility) {
                 case KVisibility::PRIVATE:
@@ -820,7 +836,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * @param container the container to add the line to, managed by a grid layout.
      * @return the container rendering.
      */
-    def KContainerRendering addSeparator(KContainerRendering container) {
+    def private KContainerRendering addSeparator(KContainerRendering container) {
         container.children += RENDERING_FACTORY.createKPolyline() => [
             it.setGridPlacementData(
                 0,
@@ -841,7 +857,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * @param pl the polyline to add the decorator to.
      * @return the given polyline.
      */
-    def KRendering addAssociationArrowDecorator(KPolyline pl) {
+    def private KRendering addAssociationArrowDecorator(KPolyline pl) {
         return pl => [
             it.addPolygon() => [
                 it.points += createKPosition(RIGHT, 0, 0, TOP, 0, 0.5f)

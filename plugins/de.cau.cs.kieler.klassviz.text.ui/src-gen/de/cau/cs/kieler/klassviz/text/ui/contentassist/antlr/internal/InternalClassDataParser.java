@@ -1209,14 +1209,14 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__KType__Alternatives"
 
 
-    // $ANTLR start "rule__KClass__Alternatives_3"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:448:1: rule__KClass__Alternatives_3 : ( ( ( rule__KClass__FieldsAssignment_3_0 ) ) | ( ( rule__KClass__MethodsAssignment_3_1 ) ) );
-    public final void rule__KClass__Alternatives_3() throws RecognitionException {
+    // $ANTLR start "rule__KClass__Alternatives_2_1"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:448:1: rule__KClass__Alternatives_2_1 : ( ( ( rule__KClass__FieldsAssignment_2_1_0 ) ) | ( ( rule__KClass__MethodsAssignment_2_1_1 ) ) );
+    public final void rule__KClass__Alternatives_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:452:1: ( ( ( rule__KClass__FieldsAssignment_3_0 ) ) | ( ( rule__KClass__MethodsAssignment_3_1 ) ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:452:1: ( ( ( rule__KClass__FieldsAssignment_2_1_0 ) ) | ( ( rule__KClass__MethodsAssignment_2_1_1 ) ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1244,24 +1244,24 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
             }
             switch (alt3) {
                 case 1 :
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:453:1: ( ( rule__KClass__FieldsAssignment_3_0 ) )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:453:1: ( ( rule__KClass__FieldsAssignment_2_1_0 ) )
                     {
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:453:1: ( ( rule__KClass__FieldsAssignment_3_0 ) )
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:454:1: ( rule__KClass__FieldsAssignment_3_0 )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:453:1: ( ( rule__KClass__FieldsAssignment_2_1_0 ) )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:454:1: ( rule__KClass__FieldsAssignment_2_1_0 )
                     {
-                     before(grammarAccess.getKClassAccess().getFieldsAssignment_3_0()); 
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:455:1: ( rule__KClass__FieldsAssignment_3_0 )
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:455:2: rule__KClass__FieldsAssignment_3_0
+                     before(grammarAccess.getKClassAccess().getFieldsAssignment_2_1_0()); 
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:455:1: ( rule__KClass__FieldsAssignment_2_1_0 )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:455:2: rule__KClass__FieldsAssignment_2_1_0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__KClass__FieldsAssignment_3_0_in_rule__KClass__Alternatives_3909);
-                    rule__KClass__FieldsAssignment_3_0();
+                    pushFollow(FollowSets000.FOLLOW_rule__KClass__FieldsAssignment_2_1_0_in_rule__KClass__Alternatives_2_1909);
+                    rule__KClass__FieldsAssignment_2_1_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getKClassAccess().getFieldsAssignment_3_0()); 
+                     after(grammarAccess.getKClassAccess().getFieldsAssignment_2_1_0()); 
 
                     }
 
@@ -1269,24 +1269,24 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 2 :
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:459:6: ( ( rule__KClass__MethodsAssignment_3_1 ) )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:459:6: ( ( rule__KClass__MethodsAssignment_2_1_1 ) )
                     {
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:459:6: ( ( rule__KClass__MethodsAssignment_3_1 ) )
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:460:1: ( rule__KClass__MethodsAssignment_3_1 )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:459:6: ( ( rule__KClass__MethodsAssignment_2_1_1 ) )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:460:1: ( rule__KClass__MethodsAssignment_2_1_1 )
                     {
-                     before(grammarAccess.getKClassAccess().getMethodsAssignment_3_1()); 
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:461:1: ( rule__KClass__MethodsAssignment_3_1 )
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:461:2: rule__KClass__MethodsAssignment_3_1
+                     before(grammarAccess.getKClassAccess().getMethodsAssignment_2_1_1()); 
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:461:1: ( rule__KClass__MethodsAssignment_2_1_1 )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:461:2: rule__KClass__MethodsAssignment_2_1_1
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__KClass__MethodsAssignment_3_1_in_rule__KClass__Alternatives_3927);
-                    rule__KClass__MethodsAssignment_3_1();
+                    pushFollow(FollowSets000.FOLLOW_rule__KClass__MethodsAssignment_2_1_1_in_rule__KClass__Alternatives_2_1927);
+                    rule__KClass__MethodsAssignment_2_1_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getKClassAccess().getMethodsAssignment_3_1()); 
+                     after(grammarAccess.getKClassAccess().getMethodsAssignment_2_1_1()); 
 
                     }
 
@@ -1307,17 +1307,17 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KClass__Alternatives_3"
+    // $ANTLR end "rule__KClass__Alternatives_2_1"
 
 
-    // $ANTLR start "rule__KInterface__Alternatives_3"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:470:1: rule__KInterface__Alternatives_3 : ( ( ( rule__KInterface__FieldsAssignment_3_0 ) ) | ( ( rule__KInterface__MethodsAssignment_3_1 ) ) );
-    public final void rule__KInterface__Alternatives_3() throws RecognitionException {
+    // $ANTLR start "rule__KInterface__Alternatives_2_1"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:470:1: rule__KInterface__Alternatives_2_1 : ( ( ( rule__KInterface__FieldsAssignment_2_1_0 ) ) | ( ( rule__KInterface__MethodsAssignment_2_1_1 ) ) );
+    public final void rule__KInterface__Alternatives_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:474:1: ( ( ( rule__KInterface__FieldsAssignment_3_0 ) ) | ( ( rule__KInterface__MethodsAssignment_3_1 ) ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:474:1: ( ( ( rule__KInterface__FieldsAssignment_2_1_0 ) ) | ( ( rule__KInterface__MethodsAssignment_2_1_1 ) ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1345,24 +1345,24 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
             }
             switch (alt4) {
                 case 1 :
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:475:1: ( ( rule__KInterface__FieldsAssignment_3_0 ) )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:475:1: ( ( rule__KInterface__FieldsAssignment_2_1_0 ) )
                     {
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:475:1: ( ( rule__KInterface__FieldsAssignment_3_0 ) )
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:476:1: ( rule__KInterface__FieldsAssignment_3_0 )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:475:1: ( ( rule__KInterface__FieldsAssignment_2_1_0 ) )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:476:1: ( rule__KInterface__FieldsAssignment_2_1_0 )
                     {
-                     before(grammarAccess.getKInterfaceAccess().getFieldsAssignment_3_0()); 
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:477:1: ( rule__KInterface__FieldsAssignment_3_0 )
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:477:2: rule__KInterface__FieldsAssignment_3_0
+                     before(grammarAccess.getKInterfaceAccess().getFieldsAssignment_2_1_0()); 
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:477:1: ( rule__KInterface__FieldsAssignment_2_1_0 )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:477:2: rule__KInterface__FieldsAssignment_2_1_0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__KInterface__FieldsAssignment_3_0_in_rule__KInterface__Alternatives_3960);
-                    rule__KInterface__FieldsAssignment_3_0();
+                    pushFollow(FollowSets000.FOLLOW_rule__KInterface__FieldsAssignment_2_1_0_in_rule__KInterface__Alternatives_2_1960);
+                    rule__KInterface__FieldsAssignment_2_1_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getKInterfaceAccess().getFieldsAssignment_3_0()); 
+                     after(grammarAccess.getKInterfaceAccess().getFieldsAssignment_2_1_0()); 
 
                     }
 
@@ -1370,24 +1370,24 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 2 :
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:481:6: ( ( rule__KInterface__MethodsAssignment_3_1 ) )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:481:6: ( ( rule__KInterface__MethodsAssignment_2_1_1 ) )
                     {
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:481:6: ( ( rule__KInterface__MethodsAssignment_3_1 ) )
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:482:1: ( rule__KInterface__MethodsAssignment_3_1 )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:481:6: ( ( rule__KInterface__MethodsAssignment_2_1_1 ) )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:482:1: ( rule__KInterface__MethodsAssignment_2_1_1 )
                     {
-                     before(grammarAccess.getKInterfaceAccess().getMethodsAssignment_3_1()); 
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:483:1: ( rule__KInterface__MethodsAssignment_3_1 )
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:483:2: rule__KInterface__MethodsAssignment_3_1
+                     before(grammarAccess.getKInterfaceAccess().getMethodsAssignment_2_1_1()); 
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:483:1: ( rule__KInterface__MethodsAssignment_2_1_1 )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:483:2: rule__KInterface__MethodsAssignment_2_1_1
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__KInterface__MethodsAssignment_3_1_in_rule__KInterface__Alternatives_3978);
-                    rule__KInterface__MethodsAssignment_3_1();
+                    pushFollow(FollowSets000.FOLLOW_rule__KInterface__MethodsAssignment_2_1_1_in_rule__KInterface__Alternatives_2_1978);
+                    rule__KInterface__MethodsAssignment_2_1_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getKInterfaceAccess().getMethodsAssignment_3_1()); 
+                     after(grammarAccess.getKInterfaceAccess().getMethodsAssignment_2_1_1()); 
 
                     }
 
@@ -1408,28 +1408,28 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KInterface__Alternatives_3"
+    // $ANTLR end "rule__KInterface__Alternatives_2_1"
 
 
-    // $ANTLR start "rule__KEnum__Alternatives_3"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:492:1: rule__KEnum__Alternatives_3 : ( ( ( rule__KEnum__FieldsAssignment_3_0 ) ) | ( ( rule__KEnum__MethodsAssignment_3_1 ) ) );
-    public final void rule__KEnum__Alternatives_3() throws RecognitionException {
+    // $ANTLR start "rule__KEnum__Alternatives_2_1"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:492:1: rule__KEnum__Alternatives_2_1 : ( ( ( rule__KEnum__FieldsAssignment_2_1_0 ) ) | ( ( rule__KEnum__MethodsAssignment_2_1_1 ) ) );
+    public final void rule__KEnum__Alternatives_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:496:1: ( ( ( rule__KEnum__FieldsAssignment_3_0 ) ) | ( ( rule__KEnum__MethodsAssignment_3_1 ) ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:496:1: ( ( ( rule__KEnum__FieldsAssignment_2_1_0 ) ) | ( ( rule__KEnum__MethodsAssignment_2_1_1 ) ) )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
             if ( (LA5_0==RULE_ID) ) {
                 int LA5_1 = input.LA(2);
 
-                if ( (LA5_1==22) ) {
-                    alt5=2;
-                }
-                else if ( (LA5_1==RULE_ID||LA5_1==18) ) {
+                if ( (LA5_1==RULE_ID||LA5_1==18) ) {
                     alt5=1;
+                }
+                else if ( (LA5_1==22) ) {
+                    alt5=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -1446,24 +1446,24 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
             }
             switch (alt5) {
                 case 1 :
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:497:1: ( ( rule__KEnum__FieldsAssignment_3_0 ) )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:497:1: ( ( rule__KEnum__FieldsAssignment_2_1_0 ) )
                     {
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:497:1: ( ( rule__KEnum__FieldsAssignment_3_0 ) )
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:498:1: ( rule__KEnum__FieldsAssignment_3_0 )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:497:1: ( ( rule__KEnum__FieldsAssignment_2_1_0 ) )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:498:1: ( rule__KEnum__FieldsAssignment_2_1_0 )
                     {
-                     before(grammarAccess.getKEnumAccess().getFieldsAssignment_3_0()); 
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:499:1: ( rule__KEnum__FieldsAssignment_3_0 )
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:499:2: rule__KEnum__FieldsAssignment_3_0
+                     before(grammarAccess.getKEnumAccess().getFieldsAssignment_2_1_0()); 
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:499:1: ( rule__KEnum__FieldsAssignment_2_1_0 )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:499:2: rule__KEnum__FieldsAssignment_2_1_0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__KEnum__FieldsAssignment_3_0_in_rule__KEnum__Alternatives_31011);
-                    rule__KEnum__FieldsAssignment_3_0();
+                    pushFollow(FollowSets000.FOLLOW_rule__KEnum__FieldsAssignment_2_1_0_in_rule__KEnum__Alternatives_2_11011);
+                    rule__KEnum__FieldsAssignment_2_1_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getKEnumAccess().getFieldsAssignment_3_0()); 
+                     after(grammarAccess.getKEnumAccess().getFieldsAssignment_2_1_0()); 
 
                     }
 
@@ -1471,24 +1471,24 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 2 :
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:503:6: ( ( rule__KEnum__MethodsAssignment_3_1 ) )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:503:6: ( ( rule__KEnum__MethodsAssignment_2_1_1 ) )
                     {
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:503:6: ( ( rule__KEnum__MethodsAssignment_3_1 ) )
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:504:1: ( rule__KEnum__MethodsAssignment_3_1 )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:503:6: ( ( rule__KEnum__MethodsAssignment_2_1_1 ) )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:504:1: ( rule__KEnum__MethodsAssignment_2_1_1 )
                     {
-                     before(grammarAccess.getKEnumAccess().getMethodsAssignment_3_1()); 
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:505:1: ( rule__KEnum__MethodsAssignment_3_1 )
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:505:2: rule__KEnum__MethodsAssignment_3_1
+                     before(grammarAccess.getKEnumAccess().getMethodsAssignment_2_1_1()); 
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:505:1: ( rule__KEnum__MethodsAssignment_2_1_1 )
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:505:2: rule__KEnum__MethodsAssignment_2_1_1
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__KEnum__MethodsAssignment_3_1_in_rule__KEnum__Alternatives_31029);
-                    rule__KEnum__MethodsAssignment_3_1();
+                    pushFollow(FollowSets000.FOLLOW_rule__KEnum__MethodsAssignment_2_1_1_in_rule__KEnum__Alternatives_2_11029);
+                    rule__KEnum__MethodsAssignment_2_1_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getKEnumAccess().getMethodsAssignment_3_1()); 
+                     after(grammarAccess.getKEnumAccess().getMethodsAssignment_2_1_1()); 
 
                     }
 
@@ -1509,7 +1509,7 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KEnum__Alternatives_3"
+    // $ANTLR end "rule__KEnum__Alternatives_2_1"
 
 
     // $ANTLR start "rule__TypeSignature__Alternatives_1_1"
@@ -2968,22 +2968,17 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KClass__Group__2"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1066:1: rule__KClass__Group__2 : rule__KClass__Group__2__Impl rule__KClass__Group__3 ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1066:1: rule__KClass__Group__2 : rule__KClass__Group__2__Impl ;
     public final void rule__KClass__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1070:1: ( rule__KClass__Group__2__Impl rule__KClass__Group__3 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1071:2: rule__KClass__Group__2__Impl rule__KClass__Group__3
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1070:1: ( rule__KClass__Group__2__Impl )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1071:2: rule__KClass__Group__2__Impl
             {
             pushFollow(FollowSets000.FOLLOW_rule__KClass__Group__2__Impl_in_rule__KClass__Group__22153);
             rule__KClass__Group__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__KClass__Group__3_in_rule__KClass__Group__22156);
-            rule__KClass__Group__3();
 
             state._fsp--;
 
@@ -3006,21 +3001,42 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KClass__Group__2__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1078:1: rule__KClass__Group__2__Impl : ( '{' ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1077:1: rule__KClass__Group__2__Impl : ( ( rule__KClass__Group_2__0 )? ) ;
     public final void rule__KClass__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1082:1: ( ( '{' ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1083:1: ( '{' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1081:1: ( ( ( rule__KClass__Group_2__0 )? ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1082:1: ( ( rule__KClass__Group_2__0 )? )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1083:1: ( '{' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1084:1: '{'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1082:1: ( ( rule__KClass__Group_2__0 )? )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1083:1: ( rule__KClass__Group_2__0 )?
             {
-             before(grammarAccess.getKClassAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,17,FollowSets000.FOLLOW_17_in_rule__KClass__Group__2__Impl2184); 
-             after(grammarAccess.getKClassAccess().getLeftCurlyBracketKeyword_2()); 
+             before(grammarAccess.getKClassAccess().getGroup_2()); 
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1084:1: ( rule__KClass__Group_2__0 )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
+
+            if ( (LA11_0==17) ) {
+                alt11=1;
+            }
+            switch (alt11) {
+                case 1 :
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1084:2: rule__KClass__Group_2__0
+                    {
+                    pushFollow(FollowSets000.FOLLOW_rule__KClass__Group_2__0_in_rule__KClass__Group__2__Impl2180);
+                    rule__KClass__Group_2__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getKClassAccess().getGroup_2()); 
 
             }
 
@@ -3042,23 +3058,23 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__KClass__Group__2__Impl"
 
 
-    // $ANTLR start "rule__KClass__Group__3"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1097:1: rule__KClass__Group__3 : rule__KClass__Group__3__Impl rule__KClass__Group__4 ;
-    public final void rule__KClass__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__KClass__Group_2__0"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1100:1: rule__KClass__Group_2__0 : rule__KClass__Group_2__0__Impl rule__KClass__Group_2__1 ;
+    public final void rule__KClass__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1101:1: ( rule__KClass__Group__3__Impl rule__KClass__Group__4 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1102:2: rule__KClass__Group__3__Impl rule__KClass__Group__4
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1104:1: ( rule__KClass__Group_2__0__Impl rule__KClass__Group_2__1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1105:2: rule__KClass__Group_2__0__Impl rule__KClass__Group_2__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KClass__Group__3__Impl_in_rule__KClass__Group__32215);
-            rule__KClass__Group__3__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__KClass__Group_2__0__Impl_in_rule__KClass__Group_2__02217);
+            rule__KClass__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__KClass__Group__4_in_rule__KClass__Group__32218);
-            rule__KClass__Group__4();
+            pushFollow(FollowSets000.FOLLOW_rule__KClass__Group_2__1_in_rule__KClass__Group_2__02220);
+            rule__KClass__Group_2__1();
 
             state._fsp--;
 
@@ -3077,40 +3093,115 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KClass__Group__3"
+    // $ANTLR end "rule__KClass__Group_2__0"
 
 
-    // $ANTLR start "rule__KClass__Group__3__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1109:1: rule__KClass__Group__3__Impl : ( ( rule__KClass__Alternatives_3 )* ) ;
-    public final void rule__KClass__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__KClass__Group_2__0__Impl"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1112:1: rule__KClass__Group_2__0__Impl : ( '{' ) ;
+    public final void rule__KClass__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1113:1: ( ( ( rule__KClass__Alternatives_3 )* ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1114:1: ( ( rule__KClass__Alternatives_3 )* )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1116:1: ( ( '{' ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1117:1: ( '{' )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1114:1: ( ( rule__KClass__Alternatives_3 )* )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1115:1: ( rule__KClass__Alternatives_3 )*
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1117:1: ( '{' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1118:1: '{'
             {
-             before(grammarAccess.getKClassAccess().getAlternatives_3()); 
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1116:1: ( rule__KClass__Alternatives_3 )*
-            loop11:
-            do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
+             before(grammarAccess.getKClassAccess().getLeftCurlyBracketKeyword_2_0()); 
+            match(input,17,FollowSets000.FOLLOW_17_in_rule__KClass__Group_2__0__Impl2248); 
+             after(grammarAccess.getKClassAccess().getLeftCurlyBracketKeyword_2_0()); 
 
-                if ( (LA11_0==RULE_ID) ) {
-                    alt11=1;
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__KClass__Group_2__0__Impl"
+
+
+    // $ANTLR start "rule__KClass__Group_2__1"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1131:1: rule__KClass__Group_2__1 : rule__KClass__Group_2__1__Impl rule__KClass__Group_2__2 ;
+    public final void rule__KClass__Group_2__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1135:1: ( rule__KClass__Group_2__1__Impl rule__KClass__Group_2__2 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1136:2: rule__KClass__Group_2__1__Impl rule__KClass__Group_2__2
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__KClass__Group_2__1__Impl_in_rule__KClass__Group_2__12279);
+            rule__KClass__Group_2__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__KClass__Group_2__2_in_rule__KClass__Group_2__12282);
+            rule__KClass__Group_2__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__KClass__Group_2__1"
+
+
+    // $ANTLR start "rule__KClass__Group_2__1__Impl"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1143:1: rule__KClass__Group_2__1__Impl : ( ( rule__KClass__Alternatives_2_1 )* ) ;
+    public final void rule__KClass__Group_2__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1147:1: ( ( ( rule__KClass__Alternatives_2_1 )* ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1148:1: ( ( rule__KClass__Alternatives_2_1 )* )
+            {
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1148:1: ( ( rule__KClass__Alternatives_2_1 )* )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1149:1: ( rule__KClass__Alternatives_2_1 )*
+            {
+             before(grammarAccess.getKClassAccess().getAlternatives_2_1()); 
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1150:1: ( rule__KClass__Alternatives_2_1 )*
+            loop12:
+            do {
+                int alt12=2;
+                int LA12_0 = input.LA(1);
+
+                if ( (LA12_0==RULE_ID) ) {
+                    alt12=1;
                 }
 
 
-                switch (alt11) {
+                switch (alt12) {
             	case 1 :
-            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1116:2: rule__KClass__Alternatives_3
+            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1150:2: rule__KClass__Alternatives_2_1
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__KClass__Alternatives_3_in_rule__KClass__Group__3__Impl2245);
-            	    rule__KClass__Alternatives_3();
+            	    pushFollow(FollowSets000.FOLLOW_rule__KClass__Alternatives_2_1_in_rule__KClass__Group_2__1__Impl2309);
+            	    rule__KClass__Alternatives_2_1();
 
             	    state._fsp--;
 
@@ -3119,11 +3210,11 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
             	    break;
 
             	default :
-            	    break loop11;
+            	    break loop12;
                 }
             } while (true);
 
-             after(grammarAccess.getKClassAccess().getAlternatives_3()); 
+             after(grammarAccess.getKClassAccess().getAlternatives_2_1()); 
 
             }
 
@@ -3142,21 +3233,21 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KClass__Group__3__Impl"
+    // $ANTLR end "rule__KClass__Group_2__1__Impl"
 
 
-    // $ANTLR start "rule__KClass__Group__4"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1126:1: rule__KClass__Group__4 : rule__KClass__Group__4__Impl ;
-    public final void rule__KClass__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__KClass__Group_2__2"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1160:1: rule__KClass__Group_2__2 : rule__KClass__Group_2__2__Impl ;
+    public final void rule__KClass__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1130:1: ( rule__KClass__Group__4__Impl )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1131:2: rule__KClass__Group__4__Impl
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1164:1: ( rule__KClass__Group_2__2__Impl )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1165:2: rule__KClass__Group_2__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KClass__Group__4__Impl_in_rule__KClass__Group__42276);
-            rule__KClass__Group__4__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__KClass__Group_2__2__Impl_in_rule__KClass__Group_2__22340);
+            rule__KClass__Group_2__2__Impl();
 
             state._fsp--;
 
@@ -3175,25 +3266,25 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KClass__Group__4"
+    // $ANTLR end "rule__KClass__Group_2__2"
 
 
-    // $ANTLR start "rule__KClass__Group__4__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1137:1: rule__KClass__Group__4__Impl : ( '}' ) ;
-    public final void rule__KClass__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__KClass__Group_2__2__Impl"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1171:1: rule__KClass__Group_2__2__Impl : ( '}' ) ;
+    public final void rule__KClass__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1141:1: ( ( '}' ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1142:1: ( '}' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1175:1: ( ( '}' ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1176:1: ( '}' )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1142:1: ( '}' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1143:1: '}'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1176:1: ( '}' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1177:1: '}'
             {
-             before(grammarAccess.getKClassAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,18,FollowSets000.FOLLOW_18_in_rule__KClass__Group__4__Impl2304); 
-             after(grammarAccess.getKClassAccess().getRightCurlyBracketKeyword_4()); 
+             before(grammarAccess.getKClassAccess().getRightCurlyBracketKeyword_2_2()); 
+            match(input,18,FollowSets000.FOLLOW_18_in_rule__KClass__Group_2__2__Impl2368); 
+             after(grammarAccess.getKClassAccess().getRightCurlyBracketKeyword_2_2()); 
 
             }
 
@@ -3212,25 +3303,25 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KClass__Group__4__Impl"
+    // $ANTLR end "rule__KClass__Group_2__2__Impl"
 
 
     // $ANTLR start "rule__KInterface__Group__0"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1166:1: rule__KInterface__Group__0 : rule__KInterface__Group__0__Impl rule__KInterface__Group__1 ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1196:1: rule__KInterface__Group__0 : rule__KInterface__Group__0__Impl rule__KInterface__Group__1 ;
     public final void rule__KInterface__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1170:1: ( rule__KInterface__Group__0__Impl rule__KInterface__Group__1 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1171:2: rule__KInterface__Group__0__Impl rule__KInterface__Group__1
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1200:1: ( rule__KInterface__Group__0__Impl rule__KInterface__Group__1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1201:2: rule__KInterface__Group__0__Impl rule__KInterface__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group__0__Impl_in_rule__KInterface__Group__02345);
+            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group__0__Impl_in_rule__KInterface__Group__02405);
             rule__KInterface__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group__1_in_rule__KInterface__Group__02348);
+            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group__1_in_rule__KInterface__Group__02408);
             rule__KInterface__Group__1();
 
             state._fsp--;
@@ -3254,20 +3345,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KInterface__Group__0__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1178:1: rule__KInterface__Group__0__Impl : ( 'interface' ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1208:1: rule__KInterface__Group__0__Impl : ( 'interface' ) ;
     public final void rule__KInterface__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1182:1: ( ( 'interface' ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1183:1: ( 'interface' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1212:1: ( ( 'interface' ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1213:1: ( 'interface' )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1183:1: ( 'interface' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1184:1: 'interface'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1213:1: ( 'interface' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1214:1: 'interface'
             {
              before(grammarAccess.getKInterfaceAccess().getInterfaceKeyword_0()); 
-            match(input,20,FollowSets000.FOLLOW_20_in_rule__KInterface__Group__0__Impl2376); 
+            match(input,20,FollowSets000.FOLLOW_20_in_rule__KInterface__Group__0__Impl2436); 
              after(grammarAccess.getKInterfaceAccess().getInterfaceKeyword_0()); 
 
             }
@@ -3291,21 +3382,21 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KInterface__Group__1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1197:1: rule__KInterface__Group__1 : rule__KInterface__Group__1__Impl rule__KInterface__Group__2 ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1227:1: rule__KInterface__Group__1 : rule__KInterface__Group__1__Impl rule__KInterface__Group__2 ;
     public final void rule__KInterface__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1201:1: ( rule__KInterface__Group__1__Impl rule__KInterface__Group__2 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1202:2: rule__KInterface__Group__1__Impl rule__KInterface__Group__2
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1231:1: ( rule__KInterface__Group__1__Impl rule__KInterface__Group__2 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1232:2: rule__KInterface__Group__1__Impl rule__KInterface__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group__1__Impl_in_rule__KInterface__Group__12407);
+            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group__1__Impl_in_rule__KInterface__Group__12467);
             rule__KInterface__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group__2_in_rule__KInterface__Group__12410);
+            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group__2_in_rule__KInterface__Group__12470);
             rule__KInterface__Group__2();
 
             state._fsp--;
@@ -3329,23 +3420,23 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KInterface__Group__1__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1209:1: rule__KInterface__Group__1__Impl : ( ( rule__KInterface__NameAssignment_1 ) ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1239:1: rule__KInterface__Group__1__Impl : ( ( rule__KInterface__NameAssignment_1 ) ) ;
     public final void rule__KInterface__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1213:1: ( ( ( rule__KInterface__NameAssignment_1 ) ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1214:1: ( ( rule__KInterface__NameAssignment_1 ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1243:1: ( ( ( rule__KInterface__NameAssignment_1 ) ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1244:1: ( ( rule__KInterface__NameAssignment_1 ) )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1214:1: ( ( rule__KInterface__NameAssignment_1 ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1215:1: ( rule__KInterface__NameAssignment_1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1244:1: ( ( rule__KInterface__NameAssignment_1 ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1245:1: ( rule__KInterface__NameAssignment_1 )
             {
              before(grammarAccess.getKInterfaceAccess().getNameAssignment_1()); 
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1216:1: ( rule__KInterface__NameAssignment_1 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1216:2: rule__KInterface__NameAssignment_1
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1246:1: ( rule__KInterface__NameAssignment_1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1246:2: rule__KInterface__NameAssignment_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KInterface__NameAssignment_1_in_rule__KInterface__Group__1__Impl2437);
+            pushFollow(FollowSets000.FOLLOW_rule__KInterface__NameAssignment_1_in_rule__KInterface__Group__1__Impl2497);
             rule__KInterface__NameAssignment_1();
 
             state._fsp--;
@@ -3376,22 +3467,17 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KInterface__Group__2"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1226:1: rule__KInterface__Group__2 : rule__KInterface__Group__2__Impl rule__KInterface__Group__3 ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1256:1: rule__KInterface__Group__2 : rule__KInterface__Group__2__Impl ;
     public final void rule__KInterface__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1230:1: ( rule__KInterface__Group__2__Impl rule__KInterface__Group__3 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1231:2: rule__KInterface__Group__2__Impl rule__KInterface__Group__3
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1260:1: ( rule__KInterface__Group__2__Impl )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1261:2: rule__KInterface__Group__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group__2__Impl_in_rule__KInterface__Group__22467);
+            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group__2__Impl_in_rule__KInterface__Group__22527);
             rule__KInterface__Group__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group__3_in_rule__KInterface__Group__22470);
-            rule__KInterface__Group__3();
 
             state._fsp--;
 
@@ -3414,21 +3500,42 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KInterface__Group__2__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1238:1: rule__KInterface__Group__2__Impl : ( '{' ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1267:1: rule__KInterface__Group__2__Impl : ( ( rule__KInterface__Group_2__0 )? ) ;
     public final void rule__KInterface__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1242:1: ( ( '{' ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1243:1: ( '{' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1271:1: ( ( ( rule__KInterface__Group_2__0 )? ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1272:1: ( ( rule__KInterface__Group_2__0 )? )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1243:1: ( '{' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1244:1: '{'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1272:1: ( ( rule__KInterface__Group_2__0 )? )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1273:1: ( rule__KInterface__Group_2__0 )?
             {
-             before(grammarAccess.getKInterfaceAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,17,FollowSets000.FOLLOW_17_in_rule__KInterface__Group__2__Impl2498); 
-             after(grammarAccess.getKInterfaceAccess().getLeftCurlyBracketKeyword_2()); 
+             before(grammarAccess.getKInterfaceAccess().getGroup_2()); 
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1274:1: ( rule__KInterface__Group_2__0 )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
+
+            if ( (LA13_0==17) ) {
+                alt13=1;
+            }
+            switch (alt13) {
+                case 1 :
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1274:2: rule__KInterface__Group_2__0
+                    {
+                    pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group_2__0_in_rule__KInterface__Group__2__Impl2554);
+                    rule__KInterface__Group_2__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getKInterfaceAccess().getGroup_2()); 
 
             }
 
@@ -3450,23 +3557,23 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__KInterface__Group__2__Impl"
 
 
-    // $ANTLR start "rule__KInterface__Group__3"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1257:1: rule__KInterface__Group__3 : rule__KInterface__Group__3__Impl rule__KInterface__Group__4 ;
-    public final void rule__KInterface__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__KInterface__Group_2__0"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1290:1: rule__KInterface__Group_2__0 : rule__KInterface__Group_2__0__Impl rule__KInterface__Group_2__1 ;
+    public final void rule__KInterface__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1261:1: ( rule__KInterface__Group__3__Impl rule__KInterface__Group__4 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1262:2: rule__KInterface__Group__3__Impl rule__KInterface__Group__4
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1294:1: ( rule__KInterface__Group_2__0__Impl rule__KInterface__Group_2__1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1295:2: rule__KInterface__Group_2__0__Impl rule__KInterface__Group_2__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group__3__Impl_in_rule__KInterface__Group__32529);
-            rule__KInterface__Group__3__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group_2__0__Impl_in_rule__KInterface__Group_2__02591);
+            rule__KInterface__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group__4_in_rule__KInterface__Group__32532);
-            rule__KInterface__Group__4();
+            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group_2__1_in_rule__KInterface__Group_2__02594);
+            rule__KInterface__Group_2__1();
 
             state._fsp--;
 
@@ -3485,40 +3592,115 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KInterface__Group__3"
+    // $ANTLR end "rule__KInterface__Group_2__0"
 
 
-    // $ANTLR start "rule__KInterface__Group__3__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1269:1: rule__KInterface__Group__3__Impl : ( ( rule__KInterface__Alternatives_3 )* ) ;
-    public final void rule__KInterface__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__KInterface__Group_2__0__Impl"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1302:1: rule__KInterface__Group_2__0__Impl : ( '{' ) ;
+    public final void rule__KInterface__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1273:1: ( ( ( rule__KInterface__Alternatives_3 )* ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1274:1: ( ( rule__KInterface__Alternatives_3 )* )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1306:1: ( ( '{' ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1307:1: ( '{' )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1274:1: ( ( rule__KInterface__Alternatives_3 )* )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1275:1: ( rule__KInterface__Alternatives_3 )*
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1307:1: ( '{' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1308:1: '{'
             {
-             before(grammarAccess.getKInterfaceAccess().getAlternatives_3()); 
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1276:1: ( rule__KInterface__Alternatives_3 )*
-            loop12:
-            do {
-                int alt12=2;
-                int LA12_0 = input.LA(1);
+             before(grammarAccess.getKInterfaceAccess().getLeftCurlyBracketKeyword_2_0()); 
+            match(input,17,FollowSets000.FOLLOW_17_in_rule__KInterface__Group_2__0__Impl2622); 
+             after(grammarAccess.getKInterfaceAccess().getLeftCurlyBracketKeyword_2_0()); 
 
-                if ( (LA12_0==RULE_ID) ) {
-                    alt12=1;
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__KInterface__Group_2__0__Impl"
+
+
+    // $ANTLR start "rule__KInterface__Group_2__1"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1321:1: rule__KInterface__Group_2__1 : rule__KInterface__Group_2__1__Impl rule__KInterface__Group_2__2 ;
+    public final void rule__KInterface__Group_2__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1325:1: ( rule__KInterface__Group_2__1__Impl rule__KInterface__Group_2__2 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1326:2: rule__KInterface__Group_2__1__Impl rule__KInterface__Group_2__2
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group_2__1__Impl_in_rule__KInterface__Group_2__12653);
+            rule__KInterface__Group_2__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group_2__2_in_rule__KInterface__Group_2__12656);
+            rule__KInterface__Group_2__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__KInterface__Group_2__1"
+
+
+    // $ANTLR start "rule__KInterface__Group_2__1__Impl"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1333:1: rule__KInterface__Group_2__1__Impl : ( ( rule__KInterface__Alternatives_2_1 )* ) ;
+    public final void rule__KInterface__Group_2__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1337:1: ( ( ( rule__KInterface__Alternatives_2_1 )* ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1338:1: ( ( rule__KInterface__Alternatives_2_1 )* )
+            {
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1338:1: ( ( rule__KInterface__Alternatives_2_1 )* )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1339:1: ( rule__KInterface__Alternatives_2_1 )*
+            {
+             before(grammarAccess.getKInterfaceAccess().getAlternatives_2_1()); 
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1340:1: ( rule__KInterface__Alternatives_2_1 )*
+            loop14:
+            do {
+                int alt14=2;
+                int LA14_0 = input.LA(1);
+
+                if ( (LA14_0==RULE_ID) ) {
+                    alt14=1;
                 }
 
 
-                switch (alt12) {
+                switch (alt14) {
             	case 1 :
-            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1276:2: rule__KInterface__Alternatives_3
+            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1340:2: rule__KInterface__Alternatives_2_1
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__KInterface__Alternatives_3_in_rule__KInterface__Group__3__Impl2559);
-            	    rule__KInterface__Alternatives_3();
+            	    pushFollow(FollowSets000.FOLLOW_rule__KInterface__Alternatives_2_1_in_rule__KInterface__Group_2__1__Impl2683);
+            	    rule__KInterface__Alternatives_2_1();
 
             	    state._fsp--;
 
@@ -3527,11 +3709,11 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
             	    break;
 
             	default :
-            	    break loop12;
+            	    break loop14;
                 }
             } while (true);
 
-             after(grammarAccess.getKInterfaceAccess().getAlternatives_3()); 
+             after(grammarAccess.getKInterfaceAccess().getAlternatives_2_1()); 
 
             }
 
@@ -3550,21 +3732,21 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KInterface__Group__3__Impl"
+    // $ANTLR end "rule__KInterface__Group_2__1__Impl"
 
 
-    // $ANTLR start "rule__KInterface__Group__4"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1286:1: rule__KInterface__Group__4 : rule__KInterface__Group__4__Impl ;
-    public final void rule__KInterface__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__KInterface__Group_2__2"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1350:1: rule__KInterface__Group_2__2 : rule__KInterface__Group_2__2__Impl ;
+    public final void rule__KInterface__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1290:1: ( rule__KInterface__Group__4__Impl )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1291:2: rule__KInterface__Group__4__Impl
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1354:1: ( rule__KInterface__Group_2__2__Impl )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1355:2: rule__KInterface__Group_2__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group__4__Impl_in_rule__KInterface__Group__42590);
-            rule__KInterface__Group__4__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__KInterface__Group_2__2__Impl_in_rule__KInterface__Group_2__22714);
+            rule__KInterface__Group_2__2__Impl();
 
             state._fsp--;
 
@@ -3583,25 +3765,25 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KInterface__Group__4"
+    // $ANTLR end "rule__KInterface__Group_2__2"
 
 
-    // $ANTLR start "rule__KInterface__Group__4__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1297:1: rule__KInterface__Group__4__Impl : ( '}' ) ;
-    public final void rule__KInterface__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__KInterface__Group_2__2__Impl"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1361:1: rule__KInterface__Group_2__2__Impl : ( '}' ) ;
+    public final void rule__KInterface__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1301:1: ( ( '}' ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1302:1: ( '}' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1365:1: ( ( '}' ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1366:1: ( '}' )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1302:1: ( '}' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1303:1: '}'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1366:1: ( '}' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1367:1: '}'
             {
-             before(grammarAccess.getKInterfaceAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,18,FollowSets000.FOLLOW_18_in_rule__KInterface__Group__4__Impl2618); 
-             after(grammarAccess.getKInterfaceAccess().getRightCurlyBracketKeyword_4()); 
+             before(grammarAccess.getKInterfaceAccess().getRightCurlyBracketKeyword_2_2()); 
+            match(input,18,FollowSets000.FOLLOW_18_in_rule__KInterface__Group_2__2__Impl2742); 
+             after(grammarAccess.getKInterfaceAccess().getRightCurlyBracketKeyword_2_2()); 
 
             }
 
@@ -3620,25 +3802,25 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KInterface__Group__4__Impl"
+    // $ANTLR end "rule__KInterface__Group_2__2__Impl"
 
 
     // $ANTLR start "rule__KEnum__Group__0"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1326:1: rule__KEnum__Group__0 : rule__KEnum__Group__0__Impl rule__KEnum__Group__1 ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1386:1: rule__KEnum__Group__0 : rule__KEnum__Group__0__Impl rule__KEnum__Group__1 ;
     public final void rule__KEnum__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1330:1: ( rule__KEnum__Group__0__Impl rule__KEnum__Group__1 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1331:2: rule__KEnum__Group__0__Impl rule__KEnum__Group__1
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1390:1: ( rule__KEnum__Group__0__Impl rule__KEnum__Group__1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1391:2: rule__KEnum__Group__0__Impl rule__KEnum__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group__0__Impl_in_rule__KEnum__Group__02659);
+            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group__0__Impl_in_rule__KEnum__Group__02779);
             rule__KEnum__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group__1_in_rule__KEnum__Group__02662);
+            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group__1_in_rule__KEnum__Group__02782);
             rule__KEnum__Group__1();
 
             state._fsp--;
@@ -3662,20 +3844,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KEnum__Group__0__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1338:1: rule__KEnum__Group__0__Impl : ( 'enum' ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1398:1: rule__KEnum__Group__0__Impl : ( 'enum' ) ;
     public final void rule__KEnum__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1342:1: ( ( 'enum' ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1343:1: ( 'enum' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1402:1: ( ( 'enum' ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1403:1: ( 'enum' )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1343:1: ( 'enum' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1344:1: 'enum'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1403:1: ( 'enum' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1404:1: 'enum'
             {
              before(grammarAccess.getKEnumAccess().getEnumKeyword_0()); 
-            match(input,21,FollowSets000.FOLLOW_21_in_rule__KEnum__Group__0__Impl2690); 
+            match(input,21,FollowSets000.FOLLOW_21_in_rule__KEnum__Group__0__Impl2810); 
              after(grammarAccess.getKEnumAccess().getEnumKeyword_0()); 
 
             }
@@ -3699,21 +3881,21 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KEnum__Group__1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1357:1: rule__KEnum__Group__1 : rule__KEnum__Group__1__Impl rule__KEnum__Group__2 ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1417:1: rule__KEnum__Group__1 : rule__KEnum__Group__1__Impl rule__KEnum__Group__2 ;
     public final void rule__KEnum__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1361:1: ( rule__KEnum__Group__1__Impl rule__KEnum__Group__2 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1362:2: rule__KEnum__Group__1__Impl rule__KEnum__Group__2
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1421:1: ( rule__KEnum__Group__1__Impl rule__KEnum__Group__2 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1422:2: rule__KEnum__Group__1__Impl rule__KEnum__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group__1__Impl_in_rule__KEnum__Group__12721);
+            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group__1__Impl_in_rule__KEnum__Group__12841);
             rule__KEnum__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group__2_in_rule__KEnum__Group__12724);
+            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group__2_in_rule__KEnum__Group__12844);
             rule__KEnum__Group__2();
 
             state._fsp--;
@@ -3737,23 +3919,23 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KEnum__Group__1__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1369:1: rule__KEnum__Group__1__Impl : ( ( rule__KEnum__NameAssignment_1 ) ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1429:1: rule__KEnum__Group__1__Impl : ( ( rule__KEnum__NameAssignment_1 ) ) ;
     public final void rule__KEnum__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1373:1: ( ( ( rule__KEnum__NameAssignment_1 ) ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1374:1: ( ( rule__KEnum__NameAssignment_1 ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1433:1: ( ( ( rule__KEnum__NameAssignment_1 ) ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1434:1: ( ( rule__KEnum__NameAssignment_1 ) )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1374:1: ( ( rule__KEnum__NameAssignment_1 ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1375:1: ( rule__KEnum__NameAssignment_1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1434:1: ( ( rule__KEnum__NameAssignment_1 ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1435:1: ( rule__KEnum__NameAssignment_1 )
             {
              before(grammarAccess.getKEnumAccess().getNameAssignment_1()); 
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1376:1: ( rule__KEnum__NameAssignment_1 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1376:2: rule__KEnum__NameAssignment_1
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1436:1: ( rule__KEnum__NameAssignment_1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1436:2: rule__KEnum__NameAssignment_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KEnum__NameAssignment_1_in_rule__KEnum__Group__1__Impl2751);
+            pushFollow(FollowSets000.FOLLOW_rule__KEnum__NameAssignment_1_in_rule__KEnum__Group__1__Impl2871);
             rule__KEnum__NameAssignment_1();
 
             state._fsp--;
@@ -3784,22 +3966,17 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KEnum__Group__2"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1386:1: rule__KEnum__Group__2 : rule__KEnum__Group__2__Impl rule__KEnum__Group__3 ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1446:1: rule__KEnum__Group__2 : rule__KEnum__Group__2__Impl ;
     public final void rule__KEnum__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1390:1: ( rule__KEnum__Group__2__Impl rule__KEnum__Group__3 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1391:2: rule__KEnum__Group__2__Impl rule__KEnum__Group__3
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1450:1: ( rule__KEnum__Group__2__Impl )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1451:2: rule__KEnum__Group__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group__2__Impl_in_rule__KEnum__Group__22781);
+            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group__2__Impl_in_rule__KEnum__Group__22901);
             rule__KEnum__Group__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group__3_in_rule__KEnum__Group__22784);
-            rule__KEnum__Group__3();
 
             state._fsp--;
 
@@ -3822,21 +3999,42 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KEnum__Group__2__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1398:1: rule__KEnum__Group__2__Impl : ( '{' ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1457:1: rule__KEnum__Group__2__Impl : ( ( rule__KEnum__Group_2__0 )? ) ;
     public final void rule__KEnum__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1402:1: ( ( '{' ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1403:1: ( '{' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1461:1: ( ( ( rule__KEnum__Group_2__0 )? ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1462:1: ( ( rule__KEnum__Group_2__0 )? )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1403:1: ( '{' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1404:1: '{'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1462:1: ( ( rule__KEnum__Group_2__0 )? )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1463:1: ( rule__KEnum__Group_2__0 )?
             {
-             before(grammarAccess.getKEnumAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,17,FollowSets000.FOLLOW_17_in_rule__KEnum__Group__2__Impl2812); 
-             after(grammarAccess.getKEnumAccess().getLeftCurlyBracketKeyword_2()); 
+             before(grammarAccess.getKEnumAccess().getGroup_2()); 
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1464:1: ( rule__KEnum__Group_2__0 )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
+
+            if ( (LA15_0==17) ) {
+                alt15=1;
+            }
+            switch (alt15) {
+                case 1 :
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1464:2: rule__KEnum__Group_2__0
+                    {
+                    pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group_2__0_in_rule__KEnum__Group__2__Impl2928);
+                    rule__KEnum__Group_2__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getKEnumAccess().getGroup_2()); 
 
             }
 
@@ -3858,23 +4056,23 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__KEnum__Group__2__Impl"
 
 
-    // $ANTLR start "rule__KEnum__Group__3"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1417:1: rule__KEnum__Group__3 : rule__KEnum__Group__3__Impl rule__KEnum__Group__4 ;
-    public final void rule__KEnum__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__KEnum__Group_2__0"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1480:1: rule__KEnum__Group_2__0 : rule__KEnum__Group_2__0__Impl rule__KEnum__Group_2__1 ;
+    public final void rule__KEnum__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1421:1: ( rule__KEnum__Group__3__Impl rule__KEnum__Group__4 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1422:2: rule__KEnum__Group__3__Impl rule__KEnum__Group__4
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1484:1: ( rule__KEnum__Group_2__0__Impl rule__KEnum__Group_2__1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1485:2: rule__KEnum__Group_2__0__Impl rule__KEnum__Group_2__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group__3__Impl_in_rule__KEnum__Group__32843);
-            rule__KEnum__Group__3__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group_2__0__Impl_in_rule__KEnum__Group_2__02965);
+            rule__KEnum__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group__4_in_rule__KEnum__Group__32846);
-            rule__KEnum__Group__4();
+            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group_2__1_in_rule__KEnum__Group_2__02968);
+            rule__KEnum__Group_2__1();
 
             state._fsp--;
 
@@ -3893,40 +4091,115 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KEnum__Group__3"
+    // $ANTLR end "rule__KEnum__Group_2__0"
 
 
-    // $ANTLR start "rule__KEnum__Group__3__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1429:1: rule__KEnum__Group__3__Impl : ( ( rule__KEnum__Alternatives_3 )* ) ;
-    public final void rule__KEnum__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__KEnum__Group_2__0__Impl"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1492:1: rule__KEnum__Group_2__0__Impl : ( '{' ) ;
+    public final void rule__KEnum__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1433:1: ( ( ( rule__KEnum__Alternatives_3 )* ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1434:1: ( ( rule__KEnum__Alternatives_3 )* )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1496:1: ( ( '{' ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1497:1: ( '{' )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1434:1: ( ( rule__KEnum__Alternatives_3 )* )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1435:1: ( rule__KEnum__Alternatives_3 )*
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1497:1: ( '{' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1498:1: '{'
             {
-             before(grammarAccess.getKEnumAccess().getAlternatives_3()); 
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1436:1: ( rule__KEnum__Alternatives_3 )*
-            loop13:
-            do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+             before(grammarAccess.getKEnumAccess().getLeftCurlyBracketKeyword_2_0()); 
+            match(input,17,FollowSets000.FOLLOW_17_in_rule__KEnum__Group_2__0__Impl2996); 
+             after(grammarAccess.getKEnumAccess().getLeftCurlyBracketKeyword_2_0()); 
 
-                if ( (LA13_0==RULE_ID) ) {
-                    alt13=1;
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__KEnum__Group_2__0__Impl"
+
+
+    // $ANTLR start "rule__KEnum__Group_2__1"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1511:1: rule__KEnum__Group_2__1 : rule__KEnum__Group_2__1__Impl rule__KEnum__Group_2__2 ;
+    public final void rule__KEnum__Group_2__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1515:1: ( rule__KEnum__Group_2__1__Impl rule__KEnum__Group_2__2 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1516:2: rule__KEnum__Group_2__1__Impl rule__KEnum__Group_2__2
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group_2__1__Impl_in_rule__KEnum__Group_2__13027);
+            rule__KEnum__Group_2__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group_2__2_in_rule__KEnum__Group_2__13030);
+            rule__KEnum__Group_2__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__KEnum__Group_2__1"
+
+
+    // $ANTLR start "rule__KEnum__Group_2__1__Impl"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1523:1: rule__KEnum__Group_2__1__Impl : ( ( rule__KEnum__Alternatives_2_1 )* ) ;
+    public final void rule__KEnum__Group_2__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1527:1: ( ( ( rule__KEnum__Alternatives_2_1 )* ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1528:1: ( ( rule__KEnum__Alternatives_2_1 )* )
+            {
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1528:1: ( ( rule__KEnum__Alternatives_2_1 )* )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1529:1: ( rule__KEnum__Alternatives_2_1 )*
+            {
+             before(grammarAccess.getKEnumAccess().getAlternatives_2_1()); 
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1530:1: ( rule__KEnum__Alternatives_2_1 )*
+            loop16:
+            do {
+                int alt16=2;
+                int LA16_0 = input.LA(1);
+
+                if ( (LA16_0==RULE_ID) ) {
+                    alt16=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt16) {
             	case 1 :
-            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1436:2: rule__KEnum__Alternatives_3
+            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1530:2: rule__KEnum__Alternatives_2_1
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__KEnum__Alternatives_3_in_rule__KEnum__Group__3__Impl2873);
-            	    rule__KEnum__Alternatives_3();
+            	    pushFollow(FollowSets000.FOLLOW_rule__KEnum__Alternatives_2_1_in_rule__KEnum__Group_2__1__Impl3057);
+            	    rule__KEnum__Alternatives_2_1();
 
             	    state._fsp--;
 
@@ -3935,11 +4208,11 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop16;
                 }
             } while (true);
 
-             after(grammarAccess.getKEnumAccess().getAlternatives_3()); 
+             after(grammarAccess.getKEnumAccess().getAlternatives_2_1()); 
 
             }
 
@@ -3958,21 +4231,21 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KEnum__Group__3__Impl"
+    // $ANTLR end "rule__KEnum__Group_2__1__Impl"
 
 
-    // $ANTLR start "rule__KEnum__Group__4"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1446:1: rule__KEnum__Group__4 : rule__KEnum__Group__4__Impl ;
-    public final void rule__KEnum__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__KEnum__Group_2__2"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1540:1: rule__KEnum__Group_2__2 : rule__KEnum__Group_2__2__Impl ;
+    public final void rule__KEnum__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1450:1: ( rule__KEnum__Group__4__Impl )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1451:2: rule__KEnum__Group__4__Impl
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1544:1: ( rule__KEnum__Group_2__2__Impl )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1545:2: rule__KEnum__Group_2__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group__4__Impl_in_rule__KEnum__Group__42904);
-            rule__KEnum__Group__4__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__KEnum__Group_2__2__Impl_in_rule__KEnum__Group_2__23088);
+            rule__KEnum__Group_2__2__Impl();
 
             state._fsp--;
 
@@ -3991,25 +4264,25 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KEnum__Group__4"
+    // $ANTLR end "rule__KEnum__Group_2__2"
 
 
-    // $ANTLR start "rule__KEnum__Group__4__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1457:1: rule__KEnum__Group__4__Impl : ( '}' ) ;
-    public final void rule__KEnum__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__KEnum__Group_2__2__Impl"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1551:1: rule__KEnum__Group_2__2__Impl : ( '}' ) ;
+    public final void rule__KEnum__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1461:1: ( ( '}' ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1462:1: ( '}' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1555:1: ( ( '}' ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1556:1: ( '}' )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1462:1: ( '}' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1463:1: '}'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1556:1: ( '}' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1557:1: '}'
             {
-             before(grammarAccess.getKEnumAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,18,FollowSets000.FOLLOW_18_in_rule__KEnum__Group__4__Impl2932); 
-             after(grammarAccess.getKEnumAccess().getRightCurlyBracketKeyword_4()); 
+             before(grammarAccess.getKEnumAccess().getRightCurlyBracketKeyword_2_2()); 
+            match(input,18,FollowSets000.FOLLOW_18_in_rule__KEnum__Group_2__2__Impl3116); 
+             after(grammarAccess.getKEnumAccess().getRightCurlyBracketKeyword_2_2()); 
 
             }
 
@@ -4028,25 +4301,25 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KEnum__Group__4__Impl"
+    // $ANTLR end "rule__KEnum__Group_2__2__Impl"
 
 
     // $ANTLR start "rule__KMethod__Group__0"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1486:1: rule__KMethod__Group__0 : rule__KMethod__Group__0__Impl rule__KMethod__Group__1 ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1576:1: rule__KMethod__Group__0 : rule__KMethod__Group__0__Impl rule__KMethod__Group__1 ;
     public final void rule__KMethod__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1490:1: ( rule__KMethod__Group__0__Impl rule__KMethod__Group__1 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1491:2: rule__KMethod__Group__0__Impl rule__KMethod__Group__1
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1580:1: ( rule__KMethod__Group__0__Impl rule__KMethod__Group__1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1581:2: rule__KMethod__Group__0__Impl rule__KMethod__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group__0__Impl_in_rule__KMethod__Group__02973);
+            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group__0__Impl_in_rule__KMethod__Group__03153);
             rule__KMethod__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group__1_in_rule__KMethod__Group__02976);
+            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group__1_in_rule__KMethod__Group__03156);
             rule__KMethod__Group__1();
 
             state._fsp--;
@@ -4070,23 +4343,23 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KMethod__Group__0__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1498:1: rule__KMethod__Group__0__Impl : ( ( rule__KMethod__NameAssignment_0 ) ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1588:1: rule__KMethod__Group__0__Impl : ( ( rule__KMethod__NameAssignment_0 ) ) ;
     public final void rule__KMethod__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1502:1: ( ( ( rule__KMethod__NameAssignment_0 ) ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1503:1: ( ( rule__KMethod__NameAssignment_0 ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1592:1: ( ( ( rule__KMethod__NameAssignment_0 ) ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1593:1: ( ( rule__KMethod__NameAssignment_0 ) )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1503:1: ( ( rule__KMethod__NameAssignment_0 ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1504:1: ( rule__KMethod__NameAssignment_0 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1593:1: ( ( rule__KMethod__NameAssignment_0 ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1594:1: ( rule__KMethod__NameAssignment_0 )
             {
              before(grammarAccess.getKMethodAccess().getNameAssignment_0()); 
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1505:1: ( rule__KMethod__NameAssignment_0 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1505:2: rule__KMethod__NameAssignment_0
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1595:1: ( rule__KMethod__NameAssignment_0 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1595:2: rule__KMethod__NameAssignment_0
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KMethod__NameAssignment_0_in_rule__KMethod__Group__0__Impl3003);
+            pushFollow(FollowSets000.FOLLOW_rule__KMethod__NameAssignment_0_in_rule__KMethod__Group__0__Impl3183);
             rule__KMethod__NameAssignment_0();
 
             state._fsp--;
@@ -4117,21 +4390,21 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KMethod__Group__1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1515:1: rule__KMethod__Group__1 : rule__KMethod__Group__1__Impl rule__KMethod__Group__2 ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1605:1: rule__KMethod__Group__1 : rule__KMethod__Group__1__Impl rule__KMethod__Group__2 ;
     public final void rule__KMethod__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1519:1: ( rule__KMethod__Group__1__Impl rule__KMethod__Group__2 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1520:2: rule__KMethod__Group__1__Impl rule__KMethod__Group__2
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1609:1: ( rule__KMethod__Group__1__Impl rule__KMethod__Group__2 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1610:2: rule__KMethod__Group__1__Impl rule__KMethod__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group__1__Impl_in_rule__KMethod__Group__13033);
+            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group__1__Impl_in_rule__KMethod__Group__13213);
             rule__KMethod__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group__2_in_rule__KMethod__Group__13036);
+            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group__2_in_rule__KMethod__Group__13216);
             rule__KMethod__Group__2();
 
             state._fsp--;
@@ -4155,20 +4428,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KMethod__Group__1__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1527:1: rule__KMethod__Group__1__Impl : ( '(' ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1617:1: rule__KMethod__Group__1__Impl : ( '(' ) ;
     public final void rule__KMethod__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1531:1: ( ( '(' ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1532:1: ( '(' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1621:1: ( ( '(' ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1622:1: ( '(' )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1532:1: ( '(' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1533:1: '('
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1622:1: ( '(' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1623:1: '('
             {
              before(grammarAccess.getKMethodAccess().getLeftParenthesisKeyword_1()); 
-            match(input,22,FollowSets000.FOLLOW_22_in_rule__KMethod__Group__1__Impl3064); 
+            match(input,22,FollowSets000.FOLLOW_22_in_rule__KMethod__Group__1__Impl3244); 
              after(grammarAccess.getKMethodAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -4192,21 +4465,21 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KMethod__Group__2"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1546:1: rule__KMethod__Group__2 : rule__KMethod__Group__2__Impl rule__KMethod__Group__3 ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1636:1: rule__KMethod__Group__2 : rule__KMethod__Group__2__Impl rule__KMethod__Group__3 ;
     public final void rule__KMethod__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1550:1: ( rule__KMethod__Group__2__Impl rule__KMethod__Group__3 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1551:2: rule__KMethod__Group__2__Impl rule__KMethod__Group__3
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1640:1: ( rule__KMethod__Group__2__Impl rule__KMethod__Group__3 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1641:2: rule__KMethod__Group__2__Impl rule__KMethod__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group__2__Impl_in_rule__KMethod__Group__23095);
+            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group__2__Impl_in_rule__KMethod__Group__23275);
             rule__KMethod__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group__3_in_rule__KMethod__Group__23098);
+            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group__3_in_rule__KMethod__Group__23278);
             rule__KMethod__Group__3();
 
             state._fsp--;
@@ -4230,31 +4503,31 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KMethod__Group__2__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1558:1: rule__KMethod__Group__2__Impl : ( ( rule__KMethod__Group_2__0 )? ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1648:1: rule__KMethod__Group__2__Impl : ( ( rule__KMethod__Group_2__0 )? ) ;
     public final void rule__KMethod__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1562:1: ( ( ( rule__KMethod__Group_2__0 )? ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1563:1: ( ( rule__KMethod__Group_2__0 )? )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1652:1: ( ( ( rule__KMethod__Group_2__0 )? ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1653:1: ( ( rule__KMethod__Group_2__0 )? )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1563:1: ( ( rule__KMethod__Group_2__0 )? )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1564:1: ( rule__KMethod__Group_2__0 )?
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1653:1: ( ( rule__KMethod__Group_2__0 )? )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1654:1: ( rule__KMethod__Group_2__0 )?
             {
              before(grammarAccess.getKMethodAccess().getGroup_2()); 
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1565:1: ( rule__KMethod__Group_2__0 )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1655:1: ( rule__KMethod__Group_2__0 )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA14_0==RULE_ID) ) {
-                alt14=1;
+            if ( (LA17_0==RULE_ID) ) {
+                alt17=1;
             }
-            switch (alt14) {
+            switch (alt17) {
                 case 1 :
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1565:2: rule__KMethod__Group_2__0
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1655:2: rule__KMethod__Group_2__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group_2__0_in_rule__KMethod__Group__2__Impl3125);
+                    pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group_2__0_in_rule__KMethod__Group__2__Impl3305);
                     rule__KMethod__Group_2__0();
 
                     state._fsp--;
@@ -4288,16 +4561,16 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KMethod__Group__3"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1575:1: rule__KMethod__Group__3 : rule__KMethod__Group__3__Impl ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1665:1: rule__KMethod__Group__3 : rule__KMethod__Group__3__Impl ;
     public final void rule__KMethod__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1579:1: ( rule__KMethod__Group__3__Impl )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1580:2: rule__KMethod__Group__3__Impl
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1669:1: ( rule__KMethod__Group__3__Impl )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1670:2: rule__KMethod__Group__3__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group__3__Impl_in_rule__KMethod__Group__33156);
+            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group__3__Impl_in_rule__KMethod__Group__33336);
             rule__KMethod__Group__3__Impl();
 
             state._fsp--;
@@ -4321,20 +4594,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KMethod__Group__3__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1586:1: rule__KMethod__Group__3__Impl : ( ')' ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1676:1: rule__KMethod__Group__3__Impl : ( ')' ) ;
     public final void rule__KMethod__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1590:1: ( ( ')' ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1591:1: ( ')' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1680:1: ( ( ')' ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1681:1: ( ')' )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1591:1: ( ')' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1592:1: ')'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1681:1: ( ')' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1682:1: ')'
             {
              before(grammarAccess.getKMethodAccess().getRightParenthesisKeyword_3()); 
-            match(input,23,FollowSets000.FOLLOW_23_in_rule__KMethod__Group__3__Impl3184); 
+            match(input,23,FollowSets000.FOLLOW_23_in_rule__KMethod__Group__3__Impl3364); 
              after(grammarAccess.getKMethodAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -4358,21 +4631,21 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KMethod__Group_2__0"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1613:1: rule__KMethod__Group_2__0 : rule__KMethod__Group_2__0__Impl rule__KMethod__Group_2__1 ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1703:1: rule__KMethod__Group_2__0 : rule__KMethod__Group_2__0__Impl rule__KMethod__Group_2__1 ;
     public final void rule__KMethod__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1617:1: ( rule__KMethod__Group_2__0__Impl rule__KMethod__Group_2__1 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1618:2: rule__KMethod__Group_2__0__Impl rule__KMethod__Group_2__1
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1707:1: ( rule__KMethod__Group_2__0__Impl rule__KMethod__Group_2__1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1708:2: rule__KMethod__Group_2__0__Impl rule__KMethod__Group_2__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group_2__0__Impl_in_rule__KMethod__Group_2__03223);
+            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group_2__0__Impl_in_rule__KMethod__Group_2__03403);
             rule__KMethod__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group_2__1_in_rule__KMethod__Group_2__03226);
+            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group_2__1_in_rule__KMethod__Group_2__03406);
             rule__KMethod__Group_2__1();
 
             state._fsp--;
@@ -4396,23 +4669,23 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KMethod__Group_2__0__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1625:1: rule__KMethod__Group_2__0__Impl : ( ( rule__KMethod__ParametersAssignment_2_0 ) ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1715:1: rule__KMethod__Group_2__0__Impl : ( ( rule__KMethod__ParametersAssignment_2_0 ) ) ;
     public final void rule__KMethod__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1629:1: ( ( ( rule__KMethod__ParametersAssignment_2_0 ) ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1630:1: ( ( rule__KMethod__ParametersAssignment_2_0 ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1719:1: ( ( ( rule__KMethod__ParametersAssignment_2_0 ) ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1720:1: ( ( rule__KMethod__ParametersAssignment_2_0 ) )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1630:1: ( ( rule__KMethod__ParametersAssignment_2_0 ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1631:1: ( rule__KMethod__ParametersAssignment_2_0 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1720:1: ( ( rule__KMethod__ParametersAssignment_2_0 ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1721:1: ( rule__KMethod__ParametersAssignment_2_0 )
             {
              before(grammarAccess.getKMethodAccess().getParametersAssignment_2_0()); 
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1632:1: ( rule__KMethod__ParametersAssignment_2_0 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1632:2: rule__KMethod__ParametersAssignment_2_0
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1722:1: ( rule__KMethod__ParametersAssignment_2_0 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1722:2: rule__KMethod__ParametersAssignment_2_0
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KMethod__ParametersAssignment_2_0_in_rule__KMethod__Group_2__0__Impl3253);
+            pushFollow(FollowSets000.FOLLOW_rule__KMethod__ParametersAssignment_2_0_in_rule__KMethod__Group_2__0__Impl3433);
             rule__KMethod__ParametersAssignment_2_0();
 
             state._fsp--;
@@ -4443,16 +4716,16 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KMethod__Group_2__1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1642:1: rule__KMethod__Group_2__1 : rule__KMethod__Group_2__1__Impl ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1732:1: rule__KMethod__Group_2__1 : rule__KMethod__Group_2__1__Impl ;
     public final void rule__KMethod__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1646:1: ( rule__KMethod__Group_2__1__Impl )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1647:2: rule__KMethod__Group_2__1__Impl
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1736:1: ( rule__KMethod__Group_2__1__Impl )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1737:2: rule__KMethod__Group_2__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group_2__1__Impl_in_rule__KMethod__Group_2__13283);
+            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group_2__1__Impl_in_rule__KMethod__Group_2__13463);
             rule__KMethod__Group_2__1__Impl();
 
             state._fsp--;
@@ -4476,35 +4749,35 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KMethod__Group_2__1__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1653:1: rule__KMethod__Group_2__1__Impl : ( ( rule__KMethod__Group_2_1__0 )* ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1743:1: rule__KMethod__Group_2__1__Impl : ( ( rule__KMethod__Group_2_1__0 )* ) ;
     public final void rule__KMethod__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1657:1: ( ( ( rule__KMethod__Group_2_1__0 )* ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1658:1: ( ( rule__KMethod__Group_2_1__0 )* )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1747:1: ( ( ( rule__KMethod__Group_2_1__0 )* ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1748:1: ( ( rule__KMethod__Group_2_1__0 )* )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1658:1: ( ( rule__KMethod__Group_2_1__0 )* )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1659:1: ( rule__KMethod__Group_2_1__0 )*
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1748:1: ( ( rule__KMethod__Group_2_1__0 )* )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1749:1: ( rule__KMethod__Group_2_1__0 )*
             {
              before(grammarAccess.getKMethodAccess().getGroup_2_1()); 
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1660:1: ( rule__KMethod__Group_2_1__0 )*
-            loop15:
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1750:1: ( rule__KMethod__Group_2_1__0 )*
+            loop18:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt18=2;
+                int LA18_0 = input.LA(1);
 
-                if ( (LA15_0==24) ) {
-                    alt15=1;
+                if ( (LA18_0==24) ) {
+                    alt18=1;
                 }
 
 
-                switch (alt15) {
+                switch (alt18) {
             	case 1 :
-            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1660:2: rule__KMethod__Group_2_1__0
+            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1750:2: rule__KMethod__Group_2_1__0
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group_2_1__0_in_rule__KMethod__Group_2__1__Impl3310);
+            	    pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group_2_1__0_in_rule__KMethod__Group_2__1__Impl3490);
             	    rule__KMethod__Group_2_1__0();
 
             	    state._fsp--;
@@ -4514,7 +4787,7 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
             	    break;
 
             	default :
-            	    break loop15;
+            	    break loop18;
                 }
             } while (true);
 
@@ -4541,21 +4814,21 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KMethod__Group_2_1__0"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1674:1: rule__KMethod__Group_2_1__0 : rule__KMethod__Group_2_1__0__Impl rule__KMethod__Group_2_1__1 ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1764:1: rule__KMethod__Group_2_1__0 : rule__KMethod__Group_2_1__0__Impl rule__KMethod__Group_2_1__1 ;
     public final void rule__KMethod__Group_2_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1678:1: ( rule__KMethod__Group_2_1__0__Impl rule__KMethod__Group_2_1__1 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1679:2: rule__KMethod__Group_2_1__0__Impl rule__KMethod__Group_2_1__1
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1768:1: ( rule__KMethod__Group_2_1__0__Impl rule__KMethod__Group_2_1__1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1769:2: rule__KMethod__Group_2_1__0__Impl rule__KMethod__Group_2_1__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group_2_1__0__Impl_in_rule__KMethod__Group_2_1__03345);
+            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group_2_1__0__Impl_in_rule__KMethod__Group_2_1__03525);
             rule__KMethod__Group_2_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group_2_1__1_in_rule__KMethod__Group_2_1__03348);
+            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group_2_1__1_in_rule__KMethod__Group_2_1__03528);
             rule__KMethod__Group_2_1__1();
 
             state._fsp--;
@@ -4579,20 +4852,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KMethod__Group_2_1__0__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1686:1: rule__KMethod__Group_2_1__0__Impl : ( ',' ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1776:1: rule__KMethod__Group_2_1__0__Impl : ( ',' ) ;
     public final void rule__KMethod__Group_2_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1690:1: ( ( ',' ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1691:1: ( ',' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1780:1: ( ( ',' ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1781:1: ( ',' )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1691:1: ( ',' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1692:1: ','
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1781:1: ( ',' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1782:1: ','
             {
              before(grammarAccess.getKMethodAccess().getCommaKeyword_2_1_0()); 
-            match(input,24,FollowSets000.FOLLOW_24_in_rule__KMethod__Group_2_1__0__Impl3376); 
+            match(input,24,FollowSets000.FOLLOW_24_in_rule__KMethod__Group_2_1__0__Impl3556); 
              after(grammarAccess.getKMethodAccess().getCommaKeyword_2_1_0()); 
 
             }
@@ -4616,16 +4889,16 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KMethod__Group_2_1__1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1705:1: rule__KMethod__Group_2_1__1 : rule__KMethod__Group_2_1__1__Impl ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1795:1: rule__KMethod__Group_2_1__1 : rule__KMethod__Group_2_1__1__Impl ;
     public final void rule__KMethod__Group_2_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1709:1: ( rule__KMethod__Group_2_1__1__Impl )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1710:2: rule__KMethod__Group_2_1__1__Impl
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1799:1: ( rule__KMethod__Group_2_1__1__Impl )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1800:2: rule__KMethod__Group_2_1__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group_2_1__1__Impl_in_rule__KMethod__Group_2_1__13407);
+            pushFollow(FollowSets000.FOLLOW_rule__KMethod__Group_2_1__1__Impl_in_rule__KMethod__Group_2_1__13587);
             rule__KMethod__Group_2_1__1__Impl();
 
             state._fsp--;
@@ -4649,23 +4922,23 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KMethod__Group_2_1__1__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1716:1: rule__KMethod__Group_2_1__1__Impl : ( ( rule__KMethod__ParametersAssignment_2_1_1 ) ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1806:1: rule__KMethod__Group_2_1__1__Impl : ( ( rule__KMethod__ParametersAssignment_2_1_1 ) ) ;
     public final void rule__KMethod__Group_2_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1720:1: ( ( ( rule__KMethod__ParametersAssignment_2_1_1 ) ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1721:1: ( ( rule__KMethod__ParametersAssignment_2_1_1 ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1810:1: ( ( ( rule__KMethod__ParametersAssignment_2_1_1 ) ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1811:1: ( ( rule__KMethod__ParametersAssignment_2_1_1 ) )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1721:1: ( ( rule__KMethod__ParametersAssignment_2_1_1 ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1722:1: ( rule__KMethod__ParametersAssignment_2_1_1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1811:1: ( ( rule__KMethod__ParametersAssignment_2_1_1 ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1812:1: ( rule__KMethod__ParametersAssignment_2_1_1 )
             {
              before(grammarAccess.getKMethodAccess().getParametersAssignment_2_1_1()); 
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1723:1: ( rule__KMethod__ParametersAssignment_2_1_1 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1723:2: rule__KMethod__ParametersAssignment_2_1_1
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1813:1: ( rule__KMethod__ParametersAssignment_2_1_1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1813:2: rule__KMethod__ParametersAssignment_2_1_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__KMethod__ParametersAssignment_2_1_1_in_rule__KMethod__Group_2_1__1__Impl3434);
+            pushFollow(FollowSets000.FOLLOW_rule__KMethod__ParametersAssignment_2_1_1_in_rule__KMethod__Group_2_1__1__Impl3614);
             rule__KMethod__ParametersAssignment_2_1_1();
 
             state._fsp--;
@@ -4696,21 +4969,21 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__QualifiedID__Group__0"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1737:1: rule__QualifiedID__Group__0 : rule__QualifiedID__Group__0__Impl rule__QualifiedID__Group__1 ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1827:1: rule__QualifiedID__Group__0 : rule__QualifiedID__Group__0__Impl rule__QualifiedID__Group__1 ;
     public final void rule__QualifiedID__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1741:1: ( rule__QualifiedID__Group__0__Impl rule__QualifiedID__Group__1 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1742:2: rule__QualifiedID__Group__0__Impl rule__QualifiedID__Group__1
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1831:1: ( rule__QualifiedID__Group__0__Impl rule__QualifiedID__Group__1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1832:2: rule__QualifiedID__Group__0__Impl rule__QualifiedID__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__QualifiedID__Group__0__Impl_in_rule__QualifiedID__Group__03468);
+            pushFollow(FollowSets000.FOLLOW_rule__QualifiedID__Group__0__Impl_in_rule__QualifiedID__Group__03648);
             rule__QualifiedID__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__QualifiedID__Group__1_in_rule__QualifiedID__Group__03471);
+            pushFollow(FollowSets000.FOLLOW_rule__QualifiedID__Group__1_in_rule__QualifiedID__Group__03651);
             rule__QualifiedID__Group__1();
 
             state._fsp--;
@@ -4734,20 +5007,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__QualifiedID__Group__0__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1749:1: rule__QualifiedID__Group__0__Impl : ( RULE_ID ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1839:1: rule__QualifiedID__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedID__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1753:1: ( ( RULE_ID ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1754:1: ( RULE_ID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1843:1: ( ( RULE_ID ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1844:1: ( RULE_ID )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1754:1: ( RULE_ID )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1755:1: RULE_ID
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1844:1: ( RULE_ID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1845:1: RULE_ID
             {
              before(grammarAccess.getQualifiedIDAccess().getIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__QualifiedID__Group__0__Impl3498); 
+            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__QualifiedID__Group__0__Impl3678); 
              after(grammarAccess.getQualifiedIDAccess().getIDTerminalRuleCall_0()); 
 
             }
@@ -4771,16 +5044,16 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__QualifiedID__Group__1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1766:1: rule__QualifiedID__Group__1 : rule__QualifiedID__Group__1__Impl ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1856:1: rule__QualifiedID__Group__1 : rule__QualifiedID__Group__1__Impl ;
     public final void rule__QualifiedID__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1770:1: ( rule__QualifiedID__Group__1__Impl )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1771:2: rule__QualifiedID__Group__1__Impl
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1860:1: ( rule__QualifiedID__Group__1__Impl )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1861:2: rule__QualifiedID__Group__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__QualifiedID__Group__1__Impl_in_rule__QualifiedID__Group__13527);
+            pushFollow(FollowSets000.FOLLOW_rule__QualifiedID__Group__1__Impl_in_rule__QualifiedID__Group__13707);
             rule__QualifiedID__Group__1__Impl();
 
             state._fsp--;
@@ -4804,35 +5077,35 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__QualifiedID__Group__1__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1777:1: rule__QualifiedID__Group__1__Impl : ( ( rule__QualifiedID__Group_1__0 )* ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1867:1: rule__QualifiedID__Group__1__Impl : ( ( rule__QualifiedID__Group_1__0 )* ) ;
     public final void rule__QualifiedID__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1781:1: ( ( ( rule__QualifiedID__Group_1__0 )* ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1782:1: ( ( rule__QualifiedID__Group_1__0 )* )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1871:1: ( ( ( rule__QualifiedID__Group_1__0 )* ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1872:1: ( ( rule__QualifiedID__Group_1__0 )* )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1782:1: ( ( rule__QualifiedID__Group_1__0 )* )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1783:1: ( rule__QualifiedID__Group_1__0 )*
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1872:1: ( ( rule__QualifiedID__Group_1__0 )* )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1873:1: ( rule__QualifiedID__Group_1__0 )*
             {
              before(grammarAccess.getQualifiedIDAccess().getGroup_1()); 
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1784:1: ( rule__QualifiedID__Group_1__0 )*
-            loop16:
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1874:1: ( rule__QualifiedID__Group_1__0 )*
+            loop19:
             do {
-                int alt16=2;
-                int LA16_0 = input.LA(1);
+                int alt19=2;
+                int LA19_0 = input.LA(1);
 
-                if ( (LA16_0==25) ) {
-                    alt16=1;
+                if ( (LA19_0==25) ) {
+                    alt19=1;
                 }
 
 
-                switch (alt16) {
+                switch (alt19) {
             	case 1 :
-            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1784:2: rule__QualifiedID__Group_1__0
+            	    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1874:2: rule__QualifiedID__Group_1__0
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__QualifiedID__Group_1__0_in_rule__QualifiedID__Group__1__Impl3554);
+            	    pushFollow(FollowSets000.FOLLOW_rule__QualifiedID__Group_1__0_in_rule__QualifiedID__Group__1__Impl3734);
             	    rule__QualifiedID__Group_1__0();
 
             	    state._fsp--;
@@ -4842,7 +5115,7 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
             	    break;
 
             	default :
-            	    break loop16;
+            	    break loop19;
                 }
             } while (true);
 
@@ -4869,21 +5142,21 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__QualifiedID__Group_1__0"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1798:1: rule__QualifiedID__Group_1__0 : rule__QualifiedID__Group_1__0__Impl rule__QualifiedID__Group_1__1 ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1888:1: rule__QualifiedID__Group_1__0 : rule__QualifiedID__Group_1__0__Impl rule__QualifiedID__Group_1__1 ;
     public final void rule__QualifiedID__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1802:1: ( rule__QualifiedID__Group_1__0__Impl rule__QualifiedID__Group_1__1 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1803:2: rule__QualifiedID__Group_1__0__Impl rule__QualifiedID__Group_1__1
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1892:1: ( rule__QualifiedID__Group_1__0__Impl rule__QualifiedID__Group_1__1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1893:2: rule__QualifiedID__Group_1__0__Impl rule__QualifiedID__Group_1__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__QualifiedID__Group_1__0__Impl_in_rule__QualifiedID__Group_1__03589);
+            pushFollow(FollowSets000.FOLLOW_rule__QualifiedID__Group_1__0__Impl_in_rule__QualifiedID__Group_1__03769);
             rule__QualifiedID__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__QualifiedID__Group_1__1_in_rule__QualifiedID__Group_1__03592);
+            pushFollow(FollowSets000.FOLLOW_rule__QualifiedID__Group_1__1_in_rule__QualifiedID__Group_1__03772);
             rule__QualifiedID__Group_1__1();
 
             state._fsp--;
@@ -4907,20 +5180,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__QualifiedID__Group_1__0__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1810:1: rule__QualifiedID__Group_1__0__Impl : ( '.' ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1900:1: rule__QualifiedID__Group_1__0__Impl : ( '.' ) ;
     public final void rule__QualifiedID__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1814:1: ( ( '.' ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1815:1: ( '.' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1904:1: ( ( '.' ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1905:1: ( '.' )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1815:1: ( '.' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1816:1: '.'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1905:1: ( '.' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1906:1: '.'
             {
              before(grammarAccess.getQualifiedIDAccess().getFullStopKeyword_1_0()); 
-            match(input,25,FollowSets000.FOLLOW_25_in_rule__QualifiedID__Group_1__0__Impl3620); 
+            match(input,25,FollowSets000.FOLLOW_25_in_rule__QualifiedID__Group_1__0__Impl3800); 
              after(grammarAccess.getQualifiedIDAccess().getFullStopKeyword_1_0()); 
 
             }
@@ -4944,16 +5217,16 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__QualifiedID__Group_1__1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1829:1: rule__QualifiedID__Group_1__1 : rule__QualifiedID__Group_1__1__Impl ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1919:1: rule__QualifiedID__Group_1__1 : rule__QualifiedID__Group_1__1__Impl ;
     public final void rule__QualifiedID__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1833:1: ( rule__QualifiedID__Group_1__1__Impl )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1834:2: rule__QualifiedID__Group_1__1__Impl
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1923:1: ( rule__QualifiedID__Group_1__1__Impl )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1924:2: rule__QualifiedID__Group_1__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__QualifiedID__Group_1__1__Impl_in_rule__QualifiedID__Group_1__13651);
+            pushFollow(FollowSets000.FOLLOW_rule__QualifiedID__Group_1__1__Impl_in_rule__QualifiedID__Group_1__13831);
             rule__QualifiedID__Group_1__1__Impl();
 
             state._fsp--;
@@ -4977,20 +5250,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__QualifiedID__Group_1__1__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1840:1: rule__QualifiedID__Group_1__1__Impl : ( RULE_ID ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1930:1: rule__QualifiedID__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedID__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1844:1: ( ( RULE_ID ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1845:1: ( RULE_ID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1934:1: ( ( RULE_ID ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1935:1: ( RULE_ID )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1845:1: ( RULE_ID )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1846:1: RULE_ID
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1935:1: ( RULE_ID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1936:1: RULE_ID
             {
              before(grammarAccess.getQualifiedIDAccess().getIDTerminalRuleCall_1_1()); 
-            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__QualifiedID__Group_1__1__Impl3678); 
+            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__QualifiedID__Group_1__1__Impl3858); 
              after(grammarAccess.getQualifiedIDAccess().getIDTerminalRuleCall_1_1()); 
 
             }
@@ -5014,21 +5287,21 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TypeSignature__Group__0"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1861:1: rule__TypeSignature__Group__0 : rule__TypeSignature__Group__0__Impl rule__TypeSignature__Group__1 ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1951:1: rule__TypeSignature__Group__0 : rule__TypeSignature__Group__0__Impl rule__TypeSignature__Group__1 ;
     public final void rule__TypeSignature__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1865:1: ( rule__TypeSignature__Group__0__Impl rule__TypeSignature__Group__1 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1866:2: rule__TypeSignature__Group__0__Impl rule__TypeSignature__Group__1
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1955:1: ( rule__TypeSignature__Group__0__Impl rule__TypeSignature__Group__1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1956:2: rule__TypeSignature__Group__0__Impl rule__TypeSignature__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Group__0__Impl_in_rule__TypeSignature__Group__03711);
+            pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Group__0__Impl_in_rule__TypeSignature__Group__03891);
             rule__TypeSignature__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Group__1_in_rule__TypeSignature__Group__03714);
+            pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Group__1_in_rule__TypeSignature__Group__03894);
             rule__TypeSignature__Group__1();
 
             state._fsp--;
@@ -5052,20 +5325,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TypeSignature__Group__0__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1873:1: rule__TypeSignature__Group__0__Impl : ( ruleQualifiedID ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1963:1: rule__TypeSignature__Group__0__Impl : ( ruleQualifiedID ) ;
     public final void rule__TypeSignature__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1877:1: ( ( ruleQualifiedID ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1878:1: ( ruleQualifiedID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1967:1: ( ( ruleQualifiedID ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1968:1: ( ruleQualifiedID )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1878:1: ( ruleQualifiedID )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1879:1: ruleQualifiedID
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1968:1: ( ruleQualifiedID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1969:1: ruleQualifiedID
             {
              before(grammarAccess.getTypeSignatureAccess().getQualifiedIDParserRuleCall_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedID_in_rule__TypeSignature__Group__0__Impl3741);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedID_in_rule__TypeSignature__Group__0__Impl3921);
             ruleQualifiedID();
 
             state._fsp--;
@@ -5093,16 +5366,16 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TypeSignature__Group__1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1890:1: rule__TypeSignature__Group__1 : rule__TypeSignature__Group__1__Impl ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1980:1: rule__TypeSignature__Group__1 : rule__TypeSignature__Group__1__Impl ;
     public final void rule__TypeSignature__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1894:1: ( rule__TypeSignature__Group__1__Impl )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1895:2: rule__TypeSignature__Group__1__Impl
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1984:1: ( rule__TypeSignature__Group__1__Impl )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1985:2: rule__TypeSignature__Group__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Group__1__Impl_in_rule__TypeSignature__Group__13770);
+            pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Group__1__Impl_in_rule__TypeSignature__Group__13950);
             rule__TypeSignature__Group__1__Impl();
 
             state._fsp--;
@@ -5126,31 +5399,31 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TypeSignature__Group__1__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1901:1: rule__TypeSignature__Group__1__Impl : ( ( rule__TypeSignature__Group_1__0 )? ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1991:1: rule__TypeSignature__Group__1__Impl : ( ( rule__TypeSignature__Group_1__0 )? ) ;
     public final void rule__TypeSignature__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1905:1: ( ( ( rule__TypeSignature__Group_1__0 )? ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1906:1: ( ( rule__TypeSignature__Group_1__0 )? )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1995:1: ( ( ( rule__TypeSignature__Group_1__0 )? ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1996:1: ( ( rule__TypeSignature__Group_1__0 )? )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1906:1: ( ( rule__TypeSignature__Group_1__0 )? )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1907:1: ( rule__TypeSignature__Group_1__0 )?
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1996:1: ( ( rule__TypeSignature__Group_1__0 )? )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1997:1: ( rule__TypeSignature__Group_1__0 )?
             {
              before(grammarAccess.getTypeSignatureAccess().getGroup_1()); 
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1908:1: ( rule__TypeSignature__Group_1__0 )?
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1998:1: ( rule__TypeSignature__Group_1__0 )?
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            if ( (LA17_0==26) ) {
-                alt17=1;
+            if ( (LA20_0==26) ) {
+                alt20=1;
             }
-            switch (alt17) {
+            switch (alt20) {
                 case 1 :
-                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1908:2: rule__TypeSignature__Group_1__0
+                    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1998:2: rule__TypeSignature__Group_1__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Group_1__0_in_rule__TypeSignature__Group__1__Impl3797);
+                    pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Group_1__0_in_rule__TypeSignature__Group__1__Impl3977);
                     rule__TypeSignature__Group_1__0();
 
                     state._fsp--;
@@ -5184,21 +5457,21 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TypeSignature__Group_1__0"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1922:1: rule__TypeSignature__Group_1__0 : rule__TypeSignature__Group_1__0__Impl rule__TypeSignature__Group_1__1 ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2012:1: rule__TypeSignature__Group_1__0 : rule__TypeSignature__Group_1__0__Impl rule__TypeSignature__Group_1__1 ;
     public final void rule__TypeSignature__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1926:1: ( rule__TypeSignature__Group_1__0__Impl rule__TypeSignature__Group_1__1 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1927:2: rule__TypeSignature__Group_1__0__Impl rule__TypeSignature__Group_1__1
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2016:1: ( rule__TypeSignature__Group_1__0__Impl rule__TypeSignature__Group_1__1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2017:2: rule__TypeSignature__Group_1__0__Impl rule__TypeSignature__Group_1__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Group_1__0__Impl_in_rule__TypeSignature__Group_1__03832);
+            pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Group_1__0__Impl_in_rule__TypeSignature__Group_1__04012);
             rule__TypeSignature__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Group_1__1_in_rule__TypeSignature__Group_1__03835);
+            pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Group_1__1_in_rule__TypeSignature__Group_1__04015);
             rule__TypeSignature__Group_1__1();
 
             state._fsp--;
@@ -5222,20 +5495,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TypeSignature__Group_1__0__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1934:1: rule__TypeSignature__Group_1__0__Impl : ( '<' ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2024:1: rule__TypeSignature__Group_1__0__Impl : ( '<' ) ;
     public final void rule__TypeSignature__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1938:1: ( ( '<' ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1939:1: ( '<' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2028:1: ( ( '<' ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2029:1: ( '<' )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1939:1: ( '<' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1940:1: '<'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2029:1: ( '<' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2030:1: '<'
             {
              before(grammarAccess.getTypeSignatureAccess().getLessThanSignKeyword_1_0()); 
-            match(input,26,FollowSets000.FOLLOW_26_in_rule__TypeSignature__Group_1__0__Impl3863); 
+            match(input,26,FollowSets000.FOLLOW_26_in_rule__TypeSignature__Group_1__0__Impl4043); 
              after(grammarAccess.getTypeSignatureAccess().getLessThanSignKeyword_1_0()); 
 
             }
@@ -5259,21 +5532,21 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TypeSignature__Group_1__1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1953:1: rule__TypeSignature__Group_1__1 : rule__TypeSignature__Group_1__1__Impl rule__TypeSignature__Group_1__2 ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2043:1: rule__TypeSignature__Group_1__1 : rule__TypeSignature__Group_1__1__Impl rule__TypeSignature__Group_1__2 ;
     public final void rule__TypeSignature__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1957:1: ( rule__TypeSignature__Group_1__1__Impl rule__TypeSignature__Group_1__2 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1958:2: rule__TypeSignature__Group_1__1__Impl rule__TypeSignature__Group_1__2
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2047:1: ( rule__TypeSignature__Group_1__1__Impl rule__TypeSignature__Group_1__2 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2048:2: rule__TypeSignature__Group_1__1__Impl rule__TypeSignature__Group_1__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Group_1__1__Impl_in_rule__TypeSignature__Group_1__13894);
+            pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Group_1__1__Impl_in_rule__TypeSignature__Group_1__14074);
             rule__TypeSignature__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Group_1__2_in_rule__TypeSignature__Group_1__13897);
+            pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Group_1__2_in_rule__TypeSignature__Group_1__14077);
             rule__TypeSignature__Group_1__2();
 
             state._fsp--;
@@ -5297,23 +5570,23 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TypeSignature__Group_1__1__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1965:1: rule__TypeSignature__Group_1__1__Impl : ( ( rule__TypeSignature__Alternatives_1_1 ) ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2055:1: rule__TypeSignature__Group_1__1__Impl : ( ( rule__TypeSignature__Alternatives_1_1 ) ) ;
     public final void rule__TypeSignature__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1969:1: ( ( ( rule__TypeSignature__Alternatives_1_1 ) ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1970:1: ( ( rule__TypeSignature__Alternatives_1_1 ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2059:1: ( ( ( rule__TypeSignature__Alternatives_1_1 ) ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2060:1: ( ( rule__TypeSignature__Alternatives_1_1 ) )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1970:1: ( ( rule__TypeSignature__Alternatives_1_1 ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1971:1: ( rule__TypeSignature__Alternatives_1_1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2060:1: ( ( rule__TypeSignature__Alternatives_1_1 ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2061:1: ( rule__TypeSignature__Alternatives_1_1 )
             {
              before(grammarAccess.getTypeSignatureAccess().getAlternatives_1_1()); 
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1972:1: ( rule__TypeSignature__Alternatives_1_1 )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1972:2: rule__TypeSignature__Alternatives_1_1
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2062:1: ( rule__TypeSignature__Alternatives_1_1 )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2062:2: rule__TypeSignature__Alternatives_1_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Alternatives_1_1_in_rule__TypeSignature__Group_1__1__Impl3924);
+            pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Alternatives_1_1_in_rule__TypeSignature__Group_1__1__Impl4104);
             rule__TypeSignature__Alternatives_1_1();
 
             state._fsp--;
@@ -5344,16 +5617,16 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TypeSignature__Group_1__2"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1982:1: rule__TypeSignature__Group_1__2 : rule__TypeSignature__Group_1__2__Impl ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2072:1: rule__TypeSignature__Group_1__2 : rule__TypeSignature__Group_1__2__Impl ;
     public final void rule__TypeSignature__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1986:1: ( rule__TypeSignature__Group_1__2__Impl )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1987:2: rule__TypeSignature__Group_1__2__Impl
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2076:1: ( rule__TypeSignature__Group_1__2__Impl )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2077:2: rule__TypeSignature__Group_1__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Group_1__2__Impl_in_rule__TypeSignature__Group_1__23954);
+            pushFollow(FollowSets000.FOLLOW_rule__TypeSignature__Group_1__2__Impl_in_rule__TypeSignature__Group_1__24134);
             rule__TypeSignature__Group_1__2__Impl();
 
             state._fsp--;
@@ -5377,20 +5650,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TypeSignature__Group_1__2__Impl"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1993:1: rule__TypeSignature__Group_1__2__Impl : ( '>' ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2083:1: rule__TypeSignature__Group_1__2__Impl : ( '>' ) ;
     public final void rule__TypeSignature__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1997:1: ( ( '>' ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1998:1: ( '>' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2087:1: ( ( '>' ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2088:1: ( '>' )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1998:1: ( '>' )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:1999:1: '>'
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2088:1: ( '>' )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2089:1: '>'
             {
              before(grammarAccess.getTypeSignatureAccess().getGreaterThanSignKeyword_1_2()); 
-            match(input,27,FollowSets000.FOLLOW_27_in_rule__TypeSignature__Group_1__2__Impl3982); 
+            match(input,27,FollowSets000.FOLLOW_27_in_rule__TypeSignature__Group_1__2__Impl4162); 
              after(grammarAccess.getTypeSignatureAccess().getGreaterThanSignKeyword_1_2()); 
 
             }
@@ -5414,20 +5687,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KClassModel__JavaProjectsAssignment_1_1_0_1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2019:1: rule__KClassModel__JavaProjectsAssignment_1_1_0_1 : ( ruleQualifiedID ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2109:1: rule__KClassModel__JavaProjectsAssignment_1_1_0_1 : ( ruleQualifiedID ) ;
     public final void rule__KClassModel__JavaProjectsAssignment_1_1_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2023:1: ( ( ruleQualifiedID ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2024:1: ( ruleQualifiedID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2113:1: ( ( ruleQualifiedID ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2114:1: ( ruleQualifiedID )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2024:1: ( ruleQualifiedID )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2025:1: ruleQualifiedID
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2114:1: ( ruleQualifiedID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2115:1: ruleQualifiedID
             {
              before(grammarAccess.getKClassModelAccess().getJavaProjectsQualifiedIDParserRuleCall_1_1_0_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedID_in_rule__KClassModel__JavaProjectsAssignment_1_1_0_14024);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedID_in_rule__KClassModel__JavaProjectsAssignment_1_1_0_14204);
             ruleQualifiedID();
 
             state._fsp--;
@@ -5455,20 +5728,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KClassModel__BundlesAssignment_1_1_1_1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2034:1: rule__KClassModel__BundlesAssignment_1_1_1_1 : ( ruleQualifiedID ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2124:1: rule__KClassModel__BundlesAssignment_1_1_1_1 : ( ruleQualifiedID ) ;
     public final void rule__KClassModel__BundlesAssignment_1_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2038:1: ( ( ruleQualifiedID ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2039:1: ( ruleQualifiedID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2128:1: ( ( ruleQualifiedID ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2129:1: ( ruleQualifiedID )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2039:1: ( ruleQualifiedID )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2040:1: ruleQualifiedID
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2129:1: ( ruleQualifiedID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2130:1: ruleQualifiedID
             {
              before(grammarAccess.getKClassModelAccess().getBundlesQualifiedIDParserRuleCall_1_1_1_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedID_in_rule__KClassModel__BundlesAssignment_1_1_1_14055);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedID_in_rule__KClassModel__BundlesAssignment_1_1_1_14235);
             ruleQualifiedID();
 
             state._fsp--;
@@ -5496,20 +5769,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KClassModel__PackagesAssignment_2"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2049:1: rule__KClassModel__PackagesAssignment_2 : ( ruleKPackage ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2139:1: rule__KClassModel__PackagesAssignment_2 : ( ruleKPackage ) ;
     public final void rule__KClassModel__PackagesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2053:1: ( ( ruleKPackage ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2054:1: ( ruleKPackage )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2143:1: ( ( ruleKPackage ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2144:1: ( ruleKPackage )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2054:1: ( ruleKPackage )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2055:1: ruleKPackage
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2144:1: ( ruleKPackage )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2145:1: ruleKPackage
             {
              before(grammarAccess.getKClassModelAccess().getPackagesKPackageParserRuleCall_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleKPackage_in_rule__KClassModel__PackagesAssignment_24086);
+            pushFollow(FollowSets000.FOLLOW_ruleKPackage_in_rule__KClassModel__PackagesAssignment_24266);
             ruleKPackage();
 
             state._fsp--;
@@ -5537,20 +5810,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KPackage__NameAssignment_1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2064:1: rule__KPackage__NameAssignment_1 : ( ruleQualifiedID ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2154:1: rule__KPackage__NameAssignment_1 : ( ruleQualifiedID ) ;
     public final void rule__KPackage__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2068:1: ( ( ruleQualifiedID ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2069:1: ( ruleQualifiedID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2158:1: ( ( ruleQualifiedID ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2159:1: ( ruleQualifiedID )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2069:1: ( ruleQualifiedID )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2070:1: ruleQualifiedID
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2159:1: ( ruleQualifiedID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2160:1: ruleQualifiedID
             {
              before(grammarAccess.getKPackageAccess().getNameQualifiedIDParserRuleCall_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedID_in_rule__KPackage__NameAssignment_14117);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedID_in_rule__KPackage__NameAssignment_14297);
             ruleQualifiedID();
 
             state._fsp--;
@@ -5578,20 +5851,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KPackage__TypesAssignment_3"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2079:1: rule__KPackage__TypesAssignment_3 : ( ruleKType ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2169:1: rule__KPackage__TypesAssignment_3 : ( ruleKType ) ;
     public final void rule__KPackage__TypesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2083:1: ( ( ruleKType ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2084:1: ( ruleKType )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2173:1: ( ( ruleKType ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2174:1: ( ruleKType )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2084:1: ( ruleKType )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2085:1: ruleKType
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2174:1: ( ruleKType )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2175:1: ruleKType
             {
              before(grammarAccess.getKPackageAccess().getTypesKTypeParserRuleCall_3_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleKType_in_rule__KPackage__TypesAssignment_34148);
+            pushFollow(FollowSets000.FOLLOW_ruleKType_in_rule__KPackage__TypesAssignment_34328);
             ruleKType();
 
             state._fsp--;
@@ -5619,20 +5892,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KClass__NameAssignment_1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2094:1: rule__KClass__NameAssignment_1 : ( RULE_ID ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2184:1: rule__KClass__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__KClass__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2098:1: ( ( RULE_ID ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2099:1: ( RULE_ID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2188:1: ( ( RULE_ID ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2189:1: ( RULE_ID )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2099:1: ( RULE_ID )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2100:1: RULE_ID
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2189:1: ( RULE_ID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2190:1: RULE_ID
             {
              before(grammarAccess.getKClassAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__KClass__NameAssignment_14179); 
+            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__KClass__NameAssignment_14359); 
              after(grammarAccess.getKClassAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -5655,26 +5928,26 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__KClass__NameAssignment_1"
 
 
-    // $ANTLR start "rule__KClass__FieldsAssignment_3_0"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2109:1: rule__KClass__FieldsAssignment_3_0 : ( ruleKField ) ;
-    public final void rule__KClass__FieldsAssignment_3_0() throws RecognitionException {
+    // $ANTLR start "rule__KClass__FieldsAssignment_2_1_0"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2199:1: rule__KClass__FieldsAssignment_2_1_0 : ( ruleKField ) ;
+    public final void rule__KClass__FieldsAssignment_2_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2113:1: ( ( ruleKField ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2114:1: ( ruleKField )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2203:1: ( ( ruleKField ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2204:1: ( ruleKField )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2114:1: ( ruleKField )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2115:1: ruleKField
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2204:1: ( ruleKField )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2205:1: ruleKField
             {
-             before(grammarAccess.getKClassAccess().getFieldsKFieldParserRuleCall_3_0_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleKField_in_rule__KClass__FieldsAssignment_3_04210);
+             before(grammarAccess.getKClassAccess().getFieldsKFieldParserRuleCall_2_1_0_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleKField_in_rule__KClass__FieldsAssignment_2_1_04390);
             ruleKField();
 
             state._fsp--;
 
-             after(grammarAccess.getKClassAccess().getFieldsKFieldParserRuleCall_3_0_0()); 
+             after(grammarAccess.getKClassAccess().getFieldsKFieldParserRuleCall_2_1_0_0()); 
 
             }
 
@@ -5693,29 +5966,29 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KClass__FieldsAssignment_3_0"
+    // $ANTLR end "rule__KClass__FieldsAssignment_2_1_0"
 
 
-    // $ANTLR start "rule__KClass__MethodsAssignment_3_1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2124:1: rule__KClass__MethodsAssignment_3_1 : ( ruleKMethod ) ;
-    public final void rule__KClass__MethodsAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__KClass__MethodsAssignment_2_1_1"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2214:1: rule__KClass__MethodsAssignment_2_1_1 : ( ruleKMethod ) ;
+    public final void rule__KClass__MethodsAssignment_2_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2128:1: ( ( ruleKMethod ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2129:1: ( ruleKMethod )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2218:1: ( ( ruleKMethod ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2219:1: ( ruleKMethod )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2129:1: ( ruleKMethod )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2130:1: ruleKMethod
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2219:1: ( ruleKMethod )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2220:1: ruleKMethod
             {
-             before(grammarAccess.getKClassAccess().getMethodsKMethodParserRuleCall_3_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleKMethod_in_rule__KClass__MethodsAssignment_3_14241);
+             before(grammarAccess.getKClassAccess().getMethodsKMethodParserRuleCall_2_1_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleKMethod_in_rule__KClass__MethodsAssignment_2_1_14421);
             ruleKMethod();
 
             state._fsp--;
 
-             after(grammarAccess.getKClassAccess().getMethodsKMethodParserRuleCall_3_1_0()); 
+             after(grammarAccess.getKClassAccess().getMethodsKMethodParserRuleCall_2_1_1_0()); 
 
             }
 
@@ -5734,24 +6007,24 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KClass__MethodsAssignment_3_1"
+    // $ANTLR end "rule__KClass__MethodsAssignment_2_1_1"
 
 
     // $ANTLR start "rule__KInterface__NameAssignment_1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2139:1: rule__KInterface__NameAssignment_1 : ( RULE_ID ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2229:1: rule__KInterface__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__KInterface__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2143:1: ( ( RULE_ID ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2144:1: ( RULE_ID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2233:1: ( ( RULE_ID ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2234:1: ( RULE_ID )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2144:1: ( RULE_ID )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2145:1: RULE_ID
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2234:1: ( RULE_ID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2235:1: RULE_ID
             {
              before(grammarAccess.getKInterfaceAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__KInterface__NameAssignment_14272); 
+            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__KInterface__NameAssignment_14452); 
              after(grammarAccess.getKInterfaceAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -5774,26 +6047,26 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__KInterface__NameAssignment_1"
 
 
-    // $ANTLR start "rule__KInterface__FieldsAssignment_3_0"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2154:1: rule__KInterface__FieldsAssignment_3_0 : ( ruleKField ) ;
-    public final void rule__KInterface__FieldsAssignment_3_0() throws RecognitionException {
+    // $ANTLR start "rule__KInterface__FieldsAssignment_2_1_0"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2244:1: rule__KInterface__FieldsAssignment_2_1_0 : ( ruleKField ) ;
+    public final void rule__KInterface__FieldsAssignment_2_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2158:1: ( ( ruleKField ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2159:1: ( ruleKField )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2248:1: ( ( ruleKField ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2249:1: ( ruleKField )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2159:1: ( ruleKField )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2160:1: ruleKField
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2249:1: ( ruleKField )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2250:1: ruleKField
             {
-             before(grammarAccess.getKInterfaceAccess().getFieldsKFieldParserRuleCall_3_0_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleKField_in_rule__KInterface__FieldsAssignment_3_04303);
+             before(grammarAccess.getKInterfaceAccess().getFieldsKFieldParserRuleCall_2_1_0_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleKField_in_rule__KInterface__FieldsAssignment_2_1_04483);
             ruleKField();
 
             state._fsp--;
 
-             after(grammarAccess.getKInterfaceAccess().getFieldsKFieldParserRuleCall_3_0_0()); 
+             after(grammarAccess.getKInterfaceAccess().getFieldsKFieldParserRuleCall_2_1_0_0()); 
 
             }
 
@@ -5812,29 +6085,29 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KInterface__FieldsAssignment_3_0"
+    // $ANTLR end "rule__KInterface__FieldsAssignment_2_1_0"
 
 
-    // $ANTLR start "rule__KInterface__MethodsAssignment_3_1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2169:1: rule__KInterface__MethodsAssignment_3_1 : ( ruleKMethod ) ;
-    public final void rule__KInterface__MethodsAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__KInterface__MethodsAssignment_2_1_1"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2259:1: rule__KInterface__MethodsAssignment_2_1_1 : ( ruleKMethod ) ;
+    public final void rule__KInterface__MethodsAssignment_2_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2173:1: ( ( ruleKMethod ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2174:1: ( ruleKMethod )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2263:1: ( ( ruleKMethod ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2264:1: ( ruleKMethod )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2174:1: ( ruleKMethod )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2175:1: ruleKMethod
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2264:1: ( ruleKMethod )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2265:1: ruleKMethod
             {
-             before(grammarAccess.getKInterfaceAccess().getMethodsKMethodParserRuleCall_3_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleKMethod_in_rule__KInterface__MethodsAssignment_3_14334);
+             before(grammarAccess.getKInterfaceAccess().getMethodsKMethodParserRuleCall_2_1_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleKMethod_in_rule__KInterface__MethodsAssignment_2_1_14514);
             ruleKMethod();
 
             state._fsp--;
 
-             after(grammarAccess.getKInterfaceAccess().getMethodsKMethodParserRuleCall_3_1_0()); 
+             after(grammarAccess.getKInterfaceAccess().getMethodsKMethodParserRuleCall_2_1_1_0()); 
 
             }
 
@@ -5853,24 +6126,24 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KInterface__MethodsAssignment_3_1"
+    // $ANTLR end "rule__KInterface__MethodsAssignment_2_1_1"
 
 
     // $ANTLR start "rule__KEnum__NameAssignment_1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2184:1: rule__KEnum__NameAssignment_1 : ( RULE_ID ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2274:1: rule__KEnum__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__KEnum__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2188:1: ( ( RULE_ID ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2189:1: ( RULE_ID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2278:1: ( ( RULE_ID ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2279:1: ( RULE_ID )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2189:1: ( RULE_ID )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2190:1: RULE_ID
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2279:1: ( RULE_ID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2280:1: RULE_ID
             {
              before(grammarAccess.getKEnumAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__KEnum__NameAssignment_14365); 
+            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__KEnum__NameAssignment_14545); 
              after(grammarAccess.getKEnumAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -5893,26 +6166,26 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__KEnum__NameAssignment_1"
 
 
-    // $ANTLR start "rule__KEnum__FieldsAssignment_3_0"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2199:1: rule__KEnum__FieldsAssignment_3_0 : ( ruleKField ) ;
-    public final void rule__KEnum__FieldsAssignment_3_0() throws RecognitionException {
+    // $ANTLR start "rule__KEnum__FieldsAssignment_2_1_0"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2289:1: rule__KEnum__FieldsAssignment_2_1_0 : ( ruleKField ) ;
+    public final void rule__KEnum__FieldsAssignment_2_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2203:1: ( ( ruleKField ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2204:1: ( ruleKField )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2293:1: ( ( ruleKField ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2294:1: ( ruleKField )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2204:1: ( ruleKField )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2205:1: ruleKField
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2294:1: ( ruleKField )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2295:1: ruleKField
             {
-             before(grammarAccess.getKEnumAccess().getFieldsKFieldParserRuleCall_3_0_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleKField_in_rule__KEnum__FieldsAssignment_3_04396);
+             before(grammarAccess.getKEnumAccess().getFieldsKFieldParserRuleCall_2_1_0_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleKField_in_rule__KEnum__FieldsAssignment_2_1_04576);
             ruleKField();
 
             state._fsp--;
 
-             after(grammarAccess.getKEnumAccess().getFieldsKFieldParserRuleCall_3_0_0()); 
+             after(grammarAccess.getKEnumAccess().getFieldsKFieldParserRuleCall_2_1_0_0()); 
 
             }
 
@@ -5931,29 +6204,29 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KEnum__FieldsAssignment_3_0"
+    // $ANTLR end "rule__KEnum__FieldsAssignment_2_1_0"
 
 
-    // $ANTLR start "rule__KEnum__MethodsAssignment_3_1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2214:1: rule__KEnum__MethodsAssignment_3_1 : ( ruleKMethod ) ;
-    public final void rule__KEnum__MethodsAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__KEnum__MethodsAssignment_2_1_1"
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2304:1: rule__KEnum__MethodsAssignment_2_1_1 : ( ruleKMethod ) ;
+    public final void rule__KEnum__MethodsAssignment_2_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2218:1: ( ( ruleKMethod ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2219:1: ( ruleKMethod )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2308:1: ( ( ruleKMethod ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2309:1: ( ruleKMethod )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2219:1: ( ruleKMethod )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2220:1: ruleKMethod
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2309:1: ( ruleKMethod )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2310:1: ruleKMethod
             {
-             before(grammarAccess.getKEnumAccess().getMethodsKMethodParserRuleCall_3_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleKMethod_in_rule__KEnum__MethodsAssignment_3_14427);
+             before(grammarAccess.getKEnumAccess().getMethodsKMethodParserRuleCall_2_1_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleKMethod_in_rule__KEnum__MethodsAssignment_2_1_14607);
             ruleKMethod();
 
             state._fsp--;
 
-             after(grammarAccess.getKEnumAccess().getMethodsKMethodParserRuleCall_3_1_0()); 
+             after(grammarAccess.getKEnumAccess().getMethodsKMethodParserRuleCall_2_1_1_0()); 
 
             }
 
@@ -5972,24 +6245,24 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__KEnum__MethodsAssignment_3_1"
+    // $ANTLR end "rule__KEnum__MethodsAssignment_2_1_1"
 
 
     // $ANTLR start "rule__KField__NameAssignment"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2229:1: rule__KField__NameAssignment : ( RULE_ID ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2319:1: rule__KField__NameAssignment : ( RULE_ID ) ;
     public final void rule__KField__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2233:1: ( ( RULE_ID ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2234:1: ( RULE_ID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2323:1: ( ( RULE_ID ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2324:1: ( RULE_ID )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2234:1: ( RULE_ID )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2235:1: RULE_ID
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2324:1: ( RULE_ID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2325:1: RULE_ID
             {
              before(grammarAccess.getKFieldAccess().getNameIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__KField__NameAssignment4458); 
+            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__KField__NameAssignment4638); 
              after(grammarAccess.getKFieldAccess().getNameIDTerminalRuleCall_0()); 
 
             }
@@ -6013,20 +6286,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KMethod__NameAssignment_0"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2244:1: rule__KMethod__NameAssignment_0 : ( RULE_ID ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2334:1: rule__KMethod__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__KMethod__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2248:1: ( ( RULE_ID ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2249:1: ( RULE_ID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2338:1: ( ( RULE_ID ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2339:1: ( RULE_ID )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2249:1: ( RULE_ID )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2250:1: RULE_ID
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2339:1: ( RULE_ID )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2340:1: RULE_ID
             {
              before(grammarAccess.getKMethodAccess().getNameIDTerminalRuleCall_0_0()); 
-            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__KMethod__NameAssignment_04489); 
+            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__KMethod__NameAssignment_04669); 
              after(grammarAccess.getKMethodAccess().getNameIDTerminalRuleCall_0_0()); 
 
             }
@@ -6050,20 +6323,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KMethod__ParametersAssignment_2_0"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2259:1: rule__KMethod__ParametersAssignment_2_0 : ( ruleKTypeReference ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2349:1: rule__KMethod__ParametersAssignment_2_0 : ( ruleKTypeReference ) ;
     public final void rule__KMethod__ParametersAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2263:1: ( ( ruleKTypeReference ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2264:1: ( ruleKTypeReference )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2353:1: ( ( ruleKTypeReference ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2354:1: ( ruleKTypeReference )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2264:1: ( ruleKTypeReference )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2265:1: ruleKTypeReference
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2354:1: ( ruleKTypeReference )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2355:1: ruleKTypeReference
             {
              before(grammarAccess.getKMethodAccess().getParametersKTypeReferenceParserRuleCall_2_0_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleKTypeReference_in_rule__KMethod__ParametersAssignment_2_04520);
+            pushFollow(FollowSets000.FOLLOW_ruleKTypeReference_in_rule__KMethod__ParametersAssignment_2_04700);
             ruleKTypeReference();
 
             state._fsp--;
@@ -6091,20 +6364,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KMethod__ParametersAssignment_2_1_1"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2274:1: rule__KMethod__ParametersAssignment_2_1_1 : ( ruleKTypeReference ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2364:1: rule__KMethod__ParametersAssignment_2_1_1 : ( ruleKTypeReference ) ;
     public final void rule__KMethod__ParametersAssignment_2_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2278:1: ( ( ruleKTypeReference ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2279:1: ( ruleKTypeReference )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2368:1: ( ( ruleKTypeReference ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2369:1: ( ruleKTypeReference )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2279:1: ( ruleKTypeReference )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2280:1: ruleKTypeReference
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2369:1: ( ruleKTypeReference )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2370:1: ruleKTypeReference
             {
              before(grammarAccess.getKMethodAccess().getParametersKTypeReferenceParserRuleCall_2_1_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleKTypeReference_in_rule__KMethod__ParametersAssignment_2_1_14551);
+            pushFollow(FollowSets000.FOLLOW_ruleKTypeReference_in_rule__KMethod__ParametersAssignment_2_1_14731);
             ruleKTypeReference();
 
             state._fsp--;
@@ -6132,20 +6405,20 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__KTypeReference__SignatureAssignment"
-    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2289:1: rule__KTypeReference__SignatureAssignment : ( ruleTypeSignature ) ;
+    // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2379:1: rule__KTypeReference__SignatureAssignment : ( ruleTypeSignature ) ;
     public final void rule__KTypeReference__SignatureAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2293:1: ( ( ruleTypeSignature ) )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2294:1: ( ruleTypeSignature )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2383:1: ( ( ruleTypeSignature ) )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2384:1: ( ruleTypeSignature )
             {
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2294:1: ( ruleTypeSignature )
-            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2295:1: ruleTypeSignature
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2384:1: ( ruleTypeSignature )
+            // ../de.cau.cs.kieler.klassviz.text.ui/src-gen/de/cau/cs/kieler/klassviz/text/ui/contentassist/antlr/internal/InternalClassData.g:2385:1: ruleTypeSignature
             {
              before(grammarAccess.getKTypeReferenceAccess().getSignatureTypeSignatureParserRuleCall_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTypeSignature_in_rule__KTypeReference__SignatureAssignment4582);
+            pushFollow(FollowSets000.FOLLOW_ruleTypeSignature_in_rule__KTypeReference__SignatureAssignment4762);
             ruleTypeSignature();
 
             state._fsp--;
@@ -6219,12 +6492,12 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         public static final BitSet FOLLOW_ruleKClass_in_rule__KType__Alternatives843 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleKInterface_in_rule__KType__Alternatives860 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleKEnum_in_rule__KType__Alternatives877 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KClass__FieldsAssignment_3_0_in_rule__KClass__Alternatives_3909 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KClass__MethodsAssignment_3_1_in_rule__KClass__Alternatives_3927 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KInterface__FieldsAssignment_3_0_in_rule__KInterface__Alternatives_3960 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KInterface__MethodsAssignment_3_1_in_rule__KInterface__Alternatives_3978 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KEnum__FieldsAssignment_3_0_in_rule__KEnum__Alternatives_31011 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KEnum__MethodsAssignment_3_1_in_rule__KEnum__Alternatives_31029 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KClass__FieldsAssignment_2_1_0_in_rule__KClass__Alternatives_2_1909 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KClass__MethodsAssignment_2_1_1_in_rule__KClass__Alternatives_2_1927 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KInterface__FieldsAssignment_2_1_0_in_rule__KInterface__Alternatives_2_1960 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KInterface__MethodsAssignment_2_1_1_in_rule__KInterface__Alternatives_2_1978 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KEnum__FieldsAssignment_2_1_0_in_rule__KEnum__Alternatives_2_11011 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KEnum__MethodsAssignment_2_1_1_in_rule__KEnum__Alternatives_2_11029 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_12_in_rule__TypeSignature__Alternatives_1_11063 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleTypeSignature_in_rule__TypeSignature__Alternatives_1_11082 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_RULE_TFLOAT_in_rule__Float__Alternatives1115 = new BitSet(new long[]{0x0000000000000002L});
@@ -6271,105 +6544,111 @@ public class InternalClassDataParser extends AbstractInternalContentAssistParser
         public static final BitSet FOLLOW_rule__KClass__Group__1__Impl_in_rule__KClass__Group__12093 = new BitSet(new long[]{0x0000000000020000L});
         public static final BitSet FOLLOW_rule__KClass__Group__2_in_rule__KClass__Group__12096 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__KClass__NameAssignment_1_in_rule__KClass__Group__1__Impl2123 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KClass__Group__2__Impl_in_rule__KClass__Group__22153 = new BitSet(new long[]{0x0000000000040040L});
-        public static final BitSet FOLLOW_rule__KClass__Group__3_in_rule__KClass__Group__22156 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_17_in_rule__KClass__Group__2__Impl2184 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KClass__Group__3__Impl_in_rule__KClass__Group__32215 = new BitSet(new long[]{0x0000000000040040L});
-        public static final BitSet FOLLOW_rule__KClass__Group__4_in_rule__KClass__Group__32218 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KClass__Alternatives_3_in_rule__KClass__Group__3__Impl2245 = new BitSet(new long[]{0x0000000000000042L});
-        public static final BitSet FOLLOW_rule__KClass__Group__4__Impl_in_rule__KClass__Group__42276 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_18_in_rule__KClass__Group__4__Impl2304 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KInterface__Group__0__Impl_in_rule__KInterface__Group__02345 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_rule__KInterface__Group__1_in_rule__KInterface__Group__02348 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_20_in_rule__KInterface__Group__0__Impl2376 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KInterface__Group__1__Impl_in_rule__KInterface__Group__12407 = new BitSet(new long[]{0x0000000000020000L});
-        public static final BitSet FOLLOW_rule__KInterface__Group__2_in_rule__KInterface__Group__12410 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KInterface__NameAssignment_1_in_rule__KInterface__Group__1__Impl2437 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KInterface__Group__2__Impl_in_rule__KInterface__Group__22467 = new BitSet(new long[]{0x0000000000040040L});
-        public static final BitSet FOLLOW_rule__KInterface__Group__3_in_rule__KInterface__Group__22470 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_17_in_rule__KInterface__Group__2__Impl2498 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KInterface__Group__3__Impl_in_rule__KInterface__Group__32529 = new BitSet(new long[]{0x0000000000040040L});
-        public static final BitSet FOLLOW_rule__KInterface__Group__4_in_rule__KInterface__Group__32532 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KInterface__Alternatives_3_in_rule__KInterface__Group__3__Impl2559 = new BitSet(new long[]{0x0000000000000042L});
-        public static final BitSet FOLLOW_rule__KInterface__Group__4__Impl_in_rule__KInterface__Group__42590 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_18_in_rule__KInterface__Group__4__Impl2618 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KEnum__Group__0__Impl_in_rule__KEnum__Group__02659 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_rule__KEnum__Group__1_in_rule__KEnum__Group__02662 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_rule__KEnum__Group__0__Impl2690 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KEnum__Group__1__Impl_in_rule__KEnum__Group__12721 = new BitSet(new long[]{0x0000000000020000L});
-        public static final BitSet FOLLOW_rule__KEnum__Group__2_in_rule__KEnum__Group__12724 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KEnum__NameAssignment_1_in_rule__KEnum__Group__1__Impl2751 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KEnum__Group__2__Impl_in_rule__KEnum__Group__22781 = new BitSet(new long[]{0x0000000000040040L});
-        public static final BitSet FOLLOW_rule__KEnum__Group__3_in_rule__KEnum__Group__22784 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_17_in_rule__KEnum__Group__2__Impl2812 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KEnum__Group__3__Impl_in_rule__KEnum__Group__32843 = new BitSet(new long[]{0x0000000000040040L});
-        public static final BitSet FOLLOW_rule__KEnum__Group__4_in_rule__KEnum__Group__32846 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KEnum__Alternatives_3_in_rule__KEnum__Group__3__Impl2873 = new BitSet(new long[]{0x0000000000000042L});
-        public static final BitSet FOLLOW_rule__KEnum__Group__4__Impl_in_rule__KEnum__Group__42904 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_18_in_rule__KEnum__Group__4__Impl2932 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KMethod__Group__0__Impl_in_rule__KMethod__Group__02973 = new BitSet(new long[]{0x0000000000400000L});
-        public static final BitSet FOLLOW_rule__KMethod__Group__1_in_rule__KMethod__Group__02976 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KMethod__NameAssignment_0_in_rule__KMethod__Group__0__Impl3003 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KMethod__Group__1__Impl_in_rule__KMethod__Group__13033 = new BitSet(new long[]{0x0000000000800040L});
-        public static final BitSet FOLLOW_rule__KMethod__Group__2_in_rule__KMethod__Group__13036 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_22_in_rule__KMethod__Group__1__Impl3064 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KMethod__Group__2__Impl_in_rule__KMethod__Group__23095 = new BitSet(new long[]{0x0000000000800040L});
-        public static final BitSet FOLLOW_rule__KMethod__Group__3_in_rule__KMethod__Group__23098 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KMethod__Group_2__0_in_rule__KMethod__Group__2__Impl3125 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KMethod__Group__3__Impl_in_rule__KMethod__Group__33156 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_23_in_rule__KMethod__Group__3__Impl3184 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KMethod__Group_2__0__Impl_in_rule__KMethod__Group_2__03223 = new BitSet(new long[]{0x0000000001000000L});
-        public static final BitSet FOLLOW_rule__KMethod__Group_2__1_in_rule__KMethod__Group_2__03226 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KMethod__ParametersAssignment_2_0_in_rule__KMethod__Group_2__0__Impl3253 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KMethod__Group_2__1__Impl_in_rule__KMethod__Group_2__13283 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KMethod__Group_2_1__0_in_rule__KMethod__Group_2__1__Impl3310 = new BitSet(new long[]{0x0000000001000002L});
-        public static final BitSet FOLLOW_rule__KMethod__Group_2_1__0__Impl_in_rule__KMethod__Group_2_1__03345 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_rule__KMethod__Group_2_1__1_in_rule__KMethod__Group_2_1__03348 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_24_in_rule__KMethod__Group_2_1__0__Impl3376 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KMethod__Group_2_1__1__Impl_in_rule__KMethod__Group_2_1__13407 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__KMethod__ParametersAssignment_2_1_1_in_rule__KMethod__Group_2_1__1__Impl3434 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__QualifiedID__Group__0__Impl_in_rule__QualifiedID__Group__03468 = new BitSet(new long[]{0x0000000002000000L});
-        public static final BitSet FOLLOW_rule__QualifiedID__Group__1_in_rule__QualifiedID__Group__03471 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedID__Group__0__Impl3498 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__QualifiedID__Group__1__Impl_in_rule__QualifiedID__Group__13527 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__QualifiedID__Group_1__0_in_rule__QualifiedID__Group__1__Impl3554 = new BitSet(new long[]{0x0000000002000002L});
-        public static final BitSet FOLLOW_rule__QualifiedID__Group_1__0__Impl_in_rule__QualifiedID__Group_1__03589 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_rule__QualifiedID__Group_1__1_in_rule__QualifiedID__Group_1__03592 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_25_in_rule__QualifiedID__Group_1__0__Impl3620 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__QualifiedID__Group_1__1__Impl_in_rule__QualifiedID__Group_1__13651 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedID__Group_1__1__Impl3678 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TypeSignature__Group__0__Impl_in_rule__TypeSignature__Group__03711 = new BitSet(new long[]{0x0000000004000000L});
-        public static final BitSet FOLLOW_rule__TypeSignature__Group__1_in_rule__TypeSignature__Group__03714 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleQualifiedID_in_rule__TypeSignature__Group__0__Impl3741 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TypeSignature__Group__1__Impl_in_rule__TypeSignature__Group__13770 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TypeSignature__Group_1__0_in_rule__TypeSignature__Group__1__Impl3797 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TypeSignature__Group_1__0__Impl_in_rule__TypeSignature__Group_1__03832 = new BitSet(new long[]{0x0000000000001040L});
-        public static final BitSet FOLLOW_rule__TypeSignature__Group_1__1_in_rule__TypeSignature__Group_1__03835 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_26_in_rule__TypeSignature__Group_1__0__Impl3863 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TypeSignature__Group_1__1__Impl_in_rule__TypeSignature__Group_1__13894 = new BitSet(new long[]{0x0000000008000000L});
-        public static final BitSet FOLLOW_rule__TypeSignature__Group_1__2_in_rule__TypeSignature__Group_1__13897 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TypeSignature__Alternatives_1_1_in_rule__TypeSignature__Group_1__1__Impl3924 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TypeSignature__Group_1__2__Impl_in_rule__TypeSignature__Group_1__23954 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_27_in_rule__TypeSignature__Group_1__2__Impl3982 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleQualifiedID_in_rule__KClassModel__JavaProjectsAssignment_1_1_0_14024 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleQualifiedID_in_rule__KClassModel__BundlesAssignment_1_1_1_14055 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleKPackage_in_rule__KClassModel__PackagesAssignment_24086 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleQualifiedID_in_rule__KPackage__NameAssignment_14117 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleKType_in_rule__KPackage__TypesAssignment_34148 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_rule__KClass__NameAssignment_14179 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleKField_in_rule__KClass__FieldsAssignment_3_04210 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleKMethod_in_rule__KClass__MethodsAssignment_3_14241 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_rule__KInterface__NameAssignment_14272 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleKField_in_rule__KInterface__FieldsAssignment_3_04303 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleKMethod_in_rule__KInterface__MethodsAssignment_3_14334 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_rule__KEnum__NameAssignment_14365 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleKField_in_rule__KEnum__FieldsAssignment_3_04396 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleKMethod_in_rule__KEnum__MethodsAssignment_3_14427 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_rule__KField__NameAssignment4458 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_rule__KMethod__NameAssignment_04489 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleKTypeReference_in_rule__KMethod__ParametersAssignment_2_04520 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleKTypeReference_in_rule__KMethod__ParametersAssignment_2_1_14551 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTypeSignature_in_rule__KTypeReference__SignatureAssignment4582 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KClass__Group__2__Impl_in_rule__KClass__Group__22153 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KClass__Group_2__0_in_rule__KClass__Group__2__Impl2180 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KClass__Group_2__0__Impl_in_rule__KClass__Group_2__02217 = new BitSet(new long[]{0x0000000000040040L});
+        public static final BitSet FOLLOW_rule__KClass__Group_2__1_in_rule__KClass__Group_2__02220 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_17_in_rule__KClass__Group_2__0__Impl2248 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KClass__Group_2__1__Impl_in_rule__KClass__Group_2__12279 = new BitSet(new long[]{0x0000000000040040L});
+        public static final BitSet FOLLOW_rule__KClass__Group_2__2_in_rule__KClass__Group_2__12282 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KClass__Alternatives_2_1_in_rule__KClass__Group_2__1__Impl2309 = new BitSet(new long[]{0x0000000000000042L});
+        public static final BitSet FOLLOW_rule__KClass__Group_2__2__Impl_in_rule__KClass__Group_2__22340 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_18_in_rule__KClass__Group_2__2__Impl2368 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KInterface__Group__0__Impl_in_rule__KInterface__Group__02405 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_rule__KInterface__Group__1_in_rule__KInterface__Group__02408 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_20_in_rule__KInterface__Group__0__Impl2436 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KInterface__Group__1__Impl_in_rule__KInterface__Group__12467 = new BitSet(new long[]{0x0000000000020000L});
+        public static final BitSet FOLLOW_rule__KInterface__Group__2_in_rule__KInterface__Group__12470 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KInterface__NameAssignment_1_in_rule__KInterface__Group__1__Impl2497 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KInterface__Group__2__Impl_in_rule__KInterface__Group__22527 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KInterface__Group_2__0_in_rule__KInterface__Group__2__Impl2554 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KInterface__Group_2__0__Impl_in_rule__KInterface__Group_2__02591 = new BitSet(new long[]{0x0000000000040040L});
+        public static final BitSet FOLLOW_rule__KInterface__Group_2__1_in_rule__KInterface__Group_2__02594 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_17_in_rule__KInterface__Group_2__0__Impl2622 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KInterface__Group_2__1__Impl_in_rule__KInterface__Group_2__12653 = new BitSet(new long[]{0x0000000000040040L});
+        public static final BitSet FOLLOW_rule__KInterface__Group_2__2_in_rule__KInterface__Group_2__12656 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KInterface__Alternatives_2_1_in_rule__KInterface__Group_2__1__Impl2683 = new BitSet(new long[]{0x0000000000000042L});
+        public static final BitSet FOLLOW_rule__KInterface__Group_2__2__Impl_in_rule__KInterface__Group_2__22714 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_18_in_rule__KInterface__Group_2__2__Impl2742 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KEnum__Group__0__Impl_in_rule__KEnum__Group__02779 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_rule__KEnum__Group__1_in_rule__KEnum__Group__02782 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_21_in_rule__KEnum__Group__0__Impl2810 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KEnum__Group__1__Impl_in_rule__KEnum__Group__12841 = new BitSet(new long[]{0x0000000000020000L});
+        public static final BitSet FOLLOW_rule__KEnum__Group__2_in_rule__KEnum__Group__12844 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KEnum__NameAssignment_1_in_rule__KEnum__Group__1__Impl2871 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KEnum__Group__2__Impl_in_rule__KEnum__Group__22901 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KEnum__Group_2__0_in_rule__KEnum__Group__2__Impl2928 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KEnum__Group_2__0__Impl_in_rule__KEnum__Group_2__02965 = new BitSet(new long[]{0x0000000000040040L});
+        public static final BitSet FOLLOW_rule__KEnum__Group_2__1_in_rule__KEnum__Group_2__02968 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_17_in_rule__KEnum__Group_2__0__Impl2996 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KEnum__Group_2__1__Impl_in_rule__KEnum__Group_2__13027 = new BitSet(new long[]{0x0000000000040040L});
+        public static final BitSet FOLLOW_rule__KEnum__Group_2__2_in_rule__KEnum__Group_2__13030 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KEnum__Alternatives_2_1_in_rule__KEnum__Group_2__1__Impl3057 = new BitSet(new long[]{0x0000000000000042L});
+        public static final BitSet FOLLOW_rule__KEnum__Group_2__2__Impl_in_rule__KEnum__Group_2__23088 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_18_in_rule__KEnum__Group_2__2__Impl3116 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KMethod__Group__0__Impl_in_rule__KMethod__Group__03153 = new BitSet(new long[]{0x0000000000400000L});
+        public static final BitSet FOLLOW_rule__KMethod__Group__1_in_rule__KMethod__Group__03156 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KMethod__NameAssignment_0_in_rule__KMethod__Group__0__Impl3183 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KMethod__Group__1__Impl_in_rule__KMethod__Group__13213 = new BitSet(new long[]{0x0000000000800040L});
+        public static final BitSet FOLLOW_rule__KMethod__Group__2_in_rule__KMethod__Group__13216 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_22_in_rule__KMethod__Group__1__Impl3244 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KMethod__Group__2__Impl_in_rule__KMethod__Group__23275 = new BitSet(new long[]{0x0000000000800040L});
+        public static final BitSet FOLLOW_rule__KMethod__Group__3_in_rule__KMethod__Group__23278 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KMethod__Group_2__0_in_rule__KMethod__Group__2__Impl3305 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KMethod__Group__3__Impl_in_rule__KMethod__Group__33336 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_23_in_rule__KMethod__Group__3__Impl3364 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KMethod__Group_2__0__Impl_in_rule__KMethod__Group_2__03403 = new BitSet(new long[]{0x0000000001000000L});
+        public static final BitSet FOLLOW_rule__KMethod__Group_2__1_in_rule__KMethod__Group_2__03406 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KMethod__ParametersAssignment_2_0_in_rule__KMethod__Group_2__0__Impl3433 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KMethod__Group_2__1__Impl_in_rule__KMethod__Group_2__13463 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KMethod__Group_2_1__0_in_rule__KMethod__Group_2__1__Impl3490 = new BitSet(new long[]{0x0000000001000002L});
+        public static final BitSet FOLLOW_rule__KMethod__Group_2_1__0__Impl_in_rule__KMethod__Group_2_1__03525 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_rule__KMethod__Group_2_1__1_in_rule__KMethod__Group_2_1__03528 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_24_in_rule__KMethod__Group_2_1__0__Impl3556 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KMethod__Group_2_1__1__Impl_in_rule__KMethod__Group_2_1__13587 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__KMethod__ParametersAssignment_2_1_1_in_rule__KMethod__Group_2_1__1__Impl3614 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__QualifiedID__Group__0__Impl_in_rule__QualifiedID__Group__03648 = new BitSet(new long[]{0x0000000002000000L});
+        public static final BitSet FOLLOW_rule__QualifiedID__Group__1_in_rule__QualifiedID__Group__03651 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedID__Group__0__Impl3678 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__QualifiedID__Group__1__Impl_in_rule__QualifiedID__Group__13707 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__QualifiedID__Group_1__0_in_rule__QualifiedID__Group__1__Impl3734 = new BitSet(new long[]{0x0000000002000002L});
+        public static final BitSet FOLLOW_rule__QualifiedID__Group_1__0__Impl_in_rule__QualifiedID__Group_1__03769 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_rule__QualifiedID__Group_1__1_in_rule__QualifiedID__Group_1__03772 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_25_in_rule__QualifiedID__Group_1__0__Impl3800 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__QualifiedID__Group_1__1__Impl_in_rule__QualifiedID__Group_1__13831 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedID__Group_1__1__Impl3858 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TypeSignature__Group__0__Impl_in_rule__TypeSignature__Group__03891 = new BitSet(new long[]{0x0000000004000000L});
+        public static final BitSet FOLLOW_rule__TypeSignature__Group__1_in_rule__TypeSignature__Group__03894 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleQualifiedID_in_rule__TypeSignature__Group__0__Impl3921 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TypeSignature__Group__1__Impl_in_rule__TypeSignature__Group__13950 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TypeSignature__Group_1__0_in_rule__TypeSignature__Group__1__Impl3977 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TypeSignature__Group_1__0__Impl_in_rule__TypeSignature__Group_1__04012 = new BitSet(new long[]{0x0000000000001040L});
+        public static final BitSet FOLLOW_rule__TypeSignature__Group_1__1_in_rule__TypeSignature__Group_1__04015 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_26_in_rule__TypeSignature__Group_1__0__Impl4043 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TypeSignature__Group_1__1__Impl_in_rule__TypeSignature__Group_1__14074 = new BitSet(new long[]{0x0000000008000000L});
+        public static final BitSet FOLLOW_rule__TypeSignature__Group_1__2_in_rule__TypeSignature__Group_1__14077 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TypeSignature__Alternatives_1_1_in_rule__TypeSignature__Group_1__1__Impl4104 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TypeSignature__Group_1__2__Impl_in_rule__TypeSignature__Group_1__24134 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_27_in_rule__TypeSignature__Group_1__2__Impl4162 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleQualifiedID_in_rule__KClassModel__JavaProjectsAssignment_1_1_0_14204 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleQualifiedID_in_rule__KClassModel__BundlesAssignment_1_1_1_14235 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleKPackage_in_rule__KClassModel__PackagesAssignment_24266 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleQualifiedID_in_rule__KPackage__NameAssignment_14297 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleKType_in_rule__KPackage__TypesAssignment_34328 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_rule__KClass__NameAssignment_14359 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleKField_in_rule__KClass__FieldsAssignment_2_1_04390 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleKMethod_in_rule__KClass__MethodsAssignment_2_1_14421 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_rule__KInterface__NameAssignment_14452 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleKField_in_rule__KInterface__FieldsAssignment_2_1_04483 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleKMethod_in_rule__KInterface__MethodsAssignment_2_1_14514 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_rule__KEnum__NameAssignment_14545 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleKField_in_rule__KEnum__FieldsAssignment_2_1_04576 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleKMethod_in_rule__KEnum__MethodsAssignment_2_1_14607 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_rule__KField__NameAssignment4638 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_rule__KMethod__NameAssignment_04669 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleKTypeReference_in_rule__KMethod__ParametersAssignment_2_04700 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleKTypeReference_in_rule__KMethod__ParametersAssignment_2_1_14731 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTypeSignature_in_rule__KTypeReference__SignatureAssignment4762 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

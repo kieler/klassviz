@@ -221,6 +221,15 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
+    public EAttribute getKClassModel_Resolved() {
+        return (EAttribute)kClassModelEClass.getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getKPackage() {
         return kPackageEClass;
     }
@@ -518,6 +527,15 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
+    public EAttribute getKMethod_Abstract() {
+        return (EAttribute)kMethodEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getKTypeReference() {
         return kTypeReferenceEClass;
     }
@@ -608,6 +626,7 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
         createEAttribute(kClassModelEClass, KCLASS_MODEL__JAVA_PROJECTS);
         createEAttribute(kClassModelEClass, KCLASS_MODEL__BUNDLES);
         createEReference(kClassModelEClass, KCLASS_MODEL__PACKAGES);
+        createEAttribute(kClassModelEClass, KCLASS_MODEL__RESOLVED);
 
         kPackageEClass = createEClass(KPACKAGE);
         createEAttribute(kPackageEClass, KPACKAGE__NAME);
@@ -649,6 +668,7 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
         kMethodEClass = createEClass(KMETHOD);
         createEReference(kMethodEClass, KMETHOD__PARAMETERS);
         createEReference(kMethodEClass, KMETHOD__RETURN_TYPE);
+        createEAttribute(kMethodEClass, KMETHOD__ABSTRACT);
 
         kTypeReferenceEClass = createEClass(KTYPE_REFERENCE);
         createEAttribute(kTypeReferenceEClass, KTYPE_REFERENCE__NAME);
@@ -700,6 +720,7 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
         initEAttribute(getKClassModel_JavaProjects(), ecorePackage.getEString(), "javaProjects", null, 0, -1, KClassModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getKClassModel_Bundles(), ecorePackage.getEString(), "bundles", null, 0, -1, KClassModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getKClassModel_Packages(), this.getKPackage(), null, "packages", null, 0, -1, KClassModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getKClassModel_Resolved(), ecorePackage.getEBoolean(), "resolved", "false", 0, 1, KClassModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(kPackageEClass, KPackage.class, "KPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getKPackage_Name(), ecorePackage.getEString(), "name", null, 1, 1, KPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -741,6 +762,7 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
         initEClass(kMethodEClass, KMethod.class, "KMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getKMethod_Parameters(), this.getKTypeReference(), null, "parameters", null, 0, -1, KMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getKMethod_ReturnType(), this.getKTypeReference(), null, "returnType", null, 0, 1, KMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getKMethod_Abstract(), ecorePackage.getEBoolean(), "abstract", "false", 1, 1, KMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(kTypeReferenceEClass, KTypeReference.class, "KTypeReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getKTypeReference_Name(), ecorePackage.getEString(), "name", null, 0, 1, KTypeReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

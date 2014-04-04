@@ -163,7 +163,7 @@ class ClassDataValidator extends AbstractClassDataValidator {
                 error("Method not found in referenced type",
                     method, ClassdataPackage.eINSTANCE.KMember_Name)
             } else {
-                val paramTypeSign = method.parameters.map[s | s.signature]
+                val paramTypeSign = method.parameters.map[s | s.signature].toList
                 if (!matchingName.exists[it.parameterTypes.map[t | Signature.toString(t)]
                         .equals(paramTypeSign)]) {
                     error("Method signature does not match any method of the referenced type",
@@ -178,7 +178,7 @@ class ClassDataValidator extends AbstractClassDataValidator {
                     error("Method not found in referenced type",
                         method, ClassdataPackage.eINSTANCE.KMember_Name)
                 } else {
-                    val paramTypeSign = method.parameters.map[s | s.signature]
+                    val paramTypeSign = method.parameters.map[s | s.signature].toList
                     if (!matchingName.exists[it.parameterTypes.map[t | t.simpleName]
                             .equals(paramTypeSign)]) {
                         error("Method signature does not match any method of the referenced type",

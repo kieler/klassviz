@@ -106,13 +106,22 @@ public interface ClassdataPackage extends EPackage {
     int KCLASS_MODEL__PACKAGES = 2;
 
     /**
+     * The feature id for the '<em><b>Resolved</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KCLASS_MODEL__RESOLVED = 3;
+
+    /**
      * The number of structural features of the '<em>KClass Model</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int KCLASS_MODEL_FEATURE_COUNT = 3;
+    int KCLASS_MODEL_FEATURE_COUNT = 4;
 
     /**
      * The number of operations of the '<em>KClass Model</em>' class.
@@ -834,13 +843,22 @@ public interface ClassdataPackage extends EPackage {
     int KMETHOD__RETURN_TYPE = KMEMBER_FEATURE_COUNT + 1;
 
     /**
+     * The feature id for the '<em><b>Abstract</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KMETHOD__ABSTRACT = KMEMBER_FEATURE_COUNT + 2;
+
+    /**
      * The number of structural features of the '<em>KMethod</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int KMETHOD_FEATURE_COUNT = KMEMBER_FEATURE_COUNT + 2;
+    int KMETHOD_FEATURE_COUNT = KMEMBER_FEATURE_COUNT + 3;
 
     /**
      * The number of operations of the '<em>KMethod</em>' class.
@@ -978,6 +996,17 @@ public interface ClassdataPackage extends EPackage {
      * @generated
      */
     EReference getKClassModel_Packages();
+
+    /**
+     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#isResolved <em>Resolved</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Resolved</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KClassModel#isResolved()
+     * @see #getKClassModel()
+     * @generated
+     */
+    EAttribute getKClassModel_Resolved();
 
     /**
      * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KPackage <em>KPackage</em>}'.
@@ -1335,6 +1364,17 @@ public interface ClassdataPackage extends EPackage {
     EReference getKMethod_ReturnType();
 
     /**
+     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#isAbstract <em>Abstract</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Abstract</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KMethod#isAbstract()
+     * @see #getKMethod()
+     * @generated
+     */
+    EAttribute getKMethod_Abstract();
+
+    /**
      * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference <em>KType Reference</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1465,6 +1505,14 @@ public interface ClassdataPackage extends EPackage {
          * @generated
          */
         EReference KCLASS_MODEL__PACKAGES = eINSTANCE.getKClassModel_Packages();
+
+        /**
+         * The meta object literal for the '<em><b>Resolved</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute KCLASS_MODEL__RESOLVED = eINSTANCE.getKClassModel_Resolved();
 
         /**
          * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KPackageImpl <em>KPackage</em>}' class.
@@ -1745,6 +1793,14 @@ public interface ClassdataPackage extends EPackage {
          * @generated
          */
         EReference KMETHOD__RETURN_TYPE = eINSTANCE.getKMethod_ReturnType();
+
+        /**
+         * The meta object literal for the '<em><b>Abstract</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute KMETHOD__ABSTRACT = eINSTANCE.getKMethod_Abstract();
 
         /**
          * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeReferenceImpl <em>KType Reference</em>}' class.

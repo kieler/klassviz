@@ -33,19 +33,19 @@ KType returns KType:
     KClass | KInterface | KEnum;
 
 KClass returns KClass:
-    'class' name=ID '{'
+    'class' name=ID ('{'
         (fields+=KField | methods+=KMethod)*
-    '}';
+    '}')?;
 
 KInterface returns KInterface:
-    'interface' name=ID '{'
+    'interface' name=ID ('{'
         (fields+=KField | methods+=KMethod)*
-    '}';
+    '}')?;
 
 KEnum returns KEnum:
-    'enum' name=ID '{'
+    'enum' name=ID ('{'
         (fields+=KField | methods+=KMethod)*
-    '}';
+    '}')?;
 
 KField returns KField:
     name=ID;

@@ -155,19 +155,20 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cClassKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Assignment cFieldsAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
-		private final RuleCall cFieldsKFieldParserRuleCall_3_0_0 = (RuleCall)cFieldsAssignment_3_0.eContents().get(0);
-		private final Assignment cMethodsAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
-		private final RuleCall cMethodsKMethodParserRuleCall_3_1_0 = (RuleCall)cMethodsAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Alternatives cAlternatives_2_1 = (Alternatives)cGroup_2.eContents().get(1);
+		private final Assignment cFieldsAssignment_2_1_0 = (Assignment)cAlternatives_2_1.eContents().get(0);
+		private final RuleCall cFieldsKFieldParserRuleCall_2_1_0_0 = (RuleCall)cFieldsAssignment_2_1_0.eContents().get(0);
+		private final Assignment cMethodsAssignment_2_1_1 = (Assignment)cAlternatives_2_1.eContents().get(1);
+		private final RuleCall cMethodsKMethodParserRuleCall_2_1_1_0 = (RuleCall)cMethodsAssignment_2_1_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
 		
 		//KClass:
-		//	"class" name=ID "{" (fields+=KField | methods+=KMethod)* "}";
+		//	"class" name=ID ("{" (fields+=KField | methods+=KMethod)* "}")?;
 		public ParserRule getRule() { return rule; }
 
-		//"class" name=ID "{" (fields+=KField | methods+=KMethod)* "}"
+		//"class" name=ID ("{" (fields+=KField | methods+=KMethod)* "}")?
 		public Group getGroup() { return cGroup; }
 
 		//"class"
@@ -179,26 +180,29 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
+		//("{" (fields+=KField | methods+=KMethod)* "}")?
+		public Group getGroup_2() { return cGroup_2; }
+
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 
 		//(fields+=KField | methods+=KMethod)*
-		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+		public Alternatives getAlternatives_2_1() { return cAlternatives_2_1; }
 
 		//fields+=KField
-		public Assignment getFieldsAssignment_3_0() { return cFieldsAssignment_3_0; }
+		public Assignment getFieldsAssignment_2_1_0() { return cFieldsAssignment_2_1_0; }
 
 		//KField
-		public RuleCall getFieldsKFieldParserRuleCall_3_0_0() { return cFieldsKFieldParserRuleCall_3_0_0; }
+		public RuleCall getFieldsKFieldParserRuleCall_2_1_0_0() { return cFieldsKFieldParserRuleCall_2_1_0_0; }
 
 		//methods+=KMethod
-		public Assignment getMethodsAssignment_3_1() { return cMethodsAssignment_3_1; }
+		public Assignment getMethodsAssignment_2_1_1() { return cMethodsAssignment_2_1_1; }
 
 		//KMethod
-		public RuleCall getMethodsKMethodParserRuleCall_3_1_0() { return cMethodsKMethodParserRuleCall_3_1_0; }
+		public RuleCall getMethodsKMethodParserRuleCall_2_1_1_0() { return cMethodsKMethodParserRuleCall_2_1_1_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_2_2() { return cRightCurlyBracketKeyword_2_2; }
 	}
 
 	public class KInterfaceElements extends AbstractParserRuleElementFinder {
@@ -207,19 +211,20 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cInterfaceKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Assignment cFieldsAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
-		private final RuleCall cFieldsKFieldParserRuleCall_3_0_0 = (RuleCall)cFieldsAssignment_3_0.eContents().get(0);
-		private final Assignment cMethodsAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
-		private final RuleCall cMethodsKMethodParserRuleCall_3_1_0 = (RuleCall)cMethodsAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Alternatives cAlternatives_2_1 = (Alternatives)cGroup_2.eContents().get(1);
+		private final Assignment cFieldsAssignment_2_1_0 = (Assignment)cAlternatives_2_1.eContents().get(0);
+		private final RuleCall cFieldsKFieldParserRuleCall_2_1_0_0 = (RuleCall)cFieldsAssignment_2_1_0.eContents().get(0);
+		private final Assignment cMethodsAssignment_2_1_1 = (Assignment)cAlternatives_2_1.eContents().get(1);
+		private final RuleCall cMethodsKMethodParserRuleCall_2_1_1_0 = (RuleCall)cMethodsAssignment_2_1_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
 		
 		//KInterface:
-		//	"interface" name=ID "{" (fields+=KField | methods+=KMethod)* "}";
+		//	"interface" name=ID ("{" (fields+=KField | methods+=KMethod)* "}")?;
 		public ParserRule getRule() { return rule; }
 
-		//"interface" name=ID "{" (fields+=KField | methods+=KMethod)* "}"
+		//"interface" name=ID ("{" (fields+=KField | methods+=KMethod)* "}")?
 		public Group getGroup() { return cGroup; }
 
 		//"interface"
@@ -231,26 +236,29 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
+		//("{" (fields+=KField | methods+=KMethod)* "}")?
+		public Group getGroup_2() { return cGroup_2; }
+
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 
 		//(fields+=KField | methods+=KMethod)*
-		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+		public Alternatives getAlternatives_2_1() { return cAlternatives_2_1; }
 
 		//fields+=KField
-		public Assignment getFieldsAssignment_3_0() { return cFieldsAssignment_3_0; }
+		public Assignment getFieldsAssignment_2_1_0() { return cFieldsAssignment_2_1_0; }
 
 		//KField
-		public RuleCall getFieldsKFieldParserRuleCall_3_0_0() { return cFieldsKFieldParserRuleCall_3_0_0; }
+		public RuleCall getFieldsKFieldParserRuleCall_2_1_0_0() { return cFieldsKFieldParserRuleCall_2_1_0_0; }
 
 		//methods+=KMethod
-		public Assignment getMethodsAssignment_3_1() { return cMethodsAssignment_3_1; }
+		public Assignment getMethodsAssignment_2_1_1() { return cMethodsAssignment_2_1_1; }
 
 		//KMethod
-		public RuleCall getMethodsKMethodParserRuleCall_3_1_0() { return cMethodsKMethodParserRuleCall_3_1_0; }
+		public RuleCall getMethodsKMethodParserRuleCall_2_1_1_0() { return cMethodsKMethodParserRuleCall_2_1_1_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_2_2() { return cRightCurlyBracketKeyword_2_2; }
 	}
 
 	public class KEnumElements extends AbstractParserRuleElementFinder {
@@ -259,19 +267,20 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEnumKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Assignment cFieldsAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
-		private final RuleCall cFieldsKFieldParserRuleCall_3_0_0 = (RuleCall)cFieldsAssignment_3_0.eContents().get(0);
-		private final Assignment cMethodsAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
-		private final RuleCall cMethodsKMethodParserRuleCall_3_1_0 = (RuleCall)cMethodsAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Alternatives cAlternatives_2_1 = (Alternatives)cGroup_2.eContents().get(1);
+		private final Assignment cFieldsAssignment_2_1_0 = (Assignment)cAlternatives_2_1.eContents().get(0);
+		private final RuleCall cFieldsKFieldParserRuleCall_2_1_0_0 = (RuleCall)cFieldsAssignment_2_1_0.eContents().get(0);
+		private final Assignment cMethodsAssignment_2_1_1 = (Assignment)cAlternatives_2_1.eContents().get(1);
+		private final RuleCall cMethodsKMethodParserRuleCall_2_1_1_0 = (RuleCall)cMethodsAssignment_2_1_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
 		
 		//KEnum:
-		//	"enum" name=ID "{" (fields+=KField | methods+=KMethod)* "}";
+		//	"enum" name=ID ("{" (fields+=KField | methods+=KMethod)* "}")?;
 		public ParserRule getRule() { return rule; }
 
-		//"enum" name=ID "{" (fields+=KField | methods+=KMethod)* "}"
+		//"enum" name=ID ("{" (fields+=KField | methods+=KMethod)* "}")?
 		public Group getGroup() { return cGroup; }
 
 		//"enum"
@@ -283,26 +292,29 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
+		//("{" (fields+=KField | methods+=KMethod)* "}")?
+		public Group getGroup_2() { return cGroup_2; }
+
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 
 		//(fields+=KField | methods+=KMethod)*
-		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+		public Alternatives getAlternatives_2_1() { return cAlternatives_2_1; }
 
 		//fields+=KField
-		public Assignment getFieldsAssignment_3_0() { return cFieldsAssignment_3_0; }
+		public Assignment getFieldsAssignment_2_1_0() { return cFieldsAssignment_2_1_0; }
 
 		//KField
-		public RuleCall getFieldsKFieldParserRuleCall_3_0_0() { return cFieldsKFieldParserRuleCall_3_0_0; }
+		public RuleCall getFieldsKFieldParserRuleCall_2_1_0_0() { return cFieldsKFieldParserRuleCall_2_1_0_0; }
 
 		//methods+=KMethod
-		public Assignment getMethodsAssignment_3_1() { return cMethodsAssignment_3_1; }
+		public Assignment getMethodsAssignment_2_1_1() { return cMethodsAssignment_2_1_1; }
 
 		//KMethod
-		public RuleCall getMethodsKMethodParserRuleCall_3_1_0() { return cMethodsKMethodParserRuleCall_3_1_0; }
+		public RuleCall getMethodsKMethodParserRuleCall_2_1_1_0() { return cMethodsKMethodParserRuleCall_2_1_1_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_2_2() { return cRightCurlyBracketKeyword_2_2; }
 	}
 
 	public class KFieldElements extends AbstractParserRuleElementFinder {
@@ -594,7 +606,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//KClass:
-	//	"class" name=ID "{" (fields+=KField | methods+=KMethod)* "}";
+	//	"class" name=ID ("{" (fields+=KField | methods+=KMethod)* "}")?;
 	public KClassElements getKClassAccess() {
 		return (pKClass != null) ? pKClass : (pKClass = new KClassElements());
 	}
@@ -604,7 +616,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//KInterface:
-	//	"interface" name=ID "{" (fields+=KField | methods+=KMethod)* "}";
+	//	"interface" name=ID ("{" (fields+=KField | methods+=KMethod)* "}")?;
 	public KInterfaceElements getKInterfaceAccess() {
 		return (pKInterface != null) ? pKInterface : (pKInterface = new KInterfaceElements());
 	}
@@ -614,7 +626,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//KEnum:
-	//	"enum" name=ID "{" (fields+=KField | methods+=KMethod)* "}";
+	//	"enum" name=ID ("{" (fields+=KField | methods+=KMethod)* "}")?;
 	public KEnumElements getKEnumAccess() {
 		return (pKEnum != null) ? pKEnum : (pKEnum = new KEnumElements());
 	}

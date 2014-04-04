@@ -41,6 +41,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMethodImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMethodImpl#getReturnType <em>Return Type</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMethodImpl#isAbstract <em>Abstract</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +67,26 @@ public class KMethodImpl extends KMemberImpl implements KMethod {
      * @ordered
      */
     protected KTypeReference returnType;
+
+    /**
+     * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isAbstract()
+     * @generated
+     * @ordered
+     */
+    protected static final boolean ABSTRACT_EDEFAULT = false;
+
+    /**
+     * The cached value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isAbstract()
+     * @generated
+     * @ordered
+     */
+    protected boolean abstract_ = ABSTRACT_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -146,6 +167,27 @@ public class KMethodImpl extends KMemberImpl implements KMethod {
      * <!-- end-user-doc -->
      * @generated
      */
+    public boolean isAbstract() {
+        return abstract_;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setAbstract(boolean newAbstract) {
+        boolean oldAbstract = abstract_;
+        abstract_ = newAbstract;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMETHOD__ABSTRACT, oldAbstract, abstract_));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
@@ -169,6 +211,8 @@ public class KMethodImpl extends KMemberImpl implements KMethod {
                 return getParameters();
             case ClassdataPackage.KMETHOD__RETURN_TYPE:
                 return getReturnType();
+            case ClassdataPackage.KMETHOD__ABSTRACT:
+                return isAbstract();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -189,6 +233,9 @@ public class KMethodImpl extends KMemberImpl implements KMethod {
             case ClassdataPackage.KMETHOD__RETURN_TYPE:
                 setReturnType((KTypeReference)newValue);
                 return;
+            case ClassdataPackage.KMETHOD__ABSTRACT:
+                setAbstract((Boolean)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -207,6 +254,9 @@ public class KMethodImpl extends KMemberImpl implements KMethod {
             case ClassdataPackage.KMETHOD__RETURN_TYPE:
                 setReturnType((KTypeReference)null);
                 return;
+            case ClassdataPackage.KMETHOD__ABSTRACT:
+                setAbstract(ABSTRACT_EDEFAULT);
+                return;
         }
         super.eUnset(featureID);
     }
@@ -223,8 +273,26 @@ public class KMethodImpl extends KMemberImpl implements KMethod {
                 return parameters != null && !parameters.isEmpty();
             case ClassdataPackage.KMETHOD__RETURN_TYPE:
                 return returnType != null;
+            case ClassdataPackage.KMETHOD__ABSTRACT:
+                return abstract_ != ABSTRACT_EDEFAULT;
         }
         return super.eIsSet(featureID);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String toString() {
+        if (eIsProxy()) return super.toString();
+
+        StringBuffer result = new StringBuffer(super.toString());
+        result.append(" (abstract: ");
+        result.append(abstract_);
+        result.append(')');
+        return result.toString();
     }
 
 } //KMethodImpl

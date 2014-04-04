@@ -25,6 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#getReturnType <em>Return Type</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#isAbstract <em>Abstract</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,5 +75,32 @@ public interface KMethod extends KMember {
      * @generated
      */
     void setReturnType(KTypeReference value);
+
+    /**
+     * Returns the value of the '<em><b>Abstract</b></em>' attribute.
+     * The default value is <code>"false"</code>.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Abstract</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Abstract</em>' attribute.
+     * @see #setAbstract(boolean)
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMethod_Abstract()
+     * @model default="false" required="true"
+     * @generated
+     */
+    boolean isAbstract();
+
+    /**
+     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#isAbstract <em>Abstract</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Abstract</em>' attribute.
+     * @see #isAbstract()
+     * @generated
+     */
+    void setAbstract(boolean value);
 
 } // KMethod

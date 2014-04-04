@@ -312,14 +312,14 @@ ruleKClass returns [EObject current=null]
 	    }
 
 )
-)	otherlv_2='{' 
+)(	otherlv_2='{' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getKClassAccess().getLeftCurlyBracketKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getKClassAccess().getLeftCurlyBracketKeyword_2_0());
     }
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getKClassAccess().getFieldsKFieldParserRuleCall_3_0_0()); 
+	        newCompositeNode(grammarAccess.getKClassAccess().getFieldsKFieldParserRuleCall_2_1_0_0()); 
 	    }
 		lv_fields_3_0=ruleKField		{
 	        if ($current==null) {
@@ -338,7 +338,7 @@ ruleKClass returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getKClassAccess().getMethodsKMethodParserRuleCall_3_1_0()); 
+	        newCompositeNode(grammarAccess.getKClassAccess().getMethodsKMethodParserRuleCall_2_1_1_0()); 
 	    }
 		lv_methods_4_0=ruleKMethod		{
 	        if ($current==null) {
@@ -355,9 +355,9 @@ ruleKClass returns [EObject current=null]
 )
 ))*	otherlv_5='}' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getKClassAccess().getRightCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_5, grammarAccess.getKClassAccess().getRightCurlyBracketKeyword_2_2());
     }
-)
+)?)
 ;
 
 
@@ -400,14 +400,14 @@ ruleKInterface returns [EObject current=null]
 	    }
 
 )
-)	otherlv_2='{' 
+)(	otherlv_2='{' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getKInterfaceAccess().getLeftCurlyBracketKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getKInterfaceAccess().getLeftCurlyBracketKeyword_2_0());
     }
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getKInterfaceAccess().getFieldsKFieldParserRuleCall_3_0_0()); 
+	        newCompositeNode(grammarAccess.getKInterfaceAccess().getFieldsKFieldParserRuleCall_2_1_0_0()); 
 	    }
 		lv_fields_3_0=ruleKField		{
 	        if ($current==null) {
@@ -426,7 +426,7 @@ ruleKInterface returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getKInterfaceAccess().getMethodsKMethodParserRuleCall_3_1_0()); 
+	        newCompositeNode(grammarAccess.getKInterfaceAccess().getMethodsKMethodParserRuleCall_2_1_1_0()); 
 	    }
 		lv_methods_4_0=ruleKMethod		{
 	        if ($current==null) {
@@ -443,9 +443,9 @@ ruleKInterface returns [EObject current=null]
 )
 ))*	otherlv_5='}' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getKInterfaceAccess().getRightCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_5, grammarAccess.getKInterfaceAccess().getRightCurlyBracketKeyword_2_2());
     }
-)
+)?)
 ;
 
 
@@ -488,14 +488,14 @@ ruleKEnum returns [EObject current=null]
 	    }
 
 )
-)	otherlv_2='{' 
+)(	otherlv_2='{' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getKEnumAccess().getLeftCurlyBracketKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getKEnumAccess().getLeftCurlyBracketKeyword_2_0());
     }
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getKEnumAccess().getFieldsKFieldParserRuleCall_3_0_0()); 
+	        newCompositeNode(grammarAccess.getKEnumAccess().getFieldsKFieldParserRuleCall_2_1_0_0()); 
 	    }
 		lv_fields_3_0=ruleKField		{
 	        if ($current==null) {
@@ -514,7 +514,7 @@ ruleKEnum returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getKEnumAccess().getMethodsKMethodParserRuleCall_3_1_0()); 
+	        newCompositeNode(grammarAccess.getKEnumAccess().getMethodsKMethodParserRuleCall_2_1_1_0()); 
 	    }
 		lv_methods_4_0=ruleKMethod		{
 	        if ($current==null) {
@@ -531,9 +531,9 @@ ruleKEnum returns [EObject current=null]
 )
 ))*	otherlv_5='}' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getKEnumAccess().getRightCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_5, grammarAccess.getKEnumAccess().getRightCurlyBracketKeyword_2_2());
     }
-)
+)?)
 ;
 
 

@@ -730,7 +730,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleKClass"
-    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:289:1: ruleKClass returns [EObject current=null] : (otherlv_0= 'class' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' ) ;
+    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:289:1: ruleKClass returns [EObject current=null] : (otherlv_0= 'class' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )? ) ;
     public final EObject ruleKClass() throws RecognitionException {
         EObject current = null;
 
@@ -746,11 +746,11 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:292:28: ( (otherlv_0= 'class' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' ) )
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:293:1: (otherlv_0= 'class' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:292:28: ( (otherlv_0= 'class' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )? ) )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:293:1: (otherlv_0= 'class' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )? )
             {
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:293:1: (otherlv_0= 'class' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:293:3: otherlv_0= 'class' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}'
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:293:1: (otherlv_0= 'class' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )? )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:293:3: otherlv_0= 'class' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )?
             {
             otherlv_0=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleKClass613); 
 
@@ -782,115 +782,132 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleKClass647); 
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:315:2: (otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
 
-                	newLeafNode(otherlv_2, grammarAccess.getKClassAccess().getLeftCurlyBracketKeyword_2());
-                
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:319:1: ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )*
-            loop6:
-            do {
-                int alt6=3;
-                int LA6_0 = input.LA(1);
+            if ( (LA7_0==16) ) {
+                alt7=1;
+            }
+            switch (alt7) {
+                case 1 :
+                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:315:4: otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}'
+                    {
+                    otherlv_2=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleKClass648); 
 
-                if ( (LA6_0==RULE_ID) ) {
-                    int LA6_2 = input.LA(2);
+                        	newLeafNode(otherlv_2, grammarAccess.getKClassAccess().getLeftCurlyBracketKeyword_2_0());
+                        
+                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:319:1: ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )*
+                    loop6:
+                    do {
+                        int alt6=3;
+                        int LA6_0 = input.LA(1);
 
-                    if ( (LA6_2==21) ) {
-                        alt6=2;
+                        if ( (LA6_0==RULE_ID) ) {
+                            int LA6_2 = input.LA(2);
+
+                            if ( (LA6_2==21) ) {
+                                alt6=2;
+                            }
+                            else if ( (LA6_2==RULE_ID||LA6_2==17) ) {
+                                alt6=1;
+                            }
+
+
+                        }
+
+
+                        switch (alt6) {
+                    	case 1 :
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:319:2: ( (lv_fields_3_0= ruleKField ) )
+                    	    {
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:319:2: ( (lv_fields_3_0= ruleKField ) )
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:320:1: (lv_fields_3_0= ruleKField )
+                    	    {
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:320:1: (lv_fields_3_0= ruleKField )
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:321:3: lv_fields_3_0= ruleKField
+                    	    {
+                    	     
+                    	    	        newCompositeNode(grammarAccess.getKClassAccess().getFieldsKFieldParserRuleCall_2_1_0_0()); 
+                    	    	    
+                    	    pushFollow(FollowSets000.FOLLOW_ruleKField_in_ruleKClass670);
+                    	    lv_fields_3_0=ruleKField();
+
+                    	    state._fsp--;
+
+
+                    	    	        if (current==null) {
+                    	    	            current = createModelElementForParent(grammarAccess.getKClassRule());
+                    	    	        }
+                    	           		add(
+                    	           			current, 
+                    	           			"fields",
+                    	            		lv_fields_3_0, 
+                    	            		"KField");
+                    	    	        afterParserOrEnumRuleCall();
+                    	    	    
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+                    	case 2 :
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:338:6: ( (lv_methods_4_0= ruleKMethod ) )
+                    	    {
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:338:6: ( (lv_methods_4_0= ruleKMethod ) )
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:339:1: (lv_methods_4_0= ruleKMethod )
+                    	    {
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:339:1: (lv_methods_4_0= ruleKMethod )
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:340:3: lv_methods_4_0= ruleKMethod
+                    	    {
+                    	     
+                    	    	        newCompositeNode(grammarAccess.getKClassAccess().getMethodsKMethodParserRuleCall_2_1_1_0()); 
+                    	    	    
+                    	    pushFollow(FollowSets000.FOLLOW_ruleKMethod_in_ruleKClass697);
+                    	    lv_methods_4_0=ruleKMethod();
+
+                    	    state._fsp--;
+
+
+                    	    	        if (current==null) {
+                    	    	            current = createModelElementForParent(grammarAccess.getKClassRule());
+                    	    	        }
+                    	           		add(
+                    	           			current, 
+                    	           			"methods",
+                    	            		lv_methods_4_0, 
+                    	            		"KMethod");
+                    	    	        afterParserOrEnumRuleCall();
+                    	    	    
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop6;
+                        }
+                    } while (true);
+
+                    otherlv_5=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleKClass711); 
+
+                        	newLeafNode(otherlv_5, grammarAccess.getKClassAccess().getRightCurlyBracketKeyword_2_2());
+                        
+
                     }
-                    else if ( (LA6_2==RULE_ID||LA6_2==17) ) {
-                        alt6=1;
-                    }
+                    break;
 
+            }
 
-                }
-
-
-                switch (alt6) {
-            	case 1 :
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:319:2: ( (lv_fields_3_0= ruleKField ) )
-            	    {
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:319:2: ( (lv_fields_3_0= ruleKField ) )
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:320:1: (lv_fields_3_0= ruleKField )
-            	    {
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:320:1: (lv_fields_3_0= ruleKField )
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:321:3: lv_fields_3_0= ruleKField
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getKClassAccess().getFieldsKFieldParserRuleCall_3_0_0()); 
-            	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleKField_in_ruleKClass669);
-            	    lv_fields_3_0=ruleKField();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getKClassRule());
-            	    	        }
-            	           		add(
-            	           			current, 
-            	           			"fields",
-            	            		lv_fields_3_0, 
-            	            		"KField");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 2 :
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:338:6: ( (lv_methods_4_0= ruleKMethod ) )
-            	    {
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:338:6: ( (lv_methods_4_0= ruleKMethod ) )
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:339:1: (lv_methods_4_0= ruleKMethod )
-            	    {
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:339:1: (lv_methods_4_0= ruleKMethod )
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:340:3: lv_methods_4_0= ruleKMethod
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getKClassAccess().getMethodsKMethodParserRuleCall_3_1_0()); 
-            	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleKMethod_in_ruleKClass696);
-            	    lv_methods_4_0=ruleKMethod();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getKClassRule());
-            	    	        }
-            	           		add(
-            	           			current, 
-            	           			"methods",
-            	            		lv_methods_4_0, 
-            	            		"KMethod");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop6;
-                }
-            } while (true);
-
-            otherlv_5=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleKClass710); 
-
-                	newLeafNode(otherlv_5, grammarAccess.getKClassAccess().getRightCurlyBracketKeyword_4());
-                
 
             }
 
@@ -924,13 +941,13 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:370:2: iv_ruleKInterface= ruleKInterface EOF
             {
              newCompositeNode(grammarAccess.getKInterfaceRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleKInterface_in_entryRuleKInterface746);
+            pushFollow(FollowSets000.FOLLOW_ruleKInterface_in_entryRuleKInterface749);
             iv_ruleKInterface=ruleKInterface();
 
             state._fsp--;
 
              current =iv_ruleKInterface; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleKInterface756); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleKInterface759); 
 
             }
 
@@ -948,7 +965,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleKInterface"
-    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:377:1: ruleKInterface returns [EObject current=null] : (otherlv_0= 'interface' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' ) ;
+    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:377:1: ruleKInterface returns [EObject current=null] : (otherlv_0= 'interface' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )? ) ;
     public final EObject ruleKInterface() throws RecognitionException {
         EObject current = null;
 
@@ -964,13 +981,13 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:380:28: ( (otherlv_0= 'interface' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' ) )
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:381:1: (otherlv_0= 'interface' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:380:28: ( (otherlv_0= 'interface' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )? ) )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:381:1: (otherlv_0= 'interface' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )? )
             {
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:381:1: (otherlv_0= 'interface' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:381:3: otherlv_0= 'interface' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}'
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:381:1: (otherlv_0= 'interface' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )? )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:381:3: otherlv_0= 'interface' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )?
             {
-            otherlv_0=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleKInterface793); 
+            otherlv_0=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleKInterface796); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getKInterfaceAccess().getInterfaceKeyword_0());
                 
@@ -980,7 +997,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:386:1: (lv_name_1_0= RULE_ID )
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:387:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleKInterface810); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleKInterface813); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getKInterfaceAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -1000,115 +1017,132 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleKInterface827); 
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:403:2: (otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-                	newLeafNode(otherlv_2, grammarAccess.getKInterfaceAccess().getLeftCurlyBracketKeyword_2());
-                
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:407:1: ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )*
-            loop7:
-            do {
-                int alt7=3;
-                int LA7_0 = input.LA(1);
+            if ( (LA9_0==16) ) {
+                alt9=1;
+            }
+            switch (alt9) {
+                case 1 :
+                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:403:4: otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}'
+                    {
+                    otherlv_2=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleKInterface831); 
 
-                if ( (LA7_0==RULE_ID) ) {
-                    int LA7_2 = input.LA(2);
+                        	newLeafNode(otherlv_2, grammarAccess.getKInterfaceAccess().getLeftCurlyBracketKeyword_2_0());
+                        
+                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:407:1: ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )*
+                    loop8:
+                    do {
+                        int alt8=3;
+                        int LA8_0 = input.LA(1);
 
-                    if ( (LA7_2==21) ) {
-                        alt7=2;
+                        if ( (LA8_0==RULE_ID) ) {
+                            int LA8_2 = input.LA(2);
+
+                            if ( (LA8_2==RULE_ID||LA8_2==17) ) {
+                                alt8=1;
+                            }
+                            else if ( (LA8_2==21) ) {
+                                alt8=2;
+                            }
+
+
+                        }
+
+
+                        switch (alt8) {
+                    	case 1 :
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:407:2: ( (lv_fields_3_0= ruleKField ) )
+                    	    {
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:407:2: ( (lv_fields_3_0= ruleKField ) )
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:408:1: (lv_fields_3_0= ruleKField )
+                    	    {
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:408:1: (lv_fields_3_0= ruleKField )
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:409:3: lv_fields_3_0= ruleKField
+                    	    {
+                    	     
+                    	    	        newCompositeNode(grammarAccess.getKInterfaceAccess().getFieldsKFieldParserRuleCall_2_1_0_0()); 
+                    	    	    
+                    	    pushFollow(FollowSets000.FOLLOW_ruleKField_in_ruleKInterface853);
+                    	    lv_fields_3_0=ruleKField();
+
+                    	    state._fsp--;
+
+
+                    	    	        if (current==null) {
+                    	    	            current = createModelElementForParent(grammarAccess.getKInterfaceRule());
+                    	    	        }
+                    	           		add(
+                    	           			current, 
+                    	           			"fields",
+                    	            		lv_fields_3_0, 
+                    	            		"KField");
+                    	    	        afterParserOrEnumRuleCall();
+                    	    	    
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+                    	case 2 :
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:426:6: ( (lv_methods_4_0= ruleKMethod ) )
+                    	    {
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:426:6: ( (lv_methods_4_0= ruleKMethod ) )
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:427:1: (lv_methods_4_0= ruleKMethod )
+                    	    {
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:427:1: (lv_methods_4_0= ruleKMethod )
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:428:3: lv_methods_4_0= ruleKMethod
+                    	    {
+                    	     
+                    	    	        newCompositeNode(grammarAccess.getKInterfaceAccess().getMethodsKMethodParserRuleCall_2_1_1_0()); 
+                    	    	    
+                    	    pushFollow(FollowSets000.FOLLOW_ruleKMethod_in_ruleKInterface880);
+                    	    lv_methods_4_0=ruleKMethod();
+
+                    	    state._fsp--;
+
+
+                    	    	        if (current==null) {
+                    	    	            current = createModelElementForParent(grammarAccess.getKInterfaceRule());
+                    	    	        }
+                    	           		add(
+                    	           			current, 
+                    	           			"methods",
+                    	            		lv_methods_4_0, 
+                    	            		"KMethod");
+                    	    	        afterParserOrEnumRuleCall();
+                    	    	    
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop8;
+                        }
+                    } while (true);
+
+                    otherlv_5=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleKInterface894); 
+
+                        	newLeafNode(otherlv_5, grammarAccess.getKInterfaceAccess().getRightCurlyBracketKeyword_2_2());
+                        
+
                     }
-                    else if ( (LA7_2==RULE_ID||LA7_2==17) ) {
-                        alt7=1;
-                    }
+                    break;
 
+            }
 
-                }
-
-
-                switch (alt7) {
-            	case 1 :
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:407:2: ( (lv_fields_3_0= ruleKField ) )
-            	    {
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:407:2: ( (lv_fields_3_0= ruleKField ) )
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:408:1: (lv_fields_3_0= ruleKField )
-            	    {
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:408:1: (lv_fields_3_0= ruleKField )
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:409:3: lv_fields_3_0= ruleKField
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getKInterfaceAccess().getFieldsKFieldParserRuleCall_3_0_0()); 
-            	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleKField_in_ruleKInterface849);
-            	    lv_fields_3_0=ruleKField();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getKInterfaceRule());
-            	    	        }
-            	           		add(
-            	           			current, 
-            	           			"fields",
-            	            		lv_fields_3_0, 
-            	            		"KField");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 2 :
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:426:6: ( (lv_methods_4_0= ruleKMethod ) )
-            	    {
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:426:6: ( (lv_methods_4_0= ruleKMethod ) )
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:427:1: (lv_methods_4_0= ruleKMethod )
-            	    {
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:427:1: (lv_methods_4_0= ruleKMethod )
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:428:3: lv_methods_4_0= ruleKMethod
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getKInterfaceAccess().getMethodsKMethodParserRuleCall_3_1_0()); 
-            	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleKMethod_in_ruleKInterface876);
-            	    lv_methods_4_0=ruleKMethod();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getKInterfaceRule());
-            	    	        }
-            	           		add(
-            	           			current, 
-            	           			"methods",
-            	            		lv_methods_4_0, 
-            	            		"KMethod");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop7;
-                }
-            } while (true);
-
-            otherlv_5=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleKInterface890); 
-
-                	newLeafNode(otherlv_5, grammarAccess.getKInterfaceAccess().getRightCurlyBracketKeyword_4());
-                
 
             }
 
@@ -1142,13 +1176,13 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:458:2: iv_ruleKEnum= ruleKEnum EOF
             {
              newCompositeNode(grammarAccess.getKEnumRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleKEnum_in_entryRuleKEnum926);
+            pushFollow(FollowSets000.FOLLOW_ruleKEnum_in_entryRuleKEnum932);
             iv_ruleKEnum=ruleKEnum();
 
             state._fsp--;
 
              current =iv_ruleKEnum; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleKEnum936); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleKEnum942); 
 
             }
 
@@ -1166,7 +1200,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleKEnum"
-    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:465:1: ruleKEnum returns [EObject current=null] : (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' ) ;
+    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:465:1: ruleKEnum returns [EObject current=null] : (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )? ) ;
     public final EObject ruleKEnum() throws RecognitionException {
         EObject current = null;
 
@@ -1182,13 +1216,13 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:468:28: ( (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' ) )
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:469:1: (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:468:28: ( (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )? ) )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:469:1: (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )? )
             {
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:469:1: (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:469:3: otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}'
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:469:1: (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )? )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:469:3: otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )?
             {
-            otherlv_0=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleKEnum973); 
+            otherlv_0=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleKEnum979); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getKEnumAccess().getEnumKeyword_0());
                 
@@ -1198,7 +1232,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:474:1: (lv_name_1_0= RULE_ID )
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:475:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleKEnum990); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleKEnum996); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getKEnumAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -1218,115 +1252,132 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleKEnum1007); 
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:491:2: (otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}' )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-                	newLeafNode(otherlv_2, grammarAccess.getKEnumAccess().getLeftCurlyBracketKeyword_2());
-                
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:495:1: ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )*
-            loop8:
-            do {
-                int alt8=3;
-                int LA8_0 = input.LA(1);
+            if ( (LA11_0==16) ) {
+                alt11=1;
+            }
+            switch (alt11) {
+                case 1 :
+                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:491:4: otherlv_2= '{' ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )* otherlv_5= '}'
+                    {
+                    otherlv_2=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleKEnum1014); 
 
-                if ( (LA8_0==RULE_ID) ) {
-                    int LA8_2 = input.LA(2);
+                        	newLeafNode(otherlv_2, grammarAccess.getKEnumAccess().getLeftCurlyBracketKeyword_2_0());
+                        
+                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:495:1: ( ( (lv_fields_3_0= ruleKField ) ) | ( (lv_methods_4_0= ruleKMethod ) ) )*
+                    loop10:
+                    do {
+                        int alt10=3;
+                        int LA10_0 = input.LA(1);
 
-                    if ( (LA8_2==21) ) {
-                        alt8=2;
+                        if ( (LA10_0==RULE_ID) ) {
+                            int LA10_2 = input.LA(2);
+
+                            if ( (LA10_2==21) ) {
+                                alt10=2;
+                            }
+                            else if ( (LA10_2==RULE_ID||LA10_2==17) ) {
+                                alt10=1;
+                            }
+
+
+                        }
+
+
+                        switch (alt10) {
+                    	case 1 :
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:495:2: ( (lv_fields_3_0= ruleKField ) )
+                    	    {
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:495:2: ( (lv_fields_3_0= ruleKField ) )
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:496:1: (lv_fields_3_0= ruleKField )
+                    	    {
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:496:1: (lv_fields_3_0= ruleKField )
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:497:3: lv_fields_3_0= ruleKField
+                    	    {
+                    	     
+                    	    	        newCompositeNode(grammarAccess.getKEnumAccess().getFieldsKFieldParserRuleCall_2_1_0_0()); 
+                    	    	    
+                    	    pushFollow(FollowSets000.FOLLOW_ruleKField_in_ruleKEnum1036);
+                    	    lv_fields_3_0=ruleKField();
+
+                    	    state._fsp--;
+
+
+                    	    	        if (current==null) {
+                    	    	            current = createModelElementForParent(grammarAccess.getKEnumRule());
+                    	    	        }
+                    	           		add(
+                    	           			current, 
+                    	           			"fields",
+                    	            		lv_fields_3_0, 
+                    	            		"KField");
+                    	    	        afterParserOrEnumRuleCall();
+                    	    	    
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+                    	case 2 :
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:514:6: ( (lv_methods_4_0= ruleKMethod ) )
+                    	    {
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:514:6: ( (lv_methods_4_0= ruleKMethod ) )
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:515:1: (lv_methods_4_0= ruleKMethod )
+                    	    {
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:515:1: (lv_methods_4_0= ruleKMethod )
+                    	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:516:3: lv_methods_4_0= ruleKMethod
+                    	    {
+                    	     
+                    	    	        newCompositeNode(grammarAccess.getKEnumAccess().getMethodsKMethodParserRuleCall_2_1_1_0()); 
+                    	    	    
+                    	    pushFollow(FollowSets000.FOLLOW_ruleKMethod_in_ruleKEnum1063);
+                    	    lv_methods_4_0=ruleKMethod();
+
+                    	    state._fsp--;
+
+
+                    	    	        if (current==null) {
+                    	    	            current = createModelElementForParent(grammarAccess.getKEnumRule());
+                    	    	        }
+                    	           		add(
+                    	           			current, 
+                    	           			"methods",
+                    	            		lv_methods_4_0, 
+                    	            		"KMethod");
+                    	    	        afterParserOrEnumRuleCall();
+                    	    	    
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop10;
+                        }
+                    } while (true);
+
+                    otherlv_5=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleKEnum1077); 
+
+                        	newLeafNode(otherlv_5, grammarAccess.getKEnumAccess().getRightCurlyBracketKeyword_2_2());
+                        
+
                     }
-                    else if ( (LA8_2==RULE_ID||LA8_2==17) ) {
-                        alt8=1;
-                    }
+                    break;
 
+            }
 
-                }
-
-
-                switch (alt8) {
-            	case 1 :
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:495:2: ( (lv_fields_3_0= ruleKField ) )
-            	    {
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:495:2: ( (lv_fields_3_0= ruleKField ) )
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:496:1: (lv_fields_3_0= ruleKField )
-            	    {
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:496:1: (lv_fields_3_0= ruleKField )
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:497:3: lv_fields_3_0= ruleKField
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getKEnumAccess().getFieldsKFieldParserRuleCall_3_0_0()); 
-            	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleKField_in_ruleKEnum1029);
-            	    lv_fields_3_0=ruleKField();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getKEnumRule());
-            	    	        }
-            	           		add(
-            	           			current, 
-            	           			"fields",
-            	            		lv_fields_3_0, 
-            	            		"KField");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 2 :
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:514:6: ( (lv_methods_4_0= ruleKMethod ) )
-            	    {
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:514:6: ( (lv_methods_4_0= ruleKMethod ) )
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:515:1: (lv_methods_4_0= ruleKMethod )
-            	    {
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:515:1: (lv_methods_4_0= ruleKMethod )
-            	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:516:3: lv_methods_4_0= ruleKMethod
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getKEnumAccess().getMethodsKMethodParserRuleCall_3_1_0()); 
-            	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleKMethod_in_ruleKEnum1056);
-            	    lv_methods_4_0=ruleKMethod();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getKEnumRule());
-            	    	        }
-            	           		add(
-            	           			current, 
-            	           			"methods",
-            	            		lv_methods_4_0, 
-            	            		"KMethod");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop8;
-                }
-            } while (true);
-
-            otherlv_5=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleKEnum1070); 
-
-                	newLeafNode(otherlv_5, grammarAccess.getKEnumAccess().getRightCurlyBracketKeyword_4());
-                
 
             }
 
@@ -1360,13 +1411,13 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:546:2: iv_ruleKField= ruleKField EOF
             {
              newCompositeNode(grammarAccess.getKFieldRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleKField_in_entryRuleKField1106);
+            pushFollow(FollowSets000.FOLLOW_ruleKField_in_entryRuleKField1115);
             iv_ruleKField=ruleKField();
 
             state._fsp--;
 
              current =iv_ruleKField; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleKField1116); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleKField1125); 
 
             }
 
@@ -1402,7 +1453,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:558:1: (lv_name_0_0= RULE_ID )
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:559:3: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleKField1157); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleKField1166); 
 
             			newLeafNode(lv_name_0_0, grammarAccess.getKFieldAccess().getNameIDTerminalRuleCall_0()); 
             		
@@ -1452,13 +1503,13 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:585:2: iv_ruleKMethod= ruleKMethod EOF
             {
              newCompositeNode(grammarAccess.getKMethodRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleKMethod_in_entryRuleKMethod1197);
+            pushFollow(FollowSets000.FOLLOW_ruleKMethod_in_entryRuleKMethod1206);
             iv_ruleKMethod=ruleKMethod();
 
             state._fsp--;
 
              current =iv_ruleKMethod; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleKMethod1207); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleKMethod1216); 
 
             }
 
@@ -1504,7 +1555,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:597:1: (lv_name_0_0= RULE_ID )
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:598:3: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleKMethod1249); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleKMethod1258); 
 
             			newLeafNode(lv_name_0_0, grammarAccess.getKMethodAccess().getNameIDTerminalRuleCall_0_0()); 
             		
@@ -1524,18 +1575,18 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleKMethod1266); 
+            otherlv_1=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleKMethod1275); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getKMethodAccess().getLeftParenthesisKeyword_1());
                 
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:618:1: ( ( (lv_parameters_2_0= ruleKTypeReference ) ) (otherlv_3= ',' ( (lv_parameters_4_0= ruleKTypeReference ) ) )* )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            if ( (LA10_0==RULE_ID) ) {
-                alt10=1;
+            if ( (LA13_0==RULE_ID) ) {
+                alt13=1;
             }
-            switch (alt10) {
+            switch (alt13) {
                 case 1 :
                     // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:618:2: ( (lv_parameters_2_0= ruleKTypeReference ) ) (otherlv_3= ',' ( (lv_parameters_4_0= ruleKTypeReference ) ) )*
                     {
@@ -1548,7 +1599,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getKMethodAccess().getParametersKTypeReferenceParserRuleCall_2_0_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleKTypeReference_in_ruleKMethod1288);
+                    pushFollow(FollowSets000.FOLLOW_ruleKTypeReference_in_ruleKMethod1297);
                     lv_parameters_2_0=ruleKTypeReference();
 
                     state._fsp--;
@@ -1571,21 +1622,21 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
                     }
 
                     // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:636:2: (otherlv_3= ',' ( (lv_parameters_4_0= ruleKTypeReference ) ) )*
-                    loop9:
+                    loop12:
                     do {
-                        int alt9=2;
-                        int LA9_0 = input.LA(1);
+                        int alt12=2;
+                        int LA12_0 = input.LA(1);
 
-                        if ( (LA9_0==22) ) {
-                            alt9=1;
+                        if ( (LA12_0==22) ) {
+                            alt12=1;
                         }
 
 
-                        switch (alt9) {
+                        switch (alt12) {
                     	case 1 :
                     	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:636:4: otherlv_3= ',' ( (lv_parameters_4_0= ruleKTypeReference ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleKMethod1301); 
+                    	    otherlv_3=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleKMethod1310); 
 
                     	        	newLeafNode(otherlv_3, grammarAccess.getKMethodAccess().getCommaKeyword_2_1_0());
                     	        
@@ -1598,7 +1649,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
                     	     
                     	    	        newCompositeNode(grammarAccess.getKMethodAccess().getParametersKTypeReferenceParserRuleCall_2_1_1_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleKTypeReference_in_ruleKMethod1322);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleKTypeReference_in_ruleKMethod1331);
                     	    lv_parameters_4_0=ruleKTypeReference();
 
                     	    state._fsp--;
@@ -1625,7 +1676,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop9;
+                    	    break loop12;
                         }
                     } while (true);
 
@@ -1635,7 +1686,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleKMethod1338); 
+            otherlv_5=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleKMethod1347); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getKMethodAccess().getRightParenthesisKeyword_3());
                 
@@ -1672,13 +1723,13 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:672:2: iv_ruleKTypeReference= ruleKTypeReference EOF
             {
              newCompositeNode(grammarAccess.getKTypeReferenceRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleKTypeReference_in_entryRuleKTypeReference1374);
+            pushFollow(FollowSets000.FOLLOW_ruleKTypeReference_in_entryRuleKTypeReference1383);
             iv_ruleKTypeReference=ruleKTypeReference();
 
             state._fsp--;
 
              current =iv_ruleKTypeReference; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleKTypeReference1384); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleKTypeReference1393); 
 
             }
 
@@ -1718,7 +1769,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getKTypeReferenceAccess().getSignatureTypeSignatureParserRuleCall_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleTypeSignature_in_ruleKTypeReference1429);
+            pushFollow(FollowSets000.FOLLOW_ruleTypeSignature_in_ruleKTypeReference1438);
             lv_signature_0_0=ruleTypeSignature();
 
             state._fsp--;
@@ -1770,13 +1821,13 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:711:2: iv_ruleQualifiedID= ruleQualifiedID EOF
             {
              newCompositeNode(grammarAccess.getQualifiedIDRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedID_in_entryRuleQualifiedID1465);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedID_in_entryRuleQualifiedID1474);
             iv_ruleQualifiedID=ruleQualifiedID();
 
             state._fsp--;
 
              current =iv_ruleQualifiedID.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleQualifiedID1476); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleQualifiedID1485); 
 
             }
 
@@ -1811,7 +1862,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:722:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:722:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedID1516); 
+            this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedID1525); 
 
             		current.merge(this_ID_0);
                 
@@ -1819,26 +1870,26 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
                 newLeafNode(this_ID_0, grammarAccess.getQualifiedIDAccess().getIDTerminalRuleCall_0()); 
                 
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:729:1: (kw= '.' this_ID_2= RULE_ID )*
-            loop11:
+            loop14:
             do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
+                int alt14=2;
+                int LA14_0 = input.LA(1);
 
-                if ( (LA11_0==24) ) {
-                    alt11=1;
+                if ( (LA14_0==24) ) {
+                    alt14=1;
                 }
 
 
-                switch (alt11) {
+                switch (alt14) {
             	case 1 :
             	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:730:2: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleQualifiedID1535); 
+            	    kw=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleQualifiedID1544); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getQualifiedIDAccess().getFullStopKeyword_1_0()); 
             	        
-            	    this_ID_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedID1550); 
+            	    this_ID_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedID1559); 
 
             	    		current.merge(this_ID_2);
             	        
@@ -1850,7 +1901,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop11;
+            	    break loop14;
                 }
             } while (true);
 
@@ -1887,13 +1938,13 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:752:2: iv_ruleTypeSignature= ruleTypeSignature EOF
             {
              newCompositeNode(grammarAccess.getTypeSignatureRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTypeSignature_in_entryRuleTypeSignature1598);
+            pushFollow(FollowSets000.FOLLOW_ruleTypeSignature_in_entryRuleTypeSignature1607);
             iv_ruleTypeSignature=ruleTypeSignature();
 
             state._fsp--;
 
              current =iv_ruleTypeSignature.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTypeSignature1609); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTypeSignature1618); 
 
             }
 
@@ -1933,7 +1984,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getTypeSignatureAccess().getQualifiedIDParserRuleCall_0()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedID_in_ruleTypeSignature1656);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedID_in_ruleTypeSignature1665);
             this_QualifiedID_0=ruleQualifiedID();
 
             state._fsp--;
@@ -1945,42 +1996,42 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
                     afterParserOrEnumRuleCall();
                 
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:774:1: (kw= '<' (kw= '?' | this_TypeSignature_3= ruleTypeSignature ) kw= '>' )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA13_0==25) ) {
-                alt13=1;
+            if ( (LA16_0==25) ) {
+                alt16=1;
             }
-            switch (alt13) {
+            switch (alt16) {
                 case 1 :
                     // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:775:2: kw= '<' (kw= '?' | this_TypeSignature_3= ruleTypeSignature ) kw= '>'
                     {
-                    kw=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleTypeSignature1675); 
+                    kw=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleTypeSignature1684); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTypeSignatureAccess().getLessThanSignKeyword_1_0()); 
                         
                     // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:780:1: (kw= '?' | this_TypeSignature_3= ruleTypeSignature )
-                    int alt12=2;
-                    int LA12_0 = input.LA(1);
+                    int alt15=2;
+                    int LA15_0 = input.LA(1);
 
-                    if ( (LA12_0==26) ) {
-                        alt12=1;
+                    if ( (LA15_0==26) ) {
+                        alt15=1;
                     }
-                    else if ( (LA12_0==RULE_ID) ) {
-                        alt12=2;
+                    else if ( (LA15_0==RULE_ID) ) {
+                        alt15=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 12, 0, input);
+                            new NoViableAltException("", 15, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt12) {
+                    switch (alt15) {
                         case 1 :
                             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:781:2: kw= '?'
                             {
-                            kw=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleTypeSignature1689); 
+                            kw=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleTypeSignature1698); 
 
                                     current.merge(kw);
                                     newLeafNode(kw, grammarAccess.getTypeSignatureAccess().getQuestionMarkKeyword_1_1_0()); 
@@ -1994,7 +2045,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
                              
                                     newCompositeNode(grammarAccess.getTypeSignatureAccess().getTypeSignatureParserRuleCall_1_1_1()); 
                                 
-                            pushFollow(FollowSets000.FOLLOW_ruleTypeSignature_in_ruleTypeSignature1717);
+                            pushFollow(FollowSets000.FOLLOW_ruleTypeSignature_in_ruleTypeSignature1726);
                             this_TypeSignature_3=ruleTypeSignature();
 
                             state._fsp--;
@@ -2011,7 +2062,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    kw=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleTypeSignature1736); 
+                    kw=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleTypeSignature1745); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTypeSignatureAccess().getGreaterThanSignKeyword_1_2()); 
@@ -2055,13 +2106,13 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:816:2: iv_ruleFloat= ruleFloat EOF
             {
              newCompositeNode(grammarAccess.getFloatRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleFloat_in_entryRuleFloat1781);
+            pushFollow(FollowSets000.FOLLOW_ruleFloat_in_entryRuleFloat1790);
             iv_ruleFloat=ruleFloat();
 
             state._fsp--;
 
              current =iv_ruleFloat.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleFloat1792); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleFloat1801); 
 
             }
 
@@ -2093,26 +2144,26 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:827:1: (this_TFLOAT_0= RULE_TFLOAT | this_NATURAL_1= RULE_NATURAL )
             {
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:827:1: (this_TFLOAT_0= RULE_TFLOAT | this_NATURAL_1= RULE_NATURAL )
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA14_0==RULE_TFLOAT) ) {
-                alt14=1;
+            if ( (LA17_0==RULE_TFLOAT) ) {
+                alt17=1;
             }
-            else if ( (LA14_0==RULE_NATURAL) ) {
-                alt14=2;
+            else if ( (LA17_0==RULE_NATURAL) ) {
+                alt17=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
+                    new NoViableAltException("", 17, 0, input);
 
                 throw nvae;
             }
-            switch (alt14) {
+            switch (alt17) {
                 case 1 :
                     // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:827:6: this_TFLOAT_0= RULE_TFLOAT
                     {
-                    this_TFLOAT_0=(Token)match(input,RULE_TFLOAT,FollowSets000.FOLLOW_RULE_TFLOAT_in_ruleFloat1832); 
+                    this_TFLOAT_0=(Token)match(input,RULE_TFLOAT,FollowSets000.FOLLOW_RULE_TFLOAT_in_ruleFloat1841); 
 
                     		current.merge(this_TFLOAT_0);
                         
@@ -2125,7 +2176,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:835:10: this_NATURAL_1= RULE_NATURAL
                     {
-                    this_NATURAL_1=(Token)match(input,RULE_NATURAL,FollowSets000.FOLLOW_RULE_NATURAL_in_ruleFloat1858); 
+                    this_NATURAL_1=(Token)match(input,RULE_NATURAL,FollowSets000.FOLLOW_RULE_NATURAL_in_ruleFloat1867); 
 
                     		current.merge(this_NATURAL_1);
                         
@@ -2184,57 +2235,57 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleKClass_in_entryRuleKClass566 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleKClass576 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_18_in_ruleKClass613 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleKClass630 = new BitSet(new long[]{0x0000000000010000L});
-        public static final BitSet FOLLOW_16_in_ruleKClass647 = new BitSet(new long[]{0x0000000000020010L});
-        public static final BitSet FOLLOW_ruleKField_in_ruleKClass669 = new BitSet(new long[]{0x0000000000020010L});
-        public static final BitSet FOLLOW_ruleKMethod_in_ruleKClass696 = new BitSet(new long[]{0x0000000000020010L});
-        public static final BitSet FOLLOW_17_in_ruleKClass710 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleKInterface_in_entryRuleKInterface746 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleKInterface756 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_19_in_ruleKInterface793 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleKInterface810 = new BitSet(new long[]{0x0000000000010000L});
-        public static final BitSet FOLLOW_16_in_ruleKInterface827 = new BitSet(new long[]{0x0000000000020010L});
-        public static final BitSet FOLLOW_ruleKField_in_ruleKInterface849 = new BitSet(new long[]{0x0000000000020010L});
-        public static final BitSet FOLLOW_ruleKMethod_in_ruleKInterface876 = new BitSet(new long[]{0x0000000000020010L});
-        public static final BitSet FOLLOW_17_in_ruleKInterface890 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleKEnum_in_entryRuleKEnum926 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleKEnum936 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_20_in_ruleKEnum973 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleKEnum990 = new BitSet(new long[]{0x0000000000010000L});
-        public static final BitSet FOLLOW_16_in_ruleKEnum1007 = new BitSet(new long[]{0x0000000000020010L});
-        public static final BitSet FOLLOW_ruleKField_in_ruleKEnum1029 = new BitSet(new long[]{0x0000000000020010L});
-        public static final BitSet FOLLOW_ruleKMethod_in_ruleKEnum1056 = new BitSet(new long[]{0x0000000000020010L});
-        public static final BitSet FOLLOW_17_in_ruleKEnum1070 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleKField_in_entryRuleKField1106 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleKField1116 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleKField1157 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleKMethod_in_entryRuleKMethod1197 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleKMethod1207 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleKMethod1249 = new BitSet(new long[]{0x0000000000200000L});
-        public static final BitSet FOLLOW_21_in_ruleKMethod1266 = new BitSet(new long[]{0x0000000000800010L});
-        public static final BitSet FOLLOW_ruleKTypeReference_in_ruleKMethod1288 = new BitSet(new long[]{0x0000000000C00000L});
-        public static final BitSet FOLLOW_22_in_ruleKMethod1301 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleKTypeReference_in_ruleKMethod1322 = new BitSet(new long[]{0x0000000000C00000L});
-        public static final BitSet FOLLOW_23_in_ruleKMethod1338 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleKTypeReference_in_entryRuleKTypeReference1374 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleKTypeReference1384 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTypeSignature_in_ruleKTypeReference1429 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleQualifiedID_in_entryRuleQualifiedID1465 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedID1476 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedID1516 = new BitSet(new long[]{0x0000000001000002L});
-        public static final BitSet FOLLOW_24_in_ruleQualifiedID1535 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedID1550 = new BitSet(new long[]{0x0000000001000002L});
-        public static final BitSet FOLLOW_ruleTypeSignature_in_entryRuleTypeSignature1598 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTypeSignature1609 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleQualifiedID_in_ruleTypeSignature1656 = new BitSet(new long[]{0x0000000002000002L});
-        public static final BitSet FOLLOW_25_in_ruleTypeSignature1675 = new BitSet(new long[]{0x0000000004000010L});
-        public static final BitSet FOLLOW_26_in_ruleTypeSignature1689 = new BitSet(new long[]{0x0000000008000000L});
-        public static final BitSet FOLLOW_ruleTypeSignature_in_ruleTypeSignature1717 = new BitSet(new long[]{0x0000000008000000L});
-        public static final BitSet FOLLOW_27_in_ruleTypeSignature1736 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleFloat_in_entryRuleFloat1781 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleFloat1792 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_TFLOAT_in_ruleFloat1832 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_NATURAL_in_ruleFloat1858 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleKClass630 = new BitSet(new long[]{0x0000000000010002L});
+        public static final BitSet FOLLOW_16_in_ruleKClass648 = new BitSet(new long[]{0x0000000000020010L});
+        public static final BitSet FOLLOW_ruleKField_in_ruleKClass670 = new BitSet(new long[]{0x0000000000020010L});
+        public static final BitSet FOLLOW_ruleKMethod_in_ruleKClass697 = new BitSet(new long[]{0x0000000000020010L});
+        public static final BitSet FOLLOW_17_in_ruleKClass711 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleKInterface_in_entryRuleKInterface749 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleKInterface759 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_19_in_ruleKInterface796 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleKInterface813 = new BitSet(new long[]{0x0000000000010002L});
+        public static final BitSet FOLLOW_16_in_ruleKInterface831 = new BitSet(new long[]{0x0000000000020010L});
+        public static final BitSet FOLLOW_ruleKField_in_ruleKInterface853 = new BitSet(new long[]{0x0000000000020010L});
+        public static final BitSet FOLLOW_ruleKMethod_in_ruleKInterface880 = new BitSet(new long[]{0x0000000000020010L});
+        public static final BitSet FOLLOW_17_in_ruleKInterface894 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleKEnum_in_entryRuleKEnum932 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleKEnum942 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_20_in_ruleKEnum979 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleKEnum996 = new BitSet(new long[]{0x0000000000010002L});
+        public static final BitSet FOLLOW_16_in_ruleKEnum1014 = new BitSet(new long[]{0x0000000000020010L});
+        public static final BitSet FOLLOW_ruleKField_in_ruleKEnum1036 = new BitSet(new long[]{0x0000000000020010L});
+        public static final BitSet FOLLOW_ruleKMethod_in_ruleKEnum1063 = new BitSet(new long[]{0x0000000000020010L});
+        public static final BitSet FOLLOW_17_in_ruleKEnum1077 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleKField_in_entryRuleKField1115 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleKField1125 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleKField1166 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleKMethod_in_entryRuleKMethod1206 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleKMethod1216 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleKMethod1258 = new BitSet(new long[]{0x0000000000200000L});
+        public static final BitSet FOLLOW_21_in_ruleKMethod1275 = new BitSet(new long[]{0x0000000000800010L});
+        public static final BitSet FOLLOW_ruleKTypeReference_in_ruleKMethod1297 = new BitSet(new long[]{0x0000000000C00000L});
+        public static final BitSet FOLLOW_22_in_ruleKMethod1310 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleKTypeReference_in_ruleKMethod1331 = new BitSet(new long[]{0x0000000000C00000L});
+        public static final BitSet FOLLOW_23_in_ruleKMethod1347 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleKTypeReference_in_entryRuleKTypeReference1383 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleKTypeReference1393 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTypeSignature_in_ruleKTypeReference1438 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleQualifiedID_in_entryRuleQualifiedID1474 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedID1485 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedID1525 = new BitSet(new long[]{0x0000000001000002L});
+        public static final BitSet FOLLOW_24_in_ruleQualifiedID1544 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedID1559 = new BitSet(new long[]{0x0000000001000002L});
+        public static final BitSet FOLLOW_ruleTypeSignature_in_entryRuleTypeSignature1607 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTypeSignature1618 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleQualifiedID_in_ruleTypeSignature1665 = new BitSet(new long[]{0x0000000002000002L});
+        public static final BitSet FOLLOW_25_in_ruleTypeSignature1684 = new BitSet(new long[]{0x0000000004000010L});
+        public static final BitSet FOLLOW_26_in_ruleTypeSignature1698 = new BitSet(new long[]{0x0000000008000000L});
+        public static final BitSet FOLLOW_ruleTypeSignature_in_ruleTypeSignature1726 = new BitSet(new long[]{0x0000000008000000L});
+        public static final BitSet FOLLOW_27_in_ruleTypeSignature1745 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleFloat_in_entryRuleFloat1790 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleFloat1801 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_TFLOAT_in_ruleFloat1841 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_NATURAL_in_ruleFloat1867 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

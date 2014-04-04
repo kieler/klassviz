@@ -23,15 +23,21 @@ import de.cau.cs.kieler.klassviz.model.classdata.KMethod
 import de.cau.cs.kieler.klassviz.model.classdata.KType
 import de.cau.cs.kieler.klassviz.model.classdata.KTypeReference
 import de.cau.cs.kieler.klassviz.model.classdata.KVisibility
+import java.util.HashMap
 import java.util.HashSet
+import java.util.LinkedList
 import java.util.Set
+import org.eclipse.core.resources.ResourcesPlugin
+import org.eclipse.core.runtime.CoreException
 import org.eclipse.core.runtime.NullProgressMonitor
 import org.eclipse.jdt.core.Flags
 import org.eclipse.jdt.core.IField
 import org.eclipse.jdt.core.IJavaElement
+import org.eclipse.jdt.core.IJavaProject
 import org.eclipse.jdt.core.IMethod
 import org.eclipse.jdt.core.IType
 import org.eclipse.jdt.core.ITypeRoot
+import org.eclipse.jdt.core.JavaCore
 import org.eclipse.jdt.core.JavaModelException
 import org.eclipse.jdt.core.Signature
 import org.eclipse.jface.viewers.IStructuredSelection
@@ -90,6 +96,86 @@ class JdtModelTransformation {
             }
             i = i + 1
         }
+        
+        // This flag tells the diagram synthesis not to resolve any types, since we have done it here.
+        classModel.resolved = true
+        return classModel
+    }
+    
+    /**
+     * Resolve all types in the given class model that refer to Java projects.
+     */
+    def resolve(KClassModel classModel) throws JavaModelException {
+        // Gather the Java projects declared in the class model
+        val projects = new LinkedList<IJavaProject>
+        for (projectName : classModel.javaProjects) {
+            val project = ResourcesPlugin.workspace.root.getProject(projectName)
+            try {
+                if (project.open && project.hasNature(JavaCore.NATURE_ID)) {
+                    projects += JavaCore.create(project)
+                }
+            } catch (CoreException e) {}
+        }
+        
+        // Gather the selected types
+        val typeMap = new HashMap<IType, KType>
+        for (pack : classModel.packages) {
+            for (kType : pack.types) {
+                val jdtType = projects.map[it.findType(kType.qualifiedName)].findFirst[it != null]
+                if (jdtType != null) {
+                    typeMap.put(jdtType, kType)
+                }
+            }
+        }
+        
+        val typeFunc = [ typeMap.get(it) ]
+        for (entry : typeMap.entrySet) {
+            val jdtType = entry.key
+            val kType = entry.value
+            kType.selected = true
+            
+            // Extract type data
+            extractTypeData(kType, jdtType, typeFunc)
+        
+            // Extract field data.
+            for (jdtField : jdtType.fields) {
+                var kField = kType.fields.findFirst[f | f.name == jdtField.elementName]
+                if (kField == null) {
+                    kField = ClassdataFactory.eINSTANCE.createKField()
+                    kField.name = jdtField.elementName
+                    kType.fields += kField
+                } else {
+                    kField.selected = true
+                }
+                extractFieldData(kField, jdtField, jdtType, classModel, typeFunc)
+            }
+            
+            // Extract method data.
+            for (jdtMethod : jdtType.methods) {
+                var kMethod = kType.methods.findFirst[m | jdtMethod.equalSignature(m)]
+                if (kMethod == null) {
+                    kMethod = ClassdataFactory.eINSTANCE.createKMethod()
+                    kMethod.name = jdtMethod.elementName
+                    kType.methods += kMethod
+                    for (jdtparam : jdtMethod.parameters) {
+                        kMethod.parameters += ClassdataFactory.eINSTANCE.createKTypeReference => [ tr |
+                            tr.name = jdtparam.elementName
+                            tr.signature = Signature.toString(jdtparam.typeSignature)
+                            jdtType.resolveReference(tr, classModel, typeFunc)
+                        ]
+                    }
+                } else {
+                    kMethod.selected = true
+                    kMethod.parameters.forEach[ kparam, i |
+                        val jdtparam = jdtMethod.parameters.get(i)
+                        kparam.name = jdtparam.elementName
+                        jdtType.resolveReference(kparam, classModel, typeFunc)
+                    ]
+                }
+                extractMethodData(kMethod, jdtMethod, jdtType, classModel, typeFunc)
+            }
+        }
+        
         return classModel
     }
     
@@ -113,45 +199,22 @@ class JdtModelTransformation {
             classModel.packages += kPackage
         }
         
+        val typeFunc = [ IType type |
+                if (selectedTypes.contains(type)) {
+                    createType(type, classModel)
+                }
+            ]
+        
         // Extract type data.
         kPackage.types += kType
         kType.name = jdtType.elementName;
-        kType.visibility = jdtType.flags.visibility
-        val typeHierarchy = jdtType.newSupertypeHierarchy(new NullProgressMonitor)
-        if (kType instanceof KClass) {
-            val kClazz = kType as KClass
-            if (Flags.isAbstract(jdtType.flags)) {
-                kClazz.abstract = true;
-            }
-            if (jdtType.superclassName != null) {
-                val superClazz = typeHierarchy.getSuperclass(jdtType)
-                if (superClazz != null && selectedTypes.contains(superClazz)) {
-                    kClazz.superClass = createType(superClazz, classModel) as KClass
-                }
-            }
-            for (superInterface : typeHierarchy.getSuperInterfaces(jdtType)) {
-                if (selectedTypes.contains(superInterface)) {
-                    kClazz.interfaces += createType(superInterface, classModel) as KInterface
-                }
-            }
-        } else if (kType instanceof KInterface) {
-            val kInterface = kType as KInterface
-            for (superInterface : typeHierarchy.getSuperInterfaces(jdtType)) {
-                if (selectedTypes.contains(superInterface)) {
-                    kInterface.superInterfaces += createType(superInterface, classModel) as KInterface
-                }
-            }
-        }
+        extractTypeData(kType, jdtType, typeFunc)
         
         // Extract field data.
         for (jdtField : jdtType.fields) {
             val kField = ClassdataFactory.eINSTANCE.createKField()
             kField.name = jdtField.elementName
-            kField.type = ClassdataFactory.eINSTANCE.createKTypeReference() => [ tr |
-                tr.signature = Signature.toString(jdtField.typeSignature)
-                jdtType.resolveReference(tr, classModel)
-            ]
-            kField.visibility = jdtField.flags.visibility
+            extractFieldData(kField, jdtField, jdtType, classModel, typeFunc)
             kType.fields += kField
         }
         
@@ -163,14 +226,10 @@ class JdtModelTransformation {
                 kMethod.parameters += ClassdataFactory.eINSTANCE.createKTypeReference => [ tr |
                     tr.name = param.elementName
                     tr.signature = Signature.toString(param.typeSignature)
-                    jdtType.resolveReference(tr, classModel)
+                    jdtType.resolveReference(tr, classModel, typeFunc)
                 ]
             }
-            kMethod.returnType = ClassdataFactory.eINSTANCE.createKTypeReference => [ tr |
-                tr.signature = Signature.toString(jdtMethod.returnType)
-                jdtType.resolveReference(tr, classModel)
-            ]
-            kMethod.visibility = jdtMethod.flags.visibility
+            extractMethodData(kMethod, jdtMethod, jdtType, classModel, typeFunc)
             kType.methods += kMethod
         }
     }
@@ -209,7 +268,7 @@ class JdtModelTransformation {
         val packageName = jdtType.packageFragment.elementName
         classModel.packages.findFirst[p | p.name == packageName]
             ?.types?.findFirst[t | t.name == jdtType.elementName]
-            ?.methods?.findFirst[f | jdtMethod.equalSignature(f)]
+            ?.methods?.findFirst[m | jdtMethod.equalSignature(m)]
     }
     
     /**
@@ -228,16 +287,91 @@ class JdtModelTransformation {
     }
     
     /**
+     * Extract data on the given JDT type into the KType instance.
+     */
+    def private extractTypeData(KType kType, IType jdtType, (IType)=>KType typeFunc) {
+        kType.visibility = jdtType.flags.visibility
+        kType.static = Flags.isStatic(jdtType.flags)
+        val typeHierarchy = jdtType.newSupertypeHierarchy(new NullProgressMonitor)
+        if (kType instanceof KClass) {
+            val kClazz = kType as KClass
+            kClazz.final = Flags.isFinal(jdtType.flags)
+            kClazz.abstract = Flags.isAbstract(jdtType.flags)
+            if (jdtType.superclassName != null) {
+                val superClazz = typeHierarchy.getSuperclass(jdtType)
+                if (superClazz != null) {
+                    kClazz.superClass = typeFunc.apply(superClazz) as KClass
+                }
+            }
+            for (superInterface : typeHierarchy.getSuperInterfaces(jdtType)) {
+                val kInterface = typeFunc.apply(superInterface) as KInterface
+                if (kInterface != null) {
+                    kClazz.interfaces += kInterface
+                }
+            }
+        } else if (kType instanceof KInterface) {
+            val kInterface = kType as KInterface
+            for (superInterface : typeHierarchy.getSuperInterfaces(jdtType)) {
+                val kSuperInterface = typeFunc.apply(superInterface) as KInterface
+                if (kSuperInterface != null) {
+                    kInterface.superInterfaces += kSuperInterface
+                }
+            }
+        }
+    }
+    
+    /**
+     * Extract data on the given JDT field into the KField instance
+     */
+    def private extractFieldData(KField kField, IField jdtField, IType jdtType,
+            KClassModel classModel, (IType)=>KType typeFunc) {
+        kField.type = ClassdataFactory.eINSTANCE.createKTypeReference() => [ tr |
+            tr.signature = Signature.toString(jdtField.typeSignature)
+            jdtType.resolveReference(tr, classModel, typeFunc)
+        ]
+        if (jdtType.isInterface) {
+            kField.visibility = KVisibility::PUBLIC
+            kField.static = true
+            kField.final = true
+        } else {
+            kField.visibility = jdtField.flags.visibility
+            kField.static = Flags.isStatic(jdtField.flags)
+            kField.final = Flags.isFinal(jdtField.flags)
+        }
+    }
+    
+    /**
+     * Extract data on the given JDT method into the KMethod instance.
+     */
+    def private extractMethodData(KMethod kMethod, IMethod jdtMethod, IType jdtType,
+            KClassModel classModel, (IType)=>KType typeFunc) {
+        kMethod.returnType = ClassdataFactory.eINSTANCE.createKTypeReference => [ tr |
+            tr.signature = Signature.toString(jdtMethod.returnType)
+            jdtType.resolveReference(tr, classModel, typeFunc)
+        ]
+        if (jdtType.isInterface) {
+            kMethod.visibility = KVisibility::PUBLIC
+            kMethod.abstract = true
+        } else {
+            kMethod.visibility = jdtMethod.flags.visibility
+            kMethod.static = Flags.isStatic(jdtMethod.flags)
+            kMethod.final = Flags.isFinal(jdtMethod.flags)
+            kMethod.abstract = Flags.isAbstract(jdtMethod.flags)
+        }
+    }
+    
+    /**
      * Resolve the given type reference: make its signature qualified, create a type cross reference,
      * and find type arguments.
      */
-    def private resolveReference(IType jdtType, KTypeReference typeRef, KClassModel classModel) {
+    def private resolveReference(IType jdtType, KTypeReference typeRef, KClassModel classModel,
+            (IType)=>KType typeFunc) {
         val res = jdtType.resolveType(typeRef.signature)
         if (!res.nullOrEmpty) {
             val qualifiedName = res.get(0).get(0) + "." + res.get(0).get(1)
             val referencedType = jdtType.javaProject.findType(qualifiedName)
-            if (referencedType != null && selectedTypes.contains(referencedType)) {
-                typeRef.referenceType = createType(referencedType, classModel)
+            if (referencedType != null) {
+                typeRef.referenceType = typeFunc.apply(referencedType)
             }
             if (!typeRef.signature.startsWith(res.get(0).get(0))) {
                 typeRef.signature = res.get(0).get(0) + "." + typeRef.signature

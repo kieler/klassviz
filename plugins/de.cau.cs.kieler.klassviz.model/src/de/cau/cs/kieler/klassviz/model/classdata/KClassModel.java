@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getJavaProjects <em>Java Projects</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getBundles <em>Bundles</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getPackages <em>Packages</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#isResolved <em>Resolved</em>}</li>
  * </ul>
  * </p>
  *
@@ -83,5 +84,32 @@ public interface KClassModel extends EObject {
      * @generated
      */
     EList<KPackage> getPackages();
+
+    /**
+     * Returns the value of the '<em><b>Resolved</b></em>' attribute.
+     * The default value is <code>"false"</code>.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Resolved</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Resolved</em>' attribute.
+     * @see #setResolved(boolean)
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKClassModel_Resolved()
+     * @model default="false"
+     * @generated
+     */
+    boolean isResolved();
+
+    /**
+     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#isResolved <em>Resolved</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Resolved</em>' attribute.
+     * @see #isResolved()
+     * @generated
+     */
+    void setResolved(boolean value);
 
 } // KClassModel
