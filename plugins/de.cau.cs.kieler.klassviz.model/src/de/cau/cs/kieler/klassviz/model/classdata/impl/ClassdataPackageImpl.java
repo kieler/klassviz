@@ -572,24 +572,6 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getKTypeReference_TypeArguments() {
-        return (EAttribute)kTypeReferenceEClass.getEStructuralFeatures().get(3);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EAttribute getKTypeReference_ArrayDepth() {
-        return (EAttribute)kTypeReferenceEClass.getEStructuralFeatures().get(4);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EEnum getKVisibility() {
         return kVisibilityEEnum;
     }
@@ -674,8 +656,6 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
         createEAttribute(kTypeReferenceEClass, KTYPE_REFERENCE__NAME);
         createEAttribute(kTypeReferenceEClass, KTYPE_REFERENCE__SIGNATURE);
         createEReference(kTypeReferenceEClass, KTYPE_REFERENCE__REFERENCE_TYPE);
-        createEAttribute(kTypeReferenceEClass, KTYPE_REFERENCE__TYPE_ARGUMENTS);
-        createEAttribute(kTypeReferenceEClass, KTYPE_REFERENCE__ARRAY_DEPTH);
 
         // Create enums
         kVisibilityEEnum = createEEnum(KVISIBILITY);
@@ -768,8 +748,6 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
         initEAttribute(getKTypeReference_Name(), ecorePackage.getEString(), "name", null, 0, 1, KTypeReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getKTypeReference_Signature(), ecorePackage.getEString(), "signature", null, 0, 1, KTypeReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getKTypeReference_ReferenceType(), this.getKType(), null, "referenceType", null, 0, 1, KTypeReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getKTypeReference_TypeArguments(), ecorePackage.getEString(), "typeArguments", null, 0, -1, KTypeReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getKTypeReference_ArrayDepth(), ecorePackage.getEInt(), "arrayDepth", "0", 0, 1, KTypeReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Initialize enums and add enum literals
         initEEnum(kVisibilityEEnum, KVisibility.class, "KVisibility");

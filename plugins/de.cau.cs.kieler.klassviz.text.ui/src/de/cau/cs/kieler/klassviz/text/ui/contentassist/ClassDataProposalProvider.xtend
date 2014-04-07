@@ -225,7 +225,7 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
             val clazz = classModel.getBundleClass(type)
             if (clazz != null) {
                 // get the proposals from a reflection class
-                for (field : clazz.fields.filter[f | f.declaringClass == clazz
+                for (field : clazz.fields.filter[f | f.declaringClass == clazz && !f.synthetic
                         && type.fields.forall[it.name != f.name]]) {
                     acceptor.accept(createCompletionProposal(field.name, context))
                 }
@@ -256,7 +256,7 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
             val clazz = classModel.getBundleClass(type)
             if (clazz != null) {
                 // get the proposals from a reflection class
-                for (method : clazz.methods.filter[m | m.declaringClass == clazz]) {
+                for (method : clazz.methods.filter[m | m.declaringClass == clazz && !m.synthetic]) {
                     val paramTypeSign = method.parameterTypes.map[t | t.simpleName].toList
                     if (type.methods.forall[it.name != method.name
                             || !it.parameters.map[s | s.signature].equals(paramTypeSign)]) {

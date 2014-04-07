@@ -73,6 +73,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     @Inject extension KRenderingExtensions
     
     @Inject JdtModelTransformation jdtModelTransformation
+    @Inject JavaReflectionTransformation javaReflectionTransformation
     
     
     ////////////////////////////////////////////////////////////////////////////////////////
@@ -195,6 +196,11 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 try {
                     jdtModelTransformation.resolve(m)
                 } catch (JavaModelException exception) {
+                    // schade :-(
+                }
+                try {
+                    javaReflectionTransformation.resolve(m)
+                } catch (SecurityException exception) {
                     // schade :-(
                 }
             } else input
@@ -370,8 +376,12 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     // Check if field has an association-dependency.
     // A field has dependency when it's type equals one of the visualized classes
     // or a generic parameter type equals one of the visualized classes. 
-    def private Maybe<Boolean> create fieldHasDependency : new Maybe<Boolean>(false)
+    def private create fieldHasDependency : new Maybe<Boolean>(false)
             hasDependency(KType classData, KClassModel classModel, KField eField) {
+        if (eField.type.referenceType != null) {
+            fieldHasDependency.set(true)
+            return
+        }
         val genericStart = eField.type.signature.indexOf('<')
         val fieldTypeFQN = if (genericStart < 0)
             eField.type.signature
@@ -398,13 +408,6 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                     ]
                 ])
             }
-        } else {
-            fieldHasDependency.set(classModel.packages.exists [ pck |
-                pck.types.exists [ classDataToBeCompared |
-                    fieldTypeFQN == classDataToBeCompared.name
-                    || fieldTypeFQN == classDataToBeCompared.qualifiedName
-                ]
-            ])
         }
     }
 
@@ -487,7 +490,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                             ]
                         }
                     }
-                    if (fieldTypeFQN == classDataToBeCompared.qualifiedName) {
+                    if (eField.type.referenceType == classDataToBeCompared) {
 
                         // If the field's type is the checked class, 
                         // set the increment the lower bound of the multiplicity.
@@ -544,17 +547,21 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
         val parameters = newLinkedList();
         if (METHODS_PARAMETERS.booleanValue) {
             method.parameters.forEach [ parameter |
-                if (METHODS_TYPE.booleanValue) {
-                    parameters += parameter.name + " : " + Signature.getSimpleName(parameter.signature)
+                if (parameter.name != null) {
+                    if (METHODS_TYPE.booleanValue) {
+                        parameters += parameter.name + " : " + Signature.getSimpleName(parameter.signature)
+                    } else {
+                        parameters += parameter.name
+                    }
                 } else {
-                    parameters += parameter.name
+                    parameters += Signature.getSimpleName(parameter.signature)
                 }
             ]
         }
         
         // Return type
         val String methodReturnType =
-            if (METHODS_TYPE.booleanValue) {
+            if (METHODS_TYPE.booleanValue && method.returnType.signature != null) {
                 " : " + Signature.getSimpleName(method.returnType.signature)
             } else {
                 ""

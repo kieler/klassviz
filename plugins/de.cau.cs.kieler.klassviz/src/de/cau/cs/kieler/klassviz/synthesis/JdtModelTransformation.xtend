@@ -49,8 +49,7 @@ import org.eclipse.jface.viewers.IStructuredSelection
  */
 class JdtModelTransformation {
     
-    @Inject
-    extension ClassDataExtensions
+    @Inject extension ClassDataExtensions
 
     /** The types contained in the current selection. */
     private final Set<IType> selectedTypes = new HashSet<IType>
@@ -147,7 +146,7 @@ class JdtModelTransformation {
                 } else {
                     kField.selected = true
                 }
-                extractFieldData(kField, jdtField, jdtType, classModel, typeFunc)
+                extractFieldData(kField, jdtField, jdtType, typeFunc)
             }
             
             // Extract method data.
@@ -161,7 +160,7 @@ class JdtModelTransformation {
                         kMethod.parameters += ClassdataFactory.eINSTANCE.createKTypeReference => [ tr |
                             tr.name = jdtparam.elementName
                             tr.signature = Signature.toString(jdtparam.typeSignature)
-                            jdtType.resolveReference(tr, classModel, typeFunc)
+                            jdtType.resolveReference(tr, typeFunc)
                         ]
                     }
                 } else {
@@ -169,10 +168,10 @@ class JdtModelTransformation {
                     kMethod.parameters.forEach[ kparam, i |
                         val jdtparam = jdtMethod.parameters.get(i)
                         kparam.name = jdtparam.elementName
-                        jdtType.resolveReference(kparam, classModel, typeFunc)
+                        jdtType.resolveReference(kparam, typeFunc)
                     ]
                 }
-                extractMethodData(kMethod, jdtMethod, jdtType, classModel, typeFunc)
+                extractMethodData(kMethod, jdtMethod, jdtType, typeFunc)
             }
         }
         
@@ -214,7 +213,7 @@ class JdtModelTransformation {
         for (jdtField : jdtType.fields) {
             val kField = ClassdataFactory.eINSTANCE.createKField()
             kField.name = jdtField.elementName
-            extractFieldData(kField, jdtField, jdtType, classModel, typeFunc)
+            extractFieldData(kField, jdtField, jdtType, typeFunc)
             kType.fields += kField
         }
         
@@ -226,10 +225,10 @@ class JdtModelTransformation {
                 kMethod.parameters += ClassdataFactory.eINSTANCE.createKTypeReference => [ tr |
                     tr.name = param.elementName
                     tr.signature = Signature.toString(param.typeSignature)
-                    jdtType.resolveReference(tr, classModel, typeFunc)
+                    jdtType.resolveReference(tr, typeFunc)
                 ]
             }
-            extractMethodData(kMethod, jdtMethod, jdtType, classModel, typeFunc)
+            extractMethodData(kMethod, jdtMethod, jdtType, typeFunc)
             kType.methods += kMethod
         }
     }
@@ -272,21 +271,6 @@ class JdtModelTransformation {
     }
     
     /**
-     * Determine the visibility of the given type flags.
-     */
-    def private KVisibility getVisibility(int flags) {
-        if (Flags.isPublic(flags)) {
-            KVisibility::PUBLIC
-        } else if (Flags.isProtected(flags)) {
-            KVisibility::PROTECTED
-        } else if (Flags.isPrivate(flags)) {
-            KVisibility::PRIVATE
-        } else {
-            KVisibility::PACKAGE
-        }
-    }
-    
-    /**
      * Extract data on the given JDT type into the KType instance.
      */
     def private extractTypeData(KType kType, IType jdtType, (IType)=>KType typeFunc) {
@@ -324,10 +308,10 @@ class JdtModelTransformation {
      * Extract data on the given JDT field into the KField instance
      */
     def private extractFieldData(KField kField, IField jdtField, IType jdtType,
-            KClassModel classModel, (IType)=>KType typeFunc) {
+            (IType)=>KType typeFunc) {
         kField.type = ClassdataFactory.eINSTANCE.createKTypeReference() => [ tr |
             tr.signature = Signature.toString(jdtField.typeSignature)
-            jdtType.resolveReference(tr, classModel, typeFunc)
+            jdtType.resolveReference(tr, typeFunc)
         ]
         if (jdtType.isInterface) {
             kField.visibility = KVisibility::PUBLIC
@@ -344,10 +328,10 @@ class JdtModelTransformation {
      * Extract data on the given JDT method into the KMethod instance.
      */
     def private extractMethodData(KMethod kMethod, IMethod jdtMethod, IType jdtType,
-            KClassModel classModel, (IType)=>KType typeFunc) {
+            (IType)=>KType typeFunc) {
         kMethod.returnType = ClassdataFactory.eINSTANCE.createKTypeReference => [ tr |
             tr.signature = Signature.toString(jdtMethod.returnType)
-            jdtType.resolveReference(tr, classModel, typeFunc)
+            jdtType.resolveReference(tr, typeFunc)
         ]
         if (jdtType.isInterface) {
             kMethod.visibility = KVisibility::PUBLIC
@@ -361,11 +345,9 @@ class JdtModelTransformation {
     }
     
     /**
-     * Resolve the given type reference: make its signature qualified, create a type cross reference,
-     * and find type arguments.
+     * Resolve the given type reference: make its signature qualified and create a type cross reference.
      */
-    def private resolveReference(IType jdtType, KTypeReference typeRef, KClassModel classModel,
-            (IType)=>KType typeFunc) {
+    def private resolveReference(IType jdtType, KTypeReference typeRef, (IType)=>KType typeFunc) {
         val res = jdtType.resolveType(typeRef.signature)
         if (!res.nullOrEmpty) {
             val qualifiedName = res.get(0).get(0) + "." + res.get(0).get(1)
@@ -375,13 +357,6 @@ class JdtModelTransformation {
             }
             if (!typeRef.signature.startsWith(res.get(0).get(0))) {
                 typeRef.signature = res.get(0).get(0) + "." + typeRef.signature
-            }
-        }
-        val genericStart = typeRef.signature.indexOf('<')
-        val genericEnd = typeRef.signature.lastIndexOf('>')
-        if (genericStart > 0 && genericEnd > 0) {
-            for (token : typeRef.signature.substring(genericStart + 1, genericEnd).split(",")) {
-                typeRef.typeArguments += token.trim
             }
         }
     }

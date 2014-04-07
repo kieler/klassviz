@@ -907,31 +907,13 @@ public interface ClassdataPackage extends EPackage {
     int KTYPE_REFERENCE__REFERENCE_TYPE = 2;
 
     /**
-     * The feature id for the '<em><b>Type Arguments</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int KTYPE_REFERENCE__TYPE_ARGUMENTS = 3;
-
-    /**
-     * The feature id for the '<em><b>Array Depth</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int KTYPE_REFERENCE__ARRAY_DEPTH = 4;
-
-    /**
      * The number of structural features of the '<em>KType Reference</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int KTYPE_REFERENCE_FEATURE_COUNT = 5;
+    int KTYPE_REFERENCE_FEATURE_COUNT = 3;
 
     /**
      * The number of operations of the '<em>KType Reference</em>' class.
@@ -1418,28 +1400,6 @@ public interface ClassdataPackage extends EPackage {
     EReference getKTypeReference_ReferenceType();
 
     /**
-     * Returns the meta object for the attribute list '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getTypeArguments <em>Type Arguments</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Type Arguments</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getTypeArguments()
-     * @see #getKTypeReference()
-     * @generated
-     */
-    EAttribute getKTypeReference_TypeArguments();
-
-    /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getArrayDepth <em>Array Depth</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Array Depth</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getArrayDepth()
-     * @see #getKTypeReference()
-     * @generated
-     */
-    EAttribute getKTypeReference_ArrayDepth();
-
-    /**
      * Returns the meta object for enum '{@link de.cau.cs.kieler.klassviz.model.classdata.KVisibility <em>KVisibility</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1835,22 +1795,6 @@ public interface ClassdataPackage extends EPackage {
          * @generated
          */
         EReference KTYPE_REFERENCE__REFERENCE_TYPE = eINSTANCE.getKTypeReference_ReferenceType();
-
-        /**
-         * The meta object literal for the '<em><b>Type Arguments</b></em>' attribute list feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute KTYPE_REFERENCE__TYPE_ARGUMENTS = eINSTANCE.getKTypeReference_TypeArguments();
-
-        /**
-         * The meta object literal for the '<em><b>Array Depth</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         * @generated
-         */
-        EAttribute KTYPE_REFERENCE__ARRAY_DEPTH = eINSTANCE.getKTypeReference_ArrayDepth();
 
         /**
          * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.KVisibility <em>KVisibility</em>}' enum.

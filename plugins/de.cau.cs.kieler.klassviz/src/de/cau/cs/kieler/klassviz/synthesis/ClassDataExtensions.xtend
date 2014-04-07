@@ -27,6 +27,9 @@ import org.eclipse.jdt.core.IType
 import org.eclipse.jdt.core.JavaCore
 import org.eclipse.jdt.core.Signature
 import org.osgi.framework.wiring.BundleWiring
+import de.cau.cs.kieler.klassviz.model.classdata.KVisibility
+import org.eclipse.jdt.core.Flags
+import java.lang.reflect.Method
 
 /**
  * @author msp
@@ -149,6 +152,41 @@ class ClassDataExtensions {
             i = i + 1
         }
         return true
+    }
+    
+    /**
+     * Determine whether the signature of the given Java method equals that of the KMethod.
+     */
+    def boolean equalSignature(Method method, KMethod kMethod) {
+        if (method.name != kMethod.name
+                || method.parameterTypes.length != kMethod.parameters.size) {
+            return false
+        }
+        var int i = 0
+        while (i < method.parameterTypes.length) {
+            val clazz = method.parameterTypes.get(i)
+            val kSignature = kMethod.parameters.get(i).signature
+            if (clazz.simpleName != kSignature && clazz.name != kSignature) {
+                return false
+            }
+            i = i + 1
+        }
+        return true
+    }
+    
+    /**
+     * Determine the visibility of the given type flags.
+     */
+    def KVisibility getVisibility(int flags) {
+        if (Flags.isPublic(flags)) {
+            KVisibility::PUBLIC
+        } else if (Flags.isProtected(flags)) {
+            KVisibility::PROTECTED
+        } else if (Flags.isPrivate(flags)) {
+            KVisibility::PRIVATE
+        } else {
+            KVisibility::PACKAGE
+        }
     }
     
 }

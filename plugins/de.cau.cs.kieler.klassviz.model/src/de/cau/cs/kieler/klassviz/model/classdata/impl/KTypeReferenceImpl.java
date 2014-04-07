@@ -16,20 +16,11 @@ package de.cau.cs.kieler.klassviz.model.classdata.impl;
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage;
 import de.cau.cs.kieler.klassviz.model.classdata.KType;
 import de.cau.cs.kieler.klassviz.model.classdata.KTypeReference;
-
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,8 +32,6 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeReferenceImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeReferenceImpl#getSignature <em>Signature</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeReferenceImpl#getReferenceType <em>Reference Type</em>}</li>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeReferenceImpl#getTypeArguments <em>Type Arguments</em>}</li>
- *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeReferenceImpl#getArrayDepth <em>Array Depth</em>}</li>
  * </ul>
  * </p>
  *
@@ -98,36 +87,6 @@ public class KTypeReferenceImpl extends MinimalEObjectImpl.Container implements 
      * @ordered
      */
     protected KType referenceType;
-
-    /**
-     * The cached value of the '{@link #getTypeArguments() <em>Type Arguments</em>}' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getTypeArguments()
-     * @generated
-     * @ordered
-     */
-    protected EList<String> typeArguments;
-
-    /**
-     * The default value of the '{@link #getArrayDepth() <em>Array Depth</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getArrayDepth()
-     * @generated
-     * @ordered
-     */
-    protected static final int ARRAY_DEPTH_EDEFAULT = 0;
-
-    /**
-     * The cached value of the '{@link #getArrayDepth() <em>Array Depth</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getArrayDepth()
-     * @generated
-     * @ordered
-     */
-    protected int arrayDepth = ARRAY_DEPTH_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -233,39 +192,6 @@ public class KTypeReferenceImpl extends MinimalEObjectImpl.Container implements 
      * <!-- end-user-doc -->
      * @generated
      */
-    public EList<String> getTypeArguments() {
-        if (typeArguments == null) {
-            typeArguments = new EDataTypeUniqueEList<String>(String.class, this, ClassdataPackage.KTYPE_REFERENCE__TYPE_ARGUMENTS);
-        }
-        return typeArguments;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public int getArrayDepth() {
-        return arrayDepth;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setArrayDepth(int newArrayDepth) {
-        int oldArrayDepth = arrayDepth;
-        arrayDepth = newArrayDepth;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KTYPE_REFERENCE__ARRAY_DEPTH, oldArrayDepth, arrayDepth));
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
@@ -276,10 +202,6 @@ public class KTypeReferenceImpl extends MinimalEObjectImpl.Container implements 
             case ClassdataPackage.KTYPE_REFERENCE__REFERENCE_TYPE:
                 if (resolve) return getReferenceType();
                 return basicGetReferenceType();
-            case ClassdataPackage.KTYPE_REFERENCE__TYPE_ARGUMENTS:
-                return getTypeArguments();
-            case ClassdataPackage.KTYPE_REFERENCE__ARRAY_DEPTH:
-                return getArrayDepth();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -302,13 +224,6 @@ public class KTypeReferenceImpl extends MinimalEObjectImpl.Container implements 
             case ClassdataPackage.KTYPE_REFERENCE__REFERENCE_TYPE:
                 setReferenceType((KType)newValue);
                 return;
-            case ClassdataPackage.KTYPE_REFERENCE__TYPE_ARGUMENTS:
-                getTypeArguments().clear();
-                getTypeArguments().addAll((Collection<? extends String>)newValue);
-                return;
-            case ClassdataPackage.KTYPE_REFERENCE__ARRAY_DEPTH:
-                setArrayDepth((Integer)newValue);
-                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -330,12 +245,6 @@ public class KTypeReferenceImpl extends MinimalEObjectImpl.Container implements 
             case ClassdataPackage.KTYPE_REFERENCE__REFERENCE_TYPE:
                 setReferenceType((KType)null);
                 return;
-            case ClassdataPackage.KTYPE_REFERENCE__TYPE_ARGUMENTS:
-                getTypeArguments().clear();
-                return;
-            case ClassdataPackage.KTYPE_REFERENCE__ARRAY_DEPTH:
-                setArrayDepth(ARRAY_DEPTH_EDEFAULT);
-                return;
         }
         super.eUnset(featureID);
     }
@@ -354,10 +263,6 @@ public class KTypeReferenceImpl extends MinimalEObjectImpl.Container implements 
                 return SIGNATURE_EDEFAULT == null ? signature != null : !SIGNATURE_EDEFAULT.equals(signature);
             case ClassdataPackage.KTYPE_REFERENCE__REFERENCE_TYPE:
                 return referenceType != null;
-            case ClassdataPackage.KTYPE_REFERENCE__TYPE_ARGUMENTS:
-                return typeArguments != null && !typeArguments.isEmpty();
-            case ClassdataPackage.KTYPE_REFERENCE__ARRAY_DEPTH:
-                return arrayDepth != ARRAY_DEPTH_EDEFAULT;
         }
         return super.eIsSet(featureID);
     }
@@ -376,10 +281,6 @@ public class KTypeReferenceImpl extends MinimalEObjectImpl.Container implements 
         result.append(name);
         result.append(", signature: ");
         result.append(signature);
-        result.append(", typeArguments: ");
-        result.append(typeArguments);
-        result.append(", arrayDepth: ");
-        result.append(arrayDepth);
         result.append(')');
         return result.toString();
     }
