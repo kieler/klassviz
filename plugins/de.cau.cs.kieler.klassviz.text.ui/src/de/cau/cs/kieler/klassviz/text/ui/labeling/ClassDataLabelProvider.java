@@ -15,25 +15,30 @@ package de.cau.cs.kieler.klassviz.text.ui.labeling;
 
 import com.google.inject.Inject;
 
+import de.cau.cs.kieler.klassviz.model.classdata.KOption;
+
 /**
  * Provides labels for a EObjects.
  * 
- * see http://www.eclipse.org/Xtext/documentation.html#labelProvider
+ * @see http://www.eclipse.org/Xtext/documentation.html#labelProvider
+ * @author msp
  */
 public class ClassDataLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider {
 
-	@Inject
-	public ClassDataLabelProvider(org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider delegate) {
-		super(delegate);
-	}
+    @Inject
+    public ClassDataLabelProvider(
+            org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider delegate) {
+        super(delegate);
+    }
+    
+    /**
+     * The label of KOptions.
+     * 
+     * @param option an option
+     * @return the corresponding label
+     */
+    public String text(KOption option) {
+        return option.getKey() + " = " + option.getValue();
+    }
 
-	// Labels and icons can be computed like this:
-	
-//	String text(Greeting ele) {
-//		return "A greeting to " + ele.getName();
-//	}
-//
-//	String image(Greeting ele) {
-//		return "Greeting.gif";
-//	}
 }

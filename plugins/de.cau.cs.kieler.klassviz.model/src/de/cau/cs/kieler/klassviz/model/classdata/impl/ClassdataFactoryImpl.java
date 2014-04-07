@@ -69,6 +69,7 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
     public EObject create(EClass eClass) {
         switch (eClass.getClassifierID()) {
             case ClassdataPackage.KCLASS_MODEL: return createKClassModel();
+            case ClassdataPackage.KOPTION: return createKOption();
             case ClassdataPackage.KPACKAGE: return createKPackage();
             case ClassdataPackage.KCLASS: return createKClass();
             case ClassdataPackage.KINTERFACE: return createKInterface();
@@ -119,6 +120,16 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
     public KClassModel createKClassModel() {
         KClassModelImpl kClassModel = new KClassModelImpl();
         return kClassModel;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public KOption createKOption() {
+        KOptionImpl kOption = new KOptionImpl();
+        return kOption;
     }
 
     /**

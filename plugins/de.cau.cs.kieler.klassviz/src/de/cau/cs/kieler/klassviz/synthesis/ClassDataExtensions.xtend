@@ -30,6 +30,11 @@ import org.osgi.framework.wiring.BundleWiring
 import de.cau.cs.kieler.klassviz.model.classdata.KVisibility
 import org.eclipse.jdt.core.Flags
 import java.lang.reflect.Method
+import java.lang.reflect.Member
+import java.lang.reflect.ParameterizedType
+import java.lang.reflect.TypeVariable
+import java.lang.reflect.GenericArrayType
+import java.lang.reflect.WildcardType
 
 /**
  * @author msp
@@ -187,6 +192,74 @@ class ClassDataExtensions {
         } else {
             KVisibility::PACKAGE
         }
+    }
+    
+    /**
+     * Determine whether the given member is declared static.
+     */
+    def isStatic(Member member) {
+        Flags.isStatic(member.modifiers)
+    }
+    
+    /**
+     * Determine whether the given member is declared static.
+     */
+    def isFinal(Member member) {
+        Flags.isFinal(member.modifiers)
+    }
+    
+    /**
+     * Determine whether the given member is declared static.
+     */
+    def isAbstract(Member member) {
+        Flags.isAbstract(member.modifiers)
+    }
+    
+    /**
+     * Compute a signature for the given parameterized type.
+     */
+    def dispatch CharSequence getSignature(ParameterizedType type) {
+        '''«IF type.ownerType != null
+            »«type.ownerType.signature».«
+        ENDIF»«
+        type.rawType.signature
+        »«IF type.actualTypeArguments.length > 0
+            »<«type.actualTypeArguments.map[it.signature].join(", ")»>«
+        ENDIF»'''
+    }
+    
+    /**
+     * Compute a signature for the given wildcard type.
+     */
+    def dispatch CharSequence getSignature(WildcardType type) {
+        '''?«IF type.lowerBounds.length > 0
+            » super «type.lowerBounds.map[it.signature].join(" | ")»«
+        ENDIF»«IF type.upperBounds.length > 0
+            » extends «type.upperBounds.map[it.signature].join(" | ")»«
+        ENDIF»'''
+    }
+    
+    /**
+     * Compute a signature for the given generic array type.
+     */
+    def dispatch CharSequence getSignature(GenericArrayType type) {
+        '''«type.genericComponentType.signature»[]'''
+    }
+    
+    /**
+     * Compute a signature for the given type variable.
+     */
+    def dispatch CharSequence getSignature(TypeVariable<?> typeVariable) {
+        '''«typeVariable.name»«IF typeVariable.bounds.length > 0
+            » extends «typeVariable.bounds.map[it.signature].join(" | ")»«
+        ENDIF»'''
+    }
+    
+    /**
+     * Compute a signature for the given class or interface.
+     */
+    def dispatch CharSequence getSignature(Class<?> clazz) {
+        clazz.name
     }
     
 }

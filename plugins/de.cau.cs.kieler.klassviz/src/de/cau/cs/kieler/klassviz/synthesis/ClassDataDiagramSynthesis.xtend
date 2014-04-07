@@ -28,7 +28,12 @@ import de.cau.cs.kieler.core.krendering.extensions.KLabelExtensions
 import de.cau.cs.kieler.core.krendering.extensions.KNodeExtensions
 import de.cau.cs.kieler.core.krendering.extensions.KPolylineExtensions
 import de.cau.cs.kieler.core.krendering.extensions.KRenderingExtensions
+import de.cau.cs.kieler.core.properties.IProperty
+import de.cau.cs.kieler.core.properties.MapPropertyHolder
+import de.cau.cs.kieler.core.properties.Property
 import de.cau.cs.kieler.core.util.Maybe
+import de.cau.cs.kieler.kiml.LayoutMetaDataService
+import de.cau.cs.kieler.kiml.klayoutdata.KShapeLayout
 import de.cau.cs.kieler.kiml.options.Direction
 import de.cau.cs.kieler.kiml.options.EdgeRouting
 import de.cau.cs.kieler.kiml.options.LayoutOptions
@@ -48,10 +53,10 @@ import java.util.ArrayList
 import java.util.Collection
 import java.util.List
 import java.util.Map
-import org.eclipse.jdt.core.Signature
-import org.eclipse.xtext.xbase.lib.Pair
 import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.jdt.core.JavaModelException
+import org.eclipse.jdt.core.Signature
+import org.eclipse.xtext.xbase.lib.Pair
 
 /**
  * Synthesis of class diagrams using the Classdata meta model.
@@ -87,24 +92,6 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     private static val CLASS_NODE_INSETS = 5
     /** Amount of space to be left between the elements of a class node. */
     private static val CLASS_NODE_PADDING = 5
-    /** Amount of space to be left between icons and text. */
-    private static val ICON_PADDING = 5
-    /** Start color of the background gradient for classes. */
-    private static val CLASS_BACKGROUND_1 = "#F8F9FD"
-    /** End color of the background gradient for classes. */
-    private static val CLASS_BACKGROUND_2 = "#CDDCF3"
-    /** Start color of the background gradient for abstract classes. */
-    private static val ABSTRACT_CLASS_BACKGROUND_1 = "#F8F9FD"
-    /** End color of the background gradient for abstract classes. */
-    private static val ABSTRACT_CLASS_BACKGROUND_2 = "#CDDCF3"
-    /** Start color of the background gradient for interfaces. */
-    private static val INTERFACE_BACKGROUND_1 = "#FEFFE8"
-    /** End color of the background gradient for interfaces. */
-    private static val INTERFACE_BACKGROUND_2 = "#dadbb5"
-    /** Start color of the background gradient for enumerations. */
-    private static val ENUM_BACKGROUND_1 = "#dfffea"
-    /** End color of the background gradient for enumerations. */
-    private static val ENUM_BACKGROUND_2 = "#badfc6"
     
     
     ////////////////////////////////////////////////////////////////////////////////////////
@@ -177,6 +164,70 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
         );
     }
     
+    /** Start color of the background gradient for classes. */
+    public static val OPTION_CLASS_COLOR1 = new Property("classdata.classColor1", "#f8f9fd")
+    /** End color of the background gradient for classes. */
+    public static val OPTION_CLASS_COLOR2 = new Property("classdata.classColor2", "#cddcf3")
+    /** Start color of the background gradient for abstract classes. */
+    public static val OPTION_ABSTRACT_CLASS_COLOR1 = new Property("classdata.abstractClassColor1", "#f8f9fd")
+    /** End color of the background gradient for abstract classes. */
+    public static val OPTION_ABSTRACT_CLASS_COLOR2 = new Property("classdata.abstractClassColor2", "#cddcf3")
+    /** Start color of the background gradient for interfaces. */
+    public static val OPTION_INTERFACE_COLOR1 = new Property("classdata.interfaceColor1", "#feffe8")
+    /** End color of the background gradient for interfaces. */
+    public static val OPTION_INTERFACE_COLOR2 = new Property("classdata.interfaceColor2", "#dadbb5")
+    /** Start color of the background gradient for enumerations. */
+    public static val OPTION_ENUM_COLOR1 = new Property("classdata.enumColor1", "#dfffea")
+    /** End color of the background gradient for enumerations. */
+    public static val OPTION_ENUM_COLOR2 = new Property("classdata.enumColor2", "#badfc6")
+    /** Whether to draw shadows of classes and interfaces. */
+    public static val OPTION_SHADOW = new Property("classdata.shadow", true)
+    /** The font name used for all text labels. */
+    public static val OPTION_FONT_NAME = new Property("classdata.fontName", "Sans")
+
+    /** The synthesis options passed with the class model instance. */
+    private val modelOptions = new MapPropertyHolder
+    
+    /**
+     * Evaluate synthesis options and layout options stored in the given class model.
+     */
+    def private evaluateOptions(KClassModel classModel, KNode rootNode) {
+        modelOptions.allProperties.clear
+        for (option : classModel.options.filter[key != null && value != null]) {
+            val property = getClass().fields.filter[
+                it.isStatic && typeof(IProperty).isAssignableFrom(it.type)
+            ].map[it.get(null) as IProperty<Object>].findFirst[it.id == option.key]
+            
+            if (property != null) {
+                // Parse a synthesis option
+                val value = switch (property.getDefault.class) {
+                    case Integer: {
+                        Integer.parseInt(option.value)
+                    }
+                    case Float: {
+                        Float.parseFloat(option.value)
+                    }
+                    case Boolean: {
+                        Boolean.parseBoolean(option.value)
+                    }
+                    default: {
+                        option.value
+                    }
+                }
+                modelOptions.setProperty(property, value)
+            } else {
+                // Parse a layout option
+                val optionData = LayoutMetaDataService.instance.getOptionDataBySuffix(option.key)
+                if (optionData != null) {
+                    val value = optionData.parseValue(option.value)
+                    if (value != null) {
+                        rootNode.getData(typeof(KShapeLayout)).setProperty(optionData, value)
+                    }
+                }
+            }
+        }
+    }
+    
     
     ////////////////////////////////////////////////////////////////////////////////////////
     // Transformation
@@ -206,6 +257,9 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
             } else input
         
         val classDiagramRoot = classModel.createNode().putToLookUpWith(classModel) => [ rootNode |
+            // evaluate the options stored in the class model
+            evaluateOptions(classModel, rootNode)
+        
             // If packages should be visualized get all package nodes and create each package including
             // their contents
             if (VISUALIZE_PACKAGES.booleanValue) {
@@ -295,9 +349,11 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
             it.addRoundedRectangle(5, 5) => [ rect |
                 rect.foreground = BORDER_COLOR.color
                 rect.configureBackground(classData)
-                rect.shadow = "black".color;
-                rect.shadow.XOffset = 4;
-                rect.shadow.YOffset = 4;
+                if (modelOptions.getProperty(OPTION_SHADOW)) {
+                    rect.shadow = "black".color;
+                    rect.shadow.XOffset = 4;
+                    rect.shadow.YOffset = 4;
+                }
                 rect.setGridPlacement(1)
                     .from(LEFT, CLASS_NODE_INSETS, 0, TOP, CLASS_NODE_INSETS, 0)
                     .to(RIGHT, CLASS_NODE_INSETS, 0, BOTTOM, CLASS_NODE_INSETS, 0)
@@ -380,6 +436,8 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
             hasDependency(KType classData, KClassModel classModel, KField eField) {
         if (eField.type.referenceType != null) {
             fieldHasDependency.set(true)
+            return
+        } else if (eField.type.signature == null) {
             return
         }
         val genericStart = eField.type.signature.indexOf('<')
@@ -585,7 +643,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      */
     def private String buildDisplayString(KField field) {
         val String fieldType = 
-            if (ATTRIBUTES_TYPE.booleanValue) {
+            if (ATTRIBUTES_TYPE.booleanValue && field.type.signature != null) {
                 " : " + Signature.getSimpleName(field.type.signature)
             } else {
                 ""
@@ -600,43 +658,29 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * @param classData the corresponding class.
      */
     def private void configureBackground(KRendering rendering, KType classData) {
+        var String color1
+        var String color2
+        if (classData instanceof KClass) {
+            if ((classData as KClass).abstract) {
+                color1 = modelOptions.getProperty(OPTION_ABSTRACT_CLASS_COLOR1)
+                color2 = modelOptions.getProperty(OPTION_ABSTRACT_CLASS_COLOR2)
+            } else {
+                color1 = modelOptions.getProperty(OPTION_CLASS_COLOR1)
+                color2 = modelOptions.getProperty(OPTION_CLASS_COLOR2)
+            }
+        } else if (classData instanceof KInterface) {
+            color1 = modelOptions.getProperty(OPTION_INTERFACE_COLOR1)
+            color2 = modelOptions.getProperty(OPTION_INTERFACE_COLOR2)
+        } else if (classData instanceof KEnum) {
+            color1 = modelOptions.getProperty(OPTION_ENUM_COLOR1)
+            color2 = modelOptions.getProperty(OPTION_ENUM_COLOR2)
+        }
+        
         // Check if we should use gradients or not
-        if (COLOR_GRADIENT.booleanValue) {
-            if (classData instanceof KClass) {
-                if ((classData as KClass).abstract) {
-                    rendering.setBackgroundGradient(
-                        ABSTRACT_CLASS_BACKGROUND_1.color,
-                        ABSTRACT_CLASS_BACKGROUND_2.color,
-                        90)
-                } else {
-                    rendering.setBackgroundGradient(
-                        CLASS_BACKGROUND_1.color,
-                        CLASS_BACKGROUND_2.color,
-                        90)
-                }
-            } else if (classData instanceof KInterface) {
-                rendering.setBackgroundGradient(
-                    INTERFACE_BACKGROUND_1.color,
-                    INTERFACE_BACKGROUND_2.color,
-                    90)
-            } else if (classData instanceof KEnum) {
-                rendering.setBackgroundGradient(
-                    ENUM_BACKGROUND_1.color,
-                    ENUM_BACKGROUND_2.color,
-                    90)
-            }
+        if (COLOR_GRADIENT.booleanValue && color1 != color2) {
+            rendering.setBackgroundGradient(color1.color, color2.color, 90)
         } else {
-            if (classData instanceof KClass) {
-                if ((classData as KClass).abstract) {
-                    rendering.setBackground(ABSTRACT_CLASS_BACKGROUND_2.color)
-                } else {
-                    rendering.setBackground(CLASS_BACKGROUND_2.color)
-                }
-            } else if (classData instanceof KInterface) {
-                rendering.setBackground(INTERFACE_BACKGROUND_2.color)
-            } else if (classData instanceof KEnum) {
-                rendering.setBackground(ENUM_BACKGROUND_2.color)
-            }
+            rendering.setBackground(color2.color)
         }
     }
     
@@ -672,7 +716,9 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 }
             
             if (modifierString != null) {
-                return container.addText("<<" + modifierString + ">>")
+                return container.addText("<<" + modifierString + ">>") => [ text |
+                    text.fontName = modelOptions.getProperty(OPTION_FONT_NAME)
+                ]
             }
         }
         
@@ -731,6 +777,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
             
             // Class name
             actualContainer.addText(className) => [ text |
+                text.fontName = modelOptions.getProperty(OPTION_FONT_NAME)
                 text.fontSize = KlighdConstants.DEFAULT_FONT_SIZE + 2
                 text.fontBold = true
                 text.fontItalic = isAbstract
@@ -746,6 +793,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
             
             // Class name
             container.addText(className) => [ text |
+                text.fontName = modelOptions.getProperty(OPTION_FONT_NAME)
                 text.fontSize = KlighdConstants.DEFAULT_FONT_SIZE + 2
                 text.fontBold = true
                 text.fontItalic = isAbstract
@@ -789,6 +837,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
         ]
         
         actualContainer.addText(name) => [ text |
+            text.fontName = modelOptions.getProperty(OPTION_FONT_NAME)
             text.setPointPlacementData(
                 LEFT, 20, 0,
                 TOP, 0, 0.5f,
@@ -832,7 +881,9 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                     ""
                 }
             
-            return container.addText(visibilityString)
+            return container.addText(visibilityString) => [ text |
+                text.fontName = modelOptions.getProperty(OPTION_FONT_NAME)
+            ]
         }
     }
 

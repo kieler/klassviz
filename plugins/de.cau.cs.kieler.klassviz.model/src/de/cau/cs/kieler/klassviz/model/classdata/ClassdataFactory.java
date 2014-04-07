@@ -42,6 +42,15 @@ public interface ClassdataFactory extends EFactory {
     KClassModel createKClassModel();
 
     /**
+     * Returns a new object of class '<em>KOption</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>KOption</em>'.
+     * @generated
+     */
+    KOption createKOption();
+
+    /**
      * Returns a new object of class '<em>KPackage</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

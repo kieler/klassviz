@@ -22,7 +22,12 @@ KClassModel returns KClassModel:
     ('import'
         ('project' javaProjects+=QualifiedID | 'bundle' bundles+=QualifiedID)
     )*
+    (options+=KOption)*
     (packages+=KPackage)*;
+
+KOption returns KOption:
+    {KOption}
+    key=QualifiedID '=' value=PropertyValue;
 
 KPackage returns KPackage:
     'package' name=QualifiedID '{'

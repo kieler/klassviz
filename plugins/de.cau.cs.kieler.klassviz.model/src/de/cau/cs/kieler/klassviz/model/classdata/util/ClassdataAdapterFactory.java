@@ -83,6 +83,10 @@ public class ClassdataAdapterFactory extends AdapterFactoryImpl {
                 return createKClassModelAdapter();
             }
             @Override
+            public Adapter caseKOption(KOption object) {
+                return createKOptionAdapter();
+            }
+            @Override
             public Adapter caseKPackage(KPackage object) {
                 return createKPackageAdapter();
             }
@@ -149,6 +153,20 @@ public class ClassdataAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createKClassModelAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link de.cau.cs.kieler.klassviz.model.classdata.KOption <em>KOption</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KOption
+     * @generated
+     */
+    public Adapter createKOptionAdapter() {
         return null;
     }
 

@@ -49,6 +49,7 @@ public class ClassDataParser extends AbstractContentAssistParser {
 					put(grammarAccess.getKClassModelAccess().getGroup_1(), "rule__KClassModel__Group_1__0");
 					put(grammarAccess.getKClassModelAccess().getGroup_1_1_0(), "rule__KClassModel__Group_1_1_0__0");
 					put(grammarAccess.getKClassModelAccess().getGroup_1_1_1(), "rule__KClassModel__Group_1_1_1__0");
+					put(grammarAccess.getKOptionAccess().getGroup(), "rule__KOption__Group__0");
 					put(grammarAccess.getKPackageAccess().getGroup(), "rule__KPackage__Group__0");
 					put(grammarAccess.getKClassAccess().getGroup(), "rule__KClass__Group__0");
 					put(grammarAccess.getKClassAccess().getGroup_2(), "rule__KClass__Group_2__0");
@@ -65,7 +66,10 @@ public class ClassDataParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypeSignatureAccess().getGroup_1(), "rule__TypeSignature__Group_1__0");
 					put(grammarAccess.getKClassModelAccess().getJavaProjectsAssignment_1_1_0_1(), "rule__KClassModel__JavaProjectsAssignment_1_1_0_1");
 					put(grammarAccess.getKClassModelAccess().getBundlesAssignment_1_1_1_1(), "rule__KClassModel__BundlesAssignment_1_1_1_1");
-					put(grammarAccess.getKClassModelAccess().getPackagesAssignment_2(), "rule__KClassModel__PackagesAssignment_2");
+					put(grammarAccess.getKClassModelAccess().getOptionsAssignment_2(), "rule__KClassModel__OptionsAssignment_2");
+					put(grammarAccess.getKClassModelAccess().getPackagesAssignment_3(), "rule__KClassModel__PackagesAssignment_3");
+					put(grammarAccess.getKOptionAccess().getKeyAssignment_1(), "rule__KOption__KeyAssignment_1");
+					put(grammarAccess.getKOptionAccess().getValueAssignment_3(), "rule__KOption__ValueAssignment_3");
 					put(grammarAccess.getKPackageAccess().getNameAssignment_1(), "rule__KPackage__NameAssignment_1");
 					put(grammarAccess.getKPackageAccess().getTypesAssignment_3(), "rule__KPackage__TypesAssignment_3");
 					put(grammarAccess.getKClassAccess().getNameAssignment_1(), "rule__KClass__NameAssignment_1");

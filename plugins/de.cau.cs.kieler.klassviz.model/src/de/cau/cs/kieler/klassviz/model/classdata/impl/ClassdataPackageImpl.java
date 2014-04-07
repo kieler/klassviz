@@ -22,6 +22,7 @@ import de.cau.cs.kieler.klassviz.model.classdata.KField;
 import de.cau.cs.kieler.klassviz.model.classdata.KInterface;
 import de.cau.cs.kieler.klassviz.model.classdata.KMember;
 import de.cau.cs.kieler.klassviz.model.classdata.KMethod;
+import de.cau.cs.kieler.klassviz.model.classdata.KOption;
 import de.cau.cs.kieler.klassviz.model.classdata.KPackage;
 import de.cau.cs.kieler.klassviz.model.classdata.KType;
 import de.cau.cs.kieler.klassviz.model.classdata.KTypeReference;
@@ -48,6 +49,13 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * @generated
      */
     private EClass kClassModelEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass kOptionEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -223,6 +231,42 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      */
     public EAttribute getKClassModel_Resolved() {
         return (EAttribute)kClassModelEClass.getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getKClassModel_Options() {
+        return (EReference)kClassModelEClass.getEStructuralFeatures().get(4);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getKOption() {
+        return kOptionEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getKOption_Key() {
+        return (EAttribute)kOptionEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getKOption_Value() {
+        return (EAttribute)kOptionEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -609,6 +653,11 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
         createEAttribute(kClassModelEClass, KCLASS_MODEL__BUNDLES);
         createEReference(kClassModelEClass, KCLASS_MODEL__PACKAGES);
         createEAttribute(kClassModelEClass, KCLASS_MODEL__RESOLVED);
+        createEReference(kClassModelEClass, KCLASS_MODEL__OPTIONS);
+
+        kOptionEClass = createEClass(KOPTION);
+        createEAttribute(kOptionEClass, KOPTION__KEY);
+        createEAttribute(kOptionEClass, KOPTION__VALUE);
 
         kPackageEClass = createEClass(KPACKAGE);
         createEAttribute(kPackageEClass, KPACKAGE__NAME);
@@ -701,6 +750,11 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
         initEAttribute(getKClassModel_Bundles(), ecorePackage.getEString(), "bundles", null, 0, -1, KClassModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getKClassModel_Packages(), this.getKPackage(), null, "packages", null, 0, -1, KClassModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getKClassModel_Resolved(), ecorePackage.getEBoolean(), "resolved", "false", 0, 1, KClassModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getKClassModel_Options(), this.getKOption(), null, "options", null, 0, -1, KClassModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(kOptionEClass, KOption.class, "KOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getKOption_Key(), ecorePackage.getEString(), "key", null, 1, 1, KOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getKOption_Value(), ecorePackage.getEString(), "value", null, 1, 1, KOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(kPackageEClass, KPackage.class, "KPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getKPackage_Name(), ecorePackage.getEString(), "name", null, 1, 1, KPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

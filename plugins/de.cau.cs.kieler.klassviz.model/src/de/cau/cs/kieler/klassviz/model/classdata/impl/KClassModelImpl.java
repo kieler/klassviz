@@ -15,6 +15,7 @@ package de.cau.cs.kieler.klassviz.model.classdata.impl;
 
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage;
 import de.cau.cs.kieler.klassviz.model.classdata.KClassModel;
+import de.cau.cs.kieler.klassviz.model.classdata.KOption;
 import de.cau.cs.kieler.klassviz.model.classdata.KPackage;
 
 import java.util.Collection;
@@ -45,6 +46,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl#getBundles <em>Bundles</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl#getPackages <em>Packages</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl#isResolved <em>Resolved</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl#getOptions <em>Options</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,6 +102,16 @@ public class KClassModelImpl extends MinimalEObjectImpl.Container implements KCl
      * @ordered
      */
     protected boolean resolved = RESOLVED_EDEFAULT;
+
+    /**
+     * The cached value of the '{@link #getOptions() <em>Options</em>}' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getOptions()
+     * @generated
+     * @ordered
+     */
+    protected EList<KOption> options;
 
     /**
      * <!-- begin-user-doc -->
@@ -182,11 +194,25 @@ public class KClassModelImpl extends MinimalEObjectImpl.Container implements KCl
      * <!-- end-user-doc -->
      * @generated
      */
+    public EList<KOption> getOptions() {
+        if (options == null) {
+            options = new EObjectContainmentEList<KOption>(KOption.class, this, ClassdataPackage.KCLASS_MODEL__OPTIONS);
+        }
+        return options;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
             case ClassdataPackage.KCLASS_MODEL__PACKAGES:
                 return ((InternalEList<?>)getPackages()).basicRemove(otherEnd, msgs);
+            case ClassdataPackage.KCLASS_MODEL__OPTIONS:
+                return ((InternalEList<?>)getOptions()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -207,6 +233,8 @@ public class KClassModelImpl extends MinimalEObjectImpl.Container implements KCl
                 return getPackages();
             case ClassdataPackage.KCLASS_MODEL__RESOLVED:
                 return isResolved();
+            case ClassdataPackage.KCLASS_MODEL__OPTIONS:
+                return getOptions();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -235,6 +263,10 @@ public class KClassModelImpl extends MinimalEObjectImpl.Container implements KCl
             case ClassdataPackage.KCLASS_MODEL__RESOLVED:
                 setResolved((Boolean)newValue);
                 return;
+            case ClassdataPackage.KCLASS_MODEL__OPTIONS:
+                getOptions().clear();
+                getOptions().addAll((Collection<? extends KOption>)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -259,6 +291,9 @@ public class KClassModelImpl extends MinimalEObjectImpl.Container implements KCl
             case ClassdataPackage.KCLASS_MODEL__RESOLVED:
                 setResolved(RESOLVED_EDEFAULT);
                 return;
+            case ClassdataPackage.KCLASS_MODEL__OPTIONS:
+                getOptions().clear();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -279,6 +314,8 @@ public class KClassModelImpl extends MinimalEObjectImpl.Container implements KCl
                 return packages != null && !packages.isEmpty();
             case ClassdataPackage.KCLASS_MODEL__RESOLVED:
                 return resolved != RESOLVED_EDEFAULT;
+            case ClassdataPackage.KCLASS_MODEL__OPTIONS:
+                return options != null && !options.isEmpty();
         }
         return super.eIsSet(featureID);
     }

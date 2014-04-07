@@ -83,6 +83,12 @@ public class ClassdataSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
+            case ClassdataPackage.KOPTION: {
+                KOption kOption = (KOption)theEObject;
+                T result = caseKOption(kOption);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
             case ClassdataPackage.KPACKAGE: {
                 KPackage kPackage = (KPackage)theEObject;
                 T result = caseKPackage(kPackage);
@@ -158,6 +164,21 @@ public class ClassdataSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseKClassModel(KClassModel object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>KOption</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>KOption</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseKOption(KOption object) {
         return null;
     }
 

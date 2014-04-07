@@ -13,26 +13,26 @@
  */
 package de.cau.cs.kieler.klassviz.synthesis
 
-import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
-import org.eclipse.core.runtime.Platform
-import java.util.HashMap
-import de.cau.cs.kieler.klassviz.model.classdata.KType
 import com.google.inject.Inject
-import org.eclipse.jdt.core.Flags
-import de.cau.cs.kieler.klassviz.model.classdata.KClass
-import de.cau.cs.kieler.klassviz.model.classdata.KInterface
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataFactory
+import de.cau.cs.kieler.klassviz.model.classdata.KClass
+import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
 import de.cau.cs.kieler.klassviz.model.classdata.KField
-import java.lang.reflect.Field
-import java.lang.reflect.Type
+import de.cau.cs.kieler.klassviz.model.classdata.KInterface
+import de.cau.cs.kieler.klassviz.model.classdata.KMethod
+import de.cau.cs.kieler.klassviz.model.classdata.KType
 import de.cau.cs.kieler.klassviz.model.classdata.KTypeReference
 import de.cau.cs.kieler.klassviz.model.classdata.KVisibility
-import java.lang.reflect.ParameterizedType
-import java.lang.reflect.WildcardType
+import java.lang.reflect.Field
 import java.lang.reflect.GenericArrayType
-import java.lang.reflect.TypeVariable
 import java.lang.reflect.Method
-import de.cau.cs.kieler.klassviz.model.classdata.KMethod
+import java.lang.reflect.ParameterizedType
+import java.lang.reflect.Type
+import java.lang.reflect.TypeVariable
+import java.lang.reflect.WildcardType
+import java.util.HashMap
+import org.eclipse.core.runtime.Platform
+import org.eclipse.jdt.core.Flags
 
 /**
  * Transformation class between the Java reflection interface and our own class model.
@@ -157,8 +157,8 @@ class JavaReflectionTransformation {
             kField.final = true
         } else {
             kField.visibility = field.modifiers.visibility
-            kField.static = Flags.isStatic(field.modifiers)
-            kField.final = Flags.isFinal(field.modifiers)
+            kField.static = field.isStatic
+            kField.final = field.isFinal
         }
     }
     
@@ -175,9 +175,9 @@ class JavaReflectionTransformation {
             kMethod.abstract = true
         } else {
             kMethod.visibility = method.modifiers.visibility
-            kMethod.static = Flags.isStatic(method.modifiers)
-            kMethod.final = Flags.isFinal(method.modifiers)
-            kMethod.abstract = Flags.isAbstract(method.modifiers)
+            kMethod.static = method.isStatic
+            kMethod.final = method.isFinal
+            kMethod.abstract = method.isAbstract
         }
     }
     
@@ -185,41 +185,33 @@ class JavaReflectionTransformation {
      * Resolve the given type reference: set the signature and create a type cross reference.
      */
     def private void resolveReference(Type type, KTypeReference typeRef, (Class<?>)=>KType typeFunc) {
-        switch (type.class) {
-            case ParameterizedType: {
+        switch (type) {
+            case type instanceof ParameterizedType: {
                 val parameterizedType = type as ParameterizedType
-                val clazz = parameterizedType.rawType as Class<?>
-                typeRef.signature = clazz.name
-                typeRef.referenceType = typeFunc.apply(clazz)
+                typeRef.referenceType = typeFunc.apply(parameterizedType.rawType as Class<?>)
             }
-            case WildcardType: {
+            case type instanceof WildcardType: {
                 val wildcardType = type as WildcardType
                 if (wildcardType.upperBounds.length > 0) {
                     resolveReference(wildcardType.upperBounds.get(0), typeRef, typeFunc)
-                } else {
-                    typeRef.signature = "java.lang.Object"
                 }
             }
-            case GenericArrayType: {
+            case type instanceof GenericArrayType: {
                 val genericArrayType = type as GenericArrayType
                 resolveReference(genericArrayType.genericComponentType, typeRef, typeFunc)
-                typeRef.signature = typeRef.signature + "[]"
             }
-            case TypeVariable: {
+            case type instanceof TypeVariable<?>: {
                 val typeVariable = type as TypeVariable<?>
                 typeRef.name = typeVariable.name
                 if (typeVariable.genericDeclaration instanceof Class<?>) {
-                    val clazz = typeVariable.genericDeclaration as Class<?>
-                    typeRef.signature = clazz.name
-                    typeRef.referenceType = typeFunc.apply(clazz)
+                    typeRef.referenceType = typeFunc.apply(typeVariable.genericDeclaration as Class<?>)
                 }
             }
-            case Class: {
-                val clazz = type as Class<?>
-                typeRef.signature = clazz.name
-                typeRef.referenceType = typeFunc.apply(clazz)
+            case type instanceof Class<?>: {
+                typeRef.referenceType = typeFunc.apply(type as Class<?>)
             }
         }
+        typeRef.signature = type.signature.toString
     }
     
 }

@@ -135,22 +135,107 @@ ruleKClassModel returns [EObject current=null]
 ))))*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getKClassModelAccess().getPackagesKPackageParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getKClassModelAccess().getOptionsKOptionParserRuleCall_2_0()); 
 	    }
-		lv_packages_6_0=ruleKPackage		{
+		lv_options_6_0=ruleKOption		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getKClassModelRule());
+	        }
+       		add(
+       			$current, 
+       			"options",
+        		lv_options_6_0, 
+        		"KOption");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getKClassModelAccess().getPackagesKPackageParserRuleCall_3_0()); 
+	    }
+		lv_packages_7_0=ruleKPackage		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getKClassModelRule());
 	        }
        		add(
        			$current, 
        			"packages",
-        		lv_packages_6_0, 
+        		lv_packages_7_0, 
         		"KPackage");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )*)
+;
+
+
+
+
+
+// Entry rule entryRuleKOption
+entryRuleKOption returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getKOptionRule()); }
+	 iv_ruleKOption=ruleKOption 
+	 { $current=$iv_ruleKOption.current; } 
+	 EOF 
+;
+
+// Rule KOption
+ruleKOption returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getKOptionAccess().getKOptionAction_0(),
+            $current);
+    }
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getKOptionAccess().getKeyQualifiedIDParserRuleCall_1_0()); 
+	    }
+		lv_key_1_0=ruleQualifiedID		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getKOptionRule());
+	        }
+       		set(
+       			$current, 
+       			"key",
+        		lv_key_1_0, 
+        		"QualifiedID");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_2='=' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getKOptionAccess().getEqualsSignKeyword_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getKOptionAccess().getValuePropertyValueParserRuleCall_3_0()); 
+	    }
+		lv_value_3_0=rulePropertyValue		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getKOptionRule());
+	        }
+       		set(
+       			$current, 
+       			"value",
+        		lv_value_3_0, 
+        		"PropertyValue");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
 ;
 
 
@@ -805,6 +890,64 @@ ruleTypeSignature returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleT
     ;
 
 
+
+
+
+// Entry rule entryRulePropertyValue
+entryRulePropertyValue returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getPropertyValueRule()); } 
+	 iv_rulePropertyValue=rulePropertyValue 
+	 { $current=$iv_rulePropertyValue.current.getText(); }  
+	 EOF 
+;
+
+// Rule PropertyValue
+rulePropertyValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(    this_BOOLEAN_0=RULE_BOOLEAN    {
+		$current.merge(this_BOOLEAN_0);
+    }
+
+    { 
+    newLeafNode(this_BOOLEAN_0, grammarAccess.getPropertyValueAccess().getBOOLEANTerminalRuleCall_0()); 
+    }
+
+    |    this_STRING_1=RULE_STRING    {
+		$current.merge(this_STRING_1);
+    }
+
+    { 
+    newLeafNode(this_STRING_1, grammarAccess.getPropertyValueAccess().getSTRINGTerminalRuleCall_1()); 
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getPropertyValueAccess().getFloatParserRuleCall_2()); 
+    }
+    this_Float_2=ruleFloat    {
+		$current.merge(this_Float_2);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getPropertyValueAccess().getQualifiedIDParserRuleCall_3()); 
+    }
+    this_QualifiedID_3=ruleQualifiedID    {
+		$current.merge(this_QualifiedID_3);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)
+    ;
 
 
 

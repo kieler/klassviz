@@ -115,13 +115,22 @@ public interface ClassdataPackage extends EPackage {
     int KCLASS_MODEL__RESOLVED = 3;
 
     /**
+     * The feature id for the '<em><b>Options</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KCLASS_MODEL__OPTIONS = 4;
+
+    /**
      * The number of structural features of the '<em>KClass Model</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int KCLASS_MODEL_FEATURE_COUNT = 4;
+    int KCLASS_MODEL_FEATURE_COUNT = 5;
 
     /**
      * The number of operations of the '<em>KClass Model</em>' class.
@@ -133,6 +142,52 @@ public interface ClassdataPackage extends EPackage {
     int KCLASS_MODEL_OPERATION_COUNT = 0;
 
     /**
+     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KOptionImpl <em>KOption</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KOptionImpl
+     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKOption()
+     * @generated
+     */
+    int KOPTION = 1;
+
+    /**
+     * The feature id for the '<em><b>Key</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KOPTION__KEY = 0;
+
+    /**
+     * The feature id for the '<em><b>Value</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KOPTION__VALUE = 1;
+
+    /**
+     * The number of structural features of the '<em>KOption</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KOPTION_FEATURE_COUNT = 2;
+
+    /**
+     * The number of operations of the '<em>KOption</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KOPTION_OPERATION_COUNT = 0;
+
+    /**
      * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KPackageImpl <em>KPackage</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -140,7 +195,7 @@ public interface ClassdataPackage extends EPackage {
      * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKPackage()
      * @generated
      */
-    int KPACKAGE = 1;
+    int KPACKAGE = 2;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -186,7 +241,7 @@ public interface ClassdataPackage extends EPackage {
      * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKType()
      * @generated
      */
-    int KTYPE = 2;
+    int KTYPE = 3;
 
     /**
      * The feature id for the '<em><b>Selected</b></em>' attribute.
@@ -277,7 +332,7 @@ public interface ClassdataPackage extends EPackage {
      * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKClass()
      * @generated
      */
-    int KCLASS = 3;
+    int KCLASS = 4;
 
     /**
      * The feature id for the '<em><b>Selected</b></em>' attribute.
@@ -413,7 +468,7 @@ public interface ClassdataPackage extends EPackage {
      * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKInterface()
      * @generated
      */
-    int KINTERFACE = 4;
+    int KINTERFACE = 5;
 
     /**
      * The feature id for the '<em><b>Selected</b></em>' attribute.
@@ -522,7 +577,7 @@ public interface ClassdataPackage extends EPackage {
      * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKEnum()
      * @generated
      */
-    int KENUM = 5;
+    int KENUM = 6;
 
     /**
      * The feature id for the '<em><b>Selected</b></em>' attribute.
@@ -622,7 +677,7 @@ public interface ClassdataPackage extends EPackage {
      * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKMember()
      * @generated
      */
-    int KMEMBER = 6;
+    int KMEMBER = 7;
 
     /**
      * The feature id for the '<em><b>Selected</b></em>' attribute.
@@ -695,7 +750,7 @@ public interface ClassdataPackage extends EPackage {
      * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKField()
      * @generated
      */
-    int KFIELD = 7;
+    int KFIELD = 8;
 
     /**
      * The feature id for the '<em><b>Selected</b></em>' attribute.
@@ -777,7 +832,7 @@ public interface ClassdataPackage extends EPackage {
      * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKMethod()
      * @generated
      */
-    int KMETHOD = 8;
+    int KMETHOD = 9;
 
     /**
      * The feature id for the '<em><b>Selected</b></em>' attribute.
@@ -877,7 +932,7 @@ public interface ClassdataPackage extends EPackage {
      * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKTypeReference()
      * @generated
      */
-    int KTYPE_REFERENCE = 9;
+    int KTYPE_REFERENCE = 10;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -933,7 +988,7 @@ public interface ClassdataPackage extends EPackage {
      * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKVisibility()
      * @generated
      */
-    int KVISIBILITY = 10;
+    int KVISIBILITY = 11;
 
 
     /**
@@ -989,6 +1044,49 @@ public interface ClassdataPackage extends EPackage {
      * @generated
      */
     EAttribute getKClassModel_Resolved();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getOptions <em>Options</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Options</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getOptions()
+     * @see #getKClassModel()
+     * @generated
+     */
+    EReference getKClassModel_Options();
+
+    /**
+     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KOption <em>KOption</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>KOption</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KOption
+     * @generated
+     */
+    EClass getKOption();
+
+    /**
+     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KOption#getKey <em>Key</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Key</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KOption#getKey()
+     * @see #getKOption()
+     * @generated
+     */
+    EAttribute getKOption_Key();
+
+    /**
+     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KOption#getValue <em>Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Value</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KOption#getValue()
+     * @see #getKOption()
+     * @generated
+     */
+    EAttribute getKOption_Value();
 
     /**
      * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KPackage <em>KPackage</em>}'.
@@ -1473,6 +1571,40 @@ public interface ClassdataPackage extends EPackage {
          * @generated
          */
         EAttribute KCLASS_MODEL__RESOLVED = eINSTANCE.getKClassModel_Resolved();
+
+        /**
+         * The meta object literal for the '<em><b>Options</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference KCLASS_MODEL__OPTIONS = eINSTANCE.getKClassModel_Options();
+
+        /**
+         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KOptionImpl <em>KOption</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KOptionImpl
+         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKOption()
+         * @generated
+         */
+        EClass KOPTION = eINSTANCE.getKOption();
+
+        /**
+         * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute KOPTION__KEY = eINSTANCE.getKOption_Key();
+
+        /**
+         * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute KOPTION__VALUE = eINSTANCE.getKOption_Value();
 
         /**
          * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KPackageImpl <em>KPackage</em>}' class.

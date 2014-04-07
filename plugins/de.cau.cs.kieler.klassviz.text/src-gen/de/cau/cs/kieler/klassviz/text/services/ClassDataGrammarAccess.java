@@ -32,14 +32,18 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cBundleKeyword_1_1_1_0 = (Keyword)cGroup_1_1_1.eContents().get(0);
 		private final Assignment cBundlesAssignment_1_1_1_1 = (Assignment)cGroup_1_1_1.eContents().get(1);
 		private final RuleCall cBundlesQualifiedIDParserRuleCall_1_1_1_1_0 = (RuleCall)cBundlesAssignment_1_1_1_1.eContents().get(0);
-		private final Assignment cPackagesAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cPackagesKPackageParserRuleCall_2_0 = (RuleCall)cPackagesAssignment_2.eContents().get(0);
+		private final Assignment cOptionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cOptionsKOptionParserRuleCall_2_0 = (RuleCall)cOptionsAssignment_2.eContents().get(0);
+		private final Assignment cPackagesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPackagesKPackageParserRuleCall_3_0 = (RuleCall)cPackagesAssignment_3.eContents().get(0);
 		
 		//KClassModel:
-		//	{KClassModel} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* packages+=KPackage*;
+		//	{KClassModel} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* options+=KOption*
+		//	packages+=KPackage*;
 		public ParserRule getRule() { return rule; }
 
-		//{KClassModel} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* packages+=KPackage*
+		//{KClassModel} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* options+=KOption*
+		//packages+=KPackage*
 		public Group getGroup() { return cGroup; }
 
 		//{KClassModel}
@@ -78,11 +82,53 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedID
 		public RuleCall getBundlesQualifiedIDParserRuleCall_1_1_1_1_0() { return cBundlesQualifiedIDParserRuleCall_1_1_1_1_0; }
 
+		//options+=KOption*
+		public Assignment getOptionsAssignment_2() { return cOptionsAssignment_2; }
+
+		//KOption
+		public RuleCall getOptionsKOptionParserRuleCall_2_0() { return cOptionsKOptionParserRuleCall_2_0; }
+
 		//packages+=KPackage*
-		public Assignment getPackagesAssignment_2() { return cPackagesAssignment_2; }
+		public Assignment getPackagesAssignment_3() { return cPackagesAssignment_3; }
 
 		//KPackage
-		public RuleCall getPackagesKPackageParserRuleCall_2_0() { return cPackagesKPackageParserRuleCall_2_0; }
+		public RuleCall getPackagesKPackageParserRuleCall_3_0() { return cPackagesKPackageParserRuleCall_3_0; }
+	}
+
+	public class KOptionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "KOption");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cKOptionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cKeyAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cKeyQualifiedIDParserRuleCall_1_0 = (RuleCall)cKeyAssignment_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cValuePropertyValueParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
+		
+		//KOption:
+		//	{KOption} key=QualifiedID "=" value=PropertyValue;
+		public ParserRule getRule() { return rule; }
+
+		//{KOption} key=QualifiedID "=" value=PropertyValue
+		public Group getGroup() { return cGroup; }
+
+		//{KOption}
+		public Action getKOptionAction_0() { return cKOptionAction_0; }
+
+		//key=QualifiedID
+		public Assignment getKeyAssignment_1() { return cKeyAssignment_1; }
+
+		//QualifiedID
+		public RuleCall getKeyQualifiedIDParserRuleCall_1_0() { return cKeyQualifiedIDParserRuleCall_1_0; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
+
+		//value=PropertyValue
+		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
+
+		//PropertyValue
+		public RuleCall getValuePropertyValueParserRuleCall_3_0() { return cValuePropertyValueParserRuleCall_3_0; }
 	}
 
 	public class KPackageElements extends AbstractParserRuleElementFinder {
@@ -524,6 +570,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	private KClassModelElements pKClassModel;
+	private KOptionElements pKOption;
 	private KPackageElements pKPackage;
 	private KTypeElements pKType;
 	private KClassElements pKClass;
@@ -576,13 +623,24 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//KClassModel:
-	//	{KClassModel} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* packages+=KPackage*;
+	//	{KClassModel} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* options+=KOption*
+	//	packages+=KPackage*;
 	public KClassModelElements getKClassModelAccess() {
 		return (pKClassModel != null) ? pKClassModel : (pKClassModel = new KClassModelElements());
 	}
 	
 	public ParserRule getKClassModelRule() {
 		return getKClassModelAccess().getRule();
+	}
+
+	//KOption:
+	//	{KOption} key=QualifiedID "=" value=PropertyValue;
+	public KOptionElements getKOptionAccess() {
+		return (pKOption != null) ? pKOption : (pKOption = new KOptionElements());
+	}
+	
+	public ParserRule getKOptionRule() {
+		return getKOptionAccess().getRule();
 	}
 
 	//KPackage:
