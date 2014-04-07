@@ -30,6 +30,8 @@ import org.eclipse.xtext.Assignment
 import org.eclipse.xtext.RuleCall
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
+import de.cau.cs.kieler.klassviz.synthesis.ClassDataDiagramSynthesis
+import de.cau.cs.kieler.core.properties.IProperty
 
 /**
  * Custom content assist proposals.
@@ -264,6 +266,21 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
                         acceptor.accept(createCompletionProposal(proposal, context))
                     }
                 }
+            }
+        }
+    }
+    
+    /**
+     * Provide completion proposals for the key of an option.
+     */
+    def override completeKOption_Key(EObject model, Assignment assignment, ContentAssistContext context,
+            ICompletionProposalAcceptor acceptor) {
+        val classModel = model as KClassModel
+        for (field : typeof(ClassDataDiagramSynthesis).fields.filter[
+                it.isStatic && typeof(IProperty).isAssignableFrom(it.type)]) {
+            val property = field.get(null) as IProperty<?>
+            if (classModel.options.forall[it.key != property.id]) {
+                acceptor.accept(createCompletionProposal(property.id, context))
             }
         }
     }

@@ -33,9 +33,9 @@ import de.cau.cs.kieler.core.properties.MapPropertyHolder
 import de.cau.cs.kieler.core.properties.Property
 import de.cau.cs.kieler.core.util.Maybe
 import de.cau.cs.kieler.kiml.LayoutMetaDataService
-import de.cau.cs.kieler.kiml.klayoutdata.KShapeLayout
 import de.cau.cs.kieler.kiml.options.Direction
 import de.cau.cs.kieler.kiml.options.EdgeRouting
+import de.cau.cs.kieler.kiml.options.EdgeType
 import de.cau.cs.kieler.kiml.options.LayoutOptions
 import de.cau.cs.kieler.klassviz.model.classdata.KClass
 import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
@@ -84,10 +84,6 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     ////////////////////////////////////////////////////////////////////////////////////////
     // Constants
     
-    /** The color of borders around nodes. */
-    private static val BORDER_COLOR = "gray"
-    /** Color used for edges. */
-    private static val EDGE_COLOR = "#404040"
     /** Space between the border of a class node and its content. */
     private static val CLASS_NODE_INSETS = 5
     /** Amount of space to be left between the elements of a class node. */
@@ -164,6 +160,10 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
         );
     }
     
+    /** The color of borders around nodes. */
+    public static val OPTION_BORDER_COLOR = new Property("classdata.borderColor", "gray")
+    /** The color used for edges. */
+    public static val OPTION_EDGE_COLOR = new Property("classdata.edgeColor", "#404040")
     /** Start color of the background gradient for classes. */
     public static val OPTION_CLASS_COLOR1 = new Property("classdata.classColor1", "#f8f9fd")
     /** End color of the background gradient for classes. */
@@ -221,7 +221,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 if (optionData != null) {
                     val value = optionData.parseValue(option.value)
                     if (value != null) {
-                        rootNode.getData(typeof(KShapeLayout)).setProperty(optionData, value)
+                        rootNode.setLayoutOption(optionData, value)
                     }
                 }
             }
@@ -286,8 +286,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
             }
             
             // General layout options
-            rootNode.setLayoutOption(LayoutOptions.SPACING, 50f)
-            rootNode.setLayoutOption(LayoutOptions.EDGE_ROUTING, EdgeRouting.ORTHOGONAL)
+            rootNode.configureLayout
         ]
 
         // If inheritance shall be visualized, create all inheritance edges
@@ -334,7 +333,16 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                     classSelection.createClassNode(classModel)
                 ]
             ]
+            packageNode.configureLayout
         ]
+    }
+    
+    /**
+     * Configure general layout options for a parent node (the root node or a package node).
+     */
+    def private configureLayout(KNode parentNode) {
+        parentNode.setLayoutOption(LayoutOptions.SPACING, 50f)
+        parentNode.setLayoutOption(LayoutOptions.EDGE_ROUTING, EdgeRouting.ORTHOGONAL)
     }
     
     /**
@@ -347,7 +355,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     def private KNode createClassNode(KType classData, KClassModel classModel) {
         return classData.createNode.putToLookUpWith(classData) => [
             it.addRoundedRectangle(5, 5) => [ rect |
-                rect.foreground = BORDER_COLOR.color
+                rect.foreground = modelOptions.getProperty(OPTION_BORDER_COLOR).color
                 rect.configureBackground(classData)
                 if (modelOptions.getProperty(OPTION_SHADOW)) {
                     rect.shadow = "black".color;
@@ -476,10 +484,12 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 it.source = classData.node
                 it.target = classData.superClass.node
                 it.addPolyline().putToLookUpWith(classData) => [
-                    it.addInheritanceTriangleArrowDecorator()
-                    it.foreground = EDGE_COLOR.color
+                    it.addInheritanceTriangleArrowDecorator() => [
+                        it.foreground = modelOptions.getProperty(OPTION_EDGE_COLOR).color
+                    ]
+                    it.foreground = modelOptions.getProperty(OPTION_EDGE_COLOR).color
                 ]
-            
+                it.setLayoutOption(LayoutOptions::EDGE_TYPE, EdgeType::GENERALIZATION)
             ]
         }
     }
@@ -502,9 +512,12 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                         // if class has super interface the line is dashed.
                         it.lineStyle = LineStyle::DASH
                     }
-                    it.addInheritanceTriangleArrowDecorator()
-                    it.foreground = EDGE_COLOR.color
+                    it.addInheritanceTriangleArrowDecorator() => [
+                        it.foreground = modelOptions.getProperty(OPTION_EDGE_COLOR).color
+                    ]
+                    it.foreground = modelOptions.getProperty(OPTION_EDGE_COLOR).color
                 ]
+                it.setLayoutOption(LayoutOptions::EDGE_TYPE, EdgeType::GENERALIZATION)
             ]
         ]
     }
@@ -567,7 +580,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                             it.target = classDataToBeCompared.node
                             it.addPolyline().putToLookUpWith(classData) => [
                                 it.addAssociationArrowDecorator
-                                it.foreground = EDGE_COLOR.color
+                                it.foreground = modelOptions.getProperty(OPTION_EDGE_COLOR).color
                             ]
                             var String multiplicity = ""
 //                            if (classHasAssociationToThisClass.get(1).intValue == -1) {
@@ -581,7 +594,8 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                                 multiplicity = "0.." + Integer.toString(classHasAssociationToThisClass.get(0))
                             }
                             it.createLabel().configureHeadEdgeLabel(multiplicity, KlighdConstants::DEFAULT_FONT_SIZE,
-                                KlighdConstants::DEFAULT_FONT_NAME).putToLookUpWith(classData)
+                                modelOptions.getProperty(OPTION_FONT_NAME)).putToLookUpWith(classData)
+                            it.setLayoutOption(LayoutOptions::EDGE_TYPE, EdgeType::ASSOCIATION)
                         ]
                     }
                 }
@@ -903,7 +917,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 createKPosition(RIGHT, 0, 0, BOTTOM, 0, 0))
             it.points += createKPosition(LEFT, -CLASS_NODE_INSETS, 0, BOTTOM, 0, 0)
             it.points += createKPosition(RIGHT, -CLASS_NODE_INSETS, 0, BOTTOM, 0, 0)
-            it.foreground = BORDER_COLOR.color
+            it.foreground = modelOptions.getProperty(OPTION_BORDER_COLOR).color
         ]
         
         return container
@@ -916,19 +930,12 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * @return the given polyline.
      */
     def private KRendering addAssociationArrowDecorator(KPolyline pl) {
-        return pl => [
-            it.addPolygon() => [
-                it.points += createKPosition(RIGHT, 0, 0, TOP, 0, 0.5f)
-                it.points += createKPosition(RIGHT, 0, 0.5f, TOP, 0, 0)
-                it.setDecoratorPlacementData(24, 12, -12, 1.0f, true)
-                it.foreground = "black".color
-            ]
-            it.addPolygon() => [
-                it.points += createKPosition(RIGHT, 0, 0, TOP, 0, 0.5f)
-                it.points += createKPosition(RIGHT, 0, 0.5f, BOTTOM, 0, 0)
-                it.setDecoratorPlacementData(24, 12, -12, 1.0f, true)
-                it.foreground = "black".color
-            ]
+        pl.addPolyline() => [
+            it.points += createKPosition(LEFT, 0, 0, TOP, 0, 0)
+            it.points += createKPosition(RIGHT, 0, 0, TOP, 0, 0.5f)
+            it.points += createKPosition(LEFT, 0, 0, BOTTOM, 0, 0)
+            it.setDecoratorPlacementData(12, 12, -6, 1.0f, true)
+            it.foreground = modelOptions.getProperty(OPTION_EDGE_COLOR).color
         ]
     }
     
