@@ -37,8 +37,7 @@ import org.eclipse.xtext.validation.Check
  */
 class ClassDataValidator extends AbstractClassDataValidator {
     
-    @Inject
-    extension ClassDataExtensions
+    @Inject extension ClassDataExtensions
     
     /**
      * Check whether the projects exists in the workspace and they have the Java nature.
@@ -164,8 +163,9 @@ class ClassDataValidator extends AbstractClassDataValidator {
                     method, ClassdataPackage.eINSTANCE.KMember_Name)
             } else {
                 val paramTypeSign = method.parameters.map[s | s.signature].toList
-                if (!matchingName.exists[it.parameterTypes.map[t | Signature.toString(t)]
-                        .equals(paramTypeSign)]) {
+                if (!matchingName.exists[it.parameterTypes.map[t |
+                    Signature.getSimpleName(Signature.toString(Signature.getTypeErasure(t)))
+                ].equals(paramTypeSign)]) {
                     error("Method signature does not match any method of the referenced type",
                         method, ClassdataPackage.eINSTANCE.KMethod_Parameters)
                 }

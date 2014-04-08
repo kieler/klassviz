@@ -17,24 +17,24 @@ import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
 import de.cau.cs.kieler.klassviz.model.classdata.KMethod
 import de.cau.cs.kieler.klassviz.model.classdata.KPackage
 import de.cau.cs.kieler.klassviz.model.classdata.KType
+import de.cau.cs.kieler.klassviz.model.classdata.KVisibility
+import java.lang.reflect.GenericArrayType
+import java.lang.reflect.Member
+import java.lang.reflect.Method
+import java.lang.reflect.ParameterizedType
+import java.lang.reflect.TypeVariable
+import java.lang.reflect.WildcardType
 import java.util.Collections
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.runtime.CoreException
 import org.eclipse.core.runtime.Platform
+import org.eclipse.jdt.core.Flags
 import org.eclipse.jdt.core.IMethod
 import org.eclipse.jdt.core.IPackageFragment
 import org.eclipse.jdt.core.IType
 import org.eclipse.jdt.core.JavaCore
 import org.eclipse.jdt.core.Signature
 import org.osgi.framework.wiring.BundleWiring
-import de.cau.cs.kieler.klassviz.model.classdata.KVisibility
-import org.eclipse.jdt.core.Flags
-import java.lang.reflect.Method
-import java.lang.reflect.Member
-import java.lang.reflect.ParameterizedType
-import java.lang.reflect.TypeVariable
-import java.lang.reflect.GenericArrayType
-import java.lang.reflect.WildcardType
 
 /**
  * @author msp
@@ -149,7 +149,8 @@ class ClassDataExtensions {
         }
         var int i = 0
         while (i < jdtMethod.numberOfParameters) {
-            val jdtSignature = Signature.toString(jdtMethod.parameterTypes.get(i))
+            val jdtSignature = Signature.getSimpleName(Signature.toString(Signature.getTypeErasure(
+                    jdtMethod.parameterTypes.get(i))))
             val kSignature = kMethod.parameters.get(i).signature
             if (jdtSignature != kSignature && jdtSignature != Signature.getSimpleName(kSignature)) {
                 return false

@@ -178,7 +178,7 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 	
 	/**
 	 * Constraint:
-	 *     signature=TypeSignature
+	 *     signature=ID
 	 */
 	protected void sequence_KTypeReference(EObject context, KTypeReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

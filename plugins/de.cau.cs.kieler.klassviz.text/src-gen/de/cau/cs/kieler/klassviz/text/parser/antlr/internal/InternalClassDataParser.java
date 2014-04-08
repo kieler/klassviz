@@ -21,13 +21,10 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalClassDataParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_BOOLEAN", "RULE_STRING", "RULE_TFLOAT", "RULE_NATURAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'import'", "'project'", "'bundle'", "'='", "'package'", "'{'", "'}'", "'class'", "'interface'", "'enum'", "'('", "','", "')'", "'.'", "'<'", "'?'", "'>'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_BOOLEAN", "RULE_STRING", "RULE_TFLOAT", "RULE_NATURAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'import'", "'project'", "'bundle'", "'='", "'package'", "'{'", "'}'", "'class'", "'interface'", "'enum'", "'('", "','", "')'", "'.'"
     };
     public static final int RULE_BOOLEAN=5;
     public static final int RULE_ID=4;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
     public static final int T__25=25;
     public static final int T__24=24;
     public static final int T__23=23;
@@ -1246,11 +1243,11 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
                         if ( (LA9_0==RULE_ID) ) {
                             int LA9_2 = input.LA(2);
 
-                            if ( (LA9_2==22) ) {
-                                alt9=2;
-                            }
-                            else if ( (LA9_2==RULE_ID||LA9_2==18) ) {
+                            if ( (LA9_2==RULE_ID||LA9_2==18) ) {
                                 alt9=1;
+                            }
+                            else if ( (LA9_2==22) ) {
+                                alt9=2;
                             }
 
 
@@ -1481,11 +1478,11 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
                         if ( (LA11_0==RULE_ID) ) {
                             int LA11_2 = input.LA(2);
 
-                            if ( (LA11_2==RULE_ID||LA11_2==18) ) {
-                                alt11=1;
-                            }
-                            else if ( (LA11_2==22) ) {
+                            if ( (LA11_2==22) ) {
                                 alt11=2;
+                            }
+                            else if ( (LA11_2==RULE_ID||LA11_2==18) ) {
+                                alt11=1;
                             }
 
 
@@ -1952,43 +1949,37 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleKTypeReference"
-    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:764:1: ruleKTypeReference returns [EObject current=null] : ( (lv_signature_0_0= ruleTypeSignature ) ) ;
+    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:764:1: ruleKTypeReference returns [EObject current=null] : ( (lv_signature_0_0= RULE_ID ) ) ;
     public final EObject ruleKTypeReference() throws RecognitionException {
         EObject current = null;
 
-        AntlrDatatypeRuleToken lv_signature_0_0 = null;
-
+        Token lv_signature_0_0=null;
 
          enterRule(); 
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:767:28: ( ( (lv_signature_0_0= ruleTypeSignature ) ) )
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:768:1: ( (lv_signature_0_0= ruleTypeSignature ) )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:767:28: ( ( (lv_signature_0_0= RULE_ID ) ) )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:768:1: ( (lv_signature_0_0= RULE_ID ) )
             {
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:768:1: ( (lv_signature_0_0= ruleTypeSignature ) )
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:769:1: (lv_signature_0_0= ruleTypeSignature )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:768:1: ( (lv_signature_0_0= RULE_ID ) )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:769:1: (lv_signature_0_0= RULE_ID )
             {
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:769:1: (lv_signature_0_0= ruleTypeSignature )
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:770:3: lv_signature_0_0= ruleTypeSignature
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:769:1: (lv_signature_0_0= RULE_ID )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:770:3: lv_signature_0_0= RULE_ID
             {
-             
-            	        newCompositeNode(grammarAccess.getKTypeReferenceAccess().getSignatureTypeSignatureParserRuleCall_0()); 
-            	    
-            pushFollow(FollowSets000.FOLLOW_ruleTypeSignature_in_ruleKTypeReference1594);
-            lv_signature_0_0=ruleTypeSignature();
+            lv_signature_0_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleKTypeReference1590); 
 
-            state._fsp--;
-
+            			newLeafNode(lv_signature_0_0, grammarAccess.getKTypeReferenceAccess().getSignatureIDTerminalRuleCall_0()); 
+            		
 
             	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getKTypeReferenceRule());
+            	            current = createModelElement(grammarAccess.getKTypeReferenceRule());
             	        }
-                   		set(
+                   		setWithLastConsumed(
                    			current, 
                    			"signature",
                     		lv_signature_0_0, 
-                    		"TypeSignature");
-            	        afterParserOrEnumRuleCall();
+                    		"ID");
             	    
 
             }
@@ -2026,13 +2017,13 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:796:2: iv_ruleQualifiedID= ruleQualifiedID EOF
             {
              newCompositeNode(grammarAccess.getQualifiedIDRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedID_in_entryRuleQualifiedID1630);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedID_in_entryRuleQualifiedID1631);
             iv_ruleQualifiedID=ruleQualifiedID();
 
             state._fsp--;
 
              current =iv_ruleQualifiedID.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleQualifiedID1641); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleQualifiedID1642); 
 
             }
 
@@ -2067,7 +2058,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:807:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:807:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedID1681); 
+            this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedID1682); 
 
             		current.merge(this_ID_0);
                 
@@ -2089,12 +2080,12 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:815:2: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleQualifiedID1700); 
+            	    kw=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleQualifiedID1701); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getQualifiedIDAccess().getFullStopKeyword_1_0()); 
             	        
-            	    this_ID_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedID1715); 
+            	    this_ID_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedID1716); 
 
             	    		current.merge(this_ID_2);
             	        
@@ -2130,176 +2121,8 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleQualifiedID"
 
 
-    // $ANTLR start "entryRuleTypeSignature"
-    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:835:1: entryRuleTypeSignature returns [String current=null] : iv_ruleTypeSignature= ruleTypeSignature EOF ;
-    public final String entryRuleTypeSignature() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleTypeSignature = null;
-
-
-        try {
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:836:2: (iv_ruleTypeSignature= ruleTypeSignature EOF )
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:837:2: iv_ruleTypeSignature= ruleTypeSignature EOF
-            {
-             newCompositeNode(grammarAccess.getTypeSignatureRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTypeSignature_in_entryRuleTypeSignature1763);
-            iv_ruleTypeSignature=ruleTypeSignature();
-
-            state._fsp--;
-
-             current =iv_ruleTypeSignature.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTypeSignature1774); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleTypeSignature"
-
-
-    // $ANTLR start "ruleTypeSignature"
-    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:844:1: ruleTypeSignature returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_QualifiedID_0= ruleQualifiedID (kw= '<' (kw= '?' | this_TypeSignature_3= ruleTypeSignature ) kw= '>' )? ) ;
-    public final AntlrDatatypeRuleToken ruleTypeSignature() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-        AntlrDatatypeRuleToken this_QualifiedID_0 = null;
-
-        AntlrDatatypeRuleToken this_TypeSignature_3 = null;
-
-
-         enterRule(); 
-            
-        try {
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:847:28: ( (this_QualifiedID_0= ruleQualifiedID (kw= '<' (kw= '?' | this_TypeSignature_3= ruleTypeSignature ) kw= '>' )? ) )
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:848:1: (this_QualifiedID_0= ruleQualifiedID (kw= '<' (kw= '?' | this_TypeSignature_3= ruleTypeSignature ) kw= '>' )? )
-            {
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:848:1: (this_QualifiedID_0= ruleQualifiedID (kw= '<' (kw= '?' | this_TypeSignature_3= ruleTypeSignature ) kw= '>' )? )
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:849:5: this_QualifiedID_0= ruleQualifiedID (kw= '<' (kw= '?' | this_TypeSignature_3= ruleTypeSignature ) kw= '>' )?
-            {
-             
-                    newCompositeNode(grammarAccess.getTypeSignatureAccess().getQualifiedIDParserRuleCall_0()); 
-                
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedID_in_ruleTypeSignature1821);
-            this_QualifiedID_0=ruleQualifiedID();
-
-            state._fsp--;
-
-
-            		current.merge(this_QualifiedID_0);
-                
-             
-                    afterParserOrEnumRuleCall();
-                
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:859:1: (kw= '<' (kw= '?' | this_TypeSignature_3= ruleTypeSignature ) kw= '>' )?
-            int alt17=2;
-            int LA17_0 = input.LA(1);
-
-            if ( (LA17_0==26) ) {
-                alt17=1;
-            }
-            switch (alt17) {
-                case 1 :
-                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:860:2: kw= '<' (kw= '?' | this_TypeSignature_3= ruleTypeSignature ) kw= '>'
-                    {
-                    kw=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleTypeSignature1840); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getTypeSignatureAccess().getLessThanSignKeyword_1_0()); 
-                        
-                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:865:1: (kw= '?' | this_TypeSignature_3= ruleTypeSignature )
-                    int alt16=2;
-                    int LA16_0 = input.LA(1);
-
-                    if ( (LA16_0==27) ) {
-                        alt16=1;
-                    }
-                    else if ( (LA16_0==RULE_ID) ) {
-                        alt16=2;
-                    }
-                    else {
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 16, 0, input);
-
-                        throw nvae;
-                    }
-                    switch (alt16) {
-                        case 1 :
-                            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:866:2: kw= '?'
-                            {
-                            kw=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleTypeSignature1854); 
-
-                                    current.merge(kw);
-                                    newLeafNode(kw, grammarAccess.getTypeSignatureAccess().getQuestionMarkKeyword_1_1_0()); 
-                                
-
-                            }
-                            break;
-                        case 2 :
-                            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:873:5: this_TypeSignature_3= ruleTypeSignature
-                            {
-                             
-                                    newCompositeNode(grammarAccess.getTypeSignatureAccess().getTypeSignatureParserRuleCall_1_1_1()); 
-                                
-                            pushFollow(FollowSets000.FOLLOW_ruleTypeSignature_in_ruleTypeSignature1882);
-                            this_TypeSignature_3=ruleTypeSignature();
-
-                            state._fsp--;
-
-
-                            		current.merge(this_TypeSignature_3);
-                                
-                             
-                                    afterParserOrEnumRuleCall();
-                                
-
-                            }
-                            break;
-
-                    }
-
-                    kw=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleTypeSignature1901); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getTypeSignatureAccess().getGreaterThanSignKeyword_1_2()); 
-                        
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleTypeSignature"
-
-
     // $ANTLR start "entryRulePropertyValue"
-    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:897:1: entryRulePropertyValue returns [String current=null] : iv_rulePropertyValue= rulePropertyValue EOF ;
+    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:835:1: entryRulePropertyValue returns [String current=null] : iv_rulePropertyValue= rulePropertyValue EOF ;
     public final String entryRulePropertyValue() throws RecognitionException {
         String current = null;
 
@@ -2307,17 +2130,17 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:898:2: (iv_rulePropertyValue= rulePropertyValue EOF )
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:899:2: iv_rulePropertyValue= rulePropertyValue EOF
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:836:2: (iv_rulePropertyValue= rulePropertyValue EOF )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:837:2: iv_rulePropertyValue= rulePropertyValue EOF
             {
              newCompositeNode(grammarAccess.getPropertyValueRule()); 
-            pushFollow(FollowSets000.FOLLOW_rulePropertyValue_in_entryRulePropertyValue1944);
+            pushFollow(FollowSets000.FOLLOW_rulePropertyValue_in_entryRulePropertyValue1764);
             iv_rulePropertyValue=rulePropertyValue();
 
             state._fsp--;
 
              current =iv_rulePropertyValue.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePropertyValue1955); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePropertyValue1775); 
 
             }
 
@@ -2335,7 +2158,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyValue"
-    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:906:1: rulePropertyValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_BOOLEAN_0= RULE_BOOLEAN | this_STRING_1= RULE_STRING | this_Float_2= ruleFloat | this_QualifiedID_3= ruleQualifiedID ) ;
+    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:844:1: rulePropertyValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_BOOLEAN_0= RULE_BOOLEAN | this_STRING_1= RULE_STRING | this_Float_2= ruleFloat | this_QualifiedID_3= ruleQualifiedID ) ;
     public final AntlrDatatypeRuleToken rulePropertyValue() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2349,45 +2172,45 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:909:28: ( (this_BOOLEAN_0= RULE_BOOLEAN | this_STRING_1= RULE_STRING | this_Float_2= ruleFloat | this_QualifiedID_3= ruleQualifiedID ) )
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:910:1: (this_BOOLEAN_0= RULE_BOOLEAN | this_STRING_1= RULE_STRING | this_Float_2= ruleFloat | this_QualifiedID_3= ruleQualifiedID )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:847:28: ( (this_BOOLEAN_0= RULE_BOOLEAN | this_STRING_1= RULE_STRING | this_Float_2= ruleFloat | this_QualifiedID_3= ruleQualifiedID ) )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:848:1: (this_BOOLEAN_0= RULE_BOOLEAN | this_STRING_1= RULE_STRING | this_Float_2= ruleFloat | this_QualifiedID_3= ruleQualifiedID )
             {
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:910:1: (this_BOOLEAN_0= RULE_BOOLEAN | this_STRING_1= RULE_STRING | this_Float_2= ruleFloat | this_QualifiedID_3= ruleQualifiedID )
-            int alt18=4;
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:848:1: (this_BOOLEAN_0= RULE_BOOLEAN | this_STRING_1= RULE_STRING | this_Float_2= ruleFloat | this_QualifiedID_3= ruleQualifiedID )
+            int alt16=4;
             switch ( input.LA(1) ) {
             case RULE_BOOLEAN:
                 {
-                alt18=1;
+                alt16=1;
                 }
                 break;
             case RULE_STRING:
                 {
-                alt18=2;
+                alt16=2;
                 }
                 break;
             case RULE_TFLOAT:
             case RULE_NATURAL:
                 {
-                alt18=3;
+                alt16=3;
                 }
                 break;
             case RULE_ID:
                 {
-                alt18=4;
+                alt16=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 18, 0, input);
+                    new NoViableAltException("", 16, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt18) {
+            switch (alt16) {
                 case 1 :
-                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:910:6: this_BOOLEAN_0= RULE_BOOLEAN
+                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:848:6: this_BOOLEAN_0= RULE_BOOLEAN
                     {
-                    this_BOOLEAN_0=(Token)match(input,RULE_BOOLEAN,FollowSets000.FOLLOW_RULE_BOOLEAN_in_rulePropertyValue1995); 
+                    this_BOOLEAN_0=(Token)match(input,RULE_BOOLEAN,FollowSets000.FOLLOW_RULE_BOOLEAN_in_rulePropertyValue1815); 
 
                     		current.merge(this_BOOLEAN_0);
                         
@@ -2398,9 +2221,9 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:918:10: this_STRING_1= RULE_STRING
+                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:856:10: this_STRING_1= RULE_STRING
                     {
-                    this_STRING_1=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_rulePropertyValue2021); 
+                    this_STRING_1=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_rulePropertyValue1841); 
 
                     		current.merge(this_STRING_1);
                         
@@ -2411,12 +2234,12 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:927:5: this_Float_2= ruleFloat
+                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:865:5: this_Float_2= ruleFloat
                     {
                      
                             newCompositeNode(grammarAccess.getPropertyValueAccess().getFloatParserRuleCall_2()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleFloat_in_rulePropertyValue2054);
+                    pushFollow(FollowSets000.FOLLOW_ruleFloat_in_rulePropertyValue1874);
                     this_Float_2=ruleFloat();
 
                     state._fsp--;
@@ -2431,12 +2254,12 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:939:5: this_QualifiedID_3= ruleQualifiedID
+                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:877:5: this_QualifiedID_3= ruleQualifiedID
                     {
                      
                             newCompositeNode(grammarAccess.getPropertyValueAccess().getQualifiedIDParserRuleCall_3()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleQualifiedID_in_rulePropertyValue2087);
+                    pushFollow(FollowSets000.FOLLOW_ruleQualifiedID_in_rulePropertyValue1907);
                     this_QualifiedID_3=ruleQualifiedID();
 
                     state._fsp--;
@@ -2471,7 +2294,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFloat"
-    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:957:1: entryRuleFloat returns [String current=null] : iv_ruleFloat= ruleFloat EOF ;
+    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:895:1: entryRuleFloat returns [String current=null] : iv_ruleFloat= ruleFloat EOF ;
     public final String entryRuleFloat() throws RecognitionException {
         String current = null;
 
@@ -2479,17 +2302,17 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:958:2: (iv_ruleFloat= ruleFloat EOF )
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:959:2: iv_ruleFloat= ruleFloat EOF
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:896:2: (iv_ruleFloat= ruleFloat EOF )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:897:2: iv_ruleFloat= ruleFloat EOF
             {
              newCompositeNode(grammarAccess.getFloatRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleFloat_in_entryRuleFloat2133);
+            pushFollow(FollowSets000.FOLLOW_ruleFloat_in_entryRuleFloat1953);
             iv_ruleFloat=ruleFloat();
 
             state._fsp--;
 
              current =iv_ruleFloat.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleFloat2144); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleFloat1964); 
 
             }
 
@@ -2507,7 +2330,7 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFloat"
-    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:966:1: ruleFloat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_TFLOAT_0= RULE_TFLOAT | this_NATURAL_1= RULE_NATURAL ) ;
+    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:904:1: ruleFloat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_TFLOAT_0= RULE_TFLOAT | this_NATURAL_1= RULE_NATURAL ) ;
     public final AntlrDatatypeRuleToken ruleFloat() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2517,30 +2340,30 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:969:28: ( (this_TFLOAT_0= RULE_TFLOAT | this_NATURAL_1= RULE_NATURAL ) )
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:970:1: (this_TFLOAT_0= RULE_TFLOAT | this_NATURAL_1= RULE_NATURAL )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:907:28: ( (this_TFLOAT_0= RULE_TFLOAT | this_NATURAL_1= RULE_NATURAL ) )
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:908:1: (this_TFLOAT_0= RULE_TFLOAT | this_NATURAL_1= RULE_NATURAL )
             {
-            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:970:1: (this_TFLOAT_0= RULE_TFLOAT | this_NATURAL_1= RULE_NATURAL )
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:908:1: (this_TFLOAT_0= RULE_TFLOAT | this_NATURAL_1= RULE_NATURAL )
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA19_0==RULE_TFLOAT) ) {
-                alt19=1;
+            if ( (LA17_0==RULE_TFLOAT) ) {
+                alt17=1;
             }
-            else if ( (LA19_0==RULE_NATURAL) ) {
-                alt19=2;
+            else if ( (LA17_0==RULE_NATURAL) ) {
+                alt17=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 19, 0, input);
+                    new NoViableAltException("", 17, 0, input);
 
                 throw nvae;
             }
-            switch (alt19) {
+            switch (alt17) {
                 case 1 :
-                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:970:6: this_TFLOAT_0= RULE_TFLOAT
+                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:908:6: this_TFLOAT_0= RULE_TFLOAT
                     {
-                    this_TFLOAT_0=(Token)match(input,RULE_TFLOAT,FollowSets000.FOLLOW_RULE_TFLOAT_in_ruleFloat2184); 
+                    this_TFLOAT_0=(Token)match(input,RULE_TFLOAT,FollowSets000.FOLLOW_RULE_TFLOAT_in_ruleFloat2004); 
 
                     		current.merge(this_TFLOAT_0);
                         
@@ -2551,9 +2374,9 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:978:10: this_NATURAL_1= RULE_NATURAL
+                    // ../de.cau.cs.kieler.klassviz.text/src-gen/de/cau/cs/kieler/klassviz/text/parser/antlr/internal/InternalClassData.g:916:10: this_NATURAL_1= RULE_NATURAL
                     {
-                    this_NATURAL_1=(Token)match(input,RULE_NATURAL,FollowSets000.FOLLOW_RULE_NATURAL_in_ruleFloat2210); 
+                    this_NATURAL_1=(Token)match(input,RULE_NATURAL,FollowSets000.FOLLOW_RULE_NATURAL_in_ruleFloat2030); 
 
                     		current.merge(this_NATURAL_1);
                         
@@ -2652,29 +2475,22 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_24_in_ruleKMethod1503 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleKTypeReference_in_entryRuleKTypeReference1539 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleKTypeReference1549 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTypeSignature_in_ruleKTypeReference1594 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleQualifiedID_in_entryRuleQualifiedID1630 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedID1641 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedID1681 = new BitSet(new long[]{0x0000000002000002L});
-        public static final BitSet FOLLOW_25_in_ruleQualifiedID1700 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedID1715 = new BitSet(new long[]{0x0000000002000002L});
-        public static final BitSet FOLLOW_ruleTypeSignature_in_entryRuleTypeSignature1763 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTypeSignature1774 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleQualifiedID_in_ruleTypeSignature1821 = new BitSet(new long[]{0x0000000004000002L});
-        public static final BitSet FOLLOW_26_in_ruleTypeSignature1840 = new BitSet(new long[]{0x0000000008000010L});
-        public static final BitSet FOLLOW_27_in_ruleTypeSignature1854 = new BitSet(new long[]{0x0000000010000000L});
-        public static final BitSet FOLLOW_ruleTypeSignature_in_ruleTypeSignature1882 = new BitSet(new long[]{0x0000000010000000L});
-        public static final BitSet FOLLOW_28_in_ruleTypeSignature1901 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePropertyValue_in_entryRulePropertyValue1944 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRulePropertyValue1955 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_BOOLEAN_in_rulePropertyValue1995 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_STRING_in_rulePropertyValue2021 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleFloat_in_rulePropertyValue2054 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleQualifiedID_in_rulePropertyValue2087 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleFloat_in_entryRuleFloat2133 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleFloat2144 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_TFLOAT_in_ruleFloat2184 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_NATURAL_in_ruleFloat2210 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleKTypeReference1590 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleQualifiedID_in_entryRuleQualifiedID1631 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedID1642 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedID1682 = new BitSet(new long[]{0x0000000002000002L});
+        public static final BitSet FOLLOW_25_in_ruleQualifiedID1701 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedID1716 = new BitSet(new long[]{0x0000000002000002L});
+        public static final BitSet FOLLOW_rulePropertyValue_in_entryRulePropertyValue1764 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRulePropertyValue1775 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_BOOLEAN_in_rulePropertyValue1815 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_STRING_in_rulePropertyValue1841 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleFloat_in_rulePropertyValue1874 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleQualifiedID_in_rulePropertyValue1907 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleFloat_in_entryRuleFloat1953 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleFloat1964 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_TFLOAT_in_ruleFloat2004 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_NATURAL_in_ruleFloat2030 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

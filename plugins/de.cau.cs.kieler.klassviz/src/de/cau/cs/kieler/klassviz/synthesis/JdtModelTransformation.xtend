@@ -177,6 +177,7 @@ class JdtModelTransformation {
                     kMethod.parameters.forEach[ kparam, i |
                         val jdtparam = jdtMethod.parameters.get(i)
                         kparam.name = jdtparam.elementName
+                        kparam.signature = Signature.toString(jdtparam.typeSignature)
                         jdtType.resolveReference(kparam, typeNameFunc)
                     ]
                 }

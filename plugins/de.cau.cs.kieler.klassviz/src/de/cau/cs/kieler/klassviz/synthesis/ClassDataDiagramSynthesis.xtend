@@ -56,12 +56,15 @@ import java.util.Map
 import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.jdt.core.JavaModelException
 import org.eclipse.jdt.core.Signature
-import org.eclipse.xtext.xbase.lib.Pair
+import de.cau.cs.kieler.kiml.klayoutdata.KShapeLayout
+import java.util.Collections
 
 /**
  * Synthesis of class diagrams using the Classdata meta model.
  * 
  * @author ems
+ * @author cds
+ * @author msp
  */
 class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     
@@ -184,6 +187,8 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     public static val OPTION_SHADOW = new Property("classdata.shadow", true)
     /** The font name used for all text labels. */
     public static val OPTION_FONT_NAME = new Property("classdata.fontName", "Sans")
+    /** Whether to print names of method parameters. */
+    public static val OPTION_METHOD_PARAM_NAMES = new Property("classdata.printMethodParameterNames", true)
 
     /** The synthesis options passed with the class model instance. */
     private val modelOptions = new MapPropertyHolder
@@ -264,7 +269,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
             // their contents
             if (VISUALIZE_PACKAGES.booleanValue) {
                 rootNode.children += classModel.packages.map [
-                    it.createPackageNode(classModel)
+                    it.createPackageNode(classModel, rootNode)
                 ]
             } else {
                 // If not just create all class nodes including their contents
@@ -274,18 +279,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 ].flatten
             }
             
-            // Layout depends on whether we have hierarchy (visualize packages) or not. If we have,
-            // hierarchy, we use KLay Layered; otherwise, we use a planarization algorithm.
-            if (VISUALIZE_PACKAGES.booleanValue) {
-                rootNode.setLayoutOption(LayoutOptions.ALGORITHM,
-                    "de.cau.cs.kieler.klay.layered")
-                rootNode.setLayoutOption(LayoutOptions.LAYOUT_HIERARCHY, true)
-            } else {
-                rootNode.setLayoutOption(LayoutOptions.ALGORITHM,
-                    "de.cau.cs.kieler.kiml.ogdf.planarization")
-            }
-            
-            // General layout options
+            // Configure layout options
             rootNode.configureLayout
         ]
 
@@ -314,9 +308,10 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * 
      * @param kPackage the package to create a node for.
      * @param classModel the Java class model.
+     * @param rootNode the root KNode instance
      * @return node representing the package, including all classes.
      */
-    def private KNode createPackageNode(KPackage kPackage, KClassModel classModel) {
+    def private KNode createPackageNode(KPackage kPackage, KClassModel classModel, KNode rootNode) {
         return kPackage.createNode.putToLookUpWith(kPackage) => [ packageNode |
             // Add a gray rectangle for each package
             packageNode.addRectangle => [ rect |
@@ -333,6 +328,8 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                     classSelection.createClassNode(classModel)
                 ]
             ]
+            // Copy the root node properties and then configure the layout
+            packageNode.getData(typeof(KShapeLayout)).copyProperties(rootNode.getData(typeof(KShapeLayout)))
             packageNode.configureLayout
         ]
     }
@@ -341,8 +338,22 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      * Configure general layout options for a parent node (the root node or a package node).
      */
     def private configureLayout(KNode parentNode) {
-        parentNode.setLayoutOption(LayoutOptions.SPACING, 50f)
-        parentNode.setLayoutOption(LayoutOptions.EDGE_ROUTING, EdgeRouting.ORTHOGONAL)
+        val parentLayout = parentNode.getData(typeof(KShapeLayout))
+        parentLayout.setProperty(LayoutOptions.SPACING, 50f)
+        if (parentLayout.getProperty(LayoutOptions.EDGE_ROUTING) == EdgeRouting.UNDEFINED) {
+            parentLayout.setProperty(LayoutOptions.EDGE_ROUTING, EdgeRouting.ORTHOGONAL)
+        }
+        
+        if (parentLayout.getProperty(LayoutOptions.ALGORITHM) == null) {
+            // Layout depends on whether we have hierarchy (visualize packages) or not. If we have,
+            // hierarchy, we use KLay Layered; otherwise, we use a planarization algorithm.
+            if (VISUALIZE_PACKAGES.booleanValue) {
+                parentLayout.setProperty(LayoutOptions.ALGORITHM, "de.cau.cs.kieler.klay.layered")
+                parentLayout.setProperty(LayoutOptions.LAYOUT_HIERARCHY, true)
+            } else {
+                parentLayout.setProperty(LayoutOptions.ALGORITHM, "de.cau.cs.kieler.kiml.ogdf.planarization")
+            }
+        }
     }
     
     /**
@@ -408,6 +419,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 if (!(fields.empty && methods.empty)) {
                     rect.addSeparator
                     
+                    Collections.sort(fields, new PairComparator<KVisibility, String>)
                     fields.forEach [ field |
                         rect.addClassMember(field.key, field.value)
                     ]
@@ -417,6 +429,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 if (!methods.empty) {
                     rect.addSeparator
                     
+                    Collections.sort(methods, new PairComparator<KVisibility, String>)
                     methods.forEach [ method |
                         rect.addClassMember(method.key, method.value)
                     ]
@@ -442,10 +455,10 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     // or a generic parameter type equals one of the visualized classes. 
     def private create fieldHasDependency : new Maybe<Boolean>(false)
             hasDependency(KType classData, KClassModel classModel, KField eField) {
-        if (eField.type.referenceType != null) {
+        if (eField.type != null && eField.type.referenceType != null) {
             fieldHasDependency.set(true)
             return
-        } else if (eField.type.signature == null) {
+        } else if (eField.type == null || eField.type.signature == null) {
             return
         }
         val genericStart = eField.type.signature.indexOf('<')
@@ -455,21 +468,22 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
         if (Signature.getQualifier(fieldTypeFQN).equals("java.util")) {
             val referencedClazz = Class.forName(fieldTypeFQN)
             if (Collection.isAssignableFrom(referencedClazz)) {
-                val genericOfCollection = eField.type.signature.substring(genericStart + 1,
-                    eField.type.signature.lastIndexOf(">")).trim
+                val genericOfCollection = Signature.getTypeErasure(eField.type.signature.substring(
+                    genericStart + 1, eField.type.signature.lastIndexOf(">")).trim)
                 fieldHasDependency.set(classModel.packages.exists [ pck |
                     pck.types.exists [ classDataToBeCompared |
                         genericOfCollection == classDataToBeCompared.name
                     ]
                 ])
             } else if (Map.isAssignableFrom(referencedClazz)) {
-                var String genericsOfMap = eField.type.signature.substring(genericStart + 1,
-                    eField.type.signature.lastIndexOf(">"))
-                val separatedGenericsOfMap = genericsOfMap.split(",")
+                val separatedGenericsOfMap = Signature.getTypeArguments(
+                        Signature.createTypeSignature(eField.type.signature, true)).map[
+                    Signature.getTypeErasure(Signature.toString(it))
+                ]
                 fieldHasDependency.set(classModel.packages.exists [ pck |
                     pck.types.exists [ classDataToBeCompared |
                         separatedGenericsOfMap.exists [
-                           it.trim == classDataToBeCompared.name
+                           it == classDataToBeCompared.name
                         ]
                     ]
                 ])
@@ -539,8 +553,9 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                     if (Signature.getQualifier(fieldTypeFQN).equals("java.util")) {
                         val referencedClazz = Class.forName(fieldTypeFQN)
                         if (Collection.isAssignableFrom(referencedClazz)) {
-                            val genericOfCollection = eField.type.signature.substring(genericStart + 1,
-                                eField.type.signature.lastIndexOf(">")).trim
+                            val genericOfCollection = Signature.getTypeErasure(
+                                eField.type.signature.substring(genericStart + 1,
+                                eField.type.signature.lastIndexOf(">")).trim)
                             if (genericOfCollection == classDataToBeCompared.name) {
 
                                 // If the field's generic parameter type is the checked class, 
@@ -548,11 +563,12 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                                 classHasAssociationToThisClass.set(1, -1)
                             }
                         } else if (Map.isAssignableFrom(referencedClazz)) {
-                            var String genericsOfMap = eField.type.signature.substring(genericStart + 1,
-                                eField.type.signature.lastIndexOf(">"))
-                            val separatedGenericsOfMap = genericsOfMap.split(",")
+                            val separatedGenericsOfMap = Signature.getTypeArguments(
+                                    Signature.createTypeSignature(eField.type.signature, true)).map[
+                                Signature.getTypeErasure(Signature.toString(it))
+                            ]
                             separatedGenericsOfMap.forEach [
-                                if (it.trim == classDataToBeCompared.name) {
+                                if (it == classDataToBeCompared.name) {
 
                                     // If the field's generic parameter type is the checked class, 
                                     // set the upper bound of the multiplicity to infinity (-1).
@@ -619,7 +635,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
         val parameters = newLinkedList();
         if (METHODS_PARAMETERS.booleanValue) {
             method.parameters.forEach [ parameter |
-                if (parameter.name != null) {
+                if (modelOptions.getProperty(OPTION_METHOD_PARAM_NAMES) && parameter.name != null) {
                     if (METHODS_TYPE.booleanValue) {
                         parameters += parameter.name + " : " + Signature.getSimpleName(parameter.signature)
                     } else {

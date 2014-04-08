@@ -364,34 +364,6 @@ finally {
 
 
 
-// Entry rule entryRuleTypeSignature
-entryRuleTypeSignature 
-:
-{ before(grammarAccess.getTypeSignatureRule()); }
-	 ruleTypeSignature
-{ after(grammarAccess.getTypeSignatureRule()); } 
-	 EOF 
-;
-
-// Rule TypeSignature
-ruleTypeSignature
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getTypeSignatureAccess().getGroup()); }
-(rule__TypeSignature__Group__0)
-{ after(grammarAccess.getTypeSignatureAccess().getGroup()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
 // Entry rule entryRulePropertyValue
 entryRulePropertyValue 
 :
@@ -558,30 +530,6 @@ rule__KEnum__Alternatives_2_1
 { before(grammarAccess.getKEnumAccess().getMethodsAssignment_2_1_1()); }
 (rule__KEnum__MethodsAssignment_2_1_1)
 { after(grammarAccess.getKEnumAccess().getMethodsAssignment_2_1_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__TypeSignature__Alternatives_1_1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getTypeSignatureAccess().getQuestionMarkKeyword_1_1_0()); }
-
-	'?' 
-
-{ after(grammarAccess.getTypeSignatureAccess().getQuestionMarkKeyword_1_1_0()); }
-)
-
-    |(
-{ before(grammarAccess.getTypeSignatureAccess().getTypeSignatureParserRuleCall_1_1_1()); }
-	ruleTypeSignature
-{ after(grammarAccess.getTypeSignatureAccess().getTypeSignatureParserRuleCall_1_1_1()); }
 )
 
 ;
@@ -2193,163 +2141,6 @@ finally {
 
 
 
-rule__TypeSignature__Group__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__TypeSignature__Group__0__Impl
-	rule__TypeSignature__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__TypeSignature__Group__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getTypeSignatureAccess().getQualifiedIDParserRuleCall_0()); }
-	ruleQualifiedID
-{ after(grammarAccess.getTypeSignatureAccess().getQualifiedIDParserRuleCall_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__TypeSignature__Group__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__TypeSignature__Group__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__TypeSignature__Group__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getTypeSignatureAccess().getGroup_1()); }
-(rule__TypeSignature__Group_1__0)?
-{ after(grammarAccess.getTypeSignatureAccess().getGroup_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
-rule__TypeSignature__Group_1__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__TypeSignature__Group_1__0__Impl
-	rule__TypeSignature__Group_1__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__TypeSignature__Group_1__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getTypeSignatureAccess().getLessThanSignKeyword_1_0()); }
-
-	'<' 
-
-{ after(grammarAccess.getTypeSignatureAccess().getLessThanSignKeyword_1_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__TypeSignature__Group_1__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__TypeSignature__Group_1__1__Impl
-	rule__TypeSignature__Group_1__2
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__TypeSignature__Group_1__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getTypeSignatureAccess().getAlternatives_1_1()); }
-(rule__TypeSignature__Alternatives_1_1)
-{ after(grammarAccess.getTypeSignatureAccess().getAlternatives_1_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__TypeSignature__Group_1__2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__TypeSignature__Group_1__2__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__TypeSignature__Group_1__2__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getTypeSignatureAccess().getGreaterThanSignKeyword_1_2()); }
-
-	'>' 
-
-{ after(grammarAccess.getTypeSignatureAccess().getGreaterThanSignKeyword_1_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
-
-
 
 rule__KClassModel__JavaProjectsAssignment_1_1_0_1
     @init {
@@ -2672,8 +2463,8 @@ rule__KTypeReference__SignatureAssignment
     }
 :
 (
-{ before(grammarAccess.getKTypeReferenceAccess().getSignatureTypeSignatureParserRuleCall_0()); }
-	ruleTypeSignature{ after(grammarAccess.getKTypeReferenceAccess().getSignatureTypeSignatureParserRuleCall_0()); }
+{ before(grammarAccess.getKTypeReferenceAccess().getSignatureIDTerminalRuleCall_0()); }
+	RULE_ID{ after(grammarAccess.getKTypeReferenceAccess().getSignatureIDTerminalRuleCall_0()); }
 )
 
 ;

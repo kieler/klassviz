@@ -61,15 +61,12 @@ KMethod returns KMethod:
     ')';
 
 KTypeReference returns KTypeReference:
-    signature=TypeSignature;
+    signature=ID;
 
 //--------------- Terminals ----------------
 
 QualifiedID returns ecore::EString:
     ID ('.' ID)*;
-
-TypeSignature returns ecore::EString:
-    QualifiedID ('<' ('?' | TypeSignature) '>')?;
 
 PropertyValue returns ecore::EString:
     BOOLEAN | STRING | Float | QualifiedID;

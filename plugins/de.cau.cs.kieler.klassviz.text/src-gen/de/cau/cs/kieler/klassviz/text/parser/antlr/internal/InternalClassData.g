@@ -767,19 +767,19 @@ ruleKTypeReference returns [EObject current=null]
     @after { leaveRule(); }:
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getKTypeReferenceAccess().getSignatureTypeSignatureParserRuleCall_0()); 
-	    }
-		lv_signature_0_0=ruleTypeSignature		{
+		lv_signature_0_0=RULE_ID
+		{
+			newLeafNode(lv_signature_0_0, grammarAccess.getKTypeReferenceAccess().getSignatureIDTerminalRuleCall_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getKTypeReferenceRule());
+	            $current = createModelElement(grammarAccess.getKTypeReferenceRule());
 	        }
-       		set(
+       		setWithLastConsumed(
        			$current, 
        			"signature",
         		lv_signature_0_0, 
-        		"TypeSignature");
-	        afterParserOrEnumRuleCall();
+        		"ID");
 	    }
 
 )
@@ -825,68 +825,6 @@ ruleQualifiedID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTok
     newLeafNode(this_ID_2, grammarAccess.getQualifiedIDAccess().getIDTerminalRuleCall_1_1()); 
     }
 )*)
-    ;
-
-
-
-
-
-// Entry rule entryRuleTypeSignature
-entryRuleTypeSignature returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getTypeSignatureRule()); } 
-	 iv_ruleTypeSignature=ruleTypeSignature 
-	 { $current=$iv_ruleTypeSignature.current.getText(); }  
-	 EOF 
-;
-
-// Rule TypeSignature
-ruleTypeSignature returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-    { 
-        newCompositeNode(grammarAccess.getTypeSignatureAccess().getQualifiedIDParserRuleCall_0()); 
-    }
-    this_QualifiedID_0=ruleQualifiedID    {
-		$current.merge(this_QualifiedID_0);
-    }
-
-    { 
-        afterParserOrEnumRuleCall();
-    }
-(
-	kw='<' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getTypeSignatureAccess().getLessThanSignKeyword_1_0()); 
-    }
-(
-	kw='?' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getTypeSignatureAccess().getQuestionMarkKeyword_1_1_0()); 
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getTypeSignatureAccess().getTypeSignatureParserRuleCall_1_1_1()); 
-    }
-    this_TypeSignature_3=ruleTypeSignature    {
-		$current.merge(this_TypeSignature_3);
-    }
-
-    { 
-        afterParserOrEnumRuleCall();
-    }
-)
-	kw='>' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getTypeSignatureAccess().getGreaterThanSignKeyword_1_2()); 
-    }
-)?)
     ;
 
 

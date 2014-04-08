@@ -42,7 +42,6 @@ public class ClassDataParser extends AbstractContentAssistParser {
 					put(grammarAccess.getKClassAccess().getAlternatives_2_1(), "rule__KClass__Alternatives_2_1");
 					put(grammarAccess.getKInterfaceAccess().getAlternatives_2_1(), "rule__KInterface__Alternatives_2_1");
 					put(grammarAccess.getKEnumAccess().getAlternatives_2_1(), "rule__KEnum__Alternatives_2_1");
-					put(grammarAccess.getTypeSignatureAccess().getAlternatives_1_1(), "rule__TypeSignature__Alternatives_1_1");
 					put(grammarAccess.getPropertyValueAccess().getAlternatives(), "rule__PropertyValue__Alternatives");
 					put(grammarAccess.getFloatAccess().getAlternatives(), "rule__Float__Alternatives");
 					put(grammarAccess.getKClassModelAccess().getGroup(), "rule__KClassModel__Group__0");
@@ -62,8 +61,6 @@ public class ClassDataParser extends AbstractContentAssistParser {
 					put(grammarAccess.getKMethodAccess().getGroup_2_1(), "rule__KMethod__Group_2_1__0");
 					put(grammarAccess.getQualifiedIDAccess().getGroup(), "rule__QualifiedID__Group__0");
 					put(grammarAccess.getQualifiedIDAccess().getGroup_1(), "rule__QualifiedID__Group_1__0");
-					put(grammarAccess.getTypeSignatureAccess().getGroup(), "rule__TypeSignature__Group__0");
-					put(grammarAccess.getTypeSignatureAccess().getGroup_1(), "rule__TypeSignature__Group_1__0");
 					put(grammarAccess.getKClassModelAccess().getJavaProjectsAssignment_1_1_0_1(), "rule__KClassModel__JavaProjectsAssignment_1_1_0_1");
 					put(grammarAccess.getKClassModelAccess().getBundlesAssignment_1_1_1_1(), "rule__KClassModel__BundlesAssignment_1_1_1_1");
 					put(grammarAccess.getKClassModelAccess().getOptionsAssignment_2(), "rule__KClassModel__OptionsAssignment_2");

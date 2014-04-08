@@ -14,10 +14,16 @@
 package de.cau.cs.kieler.klassviz.text.ui.contentassist
 
 import com.google.inject.Inject
+import de.cau.cs.kieler.core.properties.IProperty
+import de.cau.cs.kieler.kiml.LayoutMetaDataService
+import de.cau.cs.kieler.kiml.options.LayoutOptions
 import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
+import de.cau.cs.kieler.klassviz.model.classdata.KOption
 import de.cau.cs.kieler.klassviz.model.classdata.KPackage
 import de.cau.cs.kieler.klassviz.model.classdata.KType
+import de.cau.cs.kieler.klassviz.synthesis.ClassDataDiagramSynthesis
 import de.cau.cs.kieler.klassviz.synthesis.ClassDataExtensions
+import de.cau.cs.kieler.klassviz.text.services.ClassDataGrammarAccess
 import de.cau.cs.kieler.klassviz.text.ui.ClassDataUiModule
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.runtime.CoreException
@@ -30,8 +36,6 @@ import org.eclipse.xtext.Assignment
 import org.eclipse.xtext.RuleCall
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
-import de.cau.cs.kieler.klassviz.synthesis.ClassDataDiagramSynthesis
-import de.cau.cs.kieler.core.properties.IProperty
 
 /**
  * Custom content assist proposals.
@@ -41,8 +45,8 @@ import de.cau.cs.kieler.core.properties.IProperty
  */
 class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
     
-    @Inject
-    extension ClassDataExtensions
+    @Inject extension ClassDataExtensions
+    @Inject private ClassDataGrammarAccess grammmarAccess;
     
     /**
      * Provide completion proposals for the name of an imported project.
@@ -54,7 +58,8 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
                 !classModel.javaProjects.contains(it.name)]) {
              try {
                  if (project.open && project.hasNature(JavaCore.NATURE_ID)) {
-                    acceptor.accept(createCompletionProposal(project.name, context))
+                     val proposal = valueConverter.toString(project.name, grammmarAccess.qualifiedIDRule.name)
+                     acceptor.accept(createCompletionProposal(proposal, context))
                  }
             } catch (CoreException e) {}
          }
@@ -68,7 +73,8 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
          val classModel = model as KClassModel
          for (bundle : Platform.getBundle(ClassDataUiModule.PLUGIN_ID).bundleContext.bundles.filter[
                 !classModel.bundles.contains(it.symbolicName)]) {
-             acceptor.accept(createCompletionProposal(bundle.symbolicName, context))
+             val proposal = valueConverter.toString(bundle.symbolicName, grammmarAccess.qualifiedIDRule.name)
+             acceptor.accept(createCompletionProposal(proposal, context))
          }
      }
      
@@ -83,7 +89,8 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
          for (projectName : classModel.javaProjects) {
              for (packFrag : projectName.jdtPackages.filter[it.compilationUnits.length > 0
                     && classModel.packages.forall[p | p.name != it.elementName]]) {
-                 acceptor.accept(createCompletionProposal(packFrag.elementName, context))
+                 val proposal = valueConverter.toString(packFrag.elementName, grammmarAccess.qualifiedIDRule.name)
+                 acceptor.accept(createCompletionProposal(proposal, context))
              }
          }
          
@@ -92,7 +99,8 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
              val packagesString = Platform.getBundle(bundleName)?.headers?.get("Export-Package")
              if (packagesString != null) {
                  for (element : ManifestElement.parseHeader("Export-Package", packagesString)) {
-                     acceptor.accept(createCompletionProposal(element.value, context))
+                     val proposal = valueConverter.toString(element.value, grammmarAccess.qualifiedIDRule.name)
+                     acceptor.accept(createCompletionProposal(proposal, context))
                  }
              }
          }
@@ -247,7 +255,9 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
         if (jdtType != null) {
             // get the proposals from a JDT type
             for (method : jdtType.methods.filter[!it.constructor]) {
-                val paramTypeSign = method.parameterTypes.map[t | Signature.toString(t)].toList
+                val paramTypeSign = method.parameterTypes.map[t |
+                    Signature.getSimpleName(Signature.toString(Signature.getTypeErasure(t)))
+                ].toList
                 if (type.methods.forall[it.name != method.elementName
                         || !it.parameters.map[s | s.signature].equals(paramTypeSign)]) {
                     val proposal = method.elementName + "(" + paramTypeSign.join(", ") + ")"
@@ -276,11 +286,55 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
     def override completeKOption_Key(EObject model, Assignment assignment, ContentAssistContext context,
             ICompletionProposalAcceptor acceptor) {
         val classModel = model as KClassModel
+        
+        // add proposals for synthesis options
         for (field : typeof(ClassDataDiagramSynthesis).fields.filter[
                 it.isStatic && typeof(IProperty).isAssignableFrom(it.type)]) {
             val property = field.get(null) as IProperty<?>
             if (classModel.options.forall[it.key != property.id]) {
-                acceptor.accept(createCompletionProposal(property.id, context))
+                val proposal = valueConverter.toString(property.id, grammmarAccess.qualifiedIDRule.name)
+                acceptor.accept(createCompletionProposal(proposal, context))
+            }
+        }
+        
+        // add proposals for layout options
+        val activeAlgoId = classModel.options.findFirst[it.key == LayoutOptions.ALGORITHM.id]?.value
+        val activeAlgo = if (activeAlgoId != null) {
+                LayoutMetaDataService.instance.getAlgorithmData(activeAlgoId)
+            }
+        for (optionData : LayoutMetaDataService.instance.optionData.filter[
+            activeAlgo == null || activeAlgo.knowsOption(it)
+        ]) {
+            if (classModel.options.forall[it.key != optionData.id]) {
+                val proposal = valueConverter.toString(optionData.id, grammmarAccess.qualifiedIDRule.name)
+                val displayString = optionData.id + " (" + optionData.name + ")"
+                acceptor.accept(createCompletionProposal(proposal, displayString, null, context))
+            }
+        }
+    }
+
+    /**
+     * Provide completion proposals for the value of an option.
+     */    
+    def override completeKOption_Value(EObject model, Assignment assignment, ContentAssistContext context,
+            ICompletionProposalAcceptor acceptor) {
+        val optionKey = (model as KOption).key
+        if (!optionKey.nullOrEmpty) {
+            val optionData = LayoutMetaDataService.instance.getOptionDataBySuffix(optionKey)
+            if (optionData == null) {
+                return
+            }
+            
+            if (optionKey == LayoutOptions.ALGORITHM.id) {
+                for (algorithmData : LayoutMetaDataService.instance.algorithmData) {
+                    val proposal = '"' + algorithmData.id+ '"'
+                    val displayString = algorithmData.id + " (" + algorithmData.name + ")"
+                    acceptor.accept(createCompletionProposal(proposal, displayString, null, context))
+                }
+            } else {
+                for (proposal : optionData.choices) {
+                    acceptor.accept(createCompletionProposal(proposal, context))
+                }
             }
         }
     }

@@ -438,17 +438,17 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	public class KTypeReferenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "KTypeReference");
 		private final Assignment cSignatureAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cSignatureTypeSignatureParserRuleCall_0 = (RuleCall)cSignatureAssignment.eContents().get(0);
+		private final RuleCall cSignatureIDTerminalRuleCall_0 = (RuleCall)cSignatureAssignment.eContents().get(0);
 		
 		//KTypeReference:
-		//	signature=TypeSignature;
+		//	signature=ID;
 		public ParserRule getRule() { return rule; }
 
-		//signature=TypeSignature
+		//signature=ID
 		public Assignment getSignatureAssignment() { return cSignatureAssignment; }
 
-		//TypeSignature
-		public RuleCall getSignatureTypeSignatureParserRuleCall_0() { return cSignatureTypeSignatureParserRuleCall_0; }
+		//ID
+		public RuleCall getSignatureIDTerminalRuleCall_0() { return cSignatureIDTerminalRuleCall_0; }
 	}
 
 	public class QualifiedIDElements extends AbstractParserRuleElementFinder {
@@ -478,46 +478,6 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
-	}
-
-	public class TypeSignatureElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TypeSignature");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cQualifiedIDParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cLessThanSignKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
-		private final Keyword cQuestionMarkKeyword_1_1_0 = (Keyword)cAlternatives_1_1.eContents().get(0);
-		private final RuleCall cTypeSignatureParserRuleCall_1_1_1 = (RuleCall)cAlternatives_1_1.eContents().get(1);
-		private final Keyword cGreaterThanSignKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		
-		//TypeSignature returns ecore::EString:
-		//	QualifiedID ("<" ("?" | TypeSignature) ">")?;
-		public ParserRule getRule() { return rule; }
-
-		//QualifiedID ("<" ("?" | TypeSignature) ">")?
-		public Group getGroup() { return cGroup; }
-
-		//QualifiedID
-		public RuleCall getQualifiedIDParserRuleCall_0() { return cQualifiedIDParserRuleCall_0; }
-
-		//("<" ("?" | TypeSignature) ">")?
-		public Group getGroup_1() { return cGroup_1; }
-
-		//"<"
-		public Keyword getLessThanSignKeyword_1_0() { return cLessThanSignKeyword_1_0; }
-
-		//"?" | TypeSignature
-		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
-
-		//"?"
-		public Keyword getQuestionMarkKeyword_1_1_0() { return cQuestionMarkKeyword_1_1_0; }
-
-		//TypeSignature
-		public RuleCall getTypeSignatureParserRuleCall_1_1_1() { return cTypeSignatureParserRuleCall_1_1_1; }
-
-		//">"
-		public Keyword getGreaterThanSignKeyword_1_2() { return cGreaterThanSignKeyword_1_2; }
 	}
 
 	public class PropertyValueElements extends AbstractParserRuleElementFinder {
@@ -580,7 +540,6 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	private KMethodElements pKMethod;
 	private KTypeReferenceElements pKTypeReference;
 	private QualifiedIDElements pQualifiedID;
-	private TypeSignatureElements pTypeSignature;
 	private PropertyValueElements pPropertyValue;
 	private FloatElements pFloat;
 	private TerminalRule tBOOLEAN;
@@ -714,7 +673,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//KTypeReference:
-	//	signature=TypeSignature;
+	//	signature=ID;
 	public KTypeReferenceElements getKTypeReferenceAccess() {
 		return (pKTypeReference != null) ? pKTypeReference : (pKTypeReference = new KTypeReferenceElements());
 	}
@@ -732,16 +691,6 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getQualifiedIDRule() {
 		return getQualifiedIDAccess().getRule();
-	}
-
-	//TypeSignature returns ecore::EString:
-	//	QualifiedID ("<" ("?" | TypeSignature) ">")?;
-	public TypeSignatureElements getTypeSignatureAccess() {
-		return (pTypeSignature != null) ? pTypeSignature : (pTypeSignature = new TypeSignatureElements());
-	}
-	
-	public ParserRule getTypeSignatureRule() {
-		return getTypeSignatureAccess().getRule();
 	}
 
 	//PropertyValue returns ecore::EString:
