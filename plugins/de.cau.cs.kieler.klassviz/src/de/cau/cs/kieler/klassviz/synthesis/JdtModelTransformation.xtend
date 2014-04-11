@@ -325,7 +325,7 @@ class JdtModelTransformation {
             tr.signature = Signature.toString(jdtField.typeSignature)
             jdtType.resolveReference(tr, typeNameFunc)
         ]
-        if (jdtType.isInterface) {
+        if (jdtType.isInterface || jdtField.isEnumConstant) {
             kField.visibility = KVisibility::PUBLIC
             kField.static = true
             kField.final = true

@@ -151,7 +151,7 @@ class JavaReflectionTransformation {
         kField.type = ClassdataFactory.eINSTANCE.createKTypeReference() => [ tr |
             field.genericType.resolveReference(tr, typeFunc)
         ]
-        if (clazz.isInterface) {
+        if (clazz.isInterface || field.isEnumConstant) {
             kField.visibility = KVisibility::PUBLIC
             kField.static = true
             kField.final = true

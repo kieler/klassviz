@@ -455,7 +455,8 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     // or a generic parameter type equals one of the visualized classes. 
     def private create fieldHasDependency : new Maybe<Boolean>(false)
             hasDependency(KType classData, KClassModel classModel, KField eField) {
-        if (eField.type != null && eField.type.referenceType != null) {
+        if (eField.type != null && eField.type.referenceType != null
+                && eField.type.referenceType != classData) {
             fieldHasDependency.set(true)
             return
         } else if (eField.type == null || eField.type.signature == null) {
@@ -539,7 +540,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     // For each field in each class add their associations if there are any. Also add the multiplicities.
     def private createAssociationEdges(KType classData, KClassModel classModel) {
         classModel.packages.forEach [
-            it.types.forEach [ classDataToBeCompared |
+            it.types.filter[it != classData].forEach [ classDataToBeCompared |
                 val int[] classHasAssociationToThisClass = #[0, 0]
                 classData.fields.forEach [ eField |
                     // Don't check again if the field has no association relation anyways.
@@ -673,7 +674,8 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
      */
     def private String buildDisplayString(KField field) {
         val String fieldType = 
-            if (ATTRIBUTES_TYPE.booleanValue && field.type.signature != null) {
+            if (ATTRIBUTES_TYPE.booleanValue && field.type != null && field.type.signature != null
+                && !(field.eContainer instanceof KEnum && field.type.referenceType == field.eContainer)) {
                 " : " + Signature.getSimpleName(field.type.signature)
             } else {
                 ""
