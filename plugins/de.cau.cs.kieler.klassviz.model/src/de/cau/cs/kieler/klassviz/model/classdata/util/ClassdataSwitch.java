@@ -122,6 +122,12 @@ public class ClassdataSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
+            case ClassdataPackage.KDEPENDENCY: {
+                KDependency kDependency = (KDependency)theEObject;
+                T result = caseKDependency(kDependency);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
             case ClassdataPackage.KMEMBER: {
                 KMember kMember = (KMember)theEObject;
                 T result = caseKMember(kMember);
@@ -254,6 +260,21 @@ public class ClassdataSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseKEnum(KEnum object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>KDependency</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>KDependency</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseKDependency(KDependency object) {
         return null;
     }
 

@@ -325,9 +325,9 @@ ruleKType returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
+((
     { 
-        newCompositeNode(grammarAccess.getKTypeAccess().getKClassParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getKTypeAccess().getKClassParserRuleCall_0_0()); 
     }
     this_KClass_0=ruleKClass
     { 
@@ -337,7 +337,7 @@ ruleKType returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getKTypeAccess().getKInterfaceParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getKTypeAccess().getKInterfaceParserRuleCall_0_1()); 
     }
     this_KInterface_1=ruleKInterface
     { 
@@ -347,14 +347,78 @@ ruleKType returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getKTypeAccess().getKEnumParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getKTypeAccess().getKEnumParserRuleCall_0_2()); 
     }
     this_KEnum_2=ruleKEnum
     { 
         $current = $this_KEnum_2.current; 
         afterParserOrEnumRuleCall();
     }
+)(	otherlv_3='{' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getKTypeAccess().getLeftCurlyBracketKeyword_1_0());
+    }
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getKTypeAccess().getFieldsKFieldParserRuleCall_1_1_0_0()); 
+	    }
+		lv_fields_4_0=ruleKField		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getKTypeRule());
+	        }
+       		add(
+       			$current, 
+       			"fields",
+        		lv_fields_4_0, 
+        		"KField");
+	        afterParserOrEnumRuleCall();
+	    }
+
 )
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getKTypeAccess().getMethodsKMethodParserRuleCall_1_1_1_0()); 
+	    }
+		lv_methods_5_0=ruleKMethod		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getKTypeRule());
+	        }
+       		add(
+       			$current, 
+       			"methods",
+        		lv_methods_5_0, 
+        		"KMethod");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getKTypeAccess().getDependenciesKDependencyParserRuleCall_1_1_2_0()); 
+	    }
+		lv_dependencies_6_0=ruleKDependency		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getKTypeRule());
+	        }
+       		add(
+       			$current, 
+       			"dependencies",
+        		lv_dependencies_6_0, 
+        		"KDependency");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*	otherlv_7='}' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getKTypeAccess().getRightCurlyBracketKeyword_1_2());
+    }
+)?)
 ;
 
 
@@ -397,52 +461,7 @@ ruleKClass returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_2='{' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getKClassAccess().getLeftCurlyBracketKeyword_2_0());
-    }
-((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getKClassAccess().getFieldsKFieldParserRuleCall_2_1_0_0()); 
-	    }
-		lv_fields_3_0=ruleKField		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getKClassRule());
-	        }
-       		add(
-       			$current, 
-       			"fields",
-        		lv_fields_3_0, 
-        		"KField");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)
-    |(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getKClassAccess().getMethodsKMethodParserRuleCall_2_1_1_0()); 
-	    }
-		lv_methods_4_0=ruleKMethod		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getKClassRule());
-	        }
-       		add(
-       			$current, 
-       			"methods",
-        		lv_methods_4_0, 
-        		"KMethod");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))*	otherlv_5='}' 
-    {
-    	newLeafNode(otherlv_5, grammarAccess.getKClassAccess().getRightCurlyBracketKeyword_2_2());
-    }
-)?)
+))
 ;
 
 
@@ -485,52 +504,7 @@ ruleKInterface returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_2='{' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getKInterfaceAccess().getLeftCurlyBracketKeyword_2_0());
-    }
-((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getKInterfaceAccess().getFieldsKFieldParserRuleCall_2_1_0_0()); 
-	    }
-		lv_fields_3_0=ruleKField		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getKInterfaceRule());
-	        }
-       		add(
-       			$current, 
-       			"fields",
-        		lv_fields_3_0, 
-        		"KField");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)
-    |(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getKInterfaceAccess().getMethodsKMethodParserRuleCall_2_1_1_0()); 
-	    }
-		lv_methods_4_0=ruleKMethod		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getKInterfaceRule());
-	        }
-       		add(
-       			$current, 
-       			"methods",
-        		lv_methods_4_0, 
-        		"KMethod");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))*	otherlv_5='}' 
-    {
-    	newLeafNode(otherlv_5, grammarAccess.getKInterfaceAccess().getRightCurlyBracketKeyword_2_2());
-    }
-)?)
+))
 ;
 
 
@@ -573,52 +547,63 @@ ruleKEnum returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_2='{' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getKEnumAccess().getLeftCurlyBracketKeyword_2_0());
+))
+;
+
+
+
+
+
+// Entry rule entryRuleKDependency
+entryRuleKDependency returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getKDependencyRule()); }
+	 iv_ruleKDependency=ruleKDependency 
+	 { $current=$iv_ruleKDependency.current; } 
+	 EOF 
+;
+
+// Rule KDependency
+ruleKDependency returns [EObject current=null] 
+    @init { enterRule(); 
     }
-((
+    @after { leaveRule(); }:
+(	otherlv_0='depend' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getKDependencyAccess().getDependKeyword_0());
+    }
 (
-		{ 
-	        newCompositeNode(grammarAccess.getKEnumAccess().getFieldsKFieldParserRuleCall_2_1_0_0()); 
-	    }
-		lv_fields_3_0=ruleKField		{
+(
+		lv_label_1_0=RULE_STRING
+		{
+			newLeafNode(lv_label_1_0, grammarAccess.getKDependencyAccess().getLabelSTRINGTerminalRuleCall_1_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getKEnumRule());
+	            $current = createModelElement(grammarAccess.getKDependencyRule());
 	        }
-       		add(
+       		setWithLastConsumed(
        			$current, 
-       			"fields",
-        		lv_fields_3_0, 
-        		"KField");
-	        afterParserOrEnumRuleCall();
+       			"label",
+        		lv_label_1_0, 
+        		"STRING");
 	    }
 
 )
-)
-    |(
+)?(
 (
-		{ 
-	        newCompositeNode(grammarAccess.getKEnumAccess().getMethodsKMethodParserRuleCall_2_1_1_0()); 
-	    }
-		lv_methods_4_0=ruleKMethod		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getKEnumRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getKDependencyRule());
 	        }
-       		add(
-       			$current, 
-       			"methods",
-        		lv_methods_4_0, 
-        		"KMethod");
-	        afterParserOrEnumRuleCall();
-	    }
+        }
+	otherlv_2=RULE_ID
+	{
+		newLeafNode(otherlv_2, grammarAccess.getKDependencyAccess().getTargetKTypeCrossReference_2_0()); 
+	}
 
 )
-))*	otherlv_5='}' 
-    {
-    	newLeafNode(otherlv_5, grammarAccess.getKEnumAccess().getRightCurlyBracketKeyword_2_2());
-    }
-)?)
+))
 ;
 
 

@@ -122,14 +122,14 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     private static val SynthesisOption ATTRIBUTES_SEPARATOR =
         SynthesisOption::createSeparator("Attributes")
     private static val SynthesisOption ATTRIBUTES_PRIVATE =
-        SynthesisOption::createCheckOption("Private Attributes", true)
+        SynthesisOption::createCheckOption("Private Attributes", false)
     private static val SynthesisOption ATTRIBUTES_TYPE =
         SynthesisOption::createCheckOption("Type", true)
 
     private static val SynthesisOption METHODS_SEPARATOR =
         SynthesisOption::createSeparator("Methods")
     private static val SynthesisOption METHODS_PRIVATE =
-        SynthesisOption::createCheckOption("Private Methods", true)
+        SynthesisOption::createCheckOption("Private Methods", false)
     private static val SynthesisOption METHODS_TYPE =
         SynthesisOption::createCheckOption("Type", true)
     private static val SynthesisOption METHODS_PARAMETERS =
@@ -283,20 +283,26 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
             rootNode.configureLayout
         ]
 
-        // If inheritance shall be visualized, create all inheritance edges
-        if (EDGES_INHERITANCE.booleanValue) {
-            classModel.createInheritanceEdges
-        }
-
-        // If associations shall be visualized, create all association edges with their multiplicities
-        // for each node
-        if (EDGES_ASSOCIATION.booleanValue) {
-            classModel.packages.forEach [
-                it.types.forEach [
-                    it.createAssociationEdges(classModel)
-                ]
+        classModel.packages.forEach [
+            it.types.forEach [ type |
+                // If inheritance shall be visualized, create all inheritance edges
+                if (EDGES_INHERITANCE.booleanValue) {
+                    if (type instanceof KClass) {
+                        (type as KClass).createClassInheritanceEdge
+                    }
+                    type.createInterfaceInheritanceEdge
+                }
+                
+                // If associations shall be visualized, create all association edges with their
+                // multiplicities for each node
+                if (EDGES_ASSOCIATION.booleanValue) {
+                    type.createAssociationEdges(classModel)
+                }
+                
+                // In any case, create the explicit dependency edges
+                type.createDependencyEdges
             ]
-        }
+        ]
 
         // Return the finished diagram
         return classDiagramRoot
@@ -380,7 +386,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 // Add the main class information
                 rect.addClassName(classData)
                 
-                // Add all fields that have no association-relation or have association relation but
+                // Create all fields that have no association-relation or have association relation but
                 // associations shouldn't be visualized
                 val List<Pair<KVisibility, String>> fields = new ArrayList(classData.fields.size)
                 classData.fields.forEach [ eField |
@@ -401,7 +407,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                     }
                 ]
                 
-                // Add all methods
+                // Create all methods
                 val List<Pair<KVisibility, String>> methods = new ArrayList(classData.methods.size)
                 classData.methods.forEach [ eMethod |
                     // If only private methods shall be added only add non private methods...
@@ -436,19 +442,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 }
             ]
         ]
-    }
-    
-    def private void createInheritanceEdges(KClassModel classModel) {
-        classModel.packages.forEach [
-            it.types.forEach [ typeSelection |
-                if (typeSelection instanceof KClass) {
-                    (typeSelection as KClass).createClassInheritanceEdge(classModel)
-                }
-                typeSelection.createInterfaceInheritanceEdge(classModel)
-            ]
-        ]
-    }
-    
+    }    
     
     // Check if field has an association-dependency.
     // A field has dependency when it's type equals one of the visualized classes
@@ -493,7 +487,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     }
 
     // For each class visualize all relationships to super classes that are visualized.
-    def private createClassInheritanceEdge(KClass classData, KClassModel classModel) {
+    def private createClassInheritanceEdge(KClass classData) {
         if (classData.superClass != null && classData.superClass.selected) {
             createEdge.putToLookUpWith(classData) => [
                 it.source = classData.node
@@ -510,7 +504,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     }
 
     // For each class visualize all relationships to super interfaces that are visualized.
-    def private createInterfaceInheritanceEdge(KType classData, KClassModel classModel) {
+    def private createInterfaceInheritanceEdge(KType classData) {
         (if (classData instanceof KClass)
             (classData as KClass).interfaces
         else if (classData instanceof KInterface)
@@ -541,7 +535,8 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     def private createAssociationEdges(KType classData, KClassModel classModel) {
         classModel.packages.forEach [
             it.types.filter[it != classData].forEach [ classDataToBeCompared |
-                val int[] classHasAssociationToThisClass = #[0, 0]
+                val lowerBound = new Maybe(0)
+                val upperBound = new Maybe(0)
                 classData.fields.forEach [ eField |
                     // Don't check again if the field has no association relation anyways.
                     if (!hasDependency(classData, classModel, eField).get()) {
@@ -561,7 +556,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
 
                                 // If the field's generic parameter type is the checked class, 
                                 // set the upper bound of the multiplicity to infinity (-1).
-                                classHasAssociationToThisClass.set(1, -1)
+                                upperBound.set(-1)
                             }
                         } else if (Map.isAssignableFrom(referencedClazz)) {
                             val separatedGenericsOfMap = Signature.getTypeArguments(
@@ -573,7 +568,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
 
                                     // If the field's generic parameter type is the checked class, 
                                     // set the upper bound of the multiplicity to infinity (-1).
-                                    classHasAssociationToThisClass.set(1, -1)
+                                    upperBound.set(-1)
                                 }
                             ]
                         }
@@ -581,12 +576,17 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                     if (eField.type.referenceType == classDataToBeCompared) {
 
                         // If the field's type is the checked class, 
-                        // set the increment the lower bound of the multiplicity.
-                        classHasAssociationToThisClass.set(0, classHasAssociationToThisClass.get(0).intValue + 1)
+                        // increment the upper bound of the multiplicity.
+                        if (upperBound.get >= 0) {
+                            upperBound.set(upperBound.get + 1)
+                        }
+                        // If the field is final, increment the lower bound, too.
+                        if (eField.isFinal) {
+                            lowerBound.set(lowerBound.get + 1)
+                        }
                     }
                 ]
-                if (classHasAssociationToThisClass.get(0).intValue != 0 ||
-                    classHasAssociationToThisClass.get(1).intValue != 0) {
+                if (lowerBound.get != 0 || upperBound.get != 0) {
     
                     // TODO: Self-associations not supported yet.
                     if (!(classData.node == classDataToBeCompared.node)) {
@@ -599,18 +599,15 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                                 it.addAssociationArrowDecorator
                                 it.foreground = modelOptions.getProperty(OPTION_EDGE_COLOR).color
                             ]
-                            var String multiplicity = ""
-//                            if (classHasAssociationToThisClass.get(1).intValue == -1) {
-//                                multiplicity = Integer.toString(classHasAssociationToThisClass.get(0)) + "..*"
-//                            } else {
-//                                multiplicity = Integer.toString(classHasAssociationToThisClass.get(0))
-//                            }
-                            if (classHasAssociationToThisClass.get(1).intValue == -1) {
-                                multiplicity = "0..*"
-                            } else {
-                                multiplicity = "0.." + Integer.toString(classHasAssociationToThisClass.get(0))
-                            }
-                            it.createLabel().configureHeadEdgeLabel(multiplicity, KlighdConstants::DEFAULT_FONT_SIZE,
+                            val multiplicity =
+                                if (upperBound.get < 0) {
+                                    Integer.toString(lowerBound.get) + "..*"
+                                } else if (lowerBound.get == upperBound.get) {
+                                    Integer.toString(lowerBound.get)
+                                } else {
+                                    Integer.toString(lowerBound.get) + ".." + Integer.toString(upperBound.get)
+                                }
+                            it.createLabel.configureHeadEdgeLabel(multiplicity, KlighdConstants::DEFAULT_FONT_SIZE,
                                 modelOptions.getProperty(OPTION_FONT_NAME)).putToLookUpWith(classData)
                             it.setLayoutOption(LayoutOptions::EDGE_TYPE, EdgeType::ASSOCIATION)
                         ]
@@ -620,6 +617,23 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
         ]
     }
 
+    // Visualize the explicit dependencies in the model.
+    def private createDependencyEdges(KType classData) {
+        for (dependency : classData.dependencies) {
+            createEdge.putToLookUpWith(dependency) => [
+                it.source = classData.node
+                it.target = dependency.target.node
+                it.addPolyline().putToLookUpWith(dependency) => [
+                    it.lineStyle = LineStyle::DASH
+                    it.addAssociationArrowDecorator
+                    it.foreground = modelOptions.getProperty(OPTION_EDGE_COLOR).color
+                ]
+                it.createLabel.configureCenterEdgeLabel(dependency.label, KlighdConstants::DEFAULT_FONT_SIZE,
+                                modelOptions.getProperty(OPTION_FONT_NAME))putToLookUpWith(dependency)
+                it.setLayoutOption(LayoutOptions::EDGE_TYPE, EdgeType::DEPENDENCY)
+            ]
+        }
+    }
     
     
     ////////////////////////////////////////////////////////////////////////////////////////

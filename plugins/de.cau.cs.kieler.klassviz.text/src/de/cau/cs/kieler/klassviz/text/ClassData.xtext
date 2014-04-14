@@ -35,22 +35,21 @@ KPackage returns KPackage:
     '}';
 
 KType returns KType:
-    KClass | KInterface | KEnum;
+    (KClass | KInterface | KEnum) ('{'
+        (fields+=KField | methods+=KMethod | dependencies+=KDependency)*
+    '}')?;
 
 KClass returns KClass:
-    'class' name=ID ('{'
-        (fields+=KField | methods+=KMethod)*
-    '}')?;
+    'class' name=ID;
 
 KInterface returns KInterface:
-    'interface' name=ID ('{'
-        (fields+=KField | methods+=KMethod)*
-    '}')?;
+    'interface' name=ID;
 
 KEnum returns KEnum:
-    'enum' name=ID ('{'
-        (fields+=KField | methods+=KMethod)*
-    '}')?;
+    'enum' name=ID;
+
+KDependency returns KDependency:
+    'depend' (label=STRING)? target=[KType|ID];
 
 KField returns KField:
     name=ID;

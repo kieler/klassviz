@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getFields <em>Fields</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getMethods <em>Methods</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getNestedTypes <em>Nested Types</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getDependencies <em>Dependencies</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#isStatic <em>Static</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getVisibility <em>Visibility</em>}</li>
  * </ul>
@@ -140,6 +141,22 @@ public interface KType extends EObject {
      * @generated
      */
     EList<KType> getNestedTypes();
+
+    /**
+     * Returns the value of the '<em><b>Dependencies</b></em>' containment reference list.
+     * The list contents are of type {@link de.cau.cs.kieler.klassviz.model.classdata.KDependency}.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Dependencies</em>' containment reference list isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Dependencies</em>' containment reference list.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType_Dependencies()
+     * @model containment="true"
+     * @generated
+     */
+    EList<KDependency> getDependencies();
 
     /**
      * Returns the value of the '<em><b>Static</b></em>' attribute.

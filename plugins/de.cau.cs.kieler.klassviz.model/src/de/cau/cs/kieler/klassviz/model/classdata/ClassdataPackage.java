@@ -289,13 +289,22 @@ public interface ClassdataPackage extends EPackage {
     int KTYPE__NESTED_TYPES = 4;
 
     /**
+     * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KTYPE__DEPENDENCIES = 5;
+
+    /**
      * The feature id for the '<em><b>Static</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int KTYPE__STATIC = 5;
+    int KTYPE__STATIC = 6;
 
     /**
      * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -304,7 +313,7 @@ public interface ClassdataPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int KTYPE__VISIBILITY = 6;
+    int KTYPE__VISIBILITY = 7;
 
     /**
      * The number of structural features of the '<em>KType</em>' class.
@@ -313,7 +322,7 @@ public interface ClassdataPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int KTYPE_FEATURE_COUNT = 7;
+    int KTYPE_FEATURE_COUNT = 8;
 
     /**
      * The number of operations of the '<em>KType</em>' class.
@@ -378,6 +387,15 @@ public interface ClassdataPackage extends EPackage {
      * @ordered
      */
     int KCLASS__NESTED_TYPES = KTYPE__NESTED_TYPES;
+
+    /**
+     * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KCLASS__DEPENDENCIES = KTYPE__DEPENDENCIES;
 
     /**
      * The feature id for the '<em><b>Static</b></em>' attribute.
@@ -516,6 +534,15 @@ public interface ClassdataPackage extends EPackage {
     int KINTERFACE__NESTED_TYPES = KTYPE__NESTED_TYPES;
 
     /**
+     * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KINTERFACE__DEPENDENCIES = KTYPE__DEPENDENCIES;
+
+    /**
      * The feature id for the '<em><b>Static</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -625,6 +652,15 @@ public interface ClassdataPackage extends EPackage {
     int KENUM__NESTED_TYPES = KTYPE__NESTED_TYPES;
 
     /**
+     * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KENUM__DEPENDENCIES = KTYPE__DEPENDENCIES;
+
+    /**
      * The feature id for the '<em><b>Static</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -670,6 +706,52 @@ public interface ClassdataPackage extends EPackage {
     int KENUM_OPERATION_COUNT = KTYPE_OPERATION_COUNT + 0;
 
     /**
+     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KDependencyImpl <em>KDependency</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KDependencyImpl
+     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKDependency()
+     * @generated
+     */
+    int KDEPENDENCY = 7;
+
+    /**
+     * The feature id for the '<em><b>Target</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KDEPENDENCY__TARGET = 0;
+
+    /**
+     * The feature id for the '<em><b>Label</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KDEPENDENCY__LABEL = 1;
+
+    /**
+     * The number of structural features of the '<em>KDependency</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KDEPENDENCY_FEATURE_COUNT = 2;
+
+    /**
+     * The number of operations of the '<em>KDependency</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KDEPENDENCY_OPERATION_COUNT = 0;
+
+    /**
      * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl <em>KMember</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -677,7 +759,7 @@ public interface ClassdataPackage extends EPackage {
      * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKMember()
      * @generated
      */
-    int KMEMBER = 7;
+    int KMEMBER = 8;
 
     /**
      * The feature id for the '<em><b>Selected</b></em>' attribute.
@@ -750,7 +832,7 @@ public interface ClassdataPackage extends EPackage {
      * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKField()
      * @generated
      */
-    int KFIELD = 8;
+    int KFIELD = 9;
 
     /**
      * The feature id for the '<em><b>Selected</b></em>' attribute.
@@ -832,7 +914,7 @@ public interface ClassdataPackage extends EPackage {
      * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKMethod()
      * @generated
      */
-    int KMETHOD = 9;
+    int KMETHOD = 10;
 
     /**
      * The feature id for the '<em><b>Selected</b></em>' attribute.
@@ -932,7 +1014,7 @@ public interface ClassdataPackage extends EPackage {
      * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKTypeReference()
      * @generated
      */
-    int KTYPE_REFERENCE = 10;
+    int KTYPE_REFERENCE = 11;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -988,7 +1070,7 @@ public interface ClassdataPackage extends EPackage {
      * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKVisibility()
      * @generated
      */
-    int KVISIBILITY = 11;
+    int KVISIBILITY = 12;
 
 
     /**
@@ -1186,6 +1268,17 @@ public interface ClassdataPackage extends EPackage {
     EReference getKType_NestedTypes();
 
     /**
+     * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getDependencies <em>Dependencies</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Dependencies</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KType#getDependencies()
+     * @see #getKType()
+     * @generated
+     */
+    EReference getKType_Dependencies();
+
+    /**
      * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#isStatic <em>Static</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1324,6 +1417,38 @@ public interface ClassdataPackage extends EPackage {
      * @generated
      */
     EAttribute getKEnum_Constants();
+
+    /**
+     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KDependency <em>KDependency</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>KDependency</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KDependency
+     * @generated
+     */
+    EClass getKDependency();
+
+    /**
+     * Returns the meta object for the reference '{@link de.cau.cs.kieler.klassviz.model.classdata.KDependency#getTarget <em>Target</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Target</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KDependency#getTarget()
+     * @see #getKDependency()
+     * @generated
+     */
+    EReference getKDependency_Target();
+
+    /**
+     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KDependency#getLabel <em>Label</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Label</em>'.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KDependency#getLabel()
+     * @see #getKDependency()
+     * @generated
+     */
+    EAttribute getKDependency_Label();
 
     /**
      * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KMember <em>KMember</em>}'.
@@ -1683,6 +1808,14 @@ public interface ClassdataPackage extends EPackage {
         EReference KTYPE__NESTED_TYPES = eINSTANCE.getKType_NestedTypes();
 
         /**
+         * The meta object literal for the '<em><b>Dependencies</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference KTYPE__DEPENDENCIES = eINSTANCE.getKType_Dependencies();
+
+        /**
          * The meta object literal for the '<em><b>Static</b></em>' attribute feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -1791,6 +1924,32 @@ public interface ClassdataPackage extends EPackage {
          * @generated
          */
         EAttribute KENUM__CONSTANTS = eINSTANCE.getKEnum_Constants();
+
+        /**
+         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KDependencyImpl <em>KDependency</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KDependencyImpl
+         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKDependency()
+         * @generated
+         */
+        EClass KDEPENDENCY = eINSTANCE.getKDependency();
+
+        /**
+         * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference KDEPENDENCY__TARGET = eINSTANCE.getKDependency_Target();
+
+        /**
+         * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute KDEPENDENCY__LABEL = eINSTANCE.getKDependency_Label();
 
         /**
          * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl <em>KMember</em>}' class.

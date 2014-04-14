@@ -74,6 +74,7 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
             case ClassdataPackage.KCLASS: return createKClass();
             case ClassdataPackage.KINTERFACE: return createKInterface();
             case ClassdataPackage.KENUM: return createKEnum();
+            case ClassdataPackage.KDEPENDENCY: return createKDependency();
             case ClassdataPackage.KFIELD: return createKField();
             case ClassdataPackage.KMETHOD: return createKMethod();
             case ClassdataPackage.KTYPE_REFERENCE: return createKTypeReference();
@@ -170,6 +171,16 @@ public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFacto
     public KEnum createKEnum() {
         KEnumImpl kEnum = new KEnumImpl();
         return kEnum;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public KDependency createKDependency() {
+        KDependencyImpl kDependency = new KDependencyImpl();
+        return kDependency;
     }
 
     /**

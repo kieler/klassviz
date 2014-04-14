@@ -107,6 +107,10 @@ public class ClassdataAdapterFactory extends AdapterFactoryImpl {
                 return createKEnumAdapter();
             }
             @Override
+            public Adapter caseKDependency(KDependency object) {
+                return createKDependencyAdapter();
+            }
+            @Override
             public Adapter caseKMember(KMember object) {
                 return createKMemberAdapter();
             }
@@ -237,6 +241,20 @@ public class ClassdataAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createKEnumAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link de.cau.cs.kieler.klassviz.model.classdata.KDependency <em>KDependency</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see de.cau.cs.kieler.klassviz.model.classdata.KDependency
+     * @generated
+     */
+    public Adapter createKDependencyAdapter() {
         return null;
     }
 

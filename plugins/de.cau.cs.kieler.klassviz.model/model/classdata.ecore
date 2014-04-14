@@ -32,6 +32,8 @@
         eType="#//KMethod" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="nestedTypes" upperBound="-1"
         eType="#//KType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
+        eType="#//KDependency" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="static" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" lowerBound="1"
@@ -57,6 +59,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="KEnum" eSuperTypes="#//KType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="constants" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KDependency">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//KType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KMember" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"

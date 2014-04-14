@@ -5,6 +5,7 @@ import com.google.inject.Provider;
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage;
 import de.cau.cs.kieler.klassviz.model.classdata.KClass;
 import de.cau.cs.kieler.klassviz.model.classdata.KClassModel;
+import de.cau.cs.kieler.klassviz.model.classdata.KDependency;
 import de.cau.cs.kieler.klassviz.model.classdata.KEnum;
 import de.cau.cs.kieler.klassviz.model.classdata.KField;
 import de.cau.cs.kieler.klassviz.model.classdata.KInterface;
@@ -34,9 +35,12 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == ClassdataPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case ClassdataPackage.KCLASS:
-				if(context == grammarAccess.getKClassRule() ||
-				   context == grammarAccess.getKTypeRule()) {
+				if(context == grammarAccess.getKClassRule()) {
 					sequence_KClass(context, (KClass) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getKTypeRule()) {
+					sequence_KClass_KType(context, (KClass) semanticObject); 
 					return; 
 				}
 				else break;
@@ -46,10 +50,19 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 					return; 
 				}
 				else break;
+			case ClassdataPackage.KDEPENDENCY:
+				if(context == grammarAccess.getKDependencyRule()) {
+					sequence_KDependency(context, (KDependency) semanticObject); 
+					return; 
+				}
+				else break;
 			case ClassdataPackage.KENUM:
-				if(context == grammarAccess.getKEnumRule() ||
-				   context == grammarAccess.getKTypeRule()) {
+				if(context == grammarAccess.getKEnumRule()) {
 					sequence_KEnum(context, (KEnum) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getKTypeRule()) {
+					sequence_KEnum_KType(context, (KEnum) semanticObject); 
 					return; 
 				}
 				else break;
@@ -60,9 +73,12 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 				}
 				else break;
 			case ClassdataPackage.KINTERFACE:
-				if(context == grammarAccess.getKInterfaceRule() ||
-				   context == grammarAccess.getKTypeRule()) {
+				if(context == grammarAccess.getKInterfaceRule()) {
 					sequence_KInterface(context, (KInterface) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getKTypeRule()) {
+					sequence_KInterface_KType(context, (KInterface) semanticObject); 
 					return; 
 				}
 				else break;
@@ -105,7 +121,7 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (fields+=KField | methods+=KMethod)*)
+	 *     name=ID
 	 */
 	protected void sequence_KClass(EObject context, KClass semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -114,9 +130,36 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (fields+=KField | methods+=KMethod)*)
+	 *     (name=ID (fields+=KField | methods+=KMethod | dependencies+=KDependency)*)
+	 */
+	protected void sequence_KClass_KType(EObject context, KClass semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (label=STRING? target=[KType|ID])
+	 */
+	protected void sequence_KDependency(EObject context, KDependency semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=ID
 	 */
 	protected void sequence_KEnum(EObject context, KEnum semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID (fields+=KField | methods+=KMethod | dependencies+=KDependency)*)
+	 */
+	protected void sequence_KEnum_KType(EObject context, KEnum semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -132,9 +175,18 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (fields+=KField | methods+=KMethod)*)
+	 *     name=ID
 	 */
 	protected void sequence_KInterface(EObject context, KInterface semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID (fields+=KField | methods+=KMethod | dependencies+=KDependency)*)
+	 */
+	protected void sequence_KInterface_KType(EObject context, KInterface semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

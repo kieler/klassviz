@@ -14,6 +14,7 @@
 package de.cau.cs.kieler.klassviz.model.classdata.impl;
 
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage;
+import de.cau.cs.kieler.klassviz.model.classdata.KDependency;
 import de.cau.cs.kieler.klassviz.model.classdata.KField;
 import de.cau.cs.kieler.klassviz.model.classdata.KMethod;
 import de.cau.cs.kieler.klassviz.model.classdata.KType;
@@ -47,6 +48,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl#getFields <em>Fields</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl#getMethods <em>Methods</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl#getNestedTypes <em>Nested Types</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl#getDependencies <em>Dependencies</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl#isStatic <em>Static</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl#getVisibility <em>Visibility</em>}</li>
  * </ul>
@@ -124,6 +126,16 @@ public abstract class KTypeImpl extends MinimalEObjectImpl.Container implements 
      * @ordered
      */
     protected EList<KType> nestedTypes;
+
+    /**
+     * The cached value of the '{@link #getDependencies() <em>Dependencies</em>}' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDependencies()
+     * @generated
+     * @ordered
+     */
+    protected EList<KDependency> dependencies;
 
     /**
      * The default value of the '{@link #isStatic() <em>Static</em>}' attribute.
@@ -267,6 +279,18 @@ public abstract class KTypeImpl extends MinimalEObjectImpl.Container implements 
      * <!-- end-user-doc -->
      * @generated
      */
+    public EList<KDependency> getDependencies() {
+        if (dependencies == null) {
+            dependencies = new EObjectContainmentEList<KDependency>(KDependency.class, this, ClassdataPackage.KTYPE__DEPENDENCIES);
+        }
+        return dependencies;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isStatic() {
         return static_;
     }
@@ -318,6 +342,8 @@ public abstract class KTypeImpl extends MinimalEObjectImpl.Container implements 
                 return ((InternalEList<?>)getMethods()).basicRemove(otherEnd, msgs);
             case ClassdataPackage.KTYPE__NESTED_TYPES:
                 return ((InternalEList<?>)getNestedTypes()).basicRemove(otherEnd, msgs);
+            case ClassdataPackage.KTYPE__DEPENDENCIES:
+                return ((InternalEList<?>)getDependencies()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -340,6 +366,8 @@ public abstract class KTypeImpl extends MinimalEObjectImpl.Container implements 
                 return getMethods();
             case ClassdataPackage.KTYPE__NESTED_TYPES:
                 return getNestedTypes();
+            case ClassdataPackage.KTYPE__DEPENDENCIES:
+                return getDependencies();
             case ClassdataPackage.KTYPE__STATIC:
                 return isStatic();
             case ClassdataPackage.KTYPE__VISIBILITY:
@@ -375,6 +403,10 @@ public abstract class KTypeImpl extends MinimalEObjectImpl.Container implements 
                 getNestedTypes().clear();
                 getNestedTypes().addAll((Collection<? extends KType>)newValue);
                 return;
+            case ClassdataPackage.KTYPE__DEPENDENCIES:
+                getDependencies().clear();
+                getDependencies().addAll((Collection<? extends KDependency>)newValue);
+                return;
             case ClassdataPackage.KTYPE__STATIC:
                 setStatic((Boolean)newValue);
                 return;
@@ -408,6 +440,9 @@ public abstract class KTypeImpl extends MinimalEObjectImpl.Container implements 
             case ClassdataPackage.KTYPE__NESTED_TYPES:
                 getNestedTypes().clear();
                 return;
+            case ClassdataPackage.KTYPE__DEPENDENCIES:
+                getDependencies().clear();
+                return;
             case ClassdataPackage.KTYPE__STATIC:
                 setStatic(STATIC_EDEFAULT);
                 return;
@@ -436,6 +471,8 @@ public abstract class KTypeImpl extends MinimalEObjectImpl.Container implements 
                 return methods != null && !methods.isEmpty();
             case ClassdataPackage.KTYPE__NESTED_TYPES:
                 return nestedTypes != null && !nestedTypes.isEmpty();
+            case ClassdataPackage.KTYPE__DEPENDENCIES:
+                return dependencies != null && !dependencies.isEmpty();
             case ClassdataPackage.KTYPE__STATIC:
                 return static_ != STATIC_EDEFAULT;
             case ClassdataPackage.KTYPE__VISIBILITY:

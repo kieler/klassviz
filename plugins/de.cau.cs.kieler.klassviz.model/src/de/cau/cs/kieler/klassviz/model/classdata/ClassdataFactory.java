@@ -87,6 +87,15 @@ public interface ClassdataFactory extends EFactory {
     KEnum createKEnum();
 
     /**
+     * Returns a new object of class '<em>KDependency</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>KDependency</em>'.
+     * @generated
+     */
+    KDependency createKDependency();
+
+    /**
      * Returns a new object of class '<em>KField</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

@@ -17,6 +17,7 @@ import de.cau.cs.kieler.klassviz.model.classdata.ClassdataFactory;
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage;
 import de.cau.cs.kieler.klassviz.model.classdata.KClass;
 import de.cau.cs.kieler.klassviz.model.classdata.KClassModel;
+import de.cau.cs.kieler.klassviz.model.classdata.KDependency;
 import de.cau.cs.kieler.klassviz.model.classdata.KEnum;
 import de.cau.cs.kieler.klassviz.model.classdata.KField;
 import de.cau.cs.kieler.klassviz.model.classdata.KInterface;
@@ -91,6 +92,13 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * @generated
      */
     private EClass kEnumEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass kDependencyEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -355,8 +363,17 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * <!-- end-user-doc -->
      * @generated
      */
+    public EReference getKType_Dependencies() {
+        return (EReference)kTypeEClass.getEStructuralFeatures().get(5);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EAttribute getKType_Static() {
-        return (EAttribute)kTypeEClass.getEStructuralFeatures().get(5);
+        return (EAttribute)kTypeEClass.getEStructuralFeatures().get(6);
     }
 
     /**
@@ -365,7 +382,7 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      * @generated
      */
     public EAttribute getKType_Visibility() {
-        return (EAttribute)kTypeEClass.getEStructuralFeatures().get(6);
+        return (EAttribute)kTypeEClass.getEStructuralFeatures().get(7);
     }
 
     /**
@@ -465,6 +482,33 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
      */
     public EAttribute getKEnum_Constants() {
         return (EAttribute)kEnumEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getKDependency() {
+        return kDependencyEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getKDependency_Target() {
+        return (EReference)kDependencyEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getKDependency_Label() {
+        return (EAttribute)kDependencyEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -669,6 +713,7 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
         createEReference(kTypeEClass, KTYPE__FIELDS);
         createEReference(kTypeEClass, KTYPE__METHODS);
         createEReference(kTypeEClass, KTYPE__NESTED_TYPES);
+        createEReference(kTypeEClass, KTYPE__DEPENDENCIES);
         createEAttribute(kTypeEClass, KTYPE__STATIC);
         createEAttribute(kTypeEClass, KTYPE__VISIBILITY);
 
@@ -685,6 +730,10 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
 
         kEnumEClass = createEClass(KENUM);
         createEAttribute(kEnumEClass, KENUM__CONSTANTS);
+
+        kDependencyEClass = createEClass(KDEPENDENCY);
+        createEReference(kDependencyEClass, KDEPENDENCY__TARGET);
+        createEAttribute(kDependencyEClass, KDEPENDENCY__LABEL);
 
         kMemberEClass = createEClass(KMEMBER);
         createEAttribute(kMemberEClass, KMEMBER__SELECTED);
@@ -766,6 +815,7 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
         initEReference(getKType_Fields(), this.getKField(), null, "fields", null, 0, -1, KType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getKType_Methods(), this.getKMethod(), null, "methods", null, 0, -1, KType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getKType_NestedTypes(), this.getKType(), null, "nestedTypes", null, 0, -1, KType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getKType_Dependencies(), this.getKDependency(), null, "dependencies", null, 0, -1, KType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getKType_Static(), ecorePackage.getEBoolean(), "static", "false", 1, 1, KType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getKType_Visibility(), this.getKVisibility(), "visibility", "PACKAGE", 1, 1, KType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -782,6 +832,10 @@ public class ClassdataPackageImpl extends EPackageImpl implements ClassdataPacka
 
         initEClass(kEnumEClass, KEnum.class, "KEnum", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getKEnum_Constants(), ecorePackage.getEString(), "constants", null, 0, -1, KEnum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(kDependencyEClass, KDependency.class, "KDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getKDependency_Target(), this.getKType(), null, "target", null, 1, 1, KDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getKDependency_Label(), ecorePackage.getEString(), "label", null, 0, 1, KDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(kMemberEClass, KMember.class, "KMember", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getKMember_Selected(), ecorePackage.getEBoolean(), "selected", "false", 0, 1, KMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
