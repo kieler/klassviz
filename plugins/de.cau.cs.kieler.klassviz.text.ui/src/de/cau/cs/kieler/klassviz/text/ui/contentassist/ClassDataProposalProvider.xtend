@@ -222,6 +222,10 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
      */
      def override complete_KField(EObject model, RuleCall ruleCall, ContentAssistContext context,
             ICompletionProposalAcceptor acceptor) {
+        if (!(model instanceof KType)) {
+            super.complete_KField(model, ruleCall, context, acceptor)
+            return;
+        }
         val type = model as KType
         val pack = type.eContainer as KPackage
         val classModel = pack.eContainer as KClassModel
@@ -248,6 +252,10 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
      */
      def override complete_KMethod(EObject model, RuleCall ruleCall, ContentAssistContext context,
              ICompletionProposalAcceptor acceptor) {
+        if (!(model instanceof KType)) {
+            super.complete_KMethod(model, ruleCall, context, acceptor)
+            return;
+        }
         val type = model as KType
         val pack = type.eContainer as KPackage
         val classModel = pack.eContainer as KClassModel
