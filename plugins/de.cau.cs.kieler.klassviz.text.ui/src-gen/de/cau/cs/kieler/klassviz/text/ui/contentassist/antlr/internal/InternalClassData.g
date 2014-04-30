@@ -527,6 +527,78 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__KClass__NameAlternatives_1_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getKClassAccess().getNameIDTerminalRuleCall_1_0_0()); }
+	RULE_ID
+{ after(grammarAccess.getKClassAccess().getNameIDTerminalRuleCall_1_0_0()); }
+)
+
+    |(
+{ before(grammarAccess.getKClassAccess().getNameAsteriskKeyword_1_0_1()); }
+
+	'*' 
+
+{ after(grammarAccess.getKClassAccess().getNameAsteriskKeyword_1_0_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__KInterface__NameAlternatives_1_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getKInterfaceAccess().getNameIDTerminalRuleCall_1_0_0()); }
+	RULE_ID
+{ after(grammarAccess.getKInterfaceAccess().getNameIDTerminalRuleCall_1_0_0()); }
+)
+
+    |(
+{ before(grammarAccess.getKInterfaceAccess().getNameAsteriskKeyword_1_0_1()); }
+
+	'*' 
+
+{ after(grammarAccess.getKInterfaceAccess().getNameAsteriskKeyword_1_0_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__KEnum__NameAlternatives_1_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getKEnumAccess().getNameIDTerminalRuleCall_1_0_0()); }
+	RULE_ID
+{ after(grammarAccess.getKEnumAccess().getNameIDTerminalRuleCall_1_0_0()); }
+)
+
+    |(
+{ before(grammarAccess.getKEnumAccess().getNameAsteriskKeyword_1_0_1()); }
+
+	'*' 
+
+{ after(grammarAccess.getKEnumAccess().getNameAsteriskKeyword_1_0_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__PropertyValue__Alternatives
     @init {
 		int stackSize = keepStackSize();
@@ -2173,8 +2245,9 @@ rule__KClass__NameAssignment_1
     }
 :
 (
-{ before(grammarAccess.getKClassAccess().getNameIDTerminalRuleCall_1_0()); }
-	RULE_ID{ after(grammarAccess.getKClassAccess().getNameIDTerminalRuleCall_1_0()); }
+{ before(grammarAccess.getKClassAccess().getNameAlternatives_1_0()); }
+(rule__KClass__NameAlternatives_1_0)
+{ after(grammarAccess.getKClassAccess().getNameAlternatives_1_0()); }
 )
 
 ;
@@ -2188,8 +2261,9 @@ rule__KInterface__NameAssignment_1
     }
 :
 (
-{ before(grammarAccess.getKInterfaceAccess().getNameIDTerminalRuleCall_1_0()); }
-	RULE_ID{ after(grammarAccess.getKInterfaceAccess().getNameIDTerminalRuleCall_1_0()); }
+{ before(grammarAccess.getKInterfaceAccess().getNameAlternatives_1_0()); }
+(rule__KInterface__NameAlternatives_1_0)
+{ after(grammarAccess.getKInterfaceAccess().getNameAlternatives_1_0()); }
 )
 
 ;
@@ -2203,8 +2277,9 @@ rule__KEnum__NameAssignment_1
     }
 :
 (
-{ before(grammarAccess.getKEnumAccess().getNameIDTerminalRuleCall_1_0()); }
-	RULE_ID{ after(grammarAccess.getKEnumAccess().getNameIDTerminalRuleCall_1_0()); }
+{ before(grammarAccess.getKEnumAccess().getNameAlternatives_1_0()); }
+(rule__KEnum__NameAlternatives_1_0)
+{ after(grammarAccess.getKEnumAccess().getNameAlternatives_1_0()); }
 )
 
 ;

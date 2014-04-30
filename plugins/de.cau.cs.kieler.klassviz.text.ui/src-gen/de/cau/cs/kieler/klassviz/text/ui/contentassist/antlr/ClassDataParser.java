@@ -40,6 +40,9 @@ public class ClassDataParser extends AbstractContentAssistParser {
 					put(grammarAccess.getKClassModelAccess().getAlternatives_1_1(), "rule__KClassModel__Alternatives_1_1");
 					put(grammarAccess.getKTypeAccess().getAlternatives_0(), "rule__KType__Alternatives_0");
 					put(grammarAccess.getKTypeAccess().getAlternatives_1_1(), "rule__KType__Alternatives_1_1");
+					put(grammarAccess.getKClassAccess().getNameAlternatives_1_0(), "rule__KClass__NameAlternatives_1_0");
+					put(grammarAccess.getKInterfaceAccess().getNameAlternatives_1_0(), "rule__KInterface__NameAlternatives_1_0");
+					put(grammarAccess.getKEnumAccess().getNameAlternatives_1_0(), "rule__KEnum__NameAlternatives_1_0");
 					put(grammarAccess.getPropertyValueAccess().getAlternatives(), "rule__PropertyValue__Alternatives");
 					put(grammarAccess.getFloatAccess().getAlternatives(), "rule__Float__Alternatives");
 					put(grammarAccess.getKClassModelAccess().getGroup(), "rule__KClassModel__Group__0");

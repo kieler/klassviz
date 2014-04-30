@@ -445,9 +445,10 @@ ruleKClass returns [EObject current=null]
     }
 (
 (
-		lv_name_1_0=RULE_ID
+(
+		lv_name_1_1=RULE_ID
 		{
-			newLeafNode(lv_name_1_0, grammarAccess.getKClassAccess().getNameIDTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_1_1, grammarAccess.getKClassAccess().getNameIDTerminalRuleCall_1_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -456,9 +457,23 @@ ruleKClass returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_1_0, 
+        		lv_name_1_1, 
         		"ID");
 	    }
+
+    |		lv_name_1_2=	'*' 
+    {
+        newLeafNode(lv_name_1_2, grammarAccess.getKClassAccess().getNameAsteriskKeyword_1_0_1());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getKClassRule());
+	        }
+       		setWithLastConsumed($current, "name", lv_name_1_2, null);
+	    }
+
+)
 
 )
 ))
@@ -488,9 +503,10 @@ ruleKInterface returns [EObject current=null]
     }
 (
 (
-		lv_name_1_0=RULE_ID
+(
+		lv_name_1_1=RULE_ID
 		{
-			newLeafNode(lv_name_1_0, grammarAccess.getKInterfaceAccess().getNameIDTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_1_1, grammarAccess.getKInterfaceAccess().getNameIDTerminalRuleCall_1_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -499,9 +515,23 @@ ruleKInterface returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_1_0, 
+        		lv_name_1_1, 
         		"ID");
 	    }
+
+    |		lv_name_1_2=	'*' 
+    {
+        newLeafNode(lv_name_1_2, grammarAccess.getKInterfaceAccess().getNameAsteriskKeyword_1_0_1());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getKInterfaceRule());
+	        }
+       		setWithLastConsumed($current, "name", lv_name_1_2, null);
+	    }
+
+)
 
 )
 ))
@@ -531,9 +561,10 @@ ruleKEnum returns [EObject current=null]
     }
 (
 (
-		lv_name_1_0=RULE_ID
+(
+		lv_name_1_1=RULE_ID
 		{
-			newLeafNode(lv_name_1_0, grammarAccess.getKEnumAccess().getNameIDTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_1_1, grammarAccess.getKEnumAccess().getNameIDTerminalRuleCall_1_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -542,9 +573,23 @@ ruleKEnum returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_1_0, 
+        		lv_name_1_1, 
         		"ID");
 	    }
+
+    |		lv_name_1_2=	'*' 
+    {
+        newLeafNode(lv_name_1_2, grammarAccess.getKEnumAccess().getNameAsteriskKeyword_1_0_1());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getKEnumRule());
+	        }
+       		setWithLastConsumed($current, "name", lv_name_1_2, null);
+	    }
+
+)
 
 )
 ))

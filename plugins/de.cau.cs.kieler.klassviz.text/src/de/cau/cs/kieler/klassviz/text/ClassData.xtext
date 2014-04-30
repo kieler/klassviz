@@ -40,13 +40,13 @@ KType returns KType:
     '}')?;
 
 KClass returns KClass:
-    'class' name=ID;
+    'class' name=(ID | "*");
 
 KInterface returns KInterface:
-    'interface' name=ID;
+    'interface' name=(ID | "*");
 
 KEnum returns KEnum:
-    'enum' name=ID;
+    'enum' name=(ID | "*");
 
 KDependency returns KDependency:
     'depend' (label=STRING)? target=[KType|ID];

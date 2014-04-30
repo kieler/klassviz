@@ -13,10 +13,12 @@
  */
 package de.cau.cs.kieler.klassviz.synthesis
 
+import com.google.common.collect.ImmutableList
 import com.google.inject.Inject
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataFactory
 import de.cau.cs.kieler.klassviz.model.classdata.KClass
 import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
+import de.cau.cs.kieler.klassviz.model.classdata.KEnum
 import de.cau.cs.kieler.klassviz.model.classdata.KField
 import de.cau.cs.kieler.klassviz.model.classdata.KInterface
 import de.cau.cs.kieler.klassviz.model.classdata.KMethod
@@ -41,11 +43,13 @@ import org.eclipse.jdt.core.JavaCore
 import org.eclipse.jdt.core.JavaModelException
 import org.eclipse.jdt.core.Signature
 import org.eclipse.jface.viewers.IStructuredSelection
+import org.eclipse.xtext.xbase.lib.Pair
 
 /**
  * Transformation class between the JDT model and our own class model.
  * 
  * @author msp
+ * @author uru
  */
 class JdtModelTransformation {
     
@@ -116,11 +120,40 @@ class JdtModelTransformation {
             } catch (CoreException e) {}
         }
         
+        // Resolve all wildcard types to appropriate KType instances
+        for (pack : classModel.packages) {
+        	for (kType : ImmutableList.copyOf(pack.types)) {
+        		if (kType.name == "*") {
+        			
+        			// find the package within the project 
+            		val packageFragment = projects.map[
+            			Pair.of(it, it.packageFragments.filter[it.elementName.startsWith(pack.name)])
+            		].findFirst[!it.value.nullOrEmpty]
+            		
+            		// add KTypes for every class/interface/enum found in the package
+            		for (clazz : packageFragment.value.head?.compilationUnits) {
+            			val simpleName = clazz.elementName.replaceAll("\\.java", "")
+            			val fullyQualified = pack.name + "." + simpleName
+            			val jdtType = packageFragment.key.findType(fullyQualified)
+            			// same type?
+            			if (jdtType != null && kType.sameKind(jdtType)) {
+            				pack.types.add(handleType(jdtType) => [
+            					it.name = simpleName
+            				])
+            			}
+            		}
+            		
+            		// remove the wildcard KType from the model
+            		pack.types.remove(kType)
+            	}
+           	}
+        }
+        
         // Gather the selected types
         val typeMap = new LinkedHashMap<IType, KType>
         for (pack : classModel.packages) {
             for (kType : pack.types) {
-                val jdtType = projects.map[it.findType(kType.qualifiedName)].findFirst[it != null]
+        		val jdtType = projects.map[it.findType(kType.qualifiedName)].findFirst[it != null]
                 if (jdtType != null) {
                     typeMap.put(jdtType, kType)
                 }
@@ -184,7 +217,6 @@ class JdtModelTransformation {
                 extractMethodData(kMethod, jdtMethod, jdtType, typeNameFunc)
             }
         }
-        
         return classModel
     }
     
@@ -256,6 +288,15 @@ class JdtModelTransformation {
         } else if (jdtType.enum) {
             ClassdataFactory.eINSTANCE.createKEnum()
         }
+    }
+    
+    /**
+     * Returns true if both types are of the same kind, e.g. both are classes.
+     */
+    def private boolean sameKind(KType kType, IType iType) {
+    	(kType instanceof KClass && iType.isClass)
+    	|| (kType instanceof KInterface && iType.isInterface)
+    	|| (kType instanceof KEnum && iType.isEnum)
     }
     
     /**

@@ -38,11 +38,14 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPackagesKPackageParserRuleCall_3_0 = (RuleCall)cPackagesAssignment_3.eContents().get(0);
 		
 		//KClassModel:
+		//
 		//	{KClassModel} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* options+=KOption*
+		//
 		//	packages+=KPackage*;
 		public ParserRule getRule() { return rule; }
 
 		//{KClassModel} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* options+=KOption*
+		//
 		//packages+=KPackage*
 		public Group getGroup() { return cGroup; }
 
@@ -106,6 +109,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValuePropertyValueParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		//KOption:
+		//
 		//	{KOption} key=QualifiedID "=" value=PropertyValue;
 		public ParserRule getRule() { return rule; }
 
@@ -143,6 +147,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//KPackage:
+		//
 		//	"package" name=QualifiedID "{" types+=KType* "}";
 		public ParserRule getRule() { return rule; }
 
@@ -190,6 +195,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
 		//KType:
+		//
 		//	(KClass | KInterface | KEnum) ("{" (fields+=KField | methods+=KMethod | dependencies+=KDependency)* "}")?;
 		public ParserRule getRule() { return rule; }
 
@@ -244,23 +250,32 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cClassKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Alternatives cNameAlternatives_1_0 = (Alternatives)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_1_0_0 = (RuleCall)cNameAlternatives_1_0.eContents().get(0);
+		private final Keyword cNameAsteriskKeyword_1_0_1 = (Keyword)cNameAlternatives_1_0.eContents().get(1);
 		
 		//KClass:
-		//	"class" name=ID;
+		//
+		//	"class" name=(ID | "*");
 		public ParserRule getRule() { return rule; }
 
-		//"class" name=ID
+		//"class" name=(ID | "*")
 		public Group getGroup() { return cGroup; }
 
 		//"class"
 		public Keyword getClassKeyword_0() { return cClassKeyword_0; }
 
-		//name=ID
+		//name=(ID | "*")
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
+		//ID | "*"
+		public Alternatives getNameAlternatives_1_0() { return cNameAlternatives_1_0; }
+
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0_0() { return cNameIDTerminalRuleCall_1_0_0; }
+
+		//"*"
+		public Keyword getNameAsteriskKeyword_1_0_1() { return cNameAsteriskKeyword_1_0_1; }
 	}
 
 	public class KInterfaceElements extends AbstractParserRuleElementFinder {
@@ -268,23 +283,32 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cInterfaceKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Alternatives cNameAlternatives_1_0 = (Alternatives)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_1_0_0 = (RuleCall)cNameAlternatives_1_0.eContents().get(0);
+		private final Keyword cNameAsteriskKeyword_1_0_1 = (Keyword)cNameAlternatives_1_0.eContents().get(1);
 		
 		//KInterface:
-		//	"interface" name=ID;
+		//
+		//	"interface" name=(ID | "*");
 		public ParserRule getRule() { return rule; }
 
-		//"interface" name=ID
+		//"interface" name=(ID | "*")
 		public Group getGroup() { return cGroup; }
 
 		//"interface"
 		public Keyword getInterfaceKeyword_0() { return cInterfaceKeyword_0; }
 
-		//name=ID
+		//name=(ID | "*")
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
+		//ID | "*"
+		public Alternatives getNameAlternatives_1_0() { return cNameAlternatives_1_0; }
+
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0_0() { return cNameIDTerminalRuleCall_1_0_0; }
+
+		//"*"
+		public Keyword getNameAsteriskKeyword_1_0_1() { return cNameAsteriskKeyword_1_0_1; }
 	}
 
 	public class KEnumElements extends AbstractParserRuleElementFinder {
@@ -292,23 +316,32 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cEnumKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Alternatives cNameAlternatives_1_0 = (Alternatives)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_1_0_0 = (RuleCall)cNameAlternatives_1_0.eContents().get(0);
+		private final Keyword cNameAsteriskKeyword_1_0_1 = (Keyword)cNameAlternatives_1_0.eContents().get(1);
 		
 		//KEnum:
-		//	"enum" name=ID;
+		//
+		//	"enum" name=(ID | "*");
 		public ParserRule getRule() { return rule; }
 
-		//"enum" name=ID
+		//"enum" name=(ID | "*")
 		public Group getGroup() { return cGroup; }
 
 		//"enum"
 		public Keyword getEnumKeyword_0() { return cEnumKeyword_0; }
 
-		//name=ID
+		//name=(ID | "*")
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
+		//ID | "*"
+		public Alternatives getNameAlternatives_1_0() { return cNameAlternatives_1_0; }
+
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0_0() { return cNameIDTerminalRuleCall_1_0_0; }
+
+		//"*"
+		public Keyword getNameAsteriskKeyword_1_0_1() { return cNameAsteriskKeyword_1_0_1; }
 	}
 
 	public class KDependencyElements extends AbstractParserRuleElementFinder {
@@ -322,6 +355,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTargetKTypeIDTerminalRuleCall_2_0_1 = (RuleCall)cTargetKTypeCrossReference_2_0.eContents().get(1);
 		
 		//KDependency:
+		//
 		//	"depend" label=STRING? target=[KType];
 		public ParserRule getRule() { return rule; }
 
@@ -353,6 +387,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
 		
 		//KField:
+		//
 		//	name=ID;
 		public ParserRule getRule() { return rule; }
 
@@ -379,6 +414,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//KMethod:
+		//
 		//	name=ID "(" (parameters+=KTypeReference ("," parameters+=KTypeReference)*)? ")";
 		public ParserRule getRule() { return rule; }
 
@@ -425,6 +461,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSignatureIDTerminalRuleCall_0 = (RuleCall)cSignatureAssignment.eContents().get(0);
 		
 		//KTypeReference:
+		//
 		//	signature=ID;
 		public ParserRule getRule() { return rule; }
 
@@ -444,7 +481,9 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		////--------------- Terminals ----------------
+		//
 		//QualifiedID returns ecore::EString:
+		//
 		//	ID ("." ID)*;
 		public ParserRule getRule() { return rule; }
 
@@ -473,6 +512,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cQualifiedIDParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//PropertyValue returns ecore::EString:
+		//
 		//	BOOLEAN | STRING | Float | QualifiedID;
 		public ParserRule getRule() { return rule; }
 
@@ -499,6 +539,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNATURALTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Float returns ecore::EFloat:
+		//
 		//	TFLOAT | NATURAL;
 		public ParserRule getRule() { return rule; }
 
@@ -567,7 +608,9 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//KClassModel:
+	//
 	//	{KClassModel} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* options+=KOption*
+	//
 	//	packages+=KPackage*;
 	public KClassModelElements getKClassModelAccess() {
 		return (pKClassModel != null) ? pKClassModel : (pKClassModel = new KClassModelElements());
@@ -578,6 +621,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//KOption:
+	//
 	//	{KOption} key=QualifiedID "=" value=PropertyValue;
 	public KOptionElements getKOptionAccess() {
 		return (pKOption != null) ? pKOption : (pKOption = new KOptionElements());
@@ -588,6 +632,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//KPackage:
+	//
 	//	"package" name=QualifiedID "{" types+=KType* "}";
 	public KPackageElements getKPackageAccess() {
 		return (pKPackage != null) ? pKPackage : (pKPackage = new KPackageElements());
@@ -598,6 +643,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//KType:
+	//
 	//	(KClass | KInterface | KEnum) ("{" (fields+=KField | methods+=KMethod | dependencies+=KDependency)* "}")?;
 	public KTypeElements getKTypeAccess() {
 		return (pKType != null) ? pKType : (pKType = new KTypeElements());
@@ -608,7 +654,8 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//KClass:
-	//	"class" name=ID;
+	//
+	//	"class" name=(ID | "*");
 	public KClassElements getKClassAccess() {
 		return (pKClass != null) ? pKClass : (pKClass = new KClassElements());
 	}
@@ -618,7 +665,8 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//KInterface:
-	//	"interface" name=ID;
+	//
+	//	"interface" name=(ID | "*");
 	public KInterfaceElements getKInterfaceAccess() {
 		return (pKInterface != null) ? pKInterface : (pKInterface = new KInterfaceElements());
 	}
@@ -628,7 +676,8 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//KEnum:
-	//	"enum" name=ID;
+	//
+	//	"enum" name=(ID | "*");
 	public KEnumElements getKEnumAccess() {
 		return (pKEnum != null) ? pKEnum : (pKEnum = new KEnumElements());
 	}
@@ -638,6 +687,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//KDependency:
+	//
 	//	"depend" label=STRING? target=[KType];
 	public KDependencyElements getKDependencyAccess() {
 		return (pKDependency != null) ? pKDependency : (pKDependency = new KDependencyElements());
@@ -648,6 +698,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//KField:
+	//
 	//	name=ID;
 	public KFieldElements getKFieldAccess() {
 		return (pKField != null) ? pKField : (pKField = new KFieldElements());
@@ -658,6 +709,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//KMethod:
+	//
 	//	name=ID "(" (parameters+=KTypeReference ("," parameters+=KTypeReference)*)? ")";
 	public KMethodElements getKMethodAccess() {
 		return (pKMethod != null) ? pKMethod : (pKMethod = new KMethodElements());
@@ -668,6 +720,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//KTypeReference:
+	//
 	//	signature=ID;
 	public KTypeReferenceElements getKTypeReferenceAccess() {
 		return (pKTypeReference != null) ? pKTypeReference : (pKTypeReference = new KTypeReferenceElements());
@@ -678,7 +731,9 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	////--------------- Terminals ----------------
+	//
 	//QualifiedID returns ecore::EString:
+	//
 	//	ID ("." ID)*;
 	public QualifiedIDElements getQualifiedIDAccess() {
 		return (pQualifiedID != null) ? pQualifiedID : (pQualifiedID = new QualifiedIDElements());
@@ -689,6 +744,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PropertyValue returns ecore::EString:
+	//
 	//	BOOLEAN | STRING | Float | QualifiedID;
 	public PropertyValueElements getPropertyValueAccess() {
 		return (pPropertyValue != null) ? pPropertyValue : (pPropertyValue = new PropertyValueElements());
@@ -699,6 +755,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Float returns ecore::EFloat:
+	//
 	//	TFLOAT | NATURAL;
 	public FloatElements getFloatAccess() {
 		return (pFloat != null) ? pFloat : (pFloat = new FloatElements());
@@ -709,50 +766,60 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal BOOLEAN returns ecore::EBoolean:
+	//
 	//	"true" | "false";
 	public TerminalRule getBOOLEANRule() {
 		return (tBOOLEAN != null) ? tBOOLEAN : (tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BOOLEAN"));
 	} 
 
 	//terminal TFLOAT returns ecore::EFloat:
+	//
 	//	("+" | "-") ("0".."9"+ ("." "0".."9"*)? (("e" | "E") ("+" | "-")? "0".."9"+)? | "." "0".."9"+ (("e" | "E") ("+" |
-	//	"-")? "0".."9"+)?) | "0".."9"+ "." "0".."9"* (("e" | "E") ("+" | "-")? "0".."9"+)? | "." "0".."9"+ (("e" | "E") ("+" |
-	//	"-")? "0".."9"+)? | "0".."9"+ ("e" | "E") ("+" | "-")? "0".."9"+;
+	//
+	//	"-")? "0".."9"+)?) | "0".."9"+ "." "0".."9"* (("e" | "E") ("+" | "-")? "0".."9"+)? | "." "0".."9"+ (("e" | "E") ("+"
+	//
+	//	| "-")? "0".."9"+)? | "0".."9"+ ("e" | "E") ("+" | "-")? "0".."9"+;
 	public TerminalRule getTFLOATRule() {
 		return (tTFLOAT != null) ? tTFLOAT : (tTFLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TFLOAT"));
 	} 
 
 	//terminal NATURAL returns ecore::EInt:
+	//
 	//	"0".."9"+;
 	public TerminalRule getNATURALRule() {
 		return (tNATURAL != null) ? tNATURAL : (tNATURAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NATURAL"));
 	} 
 
 	//terminal ID:
+	//
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
 	public TerminalRule getIDRule() {
 		return (tID != null) ? tID : (tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID"));
 	} 
 
 	//terminal STRING:
+	//
 	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"";
 	public TerminalRule getSTRINGRule() {
 		return (tSTRING != null) ? tSTRING : (tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "STRING"));
 	} 
 
 	//terminal ML_COMMENT:
+	//
 	//	"/ *"->"* /";
 	public TerminalRule getML_COMMENTRule() {
 		return (tML_COMMENT != null) ? tML_COMMENT : (tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ML_COMMENT"));
 	} 
 
 	//terminal SL_COMMENT:
+	//
 	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
 	public TerminalRule getSL_COMMENTRule() {
 		return (tSL_COMMENT != null) ? tSL_COMMENT : (tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT"));
 	} 
 
 	//terminal WS:
+	//
 	//	(" " | "\t" | "\r" | "\n")+;
 	public TerminalRule getWSRule() {
 		return (tWS != null) ? tWS : (tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS"));

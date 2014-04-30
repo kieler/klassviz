@@ -114,6 +114,10 @@ class ClassDataValidator extends AbstractClassDataValidator {
      */
     @Check
     def checkTypeExists(KType type) {
+    	// is it a wildcard?
+    	if (type.name == "*") 
+    		return;
+    		
         val pack = type.eContainer as KPackage
         val classModel = pack.eContainer as KClassModel
         if (classModel.getJdtType(type) == null && classModel.getBundleClass(type) == null) {

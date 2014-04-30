@@ -121,7 +121,7 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 	
 	/**
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID | name='*')
 	 */
 	protected void sequence_KClass(EObject context, KClass semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -130,7 +130,7 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (fields+=KField | methods+=KMethod | dependencies+=KDependency)*)
+	 *     ((name=ID | name='*') (fields+=KField | methods+=KMethod | dependencies+=KDependency)*)
 	 */
 	protected void sequence_KClass_KType(EObject context, KClass semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -148,7 +148,7 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 	
 	/**
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID | name='*')
 	 */
 	protected void sequence_KEnum(EObject context, KEnum semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -157,7 +157,7 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (fields+=KField | methods+=KMethod | dependencies+=KDependency)*)
+	 *     ((name=ID | name='*') (fields+=KField | methods+=KMethod | dependencies+=KDependency)*)
 	 */
 	protected void sequence_KEnum_KType(EObject context, KEnum semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -175,7 +175,7 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 	
 	/**
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID | name='*')
 	 */
 	protected void sequence_KInterface(EObject context, KInterface semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -184,7 +184,7 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (fields+=KField | methods+=KMethod | dependencies+=KDependency)*)
+	 *     ((name=ID | name='*') (fields+=KField | methods+=KMethod | dependencies+=KDependency)*)
 	 */
 	protected void sequence_KInterface_KType(EObject context, KInterface semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
