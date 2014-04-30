@@ -33,6 +33,7 @@ import de.cau.cs.kieler.core.properties.MapPropertyHolder
 import de.cau.cs.kieler.core.properties.Property
 import de.cau.cs.kieler.core.util.Maybe
 import de.cau.cs.kieler.kiml.LayoutMetaDataService
+import de.cau.cs.kieler.kiml.klayoutdata.KShapeLayout
 import de.cau.cs.kieler.kiml.options.Direction
 import de.cau.cs.kieler.kiml.options.EdgeRouting
 import de.cau.cs.kieler.kiml.options.EdgeType
@@ -51,13 +52,13 @@ import de.cau.cs.kieler.klighd.SynthesisOption
 import de.cau.cs.kieler.klighd.syntheses.AbstractDiagramSynthesis
 import java.util.ArrayList
 import java.util.Collection
+import java.util.Collections
 import java.util.List
 import java.util.Map
 import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.jdt.core.JavaModelException
 import org.eclipse.jdt.core.Signature
-import de.cau.cs.kieler.kiml.klayoutdata.KShapeLayout
-import java.util.Collections
+import org.eclipse.xtext.xbase.lib.Pair
 
 /**
  * Synthesis of class diagrams using the Classdata meta model.
@@ -65,6 +66,7 @@ import java.util.Collections
  * @author ems
  * @author cds
  * @author msp
+ * @author uru
  */
 class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     
@@ -141,6 +143,11 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
         SynthesisOption::createCheckOption("Inheritance", true)
     private static val SynthesisOption EDGES_ASSOCIATION =
         SynthesisOption::createCheckOption("Associations", true)
+        
+    private static val SynthesisOption ADVANCED_SEPARATOR =
+        SynthesisOption::createSeparator("Advanced")
+    private static val SynthesisOption HIDE_UNCONNECTED =
+        SynthesisOption::createCheckOption("Hide Unconnected", false)
     
     /**
      * Returns our list of synthesis options to be displayed.
@@ -150,7 +157,8 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
             VISUALIZE_ALL_OR_SELECTION, CLASSES_SEPARATOR, CLASSES_FQNAME, ATTRIBUTES_SEPARATOR,
             ATTRIBUTES_PRIVATE, ATTRIBUTES_TYPE, METHODS_SEPARATOR,
             METHODS_PRIVATE, METHODS_TYPE, METHODS_PARAMETERS, EDGES_SEPARATOR,
-            EDGES_INHERITANCE, EDGES_ASSOCIATION)
+            EDGES_INHERITANCE, EDGES_ASSOCIATION, ADVANCED_SEPARATOR, 
+            HIDE_UNCONNECTED)
     }
     
     /**
@@ -303,6 +311,15 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 type.createDependencyEdges
             ]
         ]
+        
+        if (HIDE_UNCONNECTED.booleanValue) {
+    		ImmutableList.copyOf(classDiagramRoot.eAllContents).filter(typeof(KNode))
+    			.filter[it.incomingEdges.isEmpty && it.outgoingEdges.isEmpty]
+    			.forEach[
+    				val parent = it.eContainer as KNode
+    				parent?.children.remove(it)
+    			]
+    	}
 
         // Return the finished diagram
         return classDiagramRoot
