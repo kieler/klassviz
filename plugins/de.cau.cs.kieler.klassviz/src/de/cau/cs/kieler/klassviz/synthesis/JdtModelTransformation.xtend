@@ -131,20 +131,22 @@ class JdtModelTransformation {
             		].findFirst[!it.value.nullOrEmpty]
             		
             		// add KTypes for every class/interface/enum found in the package
-            		for (clazz : packageFragment.value.head?.compilationUnits) {
-            			val simpleName = clazz.elementName.replaceAll("\\.java", "")
-            			val fullyQualified = pack.name + "." + simpleName
-            			val jdtType = packageFragment.key.findType(fullyQualified)
-            			// same type?
-            			if (jdtType != null && kType.sameKind(jdtType)) {
-            				pack.types.add(handleType(jdtType) => [
-            					it.name = simpleName
-            				])
-            			}
-            		}
+            		if (packageFragment != null) {
+	            		for (clazz : packageFragment?.value?.head?.compilationUnits) {
+	            			val simpleName = clazz.elementName.replaceAll("\\.java", "")
+	            			val fullyQualified = pack.name + "." + simpleName
+	            			val jdtType = packageFragment.key.findType(fullyQualified)
+	            			// same type?
+	            			if (jdtType != null && kType.sameKind(jdtType)) {
+	            				pack.types.add(handleType(jdtType) => [
+	            					it.name = simpleName
+	            				])
+	            			}
+	            		}
             		
-            		// remove the wildcard KType from the model
-            		pack.types.remove(kType)
+	            		// remove the wildcard KType from the model
+	            		pack.types.remove(kType)
+            		}
             	}
            	}
         }

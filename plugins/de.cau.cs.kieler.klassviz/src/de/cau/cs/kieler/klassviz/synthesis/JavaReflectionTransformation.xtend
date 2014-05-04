@@ -33,6 +33,10 @@ import java.lang.reflect.WildcardType
 import java.util.HashMap
 import org.eclipse.core.runtime.Platform
 import org.eclipse.jdt.core.Flags
+import com.google.common.collect.ImmutableList
+import java.util.regex.Pattern
+import com.google.common.collect.Lists
+import de.cau.cs.kieler.klassviz.model.classdata.KEnum
 
 /**
  * Transformation class between the Java reflection interface and our own class model.
@@ -49,6 +53,44 @@ class JavaReflectionTransformation {
     def resolve(KClassModel classModel) throws SecurityException {
         // Gather the Java projects declared in the class model
         val bundles = classModel.bundles.map[Platform.getBundle(it)].filterNull.toList
+        
+        // Resolve all wildcard types to appropriate KType instances
+        val pattern = Pattern.compile("\\/([^/$]+)\\.")
+        for (pack : classModel.packages) {
+        	for (kType : ImmutableList.copyOf(pack.types)) {
+        		if (kType.name == "*") {
+        			val packWithSlash = pack.name.replaceAll("\\.", "/")
+        			// find the package within the project 
+        			val classes = bundles.map[
+        				val list = Lists.newLinkedList
+        				val enu = it.findEntries("/" + packWithSlash, "*.class", false)
+        				if (enu != null) {
+	        				while (enu.hasMoreElements) {
+	        					val matcher = pattern.matcher(enu.nextElement.file)
+	        					if (matcher.find) {
+	        						val name = matcher.group(1)
+	        						val clazz = it.loadClass(pack.name + "." + name)
+	        						if (sameKind(kType, clazz)) {
+		        						list += Pair.of(name, clazz)
+	        						}
+	        					}
+	        				}
+        				}
+        				list
+        			].flatten
+
+            		// add KTypes for every class/interface/enum found in the package
+            		for (pair : classes) {
+						pack.types.add(handleType(pair.value) => [
+							it.name = pair.key
+						])
+					}
+            		
+            		// remove the wildcard KType from the model
+            		pack.types.remove(kType)
+            	}
+           	}
+        }
         
         // Gather the selected types
         val typeMap = new HashMap<Class<?>, KType>
@@ -112,6 +154,31 @@ class JavaReflectionTransformation {
         
         return classModel
     }
+    
+    /**
+     * Create a class model type instance according to the given JDT type.
+     */
+    def private KType handleType(Class<?> any) {
+        if (any.interface) {
+            ClassdataFactory.eINSTANCE.createKInterface()
+        } else if (any.enum) {
+            ClassdataFactory.eINSTANCE.createKEnum()
+        } else {
+        	ClassdataFactory.eINSTANCE.createKClass()
+        }
+    }
+    
+    /**
+     * Returns true if both types are of the same kind, e.g. both are classes.
+     */
+    def private boolean sameKind(KType kType, Class<?> any) {
+    	// TODO following tests are all false for class, why? 
+    	// println(any.localClass + " " + any.memberClass + " " + any.anonymousClass + " " + any.synthetic)
+    	(kType instanceof KClass && (!any.isInterface && !any.isEnum))
+    	|| (kType instanceof KInterface && any.isInterface)
+    	|| (kType instanceof KEnum && any.isEnum)
+    }
+    
     
     /**
      * Extract data on the given class into the KType instance.
