@@ -647,7 +647,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
                 ]
                 it.createLabel.configureCenterEdgeLabel(dependency.label, KlighdConstants::DEFAULT_FONT_SIZE,
                                 modelOptions.getProperty(OPTION_FONT_NAME))putToLookUpWith(dependency)
-                it.setLayoutOption(LayoutOptions::EDGE_TYPE, EdgeType::DEPENDENCY)
+//                it.setLayoutOption(LayoutOptions::EDGE_TYPE, EdgeType::DEPENDENCY)
             ]
         }
     }
