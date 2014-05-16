@@ -186,7 +186,7 @@ class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     /** Whether to draw shadows of classes and interfaces. */
     public static val OPTION_SHADOW = new Property("classdata.shadow", true)
     /** The font name used for all text labels. */
-    public static val OPTION_FONT_NAME = new Property("classdata.fontName", "Sans")
+    public static val OPTION_FONT_NAME = new Property("classdata.fontName", KlighdConstants.DEFAULT_FONT_NAME)
     /** Whether to print names of method parameters. */
     public static val OPTION_METHOD_PARAM_NAMES = new Property("classdata.printMethodParameterNames", true)
 
