@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site associateSitesURL="associateSites.xml">
+
+   <description name="OpenKieler (Nightly Builds)" url="http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/nightly-openkieler/">
+      Update site for the OpenKieler nightly builds.
+   </description>
+
+   <!-- CATEGORY DEFINITIONS -->
+   <category-def name="klassviz" label="Class Diagram Visualization">
+      <description>
+         OpenKieler components for the generation of class diagrams.
+      </description>
+   </category-def>
+
+
+   <!-- KLASSVIZ -->
+
+   <feature url="features/de.cau.cs.kieler.klassviz_0.1.0.qualifier.jar" id="de.cau.cs.kieler.klassviz.feature" version="0.1.0.qualifier">
+      <category name="klassviz"/>
+   </feature>
+   <feature url="features/de.cau.cs.kieler.klassviz.source_0.1.0.qualifier.jar" id="de.cau.cs.kieler.klassviz.feature.source" version="0.1.0.qualifier">
+      <category name="klassviz"/>
+   </feature>
+
+</site>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <version>0.1.0-SNAPSHOT</version>
+  <artifactId>de.cau.cs.kieler.klassviz.repository</artifactId>
+  <packaging>eclipse-repository</packaging>
+  <name>OpenKieler KlassViz Repository</name>
+
+  <parent>
+    <groupId>de.cau.cs.kieler.klassviz</groupId>
+    <artifactId>parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <!-- These are a few properties we use for the small update site index.html that is generated. -->
+  <properties>
+    <update.site.name>OpenKieler KlassViz</update.site.name>
+    <update.site.description>Nightly</update.site.description>
+    <update.site.version>0.1.0</update.site.version>
+    <target.eclipse.version>4.3 (Kepler)</target.eclipse.version>
+  </properties>
+  
+  <build>
+    <plugins>
+      <!-- This plug-in generates a nice index.html for our update site and adds associate update
+           sites, which is at the time of writing not possible with Tycho alone. For how this stuff
+           works, see the bottom two links in comment 6 on this ticket:
+           https://bugs.eclipse.org/bugs/show_bug.cgi?id=391033-->
+      <plugin>
+        <groupId>org.jboss.tools.tycho-plugins</groupId>
+        <artifactId>repository-utils</artifactId>
+        <version>0.16.0.CR1</version>
+        <executions>
+          <execution>
+            <id>generate-facade</id>
+            <phase>package</phase>
+            <goals>
+              <goal>generate-repository-facade</goal>
+            </goals>
+            <configuration>
+              <associateSites>
+                <!-- Eclipse Kepler -->
+                <associateSite>http://download.eclipse.org/releases/kepler</associateSite>
+                <!-- Google Guava -->
+                <associateSite>http://guava-osgi.googlecode.com/svn/trunk/repository/</associateSite>
+                <!-- KIELER -->
+                <associateSite>http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/</associateSite>
+              </associateSites>
+              <siteTemplateFolder>siteTemplate</siteTemplateFolder>
+              <symbols>
+                <update.site.name>${update.site.name}</update.site.name>
+                <update.site.description>${update.site.description}</update.site.description>
+                <update.site.version>${update.site.version}</update.site.version>
+                <target.eclipse.version>${target.eclipse.version}</target.eclipse.version>
+              </symbols>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
