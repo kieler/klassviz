@@ -1,5 +1,6 @@
 KlassViz - Kieler Class Diagram Visualization
 =============================================
 
-Visualization of class diagrams using KIELER Lightweight Diagrams (KLighD). The project includes an Xtext-based
-text editor for specifying selections of classes as well as options for generated diagrams.
+Visualization of class diagrams using KIELER Lightweight Diagrams (KLighD).
+The project includes an Xtext-based text editor for specifying selections of
+classes as well as options for generated diagrams.
