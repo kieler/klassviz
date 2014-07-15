@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: KIELER Textual Format for KlassViz
-Bundle-Vendor: Christian-Albrechts-Universität zu Kiel
+Bundle-Vendor: OpenKieler
 Bundle-Version: 0.1.0.qualifier
 Bundle-SymbolicName: de.cau.cs.kieler.klassviz.text; singleton:=true
 Bundle-ActivationPolicy: lazy

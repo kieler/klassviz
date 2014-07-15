@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: KIELER Class Diagram Visualization
-Bundle-Vendor: Christian-Albrechts-Universität zu Kiel
+Bundle-Vendor: OpenKieler
 Bundle-Version: 0.1.0.qualifier
 Bundle-SymbolicName: de.cau.cs.kieler.klassviz;singleton:=true
 Bundle-ActivationPolicy: lazy
