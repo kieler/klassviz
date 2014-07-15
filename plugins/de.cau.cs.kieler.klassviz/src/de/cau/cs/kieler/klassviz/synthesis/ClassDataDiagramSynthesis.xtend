@@ -1,7 +1,8 @@
 /*
- * KIELER - Kiel Integrated Environment for Layout Eclipse RichClient
- *
- * http://www.informatik.uni-kiel.de/rtsys/kieler/
+ * KlassViz - Kieler Class Diagram Visualization
+ * 
+ * A part of OpenKieler
+ * https://github.com/OpenKieler
  * 
  * Copyright 2014 by
  * + Christian-Albrechts-University of Kiel
@@ -61,12 +62,8 @@ import java.util.Collections
 
 /**
  * Synthesis of class diagrams using the Classdata meta model.
- * 
- * @author ems
- * @author cds
- * @author msp
  */
-class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
+final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassModel> {
     
     public static val SYNTHESIS_ID = "de.cau.cs.kieler.klassviz.ClassDataDiagramSynthesis"
     

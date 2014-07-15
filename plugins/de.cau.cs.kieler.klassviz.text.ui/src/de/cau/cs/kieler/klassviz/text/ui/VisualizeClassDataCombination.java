@@ -1,9 +1,10 @@
 /*
- * KIELER - Kiel Integrated Environment for Layout Eclipse Rich Client
- *
- * http://www.informatik.uni-kiel.de/rtsys/kieler/
+ * KlassViz - Kieler Class Diagram Visualization
  * 
- * Copyright 2011 by
+ * A part of OpenKieler
+ * https://github.com/OpenKieler
+ * 
+ * Copyright 2014 by
  * + Christian-Albrechts-University of Kiel
  *   + Department of Computer Science
  *     + Real-Time and Embedded Systems Group

@@ -1,7 +1,8 @@
 /*
- * KIELER - Kiel Integrated Environment for Layout Eclipse RichClient
- *
- * http://www.informatik.uni-kiel.de/rtsys/kieler/
+ * KlassViz - Kieler Class Diagram Visualization
+ * 
+ * A part of OpenKieler
+ * https://github.com/OpenKieler
  * 
  * Copyright 2014 by
  * + Christian-Albrechts-University of Kiel
@@ -19,10 +20,8 @@ import org.eclipse.xtext.xbase.lib.Pair;
 
 /**
  * A lexicographical comparator for pairs. Keys and values must not be null.
- *
- * @author msp
  */
-public class PairComparator<K extends Comparable<K>, V extends Comparable<V>>
+public final class PairComparator<K extends Comparable<K>, V extends Comparable<V>>
         implements Comparator<Pair<K, V>> {
 
     /**

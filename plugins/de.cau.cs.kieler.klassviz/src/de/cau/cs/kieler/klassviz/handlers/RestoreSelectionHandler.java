@@ -1,7 +1,8 @@
 /*
- * KIELER - Kiel Integrated Environment for Layout Eclipse RichClient
- *
- * http://www.informatik.uni-kiel.de/rtsys/kieler/
+ * KlassViz - Kieler Class Diagram Visualization
+ * 
+ * A part of OpenKieler
+ * https://github.com/OpenKieler
  * 
  * Copyright 2014 by
  * + Christian-Albrechts-University of Kiel
@@ -58,11 +59,8 @@ import de.cau.cs.kieler.klighd.ui.DiagramViewManager;
  * This class checks which element is selected to restore the selection of the java-project that
  * contains this element. The data is taken from the XMI-file referred to this project. After that
  * it also starts a diagramsynthesis in Xtend.
- * 
- * @author ems
- * 
  */
-public class RestoreSelectionHandler extends AbstractHandler {
+public final class RestoreSelectionHandler extends AbstractHandler {
 
     String PLUGIN_ID = "de.cau.cs.kieler.klassviz";
 

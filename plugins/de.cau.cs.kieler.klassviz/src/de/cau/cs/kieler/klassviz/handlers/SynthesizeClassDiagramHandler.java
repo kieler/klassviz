@@ -1,7 +1,8 @@
 /*
- * KIELER - Kiel Integrated Environment for Layout Eclipse RichClient
- *
- * http://www.informatik.uni-kiel.de/rtsys/kieler/
+ * KlassViz - Kieler Class Diagram Visualization
+ * 
+ * A part of OpenKieler
+ * https://github.com/OpenKieler
  * 
  * Copyright 2014 by
  * + Christian-Albrechts-University of Kiel
@@ -48,10 +49,8 @@ import de.cau.cs.kieler.klighd.ui.DiagramViewManager;
  * methods, that is made via the package or project explorer is transferred to a metamodel. After
  * that is done the selection is saved in the metadata of the plug-in. Then it starts a
  * diagram synthesis in Xtend.
- * 
- * @author ems
  */
-public class SynthesizeClassDiagramHandler extends AbstractHandler {
+public final class SynthesizeClassDiagramHandler extends AbstractHandler {
 
     String PLUGIN_ID = "de.cau.cs.kieler.klassviz";
     ClassdataFactory factory = ClassdataFactory.eINSTANCE;
