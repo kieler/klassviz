@@ -46,7 +46,7 @@
         <repository>
           <id>p2.kieler</id>
           <layout>p2</layout>
-          <url>http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/</url>
+          <url>http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/release_pragmatics_2014-05/</url>
         </repository>
       </repositories>
       
