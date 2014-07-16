@@ -218,6 +218,10 @@ litigation.
       <update label="OpenKieler Nightly Builds" url="http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/nightly-openkieler/"/>
    </url>
 
+   <requires>
+      <import feature="de.cau.cs.kieler.klighd.feature" version="0.5.0" match="greaterOrEqual"/>
+   </requires>
+
    <plugin
          id="de.cau.cs.kieler.klassviz"
          download-size="0"
