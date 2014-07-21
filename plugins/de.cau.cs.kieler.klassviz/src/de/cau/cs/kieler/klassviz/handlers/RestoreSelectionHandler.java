@@ -30,7 +30,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IType;
@@ -56,51 +55,57 @@ import de.cau.cs.kieler.klassviz.model.classdata.KTypeReference;
 import de.cau.cs.kieler.klighd.ui.DiagramViewManager;
 
 /**
- * This class checks which element is selected to restore the selection of the java-project that
- * contains this element. The data is taken from the XMI-file referred to this project. After that
- * it also starts a diagramsynthesis in Xtend.
+ * This class checks which element is selected to restore the selection of the Java project that
+ * contains this element. The data is taken from the XMI file referred to this project. After that
+ * it also starts a diagram synthesis in Xtend.
  */
 public final class RestoreSelectionHandler extends AbstractHandler {
 
-    String PLUGIN_ID = "de.cau.cs.kieler.klassviz";
+    static final String PLUGIN_ID = "de.cau.cs.kieler.klassviz";
+    
+    static URI getStoredSelectionURI(IPath projectPath) {
+        return URI.createURI("platform:/meta/" + PLUGIN_ID + projectPath + "/selection.xmi");
+    }
 
     public Object execute(ExecutionEvent event) throws ExecutionException {
-        // Get the Java-Project of the first item in the selection.
+        // Get the Java project of the first item in the selection.
         ISelection selection = HandlerUtil.getCurrentSelection(event);
-        IStructuredSelection sSelection = (IStructuredSelection) selection;
-        Object[] selectedElements = sSelection.toArray();
+        Object selectedElement = ((IStructuredSelection) selection).getFirstElement();
         IPath projectPath = null;
         IJavaProject javaProject = null;
-        if (selectedElements[0] instanceof IProject) {
-            IProject project = ((IProject) selectedElements[0]);
-            projectPath = project.getFullPath();
-            try {
+        try {
+            if (selectedElement instanceof IProject) {
+                IProject project = (IProject) selectedElement;
+                projectPath = project.getFullPath();
                 if (project.hasNature(JavaCore.NATURE_ID)) {
                     javaProject = JavaCore.create(project);
                 }
-            } catch (CoreException e) {
-                e.printStackTrace();
+            } else if (selectedElement instanceof IJavaElement) {
+                IJavaElement javaElement = (IJavaElement) selectedElement;
+                projectPath = javaElement.getJavaProject().getPath();
+                javaProject = javaElement.getJavaProject();
             }
-        }
-        if (selectedElements[0] instanceof IJavaElement) {
-            projectPath = ((IJavaElement) selectedElements[0]).getJavaProject().getPath();
-            javaProject = ((IJavaElement) selectedElements[0]).getJavaProject();
-        }
-        if (projectPath == null) {
-            return null;
-        }
-        // Load the classdata of the URI referred to the project.
-        ResourceSet resourceSet = new ResourceSetImpl();
-        resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap()
-                .put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
-        URI platformURI = URI.createURI("platform:/meta/" + PLUGIN_ID + projectPath
-                + "/selection.xmi");
-        Resource resource = resourceSet.getResource(platformURI, true);
-        EObject modelObject = resource.getContents().get(0);
-        if (modelObject instanceof KClassModel) {
-            KClassModel classDataSelection = (KClassModel) modelObject;
-            List<Object> toBeSelectedElements = new ArrayList<Object>();
+            if (projectPath == null) {
+                return null;
+            }
+            
+            // Load the class data of the URI referred to the project.
+            ResourceSet resourceSet = new ResourceSetImpl();
+            URI platformURI = getStoredSelectionURI(projectPath);
+            EObject modelObject;
             try {
+                Resource resource = resourceSet.getResource(platformURI, true);
+                modelObject = resource.getContents().get(0);
+            } catch (RuntimeException exception) {
+                IStatus status = new Status(IStatus.ERROR, PLUGIN_ID,
+                        "There is no stored class selection for this project.", exception);
+                StatusManager.getManager().handle(status, StatusManager.SHOW);
+                return null;
+            }
+            
+            if (modelObject instanceof KClassModel) {
+                KClassModel classDataSelection = (KClassModel) modelObject;
+                List<Object> toBeSelectedElements = new ArrayList<Object>();
                 // Restore the full data of the previously selected types,
                 // including their fields and methods in the model. Also add the
                 // the previously selected types, fields and methods to
@@ -119,7 +124,7 @@ public final class RestoreSelectionHandler extends AbstractHandler {
                                     }
                                 }
                                 for (KMethod kMethod : kType.getMethods()) {
-                                    // Get method based on name and parametertypes.
+                                    // Get method based on name and parameter types.
                                     // If method was previously selected add it to
                                     // 'toBeSelectedElements'.
                                     if (kMethod.isSelected()) {
@@ -138,26 +143,25 @@ public final class RestoreSelectionHandler extends AbstractHandler {
                 IWorkbenchPage wbp = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
                         .getActivePage();
                 String id = wbp.getActivePartReference().getId();
-
-                IViewPart view = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
-                        .getActivePage().showView(id);
+                IViewPart view = wbp.showView(id);
 
                 view.getSite().getSelectionProvider().setSelection(newSelection);
 
                 // Start the synthesis with Xtend and visualize with KlighD.
-                DiagramViewManager.getInstance().createView(
+                DiagramViewManager.createView(
                         "de.cau.cs.kieler.klassviz.ClassDataDiagramSynthesis",
                         javaProject.getElementName(), classDataSelection, null);
-            } catch (JavaModelException exception) {
-                IStatus status = new Status(IStatus.ERROR, PLUGIN_ID,
-                        "Error while restoring previous selection.", exception);
-                StatusManager.getManager().handle(status, StatusManager.SHOW);
-            } catch (PartInitException exception) {
-                IStatus status = new Status(IStatus.ERROR, PLUGIN_ID,
-                        "Error while activating view.", exception);
-                StatusManager.getManager().handle(status, StatusManager.SHOW);
-                return null;
             }
+        } catch (JavaModelException exception) {
+            IStatus status = new Status(IStatus.ERROR, PLUGIN_ID,
+                    "Error while restoring previous selection.", exception);
+            StatusManager.getManager().handle(status, StatusManager.SHOW);
+        } catch (PartInitException exception) {
+            IStatus status = new Status(IStatus.ERROR, PLUGIN_ID,
+                    "Error while activating view.", exception);
+            StatusManager.getManager().handle(status, StatusManager.SHOW);
+        } catch (CoreException exception) {
+            StatusManager.getManager().handle(exception, PLUGIN_ID);
         }
 
         return null;

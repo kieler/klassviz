@@ -15,13 +15,43 @@
             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
          <command
                commandId="de.cau.cs.kieler.klassviz.synthesizeclassdiagramofselection"
+               icon="icons/class.gif"
                label="Class Diagram from Selection"
-               style="push">
+               style="push"
+               tooltip="Automatically generate a class diagram containing the selected classes and members">
+            <visibleWhen
+                  checkEnabled="false">
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <instanceof
+                        value="org.eclipse.jdt.core.IJavaElement">
+                  </instanceof>
+               </iterate>
+            </visibleWhen>
          </command>
          <command
                commandId="de.cau.cs.kieler.klassviz.getpreviousselectionofproject"
-               label="Restore Project's Previous Class Diagram"
-               style="push">
+               icon="icons/class.gif"
+               label="Restore Project&apos;s Previous Class Diagram"
+               style="push"
+               tooltip="Restore the last used selection of classes for generating a class diagram">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <count
+                        value="1">
+                  </count>
+                  <iterate
+                        ifEmpty="false"
+                        operator="and">
+                     <test
+                           forcePluginActivation="true"
+                           property="de.cau.cs.kieler.klassviz.containsStoredSelection">
+                     </test>
+                  </iterate>
+               </and>
+            </visibleWhen>
          </command>
       </menuContribution>
    </extension>
@@ -37,6 +67,16 @@
             id="de.cau.cs.kieler.klassviz.getpreviousselectionofproject"
             name="Restore Project's Previous Class Diagram">
       </command>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="de.cau.cs.kieler.klassviz.handlers.ContainsStoredSelectionTester"
+            id="de.cau.cs.kieler.klassviz.StoredSelectionTester"
+            namespace="de.cau.cs.kieler.klassviz"
+            properties="containsStoredSelection"
+            type="org.eclipse.core.resources.IResource">
+      </propertyTester>
    </extension>
 
 </plugin> 
