@@ -20,7 +20,7 @@ Nightly Builds
 
 Automatic builds are done every night by the [KIELER Bamboo build system](http://rtsys.informatik.uni-kiel.de/bamboo). To install KlassViz, open your Eclipse installation and select _Install New Software..._ from the _Help_ menu. Use the following update site:
 
-> (http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/nightly-openkieler/)
+> http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/nightly-openkieler/
 
 
 Releases
