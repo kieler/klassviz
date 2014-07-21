@@ -12,7 +12,8 @@
    </description>
 
    <copyright>
-      Copyright 2013 by Real-Time and Embedded Systems Group, Department of Computer Science, Christian-Albrechts-University of Kiel
+      Copyright 2014 by Real-Time and Embedded Systems Group, Department
+of Computer Science, Christian-Albrechts-University of Kiel
    </copyright>
 
    <license url="http://www.eclipse.org/legal/epl-v10.html">
@@ -220,6 +221,8 @@ litigation.
 
    <requires>
       <import feature="de.cau.cs.kieler.klighd.feature" version="0.5.0" match="greaterOrEqual"/>
+      <import feature="de.cau.cs.kieler.kiml.ogdf.feature" version="0.6.2.qualifier" match="greaterOrEqual"/>
+      <import feature="net.ogdf.bin.feature" version="2.0.2.qualifier" match="greaterOrEqual"/>
    </requires>
 
    <plugin
