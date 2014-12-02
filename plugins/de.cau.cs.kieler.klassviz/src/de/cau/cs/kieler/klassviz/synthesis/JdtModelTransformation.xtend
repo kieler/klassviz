@@ -57,7 +57,7 @@ final class JdtModelTransformation {
      * Transform a selection of JDT elements to a class model instance.
      */
     def KClassModel transform(IStructuredSelection selection) throws JavaModelException {
-        val selectedElements = selection.toArray()
+        val selectedElements = selection.toList()
         
         // Gather all types in the current selection.
         selectedTypes.clear
