@@ -42,6 +42,7 @@ import org.eclipse.jdt.core.JavaCore
 import org.eclipse.jdt.core.JavaModelException
 import org.eclipse.jdt.core.Signature
 import org.eclipse.jface.viewers.IStructuredSelection
+import org.eclipse.jdt.core.IPackageFragment
 
 /**
  * Transformation class between the JDT model and our own class model.
@@ -61,20 +62,31 @@ final class JdtModelTransformation {
         
         // Gather all types in the current selection.
         selectedTypes.clear
-        selectedTypes += selectedElements.filter[it instanceof IType]
-        selectedTypes += selectedElements.filter[it instanceof ITypeRoot]
-                .map[(it as ITypeRoot).findPrimaryType]
+        selectedTypes += selectedElements.filter(IType)
+        selectedTypes += selectedElements.filter(ITypeRoot).map[it.findPrimaryType]
+        selectedTypes += selectedElements.filter(IPackageFragment).map[ pf |
+            pf.classFiles.map(cf | cf.findPrimaryType)
+                + pf.compilationUnits.map[cu | cu.findPrimaryType]
+        ].flatten
         
         // Create a class model instance based on the metamodel with the factory.
         val classModel = ClassdataFactory.eINSTANCE.createKClassModel()
         
         // For each selected element, check if it's an IJavaElement. If it is
         // so extract the wanted information of the classes.
-        var int i = 0
-        while (i < selectedElements.length) {
-            if (selectedElements.get(i) instanceof IJavaElement) {
-                val je = selectedElements.get(i) as IJavaElement
+        selectedElements.forEach[ e |
+            if (e instanceof IJavaElement) {
+                val je = e as IJavaElement
                 switch (je.getElementType()) {
+                    case IJavaElement::PACKAGE_FRAGMENT: {
+                        val pf = je as IPackageFragment
+                        pf.classFiles.forEach[cf |
+                            createType((cf as ITypeRoot).findPrimaryType(), classModel).selected = true
+                        ]
+                        pf.compilationUnits.forEach[ cu |
+                            createType((cu as ITypeRoot).findPrimaryType(), classModel).selected = true
+                        ]
+                    }
                     case IJavaElement::COMPILATION_UNIT: {
                         createType((je as ITypeRoot).findPrimaryType(), classModel).selected = true
                     }
@@ -92,8 +104,7 @@ final class JdtModelTransformation {
                     }
                 }
             }
-            i = i + 1
-        }
+        ]
         
         // This flag tells the diagram synthesis not to resolve any types, since we have done it here.
         classModel.resolved = true

@@ -52,8 +52,8 @@ import de.cau.cs.kieler.klighd.ui.DiagramViewManager;
  */
 public final class SynthesizeClassDiagramHandler extends AbstractHandler {
 
-    String PLUGIN_ID = "de.cau.cs.kieler.klassviz";
-    ClassdataFactory factory = ClassdataFactory.eINSTANCE;
+    static final String PLUGIN_ID = "de.cau.cs.kieler.klassviz";
+    final ClassdataFactory factory = ClassdataFactory.eINSTANCE;
 
     /**
      * Initiates the class diagram synthesis. Therefore a selection of classes, fields and methods,
@@ -100,7 +100,7 @@ public final class SynthesizeClassDiagramHandler extends AbstractHandler {
             
             // Start synthesis with Xtend and visualize with KlighD.
             String viewTitle = projects.iterator().next().getElementName();
-            DiagramViewManager.getInstance().createView(
+            DiagramViewManager.createView(
                     "de.cau.cs.kieler.klassviz.ClassDataDiagramSynthesis",
                     viewTitle, classModel, null);
         }
@@ -120,8 +120,7 @@ public final class SynthesizeClassDiagramHandler extends AbstractHandler {
 
         for (IJavaProject javaProject : projects) {
             // Path is: /metadata of the plugin/javaproject/selection.xmi
-            URI platformURI = URI.createURI("platform:/meta/" + PLUGIN_ID + javaProject.getPath()
-                    + "/selection.xmi");
+            URI platformURI = RestoreSelectionHandler.getStoredSelectionURI(javaProject.getPath());
 
             // Create a resource for this file.
             Resource resource = resourceSet.createResource(platformURI);
@@ -134,7 +133,7 @@ public final class SynthesizeClassDiagramHandler extends AbstractHandler {
                 resource.save(Collections.EMPTY_MAP);
             } catch (IOException exception) {
                 IStatus status = new Status(IStatus.ERROR, PLUGIN_ID,
-                        "Could not save selection to project metadata.", exception);
+                        "Could not save selection to project meta data.", exception);
                 StatusManager.getManager().handle(status);
             }
         }
