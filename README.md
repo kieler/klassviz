@@ -66,7 +66,7 @@ To create a new class diagram file, simply create a new plain file with the file
 KlassViz supports the following options:
 
 Name                                  | Description
------------------------------------------------------------------------------------------------------
+--------------------------------------|--------------------------------------------------------------
 `classdata.borderColor`               | The color of borders around types.
 `classdata.edgeColor`                 | The color of edges.
 `classdata.classColor1`               | First background color of the gradient for classes.
