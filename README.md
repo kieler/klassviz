@@ -4,15 +4,15 @@ KlassViz - Kieler Class Diagram Visualization
 KlassViz provides a way to dynamically show class diagrams just by clicking a context menu entry on your Eclipse project browser. The project also provides a textual language to describe and save diagrams. The whole thing is based on the [KIELER Lightweight Diagrams (KLighD)](http://www.informatik.uni-kiel.de/rtsys/kieler/) framework.
 
 
-Building
---------
+# Using KlassViz
 
-To build KlassViz, make sure you have Maven installed. Change into the
-build directory and execute this command:
+To use KlassViz, install it into your existing Eclipse installation from our Nightly Builds update site as explained below. Once that is done, there are two ways to use KlassViz: through context menus or through class diagram files.
 
-```bash
-mvn clean package
-```
+## Using KlassViz through Context Menus
+
+
+
+## Using KlassViz through Class Diagram Files
 
 
 Nightly Builds
@@ -21,6 +21,15 @@ Nightly Builds
 Automatic builds are done every night by the [KIELER Bamboo build system](http://rtsys.informatik.uni-kiel.de/bamboo). To install KlassViz, open your Eclipse installation and select _Install New Software..._ from the _Help_ menu. Use the following update site:
 
 > http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/nightly-openkieler/
+
+
+Building
+--------
+
+To build KlassViz manually from the sources, make sure you have Maven installed. Change into the build directory and execute this command:
+
+    bash
+    mvn clean package
 
 
 Releases
