@@ -3,6 +3,8 @@ KlassViz - Kieler Class Diagram Visualization
 
 KlassViz provides a way to dynamically show class diagrams just by clicking a context menu entry on your Eclipse project browser. The project also provides a textual language to describe and save diagrams. The whole thing is based on the [KIELER Lightweight Diagrams (KLighD)](http://www.informatik.uni-kiel.de/rtsys/kieler/) framework.
 
+![Usage example](https://raw.githubusercontent.com/OpenKieler/klassviz/master/doc/screenshot.jpg) 
+
 
 Using KlassViz
 --------------
