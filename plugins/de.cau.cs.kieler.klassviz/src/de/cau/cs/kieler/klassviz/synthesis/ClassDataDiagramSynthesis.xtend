@@ -258,7 +258,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
                 }
             } else input
         
-        val classDiagramRoot = classModel.createNode().putToLookUpWith(classModel) => [ rootNode |
+        val classDiagramRoot = classModel.createNode().associateWith(classModel) => [ rootNode |
             // evaluate the options stored in the class model
             evaluateOptions(classModel, rootNode)
         
@@ -315,7 +315,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
      * @return node representing the package, including all classes.
      */
     def private KNode createPackageNode(KPackage kPackage, KClassModel classModel, KNode rootNode) {
-        return kPackage.createNode.putToLookUpWith(kPackage) => [ packageNode |
+        return kPackage.createNode.associateWith(kPackage) => [ packageNode |
             // Add a gray rectangle for each package
             packageNode.addRectangle => [ rect |
                 // If Layout shall be with gradient use gradient, else not
@@ -367,7 +367,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
      * @return node representing the class.
      */
     def private KNode createClassNode(KType classData, KClassModel classModel) {
-        return classData.createNode.putToLookUpWith(classData) => [
+        return classData.createNode.associateWith(classData) => [
             it.addRoundedRectangle(5, 5) => [ rect |
                 rect.foreground = modelOptions.getProperty(OPTION_BORDER_COLOR).color
                 rect.configureBackground(classData)
@@ -486,10 +486,10 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
     // For each class visualize all relationships to super classes that are visualized.
     def private createClassInheritanceEdge(KClass classData) {
         if (classData.superClass != null && classData.superClass.selected) {
-            createEdge.putToLookUpWith(classData) => [
+            createEdge.associateWith(classData) => [
                 it.source = classData.node
                 it.target = classData.superClass.node
-                it.addPolyline().putToLookUpWith(classData) => [
+                it.addPolyline().associateWith(classData) => [
                     it.addInheritanceTriangleArrowDecorator() => [
                         it.foreground = modelOptions.getProperty(OPTION_EDGE_COLOR).color
                     ]
@@ -507,10 +507,10 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
         else if (classData instanceof KInterface)
             (classData as KInterface).superInterfaces
         )?.filter[it.selected]?.forEach [ kInterface |
-            createEdge.putToLookUpWith(classData) => [
+            createEdge.associateWith(classData) => [
                 it.source = classData.node
                 it.target = kInterface.node
-                it.addPolyline().putToLookUpWith(classData) => [
+                it.addPolyline().associateWith(classData) => [
                     if (classData instanceof KInterface) {
                         // if interface has super interface the line is solid.
                         it.lineStyle = LineStyle::SOLID
@@ -589,10 +589,10 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
                     if (!(classData.node == classDataToBeCompared.node)) {
     
                         // Add an edge labeled with the multiplicities.
-                        createEdge.putToLookUpWith(classData) => [
+                        createEdge.associateWith(classData) => [
                             it.source = classData.node
                             it.target = classDataToBeCompared.node
-                            it.addPolyline().putToLookUpWith(classData) => [
+                            it.addPolyline().associateWith(classData) => [
                                 it.addAssociationArrowDecorator
                                 it.foreground = modelOptions.getProperty(OPTION_EDGE_COLOR).color
                             ]
@@ -605,7 +605,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
                                     Integer.toString(lowerBound.get) + ".." + Integer.toString(upperBound.get)
                                 }
                             it.createLabel.configureHeadEdgeLabel(multiplicity, KlighdConstants::DEFAULT_FONT_SIZE,
-                                modelOptions.getProperty(OPTION_FONT_NAME)).putToLookUpWith(classData)
+                                modelOptions.getProperty(OPTION_FONT_NAME)).associateWith(classData)
                             it.setLayoutOption(LayoutOptions::EDGE_TYPE, EdgeType::ASSOCIATION)
                         ]
                     }
@@ -617,16 +617,16 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
     // Visualize the explicit dependencies in the model.
     def private createDependencyEdges(KType classData) {
         for (dependency : classData.dependencies) {
-            createEdge.putToLookUpWith(dependency) => [
+            createEdge.associateWith(dependency) => [
                 it.source = classData.node
                 it.target = dependency.target.node
-                it.addPolyline().putToLookUpWith(dependency) => [
+                it.addPolyline().associateWith(dependency) => [
                     it.lineStyle = LineStyle::DASH
                     it.addAssociationArrowDecorator
                     it.foreground = modelOptions.getProperty(OPTION_EDGE_COLOR).color
                 ]
                 it.createLabel.configureCenterEdgeLabel(dependency.label, KlighdConstants::DEFAULT_FONT_SIZE,
-                                modelOptions.getProperty(OPTION_FONT_NAME))putToLookUpWith(dependency)
+                                modelOptions.getProperty(OPTION_FONT_NAME)).associateWith(dependency)
                 it.setLayoutOption(LayoutOptions::EDGE_TYPE, EdgeType::DEPENDENCY)
             ]
         }
