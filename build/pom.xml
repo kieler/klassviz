@@ -45,6 +45,11 @@
           <url>http://rtsys.informatik.uni-kiel.de/~kieler/repository/luna441/</url>
         </repository>
         <repository>
+          <id>p2.targetPlatform.delta</id>
+          <layout>p2</layout>
+          <url>http://rtsys.informatik.uni-kiel.de/~kieler/repository/luna441_delta/</url>
+        </repository>
+        <repository>
           <id>p2.kieler</id>
           <layout>p2</layout>
           <url>http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/release_pragmatics_2014-05/</url>
