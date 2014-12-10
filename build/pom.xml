@@ -11,7 +11,7 @@
   <!-- ============================================================================================ -->
   <!-- Define a few properties used throughout all build profiles. -->
   <properties>
-    <tycho-version>0.22.0</tycho-version>
+    <tycho-version>0.21.0</tycho-version>
     <xtend-version>2.7.3</xtend-version>
     <targetJdk>1.5</targetJdk>
     
