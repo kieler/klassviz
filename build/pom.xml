@@ -42,7 +42,7 @@
         <repository>
           <id>p2.targetPlatform</id>
           <layout>p2</layout>
-          <url>http://rtsys.informatik.uni-kiel.de/~kieler/repository/kepler43/</url>
+          <url>http://rtsys.informatik.uni-kiel.de/~kieler/repository/luna441/</url>
         </repository>
         <repository>
           <id>p2.kieler</id>
