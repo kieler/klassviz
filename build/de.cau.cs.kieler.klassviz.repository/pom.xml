@@ -44,8 +44,6 @@
               <associateSites>
                 <!-- Eclipse Kepler -->
                 <associateSite>http://download.eclipse.org/releases/kepler</associateSite>
-                <!-- Google Guava -->
-                <associateSite>http://guava-osgi.googlecode.com/svn/trunk/repository/</associateSite>
                 <!-- KIELER -->
                 <associateSite>http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/</associateSite>
               </associateSites>
