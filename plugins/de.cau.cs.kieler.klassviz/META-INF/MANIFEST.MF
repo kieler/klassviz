@@ -7,20 +7,20 @@ Bundle-SymbolicName: de.cau.cs.kieler.klassviz;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: com.google.guava,
  com.google.inject,
- de.cau.cs.kieler.core.krendering,
- de.cau.cs.kieler.core.krendering.extensions,
- de.cau.cs.kieler.kiml,
- de.cau.cs.kieler.klighd,
- de.cau.cs.kieler.klighd.ui,
- de.cau.cs.kieler.klassviz.model,
  org.eclipse.core.runtime;bundle-version="3.9.0",
  org.eclipse.core.resources,
  org.eclipse.core.expressions;bundle-version="3.4.0",
- org.eclipse.ui.workbench,
+ org.eclipse.emf.ecore.xmi,
  org.eclipse.jdt.core;bundle-version="3.9.0",
  org.eclipse.jface,
- org.eclipse.emf.ecore.xmi,
- org.eclipse.xtend.lib;bundle-version="2.7.0"
+ org.eclipse.ui.workbench,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.7.0",
+ de.cau.cs.kieler.core.krendering;bundle-version="0.6.0",
+ de.cau.cs.kieler.core.krendering.extensions,
+ de.cau.cs.kieler.kiml,
+ de.cau.cs.kieler.klighd;bundle-version="0.6.0",
+ de.cau.cs.kieler.klighd.ui,
+ de.cau.cs.kieler.klassviz.model
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Import-Package: org.eclipse.jdt.internal.ui.packageview,
  org.eclipse.jdt.ui
