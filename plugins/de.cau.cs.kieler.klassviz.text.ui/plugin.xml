@@ -11,7 +11,7 @@
             default="true"
             extensions="klaviz"
             id="de.cau.cs.kieler.klassviz.text.ClassData"
-            name="ClassData Editor">
+            name="KlassViz Editor">
         </editor>
     </extension>
     <extension
@@ -358,6 +358,8 @@
             extensions="klaviz">
     </provider>
   </extension>
+  
+  <!-- Custom contributions: -->
    <extension
          point="de.cau.cs.kieler.core.kivi.combinations">
       <combination
@@ -366,5 +368,13 @@
             description="Provides and updates class diagrams for class data description in '.klaviz' files."
             name="Class diagram synthesized from class data description">
       </combination>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            class="de.cau.cs.kieler.klassviz.text.ui.NewKlavizFileWizard"
+            id="de.cau.cs.kieler.klassviz.text.ui.NewKlavizFileWizard"
+            name="name">
+      </wizard>
    </extension>
 </plugin>
