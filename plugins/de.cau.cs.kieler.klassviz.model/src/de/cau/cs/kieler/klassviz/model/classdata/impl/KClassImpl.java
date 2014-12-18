@@ -51,318 +51,318 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class KClassImpl extends KTypeImpl implements KClass {
     /**
-     * The cached value of the '{@link #getSuperClass() <em>Super Class</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSuperClass() <em>Super Class</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSuperClass()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSuperClass()
+	 * @generated
+	 * @ordered
+	 */
     protected KClass superClass;
 
     /**
-     * The cached value of the '{@link #getInterfaces() <em>Interfaces</em>}' reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getInterfaces() <em>Interfaces</em>}' reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getInterfaces()
-     * @generated
-     * @ordered
-     */
+	 * @see #getInterfaces()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<KInterface> interfaces;
 
     /**
-     * The cached value of the '{@link #getTypeParameters() <em>Type Parameters</em>}' attribute list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTypeParameters() <em>Type Parameters</em>}' attribute list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getTypeParameters()
-     * @generated
-     * @ordered
-     */
+	 * @see #getTypeParameters()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<String> typeParameters;
 
     /**
-     * The default value of the '{@link #isFinal() <em>Final</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isFinal() <em>Final</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isFinal()
-     * @generated
-     * @ordered
-     */
+	 * @see #isFinal()
+	 * @generated
+	 * @ordered
+	 */
     protected static final boolean FINAL_EDEFAULT = false;
 
     /**
-     * The cached value of the '{@link #isFinal() <em>Final</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isFinal() <em>Final</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isFinal()
-     * @generated
-     * @ordered
-     */
+	 * @see #isFinal()
+	 * @generated
+	 * @ordered
+	 */
     protected boolean final_ = FINAL_EDEFAULT;
 
     /**
-     * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isAbstract()
-     * @generated
-     * @ordered
-     */
+	 * @see #isAbstract()
+	 * @generated
+	 * @ordered
+	 */
     protected static final boolean ABSTRACT_EDEFAULT = false;
 
     /**
-     * The cached value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isAbstract()
-     * @generated
-     * @ordered
-     */
+	 * @see #isAbstract()
+	 * @generated
+	 * @ordered
+	 */
     protected boolean abstract_ = ABSTRACT_EDEFAULT;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected KClassImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return ClassdataPackage.Literals.KCLASS;
-    }
+		return ClassdataPackage.Literals.KCLASS;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public KClass getSuperClass() {
-        if (superClass != null && superClass.eIsProxy()) {
-            InternalEObject oldSuperClass = (InternalEObject)superClass;
-            superClass = (KClass)eResolveProxy(oldSuperClass);
-            if (superClass != oldSuperClass) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassdataPackage.KCLASS__SUPER_CLASS, oldSuperClass, superClass));
-            }
-        }
-        return superClass;
-    }
+		if (superClass != null && superClass.eIsProxy()) {
+			InternalEObject oldSuperClass = (InternalEObject)superClass;
+			superClass = (KClass)eResolveProxy(oldSuperClass);
+			if (superClass != oldSuperClass) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassdataPackage.KCLASS__SUPER_CLASS, oldSuperClass, superClass));
+			}
+		}
+		return superClass;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public KClass basicGetSuperClass() {
-        return superClass;
-    }
+		return superClass;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSuperClass(KClass newSuperClass) {
-        KClass oldSuperClass = superClass;
-        superClass = newSuperClass;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KCLASS__SUPER_CLASS, oldSuperClass, superClass));
-    }
+		KClass oldSuperClass = superClass;
+		superClass = newSuperClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KCLASS__SUPER_CLASS, oldSuperClass, superClass));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<KInterface> getInterfaces() {
-        if (interfaces == null) {
-            interfaces = new EObjectResolvingEList<KInterface>(KInterface.class, this, ClassdataPackage.KCLASS__INTERFACES);
-        }
-        return interfaces;
-    }
+		if (interfaces == null) {
+			interfaces = new EObjectResolvingEList<KInterface>(KInterface.class, this, ClassdataPackage.KCLASS__INTERFACES);
+		}
+		return interfaces;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<String> getTypeParameters() {
-        if (typeParameters == null) {
-            typeParameters = new EDataTypeUniqueEList<String>(String.class, this, ClassdataPackage.KCLASS__TYPE_PARAMETERS);
-        }
-        return typeParameters;
-    }
+		if (typeParameters == null) {
+			typeParameters = new EDataTypeUniqueEList<String>(String.class, this, ClassdataPackage.KCLASS__TYPE_PARAMETERS);
+		}
+		return typeParameters;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isFinal() {
-        return final_;
-    }
+		return final_;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setFinal(boolean newFinal) {
-        boolean oldFinal = final_;
-        final_ = newFinal;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KCLASS__FINAL, oldFinal, final_));
-    }
+		boolean oldFinal = final_;
+		final_ = newFinal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KCLASS__FINAL, oldFinal, final_));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isAbstract() {
-        return abstract_;
-    }
+		return abstract_;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setAbstract(boolean newAbstract) {
-        boolean oldAbstract = abstract_;
-        abstract_ = newAbstract;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KCLASS__ABSTRACT, oldAbstract, abstract_));
-    }
+		boolean oldAbstract = abstract_;
+		abstract_ = newAbstract;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KCLASS__ABSTRACT, oldAbstract, abstract_));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case ClassdataPackage.KCLASS__SUPER_CLASS:
-                if (resolve) return getSuperClass();
-                return basicGetSuperClass();
-            case ClassdataPackage.KCLASS__INTERFACES:
-                return getInterfaces();
-            case ClassdataPackage.KCLASS__TYPE_PARAMETERS:
-                return getTypeParameters();
-            case ClassdataPackage.KCLASS__FINAL:
-                return isFinal();
-            case ClassdataPackage.KCLASS__ABSTRACT:
-                return isAbstract();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KCLASS__SUPER_CLASS:
+				if (resolve) return getSuperClass();
+				return basicGetSuperClass();
+			case ClassdataPackage.KCLASS__INTERFACES:
+				return getInterfaces();
+			case ClassdataPackage.KCLASS__TYPE_PARAMETERS:
+				return getTypeParameters();
+			case ClassdataPackage.KCLASS__FINAL:
+				return isFinal();
+			case ClassdataPackage.KCLASS__ABSTRACT:
+				return isAbstract();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case ClassdataPackage.KCLASS__SUPER_CLASS:
-                setSuperClass((KClass)newValue);
-                return;
-            case ClassdataPackage.KCLASS__INTERFACES:
-                getInterfaces().clear();
-                getInterfaces().addAll((Collection<? extends KInterface>)newValue);
-                return;
-            case ClassdataPackage.KCLASS__TYPE_PARAMETERS:
-                getTypeParameters().clear();
-                getTypeParameters().addAll((Collection<? extends String>)newValue);
-                return;
-            case ClassdataPackage.KCLASS__FINAL:
-                setFinal((Boolean)newValue);
-                return;
-            case ClassdataPackage.KCLASS__ABSTRACT:
-                setAbstract((Boolean)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KCLASS__SUPER_CLASS:
+				setSuperClass((KClass)newValue);
+				return;
+			case ClassdataPackage.KCLASS__INTERFACES:
+				getInterfaces().clear();
+				getInterfaces().addAll((Collection<? extends KInterface>)newValue);
+				return;
+			case ClassdataPackage.KCLASS__TYPE_PARAMETERS:
+				getTypeParameters().clear();
+				getTypeParameters().addAll((Collection<? extends String>)newValue);
+				return;
+			case ClassdataPackage.KCLASS__FINAL:
+				setFinal((Boolean)newValue);
+				return;
+			case ClassdataPackage.KCLASS__ABSTRACT:
+				setAbstract((Boolean)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case ClassdataPackage.KCLASS__SUPER_CLASS:
-                setSuperClass((KClass)null);
-                return;
-            case ClassdataPackage.KCLASS__INTERFACES:
-                getInterfaces().clear();
-                return;
-            case ClassdataPackage.KCLASS__TYPE_PARAMETERS:
-                getTypeParameters().clear();
-                return;
-            case ClassdataPackage.KCLASS__FINAL:
-                setFinal(FINAL_EDEFAULT);
-                return;
-            case ClassdataPackage.KCLASS__ABSTRACT:
-                setAbstract(ABSTRACT_EDEFAULT);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KCLASS__SUPER_CLASS:
+				setSuperClass((KClass)null);
+				return;
+			case ClassdataPackage.KCLASS__INTERFACES:
+				getInterfaces().clear();
+				return;
+			case ClassdataPackage.KCLASS__TYPE_PARAMETERS:
+				getTypeParameters().clear();
+				return;
+			case ClassdataPackage.KCLASS__FINAL:
+				setFinal(FINAL_EDEFAULT);
+				return;
+			case ClassdataPackage.KCLASS__ABSTRACT:
+				setAbstract(ABSTRACT_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case ClassdataPackage.KCLASS__SUPER_CLASS:
-                return superClass != null;
-            case ClassdataPackage.KCLASS__INTERFACES:
-                return interfaces != null && !interfaces.isEmpty();
-            case ClassdataPackage.KCLASS__TYPE_PARAMETERS:
-                return typeParameters != null && !typeParameters.isEmpty();
-            case ClassdataPackage.KCLASS__FINAL:
-                return final_ != FINAL_EDEFAULT;
-            case ClassdataPackage.KCLASS__ABSTRACT:
-                return abstract_ != ABSTRACT_EDEFAULT;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KCLASS__SUPER_CLASS:
+				return superClass != null;
+			case ClassdataPackage.KCLASS__INTERFACES:
+				return interfaces != null && !interfaces.isEmpty();
+			case ClassdataPackage.KCLASS__TYPE_PARAMETERS:
+				return typeParameters != null && !typeParameters.isEmpty();
+			case ClassdataPackage.KCLASS__FINAL:
+				return final_ != FINAL_EDEFAULT;
+			case ClassdataPackage.KCLASS__ABSTRACT:
+				return abstract_ != ABSTRACT_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (typeParameters: ");
-        result.append(typeParameters);
-        result.append(", final: ");
-        result.append(final_);
-        result.append(", abstract: ");
-        result.append(abstract_);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (typeParameters: ");
+		result.append(typeParameters);
+		result.append(", final: ");
+		result.append(final_);
+		result.append(", abstract: ");
+		result.append(abstract_);
+		result.append(')');
+		return result.toString();
+	}
 
 } //KClassImpl

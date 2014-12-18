@@ -364,6 +364,34 @@ finally {
 
 
 
+// Entry rule entryRuleMetaModelID
+entryRuleMetaModelID 
+:
+{ before(grammarAccess.getMetaModelIDRule()); }
+	 ruleMetaModelID
+{ after(grammarAccess.getMetaModelIDRule()); } 
+	 EOF 
+;
+
+// Rule MetaModelID
+ruleMetaModelID
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getMetaModelIDAccess().getGroup()); }
+(rule__MetaModelID__Group__0)
+{ after(grammarAccess.getMetaModelIDAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleQualifiedID
 entryRuleQualifiedID 
 :
@@ -464,6 +492,12 @@ rule__KClassModel__Alternatives_1_1
 { before(grammarAccess.getKClassModelAccess().getGroup_1_1_1()); }
 (rule__KClassModel__Group_1_1_1__0)
 { after(grammarAccess.getKClassModelAccess().getGroup_1_1_1()); }
+)
+
+    |(
+{ before(grammarAccess.getKClassModelAccess().getGroup_1_1_2()); }
+(rule__KClassModel__Group_1_1_2__0)
+{ after(grammarAccess.getKClassModelAccess().getGroup_1_1_2()); }
 )
 
 ;
@@ -887,6 +921,69 @@ rule__KClassModel__Group_1_1_1__1__Impl
 { before(grammarAccess.getKClassModelAccess().getBundlesAssignment_1_1_1_1()); }
 (rule__KClassModel__BundlesAssignment_1_1_1_1)
 { after(grammarAccess.getKClassModelAccess().getBundlesAssignment_1_1_1_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+rule__KClassModel__Group_1_1_2__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__KClassModel__Group_1_1_2__0__Impl
+	rule__KClassModel__Group_1_1_2__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__KClassModel__Group_1_1_2__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getKClassModelAccess().getMetamodelKeyword_1_1_2_0()); }
+
+	'metamodel' 
+
+{ after(grammarAccess.getKClassModelAccess().getMetamodelKeyword_1_1_2_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__KClassModel__Group_1_1_2__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__KClassModel__Group_1_1_2__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__KClassModel__Group_1_1_2__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getKClassModelAccess().getMetamodelsAssignment_1_1_2_1()); }
+(rule__KClassModel__MetamodelsAssignment_1_1_2_1)
+{ after(grammarAccess.getKClassModelAccess().getMetamodelsAssignment_1_1_2_1()); }
 )
 
 ;
@@ -1877,6 +1974,194 @@ finally {
 
 
 
+rule__MetaModelID__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__MetaModelID__Group__0__Impl
+	rule__MetaModelID__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MetaModelID__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMetaModelIDAccess().getQualifiedIDParserRuleCall_0()); }
+	ruleQualifiedID
+{ after(grammarAccess.getMetaModelIDAccess().getQualifiedIDParserRuleCall_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__MetaModelID__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__MetaModelID__Group__1__Impl
+	rule__MetaModelID__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MetaModelID__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMetaModelIDAccess().getSolidusKeyword_1()); }
+
+	'/' 
+
+{ after(grammarAccess.getMetaModelIDAccess().getSolidusKeyword_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__MetaModelID__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__MetaModelID__Group__2__Impl
+	rule__MetaModelID__Group__3
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MetaModelID__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMetaModelIDAccess().getGroup_2()); }
+(rule__MetaModelID__Group_2__0)*
+{ after(grammarAccess.getMetaModelIDAccess().getGroup_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__MetaModelID__Group__3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__MetaModelID__Group__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MetaModelID__Group__3__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMetaModelIDAccess().getQualifiedIDParserRuleCall_3()); }
+	ruleQualifiedID
+{ after(grammarAccess.getMetaModelIDAccess().getQualifiedIDParserRuleCall_3()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+
+
+
+
+rule__MetaModelID__Group_2__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__MetaModelID__Group_2__0__Impl
+	rule__MetaModelID__Group_2__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MetaModelID__Group_2__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMetaModelIDAccess().getIDTerminalRuleCall_2_0()); }
+	RULE_ID
+{ after(grammarAccess.getMetaModelIDAccess().getIDTerminalRuleCall_2_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__MetaModelID__Group_2__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__MetaModelID__Group_2__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MetaModelID__Group_2__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMetaModelIDAccess().getSolidusKeyword_2_1()); }
+
+	'/' 
+
+{ after(grammarAccess.getMetaModelIDAccess().getSolidusKeyword_2_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
 rule__QualifiedID__Group__0
     @init {
 		int stackSize = keepStackSize();
@@ -2025,6 +2310,21 @@ rule__KClassModel__BundlesAssignment_1_1_1_1
 (
 { before(grammarAccess.getKClassModelAccess().getBundlesQualifiedIDParserRuleCall_1_1_1_1_0()); }
 	ruleQualifiedID{ after(grammarAccess.getKClassModelAccess().getBundlesQualifiedIDParserRuleCall_1_1_1_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__KClassModel__MetamodelsAssignment_1_1_2_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getKClassModelAccess().getMetamodelsMetaModelIDParserRuleCall_1_1_2_1_0()); }
+	ruleMetaModelID{ after(grammarAccess.getKClassModelAccess().getMetamodelsMetaModelIDParserRuleCall_1_1_2_1_0()); }
 )
 
 ;

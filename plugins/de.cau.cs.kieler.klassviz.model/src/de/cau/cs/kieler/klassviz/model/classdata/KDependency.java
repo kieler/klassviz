@@ -35,55 +35,55 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface KDependency extends EObject {
     /**
-     * Returns the value of the '<em><b>Target</b></em>' reference.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Target</em>' reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Target</em>' reference.
-     * @see #setTarget(KType)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKDependency_Target()
-     * @model required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Target</em>' reference.
+	 * @see #setTarget(KType)
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKDependency_Target()
+	 * @model required="true"
+	 * @generated
+	 */
     KType getTarget();
 
     /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KDependency#getTarget <em>Target</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KDependency#getTarget <em>Target</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Target</em>' reference.
-     * @see #getTarget()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Target</em>' reference.
+	 * @see #getTarget()
+	 * @generated
+	 */
     void setTarget(KType value);
 
     /**
-     * Returns the value of the '<em><b>Label</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Label</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Label</em>' attribute.
-     * @see #setLabel(String)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKDependency_Label()
-     * @model
-     * @generated
-     */
+	 * @return the value of the '<em>Label</em>' attribute.
+	 * @see #setLabel(String)
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKDependency_Label()
+	 * @model
+	 * @generated
+	 */
     String getLabel();
 
     /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KDependency#getLabel <em>Label</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KDependency#getLabel <em>Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Label</em>' attribute.
-     * @see #getLabel()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Label</em>' attribute.
+	 * @see #getLabel()
+	 * @generated
+	 */
     void setLabel(String value);
 
 } // KDependency

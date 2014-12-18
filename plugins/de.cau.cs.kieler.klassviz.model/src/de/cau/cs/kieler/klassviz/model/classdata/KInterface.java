@@ -35,35 +35,35 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface KInterface extends KType {
     /**
-     * Returns the value of the '<em><b>Super Interfaces</b></em>' reference list.
-     * The list contents are of type {@link de.cau.cs.kieler.klassviz.model.classdata.KInterface}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Super Interfaces</b></em>' reference list.
+	 * The list contents are of type {@link de.cau.cs.kieler.klassviz.model.classdata.KInterface}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Super Interfaces</em>' reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Super Interfaces</em>' reference list.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKInterface_SuperInterfaces()
-     * @model
-     * @generated
-     */
+	 * @return the value of the '<em>Super Interfaces</em>' reference list.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKInterface_SuperInterfaces()
+	 * @model
+	 * @generated
+	 */
     EList<KInterface> getSuperInterfaces();
 
     /**
-     * Returns the value of the '<em><b>Type Parameters</b></em>' attribute list.
-     * The list contents are of type {@link java.lang.String}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Type Parameters</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Type Parameters</em>' attribute list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Type Parameters</em>' attribute list.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKInterface_TypeParameters()
-     * @model
-     * @generated
-     */
+	 * @return the value of the '<em>Type Parameters</em>' attribute list.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKInterface_TypeParameters()
+	 * @model
+	 * @generated
+	 */
     EList<String> getTypeParameters();
 
 } // KInterface

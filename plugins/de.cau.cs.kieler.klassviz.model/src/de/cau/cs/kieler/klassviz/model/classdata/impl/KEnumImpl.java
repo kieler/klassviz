@@ -40,120 +40,120 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  */
 public class KEnumImpl extends KTypeImpl implements KEnum {
     /**
-     * The cached value of the '{@link #getConstants() <em>Constants</em>}' attribute list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getConstants() <em>Constants</em>}' attribute list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getConstants()
-     * @generated
-     * @ordered
-     */
+	 * @see #getConstants()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<String> constants;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected KEnumImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return ClassdataPackage.Literals.KENUM;
-    }
+		return ClassdataPackage.Literals.KENUM;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<String> getConstants() {
-        if (constants == null) {
-            constants = new EDataTypeUniqueEList<String>(String.class, this, ClassdataPackage.KENUM__CONSTANTS);
-        }
-        return constants;
-    }
+		if (constants == null) {
+			constants = new EDataTypeUniqueEList<String>(String.class, this, ClassdataPackage.KENUM__CONSTANTS);
+		}
+		return constants;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case ClassdataPackage.KENUM__CONSTANTS:
-                return getConstants();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KENUM__CONSTANTS:
+				return getConstants();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case ClassdataPackage.KENUM__CONSTANTS:
-                getConstants().clear();
-                getConstants().addAll((Collection<? extends String>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KENUM__CONSTANTS:
+				getConstants().clear();
+				getConstants().addAll((Collection<? extends String>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case ClassdataPackage.KENUM__CONSTANTS:
-                getConstants().clear();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KENUM__CONSTANTS:
+				getConstants().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case ClassdataPackage.KENUM__CONSTANTS:
-                return constants != null && !constants.isEmpty();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KENUM__CONSTANTS:
+				return constants != null && !constants.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (constants: ");
-        result.append(constants);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (constants: ");
+		result.append(constants);
+		result.append(')');
+		return result.toString();
+	}
 
 } //KEnumImpl

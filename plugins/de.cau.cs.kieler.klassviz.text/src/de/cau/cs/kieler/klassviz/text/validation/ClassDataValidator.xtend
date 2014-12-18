@@ -15,6 +15,7 @@
 package de.cau.cs.kieler.klassviz.text.validation
 
 import com.google.inject.Inject
+import com.google.inject.name.Named
 import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage
 import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
 import de.cau.cs.kieler.klassviz.model.classdata.KField
@@ -22,6 +23,7 @@ import de.cau.cs.kieler.klassviz.model.classdata.KMethod
 import de.cau.cs.kieler.klassviz.model.classdata.KPackage
 import de.cau.cs.kieler.klassviz.model.classdata.KType
 import de.cau.cs.kieler.klassviz.synthesis.ClassDataExtensions
+import de.cau.cs.kieler.klassviz.synthesis.IMetaModelExtensions
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.runtime.CoreException
 import org.eclipse.core.runtime.Platform
@@ -39,6 +41,8 @@ import org.eclipse.xtext.validation.Check
 class ClassDataValidator extends AbstractClassDataValidator {
     
     @Inject extension ClassDataExtensions
+    @Named("Xcore")
+    @Inject extension IMetaModelExtensions
     
     /**
      * Check whether the projects exists in the workspace and they have the Java nature.
@@ -85,7 +89,12 @@ class ClassDataValidator extends AbstractClassDataValidator {
     @Check
     def checkPackageExists(KPackage pack) {
         val classModel = pack.eContainer as KClassModel
-        
+
+        // first check package is defined in an imported Xcore model
+        if (pack.isMetaModelPackage(classModel)) {
+            return true
+        }
+		
         // look for the package in the referenced projects
         for (projectName : classModel.javaProjects) {
              if (projectName.jdtPackages.exists[it.elementName == pack.name]) {
@@ -117,7 +126,9 @@ class ClassDataValidator extends AbstractClassDataValidator {
     def checkTypeExists(KType type) {
         val pack = type.eContainer as KPackage
         val classModel = pack.eContainer as KClassModel
-        if (classModel.getJdtType(type) == null && classModel.getBundleClass(type) == null) {
+        if (classModel.getJdtType(type) == null && classModel.getBundleClass(type) == null &&
+			type.getMetaModelType() == null) {
+
             error("Type not found in referenced projects and bundles",
                 type, ClassdataPackage.eINSTANCE.KType_Name)
         }
@@ -132,7 +143,13 @@ class ClassDataValidator extends AbstractClassDataValidator {
         val pack = type.eContainer as KPackage
         val classModel = pack.eContainer as KClassModel
         val jdtType = classModel.getJdtType(type)
-        if (jdtType != null) {
+        val metaModelType = type.getMetaModelType();
+        if (metaModelType != null) {
+            if (!field.isMetaModelField) {
+                error("Field not found in referenced type " + type.name,
+                    field, ClassdataPackage.eINSTANCE.KMember_Name)
+            }
+        } else if (jdtType != null) {
             if (!jdtType.fields.exists[it.elementName == field.name]) {
                 error("Field not found in referenced type",
                     field, ClassdataPackage.eINSTANCE.KMember_Name)
@@ -157,7 +174,14 @@ class ClassDataValidator extends AbstractClassDataValidator {
         val pack = type.eContainer as KPackage
         val classModel = pack.eContainer as KClassModel
         val jdtType = classModel.getJdtType(type)
-        if (jdtType != null) {
+        
+        if (type.isMetaModelType) {
+            if (!method.isMetaModelMethod) {
+                error("Method not found in referenced type " + type.name,
+                    method, ClassdataPackage.eINSTANCE.KMember_Name)
+            }
+
+        } else if (jdtType != null) {
             val matchingName = jdtType.methods.filter[it.elementName == method.name]
             if (matchingName.empty) {
                 error("Method not found in referenced type",

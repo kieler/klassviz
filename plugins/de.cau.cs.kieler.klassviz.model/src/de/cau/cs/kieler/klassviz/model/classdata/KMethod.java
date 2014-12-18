@@ -36,72 +36,72 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface KMethod extends KMember {
     /**
-     * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-     * The list contents are of type {@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+	 * The list contents are of type {@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Parameters</em>' containment reference list.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMethod_Parameters()
-     * @model containment="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Parameters</em>' containment reference list.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMethod_Parameters()
+	 * @model containment="true"
+	 * @generated
+	 */
     EList<KTypeReference> getParameters();
 
     /**
-     * Returns the value of the '<em><b>Return Type</b></em>' containment reference.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Return Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Return Type</em>' containment reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Return Type</em>' containment reference.
-     * @see #setReturnType(KTypeReference)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMethod_ReturnType()
-     * @model containment="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Return Type</em>' containment reference.
+	 * @see #setReturnType(KTypeReference)
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMethod_ReturnType()
+	 * @model containment="true"
+	 * @generated
+	 */
     KTypeReference getReturnType();
 
     /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#getReturnType <em>Return Type</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#getReturnType <em>Return Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Return Type</em>' containment reference.
-     * @see #getReturnType()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Return Type</em>' containment reference.
+	 * @see #getReturnType()
+	 * @generated
+	 */
     void setReturnType(KTypeReference value);
 
     /**
-     * Returns the value of the '<em><b>Abstract</b></em>' attribute.
-     * The default value is <code>"false"</code>.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Abstract</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Abstract</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Abstract</em>' attribute.
-     * @see #setAbstract(boolean)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMethod_Abstract()
-     * @model default="false" required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Abstract</em>' attribute.
+	 * @see #setAbstract(boolean)
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMethod_Abstract()
+	 * @model default="false" required="true"
+	 * @generated
+	 */
     boolean isAbstract();
 
     /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#isAbstract <em>Abstract</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#isAbstract <em>Abstract</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Abstract</em>' attribute.
-     * @see #isAbstract()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Abstract</em>' attribute.
+	 * @see #isAbstract()
+	 * @generated
+	 */
     void setAbstract(boolean value);
 
 } // KMethod

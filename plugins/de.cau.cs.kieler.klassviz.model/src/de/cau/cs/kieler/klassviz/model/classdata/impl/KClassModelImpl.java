@@ -48,6 +48,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl#getPackages <em>Packages</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl#isResolved <em>Resolved</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl#getOptions <em>Options</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl#getMetamodels <em>Metamodels</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,290 +56,325 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class KClassModelImpl extends MinimalEObjectImpl.Container implements KClassModel {
     /**
-     * The cached value of the '{@link #getJavaProjects() <em>Java Projects</em>}' attribute list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getJavaProjects() <em>Java Projects</em>}' attribute list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getJavaProjects()
-     * @generated
-     * @ordered
-     */
+	 * @see #getJavaProjects()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<String> javaProjects;
 
     /**
-     * The cached value of the '{@link #getBundles() <em>Bundles</em>}' attribute list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getBundles() <em>Bundles</em>}' attribute list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getBundles()
-     * @generated
-     * @ordered
-     */
+	 * @see #getBundles()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<String> bundles;
 
     /**
-     * The cached value of the '{@link #getPackages() <em>Packages</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPackages() <em>Packages</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPackages()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPackages()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<KPackage> packages;
 
     /**
-     * The default value of the '{@link #isResolved() <em>Resolved</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isResolved() <em>Resolved</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isResolved()
-     * @generated
-     * @ordered
-     */
+	 * @see #isResolved()
+	 * @generated
+	 * @ordered
+	 */
     protected static final boolean RESOLVED_EDEFAULT = false;
 
     /**
-     * The cached value of the '{@link #isResolved() <em>Resolved</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isResolved() <em>Resolved</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isResolved()
-     * @generated
-     * @ordered
-     */
+	 * @see #isResolved()
+	 * @generated
+	 * @ordered
+	 */
     protected boolean resolved = RESOLVED_EDEFAULT;
 
     /**
-     * The cached value of the '{@link #getOptions() <em>Options</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOptions() <em>Options</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getOptions()
-     * @generated
-     * @ordered
-     */
+	 * @see #getOptions()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<KOption> options;
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMetamodels() <em>Metamodels</em>}' attribute list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
-    protected KClassModelImpl() {
-        super();
-    }
+	 * @see #getMetamodels()
+	 * @generated
+	 * @ordered
+	 */
+    protected EList<String> metamodels;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
+    protected KClassModelImpl() {
+		super();
+	}
+
+    /**
+	 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return ClassdataPackage.Literals.KCLASS_MODEL;
-    }
+		return ClassdataPackage.Literals.KCLASS_MODEL;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<String> getJavaProjects() {
-        if (javaProjects == null) {
-            javaProjects = new EDataTypeUniqueEList<String>(String.class, this, ClassdataPackage.KCLASS_MODEL__JAVA_PROJECTS);
-        }
-        return javaProjects;
-    }
+		if (javaProjects == null) {
+			javaProjects = new EDataTypeUniqueEList<String>(String.class, this, ClassdataPackage.KCLASS_MODEL__JAVA_PROJECTS);
+		}
+		return javaProjects;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<String> getBundles() {
-        if (bundles == null) {
-            bundles = new EDataTypeUniqueEList<String>(String.class, this, ClassdataPackage.KCLASS_MODEL__BUNDLES);
-        }
-        return bundles;
-    }
+		if (bundles == null) {
+			bundles = new EDataTypeUniqueEList<String>(String.class, this, ClassdataPackage.KCLASS_MODEL__BUNDLES);
+		}
+		return bundles;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<KPackage> getPackages() {
-        if (packages == null) {
-            packages = new EObjectContainmentEList<KPackage>(KPackage.class, this, ClassdataPackage.KCLASS_MODEL__PACKAGES);
-        }
-        return packages;
-    }
+		if (packages == null) {
+			packages = new EObjectContainmentEList<KPackage>(KPackage.class, this, ClassdataPackage.KCLASS_MODEL__PACKAGES);
+		}
+		return packages;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isResolved() {
-        return resolved;
-    }
+		return resolved;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setResolved(boolean newResolved) {
-        boolean oldResolved = resolved;
-        resolved = newResolved;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KCLASS_MODEL__RESOLVED, oldResolved, resolved));
-    }
+		boolean oldResolved = resolved;
+		resolved = newResolved;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KCLASS_MODEL__RESOLVED, oldResolved, resolved));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<KOption> getOptions() {
-        if (options == null) {
-            options = new EObjectContainmentEList<KOption>(KOption.class, this, ClassdataPackage.KCLASS_MODEL__OPTIONS);
-        }
-        return options;
-    }
+		if (options == null) {
+			options = new EObjectContainmentEList<KOption>(KOption.class, this, ClassdataPackage.KCLASS_MODEL__OPTIONS);
+		}
+		return options;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
+    public EList<String> getMetamodels() {
+		if (metamodels == null) {
+			metamodels = new EDataTypeUniqueEList<String>(String.class, this, ClassdataPackage.KCLASS_MODEL__METAMODELS);
+		}
+		return metamodels;
+	}
+
+    /**
+	 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case ClassdataPackage.KCLASS_MODEL__PACKAGES:
-                return ((InternalEList<?>)getPackages()).basicRemove(otherEnd, msgs);
-            case ClassdataPackage.KCLASS_MODEL__OPTIONS:
-                return ((InternalEList<?>)getOptions()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KCLASS_MODEL__PACKAGES:
+				return ((InternalEList<?>)getPackages()).basicRemove(otherEnd, msgs);
+			case ClassdataPackage.KCLASS_MODEL__OPTIONS:
+				return ((InternalEList<?>)getOptions()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case ClassdataPackage.KCLASS_MODEL__JAVA_PROJECTS:
-                return getJavaProjects();
-            case ClassdataPackage.KCLASS_MODEL__BUNDLES:
-                return getBundles();
-            case ClassdataPackage.KCLASS_MODEL__PACKAGES:
-                return getPackages();
-            case ClassdataPackage.KCLASS_MODEL__RESOLVED:
-                return isResolved();
-            case ClassdataPackage.KCLASS_MODEL__OPTIONS:
-                return getOptions();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KCLASS_MODEL__JAVA_PROJECTS:
+				return getJavaProjects();
+			case ClassdataPackage.KCLASS_MODEL__BUNDLES:
+				return getBundles();
+			case ClassdataPackage.KCLASS_MODEL__PACKAGES:
+				return getPackages();
+			case ClassdataPackage.KCLASS_MODEL__RESOLVED:
+				return isResolved();
+			case ClassdataPackage.KCLASS_MODEL__OPTIONS:
+				return getOptions();
+			case ClassdataPackage.KCLASS_MODEL__METAMODELS:
+				return getMetamodels();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case ClassdataPackage.KCLASS_MODEL__JAVA_PROJECTS:
-                getJavaProjects().clear();
-                getJavaProjects().addAll((Collection<? extends String>)newValue);
-                return;
-            case ClassdataPackage.KCLASS_MODEL__BUNDLES:
-                getBundles().clear();
-                getBundles().addAll((Collection<? extends String>)newValue);
-                return;
-            case ClassdataPackage.KCLASS_MODEL__PACKAGES:
-                getPackages().clear();
-                getPackages().addAll((Collection<? extends KPackage>)newValue);
-                return;
-            case ClassdataPackage.KCLASS_MODEL__RESOLVED:
-                setResolved((Boolean)newValue);
-                return;
-            case ClassdataPackage.KCLASS_MODEL__OPTIONS:
-                getOptions().clear();
-                getOptions().addAll((Collection<? extends KOption>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KCLASS_MODEL__JAVA_PROJECTS:
+				getJavaProjects().clear();
+				getJavaProjects().addAll((Collection<? extends String>)newValue);
+				return;
+			case ClassdataPackage.KCLASS_MODEL__BUNDLES:
+				getBundles().clear();
+				getBundles().addAll((Collection<? extends String>)newValue);
+				return;
+			case ClassdataPackage.KCLASS_MODEL__PACKAGES:
+				getPackages().clear();
+				getPackages().addAll((Collection<? extends KPackage>)newValue);
+				return;
+			case ClassdataPackage.KCLASS_MODEL__RESOLVED:
+				setResolved((Boolean)newValue);
+				return;
+			case ClassdataPackage.KCLASS_MODEL__OPTIONS:
+				getOptions().clear();
+				getOptions().addAll((Collection<? extends KOption>)newValue);
+				return;
+			case ClassdataPackage.KCLASS_MODEL__METAMODELS:
+				getMetamodels().clear();
+				getMetamodels().addAll((Collection<? extends String>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case ClassdataPackage.KCLASS_MODEL__JAVA_PROJECTS:
-                getJavaProjects().clear();
-                return;
-            case ClassdataPackage.KCLASS_MODEL__BUNDLES:
-                getBundles().clear();
-                return;
-            case ClassdataPackage.KCLASS_MODEL__PACKAGES:
-                getPackages().clear();
-                return;
-            case ClassdataPackage.KCLASS_MODEL__RESOLVED:
-                setResolved(RESOLVED_EDEFAULT);
-                return;
-            case ClassdataPackage.KCLASS_MODEL__OPTIONS:
-                getOptions().clear();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KCLASS_MODEL__JAVA_PROJECTS:
+				getJavaProjects().clear();
+				return;
+			case ClassdataPackage.KCLASS_MODEL__BUNDLES:
+				getBundles().clear();
+				return;
+			case ClassdataPackage.KCLASS_MODEL__PACKAGES:
+				getPackages().clear();
+				return;
+			case ClassdataPackage.KCLASS_MODEL__RESOLVED:
+				setResolved(RESOLVED_EDEFAULT);
+				return;
+			case ClassdataPackage.KCLASS_MODEL__OPTIONS:
+				getOptions().clear();
+				return;
+			case ClassdataPackage.KCLASS_MODEL__METAMODELS:
+				getMetamodels().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case ClassdataPackage.KCLASS_MODEL__JAVA_PROJECTS:
-                return javaProjects != null && !javaProjects.isEmpty();
-            case ClassdataPackage.KCLASS_MODEL__BUNDLES:
-                return bundles != null && !bundles.isEmpty();
-            case ClassdataPackage.KCLASS_MODEL__PACKAGES:
-                return packages != null && !packages.isEmpty();
-            case ClassdataPackage.KCLASS_MODEL__RESOLVED:
-                return resolved != RESOLVED_EDEFAULT;
-            case ClassdataPackage.KCLASS_MODEL__OPTIONS:
-                return options != null && !options.isEmpty();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KCLASS_MODEL__JAVA_PROJECTS:
+				return javaProjects != null && !javaProjects.isEmpty();
+			case ClassdataPackage.KCLASS_MODEL__BUNDLES:
+				return bundles != null && !bundles.isEmpty();
+			case ClassdataPackage.KCLASS_MODEL__PACKAGES:
+				return packages != null && !packages.isEmpty();
+			case ClassdataPackage.KCLASS_MODEL__RESOLVED:
+				return resolved != RESOLVED_EDEFAULT;
+			case ClassdataPackage.KCLASS_MODEL__OPTIONS:
+				return options != null && !options.isEmpty();
+			case ClassdataPackage.KCLASS_MODEL__METAMODELS:
+				return metamodels != null && !metamodels.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (javaProjects: ");
-        result.append(javaProjects);
-        result.append(", bundles: ");
-        result.append(bundles);
-        result.append(", resolved: ");
-        result.append(resolved);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (javaProjects: ");
+		result.append(javaProjects);
+		result.append(", bundles: ");
+		result.append(bundles);
+		result.append(", resolved: ");
+		result.append(resolved);
+		result.append(", metamodels: ");
+		result.append(metamodels);
+		result.append(')');
+		return result.toString();
+	}
 
 } //KClassModelImpl

@@ -10,5 +10,5 @@ Export-Package: de.cau.cs.kieler.klassviz.model.classdata,
  de.cau.cs.kieler.klassviz.model.classdata.impl,
  de.cau.cs.kieler.klassviz.model.classdata.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore
+ org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

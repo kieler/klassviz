@@ -42,153 +42,153 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class KInterfaceImpl extends KTypeImpl implements KInterface {
     /**
-     * The cached value of the '{@link #getSuperInterfaces() <em>Super Interfaces</em>}' reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSuperInterfaces() <em>Super Interfaces</em>}' reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSuperInterfaces()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSuperInterfaces()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<KInterface> superInterfaces;
 
     /**
-     * The cached value of the '{@link #getTypeParameters() <em>Type Parameters</em>}' attribute list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTypeParameters() <em>Type Parameters</em>}' attribute list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getTypeParameters()
-     * @generated
-     * @ordered
-     */
+	 * @see #getTypeParameters()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<String> typeParameters;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected KInterfaceImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return ClassdataPackage.Literals.KINTERFACE;
-    }
+		return ClassdataPackage.Literals.KINTERFACE;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<KInterface> getSuperInterfaces() {
-        if (superInterfaces == null) {
-            superInterfaces = new EObjectResolvingEList<KInterface>(KInterface.class, this, ClassdataPackage.KINTERFACE__SUPER_INTERFACES);
-        }
-        return superInterfaces;
-    }
+		if (superInterfaces == null) {
+			superInterfaces = new EObjectResolvingEList<KInterface>(KInterface.class, this, ClassdataPackage.KINTERFACE__SUPER_INTERFACES);
+		}
+		return superInterfaces;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<String> getTypeParameters() {
-        if (typeParameters == null) {
-            typeParameters = new EDataTypeUniqueEList<String>(String.class, this, ClassdataPackage.KINTERFACE__TYPE_PARAMETERS);
-        }
-        return typeParameters;
-    }
+		if (typeParameters == null) {
+			typeParameters = new EDataTypeUniqueEList<String>(String.class, this, ClassdataPackage.KINTERFACE__TYPE_PARAMETERS);
+		}
+		return typeParameters;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case ClassdataPackage.KINTERFACE__SUPER_INTERFACES:
-                return getSuperInterfaces();
-            case ClassdataPackage.KINTERFACE__TYPE_PARAMETERS:
-                return getTypeParameters();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KINTERFACE__SUPER_INTERFACES:
+				return getSuperInterfaces();
+			case ClassdataPackage.KINTERFACE__TYPE_PARAMETERS:
+				return getTypeParameters();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case ClassdataPackage.KINTERFACE__SUPER_INTERFACES:
-                getSuperInterfaces().clear();
-                getSuperInterfaces().addAll((Collection<? extends KInterface>)newValue);
-                return;
-            case ClassdataPackage.KINTERFACE__TYPE_PARAMETERS:
-                getTypeParameters().clear();
-                getTypeParameters().addAll((Collection<? extends String>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KINTERFACE__SUPER_INTERFACES:
+				getSuperInterfaces().clear();
+				getSuperInterfaces().addAll((Collection<? extends KInterface>)newValue);
+				return;
+			case ClassdataPackage.KINTERFACE__TYPE_PARAMETERS:
+				getTypeParameters().clear();
+				getTypeParameters().addAll((Collection<? extends String>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case ClassdataPackage.KINTERFACE__SUPER_INTERFACES:
-                getSuperInterfaces().clear();
-                return;
-            case ClassdataPackage.KINTERFACE__TYPE_PARAMETERS:
-                getTypeParameters().clear();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KINTERFACE__SUPER_INTERFACES:
+				getSuperInterfaces().clear();
+				return;
+			case ClassdataPackage.KINTERFACE__TYPE_PARAMETERS:
+				getTypeParameters().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case ClassdataPackage.KINTERFACE__SUPER_INTERFACES:
-                return superInterfaces != null && !superInterfaces.isEmpty();
-            case ClassdataPackage.KINTERFACE__TYPE_PARAMETERS:
-                return typeParameters != null && !typeParameters.isEmpty();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KINTERFACE__SUPER_INTERFACES:
+				return superInterfaces != null && !superInterfaces.isEmpty();
+			case ClassdataPackage.KINTERFACE__TYPE_PARAMETERS:
+				return typeParameters != null && !typeParameters.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (typeParameters: ");
-        result.append(typeParameters);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (typeParameters: ");
+		result.append(typeParameters);
+		result.append(')');
+		return result.toString();
+	}
 
 } //KInterfaceImpl

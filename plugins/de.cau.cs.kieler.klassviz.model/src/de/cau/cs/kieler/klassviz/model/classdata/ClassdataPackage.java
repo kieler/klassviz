@@ -38,1612 +38,1652 @@ import org.eclipse.emf.ecore.EReference;
  */
 public interface ClassdataPackage extends EPackage {
     /**
-     * The package name.
-     * <!-- begin-user-doc -->
+	 * The package name.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     String eNAME = "classdata";
 
     /**
-     * The package namespace URI.
-     * <!-- begin-user-doc -->
+	 * The package namespace URI.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     String eNS_URI = "http://kieler.cs.cau.de/classdata";
 
     /**
-     * The package namespace name.
-     * <!-- begin-user-doc -->
+	 * The package namespace name.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     String eNS_PREFIX = "classdata";
 
     /**
-     * The singleton instance of the package.
-     * <!-- begin-user-doc -->
+	 * The singleton instance of the package.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     ClassdataPackage eINSTANCE = de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl.init();
 
     /**
-     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl <em>KClass Model</em>}' class.
-     * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl <em>KClass Model</em>}' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKClassModel()
-     * @generated
-     */
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKClassModel()
+	 * @generated
+	 */
     int KCLASS_MODEL = 0;
 
     /**
-     * The feature id for the '<em><b>Java Projects</b></em>' attribute list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Java Projects</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS_MODEL__JAVA_PROJECTS = 0;
 
     /**
-     * The feature id for the '<em><b>Bundles</b></em>' attribute list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Bundles</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS_MODEL__BUNDLES = 1;
 
     /**
-     * The feature id for the '<em><b>Packages</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Packages</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS_MODEL__PACKAGES = 2;
 
     /**
-     * The feature id for the '<em><b>Resolved</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Resolved</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS_MODEL__RESOLVED = 3;
 
     /**
-     * The feature id for the '<em><b>Options</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Options</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS_MODEL__OPTIONS = 4;
 
     /**
-     * The number of structural features of the '<em>KClass Model</em>' class.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Metamodels</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int KCLASS_MODEL_FEATURE_COUNT = 5;
+	 * @generated
+	 * @ordered
+	 */
+    int KCLASS_MODEL__METAMODELS = 5;
 
     /**
-     * The number of operations of the '<em>KClass Model</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>KClass Model</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
+    int KCLASS_MODEL_FEATURE_COUNT = 6;
+
+    /**
+	 * The number of operations of the '<em>KClass Model</em>' class.
+	 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS_MODEL_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KOptionImpl <em>KOption</em>}' class.
-     * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KOptionImpl <em>KOption</em>}' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KOptionImpl
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKOption()
-     * @generated
-     */
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KOptionImpl
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKOption()
+	 * @generated
+	 */
     int KOPTION = 1;
 
     /**
-     * The feature id for the '<em><b>Key</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KOPTION__KEY = 0;
 
     /**
-     * The feature id for the '<em><b>Value</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KOPTION__VALUE = 1;
 
     /**
-     * The number of structural features of the '<em>KOption</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>KOption</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KOPTION_FEATURE_COUNT = 2;
 
     /**
-     * The number of operations of the '<em>KOption</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of operations of the '<em>KOption</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KOPTION_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KPackageImpl <em>KPackage</em>}' class.
-     * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KPackageImpl <em>KPackage</em>}' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KPackageImpl
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKPackage()
-     * @generated
-     */
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KPackageImpl
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKPackage()
+	 * @generated
+	 */
     int KPACKAGE = 2;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KPACKAGE__NAME = 0;
 
     /**
-     * The feature id for the '<em><b>Types</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KPACKAGE__TYPES = 1;
 
     /**
-     * The number of structural features of the '<em>KPackage</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>KPackage</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KPACKAGE_FEATURE_COUNT = 2;
 
     /**
-     * The number of operations of the '<em>KPackage</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of operations of the '<em>KPackage</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KPACKAGE_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl <em>KType</em>}' class.
-     * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl <em>KType</em>}' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKType()
-     * @generated
-     */
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKType()
+	 * @generated
+	 */
     int KTYPE = 3;
 
     /**
-     * The feature id for the '<em><b>Selected</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KTYPE__SELECTED = 0;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KTYPE__NAME = 1;
 
     /**
-     * The feature id for the '<em><b>Fields</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KTYPE__FIELDS = 2;
 
     /**
-     * The feature id for the '<em><b>Methods</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KTYPE__METHODS = 3;
 
     /**
-     * The feature id for the '<em><b>Nested Types</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Nested Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KTYPE__NESTED_TYPES = 4;
 
     /**
-     * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KTYPE__DEPENDENCIES = 5;
 
     /**
-     * The feature id for the '<em><b>Static</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Static</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KTYPE__STATIC = 6;
 
     /**
-     * The feature id for the '<em><b>Visibility</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KTYPE__VISIBILITY = 7;
 
     /**
-     * The number of structural features of the '<em>KType</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>KType</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KTYPE_FEATURE_COUNT = 8;
 
     /**
-     * The number of operations of the '<em>KType</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of operations of the '<em>KType</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KTYPE_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassImpl <em>KClass</em>}' class.
-     * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassImpl <em>KClass</em>}' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KClassImpl
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKClass()
-     * @generated
-     */
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KClassImpl
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKClass()
+	 * @generated
+	 */
     int KCLASS = 4;
 
     /**
-     * The feature id for the '<em><b>Selected</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS__SELECTED = KTYPE__SELECTED;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS__NAME = KTYPE__NAME;
 
     /**
-     * The feature id for the '<em><b>Fields</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS__FIELDS = KTYPE__FIELDS;
 
     /**
-     * The feature id for the '<em><b>Methods</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS__METHODS = KTYPE__METHODS;
 
     /**
-     * The feature id for the '<em><b>Nested Types</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Nested Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS__NESTED_TYPES = KTYPE__NESTED_TYPES;
 
     /**
-     * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS__DEPENDENCIES = KTYPE__DEPENDENCIES;
 
     /**
-     * The feature id for the '<em><b>Static</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Static</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS__STATIC = KTYPE__STATIC;
 
     /**
-     * The feature id for the '<em><b>Visibility</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS__VISIBILITY = KTYPE__VISIBILITY;
 
     /**
-     * The feature id for the '<em><b>Super Class</b></em>' reference.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Super Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS__SUPER_CLASS = KTYPE_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Interfaces</b></em>' reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Interfaces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS__INTERFACES = KTYPE_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Type Parameters</b></em>' attribute list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Type Parameters</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS__TYPE_PARAMETERS = KTYPE_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Final</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS__FINAL = KTYPE_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Abstract</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS__ABSTRACT = KTYPE_FEATURE_COUNT + 4;
 
     /**
-     * The number of structural features of the '<em>KClass</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>KClass</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS_FEATURE_COUNT = KTYPE_FEATURE_COUNT + 5;
 
     /**
-     * The number of operations of the '<em>KClass</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of operations of the '<em>KClass</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KCLASS_OPERATION_COUNT = KTYPE_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KInterfaceImpl <em>KInterface</em>}' class.
-     * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KInterfaceImpl <em>KInterface</em>}' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KInterfaceImpl
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKInterface()
-     * @generated
-     */
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KInterfaceImpl
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKInterface()
+	 * @generated
+	 */
     int KINTERFACE = 5;
 
     /**
-     * The feature id for the '<em><b>Selected</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KINTERFACE__SELECTED = KTYPE__SELECTED;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KINTERFACE__NAME = KTYPE__NAME;
 
     /**
-     * The feature id for the '<em><b>Fields</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KINTERFACE__FIELDS = KTYPE__FIELDS;
 
     /**
-     * The feature id for the '<em><b>Methods</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KINTERFACE__METHODS = KTYPE__METHODS;
 
     /**
-     * The feature id for the '<em><b>Nested Types</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Nested Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KINTERFACE__NESTED_TYPES = KTYPE__NESTED_TYPES;
 
     /**
-     * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KINTERFACE__DEPENDENCIES = KTYPE__DEPENDENCIES;
 
     /**
-     * The feature id for the '<em><b>Static</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Static</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KINTERFACE__STATIC = KTYPE__STATIC;
 
     /**
-     * The feature id for the '<em><b>Visibility</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KINTERFACE__VISIBILITY = KTYPE__VISIBILITY;
 
     /**
-     * The feature id for the '<em><b>Super Interfaces</b></em>' reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Super Interfaces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KINTERFACE__SUPER_INTERFACES = KTYPE_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Type Parameters</b></em>' attribute list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Type Parameters</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KINTERFACE__TYPE_PARAMETERS = KTYPE_FEATURE_COUNT + 1;
 
     /**
-     * The number of structural features of the '<em>KInterface</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>KInterface</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KINTERFACE_FEATURE_COUNT = KTYPE_FEATURE_COUNT + 2;
 
     /**
-     * The number of operations of the '<em>KInterface</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of operations of the '<em>KInterface</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KINTERFACE_OPERATION_COUNT = KTYPE_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KEnumImpl <em>KEnum</em>}' class.
-     * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KEnumImpl <em>KEnum</em>}' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KEnumImpl
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKEnum()
-     * @generated
-     */
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KEnumImpl
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKEnum()
+	 * @generated
+	 */
     int KENUM = 6;
 
     /**
-     * The feature id for the '<em><b>Selected</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KENUM__SELECTED = KTYPE__SELECTED;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KENUM__NAME = KTYPE__NAME;
 
     /**
-     * The feature id for the '<em><b>Fields</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KENUM__FIELDS = KTYPE__FIELDS;
 
     /**
-     * The feature id for the '<em><b>Methods</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KENUM__METHODS = KTYPE__METHODS;
 
     /**
-     * The feature id for the '<em><b>Nested Types</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Nested Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KENUM__NESTED_TYPES = KTYPE__NESTED_TYPES;
 
     /**
-     * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KENUM__DEPENDENCIES = KTYPE__DEPENDENCIES;
 
     /**
-     * The feature id for the '<em><b>Static</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Static</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KENUM__STATIC = KTYPE__STATIC;
 
     /**
-     * The feature id for the '<em><b>Visibility</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KENUM__VISIBILITY = KTYPE__VISIBILITY;
 
     /**
-     * The feature id for the '<em><b>Constants</b></em>' attribute list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Constants</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KENUM__CONSTANTS = KTYPE_FEATURE_COUNT + 0;
 
     /**
-     * The number of structural features of the '<em>KEnum</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>KEnum</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KENUM_FEATURE_COUNT = KTYPE_FEATURE_COUNT + 1;
 
     /**
-     * The number of operations of the '<em>KEnum</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of operations of the '<em>KEnum</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KENUM_OPERATION_COUNT = KTYPE_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KDependencyImpl <em>KDependency</em>}' class.
-     * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KDependencyImpl <em>KDependency</em>}' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KDependencyImpl
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKDependency()
-     * @generated
-     */
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KDependencyImpl
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKDependency()
+	 * @generated
+	 */
     int KDEPENDENCY = 7;
 
     /**
-     * The feature id for the '<em><b>Target</b></em>' reference.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KDEPENDENCY__TARGET = 0;
 
     /**
-     * The feature id for the '<em><b>Label</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KDEPENDENCY__LABEL = 1;
 
     /**
-     * The number of structural features of the '<em>KDependency</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>KDependency</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KDEPENDENCY_FEATURE_COUNT = 2;
 
     /**
-     * The number of operations of the '<em>KDependency</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of operations of the '<em>KDependency</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KDEPENDENCY_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl <em>KMember</em>}' class.
-     * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl <em>KMember</em>}' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKMember()
-     * @generated
-     */
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKMember()
+	 * @generated
+	 */
     int KMEMBER = 8;
 
     /**
-     * The feature id for the '<em><b>Selected</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KMEMBER__SELECTED = 0;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KMEMBER__NAME = 1;
 
     /**
-     * The feature id for the '<em><b>Static</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Static</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KMEMBER__STATIC = 2;
 
     /**
-     * The feature id for the '<em><b>Final</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KMEMBER__FINAL = 3;
 
     /**
-     * The feature id for the '<em><b>Visibility</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KMEMBER__VISIBILITY = 4;
 
     /**
-     * The number of structural features of the '<em>KMember</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>KMember</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KMEMBER_FEATURE_COUNT = 5;
 
     /**
-     * The number of operations of the '<em>KMember</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of operations of the '<em>KMember</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KMEMBER_OPERATION_COUNT = 0;
 
     /**
-     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KFieldImpl <em>KField</em>}' class.
-     * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KFieldImpl <em>KField</em>}' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KFieldImpl
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKField()
-     * @generated
-     */
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KFieldImpl
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKField()
+	 * @generated
+	 */
     int KFIELD = 9;
 
     /**
-     * The feature id for the '<em><b>Selected</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KFIELD__SELECTED = KMEMBER__SELECTED;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KFIELD__NAME = KMEMBER__NAME;
 
     /**
-     * The feature id for the '<em><b>Static</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Static</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KFIELD__STATIC = KMEMBER__STATIC;
 
     /**
-     * The feature id for the '<em><b>Final</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KFIELD__FINAL = KMEMBER__FINAL;
 
     /**
-     * The feature id for the '<em><b>Visibility</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KFIELD__VISIBILITY = KMEMBER__VISIBILITY;
 
     /**
-     * The feature id for the '<em><b>Type</b></em>' containment reference.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KFIELD__TYPE = KMEMBER_FEATURE_COUNT + 0;
 
     /**
-     * The number of structural features of the '<em>KField</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>KField</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KFIELD_FEATURE_COUNT = KMEMBER_FEATURE_COUNT + 1;
 
     /**
-     * The number of operations of the '<em>KField</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of operations of the '<em>KField</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KFIELD_OPERATION_COUNT = KMEMBER_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMethodImpl <em>KMethod</em>}' class.
-     * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMethodImpl <em>KMethod</em>}' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KMethodImpl
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKMethod()
-     * @generated
-     */
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KMethodImpl
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKMethod()
+	 * @generated
+	 */
     int KMETHOD = 10;
 
     /**
-     * The feature id for the '<em><b>Selected</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KMETHOD__SELECTED = KMEMBER__SELECTED;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KMETHOD__NAME = KMEMBER__NAME;
 
     /**
-     * The feature id for the '<em><b>Static</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Static</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KMETHOD__STATIC = KMEMBER__STATIC;
 
     /**
-     * The feature id for the '<em><b>Final</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KMETHOD__FINAL = KMEMBER__FINAL;
 
     /**
-     * The feature id for the '<em><b>Visibility</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KMETHOD__VISIBILITY = KMEMBER__VISIBILITY;
 
     /**
-     * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KMETHOD__PARAMETERS = KMEMBER_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Return Type</b></em>' containment reference.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Return Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KMETHOD__RETURN_TYPE = KMEMBER_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Abstract</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KMETHOD__ABSTRACT = KMEMBER_FEATURE_COUNT + 2;
 
     /**
-     * The number of structural features of the '<em>KMethod</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of structural features of the '<em>KMethod</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KMETHOD_FEATURE_COUNT = KMEMBER_FEATURE_COUNT + 3;
 
     /**
-     * The number of operations of the '<em>KMethod</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of operations of the '<em>KMethod</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KMETHOD_OPERATION_COUNT = KMEMBER_OPERATION_COUNT + 0;
 
     /**
-     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeReferenceImpl <em>KType Reference</em>}' class.
-     * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeReferenceImpl <em>KType Reference</em>}' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeReferenceImpl
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKTypeReference()
-     * @generated
-     */
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeReferenceImpl
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKTypeReference()
+	 * @generated
+	 */
     int KTYPE_REFERENCE = 11;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KTYPE_REFERENCE__NAME = 0;
 
     /**
-     * The feature id for the '<em><b>Signature</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Signature</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KTYPE_REFERENCE__SIGNATURE = 1;
 
     /**
-     * The feature id for the '<em><b>Reference Type</b></em>' reference.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Reference Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KTYPE_REFERENCE__REFERENCE_TYPE = 2;
 
     /**
-     * The number of structural features of the '<em>KType Reference</em>' class.
-     * <!-- begin-user-doc -->
+	 * The feature id for the '<em><b>Type Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KTYPE_REFERENCE__TYPE_PARAMETERS = 3;
+
+				/**
+	 * The number of structural features of the '<em>KType Reference</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int KTYPE_REFERENCE_FEATURE_COUNT = 3;
+	 * @generated
+	 * @ordered
+	 */
+    int KTYPE_REFERENCE_FEATURE_COUNT = 4;
 
     /**
-     * The number of operations of the '<em>KType Reference</em>' class.
-     * <!-- begin-user-doc -->
+	 * The number of operations of the '<em>KType Reference</em>' class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     int KTYPE_REFERENCE_OPERATION_COUNT = 0;
 
 
     /**
-     * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.KVisibility <em>KVisibility</em>}' enum.
-     * <!-- begin-user-doc -->
+	 * The meta object id for the '{@link de.cau.cs.kieler.klassviz.model.classdata.KVisibility <em>KVisibility</em>}' enum.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KVisibility
-     * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKVisibility()
-     * @generated
-     */
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KVisibility
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKVisibility()
+	 * @generated
+	 */
     int KVISIBILITY = 12;
 
 
     /**
-     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel <em>KClass Model</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel <em>KClass Model</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>KClass Model</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KClassModel
-     * @generated
-     */
+	 * @return the meta object for class '<em>KClass Model</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KClassModel
+	 * @generated
+	 */
     EClass getKClassModel();
 
     /**
-     * Returns the meta object for the attribute list '{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getJavaProjects <em>Java Projects</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute list '{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getJavaProjects <em>Java Projects</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Java Projects</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getJavaProjects()
-     * @see #getKClassModel()
-     * @generated
-     */
+	 * @return the meta object for the attribute list '<em>Java Projects</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getJavaProjects()
+	 * @see #getKClassModel()
+	 * @generated
+	 */
     EAttribute getKClassModel_JavaProjects();
 
     /**
-     * Returns the meta object for the attribute list '{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getBundles <em>Bundles</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute list '{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getBundles <em>Bundles</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Bundles</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getBundles()
-     * @see #getKClassModel()
-     * @generated
-     */
+	 * @return the meta object for the attribute list '<em>Bundles</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getBundles()
+	 * @see #getKClassModel()
+	 * @generated
+	 */
     EAttribute getKClassModel_Bundles();
 
     /**
-     * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getPackages <em>Packages</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getPackages <em>Packages</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Packages</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getPackages()
-     * @see #getKClassModel()
-     * @generated
-     */
+	 * @return the meta object for the containment reference list '<em>Packages</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getPackages()
+	 * @see #getKClassModel()
+	 * @generated
+	 */
     EReference getKClassModel_Packages();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#isResolved <em>Resolved</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#isResolved <em>Resolved</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Resolved</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KClassModel#isResolved()
-     * @see #getKClassModel()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Resolved</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KClassModel#isResolved()
+	 * @see #getKClassModel()
+	 * @generated
+	 */
     EAttribute getKClassModel_Resolved();
 
     /**
-     * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getOptions <em>Options</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getOptions <em>Options</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Options</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getOptions()
-     * @see #getKClassModel()
-     * @generated
-     */
+	 * @return the meta object for the containment reference list '<em>Options</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getOptions()
+	 * @see #getKClassModel()
+	 * @generated
+	 */
     EReference getKClassModel_Options();
 
     /**
-     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KOption <em>KOption</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute list '{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getMetamodels <em>Metamodels</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>KOption</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KOption
-     * @generated
-     */
+	 * @return the meta object for the attribute list '<em>Metamodels</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getMetamodels()
+	 * @see #getKClassModel()
+	 * @generated
+	 */
+    EAttribute getKClassModel_Metamodels();
+
+    /**
+	 * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KOption <em>KOption</em>}'.
+	 * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>KOption</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KOption
+	 * @generated
+	 */
     EClass getKOption();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KOption#getKey <em>Key</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KOption#getKey <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Key</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KOption#getKey()
-     * @see #getKOption()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KOption#getKey()
+	 * @see #getKOption()
+	 * @generated
+	 */
     EAttribute getKOption_Key();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KOption#getValue <em>Value</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KOption#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Value</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KOption#getValue()
-     * @see #getKOption()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KOption#getValue()
+	 * @see #getKOption()
+	 * @generated
+	 */
     EAttribute getKOption_Value();
 
     /**
-     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KPackage <em>KPackage</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KPackage <em>KPackage</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>KPackage</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KPackage
-     * @generated
-     */
+	 * @return the meta object for class '<em>KPackage</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KPackage
+	 * @generated
+	 */
     EClass getKPackage();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KPackage#getName <em>Name</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KPackage#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Name</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KPackage#getName()
-     * @see #getKPackage()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KPackage#getName()
+	 * @see #getKPackage()
+	 * @generated
+	 */
     EAttribute getKPackage_Name();
 
     /**
-     * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KPackage#getTypes <em>Types</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KPackage#getTypes <em>Types</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Types</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KPackage#getTypes()
-     * @see #getKPackage()
-     * @generated
-     */
+	 * @return the meta object for the containment reference list '<em>Types</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KPackage#getTypes()
+	 * @see #getKPackage()
+	 * @generated
+	 */
     EReference getKPackage_Types();
 
     /**
-     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KType <em>KType</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KType <em>KType</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>KType</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KType
-     * @generated
-     */
+	 * @return the meta object for class '<em>KType</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KType
+	 * @generated
+	 */
     EClass getKType();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#isSelected <em>Selected</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#isSelected <em>Selected</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Selected</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KType#isSelected()
-     * @see #getKType()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Selected</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KType#isSelected()
+	 * @see #getKType()
+	 * @generated
+	 */
     EAttribute getKType_Selected();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getName <em>Name</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Name</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KType#getName()
-     * @see #getKType()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KType#getName()
+	 * @see #getKType()
+	 * @generated
+	 */
     EAttribute getKType_Name();
 
     /**
-     * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getFields <em>Fields</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getFields <em>Fields</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Fields</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KType#getFields()
-     * @see #getKType()
-     * @generated
-     */
+	 * @return the meta object for the containment reference list '<em>Fields</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KType#getFields()
+	 * @see #getKType()
+	 * @generated
+	 */
     EReference getKType_Fields();
 
     /**
-     * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getMethods <em>Methods</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getMethods <em>Methods</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Methods</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KType#getMethods()
-     * @see #getKType()
-     * @generated
-     */
+	 * @return the meta object for the containment reference list '<em>Methods</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KType#getMethods()
+	 * @see #getKType()
+	 * @generated
+	 */
     EReference getKType_Methods();
 
     /**
-     * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getNestedTypes <em>Nested Types</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getNestedTypes <em>Nested Types</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Nested Types</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KType#getNestedTypes()
-     * @see #getKType()
-     * @generated
-     */
+	 * @return the meta object for the containment reference list '<em>Nested Types</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KType#getNestedTypes()
+	 * @see #getKType()
+	 * @generated
+	 */
     EReference getKType_NestedTypes();
 
     /**
-     * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getDependencies <em>Dependencies</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getDependencies <em>Dependencies</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Dependencies</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KType#getDependencies()
-     * @see #getKType()
-     * @generated
-     */
+	 * @return the meta object for the containment reference list '<em>Dependencies</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KType#getDependencies()
+	 * @see #getKType()
+	 * @generated
+	 */
     EReference getKType_Dependencies();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#isStatic <em>Static</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#isStatic <em>Static</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Static</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KType#isStatic()
-     * @see #getKType()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Static</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KType#isStatic()
+	 * @see #getKType()
+	 * @generated
+	 */
     EAttribute getKType_Static();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getVisibility <em>Visibility</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getVisibility <em>Visibility</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Visibility</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KType#getVisibility()
-     * @see #getKType()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Visibility</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KType#getVisibility()
+	 * @see #getKType()
+	 * @generated
+	 */
     EAttribute getKType_Visibility();
 
     /**
-     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KClass <em>KClass</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KClass <em>KClass</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>KClass</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KClass
-     * @generated
-     */
+	 * @return the meta object for class '<em>KClass</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KClass
+	 * @generated
+	 */
     EClass getKClass();
 
     /**
-     * Returns the meta object for the reference '{@link de.cau.cs.kieler.klassviz.model.classdata.KClass#getSuperClass <em>Super Class</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the reference '{@link de.cau.cs.kieler.klassviz.model.classdata.KClass#getSuperClass <em>Super Class</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Super Class</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KClass#getSuperClass()
-     * @see #getKClass()
-     * @generated
-     */
+	 * @return the meta object for the reference '<em>Super Class</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KClass#getSuperClass()
+	 * @see #getKClass()
+	 * @generated
+	 */
     EReference getKClass_SuperClass();
 
     /**
-     * Returns the meta object for the reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KClass#getInterfaces <em>Interfaces</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KClass#getInterfaces <em>Interfaces</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Interfaces</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KClass#getInterfaces()
-     * @see #getKClass()
-     * @generated
-     */
+	 * @return the meta object for the reference list '<em>Interfaces</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KClass#getInterfaces()
+	 * @see #getKClass()
+	 * @generated
+	 */
     EReference getKClass_Interfaces();
 
     /**
-     * Returns the meta object for the attribute list '{@link de.cau.cs.kieler.klassviz.model.classdata.KClass#getTypeParameters <em>Type Parameters</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute list '{@link de.cau.cs.kieler.klassviz.model.classdata.KClass#getTypeParameters <em>Type Parameters</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Type Parameters</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KClass#getTypeParameters()
-     * @see #getKClass()
-     * @generated
-     */
+	 * @return the meta object for the attribute list '<em>Type Parameters</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KClass#getTypeParameters()
+	 * @see #getKClass()
+	 * @generated
+	 */
     EAttribute getKClass_TypeParameters();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KClass#isFinal <em>Final</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KClass#isFinal <em>Final</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Final</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KClass#isFinal()
-     * @see #getKClass()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Final</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KClass#isFinal()
+	 * @see #getKClass()
+	 * @generated
+	 */
     EAttribute getKClass_Final();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KClass#isAbstract <em>Abstract</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KClass#isAbstract <em>Abstract</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Abstract</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KClass#isAbstract()
-     * @see #getKClass()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Abstract</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KClass#isAbstract()
+	 * @see #getKClass()
+	 * @generated
+	 */
     EAttribute getKClass_Abstract();
 
     /**
-     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KInterface <em>KInterface</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KInterface <em>KInterface</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>KInterface</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KInterface
-     * @generated
-     */
+	 * @return the meta object for class '<em>KInterface</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KInterface
+	 * @generated
+	 */
     EClass getKInterface();
 
     /**
-     * Returns the meta object for the reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KInterface#getSuperInterfaces <em>Super Interfaces</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KInterface#getSuperInterfaces <em>Super Interfaces</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Super Interfaces</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KInterface#getSuperInterfaces()
-     * @see #getKInterface()
-     * @generated
-     */
+	 * @return the meta object for the reference list '<em>Super Interfaces</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KInterface#getSuperInterfaces()
+	 * @see #getKInterface()
+	 * @generated
+	 */
     EReference getKInterface_SuperInterfaces();
 
     /**
-     * Returns the meta object for the attribute list '{@link de.cau.cs.kieler.klassviz.model.classdata.KInterface#getTypeParameters <em>Type Parameters</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute list '{@link de.cau.cs.kieler.klassviz.model.classdata.KInterface#getTypeParameters <em>Type Parameters</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Type Parameters</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KInterface#getTypeParameters()
-     * @see #getKInterface()
-     * @generated
-     */
+	 * @return the meta object for the attribute list '<em>Type Parameters</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KInterface#getTypeParameters()
+	 * @see #getKInterface()
+	 * @generated
+	 */
     EAttribute getKInterface_TypeParameters();
 
     /**
-     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KEnum <em>KEnum</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KEnum <em>KEnum</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>KEnum</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KEnum
-     * @generated
-     */
+	 * @return the meta object for class '<em>KEnum</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KEnum
+	 * @generated
+	 */
     EClass getKEnum();
 
     /**
-     * Returns the meta object for the attribute list '{@link de.cau.cs.kieler.klassviz.model.classdata.KEnum#getConstants <em>Constants</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute list '{@link de.cau.cs.kieler.klassviz.model.classdata.KEnum#getConstants <em>Constants</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Constants</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KEnum#getConstants()
-     * @see #getKEnum()
-     * @generated
-     */
+	 * @return the meta object for the attribute list '<em>Constants</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KEnum#getConstants()
+	 * @see #getKEnum()
+	 * @generated
+	 */
     EAttribute getKEnum_Constants();
 
     /**
-     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KDependency <em>KDependency</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KDependency <em>KDependency</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>KDependency</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KDependency
-     * @generated
-     */
+	 * @return the meta object for class '<em>KDependency</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KDependency
+	 * @generated
+	 */
     EClass getKDependency();
 
     /**
-     * Returns the meta object for the reference '{@link de.cau.cs.kieler.klassviz.model.classdata.KDependency#getTarget <em>Target</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the reference '{@link de.cau.cs.kieler.klassviz.model.classdata.KDependency#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Target</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KDependency#getTarget()
-     * @see #getKDependency()
-     * @generated
-     */
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KDependency#getTarget()
+	 * @see #getKDependency()
+	 * @generated
+	 */
     EReference getKDependency_Target();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KDependency#getLabel <em>Label</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KDependency#getLabel <em>Label</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Label</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KDependency#getLabel()
-     * @see #getKDependency()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Label</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KDependency#getLabel()
+	 * @see #getKDependency()
+	 * @generated
+	 */
     EAttribute getKDependency_Label();
 
     /**
-     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KMember <em>KMember</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KMember <em>KMember</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>KMember</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KMember
-     * @generated
-     */
+	 * @return the meta object for class '<em>KMember</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KMember
+	 * @generated
+	 */
     EClass getKMember();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#isSelected <em>Selected</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#isSelected <em>Selected</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Selected</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KMember#isSelected()
-     * @see #getKMember()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Selected</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KMember#isSelected()
+	 * @see #getKMember()
+	 * @generated
+	 */
     EAttribute getKMember_Selected();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#getName <em>Name</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Name</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KMember#getName()
-     * @see #getKMember()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KMember#getName()
+	 * @see #getKMember()
+	 * @generated
+	 */
     EAttribute getKMember_Name();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#isStatic <em>Static</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#isStatic <em>Static</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Static</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KMember#isStatic()
-     * @see #getKMember()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Static</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KMember#isStatic()
+	 * @see #getKMember()
+	 * @generated
+	 */
     EAttribute getKMember_Static();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#isFinal <em>Final</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#isFinal <em>Final</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Final</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KMember#isFinal()
-     * @see #getKMember()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Final</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KMember#isFinal()
+	 * @see #getKMember()
+	 * @generated
+	 */
     EAttribute getKMember_Final();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#getVisibility <em>Visibility</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#getVisibility <em>Visibility</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Visibility</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KMember#getVisibility()
-     * @see #getKMember()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Visibility</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KMember#getVisibility()
+	 * @see #getKMember()
+	 * @generated
+	 */
     EAttribute getKMember_Visibility();
 
     /**
-     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KField <em>KField</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KField <em>KField</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>KField</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KField
-     * @generated
-     */
+	 * @return the meta object for class '<em>KField</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KField
+	 * @generated
+	 */
     EClass getKField();
 
     /**
-     * Returns the meta object for the containment reference '{@link de.cau.cs.kieler.klassviz.model.classdata.KField#getType <em>Type</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link de.cau.cs.kieler.klassviz.model.classdata.KField#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference '<em>Type</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KField#getType()
-     * @see #getKField()
-     * @generated
-     */
+	 * @return the meta object for the containment reference '<em>Type</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KField#getType()
+	 * @see #getKField()
+	 * @generated
+	 */
     EReference getKField_Type();
 
     /**
-     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod <em>KMethod</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod <em>KMethod</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>KMethod</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KMethod
-     * @generated
-     */
+	 * @return the meta object for class '<em>KMethod</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KMethod
+	 * @generated
+	 */
     EClass getKMethod();
 
     /**
-     * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#getParameters <em>Parameters</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference list '<em>Parameters</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KMethod#getParameters()
-     * @see #getKMethod()
-     * @generated
-     */
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KMethod#getParameters()
+	 * @see #getKMethod()
+	 * @generated
+	 */
     EReference getKMethod_Parameters();
 
     /**
-     * Returns the meta object for the containment reference '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#getReturnType <em>Return Type</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#getReturnType <em>Return Type</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the containment reference '<em>Return Type</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KMethod#getReturnType()
-     * @see #getKMethod()
-     * @generated
-     */
+	 * @return the meta object for the containment reference '<em>Return Type</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KMethod#getReturnType()
+	 * @see #getKMethod()
+	 * @generated
+	 */
     EReference getKMethod_ReturnType();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#isAbstract <em>Abstract</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#isAbstract <em>Abstract</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Abstract</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KMethod#isAbstract()
-     * @see #getKMethod()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Abstract</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KMethod#isAbstract()
+	 * @see #getKMethod()
+	 * @generated
+	 */
     EAttribute getKMethod_Abstract();
 
     /**
-     * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference <em>KType Reference</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for class '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference <em>KType Reference</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for class '<em>KType Reference</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KTypeReference
-     * @generated
-     */
+	 * @return the meta object for class '<em>KType Reference</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KTypeReference
+	 * @generated
+	 */
     EClass getKTypeReference();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getName <em>Name</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Name</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getName()
-     * @see #getKTypeReference()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getName()
+	 * @see #getKTypeReference()
+	 * @generated
+	 */
     EAttribute getKTypeReference_Name();
 
     /**
-     * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getSignature <em>Signature</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the attribute '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getSignature <em>Signature</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Signature</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getSignature()
-     * @see #getKTypeReference()
-     * @generated
-     */
+	 * @return the meta object for the attribute '<em>Signature</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getSignature()
+	 * @see #getKTypeReference()
+	 * @generated
+	 */
     EAttribute getKTypeReference_Signature();
 
     /**
-     * Returns the meta object for the reference '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getReferenceType <em>Reference Type</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the reference '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getReferenceType <em>Reference Type</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Reference Type</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getReferenceType()
-     * @see #getKTypeReference()
-     * @generated
-     */
+	 * @return the meta object for the reference '<em>Reference Type</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getReferenceType()
+	 * @see #getKTypeReference()
+	 * @generated
+	 */
     EReference getKTypeReference_ReferenceType();
 
     /**
-     * Returns the meta object for enum '{@link de.cau.cs.kieler.klassviz.model.classdata.KVisibility <em>KVisibility</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getTypeParameters <em>Type Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Type Parameters</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getTypeParameters()
+	 * @see #getKTypeReference()
+	 * @generated
+	 */
+	EReference getKTypeReference_TypeParameters();
+
+				/**
+	 * Returns the meta object for enum '{@link de.cau.cs.kieler.klassviz.model.classdata.KVisibility <em>KVisibility</em>}'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for enum '<em>KVisibility</em>'.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.KVisibility
-     * @generated
-     */
+	 * @return the meta object for enum '<em>KVisibility</em>'.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.KVisibility
+	 * @generated
+	 */
     EEnum getKVisibility();
 
     /**
-     * Returns the factory that creates the instances of the model.
-     * <!-- begin-user-doc -->
+	 * Returns the factory that creates the instances of the model.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the factory that creates the instances of the model.
-     * @generated
-     */
+	 * @return the factory that creates the instances of the model.
+	 * @generated
+	 */
     ClassdataFactory getClassdataFactory();
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * Defines literals for the meta objects that represent
      * <ul>
      *   <li>each class,</li>
@@ -1653,449 +1693,465 @@ public interface ClassdataPackage extends EPackage {
      *   <li>and each data type</li>
      * </ul>
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     interface Literals {
         /**
-         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl <em>KClass Model</em>}' class.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl <em>KClass Model</em>}' class.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKClassModel()
-         * @generated
-         */
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKClassModel()
+		 * @generated
+		 */
         EClass KCLASS_MODEL = eINSTANCE.getKClassModel();
 
         /**
-         * The meta object literal for the '<em><b>Java Projects</b></em>' attribute list feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Java Projects</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KCLASS_MODEL__JAVA_PROJECTS = eINSTANCE.getKClassModel_JavaProjects();
 
         /**
-         * The meta object literal for the '<em><b>Bundles</b></em>' attribute list feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Bundles</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KCLASS_MODEL__BUNDLES = eINSTANCE.getKClassModel_Bundles();
 
         /**
-         * The meta object literal for the '<em><b>Packages</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Packages</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EReference KCLASS_MODEL__PACKAGES = eINSTANCE.getKClassModel_Packages();
 
         /**
-         * The meta object literal for the '<em><b>Resolved</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Resolved</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KCLASS_MODEL__RESOLVED = eINSTANCE.getKClassModel_Resolved();
 
         /**
-         * The meta object literal for the '<em><b>Options</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Options</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EReference KCLASS_MODEL__OPTIONS = eINSTANCE.getKClassModel_Options();
 
         /**
-         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KOptionImpl <em>KOption</em>}' class.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Metamodels</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KOptionImpl
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKOption()
-         * @generated
-         */
+		 * @generated
+		 */
+        EAttribute KCLASS_MODEL__METAMODELS = eINSTANCE.getKClassModel_Metamodels();
+
+        /**
+		 * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KOptionImpl <em>KOption</em>}' class.
+		 * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KOptionImpl
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKOption()
+		 * @generated
+		 */
         EClass KOPTION = eINSTANCE.getKOption();
 
         /**
-         * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KOPTION__KEY = eINSTANCE.getKOption_Key();
 
         /**
-         * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KOPTION__VALUE = eINSTANCE.getKOption_Value();
 
         /**
-         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KPackageImpl <em>KPackage</em>}' class.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KPackageImpl <em>KPackage</em>}' class.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KPackageImpl
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKPackage()
-         * @generated
-         */
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KPackageImpl
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKPackage()
+		 * @generated
+		 */
         EClass KPACKAGE = eINSTANCE.getKPackage();
 
         /**
-         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KPACKAGE__NAME = eINSTANCE.getKPackage_Name();
 
         /**
-         * The meta object literal for the '<em><b>Types</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Types</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EReference KPACKAGE__TYPES = eINSTANCE.getKPackage_Types();
 
         /**
-         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl <em>KType</em>}' class.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl <em>KType</em>}' class.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKType()
-         * @generated
-         */
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKType()
+		 * @generated
+		 */
         EClass KTYPE = eINSTANCE.getKType();
 
         /**
-         * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KTYPE__SELECTED = eINSTANCE.getKType_Selected();
 
         /**
-         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KTYPE__NAME = eINSTANCE.getKType_Name();
 
         /**
-         * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EReference KTYPE__FIELDS = eINSTANCE.getKType_Fields();
 
         /**
-         * The meta object literal for the '<em><b>Methods</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Methods</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EReference KTYPE__METHODS = eINSTANCE.getKType_Methods();
 
         /**
-         * The meta object literal for the '<em><b>Nested Types</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Nested Types</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EReference KTYPE__NESTED_TYPES = eINSTANCE.getKType_NestedTypes();
 
         /**
-         * The meta object literal for the '<em><b>Dependencies</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Dependencies</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EReference KTYPE__DEPENDENCIES = eINSTANCE.getKType_Dependencies();
 
         /**
-         * The meta object literal for the '<em><b>Static</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Static</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KTYPE__STATIC = eINSTANCE.getKType_Static();
 
         /**
-         * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KTYPE__VISIBILITY = eINSTANCE.getKType_Visibility();
 
         /**
-         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassImpl <em>KClass</em>}' class.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassImpl <em>KClass</em>}' class.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KClassImpl
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKClass()
-         * @generated
-         */
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KClassImpl
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKClass()
+		 * @generated
+		 */
         EClass KCLASS = eINSTANCE.getKClass();
 
         /**
-         * The meta object literal for the '<em><b>Super Class</b></em>' reference feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Super Class</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EReference KCLASS__SUPER_CLASS = eINSTANCE.getKClass_SuperClass();
 
         /**
-         * The meta object literal for the '<em><b>Interfaces</b></em>' reference list feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Interfaces</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EReference KCLASS__INTERFACES = eINSTANCE.getKClass_Interfaces();
 
         /**
-         * The meta object literal for the '<em><b>Type Parameters</b></em>' attribute list feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Type Parameters</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KCLASS__TYPE_PARAMETERS = eINSTANCE.getKClass_TypeParameters();
 
         /**
-         * The meta object literal for the '<em><b>Final</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Final</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KCLASS__FINAL = eINSTANCE.getKClass_Final();
 
         /**
-         * The meta object literal for the '<em><b>Abstract</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Abstract</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KCLASS__ABSTRACT = eINSTANCE.getKClass_Abstract();
 
         /**
-         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KInterfaceImpl <em>KInterface</em>}' class.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KInterfaceImpl <em>KInterface</em>}' class.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KInterfaceImpl
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKInterface()
-         * @generated
-         */
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KInterfaceImpl
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKInterface()
+		 * @generated
+		 */
         EClass KINTERFACE = eINSTANCE.getKInterface();
 
         /**
-         * The meta object literal for the '<em><b>Super Interfaces</b></em>' reference list feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Super Interfaces</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EReference KINTERFACE__SUPER_INTERFACES = eINSTANCE.getKInterface_SuperInterfaces();
 
         /**
-         * The meta object literal for the '<em><b>Type Parameters</b></em>' attribute list feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Type Parameters</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KINTERFACE__TYPE_PARAMETERS = eINSTANCE.getKInterface_TypeParameters();
 
         /**
-         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KEnumImpl <em>KEnum</em>}' class.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KEnumImpl <em>KEnum</em>}' class.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KEnumImpl
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKEnum()
-         * @generated
-         */
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KEnumImpl
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKEnum()
+		 * @generated
+		 */
         EClass KENUM = eINSTANCE.getKEnum();
 
         /**
-         * The meta object literal for the '<em><b>Constants</b></em>' attribute list feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Constants</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KENUM__CONSTANTS = eINSTANCE.getKEnum_Constants();
 
         /**
-         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KDependencyImpl <em>KDependency</em>}' class.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KDependencyImpl <em>KDependency</em>}' class.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KDependencyImpl
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKDependency()
-         * @generated
-         */
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KDependencyImpl
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKDependency()
+		 * @generated
+		 */
         EClass KDEPENDENCY = eINSTANCE.getKDependency();
 
         /**
-         * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EReference KDEPENDENCY__TARGET = eINSTANCE.getKDependency_Target();
 
         /**
-         * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KDEPENDENCY__LABEL = eINSTANCE.getKDependency_Label();
 
         /**
-         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl <em>KMember</em>}' class.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl <em>KMember</em>}' class.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKMember()
-         * @generated
-         */
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKMember()
+		 * @generated
+		 */
         EClass KMEMBER = eINSTANCE.getKMember();
 
         /**
-         * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KMEMBER__SELECTED = eINSTANCE.getKMember_Selected();
 
         /**
-         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KMEMBER__NAME = eINSTANCE.getKMember_Name();
 
         /**
-         * The meta object literal for the '<em><b>Static</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Static</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KMEMBER__STATIC = eINSTANCE.getKMember_Static();
 
         /**
-         * The meta object literal for the '<em><b>Final</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Final</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KMEMBER__FINAL = eINSTANCE.getKMember_Final();
 
         /**
-         * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KMEMBER__VISIBILITY = eINSTANCE.getKMember_Visibility();
 
         /**
-         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KFieldImpl <em>KField</em>}' class.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KFieldImpl <em>KField</em>}' class.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KFieldImpl
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKField()
-         * @generated
-         */
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KFieldImpl
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKField()
+		 * @generated
+		 */
         EClass KFIELD = eINSTANCE.getKField();
 
         /**
-         * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EReference KFIELD__TYPE = eINSTANCE.getKField_Type();
 
         /**
-         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMethodImpl <em>KMethod</em>}' class.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMethodImpl <em>KMethod</em>}' class.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KMethodImpl
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKMethod()
-         * @generated
-         */
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KMethodImpl
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKMethod()
+		 * @generated
+		 */
         EClass KMETHOD = eINSTANCE.getKMethod();
 
         /**
-         * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EReference KMETHOD__PARAMETERS = eINSTANCE.getKMethod_Parameters();
 
         /**
-         * The meta object literal for the '<em><b>Return Type</b></em>' containment reference feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Return Type</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EReference KMETHOD__RETURN_TYPE = eINSTANCE.getKMethod_ReturnType();
 
         /**
-         * The meta object literal for the '<em><b>Abstract</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Abstract</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KMETHOD__ABSTRACT = eINSTANCE.getKMethod_Abstract();
 
         /**
-         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeReferenceImpl <em>KType Reference</em>}' class.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeReferenceImpl <em>KType Reference</em>}' class.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeReferenceImpl
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKTypeReference()
-         * @generated
-         */
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeReferenceImpl
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKTypeReference()
+		 * @generated
+		 */
         EClass KTYPE_REFERENCE = eINSTANCE.getKTypeReference();
 
         /**
-         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KTYPE_REFERENCE__NAME = eINSTANCE.getKTypeReference_Name();
 
         /**
-         * The meta object literal for the '<em><b>Signature</b></em>' attribute feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Signature</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EAttribute KTYPE_REFERENCE__SIGNATURE = eINSTANCE.getKTypeReference_Signature();
 
         /**
-         * The meta object literal for the '<em><b>Reference Type</b></em>' reference feature.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Reference Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @generated
-         */
+		 * @generated
+		 */
         EReference KTYPE_REFERENCE__REFERENCE_TYPE = eINSTANCE.getKTypeReference_ReferenceType();
 
         /**
-         * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.KVisibility <em>KVisibility</em>}' enum.
-         * <!-- begin-user-doc -->
+		 * The meta object literal for the '<em><b>Type Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference KTYPE_REFERENCE__TYPE_PARAMETERS = eINSTANCE.getKTypeReference_TypeParameters();
+
+								/**
+		 * The meta object literal for the '{@link de.cau.cs.kieler.klassviz.model.classdata.KVisibility <em>KVisibility</em>}' enum.
+		 * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * @see de.cau.cs.kieler.klassviz.model.classdata.KVisibility
-         * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKVisibility()
-         * @generated
-         */
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.KVisibility
+		 * @see de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataPackageImpl#getKVisibility()
+		 * @generated
+		 */
         EEnum KVISIBILITY = eINSTANCE.getKVisibility();
 
     }

@@ -33,225 +33,225 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  */
 public class ClassdataFactoryImpl extends EFactoryImpl implements ClassdataFactory {
     /**
-     * Creates the default factory implementation.
-     * <!-- begin-user-doc -->
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public static ClassdataFactory init() {
-        try {
-            ClassdataFactory theClassdataFactory = (ClassdataFactory)EPackage.Registry.INSTANCE.getEFactory(ClassdataPackage.eNS_URI);
-            if (theClassdataFactory != null) {
-                return theClassdataFactory;
-            }
-        }
-        catch (Exception exception) {
-            EcorePlugin.INSTANCE.log(exception);
-        }
-        return new ClassdataFactoryImpl();
-    }
+		try {
+			ClassdataFactory theClassdataFactory = (ClassdataFactory)EPackage.Registry.INSTANCE.getEFactory(ClassdataPackage.eNS_URI);
+			if (theClassdataFactory != null) {
+				return theClassdataFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new ClassdataFactoryImpl();
+	}
 
     /**
-     * Creates an instance of the factory.
-     * <!-- begin-user-doc -->
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ClassdataFactoryImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public EObject create(EClass eClass) {
-        switch (eClass.getClassifierID()) {
-            case ClassdataPackage.KCLASS_MODEL: return createKClassModel();
-            case ClassdataPackage.KOPTION: return createKOption();
-            case ClassdataPackage.KPACKAGE: return createKPackage();
-            case ClassdataPackage.KCLASS: return createKClass();
-            case ClassdataPackage.KINTERFACE: return createKInterface();
-            case ClassdataPackage.KENUM: return createKEnum();
-            case ClassdataPackage.KDEPENDENCY: return createKDependency();
-            case ClassdataPackage.KFIELD: return createKField();
-            case ClassdataPackage.KMETHOD: return createKMethod();
-            case ClassdataPackage.KTYPE_REFERENCE: return createKTypeReference();
-            default:
-                throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-        }
-    }
+		switch (eClass.getClassifierID()) {
+			case ClassdataPackage.KCLASS_MODEL: return createKClassModel();
+			case ClassdataPackage.KOPTION: return createKOption();
+			case ClassdataPackage.KPACKAGE: return createKPackage();
+			case ClassdataPackage.KCLASS: return createKClass();
+			case ClassdataPackage.KINTERFACE: return createKInterface();
+			case ClassdataPackage.KENUM: return createKEnum();
+			case ClassdataPackage.KDEPENDENCY: return createKDependency();
+			case ClassdataPackage.KFIELD: return createKField();
+			case ClassdataPackage.KMETHOD: return createKMethod();
+			case ClassdataPackage.KTYPE_REFERENCE: return createKTypeReference();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object createFromString(EDataType eDataType, String initialValue) {
-        switch (eDataType.getClassifierID()) {
-            case ClassdataPackage.KVISIBILITY:
-                return createKVisibilityFromString(eDataType, initialValue);
-            default:
-                throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-        }
-    }
+		switch (eDataType.getClassifierID()) {
+			case ClassdataPackage.KVISIBILITY:
+				return createKVisibilityFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String convertToString(EDataType eDataType, Object instanceValue) {
-        switch (eDataType.getClassifierID()) {
-            case ClassdataPackage.KVISIBILITY:
-                return convertKVisibilityToString(eDataType, instanceValue);
-            default:
-                throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-        }
-    }
+		switch (eDataType.getClassifierID()) {
+			case ClassdataPackage.KVISIBILITY:
+				return convertKVisibilityToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public KClassModel createKClassModel() {
-        KClassModelImpl kClassModel = new KClassModelImpl();
-        return kClassModel;
-    }
+		KClassModelImpl kClassModel = new KClassModelImpl();
+		return kClassModel;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public KOption createKOption() {
-        KOptionImpl kOption = new KOptionImpl();
-        return kOption;
-    }
+		KOptionImpl kOption = new KOptionImpl();
+		return kOption;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public KPackage createKPackage() {
-        KPackageImpl kPackage = new KPackageImpl();
-        return kPackage;
-    }
+		KPackageImpl kPackage = new KPackageImpl();
+		return kPackage;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public KClass createKClass() {
-        KClassImpl kClass = new KClassImpl();
-        return kClass;
-    }
+		KClassImpl kClass = new KClassImpl();
+		return kClass;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public KInterface createKInterface() {
-        KInterfaceImpl kInterface = new KInterfaceImpl();
-        return kInterface;
-    }
+		KInterfaceImpl kInterface = new KInterfaceImpl();
+		return kInterface;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public KEnum createKEnum() {
-        KEnumImpl kEnum = new KEnumImpl();
-        return kEnum;
-    }
+		KEnumImpl kEnum = new KEnumImpl();
+		return kEnum;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public KDependency createKDependency() {
-        KDependencyImpl kDependency = new KDependencyImpl();
-        return kDependency;
-    }
+		KDependencyImpl kDependency = new KDependencyImpl();
+		return kDependency;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public KField createKField() {
-        KFieldImpl kField = new KFieldImpl();
-        return kField;
-    }
+		KFieldImpl kField = new KFieldImpl();
+		return kField;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public KMethod createKMethod() {
-        KMethodImpl kMethod = new KMethodImpl();
-        return kMethod;
-    }
+		KMethodImpl kMethod = new KMethodImpl();
+		return kMethod;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public KTypeReference createKTypeReference() {
-        KTypeReferenceImpl kTypeReference = new KTypeReferenceImpl();
-        return kTypeReference;
-    }
+		KTypeReferenceImpl kTypeReference = new KTypeReferenceImpl();
+		return kTypeReference;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public KVisibility createKVisibilityFromString(EDataType eDataType, String initialValue) {
-        KVisibility result = KVisibility.get(initialValue);
-        if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-        return result;
-    }
+		KVisibility result = KVisibility.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String convertKVisibilityToString(EDataType eDataType, Object instanceValue) {
-        return instanceValue == null ? null : instanceValue.toString();
-    }
+		return instanceValue == null ? null : instanceValue.toString();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ClassdataPackage getClassdataPackage() {
-        return (ClassdataPackage)getEPackage();
-    }
+		return (ClassdataPackage)getEPackage();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @deprecated
-     * @generated
-     */
+	 * @deprecated
+	 * @generated
+	 */
     @Deprecated
     public static ClassdataPackage getPackage() {
-        return ClassdataPackage.eINSTANCE;
-    }
+		return ClassdataPackage.eINSTANCE;
+	}
 
 } //ClassdataFactoryImpl

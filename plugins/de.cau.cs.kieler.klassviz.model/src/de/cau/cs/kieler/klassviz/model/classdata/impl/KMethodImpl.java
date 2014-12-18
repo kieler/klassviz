@@ -50,250 +50,250 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class KMethodImpl extends KMemberImpl implements KMethod {
     /**
-     * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getParameters()
-     * @generated
-     * @ordered
-     */
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<KTypeReference> parameters;
 
     /**
-     * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getReturnType()
-     * @generated
-     * @ordered
-     */
+	 * @see #getReturnType()
+	 * @generated
+	 * @ordered
+	 */
     protected KTypeReference returnType;
 
     /**
-     * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isAbstract()
-     * @generated
-     * @ordered
-     */
+	 * @see #isAbstract()
+	 * @generated
+	 * @ordered
+	 */
     protected static final boolean ABSTRACT_EDEFAULT = false;
 
     /**
-     * The cached value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isAbstract() <em>Abstract</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isAbstract()
-     * @generated
-     * @ordered
-     */
+	 * @see #isAbstract()
+	 * @generated
+	 * @ordered
+	 */
     protected boolean abstract_ = ABSTRACT_EDEFAULT;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected KMethodImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return ClassdataPackage.Literals.KMETHOD;
-    }
+		return ClassdataPackage.Literals.KMETHOD;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<KTypeReference> getParameters() {
-        if (parameters == null) {
-            parameters = new EObjectContainmentEList<KTypeReference>(KTypeReference.class, this, ClassdataPackage.KMETHOD__PARAMETERS);
-        }
-        return parameters;
-    }
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<KTypeReference>(KTypeReference.class, this, ClassdataPackage.KMETHOD__PARAMETERS);
+		}
+		return parameters;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public KTypeReference getReturnType() {
-        return returnType;
-    }
+		return returnType;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetReturnType(KTypeReference newReturnType, NotificationChain msgs) {
-        KTypeReference oldReturnType = returnType;
-        returnType = newReturnType;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMETHOD__RETURN_TYPE, oldReturnType, newReturnType);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		KTypeReference oldReturnType = returnType;
+		returnType = newReturnType;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMETHOD__RETURN_TYPE, oldReturnType, newReturnType);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setReturnType(KTypeReference newReturnType) {
-        if (newReturnType != returnType) {
-            NotificationChain msgs = null;
-            if (returnType != null)
-                msgs = ((InternalEObject)returnType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ClassdataPackage.KMETHOD__RETURN_TYPE, null, msgs);
-            if (newReturnType != null)
-                msgs = ((InternalEObject)newReturnType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ClassdataPackage.KMETHOD__RETURN_TYPE, null, msgs);
-            msgs = basicSetReturnType(newReturnType, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMETHOD__RETURN_TYPE, newReturnType, newReturnType));
-    }
+		if (newReturnType != returnType) {
+			NotificationChain msgs = null;
+			if (returnType != null)
+				msgs = ((InternalEObject)returnType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ClassdataPackage.KMETHOD__RETURN_TYPE, null, msgs);
+			if (newReturnType != null)
+				msgs = ((InternalEObject)newReturnType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ClassdataPackage.KMETHOD__RETURN_TYPE, null, msgs);
+			msgs = basicSetReturnType(newReturnType, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMETHOD__RETURN_TYPE, newReturnType, newReturnType));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isAbstract() {
-        return abstract_;
-    }
+		return abstract_;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setAbstract(boolean newAbstract) {
-        boolean oldAbstract = abstract_;
-        abstract_ = newAbstract;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMETHOD__ABSTRACT, oldAbstract, abstract_));
-    }
+		boolean oldAbstract = abstract_;
+		abstract_ = newAbstract;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMETHOD__ABSTRACT, oldAbstract, abstract_));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case ClassdataPackage.KMETHOD__PARAMETERS:
-                return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
-            case ClassdataPackage.KMETHOD__RETURN_TYPE:
-                return basicSetReturnType(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KMETHOD__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+			case ClassdataPackage.KMETHOD__RETURN_TYPE:
+				return basicSetReturnType(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case ClassdataPackage.KMETHOD__PARAMETERS:
-                return getParameters();
-            case ClassdataPackage.KMETHOD__RETURN_TYPE:
-                return getReturnType();
-            case ClassdataPackage.KMETHOD__ABSTRACT:
-                return isAbstract();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KMETHOD__PARAMETERS:
+				return getParameters();
+			case ClassdataPackage.KMETHOD__RETURN_TYPE:
+				return getReturnType();
+			case ClassdataPackage.KMETHOD__ABSTRACT:
+				return isAbstract();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case ClassdataPackage.KMETHOD__PARAMETERS:
-                getParameters().clear();
-                getParameters().addAll((Collection<? extends KTypeReference>)newValue);
-                return;
-            case ClassdataPackage.KMETHOD__RETURN_TYPE:
-                setReturnType((KTypeReference)newValue);
-                return;
-            case ClassdataPackage.KMETHOD__ABSTRACT:
-                setAbstract((Boolean)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KMETHOD__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends KTypeReference>)newValue);
+				return;
+			case ClassdataPackage.KMETHOD__RETURN_TYPE:
+				setReturnType((KTypeReference)newValue);
+				return;
+			case ClassdataPackage.KMETHOD__ABSTRACT:
+				setAbstract((Boolean)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case ClassdataPackage.KMETHOD__PARAMETERS:
-                getParameters().clear();
-                return;
-            case ClassdataPackage.KMETHOD__RETURN_TYPE:
-                setReturnType((KTypeReference)null);
-                return;
-            case ClassdataPackage.KMETHOD__ABSTRACT:
-                setAbstract(ABSTRACT_EDEFAULT);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KMETHOD__PARAMETERS:
+				getParameters().clear();
+				return;
+			case ClassdataPackage.KMETHOD__RETURN_TYPE:
+				setReturnType((KTypeReference)null);
+				return;
+			case ClassdataPackage.KMETHOD__ABSTRACT:
+				setAbstract(ABSTRACT_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case ClassdataPackage.KMETHOD__PARAMETERS:
-                return parameters != null && !parameters.isEmpty();
-            case ClassdataPackage.KMETHOD__RETURN_TYPE:
-                return returnType != null;
-            case ClassdataPackage.KMETHOD__ABSTRACT:
-                return abstract_ != ABSTRACT_EDEFAULT;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KMETHOD__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
+			case ClassdataPackage.KMETHOD__RETURN_TYPE:
+				return returnType != null;
+			case ClassdataPackage.KMETHOD__ABSTRACT:
+				return abstract_ != ABSTRACT_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (abstract: ");
-        result.append(abstract_);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (abstract: ");
+		result.append(abstract_);
+		result.append(')');
+		return result.toString();
+	}
 
 } //KMethodImpl

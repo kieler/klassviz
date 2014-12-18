@@ -132,19 +132,42 @@ ruleKClassModel returns [EObject current=null]
 	    }
 
 )
+))
+    |(	otherlv_6='metamodel' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getKClassModelAccess().getMetamodelKeyword_1_1_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getKClassModelAccess().getMetamodelsMetaModelIDParserRuleCall_1_1_2_1_0()); 
+	    }
+		lv_metamodels_7_0=ruleMetaModelID		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getKClassModelRule());
+	        }
+       		add(
+       			$current, 
+       			"metamodels",
+        		lv_metamodels_7_0, 
+        		"MetaModelID");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
 ))))*(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getKClassModelAccess().getOptionsKOptionParserRuleCall_2_0()); 
 	    }
-		lv_options_6_0=ruleKOption		{
+		lv_options_8_0=ruleKOption		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getKClassModelRule());
 	        }
        		add(
        			$current, 
        			"options",
-        		lv_options_6_0, 
+        		lv_options_8_0, 
         		"KOption");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -155,14 +178,14 @@ ruleKClassModel returns [EObject current=null]
 		{ 
 	        newCompositeNode(grammarAccess.getKClassModelAccess().getPackagesKPackageParserRuleCall_3_0()); 
 	    }
-		lv_packages_7_0=ruleKPackage		{
+		lv_packages_9_0=ruleKPackage		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getKClassModelRule());
 	        }
        		add(
        			$current, 
        			"packages",
-        		lv_packages_7_0, 
+        		lv_packages_9_0, 
         		"KPackage");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -770,6 +793,68 @@ ruleKTypeReference returns [EObject current=null]
 )
 )
 ;
+
+
+
+
+
+// Entry rule entryRuleMetaModelID
+entryRuleMetaModelID returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getMetaModelIDRule()); } 
+	 iv_ruleMetaModelID=ruleMetaModelID 
+	 { $current=$iv_ruleMetaModelID.current.getText(); }  
+	 EOF 
+;
+
+// Rule MetaModelID
+ruleMetaModelID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getMetaModelIDAccess().getQualifiedIDParserRuleCall_0()); 
+    }
+    this_QualifiedID_0=ruleQualifiedID    {
+		$current.merge(this_QualifiedID_0);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+	kw='/' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getMetaModelIDAccess().getSolidusKeyword_1()); 
+    }
+(    this_ID_2=RULE_ID    {
+		$current.merge(this_ID_2);
+    }
+
+    { 
+    newLeafNode(this_ID_2, grammarAccess.getMetaModelIDAccess().getIDTerminalRuleCall_2_0()); 
+    }
+
+	kw='/' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getMetaModelIDAccess().getSolidusKeyword_2_1()); 
+    }
+)*
+    { 
+        newCompositeNode(grammarAccess.getMetaModelIDAccess().getQualifiedIDParserRuleCall_3()); 
+    }
+    this_QualifiedID_4=ruleQualifiedID    {
+		$current.merge(this_QualifiedID_4);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)
+    ;
 
 
 

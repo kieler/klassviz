@@ -33,29 +33,29 @@ package de.cau.cs.kieler.klassviz.model.classdata;
  */
 public interface KField extends KMember {
     /**
-     * Returns the value of the '<em><b>Type</b></em>' containment reference.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Type</em>' containment reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Type</em>' containment reference.
-     * @see #setType(KTypeReference)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKField_Type()
-     * @model containment="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Type</em>' containment reference.
+	 * @see #setType(KTypeReference)
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKField_Type()
+	 * @model containment="true"
+	 * @generated
+	 */
     KTypeReference getType();
 
     /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KField#getType <em>Type</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KField#getType <em>Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Type</em>' containment reference.
-     * @see #getType()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Type</em>' containment reference.
+	 * @see #getType()
+	 * @generated
+	 */
     void setType(KTypeReference value);
 
 } // KField

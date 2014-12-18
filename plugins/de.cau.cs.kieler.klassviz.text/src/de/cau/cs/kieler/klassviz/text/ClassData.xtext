@@ -21,7 +21,7 @@ import "http://kieler.cs.cau.de/classdata"
 KClassModel returns KClassModel:
     {KClassModel}
     ('import'
-        ('project' javaProjects+=QualifiedID | 'bundle' bundles+=QualifiedID)
+        ('project' javaProjects+=QualifiedID | 'bundle' bundles+=QualifiedID | 'metamodel' metamodels+=MetaModelID)
     )*
     (options+=KOption)*
     (packages+=KPackage)*;
@@ -64,6 +64,10 @@ KTypeReference returns KTypeReference:
     signature=ID;
 
 //--------------- Terminals ----------------
+
+MetaModelID returns ecore::EString:
+    QualifiedID '/' (ID '/')* QualifiedID
+;
 
 QualifiedID returns ecore::EString:
     ID ('.' ID)*;

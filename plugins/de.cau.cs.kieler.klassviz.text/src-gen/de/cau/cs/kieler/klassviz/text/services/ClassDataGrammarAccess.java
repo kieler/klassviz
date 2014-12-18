@@ -32,30 +32,34 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cBundleKeyword_1_1_1_0 = (Keyword)cGroup_1_1_1.eContents().get(0);
 		private final Assignment cBundlesAssignment_1_1_1_1 = (Assignment)cGroup_1_1_1.eContents().get(1);
 		private final RuleCall cBundlesQualifiedIDParserRuleCall_1_1_1_1_0 = (RuleCall)cBundlesAssignment_1_1_1_1.eContents().get(0);
+		private final Group cGroup_1_1_2 = (Group)cAlternatives_1_1.eContents().get(2);
+		private final Keyword cMetamodelKeyword_1_1_2_0 = (Keyword)cGroup_1_1_2.eContents().get(0);
+		private final Assignment cMetamodelsAssignment_1_1_2_1 = (Assignment)cGroup_1_1_2.eContents().get(1);
+		private final RuleCall cMetamodelsMetaModelIDParserRuleCall_1_1_2_1_0 = (RuleCall)cMetamodelsAssignment_1_1_2_1.eContents().get(0);
 		private final Assignment cOptionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cOptionsKOptionParserRuleCall_2_0 = (RuleCall)cOptionsAssignment_2.eContents().get(0);
 		private final Assignment cPackagesAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cPackagesKPackageParserRuleCall_3_0 = (RuleCall)cPackagesAssignment_3.eContents().get(0);
 		
 		//KClassModel:
-		//	{KClassModel} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* options+=KOption*
-		//	packages+=KPackage*;
+		//	{KClassModel} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID | "metamodel"
+		//	metamodels+=MetaModelID))* options+=KOption* packages+=KPackage*;
 		public ParserRule getRule() { return rule; }
 
-		//{KClassModel} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* options+=KOption*
-		//packages+=KPackage*
+		//{KClassModel} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID | "metamodel"
+		//metamodels+=MetaModelID))* options+=KOption* packages+=KPackage*
 		public Group getGroup() { return cGroup; }
 
 		//{KClassModel}
 		public Action getKClassModelAction_0() { return cKClassModelAction_0; }
 
-		//("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))*
+		//("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID | "metamodel" metamodels+=MetaModelID))*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"import"
 		public Keyword getImportKeyword_1_0() { return cImportKeyword_1_0; }
 
-		//"project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID
+		//"project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID | "metamodel" metamodels+=MetaModelID
 		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
 
 		//"project" javaProjects+=QualifiedID
@@ -81,6 +85,18 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 
 		//QualifiedID
 		public RuleCall getBundlesQualifiedIDParserRuleCall_1_1_1_1_0() { return cBundlesQualifiedIDParserRuleCall_1_1_1_1_0; }
+
+		//"metamodel" metamodels+=MetaModelID
+		public Group getGroup_1_1_2() { return cGroup_1_1_2; }
+
+		//"metamodel"
+		public Keyword getMetamodelKeyword_1_1_2_0() { return cMetamodelKeyword_1_1_2_0; }
+
+		//metamodels+=MetaModelID
+		public Assignment getMetamodelsAssignment_1_1_2_1() { return cMetamodelsAssignment_1_1_2_1; }
+
+		//MetaModelID
+		public RuleCall getMetamodelsMetaModelIDParserRuleCall_1_1_2_1_0() { return cMetamodelsMetaModelIDParserRuleCall_1_1_2_1_0; }
 
 		//options+=KOption*
 		public Assignment getOptionsAssignment_2() { return cOptionsAssignment_2; }
@@ -435,6 +451,43 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getSignatureIDTerminalRuleCall_0() { return cSignatureIDTerminalRuleCall_0; }
 	}
 
+	public class MetaModelIDElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MetaModelID");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cQualifiedIDParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cSolidusKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final RuleCall cIDTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cSolidusKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final RuleCall cQualifiedIDParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		
+		////--------------- Terminals ----------------
+		//MetaModelID returns ecore::EString:
+		//	QualifiedID "/" (ID "/")* QualifiedID;
+		public ParserRule getRule() { return rule; }
+
+		//QualifiedID "/" (ID "/")* QualifiedID
+		public Group getGroup() { return cGroup; }
+
+		//QualifiedID
+		public RuleCall getQualifiedIDParserRuleCall_0() { return cQualifiedIDParserRuleCall_0; }
+
+		//"/"
+		public Keyword getSolidusKeyword_1() { return cSolidusKeyword_1; }
+
+		//(ID "/")*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_2_0() { return cIDTerminalRuleCall_2_0; }
+
+		//"/"
+		public Keyword getSolidusKeyword_2_1() { return cSolidusKeyword_2_1; }
+
+		//QualifiedID
+		public RuleCall getQualifiedIDParserRuleCall_3() { return cQualifiedIDParserRuleCall_3; }
+	}
+
 	public class QualifiedIDElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedID");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -443,7 +496,6 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
-		////--------------- Terminals ----------------
 		//QualifiedID returns ecore::EString:
 		//	ID ("." ID)*;
 		public ParserRule getRule() { return rule; }
@@ -513,34 +565,58 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
-	private KClassModelElements pKClassModel;
-	private KOptionElements pKOption;
-	private KPackageElements pKPackage;
-	private KTypeElements pKType;
-	private KClassElements pKClass;
-	private KInterfaceElements pKInterface;
-	private KEnumElements pKEnum;
-	private KDependencyElements pKDependency;
-	private KFieldElements pKField;
-	private KMethodElements pKMethod;
-	private KTypeReferenceElements pKTypeReference;
-	private QualifiedIDElements pQualifiedID;
-	private PropertyValueElements pPropertyValue;
-	private FloatElements pFloat;
-	private TerminalRule tBOOLEAN;
-	private TerminalRule tTFLOAT;
-	private TerminalRule tNATURAL;
-	private TerminalRule tID;
-	private TerminalRule tSTRING;
-	private TerminalRule tML_COMMENT;
-	private TerminalRule tSL_COMMENT;
-	private TerminalRule tWS;
+	private final KClassModelElements pKClassModel;
+	private final KOptionElements pKOption;
+	private final KPackageElements pKPackage;
+	private final KTypeElements pKType;
+	private final KClassElements pKClass;
+	private final KInterfaceElements pKInterface;
+	private final KEnumElements pKEnum;
+	private final KDependencyElements pKDependency;
+	private final KFieldElements pKField;
+	private final KMethodElements pKMethod;
+	private final KTypeReferenceElements pKTypeReference;
+	private final MetaModelIDElements pMetaModelID;
+	private final QualifiedIDElements pQualifiedID;
+	private final PropertyValueElements pPropertyValue;
+	private final FloatElements pFloat;
+	private final TerminalRule tBOOLEAN;
+	private final TerminalRule tTFLOAT;
+	private final TerminalRule tNATURAL;
+	private final TerminalRule tID;
+	private final TerminalRule tSTRING;
+	private final TerminalRule tML_COMMENT;
+	private final TerminalRule tSL_COMMENT;
+	private final TerminalRule tWS;
 	
 	private final Grammar grammar;
 
 	@Inject
 	public ClassDataGrammarAccess(GrammarProvider grammarProvider) {
 		this.grammar = internalFindGrammar(grammarProvider);
+		this.pKClassModel = new KClassModelElements();
+		this.pKOption = new KOptionElements();
+		this.pKPackage = new KPackageElements();
+		this.pKType = new KTypeElements();
+		this.pKClass = new KClassElements();
+		this.pKInterface = new KInterfaceElements();
+		this.pKEnum = new KEnumElements();
+		this.pKDependency = new KDependencyElements();
+		this.pKField = new KFieldElements();
+		this.pKMethod = new KMethodElements();
+		this.pKTypeReference = new KTypeReferenceElements();
+		this.pMetaModelID = new MetaModelIDElements();
+		this.pQualifiedID = new QualifiedIDElements();
+		this.pPropertyValue = new PropertyValueElements();
+		this.pFloat = new FloatElements();
+		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BOOLEAN");
+		this.tTFLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TFLOAT");
+		this.tNATURAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NATURAL");
+		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID");
+		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "STRING");
+		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ML_COMMENT");
+		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT");
+		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -567,10 +643,10 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//KClassModel:
-	//	{KClassModel} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID))* options+=KOption*
-	//	packages+=KPackage*;
+	//	{KClassModel} ("import" ("project" javaProjects+=QualifiedID | "bundle" bundles+=QualifiedID | "metamodel"
+	//	metamodels+=MetaModelID))* options+=KOption* packages+=KPackage*;
 	public KClassModelElements getKClassModelAccess() {
-		return (pKClassModel != null) ? pKClassModel : (pKClassModel = new KClassModelElements());
+		return pKClassModel;
 	}
 	
 	public ParserRule getKClassModelRule() {
@@ -580,7 +656,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	//KOption:
 	//	{KOption} key=QualifiedID "=" value=PropertyValue;
 	public KOptionElements getKOptionAccess() {
-		return (pKOption != null) ? pKOption : (pKOption = new KOptionElements());
+		return pKOption;
 	}
 	
 	public ParserRule getKOptionRule() {
@@ -590,7 +666,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	//KPackage:
 	//	"package" name=QualifiedID "{" types+=KType* "}";
 	public KPackageElements getKPackageAccess() {
-		return (pKPackage != null) ? pKPackage : (pKPackage = new KPackageElements());
+		return pKPackage;
 	}
 	
 	public ParserRule getKPackageRule() {
@@ -600,7 +676,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	//KType:
 	//	(KClass | KInterface | KEnum) ("{" (fields+=KField | methods+=KMethod | dependencies+=KDependency)* "}")?;
 	public KTypeElements getKTypeAccess() {
-		return (pKType != null) ? pKType : (pKType = new KTypeElements());
+		return pKType;
 	}
 	
 	public ParserRule getKTypeRule() {
@@ -610,7 +686,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	//KClass:
 	//	"class" name=ID;
 	public KClassElements getKClassAccess() {
-		return (pKClass != null) ? pKClass : (pKClass = new KClassElements());
+		return pKClass;
 	}
 	
 	public ParserRule getKClassRule() {
@@ -620,7 +696,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	//KInterface:
 	//	"interface" name=ID;
 	public KInterfaceElements getKInterfaceAccess() {
-		return (pKInterface != null) ? pKInterface : (pKInterface = new KInterfaceElements());
+		return pKInterface;
 	}
 	
 	public ParserRule getKInterfaceRule() {
@@ -630,7 +706,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	//KEnum:
 	//	"enum" name=ID;
 	public KEnumElements getKEnumAccess() {
-		return (pKEnum != null) ? pKEnum : (pKEnum = new KEnumElements());
+		return pKEnum;
 	}
 	
 	public ParserRule getKEnumRule() {
@@ -640,7 +716,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	//KDependency:
 	//	"depend" label=STRING? target=[KType];
 	public KDependencyElements getKDependencyAccess() {
-		return (pKDependency != null) ? pKDependency : (pKDependency = new KDependencyElements());
+		return pKDependency;
 	}
 	
 	public ParserRule getKDependencyRule() {
@@ -650,7 +726,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	//KField:
 	//	name=ID;
 	public KFieldElements getKFieldAccess() {
-		return (pKField != null) ? pKField : (pKField = new KFieldElements());
+		return pKField;
 	}
 	
 	public ParserRule getKFieldRule() {
@@ -660,7 +736,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	//KMethod:
 	//	name=ID "(" (parameters+=KTypeReference ("," parameters+=KTypeReference)*)? ")";
 	public KMethodElements getKMethodAccess() {
-		return (pKMethod != null) ? pKMethod : (pKMethod = new KMethodElements());
+		return pKMethod;
 	}
 	
 	public ParserRule getKMethodRule() {
@@ -670,7 +746,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	//KTypeReference:
 	//	signature=ID;
 	public KTypeReferenceElements getKTypeReferenceAccess() {
-		return (pKTypeReference != null) ? pKTypeReference : (pKTypeReference = new KTypeReferenceElements());
+		return pKTypeReference;
 	}
 	
 	public ParserRule getKTypeReferenceRule() {
@@ -678,10 +754,20 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	////--------------- Terminals ----------------
+	//MetaModelID returns ecore::EString:
+	//	QualifiedID "/" (ID "/")* QualifiedID;
+	public MetaModelIDElements getMetaModelIDAccess() {
+		return pMetaModelID;
+	}
+	
+	public ParserRule getMetaModelIDRule() {
+		return getMetaModelIDAccess().getRule();
+	}
+
 	//QualifiedID returns ecore::EString:
 	//	ID ("." ID)*;
 	public QualifiedIDElements getQualifiedIDAccess() {
-		return (pQualifiedID != null) ? pQualifiedID : (pQualifiedID = new QualifiedIDElements());
+		return pQualifiedID;
 	}
 	
 	public ParserRule getQualifiedIDRule() {
@@ -691,7 +777,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	//PropertyValue returns ecore::EString:
 	//	BOOLEAN | STRING | Float | QualifiedID;
 	public PropertyValueElements getPropertyValueAccess() {
-		return (pPropertyValue != null) ? pPropertyValue : (pPropertyValue = new PropertyValueElements());
+		return pPropertyValue;
 	}
 	
 	public ParserRule getPropertyValueRule() {
@@ -701,7 +787,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	//Float returns ecore::EFloat:
 	//	TFLOAT | NATURAL;
 	public FloatElements getFloatAccess() {
-		return (pFloat != null) ? pFloat : (pFloat = new FloatElements());
+		return pFloat;
 	}
 	
 	public ParserRule getFloatRule() {
@@ -711,7 +797,7 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	//terminal BOOLEAN returns ecore::EBoolean:
 	//	"true" | "false";
 	public TerminalRule getBOOLEANRule() {
-		return (tBOOLEAN != null) ? tBOOLEAN : (tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BOOLEAN"));
+		return tBOOLEAN;
 	} 
 
 	//terminal TFLOAT returns ecore::EFloat:
@@ -719,42 +805,42 @@ public class ClassDataGrammarAccess extends AbstractGrammarElementFinder {
 	//	"-")? "0".."9"+)?) | "0".."9"+ "." "0".."9"* (("e" | "E") ("+" | "-")? "0".."9"+)? | "." "0".."9"+ (("e" | "E") ("+" |
 	//	"-")? "0".."9"+)? | "0".."9"+ ("e" | "E") ("+" | "-")? "0".."9"+;
 	public TerminalRule getTFLOATRule() {
-		return (tTFLOAT != null) ? tTFLOAT : (tTFLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TFLOAT"));
+		return tTFLOAT;
 	} 
 
 	//terminal NATURAL returns ecore::EInt:
 	//	"0".."9"+;
 	public TerminalRule getNATURALRule() {
-		return (tNATURAL != null) ? tNATURAL : (tNATURAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NATURAL"));
+		return tNATURAL;
 	} 
 
 	//terminal ID:
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
 	public TerminalRule getIDRule() {
-		return (tID != null) ? tID : (tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID"));
+		return tID;
 	} 
 
 	//terminal STRING:
 	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"";
 	public TerminalRule getSTRINGRule() {
-		return (tSTRING != null) ? tSTRING : (tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "STRING"));
+		return tSTRING;
 	} 
 
 	//terminal ML_COMMENT:
 	//	"/ *"->"* /";
 	public TerminalRule getML_COMMENTRule() {
-		return (tML_COMMENT != null) ? tML_COMMENT : (tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ML_COMMENT"));
+		return tML_COMMENT;
 	} 
 
 	//terminal SL_COMMENT:
 	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
 	public TerminalRule getSL_COMMENTRule() {
-		return (tSL_COMMENT != null) ? tSL_COMMENT : (tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT"));
+		return tSL_COMMENT;
 	} 
 
 	//terminal WS:
 	//	(" " | "\t" | "\r" | "\n")+;
 	public TerminalRule getWSRule() {
-		return (tWS != null) ? tWS : (tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS"));
+		return tWS;
 	} 
 }

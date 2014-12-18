@@ -112,7 +112,7 @@ public abstract class AbstractClassDataSemanticSequencer extends AbstractDelegat
 	
 	/**
 	 * Constraint:
-	 *     ((javaProjects+=QualifiedID | bundles+=QualifiedID)* options+=KOption* packages+=KPackage*)
+	 *     ((javaProjects+=QualifiedID | bundles+=QualifiedID | metamodels+=MetaModelID)* options+=KOption* packages+=KPackage*)
 	 */
 	protected void sequence_KClassModel(EObject context, KClassModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

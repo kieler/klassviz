@@ -42,196 +42,196 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class KDependencyImpl extends MinimalEObjectImpl.Container implements KDependency {
     /**
-     * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getTarget()
-     * @generated
-     * @ordered
-     */
+	 * @see #getTarget()
+	 * @generated
+	 * @ordered
+	 */
     protected KType target;
 
     /**
-     * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLabel()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLabel()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String LABEL_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLabel()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLabel()
+	 * @generated
+	 * @ordered
+	 */
     protected String label = LABEL_EDEFAULT;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected KDependencyImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return ClassdataPackage.Literals.KDEPENDENCY;
-    }
+		return ClassdataPackage.Literals.KDEPENDENCY;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public KType getTarget() {
-        if (target != null && target.eIsProxy()) {
-            InternalEObject oldTarget = (InternalEObject)target;
-            target = (KType)eResolveProxy(oldTarget);
-            if (target != oldTarget) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassdataPackage.KDEPENDENCY__TARGET, oldTarget, target));
-            }
-        }
-        return target;
-    }
+		if (target != null && target.eIsProxy()) {
+			InternalEObject oldTarget = (InternalEObject)target;
+			target = (KType)eResolveProxy(oldTarget);
+			if (target != oldTarget) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassdataPackage.KDEPENDENCY__TARGET, oldTarget, target));
+			}
+		}
+		return target;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public KType basicGetTarget() {
-        return target;
-    }
+		return target;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setTarget(KType newTarget) {
-        KType oldTarget = target;
-        target = newTarget;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KDEPENDENCY__TARGET, oldTarget, target));
-    }
+		KType oldTarget = target;
+		target = newTarget;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KDEPENDENCY__TARGET, oldTarget, target));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getLabel() {
-        return label;
-    }
+		return label;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLabel(String newLabel) {
-        String oldLabel = label;
-        label = newLabel;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KDEPENDENCY__LABEL, oldLabel, label));
-    }
+		String oldLabel = label;
+		label = newLabel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KDEPENDENCY__LABEL, oldLabel, label));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case ClassdataPackage.KDEPENDENCY__TARGET:
-                if (resolve) return getTarget();
-                return basicGetTarget();
-            case ClassdataPackage.KDEPENDENCY__LABEL:
-                return getLabel();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KDEPENDENCY__TARGET:
+				if (resolve) return getTarget();
+				return basicGetTarget();
+			case ClassdataPackage.KDEPENDENCY__LABEL:
+				return getLabel();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case ClassdataPackage.KDEPENDENCY__TARGET:
-                setTarget((KType)newValue);
-                return;
-            case ClassdataPackage.KDEPENDENCY__LABEL:
-                setLabel((String)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KDEPENDENCY__TARGET:
+				setTarget((KType)newValue);
+				return;
+			case ClassdataPackage.KDEPENDENCY__LABEL:
+				setLabel((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case ClassdataPackage.KDEPENDENCY__TARGET:
-                setTarget((KType)null);
-                return;
-            case ClassdataPackage.KDEPENDENCY__LABEL:
-                setLabel(LABEL_EDEFAULT);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KDEPENDENCY__TARGET:
+				setTarget((KType)null);
+				return;
+			case ClassdataPackage.KDEPENDENCY__LABEL:
+				setLabel(LABEL_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case ClassdataPackage.KDEPENDENCY__TARGET:
-                return target != null;
-            case ClassdataPackage.KDEPENDENCY__LABEL:
-                return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KDEPENDENCY__TARGET:
+				return target != null;
+			case ClassdataPackage.KDEPENDENCY__LABEL:
+				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (label: ");
-        result.append(label);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (label: ");
+		result.append(label);
+		result.append(')');
+		return result.toString();
+	}
 
 } //KDependencyImpl

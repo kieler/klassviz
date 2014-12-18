@@ -43,6 +43,7 @@ import org.eclipse.jdt.core.JavaModelException
 import org.eclipse.jdt.core.Signature
 import org.eclipse.jface.viewers.IStructuredSelection
 import org.eclipse.jdt.core.IPackageFragment
+import java.util.Arrays
 
 /**
  * Transformation class between the JDT model and our own class model.
@@ -178,7 +179,7 @@ final class JdtModelTransformation {
                     for (jdtparam : jdtMethod.parameters) {
                         kMethod.parameters += ClassdataFactory.eINSTANCE.createKTypeReference => [ tr |
                             tr.name = jdtparam.elementName
-                            tr.signature = Signature.toString(jdtparam.typeSignature)
+                            tr.signature = /* Signature.toString(*/ jdtparam.typeSignature //)
                             jdtType.resolveReference(tr, typeNameFunc)
                         ]
                     }
@@ -187,7 +188,7 @@ final class JdtModelTransformation {
                     kMethod.parameters.forEach[ kparam, i |
                         val jdtparam = jdtMethod.parameters.get(i)
                         kparam.name = jdtparam.elementName
-                        kparam.signature = Signature.toString(jdtparam.typeSignature)
+                        kparam.signature = /* Signature.toString(*/ jdtparam.typeSignature //)
                         jdtType.resolveReference(kparam, typeNameFunc)
                     ]
                 }
@@ -246,7 +247,7 @@ final class JdtModelTransformation {
             for (param : jdtMethod.parameters) {
                 kMethod.parameters += ClassdataFactory.eINSTANCE.createKTypeReference => [ tr |
                     tr.name = param.elementName
-                    tr.signature = Signature.toString(param.typeSignature)
+                    tr.signature = /* Signature.toString(*/ param.typeSignature //)
                     jdtType.resolveReference(tr, typeNameFunc)
                 ]
             }
@@ -332,8 +333,14 @@ final class JdtModelTransformation {
     def private extractFieldData(KField kField, IField jdtField, IType jdtType,
             (String)=>KType typeNameFunc) {
         kField.type = ClassdataFactory.eINSTANCE.createKTypeReference() => [ tr |
-            tr.signature = Signature.toString(jdtField.typeSignature)
+            tr.signature = /* Signature.toString(*/ jdtField.typeSignature //)
             jdtType.resolveReference(tr, typeNameFunc)
+
+            val typeArgs = Signature.getTypeArguments(jdtField.typeSignature);
+            for (arg : typeArgs) {
+                
+                print(Arrays.toString(jdtType.resolveType(Signature.toString(arg))) + " ");
+            }
         ]
         if (jdtType.isInterface || jdtField.isEnumConstant) {
             kField.visibility = KVisibility::PUBLIC
@@ -352,7 +359,7 @@ final class JdtModelTransformation {
     def private extractMethodData(KMethod kMethod, IMethod jdtMethod, IType jdtType,
             (String)=>KType typeNameFunc) {
         kMethod.returnType = ClassdataFactory.eINSTANCE.createKTypeReference => [ tr |
-            tr.signature = Signature.toString(jdtMethod.returnType)
+            tr.signature = /* Signature.toString(*/ jdtMethod.returnType //)
             jdtType.resolveReference(tr, typeNameFunc)
         ]
         if (jdtType.isInterface) {
@@ -369,7 +376,9 @@ final class JdtModelTransformation {
     /**
      * Resolve the given type reference: make its signature qualified and create a type cross reference.
      */
-    def private resolveReference(IType jdtType, KTypeReference typeRef, (String)=>KType typeNameFunc) {
+    def private void resolveReference(IType jdtType, KTypeReference typeRef, (String)=>KType typeNameFunc) {
+        val jdtSignature = typeRef.signature
+        typeRef.signature = Signature.toString(jdtSignature);
         val res = jdtType.resolveType(typeRef.signature)
         if (!res.nullOrEmpty) {
             val qualifiedName = res.get(0).get(0) + "." + res.get(0).get(1)
@@ -377,6 +386,12 @@ final class JdtModelTransformation {
             if (!typeRef.signature.startsWith(res.get(0).get(0))) {
                 typeRef.signature = res.get(0).get(0) + "." + typeRef.signature
             }
+        }
+        for (param : Signature.getTypeArguments(jdtSignature)) {
+            val paramRef = ClassdataFactory.eINSTANCE.createKTypeReference;
+            paramRef.signature = param;
+            typeRef.typeParameters += paramRef;
+            resolveReference(jdtType, paramRef, typeNameFunc);
         }
     }
     

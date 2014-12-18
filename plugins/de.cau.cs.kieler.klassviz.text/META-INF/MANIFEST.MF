@@ -7,6 +7,7 @@ Bundle-SymbolicName: de.cau.cs.kieler.klassviz.text; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: de.cau.cs.kieler.klassviz,
  de.cau.cs.kieler.klassviz.model,
+ de.cau.cs.kieler.klassviz.xcore;bundle-version="0.1.0";resolution:=optional,
  org.eclipse.xtext;visibility:=reexport,
  org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
  org.eclipse.xtext.generator;resolution:=optional,
@@ -19,7 +20,8 @@ Require-Bundle: de.cau.cs.kieler.klassviz,
  org.eclipse.xtext.common.types,
  org.eclipse.core.runtime;bundle-version="3.9.0",
  org.eclipse.core.resources;bundle-version="3.8.0",
- org.eclipse.jdt.core;bundle-version="3.9.0"
+ org.eclipse.jdt.core;bundle-version="3.9.0",
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5

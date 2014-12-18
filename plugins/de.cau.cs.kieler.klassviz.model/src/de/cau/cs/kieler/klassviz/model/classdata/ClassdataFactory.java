@@ -26,110 +26,110 @@ import org.eclipse.emf.ecore.EFactory;
  */
 public interface ClassdataFactory extends EFactory {
     /**
-     * The singleton instance of the factory.
-     * <!-- begin-user-doc -->
+	 * The singleton instance of the factory.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     ClassdataFactory eINSTANCE = de.cau.cs.kieler.klassviz.model.classdata.impl.ClassdataFactoryImpl.init();
 
     /**
-     * Returns a new object of class '<em>KClass Model</em>'.
-     * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>KClass Model</em>'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>KClass Model</em>'.
-     * @generated
-     */
+	 * @return a new object of class '<em>KClass Model</em>'.
+	 * @generated
+	 */
     KClassModel createKClassModel();
 
     /**
-     * Returns a new object of class '<em>KOption</em>'.
-     * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>KOption</em>'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>KOption</em>'.
-     * @generated
-     */
+	 * @return a new object of class '<em>KOption</em>'.
+	 * @generated
+	 */
     KOption createKOption();
 
     /**
-     * Returns a new object of class '<em>KPackage</em>'.
-     * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>KPackage</em>'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>KPackage</em>'.
-     * @generated
-     */
+	 * @return a new object of class '<em>KPackage</em>'.
+	 * @generated
+	 */
     KPackage createKPackage();
 
     /**
-     * Returns a new object of class '<em>KClass</em>'.
-     * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>KClass</em>'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>KClass</em>'.
-     * @generated
-     */
+	 * @return a new object of class '<em>KClass</em>'.
+	 * @generated
+	 */
     KClass createKClass();
 
     /**
-     * Returns a new object of class '<em>KInterface</em>'.
-     * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>KInterface</em>'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>KInterface</em>'.
-     * @generated
-     */
+	 * @return a new object of class '<em>KInterface</em>'.
+	 * @generated
+	 */
     KInterface createKInterface();
 
     /**
-     * Returns a new object of class '<em>KEnum</em>'.
-     * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>KEnum</em>'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>KEnum</em>'.
-     * @generated
-     */
+	 * @return a new object of class '<em>KEnum</em>'.
+	 * @generated
+	 */
     KEnum createKEnum();
 
     /**
-     * Returns a new object of class '<em>KDependency</em>'.
-     * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>KDependency</em>'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>KDependency</em>'.
-     * @generated
-     */
+	 * @return a new object of class '<em>KDependency</em>'.
+	 * @generated
+	 */
     KDependency createKDependency();
 
     /**
-     * Returns a new object of class '<em>KField</em>'.
-     * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>KField</em>'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>KField</em>'.
-     * @generated
-     */
+	 * @return a new object of class '<em>KField</em>'.
+	 * @generated
+	 */
     KField createKField();
 
     /**
-     * Returns a new object of class '<em>KMethod</em>'.
-     * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>KMethod</em>'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>KMethod</em>'.
-     * @generated
-     */
+	 * @return a new object of class '<em>KMethod</em>'.
+	 * @generated
+	 */
     KMethod createKMethod();
 
     /**
-     * Returns a new object of class '<em>KType Reference</em>'.
-     * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>KType Reference</em>'.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return a new object of class '<em>KType Reference</em>'.
-     * @generated
-     */
+	 * @return a new object of class '<em>KType Reference</em>'.
+	 * @generated
+	 */
     KTypeReference createKTypeReference();
 
     /**
-     * Returns the package supported by this factory.
-     * <!-- begin-user-doc -->
+	 * Returns the package supported by this factory.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the package supported by this factory.
-     * @generated
-     */
+	 * @return the package supported by this factory.
+	 * @generated
+	 */
     ClassdataPackage getClassdataPackage();
 
 } //ClassdataFactory

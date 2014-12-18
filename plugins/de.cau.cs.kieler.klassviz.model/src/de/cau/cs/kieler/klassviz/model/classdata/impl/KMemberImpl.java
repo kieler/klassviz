@@ -44,349 +44,349 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public abstract class KMemberImpl extends MinimalEObjectImpl.Container implements KMember {
     /**
-     * The default value of the '{@link #isSelected() <em>Selected</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSelected()
-     * @generated
-     * @ordered
-     */
+	 * @see #isSelected()
+	 * @generated
+	 * @ordered
+	 */
     protected static final boolean SELECTED_EDEFAULT = false;
 
     /**
-     * The cached value of the '{@link #isSelected() <em>Selected</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSelected()
-     * @generated
-     * @ordered
-     */
+	 * @see #isSelected()
+	 * @generated
+	 * @ordered
+	 */
     protected boolean selected = SELECTED_EDEFAULT;
 
     /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
     protected String name = NAME_EDEFAULT;
 
     /**
-     * The default value of the '{@link #isStatic() <em>Static</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isStatic() <em>Static</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isStatic()
-     * @generated
-     * @ordered
-     */
+	 * @see #isStatic()
+	 * @generated
+	 * @ordered
+	 */
     protected static final boolean STATIC_EDEFAULT = false;
 
     /**
-     * The cached value of the '{@link #isStatic() <em>Static</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isStatic() <em>Static</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isStatic()
-     * @generated
-     * @ordered
-     */
+	 * @see #isStatic()
+	 * @generated
+	 * @ordered
+	 */
     protected boolean static_ = STATIC_EDEFAULT;
 
     /**
-     * The default value of the '{@link #isFinal() <em>Final</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isFinal() <em>Final</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isFinal()
-     * @generated
-     * @ordered
-     */
+	 * @see #isFinal()
+	 * @generated
+	 * @ordered
+	 */
     protected static final boolean FINAL_EDEFAULT = false;
 
     /**
-     * The cached value of the '{@link #isFinal() <em>Final</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isFinal() <em>Final</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isFinal()
-     * @generated
-     * @ordered
-     */
+	 * @see #isFinal()
+	 * @generated
+	 * @ordered
+	 */
     protected boolean final_ = FINAL_EDEFAULT;
 
     /**
-     * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getVisibility()
-     * @generated
-     * @ordered
-     */
+	 * @see #getVisibility()
+	 * @generated
+	 * @ordered
+	 */
     protected static final KVisibility VISIBILITY_EDEFAULT = KVisibility.PACKAGE;
 
     /**
-     * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getVisibility()
-     * @generated
-     * @ordered
-     */
+	 * @see #getVisibility()
+	 * @generated
+	 * @ordered
+	 */
     protected KVisibility visibility = VISIBILITY_EDEFAULT;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected KMemberImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return ClassdataPackage.Literals.KMEMBER;
-    }
+		return ClassdataPackage.Literals.KMEMBER;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSelected() {
-        return selected;
-    }
+		return selected;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSelected(boolean newSelected) {
-        boolean oldSelected = selected;
-        selected = newSelected;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMEMBER__SELECTED, oldSelected, selected));
-    }
+		boolean oldSelected = selected;
+		selected = newSelected;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMEMBER__SELECTED, oldSelected, selected));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getName() {
-        return name;
-    }
+		return name;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setName(String newName) {
-        String oldName = name;
-        name = newName;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMEMBER__NAME, oldName, name));
-    }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMEMBER__NAME, oldName, name));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isStatic() {
-        return static_;
-    }
+		return static_;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setStatic(boolean newStatic) {
-        boolean oldStatic = static_;
-        static_ = newStatic;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMEMBER__STATIC, oldStatic, static_));
-    }
+		boolean oldStatic = static_;
+		static_ = newStatic;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMEMBER__STATIC, oldStatic, static_));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isFinal() {
-        return final_;
-    }
+		return final_;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setFinal(boolean newFinal) {
-        boolean oldFinal = final_;
-        final_ = newFinal;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMEMBER__FINAL, oldFinal, final_));
-    }
+		boolean oldFinal = final_;
+		final_ = newFinal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMEMBER__FINAL, oldFinal, final_));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public KVisibility getVisibility() {
-        return visibility;
-    }
+		return visibility;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setVisibility(KVisibility newVisibility) {
-        KVisibility oldVisibility = visibility;
-        visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMEMBER__VISIBILITY, oldVisibility, visibility));
-    }
+		KVisibility oldVisibility = visibility;
+		visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassdataPackage.KMEMBER__VISIBILITY, oldVisibility, visibility));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case ClassdataPackage.KMEMBER__SELECTED:
-                return isSelected();
-            case ClassdataPackage.KMEMBER__NAME:
-                return getName();
-            case ClassdataPackage.KMEMBER__STATIC:
-                return isStatic();
-            case ClassdataPackage.KMEMBER__FINAL:
-                return isFinal();
-            case ClassdataPackage.KMEMBER__VISIBILITY:
-                return getVisibility();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KMEMBER__SELECTED:
+				return isSelected();
+			case ClassdataPackage.KMEMBER__NAME:
+				return getName();
+			case ClassdataPackage.KMEMBER__STATIC:
+				return isStatic();
+			case ClassdataPackage.KMEMBER__FINAL:
+				return isFinal();
+			case ClassdataPackage.KMEMBER__VISIBILITY:
+				return getVisibility();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case ClassdataPackage.KMEMBER__SELECTED:
-                setSelected((Boolean)newValue);
-                return;
-            case ClassdataPackage.KMEMBER__NAME:
-                setName((String)newValue);
-                return;
-            case ClassdataPackage.KMEMBER__STATIC:
-                setStatic((Boolean)newValue);
-                return;
-            case ClassdataPackage.KMEMBER__FINAL:
-                setFinal((Boolean)newValue);
-                return;
-            case ClassdataPackage.KMEMBER__VISIBILITY:
-                setVisibility((KVisibility)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KMEMBER__SELECTED:
+				setSelected((Boolean)newValue);
+				return;
+			case ClassdataPackage.KMEMBER__NAME:
+				setName((String)newValue);
+				return;
+			case ClassdataPackage.KMEMBER__STATIC:
+				setStatic((Boolean)newValue);
+				return;
+			case ClassdataPackage.KMEMBER__FINAL:
+				setFinal((Boolean)newValue);
+				return;
+			case ClassdataPackage.KMEMBER__VISIBILITY:
+				setVisibility((KVisibility)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case ClassdataPackage.KMEMBER__SELECTED:
-                setSelected(SELECTED_EDEFAULT);
-                return;
-            case ClassdataPackage.KMEMBER__NAME:
-                setName(NAME_EDEFAULT);
-                return;
-            case ClassdataPackage.KMEMBER__STATIC:
-                setStatic(STATIC_EDEFAULT);
-                return;
-            case ClassdataPackage.KMEMBER__FINAL:
-                setFinal(FINAL_EDEFAULT);
-                return;
-            case ClassdataPackage.KMEMBER__VISIBILITY:
-                setVisibility(VISIBILITY_EDEFAULT);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KMEMBER__SELECTED:
+				setSelected(SELECTED_EDEFAULT);
+				return;
+			case ClassdataPackage.KMEMBER__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case ClassdataPackage.KMEMBER__STATIC:
+				setStatic(STATIC_EDEFAULT);
+				return;
+			case ClassdataPackage.KMEMBER__FINAL:
+				setFinal(FINAL_EDEFAULT);
+				return;
+			case ClassdataPackage.KMEMBER__VISIBILITY:
+				setVisibility(VISIBILITY_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case ClassdataPackage.KMEMBER__SELECTED:
-                return selected != SELECTED_EDEFAULT;
-            case ClassdataPackage.KMEMBER__NAME:
-                return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-            case ClassdataPackage.KMEMBER__STATIC:
-                return static_ != STATIC_EDEFAULT;
-            case ClassdataPackage.KMEMBER__FINAL:
-                return final_ != FINAL_EDEFAULT;
-            case ClassdataPackage.KMEMBER__VISIBILITY:
-                return visibility != VISIBILITY_EDEFAULT;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case ClassdataPackage.KMEMBER__SELECTED:
+				return selected != SELECTED_EDEFAULT;
+			case ClassdataPackage.KMEMBER__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ClassdataPackage.KMEMBER__STATIC:
+				return static_ != STATIC_EDEFAULT;
+			case ClassdataPackage.KMEMBER__FINAL:
+				return final_ != FINAL_EDEFAULT;
+			case ClassdataPackage.KMEMBER__VISIBILITY:
+				return visibility != VISIBILITY_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (selected: ");
-        result.append(selected);
-        result.append(", name: ");
-        result.append(name);
-        result.append(", static: ");
-        result.append(static_);
-        result.append(", final: ");
-        result.append(final_);
-        result.append(", visibility: ");
-        result.append(visibility);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (selected: ");
+		result.append(selected);
+		result.append(", name: ");
+		result.append(name);
+		result.append(", static: ");
+		result.append(static_);
+		result.append(", final: ");
+		result.append(final_);
+		result.append(", visibility: ");
+		result.append(visibility);
+		result.append(')');
+		return result.toString();
+	}
 
 } //KMemberImpl

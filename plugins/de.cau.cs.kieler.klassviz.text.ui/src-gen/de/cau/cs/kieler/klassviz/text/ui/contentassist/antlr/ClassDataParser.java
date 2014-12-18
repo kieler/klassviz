@@ -46,6 +46,7 @@ public class ClassDataParser extends AbstractContentAssistParser {
 					put(grammarAccess.getKClassModelAccess().getGroup_1(), "rule__KClassModel__Group_1__0");
 					put(grammarAccess.getKClassModelAccess().getGroup_1_1_0(), "rule__KClassModel__Group_1_1_0__0");
 					put(grammarAccess.getKClassModelAccess().getGroup_1_1_1(), "rule__KClassModel__Group_1_1_1__0");
+					put(grammarAccess.getKClassModelAccess().getGroup_1_1_2(), "rule__KClassModel__Group_1_1_2__0");
 					put(grammarAccess.getKOptionAccess().getGroup(), "rule__KOption__Group__0");
 					put(grammarAccess.getKPackageAccess().getGroup(), "rule__KPackage__Group__0");
 					put(grammarAccess.getKTypeAccess().getGroup(), "rule__KType__Group__0");
@@ -57,10 +58,13 @@ public class ClassDataParser extends AbstractContentAssistParser {
 					put(grammarAccess.getKMethodAccess().getGroup(), "rule__KMethod__Group__0");
 					put(grammarAccess.getKMethodAccess().getGroup_2(), "rule__KMethod__Group_2__0");
 					put(grammarAccess.getKMethodAccess().getGroup_2_1(), "rule__KMethod__Group_2_1__0");
+					put(grammarAccess.getMetaModelIDAccess().getGroup(), "rule__MetaModelID__Group__0");
+					put(grammarAccess.getMetaModelIDAccess().getGroup_2(), "rule__MetaModelID__Group_2__0");
 					put(grammarAccess.getQualifiedIDAccess().getGroup(), "rule__QualifiedID__Group__0");
 					put(grammarAccess.getQualifiedIDAccess().getGroup_1(), "rule__QualifiedID__Group_1__0");
 					put(grammarAccess.getKClassModelAccess().getJavaProjectsAssignment_1_1_0_1(), "rule__KClassModel__JavaProjectsAssignment_1_1_0_1");
 					put(grammarAccess.getKClassModelAccess().getBundlesAssignment_1_1_1_1(), "rule__KClassModel__BundlesAssignment_1_1_1_1");
+					put(grammarAccess.getKClassModelAccess().getMetamodelsAssignment_1_1_2_1(), "rule__KClassModel__MetamodelsAssignment_1_1_2_1");
 					put(grammarAccess.getKClassModelAccess().getOptionsAssignment_2(), "rule__KClassModel__OptionsAssignment_2");
 					put(grammarAccess.getKClassModelAccess().getPackagesAssignment_3(), "rule__KClassModel__PackagesAssignment_3");
 					put(grammarAccess.getKOptionAccess().getKeyAssignment_1(), "rule__KOption__KeyAssignment_1");

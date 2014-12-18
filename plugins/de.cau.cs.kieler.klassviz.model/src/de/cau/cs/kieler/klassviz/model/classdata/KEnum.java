@@ -34,19 +34,19 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface KEnum extends KType {
     /**
-     * Returns the value of the '<em><b>Constants</b></em>' attribute list.
-     * The list contents are of type {@link java.lang.String}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Constants</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Constants</em>' attribute list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Constants</em>' attribute list.
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKEnum_Constants()
-     * @model
-     * @generated
-     */
+	 * @return the value of the '<em>Constants</em>' attribute list.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKEnum_Constants()
+	 * @model
+	 * @generated
+	 */
     EList<String> getConstants();
 
 } // KEnum

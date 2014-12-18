@@ -17,6 +17,7 @@ package de.cau.cs.kieler.klassviz.synthesis
 import com.google.common.base.Joiner
 import com.google.common.collect.ImmutableList
 import com.google.inject.Inject
+import de.cau.cs.kieler.core.util.Pair
 import de.cau.cs.kieler.core.kgraph.KNode
 import de.cau.cs.kieler.core.krendering.KContainerRendering
 import de.cau.cs.kieler.core.krendering.KPolyline
@@ -59,6 +60,7 @@ import org.eclipse.jdt.core.JavaModelException
 import org.eclipse.jdt.core.Signature
 import de.cau.cs.kieler.kiml.klayoutdata.KShapeLayout
 import java.util.Collections
+import de.cau.cs.kieler.klassviz.model.classdata.KTypeReference
 
 /**
  * Synthesis of class diagrams using the Classdata meta model.
@@ -69,6 +71,8 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
     
     // Various extensions that make it easier to generate a KGraph
     @Inject extension ClassDataExtensions
+//    @Inject extension IMetaModelExtensions
+    
     @Inject extension KColorExtensions
     @Inject extension KContainerRenderingExtensions
     @Inject extension KEdgeExtensions
@@ -138,6 +142,8 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
         SynthesisOption::createCheckOption("Inheritance", true)
     private static val SynthesisOption EDGES_ASSOCIATION =
         SynthesisOption::createCheckOption("Associations", true)
+    private static val SynthesisOption EDGES_COMBINATION =
+        SynthesisOption::createCheckOption("Combined associations", true)
     
     /**
      * Returns our list of synthesis options to be displayed.
@@ -147,7 +153,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
             VISUALIZE_ALL_OR_SELECTION, CLASSES_SEPARATOR, CLASSES_FQNAME, ATTRIBUTES_SEPARATOR,
             ATTRIBUTES_PRIVATE, ATTRIBUTES_TYPE, METHODS_SEPARATOR,
             METHODS_PRIVATE, METHODS_TYPE, METHODS_PARAMETERS, EDGES_SEPARATOR,
-            EDGES_INHERITANCE, EDGES_ASSOCIATION)
+            EDGES_INHERITANCE, EDGES_ASSOCIATION, EDGES_COMBINATION)
     }
     
     /**
@@ -246,6 +252,12 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
             if (!input.resolved) {
                 val m = EcoreUtil.copy(input)
                 m.resolved = true
+                
+                try {
+                    val me = Class.forName("de.cau.cs.kieler.klassviz.xcore.XcoreExtensions").newInstance as IMetaModelExtensions
+                    me.resolve(m)
+                } catch (ClassNotFoundException exception) {
+                }
                 try {
                     jdtModelTransformation.resolve(m)
                 } catch (JavaModelException exception) {
@@ -290,8 +302,8 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
                     type.createInterfaceInheritanceEdge
                 }
                 
-                // If associations shall be visualized, create all association edges with their
-                // multiplicities for each node
+                // If associations shall be visualized,
+                //  create all association edges with their multiplicities for each node
                 if (EDGES_ASSOCIATION.booleanValue) {
                     type.createAssociationEdges(classModel)
                 }
@@ -389,12 +401,11 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
                 classData.fields.forEach [ eField |
                     // If the field will be visualized as a dependency, we don't need to process it
                     // at this point
-                    if (!hasDependency(classData, classModel, eField).get(0)
-                        || !EDGES_ASSOCIATION.booleanValue) {
+
+                    if (!EDGES_ASSOCIATION.booleanValue || !eField.hasDependency(classModel).get()) {
 
                         // If only private fields shall be added only add non private fields...
-                        if (eField.visibility != KVisibility::PRIVATE
-                                || ATTRIBUTES_PRIVATE.booleanValue) {
+                        if (ATTRIBUTES_PRIVATE.booleanValue || eField.visibility != KVisibility::PRIVATE) {
                             // If only selected fields shall be visualized only add selected fields
                             if (eField.selected
                                     || VISUALIZE_ALL_OR_SELECTION.objectValue == VISUALIZE_ALL) {
@@ -424,7 +435,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
                     
                     Collections.sort(fields, new PairComparator<KVisibility, String>)
                     fields.forEach [ field |
-                        rect.addClassMember(field.key, field.value)
+                        rect.addClassMember(field.first, field.second)
                     ]
                 }
                 
@@ -434,34 +445,48 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
                     
                     Collections.sort(methods, new PairComparator<KVisibility, String>)
                     methods.forEach [ method |
-                        rect.addClassMember(method.key, method.value)
+                        rect.addClassMember(method.first, method.second)
                     ]
                 }
             ]
         ]
     }    
     
-    // Check if field has an association-dependency.
+    // Check if field has an association-dependency at all, not to a specific type.
     // A field has dependency when it's type equals one of the visualized classes
     // or a generic parameter type equals one of the visualized classes. 
     def private create fieldHasDependency : new Maybe<Boolean>(false)
-            hasDependency(KType classData, KClassModel classModel, KField eField) {
-        if (eField.type != null && eField.type.referenceType != null
-                && eField.type.referenceType != classData) {
+//            hasDependency(KType classData, KClassModel classModel, KField eField) {
+            hasDependency(KField eField, KClassModel classModel) {
+
+        if (eField.type?.referenceType != null
+                // self dependencies are not respected yet!
+                && eField.type.referenceType != eField.eContainer) {
             fieldHasDependency.set(true)
             return
+
         } else if (eField.type == null || eField.type.signature == null) {
             return
+
         }
+
         val genericStart = eField.type.signature.indexOf('<')
         val fieldTypeFQN = if (genericStart < 0)
             eField.type.signature
             else eField.type.signature.substring(0, genericStart)
-        if (Signature.getQualifier(fieldTypeFQN).equals("java.util")) {
-            val referencedClazz = Class.forName(fieldTypeFQN)
+//        if (Signature.getQualifier(fieldTypeFQN).equals("java.util")) {
+
+        var Class<?> referencedClazz = null;
+        try {
+            referencedClazz = Class.forName(fieldTypeFQN)
+        } catch (ClassNotFoundException e) {
+            return;
+        }
             if (Collection.isAssignableFrom(referencedClazz)) {
-                val genericOfCollection = Signature.getTypeErasure(eField.type.signature.substring(
-                    genericStart + 1, eField.type.signature.lastIndexOf(">")).trim)
+                val s = eField.type.signature.substring(
+                    genericStart + 1, eField.type.signature.lastIndexOf(">")).trim;
+                val genericOfCollection = Signature.getTypeErasure(s
+                    )
                 fieldHasDependency.set(classModel.packages.exists [ pck |
                     pck.types.exists [ classDataToBeCompared |
                         genericOfCollection == classDataToBeCompared.name
@@ -480,7 +505,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
                     ]
                 ])
             }
-        }
+//        }
     }
 
     // For each class visualize all relationships to super classes that are visualized.
@@ -530,88 +555,202 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
 
     // For each field in each class add their associations if there are any. Also add the multiplicities.
     def private createAssociationEdges(KType classData, KClassModel classModel) {
-        classModel.packages.forEach [
-            it.types.filter[it != classData].forEach [ classDataToBeCompared |
-                val lowerBound = new Maybe(0)
-                val upperBound = new Maybe(0)
-                classData.fields.forEach [ eField |
-                    // Don't check again if the field has no association relation anyways.
-                    if (!hasDependency(classData, classModel, eField).get()) {
-                        return
-                    }
-                    val genericStart = eField.type.signature.indexOf('<')
-                    val fieldTypeFQN = if (genericStart < 0)
-                        eField.type.signature
-                        else eField.type.signature.substring(0, genericStart)
-                    if (Signature.getQualifier(fieldTypeFQN).equals("java.util")) {
-                        val referencedClazz = Class.forName(fieldTypeFQN)
-                        if (Collection.isAssignableFrom(referencedClazz)) {
-                            val genericOfCollection = Signature.getTypeErasure(
-                                eField.type.signature.substring(genericStart + 1,
-                                eField.type.signature.lastIndexOf(">")).trim)
-                            if (genericOfCollection == classDataToBeCompared.name) {
+        val targets = newHashMap();
 
-                                // If the field's generic parameter type is the checked class, 
-                                // set the upper bound of the multiplicity to infinity (-1).
-                                upperBound.set(-1)
-                            }
-                        } else if (Map.isAssignableFrom(referencedClazz)) {
-                            val separatedGenericsOfMap = Signature.getTypeArguments(
-                                    Signature.createTypeSignature(eField.type.signature, true)).map[
-                                Signature.getTypeErasure(Signature.toString(it))
-                            ]
-                            separatedGenericsOfMap.forEach [
-                                if (it == classDataToBeCompared.name) {
+        classData.fields.filter[
+            // skip the field if it has no association relation at all
+            it.hasDependency(classModel).get() ].forEach[ eField |
 
-                                    // If the field's generic parameter type is the checked class, 
-                                    // set the upper bound of the multiplicity to infinity (-1).
-                                    upperBound.set(-1)
-                                }
-                            ]
-                        }
-                    }
-                    if (eField.type.referenceType == classDataToBeCompared) {
+            val refType = eField.type.referenceType
+            val signature = eField.type?.signature
 
-                        // If the field's type is the checked class, 
-                        // increment the upper bound of the multiplicity.
-                        if (upperBound.get >= 0) {
-                            upperBound.set(upperBound.get + 1)
+            if (refType != null) {
+
+                val multiplicities = if (targets.containsKey(refType)) {
+                    targets.get(refType)
+                } else {
+                    Pair.of(0, 0) => [
+                        targets.put(refType, it);
+                    ]
+                }
+
+                // If the field's type is the checked class, 
+                //  increment the upper bound of the multiplicity.
+                if (multiplicities.second != -1) {
+                    multiplicities.second = multiplicities.second + 1;
+                }
+                // If the field is final, increment the lower bound, too.
+                if (eField.isFinal) {
+                    multiplicities.first = multiplicities.first + 1;
+                }
+
+            } else if (!eField.type.signature.nullOrEmpty && !eField.type.typeParameters.nullOrEmpty && [ String className |
+                        try {
+                            val Class<?> c = Class.forName(Signature.getTypeErasure(className));
+                            return Collection.isAssignableFrom(c) || Map.isAssignableFrom(c)
+                        } catch (Exception e) {
+                            return false;
                         }
-                        // If the field is final, increment the lower bound, too.
-                        if (eField.isFinal) {
-                            lowerBound.set(lowerBound.get + 1)
-                        }
-                    }
-                ]
-                if (lowerBound.get != 0 || upperBound.get != 0) {
-    
-                    // TODO: Self-associations not supported yet.
-                    if (!(classData.node == classDataToBeCompared.node)) {
-    
-                        // Add an edge labeled with the multiplicities.
-                        createEdge.associateWith(classData) => [
-                            it.source = classData.node
-                            it.target = classDataToBeCompared.node
-                            it.addPolyline().associateWith(classData) => [
-                                it.addAssociationArrowDecorator
-                                it.foreground = modelOptions.getProperty(OPTION_EDGE_COLOR).color
-                            ]
-                            val multiplicity =
-                                if (upperBound.get < 0) {
-                                    Integer.toString(lowerBound.get) + "..*"
-                                } else if (lowerBound.get == upperBound.get) {
-                                    Integer.toString(lowerBound.get)
-                                } else {
-                                    Integer.toString(lowerBound.get) + ".." + Integer.toString(upperBound.get)
-                                }
-                            it.createLabel.configureHeadEdgeLabel(multiplicity, KlighdConstants::DEFAULT_FONT_SIZE,
-                                modelOptions.getProperty(OPTION_FONT_NAME)).associateWith(classData)
-                            it.setLayoutOption(LayoutOptions::EDGE_TYPE, EdgeType::ASSOCIATION)
+                    ].apply(eField.type.signature)) {
+                        
+                eField.type.typeParameters.filter[ it.referenceType != null ].forEach[
+                    val paramType = it.referenceType
+                    val multiplicities = if (targets.containsKey(paramType)) {
+                        targets.get(paramType)
+                    } else {
+                        Pair.of(0, 0) => [
+                            targets.put(paramType, it);
                         ]
                     }
+
+                    multiplicities.second = -1; 
+                ]
+            } else if (signature != null) {
+                val multiplicities = if (targets.containsKey(signature)) {
+                    targets.get(signature)
+                } else {
+                    Pair.of(0, 0) => [
+                        targets.put(refType, it);
+                    ]
                 }
+//                multiplicities.second =
+//                    eField.type.evaluateTypeSignature(/* classDataToBeCompared,*/ multiplicities.second);
+                val genericStart = signature.indexOf('<')
+                val fieldTypeFQN =
+                        if (genericStart < 0) signature else signature.substring(0, genericStart)
+        
+                val referencedClazz = Class.forName(fieldTypeFQN)
+                
+                // distinguish the field types wrt. being a 'Collection' or a 'Map',
+                //  consider fields with such types and a type parameter to have a dependency to the parameter type
+                if (Collection.isAssignableFrom(referencedClazz)) {
+                    val genericOfCollection = Signature.getTypeErasure(
+                        signature.substring(genericStart + 1,
+                        signature.lastIndexOf(">")).trim)
+        //            if (genericOfCollection == classDataToBeCompared.name) {
+        //    
+        //                // If the field's generic parameter type is the checked class, 
+        //                // set the upper bound of the multiplicity to infinity (-1).
+        //                result = -1;
+        //            }
+                } else if (Map.isAssignableFrom(referencedClazz)) {
+                    val separatedGenericsOfMap = Signature.getTypeArguments(
+                            Signature.createTypeSignature(signature, true)).map[
+                        Signature.getTypeErasure(Signature.toString(it))
+                    ]
+                    for (it : separatedGenericsOfMap) {
+        //                if (it == classDataToBeCompared.name) {
+        //    
+        //                    // If the field's generic parameter type is the checked class, 
+        //                    // set the upper bound of the multiplicity to infinity (-1).
+        //                    result = -1;
+        //                }
+                    }
+                }
+            }
+
+            if (!EDGES_COMBINATION.booleanValue) {
+                // Add an edge labeled with the multiplicities.
+                (if (refType != null) newArrayList(refType)
+                    else if (!eField.type.typeParameters.nullOrEmpty) eField.type.typeParameters.map[it.referenceType]
+                    else emptyList()).forEach[ type |
+                        
+                createEdge.associateWith(classData) => [
+                    it.source = classData.node
+                    it.target = type.node
+                    it.addPolyline().associateWith(eField) => [
+                        it.addAssociationArrowDecorator
+                        it.foreground = modelOptions.getProperty(OPTION_EDGE_COLOR).color
+                    ]
+//                    val multiplicityString =
+//                        if (multiplicities.second < 0) {
+//                            Integer.toString(multiplicities.first) + "..*"
+//                        } else if (multiplicities.first == multiplicities.second) {
+//                            Integer.toString(multiplicities.first)
+//                        } else {
+//                            Integer.toString(multiplicities.first) + ".." + Integer.toString(multiplicities.second)
+//                        }
+//                    it.createLabel.configureHeadEdgeLabel(multiplicityString, KlighdConstants::DEFAULT_FONT_SIZE,
+//                        modelOptions.getProperty(OPTION_FONT_NAME)).associateWith(classData)
+                    it.setLayoutOption(LayoutOptions::EDGE_TYPE, EdgeType::ASSOCIATION)
+                ]
+                    ]
+            }
+        ];
+        
+        if (!EDGES_COMBINATION.booleanValue) {
+            return;
+        }
+                
+        for (entry : targets.entrySet) {
+            val classDataToBeCompared = entry.key;
+            val multiplicities = entry.value
+            if (multiplicities.first != 0 || multiplicities.second != 0) {
+
+                // TODO: Self-associations not supported yet.
+                if (classData.node == classDataToBeCompared.node) {
+                    return;
+                }
+
+                // Add an edge labeled with the multiplicities.
+                createEdge.associateWith(classData) => [
+                    it.source = classData.node
+                    it.target = classDataToBeCompared.node
+                    it.addPolyline().associateWith(classData) => [
+                        it.addAssociationArrowDecorator
+                        it.foreground = modelOptions.getProperty(OPTION_EDGE_COLOR).color
+                    ]
+                    val multiplicityString =
+                        if (multiplicities.second < 0) {
+                            Integer.toString(multiplicities.first) + "..*"
+                        } else if (multiplicities.first == multiplicities.second) {
+                            Integer.toString(multiplicities.first)
+                        } else {
+                            Integer.toString(multiplicities.first) + ".." + Integer.toString(multiplicities.second)
+                        }
+                    it.createLabel.configureHeadEdgeLabel(multiplicityString, KlighdConstants::DEFAULT_FONT_SIZE,
+                        modelOptions.getProperty(OPTION_FONT_NAME)).associateWith(classData)
+                    it.setLayoutOption(LayoutOptions::EDGE_TYPE, EdgeType::ASSOCIATION)
+                ]
+            }
+        }
+    }
+
+    def private KType evaluateTypeSignature(KTypeReference type, /* KType classDataToBeCompared,*/ Pair<Integer, Integer> multiplicites) {
+
+        val genericStart = type.signature.indexOf('<')
+        val fieldTypeFQN =
+                if (genericStart < 0) type.signature else type.signature.substring(0, genericStart)
+
+        val referencedClazz = Class.forName(fieldTypeFQN)
+        
+        // distinguish the field types wrt. being a 'Collection' or a 'Map',
+        //  consider fields with such types and a type parameter to have a dependency to the parameter type
+        if (Collection.isAssignableFrom(referencedClazz)) {
+            val genericOfCollection = Signature.getTypeErasure(
+                type.signature.substring(genericStart + 1,
+                type.signature.lastIndexOf(">")).trim)
+//            if (genericOfCollection == classDataToBeCompared.name) {
+//    
+//                // If the field's generic parameter type is the checked class, 
+//                // set the upper bound of the multiplicity to infinity (-1).
+//                result = -1;
+//            }
+        } else if (Map.isAssignableFrom(referencedClazz)) {
+            val separatedGenericsOfMap = Signature.getTypeArguments(
+                    Signature.createTypeSignature(type.signature, true)).map[
+                Signature.getTypeErasure(Signature.toString(it))
             ]
-        ]
+            for (it : separatedGenericsOfMap) {
+//                if (it == classDataToBeCompared.name) {
+//    
+//                    // If the field's generic parameter type is the checked class, 
+//                    // set the upper bound of the multiplicity to infinity (-1).
+//                    result = -1;
+//                }
+            }
+        }
+        return null;
     }
 
     // Visualize the explicit dependencies in the model.
@@ -963,7 +1102,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
             it.points += createKPosition(LEFT, 0, 0, TOP, 0, 0)
             it.points += createKPosition(RIGHT, 0, 0, TOP, 0, 0.5f)
             it.points += createKPosition(LEFT, 0, 0, BOTTOM, 0, 0)
-            it.setDecoratorPlacementData(12, 12, -6, 1.0f, true)
+            it.setDecoratorPlacementData(12, 8, -6, 1.0f, true)
             it.foreground = modelOptions.getProperty(OPTION_EDGE_COLOR).color
         ]
     }

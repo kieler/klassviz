@@ -14,6 +14,7 @@
  */
 package de.cau.cs.kieler.klassviz.model.classdata;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -27,6 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getName <em>Name</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getSignature <em>Signature</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getReferenceType <em>Reference Type</em>}</li>
+ *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getTypeParameters <em>Type Parameters</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,81 +38,97 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface KTypeReference extends EObject {
     /**
-     * Returns the value of the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Name</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Name</em>' attribute.
-     * @see #setName(String)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKTypeReference_Name()
-     * @model
-     * @generated
-     */
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKTypeReference_Name()
+	 * @model
+	 * @generated
+	 */
     String getName();
 
     /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getName <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Name</em>' attribute.
-     * @see #getName()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
     void setName(String value);
 
     /**
-     * Returns the value of the '<em><b>Signature</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Signature</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Signature</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Signature</em>' attribute.
-     * @see #setSignature(String)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKTypeReference_Signature()
-     * @model
-     * @generated
-     */
+	 * @return the value of the '<em>Signature</em>' attribute.
+	 * @see #setSignature(String)
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKTypeReference_Signature()
+	 * @model
+	 * @generated
+	 */
     String getSignature();
 
     /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getSignature <em>Signature</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getSignature <em>Signature</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Signature</em>' attribute.
-     * @see #getSignature()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Signature</em>' attribute.
+	 * @see #getSignature()
+	 * @generated
+	 */
     void setSignature(String value);
 
     /**
-     * Returns the value of the '<em><b>Reference Type</b></em>' reference.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Reference Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Reference Type</em>' reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Reference Type</em>' reference.
-     * @see #setReferenceType(KType)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKTypeReference_ReferenceType()
-     * @model
-     * @generated
-     */
+	 * @return the value of the '<em>Reference Type</em>' reference.
+	 * @see #setReferenceType(KType)
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKTypeReference_ReferenceType()
+	 * @model
+	 * @generated
+	 */
     KType getReferenceType();
 
     /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getReferenceType <em>Reference Type</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getReferenceType <em>Reference Type</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Reference Type</em>' reference.
-     * @see #getReferenceType()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Reference Type</em>' reference.
+	 * @see #getReferenceType()
+	 * @generated
+	 */
     void setReferenceType(KType value);
+
+				/**
+	 * Returns the value of the '<em><b>Type Parameters</b></em>' containment reference list.
+	 * The list contents are of type {@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type Parameters</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type Parameters</em>' containment reference list.
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKTypeReference_TypeParameters()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<KTypeReference> getTypeParameters();
 
 } // KTypeReference

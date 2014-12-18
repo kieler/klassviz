@@ -35,55 +35,55 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface KOption extends EObject {
     /**
-     * Returns the value of the '<em><b>Key</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Key</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Key</em>' attribute.
-     * @see #setKey(String)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKOption_Key()
-     * @model required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Key</em>' attribute.
+	 * @see #setKey(String)
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKOption_Key()
+	 * @model required="true"
+	 * @generated
+	 */
     String getKey();
 
     /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KOption#getKey <em>Key</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KOption#getKey <em>Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Key</em>' attribute.
-     * @see #getKey()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Key</em>' attribute.
+	 * @see #getKey()
+	 * @generated
+	 */
     void setKey(String value);
 
     /**
-     * Returns the value of the '<em><b>Value</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Value</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Value</em>' attribute.
-     * @see #setValue(String)
-     * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKOption_Value()
-     * @model required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Value</em>' attribute.
+	 * @see #setValue(String)
+	 * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKOption_Value()
+	 * @model required="true"
+	 * @generated
+	 */
     String getValue();
 
     /**
-     * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KOption#getValue <em>Value</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link de.cau.cs.kieler.klassviz.model.classdata.KOption#getValue <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Value</em>' attribute.
-     * @see #getValue()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * @see #getValue()
+	 * @generated
+	 */
     void setValue(String value);
 
 } // KOption
