@@ -389,7 +389,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
                 classData.fields.forEach [ eField |
                     // If the field will be visualized as a dependency, we don't need to process it
                     // at this point
-                    if (!hasDependency(classData, classModel, eField).get(0)
+                    if (!hasDependency(classData, classModel, eField).head
                         || !EDGES_ASSOCIATION.booleanValue) {
 
                         // If only private fields shall be added only add non private fields...
