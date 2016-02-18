@@ -52,7 +52,7 @@
         <repository>
           <id>p2.kieler</id>
           <layout>p2</layout>
-          <url>http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/release_pragmatics_2015-06/</url>
+          <url>http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/release_pragmatics_2016-02/</url>
         </repository>
       </repositories>
       
