@@ -1,14 +1,15 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: KIELER Class Diagram Visualization Model
+Bundle-Name: %pluginName
 Bundle-SymbolicName: de.cau.cs.kieler.klassviz.model;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: OpenKieler
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: de.cau.cs.kieler.klassviz.model.classdata,
  de.cau.cs.kieler.klassviz.model.classdata.impl,
  de.cau.cs.kieler.klassviz.model.classdata.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore
+ org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

@@ -14,5 +14,27 @@
  */
 package de.cau.cs.kieler.klassviz.text.serializer;
 
+import org.eclipse.emf.ecore.EObject;
+
+import de.cau.cs.kieler.klassviz.model.classdata.KTypeReference;
+
 public class ClassDataSemanticSequencer extends AbstractClassDataSemanticSequencer {
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void sequence_KTypeReference(EObject context, KTypeReference typeRef) {
+        final String origSig = typeRef.getSignature();
+        // Use only the simple name for serialization (i.e. the part after the last '.').
+        String tmpSig = origSig.substring(origSig.lastIndexOf('.') + 1);
+        // Remove any type generics.
+        if (tmpSig.contains("<")) {
+            tmpSig = tmpSig.substring(0, tmpSig.indexOf('<'));
+        }
+        typeRef.setSignature(tmpSig);
+        super.sequence_KTypeReference(context, typeRef);
+        // Restore the original signature.
+        typeRef.setSignature(origSig);
+    }
 }

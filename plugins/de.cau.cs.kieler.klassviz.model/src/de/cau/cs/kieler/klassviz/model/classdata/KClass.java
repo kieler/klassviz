@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KClass#getSuperClass <em>Super Class</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KClass#getInterfaces <em>Interfaces</em>}</li>
@@ -30,7 +31,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KClass#isFinal <em>Final</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KClass#isAbstract <em>Abstract</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKClass()
  * @model
@@ -48,7 +48,7 @@ public interface KClass extends KType {
      * @return the value of the '<em>Super Class</em>' reference.
      * @see #setSuperClass(KClass)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKClass_SuperClass()
-     * @model
+     * @model transient="true"
      * @generated
      */
     KClass getSuperClass();
@@ -74,7 +74,7 @@ public interface KClass extends KType {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Interfaces</em>' reference list.
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKClass_Interfaces()
-     * @model
+     * @model transient="true"
      * @generated
      */
     EList<KInterface> getInterfaces();
@@ -90,7 +90,7 @@ public interface KClass extends KType {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Type Parameters</em>' attribute list.
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKClass_TypeParameters()
-     * @model
+     * @model transient="true"
      * @generated
      */
     EList<String> getTypeParameters();
@@ -107,7 +107,7 @@ public interface KClass extends KType {
      * @return the value of the '<em>Final</em>' attribute.
      * @see #setFinal(boolean)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKClass_Final()
-     * @model default="false" required="true"
+     * @model default="false" required="true" transient="true"
      * @generated
      */
     boolean isFinal();
@@ -134,7 +134,7 @@ public interface KClass extends KType {
      * @return the value of the '<em>Abstract</em>' attribute.
      * @see #setAbstract(boolean)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKClass_Abstract()
-     * @model default="false" required="true"
+     * @model default="false" required="true" transient="true"
      * @generated
      */
     boolean isAbstract();

@@ -29,12 +29,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeReferenceImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeReferenceImpl#getSignature <em>Signature</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeReferenceImpl#getReferenceType <em>Reference Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

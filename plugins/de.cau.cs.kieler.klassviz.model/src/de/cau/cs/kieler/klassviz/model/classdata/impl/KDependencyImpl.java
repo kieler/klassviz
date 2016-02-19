@@ -32,11 +32,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KDependencyImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KDependencyImpl#getLabel <em>Label</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassImpl#getSuperClass <em>Super Class</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassImpl#getInterfaces <em>Interfaces</em>}</li>
@@ -45,7 +46,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassImpl#isFinal <em>Final</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassImpl#isAbstract <em>Abstract</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

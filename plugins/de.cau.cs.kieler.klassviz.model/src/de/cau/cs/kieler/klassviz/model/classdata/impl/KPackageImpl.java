@@ -40,11 +40,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KPackageImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KPackageImpl#getTypes <em>Types</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

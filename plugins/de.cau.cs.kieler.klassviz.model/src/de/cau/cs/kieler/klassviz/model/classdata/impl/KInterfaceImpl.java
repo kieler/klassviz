@@ -32,11 +32,11 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KInterfaceImpl#getSuperInterfaces <em>Super Interfaces</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KInterfaceImpl#getTypeParameters <em>Type Parameters</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

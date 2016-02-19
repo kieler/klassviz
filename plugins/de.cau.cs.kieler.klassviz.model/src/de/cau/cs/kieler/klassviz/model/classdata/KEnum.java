@@ -23,10 +23,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KEnum#getConstants <em>Constants</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKEnum()
  * @model
@@ -44,7 +44,7 @@ public interface KEnum extends KType {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Constants</em>' attribute list.
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKEnum_Constants()
-     * @model
+     * @model transient="true"
      * @generated
      */
     EList<String> getConstants();

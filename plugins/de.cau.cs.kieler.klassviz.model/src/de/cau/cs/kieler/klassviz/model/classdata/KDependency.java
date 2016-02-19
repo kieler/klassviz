@@ -23,11 +23,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KDependency#getTarget <em>Target</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KDependency#getLabel <em>Label</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKDependency()
  * @model

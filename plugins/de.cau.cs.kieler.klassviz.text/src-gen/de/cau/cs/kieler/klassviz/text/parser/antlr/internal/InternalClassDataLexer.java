@@ -13,29 +13,29 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalClassDataLexer extends Lexer {
     public static final int RULE_BOOLEAN=6;
-    public static final int RULE_ID=4;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int RULE_NATURAL=8;
-    public static final int EOF=-1;
-    public static final int RULE_SL_COMMENT=10;
-    public static final int RULE_ML_COMMENT=9;
-    public static final int RULE_TFLOAT=7;
-    public static final int T__19=19;
     public static final int RULE_STRING=5;
-    public static final int T__16=16;
+    public static final int RULE_SL_COMMENT=10;
+    public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__18=18;
+    public static final int T__16=16;
     public static final int T__17=17;
+    public static final int T__18=18;
     public static final int T__12=12;
-    public static final int T__14=14;
     public static final int T__13=13;
+    public static final int T__14=14;
+    public static final int EOF=-1;
+    public static final int RULE_TFLOAT=7;
+    public static final int RULE_ID=4;
     public static final int RULE_WS=11;
+    public static final int T__26=26;
+    public static final int T__22=22;
+    public static final int RULE_NATURAL=8;
+    public static final int RULE_ML_COMMENT=9;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -1709,13 +1709,13 @@ public class InternalClassDataLexer extends Lexer {
     static final String DFA25_maxS =
         "\1\71\1\uffff\1\145\3\uffff";
     static final String DFA25_acceptS =
-        "\1\uffff\1\1\1\uffff\1\3\1\4\1\2";
+        "\1\uffff\1\1\1\uffff\1\3\1\2\1\4";
     static final String DFA25_specialS =
         "\6\uffff}>";
     static final String[] DFA25_transitionS = {
             "\1\1\1\uffff\1\1\1\3\1\uffff\12\2",
             "",
-            "\1\5\1\uffff\12\2\13\uffff\1\4\37\uffff\1\4",
+            "\1\4\1\uffff\12\2\13\uffff\1\5\37\uffff\1\5",
             "",
             "",
             ""
@@ -1755,40 +1755,19 @@ public class InternalClassDataLexer extends Lexer {
         }
     }
     static final String DFA35_eotS =
-        "\1\uffff\3\22\3\uffff\3\22\3\uffff\1\36\2\22\1\uffff\1\41\4\uffff"+
-        "\10\22\1\uffff\2\22\3\uffff\20\22\1\76\1\22\1\100\6\22\1\107\1\uffff"+
-        "\1\22\1\uffff\1\100\1\111\3\22\1\115\1\uffff\1\116\1\uffff\1\22"+
-        "\1\120\1\121\2\uffff\1\22\2\uffff\1\123\1\uffff";
+        "\1\uffff\3\22\3\uffff\3\22\3\uffff\1\36\2\22\1\uffff\1\41\4\uffff\10\22\1\uffff\2\22\3\uffff\20\22\1\76\1\22\1\100\6\22\1\107\1\uffff\1\22\1\uffff\1\100\1\111\3\22\1\115\1\uffff\1\116\1\uffff\1\22\1\120\1\121\2\uffff\1\22\2\uffff\1\123\1\uffff";
     static final String DFA35_eofS =
         "\124\uffff";
     static final String DFA35_minS =
-        "\1\11\1\155\1\141\1\165\3\uffff\1\154\1\156\1\145\3\uffff\1\60\1"+
-        "\162\1\141\1\uffff\1\56\2\uffff\1\52\1\uffff\1\160\1\164\1\157\1"+
-        "\143\1\156\1\141\1\165\1\160\1\uffff\1\165\1\154\3\uffff\1\157\1"+
-        "\145\1\152\1\153\1\144\1\163\1\155\2\145\1\163\2\162\1\145\1\141"+
-        "\1\154\1\163\1\60\1\156\1\60\1\145\1\164\1\146\1\143\1\147\1\145"+
-        "\1\60\1\uffff\1\144\1\uffff\2\60\1\141\1\164\1\145\1\60\1\uffff"+
-        "\1\60\1\uffff\1\143\2\60\2\uffff\1\145\2\uffff\1\60\1\uffff";
+        "\1\11\1\155\1\141\1\165\3\uffff\1\154\1\156\1\145\3\uffff\1\60\1\162\1\141\1\uffff\1\56\2\uffff\1\52\1\uffff\1\160\1\164\1\157\1\143\1\156\1\141\1\165\1\160\1\uffff\1\165\1\154\3\uffff\1\157\1\145\1\152\1\153\1\144\1\163\1\155\2\145\1\163\2\162\1\145\1\141\1\154\1\163\1\60\1\156\1\60\1\145\1\164\1\146\1\143\1\147\1\145\1\60\1\uffff\1\144\1\uffff\2\60\1\141\1\164\1\145\1\60\1\uffff\1\60\1\uffff\1\143\2\60\2\uffff\1\145\2\uffff\1\60\1\uffff";
     static final String DFA35_maxS =
-        "\1\175\1\156\1\162\1\165\3\uffff\1\154\1\156\1\145\3\uffff\1\71"+
-        "\1\162\1\141\1\uffff\1\145\2\uffff\1\57\1\uffff\1\160\1\164\1\157"+
-        "\1\143\1\156\1\141\1\165\1\160\1\uffff\1\165\1\154\3\uffff\1\157"+
-        "\1\145\1\152\1\153\1\144\1\163\1\155\2\145\1\163\2\162\1\145\1\141"+
-        "\1\154\1\163\1\172\1\156\1\172\1\145\1\164\1\146\1\143\1\147\1\145"+
-        "\1\172\1\uffff\1\144\1\uffff\2\172\1\141\1\164\1\145\1\172\1\uffff"+
-        "\1\172\1\uffff\1\143\2\172\2\uffff\1\145\2\uffff\1\172\1\uffff";
+        "\1\175\1\156\1\162\1\165\3\uffff\1\154\1\156\1\145\3\uffff\1\71\1\162\1\141\1\uffff\1\145\2\uffff\1\57\1\uffff\1\160\1\164\1\157\1\143\1\156\1\141\1\165\1\160\1\uffff\1\165\1\154\3\uffff\1\157\1\145\1\152\1\153\1\144\1\163\1\155\2\145\1\163\2\162\1\145\1\141\1\154\1\163\1\172\1\156\1\172\1\145\1\164\1\146\1\143\1\147\1\145\1\172\1\uffff\1\144\1\uffff\2\172\1\141\1\164\1\145\1\172\1\uffff\1\172\1\uffff\1\143\2\172\2\uffff\1\145\2\uffff\1\172\1\uffff";
     static final String DFA35_acceptS =
-        "\4\uffff\1\4\1\6\1\7\3\uffff\1\14\1\15\1\16\3\uffff\1\21\1\uffff"+
-        "\1\23\1\24\1\uffff\1\27\10\uffff\1\17\2\uffff\1\22\1\25\1\26\32"+
-        "\uffff\1\12\1\uffff\1\20\6\uffff\1\10\1\uffff\1\1\3\uffff\1\3\1"+
-        "\13\1\uffff\1\2\1\5\1\uffff\1\11";
+        "\4\uffff\1\4\1\6\1\7\3\uffff\1\14\1\15\1\16\3\uffff\1\21\1\uffff\1\23\1\24\1\uffff\1\27\10\uffff\1\17\2\uffff\1\22\1\25\1\26\32\uffff\1\12\1\uffff\1\20\6\uffff\1\10\1\uffff\1\1\3\uffff\1\3\1\13\1\uffff\1\2\1\5\1\uffff\1\11";
     static final String DFA35_specialS =
         "\124\uffff}>";
     static final String[] DFA35_transitionS = {
-            "\2\25\2\uffff\1\25\22\uffff\1\25\1\uffff\1\23\5\uffff\1\12\1"+
-            "\14\1\uffff\1\20\1\13\1\20\1\15\1\24\12\21\3\uffff\1\4\3\uffff"+
-            "\32\22\3\uffff\2\22\1\uffff\1\22\1\3\1\7\1\11\1\10\1\17\2\22"+
-            "\1\1\6\22\1\2\3\22\1\16\6\22\1\5\1\uffff\1\6",
+            "\2\25\2\uffff\1\25\22\uffff\1\25\1\uffff\1\23\5\uffff\1\12\1\14\1\uffff\1\20\1\13\1\20\1\15\1\24\12\21\3\uffff\1\4\3\uffff\32\22\3\uffff\2\22\1\uffff\1\22\1\3\1\7\1\11\1\10\1\17\2\22\1\1\6\22\1\2\3\22\1\16\6\22\1\5\1\uffff\1\6",
             "\1\26\1\27",
             "\1\31\20\uffff\1\30",
             "\1\32",

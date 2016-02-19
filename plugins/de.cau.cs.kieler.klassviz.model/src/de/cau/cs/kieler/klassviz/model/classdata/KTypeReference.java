@@ -23,12 +23,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getName <em>Name</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getSignature <em>Signature</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KTypeReference#getReferenceType <em>Reference Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKTypeReference()
  * @model
@@ -46,7 +46,7 @@ public interface KTypeReference extends EObject {
      * @return the value of the '<em>Name</em>' attribute.
      * @see #setName(String)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKTypeReference_Name()
-     * @model
+     * @model transient="true"
      * @generated
      */
     String getName();
@@ -98,7 +98,7 @@ public interface KTypeReference extends EObject {
      * @return the value of the '<em>Reference Type</em>' reference.
      * @see #setReferenceType(KType)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKTypeReference_ReferenceType()
-     * @model
+     * @model transient="true"
      * @generated
      */
     KType getReferenceType();

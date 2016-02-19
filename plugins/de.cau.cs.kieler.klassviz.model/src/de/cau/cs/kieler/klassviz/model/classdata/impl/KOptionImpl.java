@@ -30,11 +30,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KOptionImpl#getKey <em>Key</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KOptionImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

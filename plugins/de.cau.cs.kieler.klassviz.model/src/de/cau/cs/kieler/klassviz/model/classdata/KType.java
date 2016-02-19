@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#isSelected <em>Selected</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getName <em>Name</em>}</li>
@@ -35,7 +36,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#isStatic <em>Static</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KType#getVisibility <em>Visibility</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType()
  * @model abstract="true"
@@ -54,7 +54,7 @@ public interface KType extends EObject {
      * @return the value of the '<em>Selected</em>' attribute.
      * @see #setSelected(boolean)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType_Selected()
-     * @model default="false"
+     * @model default="false" transient="true"
      * @generated
      */
     boolean isSelected();
@@ -171,7 +171,7 @@ public interface KType extends EObject {
      * @return the value of the '<em>Static</em>' attribute.
      * @see #setStatic(boolean)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType_Static()
-     * @model default="false" required="true"
+     * @model default="false" required="true" transient="true"
      * @generated
      */
     boolean isStatic();
@@ -200,7 +200,7 @@ public interface KType extends EObject {
      * @see de.cau.cs.kieler.klassviz.model.classdata.KVisibility
      * @see #setVisibility(KVisibility)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKType_Visibility()
-     * @model default="PACKAGE" required="true"
+     * @model default="PACKAGE" required="true" transient="true"
      * @generated
      */
     KVisibility getVisibility();

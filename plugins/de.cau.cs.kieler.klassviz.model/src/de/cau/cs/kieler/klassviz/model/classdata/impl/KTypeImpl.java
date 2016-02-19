@@ -43,6 +43,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl#isSelected <em>Selected</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl#getName <em>Name</em>}</li>
@@ -53,7 +54,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl#isStatic <em>Static</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KTypeImpl#getVisibility <em>Visibility</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -24,29 +24,29 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_BOOLEAN", "RULE_TFLOAT", "RULE_NATURAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'import'", "'project'", "'bundle'", "'='", "'package'", "'{'", "'}'", "'class'", "'interface'", "'enum'", "'depend'", "'('", "','", "')'", "'.'"
     };
     public static final int RULE_BOOLEAN=6;
-    public static final int RULE_ID=4;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int RULE_NATURAL=8;
-    public static final int RULE_SL_COMMENT=10;
-    public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=9;
-    public static final int RULE_TFLOAT=7;
-    public static final int T__19=19;
     public static final int RULE_STRING=5;
-    public static final int T__16=16;
+    public static final int RULE_SL_COMMENT=10;
+    public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__18=18;
+    public static final int T__16=16;
     public static final int T__17=17;
+    public static final int T__18=18;
     public static final int T__12=12;
-    public static final int T__14=14;
     public static final int T__13=13;
+    public static final int T__14=14;
+    public static final int EOF=-1;
+    public static final int RULE_TFLOAT=7;
+    public static final int RULE_ID=4;
     public static final int RULE_WS=11;
+    public static final int T__26=26;
+    public static final int T__22=22;
+    public static final int RULE_NATURAL=8;
+    public static final int RULE_ML_COMMENT=9;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -914,11 +914,11 @@ public class InternalClassDataParser extends AbstractInternalAntlrParser {
                         if ( (LA7_0==RULE_ID) ) {
                             int LA7_2 = input.LA(2);
 
-                            if ( (LA7_2==RULE_ID||LA7_2==18||LA7_2==22) ) {
-                                alt7=1;
-                            }
-                            else if ( (LA7_2==23) ) {
+                            if ( (LA7_2==23) ) {
                                 alt7=2;
+                            }
+                            else if ( (LA7_2==RULE_ID||LA7_2==18||LA7_2==22) ) {
+                                alt7=1;
                             }
 
 

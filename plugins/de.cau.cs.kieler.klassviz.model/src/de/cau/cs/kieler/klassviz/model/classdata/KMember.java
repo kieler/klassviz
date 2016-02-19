@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#isSelected <em>Selected</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#getName <em>Name</em>}</li>
@@ -30,7 +31,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#isFinal <em>Final</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KMember#getVisibility <em>Visibility</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMember()
  * @model abstract="true"
@@ -49,7 +49,7 @@ public interface KMember extends EObject {
      * @return the value of the '<em>Selected</em>' attribute.
      * @see #setSelected(boolean)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMember_Selected()
-     * @model default="false"
+     * @model default="false" transient="true"
      * @generated
      */
     boolean isSelected();
@@ -102,7 +102,7 @@ public interface KMember extends EObject {
      * @return the value of the '<em>Static</em>' attribute.
      * @see #setStatic(boolean)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMember_Static()
-     * @model default="false" required="true"
+     * @model default="false" required="true" transient="true"
      * @generated
      */
     boolean isStatic();
@@ -129,7 +129,7 @@ public interface KMember extends EObject {
      * @return the value of the '<em>Final</em>' attribute.
      * @see #setFinal(boolean)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMember_Final()
-     * @model default="false" required="true"
+     * @model default="false" required="true" transient="true"
      * @generated
      */
     boolean isFinal();
@@ -158,7 +158,7 @@ public interface KMember extends EObject {
      * @see de.cau.cs.kieler.klassviz.model.classdata.KVisibility
      * @see #setVisibility(KVisibility)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMember_Visibility()
-     * @model default="PACKAGE" required="true"
+     * @model default="PACKAGE" required="true" transient="true"
      * @generated
      */
     KVisibility getVisibility();

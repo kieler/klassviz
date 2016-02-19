@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl#isSelected <em>Selected</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl#getName <em>Name</em>}</li>
@@ -38,7 +39,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl#isFinal <em>Final</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMemberImpl#getVisibility <em>Visibility</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

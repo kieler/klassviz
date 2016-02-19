@@ -23,11 +23,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KInterface#getSuperInterfaces <em>Super Interfaces</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KInterface#getTypeParameters <em>Type Parameters</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKInterface()
  * @model
@@ -45,7 +45,7 @@ public interface KInterface extends KType {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Super Interfaces</em>' reference list.
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKInterface_SuperInterfaces()
-     * @model
+     * @model transient="true"
      * @generated
      */
     EList<KInterface> getSuperInterfaces();
@@ -61,7 +61,7 @@ public interface KInterface extends KType {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Type Parameters</em>' attribute list.
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKInterface_TypeParameters()
-     * @model
+     * @model transient="true"
      * @generated
      */
     EList<String> getTypeParameters();

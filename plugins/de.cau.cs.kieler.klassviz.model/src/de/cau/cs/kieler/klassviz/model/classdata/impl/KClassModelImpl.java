@@ -42,6 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl#getJavaProjects <em>Java Projects</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl#getBundles <em>Bundles</em>}</li>
@@ -49,7 +50,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl#isResolved <em>Resolved</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KClassModelImpl#getOptions <em>Options</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

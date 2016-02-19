@@ -22,10 +22,10 @@ package de.cau.cs.kieler.klassviz.model.classdata;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KField#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKField()
  * @model
@@ -43,7 +43,7 @@ public interface KField extends KMember {
      * @return the value of the '<em>Type</em>' containment reference.
      * @see #setType(KTypeReference)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKField_Type()
-     * @model containment="true"
+     * @model containment="true" transient="true"
      * @generated
      */
     KTypeReference getType();

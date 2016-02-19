@@ -9,7 +9,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
         eType="#//KPackage" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="resolved" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="false"/>
+        transient="true" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="options" upperBound="-1"
         eType="#//KOption" containment="true"/>
   </eClassifiers>
@@ -24,7 +24,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KType" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="false"/>
+        transient="true" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
         eType="#//KField" containment="true"/>
@@ -35,30 +35,33 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
         eType="#//KDependency" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="static" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" transient="true"
+        defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" lowerBound="1"
-        eType="#//KVisibility" defaultValueLiteral="PACKAGE"/>
+        eType="#//KVisibility" transient="true" defaultValueLiteral="PACKAGE"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KClass" eSuperTypes="#//KType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="superClass" eType="#//KClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superClass" eType="#//KClass"
+        transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
-        eType="#//KInterface"/>
+        eType="#//KInterface" transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeParameters" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="final" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="false"/>
+        transient="true" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" transient="true"
+        defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KInterface" eSuperTypes="#//KType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="superInterfaces" upperBound="-1"
-        eType="#//KInterface"/>
+        eType="#//KInterface" transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeParameters" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" transient="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KEnum" eSuperTypes="#//KType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="constants" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" transient="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KDependency">
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
@@ -67,31 +70,35 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KMember" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="false"/>
+        transient="true" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="static" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="final" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" transient="true"
         defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="final" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        transient="true" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" lowerBound="1"
-        eType="#//KVisibility" defaultValueLiteral="PACKAGE"/>
+        eType="#//KVisibility" transient="true" defaultValueLiteral="PACKAGE"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KField" eSuperTypes="#//KMember">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//KTypeReference"
-        containment="true"/>
+        transient="true" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KMethod" eSuperTypes="#//KMember">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//KTypeReference" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="#//KTypeReference"
-        containment="true"/>
+        transient="true" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" transient="true"
+        defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KTypeReference">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="signature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceType" eType="#//KType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceType" eType="#//KType"
+        transient="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="KVisibility">
     <eLiterals name="PUBLIC"/>

@@ -31,10 +31,10 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KEnumImpl#getConstants <em>Constants</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

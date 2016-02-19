@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getJavaProjects <em>Java Projects</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getBundles <em>Bundles</em>}</li>
@@ -32,7 +33,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#isResolved <em>Resolved</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KClassModel#getOptions <em>Options</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKClassModel()
  * @model
@@ -99,7 +99,7 @@ public interface KClassModel extends EObject {
      * @return the value of the '<em>Resolved</em>' attribute.
      * @see #setResolved(boolean)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKClassModel_Resolved()
-     * @model default="false"
+     * @model default="false" transient="true"
      * @generated
      */
     boolean isResolved();

@@ -23,12 +23,12 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.KMethod#isAbstract <em>Abstract</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMethod()
  * @model
@@ -62,7 +62,7 @@ public interface KMethod extends KMember {
      * @return the value of the '<em>Return Type</em>' containment reference.
      * @see #setReturnType(KTypeReference)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMethod_ReturnType()
-     * @model containment="true"
+     * @model containment="true" transient="true"
      * @generated
      */
     KTypeReference getReturnType();
@@ -89,7 +89,7 @@ public interface KMethod extends KMember {
      * @return the value of the '<em>Abstract</em>' attribute.
      * @see #setAbstract(boolean)
      * @see de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage#getKMethod_Abstract()
-     * @model default="false" required="true"
+     * @model default="false" required="true" transient="true"
      * @generated
      */
     boolean isAbstract();

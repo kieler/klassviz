@@ -39,12 +39,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMethodImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMethodImpl#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link de.cau.cs.kieler.klassviz.model.classdata.impl.KMethodImpl#isAbstract <em>Abstract</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
