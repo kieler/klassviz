@@ -78,5 +78,12 @@
             type="org.eclipse.core.resources.IResource">
       </propertyTester>
    </extension>
+   <extension
+         point="de.cau.cs.kieler.klighd.ui.view.editor">
+      <editor
+            controllerID="de.cau.cs.kieler.klighd.ui.view.controllers.XtextChangeUpdateController"
+            editorID="de.cau.cs.kieler.klassviz.text.ClassData">
+      </editor>
+   </extension>
 
 </plugin> 
