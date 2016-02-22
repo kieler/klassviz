@@ -14,11 +14,11 @@
             allPopups="false"
             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
          <command
-               commandId="de.cau.cs.kieler.klassviz.synthesizeclassdiagramofselection"
+               commandId="de.cau.cs.kieler.klassviz.generateKlassVizFile"
                icon="icons/class.gif"
-               label="Class Diagram from Selection"
+               label="Generate class diagram file from selection"
                style="push"
-               tooltip="Automatically generate a class diagram containing the selected classes and members">
+               tooltip="Automatically generate a class diagram file containing the selected classes and members.">
             <visibleWhen
                   checkEnabled="false">
                <iterate
@@ -30,42 +30,14 @@
                </iterate>
             </visibleWhen>
          </command>
-         <command
-               commandId="de.cau.cs.kieler.klassviz.getpreviousselectionofproject"
-               icon="icons/class.gif"
-               label="Restore Project&apos;s Previous Class Diagram"
-               style="push"
-               tooltip="Restore the last used selection of classes for generating a class diagram">
-            <visibleWhen
-                  checkEnabled="false">
-               <and>
-                  <count
-                        value="1">
-                  </count>
-                  <iterate
-                        ifEmpty="false"
-                        operator="and">
-                     <test
-                           forcePluginActivation="true"
-                           property="de.cau.cs.kieler.klassviz.containsStoredSelection">
-                     </test>
-                  </iterate>
-               </and>
-            </visibleWhen>
-         </command>
       </menuContribution>
    </extension>
    <extension
          point="org.eclipse.ui.commands">
       <command
-            defaultHandler="de.cau.cs.kieler.klassviz.handlers.SynthesizeClassDiagramHandler"
-            id="de.cau.cs.kieler.klassviz.synthesizeclassdiagramofselection"
-            name="Class Diagram from Selection">
-      </command>
-      <command
-            defaultHandler="de.cau.cs.kieler.klassviz.handlers.RestoreSelectionHandler"
-            id="de.cau.cs.kieler.klassviz.getpreviousselectionofproject"
-            name="Restore Project's Previous Class Diagram">
+            defaultHandler="de.cau.cs.kieler.klassviz.handlers.GenerateKlassVizFileHandler"
+            id="de.cau.cs.kieler.klassviz.generateKlassVizFile"
+            name="Generate class diagram file from selection">
       </command>
    </extension>
    <extension

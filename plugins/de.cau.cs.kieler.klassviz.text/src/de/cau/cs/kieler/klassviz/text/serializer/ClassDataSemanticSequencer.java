@@ -16,6 +16,8 @@ package de.cau.cs.kieler.klassviz.text.serializer;
 
 import org.eclipse.emf.ecore.EObject;
 
+import de.cau.cs.kieler.klassviz.model.classdata.KField;
+import de.cau.cs.kieler.klassviz.model.classdata.KMethod;
 import de.cau.cs.kieler.klassviz.model.classdata.KTypeReference;
 
 public class ClassDataSemanticSequencer extends AbstractClassDataSemanticSequencer {
@@ -36,5 +38,27 @@ public class ClassDataSemanticSequencer extends AbstractClassDataSemanticSequenc
         super.sequence_KTypeReference(context, typeRef);
         // Restore the original signature.
         typeRef.setSignature(origSig);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void sequence_KField(EObject context, KField semanticObject) {
+        // Only serialize fields that are explicitly selected.
+        if (semanticObject.isSelected()) {
+            super.sequence_KField(context, semanticObject);
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void sequence_KMethod(EObject context, KMethod semanticObject) {
+        // Only serialize fields that are explicitly selected.
+        if (semanticObject.isSelected()) {
+            super.sequence_KMethod(context, semanticObject);
+        }
     }
 }
