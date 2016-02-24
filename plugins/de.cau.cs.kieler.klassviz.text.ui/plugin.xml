@@ -361,15 +361,6 @@
   
   <!-- Custom contributions: -->
    <extension
-         point="de.cau.cs.kieler.core.kivi.combinations">
-      <combination
-            active="true"
-            class="de.cau.cs.kieler.klassviz.text.ui.VisualizeClassDataCombination"
-            description="Provides and updates class diagrams for class data description in '.klaviz' files."
-            name="Class diagram synthesized from class data description">
-      </combination>
-   </extension>
-   <extension
          point="org.eclipse.ui.newWizards">
       <wizard
             class="de.cau.cs.kieler.klassviz.text.ui.NewKlavizFileWizard"
