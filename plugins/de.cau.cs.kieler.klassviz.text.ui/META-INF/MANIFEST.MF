@@ -21,7 +21,7 @@ Require-Bundle: de.cau.cs.kieler.klassviz,
  org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: de.cau.cs.kieler.klassviz.text.ui.quickfix,
  de.cau.cs.kieler.klassviz.text.ui.contentassist,
  de.cau.cs.kieler.klassviz.text.ui.contentassist.antlr

@@ -23,7 +23,7 @@ Require-Bundle: de.cau.cs.kieler.klassviz,
  org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: de.cau.cs.kieler.klassviz.text,
  de.cau.cs.kieler.klassviz.text.formatting,
  de.cau.cs.kieler.klassviz.text.parser.antlr,
