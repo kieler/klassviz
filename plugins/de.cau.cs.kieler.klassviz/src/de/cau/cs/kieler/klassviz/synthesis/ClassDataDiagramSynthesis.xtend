@@ -59,6 +59,7 @@ import org.eclipse.jdt.core.JavaModelException
 import org.eclipse.jdt.core.Signature
 import de.cau.cs.kieler.kiml.klayoutdata.KShapeLayout
 import java.util.Collections
+import de.cau.cs.kieler.kiml.options.HierarchyHandling
 
 /**
  * Synthesis of class diagrams using the Classdata meta model.
@@ -352,7 +353,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
             // hierarchy, we use KLay Layered; otherwise, we use a planarization algorithm.
             if (VISUALIZE_PACKAGES.booleanValue) {
                 parentLayout.setProperty(LayoutOptions.ALGORITHM, "de.cau.cs.kieler.klay.layered")
-                parentLayout.setProperty(LayoutOptions.LAYOUT_HIERARCHY, true)
+                parentLayout.setProperty(LayoutOptions.HIERARCHY_HANDLING, HierarchyHandling.INCLUDE_CHILDREN)
             } else {
                 parentLayout.setProperty(LayoutOptions.ALGORITHM, "de.cau.cs.kieler.kiml.ogdf.planarization")
             }
