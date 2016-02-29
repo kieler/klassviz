@@ -14,14 +14,14 @@ To use KlassViz, install it into your existing Eclipse installation from our Nig
 
 ### Using KlassViz through Context Menus
 
-To quickly pull up a bunch of classes in a class diagram, simply select your source files (or the types contained therein) in the project explorer, right-click, and select _Class Diagram from Selection_. In the class diagram view, use the panel to the right to customize what gets shown in the diagram.
+To quickly pull up a bunch of classes in a class diagram, simply select your source files (or the types contained therein) in the project explorer, right-click, and select _Generate class diagram file from selection_. Choose a folder and file name to save the generated file to.
 
-KlassViz saves the last type selection on a per-project basis. To restore the most recent class diagram generated for a given project, right-click that project and select _Restore Project's Previous Class Diagram_.
+To view the class diagram, proceed with the section [Viewing Class Diagram Files](#viewing-class-diagram-files).
 
 
 ### Using KlassViz through Class Diagram Files
 
-Generating class diagrams through the context menu is quick and easy, but offers only a limited subset of the vast, nearly endless degrees of artistic freedom KlassViz gives you. To unlock its full potential, use the KlassViz Language to specify what to show in your class diagram and how to show it.
+#### Creating Class Diagram Files
 
 To create a new class diagram file, simply create a new plain file with the file extension `.klaviz`. Here's an example of what such a file could look like (this example assumes that you have pulled the `de.cau.cs.kieler.debukviz` project into your IDE):
 
@@ -84,6 +84,13 @@ Name                                  | Description
 `classdata.printMethodParameterNames` | Whether to show the actual names of method parameters.
 
 
+#### Viewing Class Diagram Files
+
+To open the Diagram View, enter "diagram" into the 'Quick Access'-search field and select Diagram from the views category.
+
+To visualize a class diagram file, simply open it and it should be displayed in the Diagram View.
+
+
 Nightly Builds
 --------------
 
@@ -97,7 +104,6 @@ Building
 
 To build KlassViz manually from the sources, make sure you have Maven installed. Change into the build directory and execute this command:
 
-    bash
     mvn clean package
 
 
@@ -111,3 +117,16 @@ Development
 -----------
 
 Our development process is quite easy: the master branch is supposed to always be stable. All development takes place in feature branches. Once a feature is deemed stable enough, the code is merged into the master branch and thus gets shipped through the nightly builds.
+
+### Setting Up Your Development Environment
+You will first need an Eclipse installation to hack away on OpenKieler with. Since we have a shiny Oomph setup available, this turns out to be comparatively painless (note that our setup assumes that you have a GitHub account):
+
+1. Go to [this site](https://www.eclipse.org/downloads/index.php) and download the Eclipse Installer for your platform. You will find the links at the bottom of the "Try the Eclipse Installer" box.
+
+2. Start the installer. Click the Hamburger button at the top right corner and select Advanced Mode. Why? Because we're computer scientists, that's why!
+
+3. Next, we need to tell Oomph to get everything ready for OpenKieler development. Download our [Oomph setup file](https://raw.githubusercontent.com/OpenKieler/config/master/OpenKieler.setup), click the Plus button at the top right corner and add the setup file to the Github Projects catalog. Double-click the new OpenKieler entry. This will cause an item to appear in the table at the bottom of the window. Once you're done, click Next.
+
+3. Oomph now asks you to enter some more information. You can usually leave the settings as is, except for the Installation folder name. This will be the directory under which all your Eclipse installations installed with Oomph will appear, each in a separate sub-directory. Select a proper directory and click Next.
+
+5. If Oomph fails to clone our GitHub repository, this is probably due to Eclipse not finding your SSH key for GitHub. Fix it by going to the Eclipse preferences. You can manage your keys under General > Network Connections > SSH2. Once you have setup your SSH keys, let Oomph try again by selecting Perform Setup Tasks from the Help menu.
