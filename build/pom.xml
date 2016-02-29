@@ -6,19 +6,19 @@
   <artifactId>parent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-
+  
   
   <!-- ============================================================================================ -->
   <!-- Define a few properties used throughout all build profiles. -->
   <properties>
     <tycho-version>0.21.0</tycho-version>
-    <xtend-version>2.7.3</xtend-version>
+    <xtend-version>2.9.0</xtend-version>
     <targetJdk>1.8</targetJdk>
     
     <!-- chsch: copied from https://eclipse.googlesource.com/recommenders/org.eclipse.recommenders/+/3dae4575d3370da2da25a1cbce3dfcff198f0611/features/pom.xml -->
     <!-- Non-breakable space, as normal spaces are trimmed. -->
     <sourceFeatureLabelSuffix>&#xA0;(Sources)</sourceFeatureLabelSuffix>
-
+    
     <!-- guarantee that we use utf8 for compilation, this is especially required
          due to xtend's template symbols («) when running maven on windows. -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,25 +38,8 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       
-      <repositories>
-        <repository>
-          <id>p2.targetPlatform</id>
-          <layout>p2</layout>
-          <url>http://rtsys.informatik.uni-kiel.de/~kieler/repository/luna441/</url>
-        </repository>
-        <repository>
-          <id>p2.targetPlatform.delta</id>
-          <layout>p2</layout>
-          <url>http://rtsys.informatik.uni-kiel.de/~kieler/repository/luna441_delta/</url>
-        </repository>
-        <repository>
-          <id>p2.kieler</id>
-          <layout>p2</layout>
-          <url>http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/release_pragmatics_2016-02/</url>
-        </repository>
-      </repositories>
-      
       <modules>
+        <module>de.cau.cs.kieler.openkieler.targetplatform</module>
         <module>../plugins</module>
         <module>../features</module>
         <module>de.cau.cs.kieler.klassviz.repository</module>
@@ -112,44 +95,19 @@
         </executions>
       </plugin>
 
-      <!-- as we have platform specific fragments we need to tell tycho about target platforms -->
+      <!-- Setup our target platform definition file. -->
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>target-platform-configuration</artifactId>
         <version>${tycho-version}</version>
         <configuration>
-          <environments>
-            <environment>
-              <os>linux</os>
-              <ws>gtk</ws>
-              <arch>x86</arch>
-            </environment>
-            <environment>
-              <os>linux</os>
-              <ws>gtk</ws>
-              <arch>x86_64</arch>
-            </environment>
-            <environment>
-              <os>win32</os>
-              <ws>win32</ws>
-              <arch>x86</arch>
-            </environment>
-            <environment>
-              <os>win32</os>
-              <ws>win32</ws>
-              <arch>x86_64</arch>
-            </environment>
-            <environment>
-              <os>macosx</os>
-              <ws>cocoa</ws>
-              <arch>x86</arch>
-            </environment>
-            <environment>
-              <os>macosx</os>
-              <ws>cocoa</ws>
-              <arch>x86_64</arch>
-            </environment>
-          </environments>
+          <target>
+            <artifact>
+              <groupId>de.cau.cs.kieler.klassviz</groupId>
+              <artifactId>de.cau.cs.kieler.openkieler.targetplatform</artifactId>
+              <version>0.1.0-SNAPSHOT</version>
+            </artifact>
+          </target>
         </configuration>
       </plugin>
     </plugins>
