@@ -71,7 +71,7 @@
             <artifact>
               <groupId>de.cau.cs.kieler.ecoreviz</groupId>
               <artifactId>de.cau.cs.kieler.openkieler.targetplatform</artifactId>
-              <version>${openkieler-version}-SNAPSHOT</version>
+              <version>${openkieler-version}</version>
             </artifact>
           </target>
         </configuration>
