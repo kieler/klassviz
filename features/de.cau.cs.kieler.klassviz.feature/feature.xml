@@ -2,7 +2,7 @@
 <feature
       id="de.cau.cs.kieler.klassviz.feature"
       label="KlassViz"
-      version="0.1.0.qualifier"
+      version="0.2.0.qualifier"
       provider-name="OpenKieler">
 
    <description url="https://github.com/OpenKieler">

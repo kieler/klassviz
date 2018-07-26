@@ -4,16 +4,16 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.cau.cs.kieler.klassviz</groupId>
   <artifactId>parent</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.2.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   
   
-  <!-- ============================================================================================ -->
   <!-- Define a few properties used throughout all build profiles. -->
   <properties>
-    <tycho-version>0.21.0</tycho-version>
-    <xtend-version>2.9.0</xtend-version>
     <targetJdk>1.8</targetJdk>
+    <tycho-version>1.2.0</tycho-version>
+    <xtext-version>2.12.0</xtext-version>
+    <openkieler-version>${project.version}</openkieler-version>
     
     <!-- chsch: copied from https://eclipse.googlesource.com/recommenders/org.eclipse.recommenders/+/3dae4575d3370da2da25a1cbce3dfcff198f0611/features/pom.xml -->
     <!-- Non-breakable space, as normal spaces are trimmed. -->
@@ -27,53 +27,33 @@
   </properties>
   
   
-  <!-- ============================================================================================ -->
-  <!-- Define build profiles that control what will be built against which update sites. -->
+  <!-- Define one profile for each output target we have -->
   <profiles>
-    <!-- KlassViz -->
     <profile>
-      <id>klassviz</id>
-      
+      <id>repo</id>
+
       <activation>
         <activeByDefault>true</activeByDefault>
       </activation>
       
       <modules>
         <module>de.cau.cs.kieler.openkieler.targetplatform</module>
-        <module>../plugins</module>
-        <module>../features</module>
+        <module>../plugins/de.cau.cs.kieler.klassviz</module>
+        <module>../plugins/de.cau.cs.kieler.klassviz.model</module>
+        <module>../plugins/de.cau.cs.kieler.klassviz.text</module>
+        <module>../plugins/de.cau.cs.kieler.klassviz.text.ui</module>
+        <module>../features/de.cau.cs.kieler.klassviz.feature</module>
         <module>de.cau.cs.kieler.klassviz.repository</module>
       </modules>
     </profile>
   </profiles>
 
 
-  <!-- ============================================================================================ -->
-  <!-- Maven plugin repositories -->
-  <pluginRepositories>
-    <pluginRepository>
-      <id>xtend</id>
-      <layout>default</layout>
-      <url>http://build.eclipse.org/common/xtend/maven</url>
-    </pluginRepository>
-    <pluginRepository>
-      <id>jboss-releases</id>
-      <name>JBoss Releases Maven Repository</name>
-      <url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
-<!--
-      <releases>
-        <enabled>true</enabled>
-      </releases>
--->
-    </pluginRepository>
-  </pluginRepositories>
-
-
-  <!-- ============================================================================================ -->
   <!-- Modify the build process to add Tycho and configure some utility plug-ins. -->
   <build>
     <plugins>
-      <!-- we need tycho plugin to build eclipse plugins -->
+
+      <!-- We need tycho to build eclipse plugins -->
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-maven-plugin</artifactId>
@@ -81,6 +61,23 @@
         <extensions>true</extensions>
       </plugin>
 
+      <!-- Setup our target platform for the build -->
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <target>
+            <artifact>
+              <groupId>de.cau.cs.kieler.ecoreviz</groupId>
+              <artifactId>de.cau.cs.kieler.openkieler.targetplatform</artifactId>
+              <version>${openkieler-version}-SNAPSHOT</version>
+            </artifact>
+          </target>
+        </configuration>
+      </plugin>
+
+      <!-- Build source plugin bundles -->
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-source-plugin</artifactId>
@@ -95,37 +92,38 @@
         </executions>
       </plugin>
 
-      <!-- Setup our target platform definition file. -->
-      <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>target-platform-configuration</artifactId>
-        <version>${tycho-version}</version>
-        <configuration>
-          <target>
-            <artifact>
-              <groupId>de.cau.cs.kieler.klassviz</groupId>
-              <artifactId>de.cau.cs.kieler.openkieler.targetplatform</artifactId>
-              <version>0.1.0-SNAPSHOT</version>
-            </artifact>
-          </target>
-        </configuration>
-      </plugin>
     </plugins>
 
     <pluginManagement>
       <plugins>
 
-        <!-- maven xtend plugin to tell maven how to compile xtend code -->
+        <!-- Maven Xtend plugin to tell maven how to compile Xtend code -->
         <plugin>
           <groupId>org.eclipse.xtend</groupId>
           <artifactId>xtend-maven-plugin</artifactId>
-          <version>${xtend-version}</version>
+          <version>${xtext-version}</version>
+          <!-- Workaround for broken build from https://github.com/eclipse/xtext/issues/1231#issuecomment-401125569 -->
+          <dependencies>
+            <dependency>
+              <groupId>org.eclipse.platform</groupId>
+              <artifactId>org.eclipse.equinox.common</artifactId>
+              <version>3.10.0</version>
+            </dependency>
+          </dependencies>
+          <!-- End Workaround -->
           <configuration>
             <outputDirectory>${basedir}/xtend-gen</outputDirectory>
           </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>compile</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
 
-        <!-- add src-gen and xtend-gen to source-directories -->
+        <!-- Add src-gen and xtend-gen to source-directories -->
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
@@ -140,8 +138,6 @@
               <configuration>
                 <sources>
                   <source>src-gen</source>
-                </sources>
-                <sources>
                   <source>${project.build.directory}/xtend-gen</source>
                 </sources>
               </configuration>
@@ -149,10 +145,10 @@
           </executions>
         </plugin>
 
-        <!-- generated code needs cleanup too -->
+        <!-- Generated code needs cleanup too -->
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>2.4.1</version>
+          <version>3.0.0</version>
           <configuration>
             <filesets>
               <fileset>
@@ -164,7 +160,9 @@
             </filesets>
           </configuration>
         </plugin>
+
       </plugins>
     </pluginManagement>
   </build>
+
 </project>
