@@ -15,10 +15,10 @@
 
    <!-- KLASSVIZ -->
 
-   <feature url="features/de.cau.cs.kieler.klassviz_0.1.0.qualifier.jar" id="de.cau.cs.kieler.klassviz.feature" version="0.1.0.qualifier">
+   <feature url="features/de.cau.cs.kieler.klassviz_0.2.0.qualifier.jar" id="de.cau.cs.kieler.klassviz.feature" version="0.2.0.qualifier">
       <category name="klassviz"/>
    </feature>
-   <feature url="features/de.cau.cs.kieler.klassviz.source_0.1.0.qualifier.jar" id="de.cau.cs.kieler.klassviz.feature.source" version="0.1.0.qualifier">
+   <feature url="features/de.cau.cs.kieler.klassviz.source_0.2.0.qualifier.jar" id="de.cau.cs.kieler.klassviz.feature.source" version="0.2.0.qualifier">
       <category name="klassviz"/>
    </feature>
 
