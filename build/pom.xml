@@ -69,7 +69,7 @@
         <configuration>
           <target>
             <artifact>
-              <groupId>de.cau.cs.kieler.ecoreviz</groupId>
+              <groupId>de.cau.cs.kieler.klassviz</groupId>
               <artifactId>de.cau.cs.kieler.openkieler.targetplatform</artifactId>
               <version>${openkieler-version}</version>
             </artifact>
