@@ -15,9 +15,6 @@
 package de.cau.cs.kieler.klassviz.text.ui.contentassist
 
 import com.google.inject.Inject
-import de.cau.cs.kieler.core.properties.IProperty
-import de.cau.cs.kieler.kiml.LayoutMetaDataService
-import de.cau.cs.kieler.kiml.options.LayoutOptions
 import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
 import de.cau.cs.kieler.klassviz.model.classdata.KOption
 import de.cau.cs.kieler.klassviz.model.classdata.KPackage
@@ -29,6 +26,9 @@ import de.cau.cs.kieler.klassviz.text.ui.ClassDataUiModule
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.runtime.CoreException
 import org.eclipse.core.runtime.Platform
+import org.eclipse.elk.core.data.LayoutMetaDataService
+import org.eclipse.elk.core.options.CoreOptions
+import org.eclipse.elk.graph.properties.IProperty
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.jdt.core.JavaCore
 import org.eclipse.jdt.core.Signature
@@ -98,7 +98,7 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
          // provide proposals for all referenced bundles
          for (bundleName : classModel.bundles) {
              val packagesString = Platform.getBundle(bundleName)?.headers?.get("Export-Package")
-             if (packagesString != null) {
+             if (packagesString !== null) {
                  for (element : ManifestElement.parseHeader("Export-Package", packagesString)) {
                      val proposal = valueConverter.toString(element.value, grammmarAccess.qualifiedIDRule.name)
                      acceptor.accept(createCompletionProposal(proposal, context))
@@ -123,7 +123,7 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
         // provide proposals for all referenced Java projects
         for (projectName : classModel.javaProjects) {
             val packFrag = projectName.getJdtPackage(pack)
-            if (packFrag != null) {
+            if (packFrag !== null) {
                 for (compilationUnit : packFrag.compilationUnits) {
                     for (type : compilationUnit.types.filter[it.isClass
                             && pack.types.forall[t | t.name != it.elementName]]) {
@@ -160,7 +160,7 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
         // provide proposals for all referenced Java projects
         for (projectName : classModel.javaProjects) {
             val packFrag = projectName.getJdtPackage(pack)
-            if (packFrag != null) {
+            if (packFrag !== null) {
                 for (compilationUnit : packFrag.compilationUnits) {
                     for (type : compilationUnit.types.filter[it.isInterface
                             && pack.types.forall[t | t.name != it.elementName]]) {
@@ -197,7 +197,7 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
         // provide proposals for all referenced Java projects
         for (projectName : classModel.javaProjects) {
             val packFrag = projectName.getJdtPackage(pack)
-            if (packFrag != null) {
+            if (packFrag !== null) {
                 for (compilationUnit : packFrag.compilationUnits) {
                     for (type : compilationUnit.types.filter[it.isEnum
                             && pack.types.forall[t | t.name != it.elementName]]) {
@@ -231,14 +231,14 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
         val pack = type.eContainer as KPackage
         val classModel = pack.eContainer as KClassModel
         val jdtType = classModel.getJdtType(type)
-        if (jdtType != null) {
+        if (jdtType !== null) {
             // get the proposals from a JDT type
             for (field : jdtType.fields.filter[f | type.fields.forall[it.name != f.elementName]]) {
                 acceptor.accept(createCompletionProposal(field.elementName, context))
             }
         } else {
             val clazz = classModel.getBundleClass(type)
-            if (clazz != null) {
+            if (clazz !== null) {
                 // get the proposals from a reflection class
                 for (field : clazz.fields.filter[f | f.declaringClass == clazz && !f.synthetic
                         && type.fields.forall[it.name != f.name]]) {
@@ -261,7 +261,7 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
         val pack = type.eContainer as KPackage
         val classModel = pack.eContainer as KClassModel
         val jdtType = classModel.getJdtType(type)
-        if (jdtType != null) {
+        if (jdtType !== null) {
             // get the proposals from a JDT type
             for (method : jdtType.methods.filter[!it.constructor]) {
                 val paramTypeSign = method.parameterTypes.map[t |
@@ -275,7 +275,7 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
             }
         } else {
             val clazz = classModel.getBundleClass(type)
-            if (clazz != null) {
+            if (clazz !== null) {
                 // get the proposals from a reflection class
                 for (method : clazz.methods.filter[m | m.declaringClass == clazz && !m.synthetic]) {
                     val paramTypeSign = method.parameterTypes.map[t | t.simpleName].toList
@@ -307,12 +307,12 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
         }
         
         // add proposals for layout options
-        val activeAlgoId = classModel.options.findFirst[it.key == LayoutOptions.ALGORITHM.id]?.value
-        val activeAlgo = if (activeAlgoId != null) {
+        val activeAlgoId = classModel.options.findFirst[it.key == CoreOptions.ALGORITHM.id]?.value
+        val activeAlgo = if (activeAlgoId !== null) {
                 LayoutMetaDataService.instance.getAlgorithmData(activeAlgoId)
             }
         for (optionData : LayoutMetaDataService.instance.optionData.filter[
-            activeAlgo == null || activeAlgo.knowsOption(it)
+            activeAlgo === null || activeAlgo.knowsOption(it)
         ]) {
             if (classModel.options.forall[it.key != optionData.id]) {
                 val proposal = valueConverter.toString(optionData.id, grammmarAccess.qualifiedIDRule.name)
@@ -330,11 +330,11 @@ class ClassDataProposalProvider extends AbstractClassDataProposalProvider {
         val optionKey = (model as KOption).key
         if (!optionKey.nullOrEmpty) {
             val optionData = LayoutMetaDataService.instance.getOptionDataBySuffix(optionKey)
-            if (optionData == null) {
+            if (optionData === null) {
                 return
             }
             
-            if (optionKey == LayoutOptions.ALGORITHM.id) {
+            if (optionKey == CoreOptions.ALGORITHM.id) {
                 for (algorithmData : LayoutMetaDataService.instance.algorithmData) {
                     val proposal = '"' + algorithmData.id+ '"'
                     val displayString = algorithmData.id + " (" + algorithmData.name + ")"

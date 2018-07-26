@@ -65,7 +65,7 @@ final class JdtModelTransformation {
         selectedTypes += selectedElements.filter(IType)
         selectedTypes += selectedElements.filter(ITypeRoot).map[it.findPrimaryType]
         selectedTypes += selectedElements.filter(IPackageFragment).map[ pf |
-            pf.classFiles.map(cf | cf.findPrimaryType)
+            pf.ordinaryClassFiles.map(cf | cf.findPrimaryType)
                 + pf.compilationUnits.map[cu | cu.findPrimaryType]
         ].flatten
         
@@ -80,7 +80,7 @@ final class JdtModelTransformation {
                 switch (je.getElementType()) {
                     case IJavaElement::PACKAGE_FRAGMENT: {
                         val pf = je as IPackageFragment
-                        pf.classFiles.forEach[cf |
+                        pf.ordinaryClassFiles.forEach[cf |
                             createType((cf as ITypeRoot).findPrimaryType(), classModel).selected = true
                         ]
                         pf.compilationUnits.forEach[ cu |
@@ -130,8 +130,8 @@ final class JdtModelTransformation {
         val typeMap = new LinkedHashMap<IType, KType>
         for (pack : classModel.packages) {
             for (kType : pack.types) {
-                val jdtType = projects.map[it.findType(kType.qualifiedName)].findFirst[it != null]
-                if (jdtType != null) {
+                val jdtType = projects.map[it.findType(kType.qualifiedName)].findFirst[it !== null]
+                if (jdtType !== null) {
                     typeMap.put(jdtType, kType)
                 }
             }
@@ -158,7 +158,7 @@ final class JdtModelTransformation {
             // Extract field data.
             for (jdtField : jdtType.fields) {
                 var kField = kType.fields.findFirst[f | f.name == jdtField.elementName]
-                if (kField == null) {
+                if (kField === null) {
                     kField = ClassdataFactory.eINSTANCE.createKField()
                     kField.name = jdtField.elementName
                     kType.fields += kField
@@ -171,7 +171,7 @@ final class JdtModelTransformation {
             // Extract method data.
             for (jdtMethod : jdtType.methods) {
                 var kMethod = kType.methods.findFirst[m | jdtMethod.equalSignature(m)]
-                if (kMethod == null) {
+                if (kMethod === null) {
                     kMethod = ClassdataFactory.eINSTANCE.createKMethod()
                     kMethod.name = jdtMethod.elementName
                     kType.methods += kMethod
@@ -205,14 +205,14 @@ final class JdtModelTransformation {
             createType(IType jdtType, KClassModel classModel) {
 
         // Anonymous classes are not supported yet.
-        if (kType == null || jdtType.anonymous) {
+        if (kType === null || jdtType.anonymous) {
             return
         }
         
         // Extract package data.
         val packageName = jdtType.packageFragment.elementName
         var kPackage = classModel.packages.findFirst[p | p.name == packageName]
-        if (kPackage == null) {
+        if (kPackage === null) {
             kPackage = ClassdataFactory.eINSTANCE.createKPackage()
             kPackage.name = packageName
             classModel.packages += kPackage
@@ -304,7 +304,7 @@ final class JdtModelTransformation {
             val kClazz = kType as KClass
             kClazz.final = Flags.isFinal(jdtType.flags)
             kClazz.abstract = Flags.isAbstract(jdtType.flags)
-            if (jdtType.superclassName != null) {
+            if (jdtType.superclassName !== null) {
                 kClazz.superClass = resolveHierarchy(jdtType, typeHierarchy.getSuperclass(jdtType),
                         Signature.getTypeErasure(jdtType.superclassName), typeFunc, typeNameFunc) as KClass
             }
@@ -316,7 +316,7 @@ final class JdtModelTransformation {
             ]
             val kSuperInterface = resolveHierarchy(jdtType, resolvedInterface, superInterfaceName,
                     typeFunc, typeNameFunc) as KInterface
-            if (kSuperInterface != null) {
+            if (kSuperInterface !== null) {
                 if (kType instanceof KClass) {
                     (kType as KClass).interfaces += kSuperInterface
                 } else if (kType instanceof KInterface) {
@@ -385,9 +385,9 @@ final class JdtModelTransformation {
      */
     def private resolveHierarchy(IType jdtType, IType resolvedType, String name,
             (IType)=>KType typeFunc, (String)=>KType typeNameFunc) {
-        if (resolvedType != null) {
+        if (resolvedType !== null) {
             val typeFuncResult = typeFunc.apply(resolvedType)
-            if (typeFuncResult != null) {
+            if (typeFuncResult !== null) {
                 return typeFuncResult
             }
         }

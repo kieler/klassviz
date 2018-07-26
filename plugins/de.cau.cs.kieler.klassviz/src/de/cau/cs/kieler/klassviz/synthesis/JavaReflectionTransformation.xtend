@@ -57,8 +57,8 @@ final class JavaReflectionTransformation {
                     try {
                         it.loadClass(kType.qualifiedName)
                     } catch (ClassNotFoundException exception) { null }
-                ].findFirst[it != null]
-                if (clazz != null) {
+                ].findFirst[it !== null]
+                if (clazz !== null) {
                     typeMap.put(clazz, kType)
                 }
             }
@@ -76,7 +76,7 @@ final class JavaReflectionTransformation {
             // Extract field data.
             for (field : clazz.fields.filter[ f | f.declaringClass == clazz && !f.synthetic]) {
                 var kField = kType.fields.findFirst[f | f.name == field.name]
-                if (kField == null) {
+                if (kField === null) {
                     kField = ClassdataFactory.eINSTANCE.createKField()
                     kField.name = field.name
                     kType.fields += kField
@@ -89,7 +89,7 @@ final class JavaReflectionTransformation {
             // Extract method data.
             for (method : clazz.methods.filter[ m | m.declaringClass == clazz && !m.synthetic]) {
                 var kMethod = kType.methods.findFirst[m | method.equalSignature(m)]
-                if (kMethod == null) {
+                if (kMethod === null) {
                     kMethod = ClassdataFactory.eINSTANCE.createKMethod()
                     kMethod.name = method.name
                     kType.methods += kMethod
@@ -122,12 +122,12 @@ final class JavaReflectionTransformation {
             val kClazz = kType as KClass
             kClazz.final = Flags.isFinal(clazz.modifiers)
             kClazz.abstract = Flags.isAbstract(clazz.modifiers)
-            if (clazz.superclass != null) {
+            if (clazz.superclass !== null) {
                 kClazz.superClass = typeFunc.apply(clazz.superclass) as KClass
             }
             for (superInterface : clazz.interfaces) {
                 val kInterface = typeFunc.apply(superInterface) as KInterface
-                if (kInterface != null) {
+                if (kInterface !== null) {
                     kClazz.interfaces += kInterface
                 }
             }
@@ -135,7 +135,7 @@ final class JavaReflectionTransformation {
             val kInterface = kType as KInterface
             for (superInterface : clazz.interfaces) {
                 val kSuperInterface = typeFunc.apply(superInterface) as KInterface
-                if (kSuperInterface != null) {
+                if (kSuperInterface !== null) {
                     kInterface.superInterfaces += kSuperInterface
                 }
             }

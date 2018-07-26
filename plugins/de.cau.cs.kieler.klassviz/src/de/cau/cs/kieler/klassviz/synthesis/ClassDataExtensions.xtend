@@ -50,7 +50,7 @@ final class ClassDataExtensions {
     def String getQualifiedName(KType type) {
         val result = new StringBuilder(type.name)
         var container = type.eContainer
-        while (!(container instanceof KPackage) && container != null) {
+        while (!(container instanceof KPackage) && container !== null) {
             if (container instanceof KType) {
                 result.insert(0, '$')
                 result.insert(0, (container as KType).name)
@@ -74,7 +74,7 @@ final class ClassDataExtensions {
                 if (project.open && project.hasNature(JavaCore.NATURE_ID)) {
                     val javaProject = JavaCore.create(project)
                     val result = javaProject.findType(type.qualifiedName)
-                    if (result != null) {
+                    if (result !== null) {
                         return result
                     }
                 }
@@ -116,7 +116,7 @@ final class ClassDataExtensions {
         for (bundleName : classModel.bundles) {
             try {
                 val result = Platform.getBundle(bundleName)?.loadClass(type.qualifiedName)
-                if (result != null) {
+                if (result !== null) {
                     return result
                 }
             } catch (ClassNotFoundException e) {}
@@ -129,7 +129,7 @@ final class ClassDataExtensions {
      */
     def Iterable<Class<?>> getBundleClasses(String bundleName, String packageName) {
         val bundle = Platform.getBundle(bundleName)
-        if (bundle == null) {
+        if (bundle === null) {
             return Collections.emptyList
         }
         bundle.adapt(BundleWiring)
@@ -221,7 +221,7 @@ final class ClassDataExtensions {
      * Compute a signature for the given parameterized type.
      */
     def dispatch CharSequence getSignature(ParameterizedType type) {
-        '''«IF type.ownerType != null
+        '''«IF type.ownerType !== null
             »«type.ownerType.signature».«
         ENDIF»«
         type.rawType.signature

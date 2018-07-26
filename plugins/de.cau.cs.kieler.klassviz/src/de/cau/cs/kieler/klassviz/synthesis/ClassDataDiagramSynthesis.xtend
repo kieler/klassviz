@@ -17,27 +17,6 @@ package de.cau.cs.kieler.klassviz.synthesis
 import com.google.common.base.Joiner
 import com.google.common.collect.ImmutableList
 import com.google.inject.Inject
-import de.cau.cs.kieler.core.kgraph.KNode
-import de.cau.cs.kieler.core.krendering.KContainerRendering
-import de.cau.cs.kieler.core.krendering.KPolyline
-import de.cau.cs.kieler.core.krendering.KRendering
-import de.cau.cs.kieler.core.krendering.LineStyle
-import de.cau.cs.kieler.core.krendering.extensions.KColorExtensions
-import de.cau.cs.kieler.core.krendering.extensions.KContainerRenderingExtensions
-import de.cau.cs.kieler.core.krendering.extensions.KEdgeExtensions
-import de.cau.cs.kieler.core.krendering.extensions.KLabelExtensions
-import de.cau.cs.kieler.core.krendering.extensions.KNodeExtensions
-import de.cau.cs.kieler.core.krendering.extensions.KPolylineExtensions
-import de.cau.cs.kieler.core.krendering.extensions.KRenderingExtensions
-import de.cau.cs.kieler.core.properties.IProperty
-import de.cau.cs.kieler.core.properties.MapPropertyHolder
-import de.cau.cs.kieler.core.properties.Property
-import de.cau.cs.kieler.core.util.Maybe
-import de.cau.cs.kieler.kiml.LayoutMetaDataService
-import de.cau.cs.kieler.kiml.options.Direction
-import de.cau.cs.kieler.kiml.options.EdgeRouting
-import de.cau.cs.kieler.kiml.options.EdgeType
-import de.cau.cs.kieler.kiml.options.LayoutOptions
 import de.cau.cs.kieler.klassviz.model.classdata.KClass
 import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
 import de.cau.cs.kieler.klassviz.model.classdata.KEnum
@@ -49,17 +28,38 @@ import de.cau.cs.kieler.klassviz.model.classdata.KType
 import de.cau.cs.kieler.klassviz.model.classdata.KVisibility
 import de.cau.cs.kieler.klighd.KlighdConstants
 import de.cau.cs.kieler.klighd.SynthesisOption
+import de.cau.cs.kieler.klighd.kgraph.KNode
+import de.cau.cs.kieler.klighd.krendering.KContainerRendering
+import de.cau.cs.kieler.klighd.krendering.KPolyline
+import de.cau.cs.kieler.klighd.krendering.KRendering
+import de.cau.cs.kieler.klighd.krendering.LineStyle
+import de.cau.cs.kieler.klighd.krendering.extensions.KColorExtensions
+import de.cau.cs.kieler.klighd.krendering.extensions.KContainerRenderingExtensions
+import de.cau.cs.kieler.klighd.krendering.extensions.KEdgeExtensions
+import de.cau.cs.kieler.klighd.krendering.extensions.KLabelExtensions
+import de.cau.cs.kieler.klighd.krendering.extensions.KNodeExtensions
+import de.cau.cs.kieler.klighd.krendering.extensions.KPolylineExtensions
+import de.cau.cs.kieler.klighd.krendering.extensions.KRenderingExtensions
 import de.cau.cs.kieler.klighd.syntheses.AbstractDiagramSynthesis
 import java.util.ArrayList
 import java.util.Collection
+import java.util.Collections
 import java.util.List
 import java.util.Map
+import org.eclipse.elk.core.options.Direction
+import org.eclipse.elk.graph.properties.IProperty
+import org.eclipse.elk.graph.properties.MapPropertyHolder
+import org.eclipse.elk.graph.properties.Property
 import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.jdt.core.JavaModelException
 import org.eclipse.jdt.core.Signature
-import de.cau.cs.kieler.kiml.klayoutdata.KShapeLayout
-import java.util.Collections
-import de.cau.cs.kieler.kiml.options.HierarchyHandling
+import de.cau.cs.kieler.klighd.syntheses.DiagramSyntheses
+import org.eclipse.elk.core.options.CoreOptions
+import org.eclipse.elk.core.data.LayoutMetaDataService
+import org.eclipse.elk.core.util.Maybe
+import org.eclipse.elk.core.options.EdgeType
+import org.eclipse.elk.core.options.EdgeRouting
+import org.eclipse.elk.core.options.HierarchyHandling
 
 /**
  * Synthesis of class diagrams using the Classdata meta model.
@@ -156,8 +156,12 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
      */
     override public getDisplayedLayoutOptions() {
         return ImmutableList::of(
-            specifyLayoutOption(LayoutOptions::DIRECTION, Direction::values().drop(1).sortBy[it.name]),
-            specifyLayoutOption(LayoutOptions::SPACING, newArrayList(0, 255))
+            DiagramSyntheses.specifyLayoutOption(
+                CoreOptions.DIRECTION,
+                ImmutableList.copyOf(Direction::values().drop(1).sortBy[it.name])),
+            DiagramSyntheses.specifyLayoutOption(
+                CoreOptions.SPACING_NODE_NODE,
+                ImmutableList.of(0, 255))
         );
     }
     
@@ -196,12 +200,12 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
      */
     def private evaluateOptions(KClassModel classModel, KNode rootNode) {
         modelOptions.allProperties.clear
-        for (option : classModel.options.filter[key != null && value != null]) {
+        for (option : classModel.options.filter[key !== null && value !== null]) {
             val property = getClass().fields.filter[
                 it.isStatic && typeof(IProperty).isAssignableFrom(it.type)
             ].map[it.get(null) as IProperty<Object>].findFirst[it.id == option.key]
             
-            if (property != null) {
+            if (property !== null) {
                 // Parse a synthesis option
                 val value = switch (property.getDefault.class) {
                     case Integer: {
@@ -221,9 +225,9 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
             } else {
                 // Parse a layout option
                 val optionData = LayoutMetaDataService.instance.getOptionDataBySuffix(option.key)
-                if (optionData != null) {
+                if (optionData !== null) {
                     val value = optionData.parseValue(option.value)
-                    if (value != null) {
+                    if (value !== null) {
                         rootNode.setLayoutOption(optionData, value)
                     }
                 }
@@ -333,7 +337,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
                 ]
             ]
             // Copy the root node properties and then configure the layout
-            packageNode.getData(typeof(KShapeLayout)).copyProperties(rootNode.getData(typeof(KShapeLayout)))
+            packageNode.copyProperties(rootNode)
             packageNode.configureLayout
         ]
     }
@@ -342,20 +346,19 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
      * Configure general layout options for a parent node (the root node or a package node).
      */
     def private configureLayout(KNode parentNode) {
-        val parentLayout = parentNode.getData(typeof(KShapeLayout))
-        parentLayout.setProperty(LayoutOptions.SPACING, 50f)
-        if (parentLayout.getProperty(LayoutOptions.EDGE_ROUTING) == EdgeRouting.UNDEFINED) {
-            parentLayout.setProperty(LayoutOptions.EDGE_ROUTING, EdgeRouting.ORTHOGONAL)
+        parentNode.setProperty(CoreOptions.SPACING_NODE_NODE, 50.0)
+        if (!parentNode.hasProperty(CoreOptions.EDGE_ROUTING)) {
+            parentNode.setProperty(CoreOptions.EDGE_ROUTING, EdgeRouting.ORTHOGONAL)
         }
         
-        if (parentLayout.getProperty(LayoutOptions.ALGORITHM) == null) {
+        if (!parentNode.hasProperty(CoreOptions.ALGORITHM)) {
             // Layout depends on whether we have hierarchy (visualize packages) or not. If we have,
             // hierarchy, we use KLay Layered; otherwise, we use a planarization algorithm.
             if (VISUALIZE_PACKAGES.booleanValue) {
-                parentLayout.setProperty(LayoutOptions.ALGORITHM, "de.cau.cs.kieler.klay.layered")
-                parentLayout.setProperty(LayoutOptions.HIERARCHY_HANDLING, HierarchyHandling.INCLUDE_CHILDREN)
+                parentNode.setProperty(CoreOptions.ALGORITHM, "de.cau.cs.kieler.klay.layered")
+                parentNode.setProperty(CoreOptions.HIERARCHY_HANDLING, HierarchyHandling.INCLUDE_CHILDREN)
             } else {
-                parentLayout.setProperty(LayoutOptions.ALGORITHM, "de.cau.cs.kieler.kiml.ogdf.planarization")
+                parentNode.setProperty(CoreOptions.ALGORITHM, "de.cau.cs.kieler.kiml.ogdf.planarization")
             }
         }
     }
@@ -447,11 +450,11 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
     // or a generic parameter type equals one of the visualized classes. 
     def private create fieldHasDependency : new Maybe<Boolean>(false)
             hasDependency(KType classData, KClassModel classModel, KField eField) {
-        if (eField.type != null && eField.type.referenceType != null
+        if (eField.type !== null && eField.type.referenceType !== null
                 && eField.type.referenceType != classData) {
             fieldHasDependency.set(true)
             return
-        } else if (eField.type == null || eField.type.signature == null) {
+        } else if (eField.type === null || eField.type.signature === null) {
             return
         }
         val genericStart = eField.type.signature.indexOf('<')
@@ -486,7 +489,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
 
     // For each class visualize all relationships to super classes that are visualized.
     def private createClassInheritanceEdge(KClass classData) {
-        if (classData.superClass != null && classData.superClass.selected) {
+        if (classData.superClass !== null && classData.superClass.selected) {
             createEdge.associateWith(classData) => [
                 it.source = classData.node
                 it.target = classData.superClass.node
@@ -496,7 +499,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
                     ]
                     it.foreground = modelOptions.getProperty(OPTION_EDGE_COLOR).color
                 ]
-                it.setLayoutOption(LayoutOptions::EDGE_TYPE, EdgeType::GENERALIZATION)
+                it.setLayoutOption(CoreOptions::EDGE_TYPE, EdgeType::GENERALIZATION)
             ]
         }
     }
@@ -524,7 +527,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
                     ]
                     it.foreground = modelOptions.getProperty(OPTION_EDGE_COLOR).color
                 ]
-                it.setLayoutOption(LayoutOptions::EDGE_TYPE, EdgeType::GENERALIZATION)
+                it.setLayoutOption(CoreOptions::EDGE_TYPE, EdgeType::GENERALIZATION)
             ]
         ]
     }
@@ -607,7 +610,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
                                 }
                             it.createLabel.configureHeadEdgeLabel(multiplicity, KlighdConstants::DEFAULT_FONT_SIZE,
                                 modelOptions.getProperty(OPTION_FONT_NAME)).associateWith(classData)
-                            it.setLayoutOption(LayoutOptions::EDGE_TYPE, EdgeType::ASSOCIATION)
+                            it.setLayoutOption(CoreOptions::EDGE_TYPE, EdgeType::ASSOCIATION)
                         ]
                     }
                 }
@@ -628,7 +631,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
                 ]
                 it.createLabel.configureCenterEdgeLabel(dependency.label, KlighdConstants::DEFAULT_FONT_SIZE,
                                 modelOptions.getProperty(OPTION_FONT_NAME)).associateWith(dependency)
-                it.setLayoutOption(LayoutOptions::EDGE_TYPE, EdgeType::DEPENDENCY)
+                it.setLayoutOption(CoreOptions::EDGE_TYPE, EdgeType::DEPENDENCY)
             ]
         }
     }
@@ -648,7 +651,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
         val parameters = newLinkedList();
         if (METHODS_PARAMETERS.booleanValue) {
             method.parameters.forEach [ parameter |
-                if (modelOptions.getProperty(OPTION_METHOD_PARAM_NAMES) && parameter.name != null) {
+                if (modelOptions.getProperty(OPTION_METHOD_PARAM_NAMES) && parameter.name !== null) {
                     if (METHODS_TYPE.booleanValue) {
                         parameters += parameter.name + " : " + Signature.getSimpleName(parameter.signature)
                     } else {
@@ -662,7 +665,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
         
         // Return type
         val String methodReturnType =
-            if (METHODS_TYPE.booleanValue && method.returnType.signature != null) {
+            if (METHODS_TYPE.booleanValue && method.returnType.signature !== null) {
                 " : " + Signature.getSimpleName(method.returnType.signature)
             } else {
                 ""
@@ -686,7 +689,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
      */
     def private String buildDisplayString(KField field) {
         val String fieldType = 
-            if (ATTRIBUTES_TYPE.booleanValue && field.type != null && field.type.signature != null
+            if (ATTRIBUTES_TYPE.booleanValue && field.type !== null && field.type.signature !== null
                 && !(field.eContainer instanceof KEnum && field.type.referenceType == field.eContainer)) {
                 " : " + Signature.getSimpleName(field.type.signature)
             } else {
@@ -759,7 +762,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
                     null
                 }
             
-            if (modifierString != null) {
+            if (modifierString !== null) {
                 return container.addText("<<" + modifierString + ">>") => [ text |
                     text.fontName = modelOptions.getProperty(OPTION_FONT_NAME)
                 ]
