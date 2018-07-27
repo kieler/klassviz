@@ -220,11 +220,11 @@ litigation.
    </url>
 
    <requires>
-      <import feature="de.cau.cs.kieler.klighd.feature" version="0.5.0" match="greaterOrEqual"/>
-      <import feature="de.cau.cs.kieler.kiml.ogdf.feature" version="0.6.2" match="greaterOrEqual"/>
-      <import feature="net.ogdf.bin.feature" version="2.0.2" match="greaterOrEqual"/>
-      <import feature="org.eclipse.elk.feature" version="0.5.0" match="greaterOrEqual"/>
-      <import feature="org.eclipse.elk.algorithms.feature" version="0.5.0" match="greaterOrEqual"/>
+      <import feature="de.cau.cs.kieler.klighd.feature"/>
+      <import feature="de.cau.cs.kieler.kiml.ogdf.feature"/>
+      <import feature="net.ogdf.bin.feature"/>
+      <import feature="org.eclipse.elk.feature" version="0.4.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.elk.algorithms.feature" version="0.4.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
