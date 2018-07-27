@@ -16,8 +16,8 @@
   </parent>
   
   <properties>
-    <update.site.name>OpenKieler</update.site.name>
-    <update.site.description>KlassViz Nightly Build</update.site.description>
+    <update.site.name>OpenKieler KlassViz</update.site.name>
+    <update.site.description>Nightly Build</update.site.description>
     <update.site.version>${openkieler-version}</update.site.version>
     <target.eclipse.version>Photon</target.eclipse.version>
   </properties>
