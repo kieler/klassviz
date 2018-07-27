@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<site associateSitesURL="associateSites.xml">
-
+<site>
    <description name="OpenKieler (Nightly Builds)" url="http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/nightly-openkieler/">
       Update site for the OpenKieler nightly builds.
    </description>
-
-   <!-- CATEGORY DEFINITIONS -->
-   <category-def name="klassviz" label="Class Diagram Visualization">
-      <description>
-         OpenKieler components for the generation of class diagrams.
-      </description>
-   </category-def>
-
-
-   <!-- KLASSVIZ -->
-
    <feature url="features/de.cau.cs.kieler.klassviz_0.2.0.qualifier.jar" id="de.cau.cs.kieler.klassviz.feature" version="0.2.0.qualifier">
       <category name="klassviz"/>
    </feature>
    <feature url="features/de.cau.cs.kieler.klassviz.source_0.2.0.qualifier.jar" id="de.cau.cs.kieler.klassviz.feature.source" version="0.2.0.qualifier">
       <category name="klassviz"/>
    </feature>
-
+   <category-def name="klassviz" label="Class Diagram Visualization">
+      <description>
+         OpenKieler components for the generation of class diagrams.
+      </description>
+   </category-def>
+   <repository-reference location="http://rtsys.informatik.uni-kiel.de/%7Ekieler/updatesite/" enabled="true" />
+   <repository-reference location="http://download.eclipse.org/elk/updates/releases/0.4.0/" enabled="true" />
 </site>
