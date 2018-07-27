@@ -15,13 +15,6 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
   
-  <properties>
-    <update.site.name>OpenKieler</update.site.name>
-    <update.site.description>KlassViz Nightly Build</update.site.description>
-    <update.site.version>${openkieler-version}</update.site.version>
-    <target.eclipse.version>Photon</target.eclipse.version>
-  </properties>
-
   <build>
     <plugins>
       <plugin>
@@ -38,6 +31,8 @@
               <goal>generate-repository-facade</goal>
             </goals>
             <configuration>
+              <siteTemplateFolder>siteTemplate</siteTemplateFolder>
+            
               <!-- this adds repository references to the update site's content.xml -->
               <associateSites>
                 <site>http://download.eclipse.org/releases/photon/</site>
