@@ -14,4 +14,40 @@
     <version>0..0-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
+  
+  <properties>
+    <update.site.name>OpenKieler</update.site.name>
+    <update.site.description>KlassViz Nightly Build</update.site.description>
+    <update.site.version>${openkieler-version}</update.site.version>
+    <target.eclipse.version>Photon</target.eclipse.version>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jboss.tools.tycho-plugins</groupId>
+        <artifactId>repository-utils</artifactId>
+        <version>1.1.1-SNAPSHOT</version>
+        <executions>
+        
+          <!-- creates index.html and other artifacts -->
+          <execution>
+            <id>generate-facade</id>
+            <phase>package</phase>
+            <goals>
+              <goal>generate-repository-facade</goal>
+            </goals>
+            <configuration>
+              <!-- this adds repository references to the update site's content.xml -->
+              <associateSites>
+                <site>http://download.eclipse.org/releases/photon/</site>
+                <site>http://download.eclipse.org/elk/updates/releases/0.4.0/</site>
+                <site>http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/</site>
+              </associateSites>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>
