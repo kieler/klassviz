@@ -16,4 +16,5 @@
    </category-def>
    <repository-reference location="http://rtsys.informatik.uni-kiel.de/%7Ekieler/updatesite/" enabled="true" />
    <repository-reference location="http://download.eclipse.org/elk/updates/releases/0.4.0/" enabled="true" />
+   <repository-reference location="http://download.eclipse.org/releases/" enabled="true" />
 </site>
