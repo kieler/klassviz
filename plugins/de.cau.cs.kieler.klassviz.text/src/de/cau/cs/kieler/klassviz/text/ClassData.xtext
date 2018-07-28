@@ -4,7 +4,7 @@
  * A part of OpenKieler
  * https://github.com/OpenKieler
  * 
- * Copyright 2014 by
+ * Copyright 2014, 2018 by
  * + Christian-Albrechts-University of Kiel
  *   + Department of Computer Science
  *     + Real-Time and Embedded Systems Group
@@ -12,16 +12,15 @@
  * This code is provided under the terms of the Eclipse Public License (EPL).
  * See the file epl-v10.html for the license text.
  */
-grammar de.cau.cs.kieler.klassviz.text.ClassData
-hidden(WS, ML_COMMENT, SL_COMMENT)
+grammar de.cau.cs.kieler.klassviz.text.ClassData with org.eclipse.xtext.common.Terminals
 
+import "http://kieler.cs.cau.de/classdata" 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
-import "http://kieler.cs.cau.de/classdata"
 
 KClassModel returns KClassModel:
     {KClassModel}
     ('import'
-        ('project' javaProjects+=QualifiedID | 'bundle' bundles+=QualifiedID)
+        ('project' javaProjects+=STRING | 'bundle' bundles+=QualifiedID)
     )*
     (options+=KOption)*
     (packages+=KPackage)*;
@@ -87,11 +86,3 @@ terminal TFLOAT returns ecore::EFloat:
     | ('0'..'9')+ ('e' | 'E') ('+' | '-')? ('0'..'9')+;
 terminal NATURAL returns ecore::EInt:
     ('0'..'9')+;
-terminal ID:
-    '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
-terminal STRING :
-    '"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\') | !('\\'|'"') )* '"';
-
-terminal ML_COMMENT    : '/*' -> '*/';
-terminal SL_COMMENT     : '//' !('\n'|'\r')* ('\r'? '\n')?;
-terminal WS         : (' '|'\t'|'\r'|'\n')+;

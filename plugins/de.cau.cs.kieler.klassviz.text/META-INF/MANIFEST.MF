@@ -7,28 +7,22 @@ Bundle-SymbolicName: de.cau.cs.kieler.klassviz.text; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: de.cau.cs.kieler.klassviz,
  de.cau.cs.kieler.klassviz.model,
- org.eclipse.xtext;visibility:=reexport,
- org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
- org.eclipse.xtext.generator;resolution:=optional,
- org.apache.commons.logging;resolution:=optional,
- org.eclipse.emf.codegen.ecore;resolution:=optional,
- org.eclipse.emf.mwe.utils;resolution:=optional,
- org.eclipse.emf.mwe2.launch;resolution:=optional,
- org.eclipse.xtext.util,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib,
  org.antlr.runtime,
- org.eclipse.xtext.common.types,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
- org.eclipse.jdt.core,
- org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
-Import-Package: org.apache.log4j,
- org.eclipse.xtext.xbase.lib
+ org.eclipse.jdt.core
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.apache.log4j
 Export-Package: de.cau.cs.kieler.klassviz.text,
- de.cau.cs.kieler.klassviz.text.formatting,
+ de.cau.cs.kieler.klassviz.text.formatting2,
  de.cau.cs.kieler.klassviz.text.parser.antlr,
  de.cau.cs.kieler.klassviz.text.parser.antlr.internal,
- de.cau.cs.kieler.klassviz.text.scoping,
  de.cau.cs.kieler.klassviz.text.serializer,
  de.cau.cs.kieler.klassviz.text.services,
  de.cau.cs.kieler.klassviz.text.validation

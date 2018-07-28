@@ -7,23 +7,26 @@ Bundle-SymbolicName: de.cau.cs.kieler.klassviz.text.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: de.cau.cs.kieler.klassviz,
  de.cau.cs.kieler.klassviz.model,
- de.cau.cs.kieler.klassviz.text;visibility:=reexport,
- de.cau.cs.kieler.klighd,
- org.antlr.runtime,
+ de.cau.cs.kieler.klassviz.text,
+ de.cau.cs.kieler.klassviz.text.ide,
  org.eclipse.xtext.ui,
  org.eclipse.xtext.ui.shared,
- org.eclipse.xtext.common.types.ui,
- org.eclipse.xtext.builder,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.eclipse.ui.ide;bundle-version="3.5.0",
  org.eclipse.ui,
- org.eclipse.ui.editors,
- org.eclipse.ui.ide,
- org.eclipse.jdt.core,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtend.lib;resolution:=optional,
  org.eclipse.xtext.xbase.lib,
- org.eclipse.elk.core
-Import-Package: org.apache.log4j,
- org.eclipse.xtext.xbase.lib
+ org.eclipse.elk.core,
+ org.eclipse.elk.graph,
+ org.eclipse.jdt.core
+Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: de.cau.cs.kieler.klassviz.text.ui.quickfix,
+Export-Package: de.cau.cs.kieler.klassviz.text.ui,
  de.cau.cs.kieler.klassviz.text.ui.contentassist,
- de.cau.cs.kieler.klassviz.text.ui.contentassist.antlr
-Bundle-Activator: de.cau.cs.kieler.klassviz.text.ui.internal.ClassDataActivator
+ de.cau.cs.kieler.klassviz.text.ui.internal,
+ de.cau.cs.kieler.klassviz.text.ui.labeling,
+ de.cau.cs.kieler.klassviz.text.ui.quickfix
+Bundle-Activator: de.cau.cs.kieler.klassviz.text.ui.internal.TextActivator
