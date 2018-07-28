@@ -41,6 +41,7 @@
         <module>../plugins/de.cau.cs.kieler.klassviz</module>
         <module>../plugins/de.cau.cs.kieler.klassviz.model</module>
         <module>../plugins/de.cau.cs.kieler.klassviz.text</module>
+        <module>../plugins/de.cau.cs.kieler.klassviz.text.ide</module>
         <module>../plugins/de.cau.cs.kieler.klassviz.text.ui</module>
         <module>../features/de.cau.cs.kieler.klassviz.feature</module>
         <module>de.cau.cs.kieler.klassviz.repository</module>
