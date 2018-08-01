@@ -7,7 +7,6 @@ KlassViz provides a way to dynamically show class diagrams just by clicking a co
 
 ## Installing KlassViz
 
-
 Automatic builds are done every night by the [KIELER Bamboo build system](http://rtsys.informatik.uni-kiel.de/bamboo). To install KlassViz, open your Eclipse installation and select _Install New Software..._ from the _Help_ menu. Use the following update site:
 
 > http://rtsys.informatik.uni-kiel.de/~kieler/updatesite/nightly-openkieler/
