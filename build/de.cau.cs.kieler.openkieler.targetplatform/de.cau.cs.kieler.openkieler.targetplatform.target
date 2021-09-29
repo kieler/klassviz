@@ -20,7 +20,7 @@
       <unit id="org.eclipse.elk.graphviz.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.elk.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.elk.ui.feature.feature.group" version="0.0.0"/>
-      <repository location="http://build.eclipse.org/modeling/elk/updates/nightly"/>
+      <repository location="https://download.eclipse.org/elk/updates/nightly/"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
       <unit id="de.cau.cs.kieler.kiml.ogdf.feature.feature.group" version="0.0.0"/>
