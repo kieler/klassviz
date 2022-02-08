@@ -48,22 +48,6 @@
       </modules>
     </profile>
   </profiles>
-  
-  
-  <!-- Additional plug-in repositories. -->
-  <pluginRepositories>
-    <pluginRepository>
-      <id>jboss-public-repository-group</id>
-      <name>JBoss Public Repository Group</name>
-      <url>http://repository.jboss.org/nexus/content/groups/public/</url>
-    </pluginRepository>
-    <pluginRepository>
-      <id>jboss-snapshots-repository</id>
-      <name>JBoss Snapshots Repository</name>
-      <url>https://repository.jboss.org/nexus/content/repositories/snapshots/</url>
-    </pluginRepository>
-  </pluginRepositories>
-
 
   <!-- Modify the build process to add Tycho and configure some utility plug-ins. -->
   <build>

@@ -22,12 +22,20 @@
     <target.eclipse.version>Photon</target.eclipse.version>
   </properties>
 
+  <pluginRepositories>
+    <pluginRepository>
+      <id>jboss-releases</id>
+      <name>JBoss Releases Maven Repository</name>
+      <url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
   <build>
     <plugins>
       <plugin>
         <groupId>org.jboss.tools.tycho-plugins</groupId>
         <artifactId>repository-utils</artifactId>
-        <version>1.1.1-SNAPSHOT</version>
+        <version>1.0.0</version>
         <executions>
         
           <!-- creates index.html and other artifacts -->
