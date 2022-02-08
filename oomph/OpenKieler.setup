@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:Project
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
+    xmlns:jdt="http://www.eclipse.org/oomph/setup/jdt/1.0"
+    xmlns:predicates="http://www.eclipse.org/oomph/predicates/1.0"
+    xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
+    xmlns:setup.targlets="http://www.eclipse.org/oomph/setup/targlets/1.0"
+    xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
+    name="kieler-klassviz"
+    label="Kieler Klassviz">
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="User Preferences">
+    <annotation
+        source="http://www.eclipse.org/oomph/setup/UserPreferences"/>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.core.resources">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.core.resources/encoding"
+          value="UTF-8"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.egit.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.egit.core/core_autoIgnoreDerivedResources"
+          value="false"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.jdt.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.incompleteEnumSwitch"
+          value="ignore"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.ui.editors">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.editors/printMargin"
+          value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.editors/printMarginColumn"
+          value="120"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.editors/spacesForTabs"
+          value="true"/>
+    </setupTask>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="Eclipse Ini Configuration">
+    <setupTask
+        xsi:type="setup:EclipseIniTask"
+        option="-Xmx"
+        value="2048m"
+        vm="true">
+      <description>Set the heap space needed to work with the projects of ${scope.project.label}</description>
+    </setupTask>
+  </setupTask>
+  <setupTask
+      xsi:type="setup.p2:P2Task">
+    <requirement
+        name="org.eclipse.emf.sdk.feature.group"/>
+    <requirement
+        name="org.eclipse.emf.mwe2.language.sdk.feature.group"/>
+    <requirement
+        name="org.eclipse.emf.mwe2.runtime.sdk.feature.group"/>
+    <requirement
+        name="org.eclipse.jdt.feature.group"/>
+    <requirement
+        name="org.eclipse.xtext.sdk.feature.group"
+        versionRange="[2.16.0,2.17.0)"/>
+    <requirement
+        name="org.eclipse.egit.feature.group"/>
+    <requirement
+        name="org.eclipse.pde.feature.group"/>
+    <requirement
+        name="org.eclipse.oomph.setup.sdk.feature.group"/>
+    <requirement
+        name="org.eclipse.oomph.preferences.feature.group"/>
+    <requirement
+        name="org.eclipse.oomph.workingsets.feature.group"/>
+    <requirement
+        name="org.eclipse.elk.sdk.feature.feature.group"/>
+    <repository
+        url="http://download.eclipse.org/elk/updates/nightly/"/>
+    <repository
+        url="http://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.16.0"/>
+    <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="Git Repositories">
+    <!-- <setupTask
+        xsi:type="git:GitCloneTask"
+        id="git.clone.kieler.debukviz"
+        remoteURI="Kieler/debukviz">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/InducedChoices">
+        <detail
+            key="inherit">
+          <value>github.remoteURIs</value>
+        </detail>
+        <detail
+            key="label">
+          <value>${scope.project.label} DebuKViz Repository</value>
+        </detail>
+        <detail
+            key="target">
+          <value>remoteURI</value>
+        </detail>
+      </annotation>
+      <description>${scope.project.label} DebuKViz Repository</description>
+    </setupTask> -->
+    <!-- <setupTask
+        xsi:type="git:GitCloneTask"
+        id="git.clone.kieler.ecoreviz"
+        remoteURI="Kieler/ecoreviz">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/InducedChoices">
+        <detail
+            key="inherit">
+          <value>github.remoteURIs</value>
+        </detail>
+        <detail
+            key="label">
+          <value>${scope.project.label} EcoreViz Repository</value>
+        </detail>
+        <detail
+            key="target">
+          <value>remoteURI</value>
+        </detail>
+      </annotation>
+      <description>${scope.project.label} EcoreViz Repository</description>
+    </setupTask> -->
+    <!-- <setupTask
+        xsi:type="git:GitCloneTask"
+        id="git.clone.kieler.kiesl"
+        remoteURI="Kieler/kiesl">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/InducedChoices">
+        <detail
+            key="inherit">
+          <value>github.remoteURIs</value>
+        </detail>
+        <detail
+            key="label">
+          <value>${scope.project.label} KieSL Repository</value>
+        </detail>
+        <detail
+            key="target">
+          <value>remoteURI</value>
+        </detail>
+      </annotation>
+      <description>${scope.project.label} KieSL Repository</description>
+    </setupTask> -->
+    <setupTask
+        xsi:type="git:GitCloneTask"
+        id="git.clone.kieler.klassviz"
+        remoteURI="Kieler/klassviz">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/InducedChoices">
+        <detail
+            key="inherit">
+          <value>github.remoteURIs</value>
+        </detail>
+        <detail
+            key="label">
+          <value>${scope.project.label} KlassViz Repository</value>
+        </detail>
+        <detail
+            key="target">
+          <value>remoteURI</value>
+        </detail>
+      </annotation>
+      <description>${scope.project.label} KlassViz Repository</description>
+    </setupTask>
+    <!-- <setupTask
+        xsi:type="git:GitCloneTask"
+        id="git.clone.kieler.ptbrowser"
+        remoteURI="Kieler/ptbrowser">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/InducedChoices">
+        <detail
+            key="inherit">
+          <value>github.remoteURIs</value>
+        </detail>
+        <detail
+            key="label">
+          <value>${scope.project.label} KieSL Repository</value>
+        </detail>
+        <detail
+            key="target">
+          <value>remoteURI</value>
+        </detail>
+      </annotation>
+      <description>${scope.project.label} Ptolemy Browser Repository</description>
+    </setupTask> -->
+  </setupTask>
+  <setupTask
+      xsi:type="jdt:JRETask"
+      version="JavaSE-1.8"
+      location="${jre.location-1.8}">
+    <description>Define the JRE needed to compile and run the Java projects of ${scope.project.label}</description>
+  </setupTask>
+  <setupTask
+      xsi:type="projects:ProjectsImportTask">
+    <!-- <sourceLocator
+        rootFolder="${git.clone.kieler.debukviz.location}"
+        locateNestedProjects="true"/> -->
+    <!-- <sourceLocator
+        rootFolder="${git.clone.kieler.ecoreviz.location}"
+        locateNestedProjects="true"/> -->
+    <!-- <sourceLocator
+        rootFolder="${git.clone.kieler.kiesl.location}"
+        locateNestedProjects="true"/> -->
+    <sourceLocator
+        rootFolder="${git.clone.kieler.klassviz.location}"
+        locateNestedProjects="true"/>
+    <!-- <sourceLocator
+        rootFolder="${git.clone.kieler.ptbrowser.location}"
+        locateNestedProjects="true"/> -->
+  </setupTask>
+  <setupTask
+      xsi:type="setup.workingsets:WorkingSetTask">
+    <!-- <workingSet
+        name="Kieler DebuKViz">
+      <predicate
+          xsi:type="predicates:RepositoryPredicate"
+          project="de.cau.cs.kieler.debukviz"/>
+    </workingSet> -->
+    <!-- <workingSet
+        name="Kieler EcoreViz">
+      <predicate
+          xsi:type="predicates:RepositoryPredicate"
+          project="de.cau.cs.kieler.ecoreviz"/>
+    </workingSet> -->
+    <!-- <workingSet
+        name="Kieler KieSL">
+      <predicate
+          xsi:type="predicates:RepositoryPredicate"
+          project="de.cau.cs.kieler.kiesl.text"/>
+    </workingSet> -->
+    <workingSet
+        name="Kieler KlassViz">
+      <predicate
+          xsi:type="predicates:RepositoryPredicate"
+          project="de.cau.cs.kieler.klassviz"/>
+    </workingSet>
+    <!-- <workingSet
+        name="Kieler Ptolemy Browser">
+      <predicate
+          xsi:type="predicates:RepositoryPredicate"
+          project="de.cau.cs.kieler.ptbrowser.klighd"/>
+    </workingSet> -->
+  </setupTask>
+  <stream name="master"
+      label="Master">
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="eclipse.target.platform"
+        defaultValue="Photon"
+        storageURI="scope://Workspace"/>
+    <setupTask
+        xsi:type="setup.p2:P2Task"/>
+    <setupTask
+        xsi:type="setup.targlets:TargletTask">
+      <targlet
+          name="${scope.project.label}"
+          activeRepositoryList="${eclipse.target.platform}">
+        <annotation
+            source="http:/www.eclipse.org/oomph/targlets/TargetDefinitionGenerator_DISABLED">
+          <detail
+              key="preferredRepositories">
+            <value>http://download.eclipse.org/eclipse/updates/</value>
+          </detail>
+          <detail
+              key="includeAllPlatforms">
+            <value>false</value>
+          </detail>
+          <detail
+              key="includeSource">
+            <value>false</value>
+          </detail>
+          <detail
+              key="location">
+            <value>${git.clone.kieler.klassviz.location|trimTrailingSlashes}/build/de.cau.cs.kieler.openkieler.targetplatform/de.cau.cs.kieler.openkieler.targetplatform.target</value>
+          </detail>
+        </annotation>
+        <requirement
+            name="org.eclipse.sdk.feature.group"/>
+        <requirement
+            name="com.google.guava"
+            versionRange="15.0.0"/>
+        <requirement
+            name="com.google.inject"/>
+        <requirement
+            name="org.eclipse.emf.sdk.feature.group"/>
+        <requirement
+            name="org.eclipse.xtext.sdk.feature.group"
+            versionRange="[2.16.0,2.17.0)"/>
+        <requirement
+            name="org.eclipse.equinox.executable.feature.group"/>
+        <requirement
+            name="javax.xml.bind"/>
+        <requirement
+            name="de.cau.cs.kieler.klighd.feature.feature.group"/>
+        <requirement
+            name="de.cau.cs.kieler.klighd.freehep.feature.feature.group"/>
+        <requirement
+            name="de.cau.cs.kieler.klighd.view.feature.feature.group"/>
+        <requirement
+            name="de.cau.cs.kieler.kiml.ogdf.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.elk.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.elk.feature.source.feature.group"/>
+        <requirement
+            name="org.eclipse.elk.graphviz.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.elk.graphviz.feature.source.feature.group"/>
+        <requirement
+            name="org.eclipse.elk.ui.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.elk.ui.feature.source.feature.group"/>
+        <requirement
+            name="org.eclipse.elk.graph.json.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.elk.graph.json.feature.source.feature.group"/>
+        <requirement
+            name="org.eclipse.elk.sdk.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.elk.sdk.feature.source.feature.group"/>
+        <requirement
+            name="org.eclipse.emf.ecore.xcore.lib.feature.group"/>
+        <requirement
+            name="org.ptolemy.feature.feature.group"/>
+        <requirement
+            name="org.ptolemy.feature.source.feature.group"/>
+        <requirement
+            name="org.eclipse.jdt.feature.group"/>
+        <!-- <sourceLocator
+            rootFolder="${git.clone.kieler.debukviz.location}"
+            locateNestedProjects="true"/> -->
+        <!-- <sourceLocator
+            rootFolder="${git.clone.kieler.ecoreviz.location}"
+            locateNestedProjects="true"/> -->
+        <sourceLocator
+            rootFolder="${git.clone.kieler.klassviz.location}"
+            locateNestedProjects="true"/>
+        <!-- <sourceLocator
+            rootFolder="${git.clone.kieler.kiesl.location}"
+            locateNestedProjects="true"/> -->
+        <!-- <sourceLocator
+            rootFolder="${git.clone.kieler.ptbrowser.location}"
+            locateNestedProjects="true"/> -->
+        <repositoryList
+            name="Photon">
+          <repository
+              url="http://download.eclipse.org/releases/photon"/>
+          <repository
+              url="http://download.eclipse.org/tools/orbit/downloads/drops/R20180606145124/repository"/>
+          <repository
+              url="http://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.16.0/"/>
+          <repository
+              url="http://download.eclipse.org/elk/updates/nightly"/>
+          <repository
+              url="http://rtsys.informatik.uni-kiel.de/%7Ekieler/updatesite/nightly/pragmatics/"/>
+          <repository
+              url="https://rtsys.informatik.uni-kiel.de/~kieler/updatesite/ptolemy/"/>
+          <repository
+              url="https://kieler.github.io/KLighD/v1.0.0/"/>
+        </repositoryList>
+      </targlet>
+    </setupTask>
+  </stream>
+  <logicalProjectContainer
+      xsi:type="setup:ProjectCatalog"
+      href="index:/org.eclipse.setup#//@projectCatalogs[name='com.github']"/>
+  <description>A selection of projects using KIELER technology.</description>
+</setup:Project>
