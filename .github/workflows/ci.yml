@@ -1,0 +1,44 @@
+# This workflow will build a Java project with Maven
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch: # manual triggering, for debugging purposes
+
+jobs:
+  mavenBuilds:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # Setup
+      - uses: actions/checkout@v2
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      
+      - name: Cache local Maven repository
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('.github/workflows/*.*', '**/pom.xml', '**/META-INF/MANIFEST.MF', 'build/de.cau.cs.kieler.openkieler.targetplatform/de.cau.cs.kieler.openkieler.targetplatform.target') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      # Maven build update site
+      - name: Build update site
+        run: MAVEN_OPTS="-Xmx2048M" mvn --update-snapshots clean package --file build/pom.xml
+
+      - name: Archive Klassviz Repository Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Klassviz Repository Artifact
+          path: build/de.cau.cs.kieler.klassviz.repository/target/repository/
+          if-no-files-found: error
