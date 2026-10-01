@@ -15,6 +15,7 @@
 package de.cau.cs.kieler.klassviz.text.ide
 
 import com.google.inject.Guice
+import com.google.inject.Injector
 import de.cau.cs.kieler.klassviz.text.ClassDataRuntimeModule
 import de.cau.cs.kieler.klassviz.text.ClassDataStandaloneSetup
 import org.eclipse.xtext.util.Modules2
@@ -22,10 +23,17 @@ import org.eclipse.xtext.util.Modules2
 /**
  * Initialization support for running Xtext languages as language servers.
  */
-class ClassDataIdeSetup extends ClassDataStandaloneSetup {
+class ClassDataIdeSetup extends ClassDataStandaloneSetup implements de.cau.cs.kieler.core.ls.ILSSetup {
+
+	def static Injector doSetup() {
+		new ClassDataIdeSetup().createInjectorAndDoEMFRegistration()
+	}
 
 	override createInjector() {
 		Guice.createInjector(Modules2.mixin(new ClassDataRuntimeModule, new ClassDataIdeModule))
 	}
 	
+	override doLSSetup() {
+		createInjectorAndDoEMFRegistration()
+	}
 }

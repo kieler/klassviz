@@ -80,7 +80,7 @@ public final class GenerateKlassVizFileHandler extends AbstractHandler {
                 JdtModelTransformation.class);
         KClassModel classModel;
         try {
-            classModel = transformation.transform(selection);
+            classModel = transformation.transform(selection.toList());
         } catch (JavaModelException exception) {
             IStatus status = new Status(IStatus.ERROR, PLUGIN_ID,
                     "Error while transforming Java model.", exception);

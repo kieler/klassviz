@@ -41,7 +41,6 @@ import org.eclipse.jdt.core.ITypeRoot
 import org.eclipse.jdt.core.JavaCore
 import org.eclipse.jdt.core.JavaModelException
 import org.eclipse.jdt.core.Signature
-import org.eclipse.jface.viewers.IStructuredSelection
 import org.eclipse.jdt.core.IPackageFragment
 
 /**
@@ -57,8 +56,8 @@ final class JdtModelTransformation {
     /**
      * Transform a selection of JDT elements to a class model instance.
      */
-    def KClassModel transform(IStructuredSelection selection) throws JavaModelException {
-        val selectedElements = selection.toList()
+    def KClassModel transform(java.util.List<?> selection) throws JavaModelException {
+        val selectedElements = selection
         
         // Gather all types in the current selection.
         selectedTypes.clear

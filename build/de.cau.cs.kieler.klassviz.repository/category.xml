@@ -16,7 +16,12 @@
    <feature url="features/de.cau.cs.kieler.klassviz_0.2.0.qualifier.jar" id="de.cau.cs.kieler.klassviz.feature" version="0.2.0.qualifier">
       <category name="klassviz"/>
    </feature>
-   <feature url="features/de.cau.cs.kieler.klassviz.source_0.2.0.qualifier.jar" id="de.cau.cs.kieler.klassviz.feature.source" version="0.2.0.qualifier">
-      <category name="klassviz"/>
-   </feature>
+
+   <!-- ASSOCIATE SITES FOR AUTO-RESOLUTION -->
+   <repository-reference location="https://kieler.github.io/KLighD/v3.1.0/" type="0" options="0"/>
+   <repository-reference location="https://kieler.github.io/KLighD/v3.1.0/" type="1" options="0"/>
+   <repository-reference location="https://download.eclipse.org/elk/updates/releases/0.11.0/" type="0" options="0"/>
+   <repository-reference location="https://download.eclipse.org/elk/updates/releases/0.11.0/" type="1" options="0"/>
+   <repository-reference location="https://download.eclipse.org/releases/2024-12/" type="0" options="0"/>
+   <repository-reference location="https://download.eclipse.org/releases/2024-12/" type="1" options="0"/>
 </site>

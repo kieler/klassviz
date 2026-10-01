@@ -23,7 +23,7 @@ Require-Bundle: de.cau.cs.kieler.klassviz,
  org.eclipse.elk.graph,
  org.eclipse.jdt.core
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: de.cau.cs.kieler.klassviz.text.ui,
  de.cau.cs.kieler.klassviz.text.ui.contentassist,
  de.cau.cs.kieler.klassviz.text.ui.internal,

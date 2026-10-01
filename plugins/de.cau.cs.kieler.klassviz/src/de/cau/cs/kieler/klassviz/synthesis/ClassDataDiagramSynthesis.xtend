@@ -110,7 +110,7 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
         SynthesisOption::createChoiceOption(
             "Visualization of Attributes/Methods",
             ImmutableList::of(VISUALIZE_SELECTION, VISUALIZE_ALL),
-            VISUALIZE_SELECTION)
+            VISUALIZE_ALL)
 
     private static val SynthesisOption CLASSES_SEPARATOR =
         SynthesisOption::createSeparator("Classes")
@@ -355,10 +355,10 @@ final class ClassDataDiagramSynthesis extends AbstractDiagramSynthesis<KClassMod
             // Layout depends on whether we have hierarchy (visualize packages) or not. If we have,
             // hierarchy, we use KLay Layered; otherwise, we use a planarization algorithm.
             if (VISUALIZE_PACKAGES.booleanValue) {
-                parentNode.setProperty(CoreOptions.ALGORITHM, "de.cau.cs.kieler.klay.layered")
+                parentNode.setProperty(CoreOptions.ALGORITHM, "org.eclipse.elk.layered")
                 parentNode.setProperty(CoreOptions.HIERARCHY_HANDLING, HierarchyHandling.INCLUDE_CHILDREN)
             } else {
-                parentNode.setProperty(CoreOptions.ALGORITHM, "de.cau.cs.kieler.kiml.ogdf.planarization")
+                parentNode.setProperty(CoreOptions.ALGORITHM, "org.eclipse.elk.layered")
             }
         }
     }

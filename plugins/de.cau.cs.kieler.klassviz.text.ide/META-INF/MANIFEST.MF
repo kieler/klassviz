@@ -9,8 +9,9 @@ Require-Bundle: de.cau.cs.kieler.klassviz.text,
  de.cau.cs.kieler.klassviz.model,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide,
- org.antlr.runtime
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+ org.antlr.runtime,
+ de.cau.cs.kieler.core
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: de.cau.cs.kieler.klassviz.text.ide,
  de.cau.cs.kieler.klassviz.text.ide.contentassist.antlr,
  de.cau.cs.kieler.klassviz.text.ide.contentassist.antlr.internal

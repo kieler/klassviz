@@ -1,26 +1,39 @@
-/*
- * KlassViz - Kieler Class Diagram Visualization
- * 
- * A part of OpenKieler
- * https://github.com/OpenKieler
- * 
- * Copyright 2014, 2018 by
- * + Christian-Albrechts-University of Kiel
- *   + Department of Computer Science
- *     + Real-Time and Embedded Systems Group
- * 
- * This code is provided under the terms of the Eclipse Public License (EPL).
- * See the file epl-v10.html for the license text.
- */
 package de.cau.cs.kieler.klassviz.text
 
+import com.google.inject.Injector
+import de.cau.cs.kieler.core.services.KielerLanguage
+import de.cau.cs.kieler.klassviz.model.classdata.ClassdataPackage
+import de.cau.cs.kieler.klassviz.model.classdata.KClassModel
 
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
  */
-class ClassDataStandaloneSetup extends ClassDataStandaloneSetupGenerated {
+class ClassDataStandaloneSetup extends ClassDataStandaloneSetupGenerated implements KielerLanguage {
 
-	def static void doSetup() {
-		new ClassDataStandaloneSetup().createInjectorAndDoEMFRegistration()
-	}
+    protected static Injector injector
+
+    def static Injector doSetup() {
+        if (injector === null) {
+            ClassdataPackage.eINSTANCE.eClass()
+            injector = new ClassDataStandaloneSetup().createInjectorAndDoEMFRegistration()
+        }
+        return injector
+    }
+    
+    override register(Injector injector) {
+        super.register(injector)
+        ClassdataPackage.eINSTANCE.eClass()
+    }
+    
+    override getInjector() {
+        return doSetup()
+    }
+
+    override getSupportedModels() {
+        return #[KClassModel]
+    }
+    
+    override getSupportedResourceExtensions() {
+        return #["klaviz"]
+    }
 }

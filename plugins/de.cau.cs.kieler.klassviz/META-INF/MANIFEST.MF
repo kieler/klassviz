@@ -23,7 +23,7 @@ Require-Bundle: com.google.guava,
  de.cau.cs.kieler.klassviz.model,
  org.eclipse.ui.ide,
  org.eclipse.elk.core
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Import-Package: org.eclipse.jdt.internal.ui.packageview,
  org.eclipse.jdt.ui
 Export-Package: de.cau.cs.kieler.klassviz.synthesis
